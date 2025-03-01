@@ -23,6 +23,7 @@ params:
 
   profile:
     name: "Juan Manuel"
+    about: "Data Scientist & AI Researcher"
     location: "Petrer, Alicante, España"
     photo: profile.jpg
   social:
