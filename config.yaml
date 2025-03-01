@@ -107,7 +107,7 @@ params:
     list:
       - title: Proyecto 1
         url: "#"
-        description:
+        description: ...
   skill:
     title: Skills
     panelId: skill-panel
