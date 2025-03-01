@@ -37,7 +37,7 @@ params:
         url: "https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
         title: LinkedIn
       - icon: fab fa-github
-        url: "#"
+        url: "https://github.com/JuanManuelRM7"
         title: GitHub
       - icon: fas fa-envelope
         url: "mailto:juanmanuel@petrer.eu
