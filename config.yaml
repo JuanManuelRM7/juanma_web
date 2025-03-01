@@ -34,14 +34,20 @@ params:
     title: Links
     list:
       - icon: fab fa-linkedin-in
-        url: "https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
+        url: "#"
         title: LinkedIn
+      - icon: fab fa-stack-overflow
+        url: "#"
+        title: StackOverflow
       - icon: fab fa-github
-        url: "https://github.com/JuanManuelRM7"
+        url: "#"
         title: GitHub
-      - icon: fas fa-envelope
-        url: "mailto:juanmanuel@petrer.eu
-        title: Email
+      - icon: ai ai-google-scholar
+        url: "#"
+        title: Google Scholar
+      - icon: fab fa-researchgate
+        url: "#"
+        title: ResearchGate
   showInAccordion:
     - item: aboutme
       expand: true
@@ -52,9 +58,9 @@ params:
     - item: skill
     - item: hobby
   aboutme:
-    title: Sobre mí
+    title: About Me
     icon: fas fa-user
-    description: Soy un apasionado de la física y de las matemáticas. Siempre me ha interesado la problemática del cambio climático y es por ello por lo que creo que encuentro una mayor afinidad con los ámbitos relacionados con la meteorología o energías renovables. Actualmente me encuentro trabajando como investigador y desarrollador en inteligencia artificial, un campo con mucho potencial en multitud de sectores, especialmente en la lucha por paliar los efectos del cambio climático.
+    description: This is a demo of the `aafu` theme. It has `light` and `dark` theme.
   experience:
     title: Experiences
     icon: fas fa-briefcase
