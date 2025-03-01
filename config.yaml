@@ -3,9 +3,9 @@ languageCode: en-us
 build:
   writeStats: true
 params:
-  title: aafu theme
-  author: Darshan Baral
-  description: Website title
+  title: Blog de Juan Manuel
+  author: Juan Manuel
+  description: Blog personal de Juan Manuel
   copyright:
   theme:
     mainTheme: dark
