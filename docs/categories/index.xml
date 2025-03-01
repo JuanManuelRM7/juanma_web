@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>https://juanmanuelrm7.github.io/juanma_web/categories/</link>
+    <link>https://juanmanuel.petrer.eu/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuelrm7.github.io/juanma_web/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://juanmanuel.petrer.eu/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syntax</title>
-      <link>https://juanmanuelrm7.github.io/juanma_web/categories/syntax/</link>
+      <link>https://juanmanuel.petrer.eu/categories/syntax/</link>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuelrm7.github.io/juanma_web/categories/syntax/</guid>
+      <guid>https://juanmanuel.petrer.eu/categories/syntax/</guid>
       <description></description>
     </item>
     <item>
       <title>Themes</title>
-      <link>https://juanmanuelrm7.github.io/juanma_web/categories/themes/</link>
+      <link>https://juanmanuel.petrer.eu/categories/themes/</link>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuelrm7.github.io/juanma_web/categories/themes/</guid>
+      <guid>https://juanmanuel.petrer.eu/categories/themes/</guid>
       <description></description>
     </item>
     <item>
       <title>Diam Aliqua</title>
-      <link>https://juanmanuelrm7.github.io/juanma_web/categories/diam-aliqua/</link>
+      <link>https://juanmanuel.petrer.eu/categories/diam-aliqua/</link>
       <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuelrm7.github.io/juanma_web/categories/diam-aliqua/</guid>
+      <guid>https://juanmanuel.petrer.eu/categories/diam-aliqua/</guid>
       <description></description>
     </item>
     <item>
       <title>Fringilla</title>
-      <link>https://juanmanuelrm7.github.io/juanma_web/categories/fringilla/</link>
+      <link>https://juanmanuel.petrer.eu/categories/fringilla/</link>
       <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuelrm7.github.io/juanma_web/categories/fringilla/</guid>
+      <guid>https://juanmanuel.petrer.eu/categories/fringilla/</guid>
       <description></description>
     </item>
   </channel>
