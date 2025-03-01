@@ -6,9 +6,7 @@ params:
   title: aafu theme
   author: Darshan Baral
   description: Website title
-  copyright: >-
-    powered by [hugo](https://gohugo.io/) & deployed on
-    [Cloudflare](https://www.cloudflare.com/)
+  copyright:
   theme:
     mainTheme: dark
     showAttribute: true
@@ -150,3 +148,4 @@ params:
     icon: fas fa-cogs
     list:
       - skill: "Python"
+        skillrating: 
