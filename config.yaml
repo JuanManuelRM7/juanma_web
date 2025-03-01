@@ -33,16 +33,16 @@ params:
       - icon: fab fa-linkedin-in
         url: "#"
         title: LinkedIn
-      - icon: fab fa-stack-overflow
+      - icon:
         url: "#"
         title: StackOverflow
       - icon: fab fa-github
         url: "#"
         title: GitHub
-      - icon: ai ai-google-scholar
+      - icon:
         url: "#"
         title: Google Scholar
-      - icon: fab fa-researchgate
+      - icon:
         url: "#"
         title: ResearchGate
   showInAccordion:
