@@ -24,9 +24,11 @@ params:
               <link rel="shortcut icon" href="favicon.ico">
 
   profile:
-    name: "Juan Manuel."
-    tagline: Title
-    location: "City Name, ST"
+    name: "Juan Manuel Ruiz Muñoz"
+    title: "AI Researcher & Developer | Data Scientist | Phisicist"
+    location: "Petrer, Alicante, España"
+    email: "[juanmanuel@petrer.eu](mailto:juanmanuel@petrer.eu)"
+    phone: "+34 678 23 12 12"
     photo: profile.jpg
   social:
     title: Links
