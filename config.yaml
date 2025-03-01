@@ -37,11 +37,8 @@ params:
         url: "https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
         title: StackOverflow
       - icon: fab fa-github
-        url: "#"
-        title: GitHub
-      - icon:
         url: "https://github.com/JuanManuelRM7"
-        title: Google Scholar
+        title: GitHub
       - icon:
         url: "#"
         title: ResearchGate
