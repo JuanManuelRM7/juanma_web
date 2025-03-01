@@ -52,9 +52,9 @@ params:
     - item: skill
     - item: hobby
   aboutme:
-    title: About Me
+    title: Sobre mí
     icon: fas fa-user
-    description: This is a demo of the `aafu` theme. It has `light` and `dark` theme.
+    description: Soy un apasionado de la física y de las matemáticas. Siempre me ha interesado la problemática del cambio climático y es por ello por lo que creo que encuentro una mayor afinidad con los ámbitos relacionados con la meteorología o energías renovables. Actualmente me encuentro trabajando como investigador y desarrollador en inteligencia artificial, un campo con mucho potencial en multitud de sectores, especialmente en la lucha por paliar los efectos del cambio climático.
   experience:
     title: Experiences
     icon: fas fa-briefcase
