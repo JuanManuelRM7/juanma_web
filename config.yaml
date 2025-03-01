@@ -68,10 +68,6 @@ params:
         company: AIR Institute
         url: "https://www.air-institute.org/"
         details: |1-
-          - Printed from desktop. Sent [emails](#).
-              - Called people *using* telephone.
-          - Drank water from office cooler.
-          - Ate donuts on people's birthdays.
       - position: Investigador en Universidad Miguel Hernández
         dates: Enero 2024 - Julio 2024
         url: "#"
