@@ -151,14 +151,3 @@ params:
     list:
       - skill: "Python"
         skillrating: 100
-      - skill: Skill 3
-        skillrating: 80
-      - skill: Skill 4
-        skillrating: 50
-  hobby:
-    title: Hobbies
-    icon: fas fa-gamepad
-    list:
-      - hobby: Cooking
-      - hobby: Hiking
-      - hobby: Baking
