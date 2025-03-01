@@ -83,7 +83,7 @@ params:
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "#"
   publication:
-    title: Publications
+    title: Publicaciones
     icon: fas fa-book
     format:
       - date
@@ -119,21 +119,13 @@ params:
         url: "#"
         type: Proceedings
   project:
-    title: Projects
+    title: Proyectos
     icon: fas fa-project-diagram
     list:
-      - title: Project 1
+      - title: Proyecto 1
         url: "#"
-        description: Description of the project
-      - title: Project 2
-        url: "#"
-        description: Description of the project
-      - title: Project 3
-        url: "#"
-        description: Description of the project
-      - title: Project 4
-        url: "#"
-        description: Description of the project
+        description: |1-
+          - Desarrollo de un modelo de predicción de la radiación solar en la provincia de Alicante.
   skill:
     title: Skills
     panelId: skill-panel
