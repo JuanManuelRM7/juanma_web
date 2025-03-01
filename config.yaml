@@ -150,4 +150,3 @@ params:
     icon: fas fa-cogs
     list:
       - skill: "Python"
-        level: 100
