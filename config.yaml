@@ -42,18 +42,9 @@ params:
       - icon: fab fa-github
         url: "#"
         title: GitHub
-      - icon: fab fa-twitter
-        url: "#"
-        title: Twitter
-      - icon: fab fa-orcid
-        url: "#"
-        title: Orcid
-      - icon: ai ai-google-scholar
-        url: "#"
-        title: Google Scholar
-      - icon: fab fa-researchgate
-        url: "#"
-        title: ResearchGate
+      - icon: fas fa-envelope
+        url: "mailto:juanmanuel@petrer.eu
+        title: Email
   showInAccordion:
     - item: aboutme
       expand: true
