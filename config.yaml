@@ -9,7 +9,7 @@ params:
   copyright:
   theme:
     mainTheme: dark
-    showAttribute: true
+    showAttribute: false
     singlePage: false
   favicons:
     use: true
