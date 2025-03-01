@@ -34,17 +34,21 @@ params:
         url: "#"
         title: LinkedIn
       - icon:
-        url: "#"
+        url: "https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
         title: StackOverflow
       - icon: fab fa-github
         url: "#"
         title: GitHub
       - icon:
-        url: "#"
+        url: "https://github.com/JuanManuelRM7"
         title: Google Scholar
       - icon:
         url: "#"
         title: ResearchGate
+        #email
+      - icon: fas fa-envelope
+        url: "mailto:juanmanuel@petrer.eu"
+        title: Email
   showInAccordion:
     - item: aboutme
       expand: true
