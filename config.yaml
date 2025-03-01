@@ -95,37 +95,19 @@ params:
       - Proceedings
     list:
       - title: >-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        authors: "F Last, F Second, P secondary"
-        date: "2018"
-        journal: "Journal of Field 52 (16), 9033-9044"
+          Trabajo Final de Grado: Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico
+        authors: "Juan Manuel Ruiz Muñoz"
+        date: "2024"
+        journal: "Universidad de Alicante"
         url: "#"
         type: Journal Articles
-      - title: >-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        authors: "F Last, F Second, P secondary"
-        date: "2018"
-        journal: "Journal of Field 52 (16), 9033-9044"
-        url: "#"
-        type: Journal Articles
-      - title: >-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        authors: "F Last, F Second, P secondary"
-        date: "2018"
-        journal: "Journal of Field 52 (16), 9033-9044"
-        url: "#"
-        type: Proceedings
   project:
     title: Proyectos
     icon: fas fa-project-diagram
     list:
       - title: Proyecto 1
         url: "#"
-        description: |1-
-          - Desarrollo de un modelo de predicción de la radiación solar en la provincia de Alicante.
+        description:
   skill:
     title: Skills
     panelId: skill-panel
