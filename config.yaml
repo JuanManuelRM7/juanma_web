@@ -60,21 +60,25 @@ params:
     icon: fas fa-user
     description: Soy un apasionado de la física y de las matemáticas. Siempre me ha interesado la problemática del cambio climático y es por ello por lo que creo que encuentro una mayor afinidad con los ámbitos relacionados con la meteorología o energías renovables. Actualmente me encuentro trabajando como investigador y desarrollador en inteligencia artificial, un campo con mucho potencial en multitud de sectores, especialmente en la lucha por paliar los efectos del cambio climático.
   experience:
-    title: Experiences
+    title: Experiencia
     icon: fas fa-briefcase
     list:
-      - position: Job Title
-        dates: 2019 - *Present*
-        company: Company Name
+      - position: Data Scientist & AI Researcher
+        dates: Junio 2024 - *Presente*
+        company: AIR Institute
+        url: "https://www.air-institute.org/"
         details: |1-
           - Printed from desktop. Sent [emails](#).
               - Called people *using* telephone.
           - Drank water from office cooler.
           - Ate donuts on people's birthdays.
-      - position: Job Title
-        dates: 2018 - 2019
+      - position: Investigador en Universidad Miguel Hernández
+        dates: Enero 2024 - Julio 2024
         url: "#"
-        company: Company Name
+        company: Grupo SCOLAb
+        url: "https://seneca.umh.es/"
+        details: |1-
+            - Técnicas Lagrangianas para la detección automática de situaciones de bloqueo atmosférico.
   education:
     title: Education
     icon: fas fa-graduation-cap
