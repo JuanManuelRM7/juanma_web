@@ -25,10 +25,7 @@ params:
 
   profile:
     name: "Juan Manuel"
-    title: "AI Researcher & Developer | Data Scientist | Phisicist"
     location: "Petrer, Alicante, España"
-    email: "[juanmanuel@petrer.eu](mailto:juanmanuel@petrer.eu)"
-    phone: "+34 678 23 12 12"
     photo: profile.jpg
   social:
     title: Links
