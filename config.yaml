@@ -148,4 +148,4 @@ params:
     icon: fas fa-cogs
     list:
       - skill: "Python"
-        skillrating: 
+        skillrating: 100
