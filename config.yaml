@@ -12,7 +12,7 @@ params:
     showAttribute: false
     singlePage: false
   favicons:
-    use: false
+    use: true
     metas: |2-
               <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
               <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -74,22 +74,14 @@ params:
         details: |1-
             - Técnicas Lagrangianas para la detección automática de situaciones de bloqueo atmosférico.
   education:
-    title: Education
+    title: Educación
     icon: fas fa-graduation-cap
     list:
-      - degree: Ph.D. in Subject
-        college: University of State-City
-        dates: 2013 - 2018
-        thesis_title: "Effect of humans on other humans: a study of human behavior."
+      - degree: Grado en Física
+        college: Universidad de Alicante
+        dates: 2020 - 2024
+        thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "#"
-      - degree: M.S. in Subject
-        college: University of State-City
-        dates: 2013 - 2018
-        thesis_title: "Effect of humans on other humans: a study of human behavior."
-        thesis_url: "#"
-      - degree: B.S. in Subject
-        college: University of State-City
-        dates: 2004 - 2009
   publication:
     title: Publications
     icon: fas fa-book
