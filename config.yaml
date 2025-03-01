@@ -149,8 +149,8 @@ params:
     panelId: skill-panel
     icon: fas fa-cogs
     list:
-      - skill: "Skill 1, Skill 2"
-        skillrating: 90
+      - skill: "Python"
+        skillrating: 100
       - skill: Skill 3
         skillrating: 80
       - skill: Skill 4
