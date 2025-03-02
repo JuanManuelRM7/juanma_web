@@ -66,13 +66,20 @@ params:
         company: AIR Institute
         url: "https://www.air-institute.org/"
         details: |1-
+            - Analizar y definir los requisitos del proyecto, diseñando y desarrollando soluciones de aprendizaje automático utilizando algoritmos de vanguardia.
+            - Diseñar e implementar algoritmos de aprendizaje automático personalizados para una variedad de proyectos, incluyendo procesamiento del lenguaje natural, redes neuronales y visión computacional, entre otros.
+            - Mantenerse al día con los últimos avances en investigación en diversos campos de la inteligencia artificial.
+            - Escribir y revisar documentación técnica.
+            - Reunirse con los clientes para comprender sus requisitos y adaptar las soluciones a sus necesidades.
+            - Colaborar con otros miembros del equipo para lograr los objetivos del proyecto.
       - position: Investigador en Universidad Miguel Hernández
         dates: Enero 2024 - Julio 2024
         url: "#"
         company: Grupo SCOLAb
         url: "https://seneca.umh.es/"
         details: |1-
-            - Técnicas Lagrangianas para la detección automática de situaciones de bloqueo atmosférico.
+            - Desarrollo e investigación de técnicas Lagrangianas para la identificación automática de situaciones de bloqueo atmosférico.
+            - Colaboración en otros proyectos del grupo relacionados con la física atmosférica.
   education:
     title: Educación
     icon: fas fa-graduation-cap
@@ -123,4 +130,4 @@ params:
         skillrating: 100
       - skill: "AWS"
         skillrating: 10
-        
+
