@@ -398,9 +398,7 @@
         
       >
         <div class=""><script>
-  let skillPanel = document.querySelector("#skill-panel")
-    .previousElementSibling;
-  skillPanel.addEventListener("click", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     let skillBars = document.querySelectorAll("#skill-percent");
     skillBars.forEach(elem => {
       elem.style.width = elem.classList[0];
