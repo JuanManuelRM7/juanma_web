@@ -8,7 +8,7 @@ params:
   description: Blog personal de Juan Manuel
   copyright:
   theme:
-    mainTheme: dark
+    mainTheme: null
     showAttribute: false
     singlePage: false
   favicons:
