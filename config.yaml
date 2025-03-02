@@ -108,19 +108,19 @@ params:
       - Proceedings
     list:
       - title: >-
-          Trabajo Final de Grado: Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico
-        authors: "Juan Manuel Ruiz Muñoz"
-        date: "2024"
-        journal: "Universidad de Alicante"
+          En desarrollo: A Lagrangian method for the identification of atmospheric blocking situations
+        authors: 
+        date: 
+        journal: 
         url: "#"
         type: Journal Articles
   project:
     title: Proyectos
     icon: fas fa-project-diagram
     list:
-      - title: Proyecto 1
+      - title: En desarrollo
         url: "#"
-        description: ...
+        description: 
   skill:
     title: Skills
     panelId: skill-panel
@@ -135,5 +135,5 @@ params:
       - skill: "LaTeX"
         skillrating: 100
       - skill: "AWS"
-        skillrating: 10
+        skillrating: 60
 
