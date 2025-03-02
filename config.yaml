@@ -104,16 +104,14 @@ params:
       - authors
       - journal
     types:
-      - Journal Articles
-      - Proceedings
+      - En desarrollo
     list:
       - title: >-
-          En desarrollo: A Lagrangian method for the identification of atmospheric blocking situations
         authors: 
         date: 
         journal: 
         url: "#"
-        type: Journal Articles
+        type:
   project:
     title: Proyectos
     icon: fas fa-project-diagram
