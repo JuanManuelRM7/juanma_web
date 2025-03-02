@@ -6,21 +6,6 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Syntax</title>
-      <link>https://juanmanuel.petrer.eu/categories/syntax/</link>
-      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/categories/syntax/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Themes</title>
-      <link>https://juanmanuel.petrer.eu/categories/themes/</link>
-      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/categories/themes/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
