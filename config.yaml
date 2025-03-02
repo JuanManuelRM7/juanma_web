@@ -46,7 +46,7 @@ params:
         title: Email
   showInAccordion:
     - item: aboutme
-      expand: true
+      expand: false
     - item: experience
     - item: education
     - item: publication
