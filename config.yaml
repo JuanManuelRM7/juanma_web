@@ -86,6 +86,7 @@ params:
     list:
       - degree: Grado en Física
         college: Universidad de Alicante
+        url: "https://www.ua.es/"
         dates: 2020 - 2024
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "#"
