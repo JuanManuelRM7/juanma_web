@@ -94,7 +94,7 @@ params:
         dates: 2018 - 2023
       - degree: Estudiante SICUE en el grado en Física y grado en Matemáticas
         college: Universidad de Salamanca
-        dates: Septiembre 2022 - Julio 2023
+        dates: 2022 - 2023
   publication:
     title: Publicaciones
     icon: fas fa-book
