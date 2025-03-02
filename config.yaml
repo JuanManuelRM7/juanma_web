@@ -72,10 +72,10 @@ params:
             - Escribir y revisar documentación técnica.
             - Reunirse con los clientes para comprender sus requisitos y adaptar las soluciones a sus necesidades.
             - Colaborar con otros miembros del equipo para lograr los objetivos del proyecto.
-      - position: Investigador en Universidad Miguel Hernández
+      - position: Investigador en el grupo SCOLAb
         dates: Enero 2024 - Julio 2024
         url: "#"
-        company: Grupo SCOLAb
+        company: Universidad Miguel Hernández de Elche
         url: "https://seneca.umh.es/"
         details: |1-
             - Desarrollo e investigación de técnicas Lagrangianas para la identificación automática de situaciones de bloqueo atmosférico.
