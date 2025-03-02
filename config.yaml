@@ -89,8 +89,12 @@ params:
         dates: 2020 - 2024
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "#"
-        details: |1-
-            - Durante estos años, he estado combinando mis estudios con asignaturas del Grado en Matemáticas (+120ECTS), concretamente en el programa de estudios simultáneos que ofrece la Universidad de Alicante, UA.
+      - degree: Grado en Matemáticas
+        college: Universidad de Alicante
+        dates: 2018 - 2023
+      - degree: Estudiante SICUE en el grado en Física y grado en Matemáticas
+        college: Universidad de Salamanca
+        dates: Septiembre 2022 - Julio 2023
   publication:
     title: Publicaciones
     icon: fas fa-book
