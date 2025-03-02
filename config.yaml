@@ -130,12 +130,13 @@ params:
       - skill: "LaTeX"
         skillrating: 100
       - skill: "HYSPLIT"
-        url: "https://www.ready.noaa.gov/HYSPLIT.php"
         skillrating: 100
       - skill: "R"
         skillrating: 80
       - skill: "SQL"
         skillrating: 80
+      - skill: "MATLAB"
+        skillrating: 70
       - skill: "AWS"
         skillrating: 60
 
