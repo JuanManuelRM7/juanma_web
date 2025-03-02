@@ -23,7 +23,7 @@ params:
 
   profile:
     name: "Juan Manuel"
-    location: "Petrer, Alicante, España"
+    location: "Petrer, Alicante"
     photo: profile.jpg
   social:
     title: Links
