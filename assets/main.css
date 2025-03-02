@@ -23,7 +23,7 @@
 
 @layer utilities {
   h1 {
-    @apply text-4xl mb-5 mt-1;
+    @apply text-4xl mb-5 mt-1 text-red-500;
   }
   h2 {
     @apply text-3xl mb-4 mt-1;
