@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>https://juanmanuel.petrer.eu/</link>
-    <description>Recent content on </description>
+    <title>APi on </title>
+    <link>https://juanmanuel.petrer.eu/tags/api/</link>
+    <description>Recent content in APi on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuel.petrer.eu/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bloqueos atmosféricos desde un punta de vista lagrangiano</title>
-      <link>https://juanmanuel.petrer.eu/blog/post_3/</link>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/post_3/</guid>
-      <description>&lt;h2 id=&#34;qué-es-un-bloqueo-atmosférico&#34;&gt;¿Qué es un bloqueo atmosférico?&lt;/h2&gt;&#xA;&lt;p&gt;En desarrollo&amp;hellip;&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trabajar con datos meteorológicos. El repositorio Copernicus.</title>
       <link>https://juanmanuel.petrer.eu/blog/post_3-copy/</link>
