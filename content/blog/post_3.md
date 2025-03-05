@@ -1,13 +1,13 @@
 ---
-title: "luctus enim ultricies auctor pulvinar nam etiam"
-date: 2018-01-06
-tags: ["mollis urna", "notes", "laoreet"]
-categories: ["diam aliqua", "fringilla"]
-description: "dictum tellus sapien vitae integer justo amet mauris cras bolestie sollicitudin dignissim"
-draft: true
+title: "Un método lagrangiano para identificar bloqueos atmosféricos"
+date: 2025-03-05
+tags: ["bloqueo"]
+categories: []
+description: "Descripción"
+draft: false
 ---
 
-## donec lacinia eleifend sem a
+## ¿Qué es un bloqueo atmosférico?
 
 Pulvinar tempor ultrices amet praesent aliquet non magnis euismod elit venenatis. Aliqua consequat tristique erat nulla sit risus aliqua posuere. Potenti natoque augue proin accimsan risus scelerisque id integer curabitur mattis amet quisque. Aliquet porta sit sapien natoque sed fringilla, madssa suspendisse vivamus placerat sociis condimentum ridiculus. Natoque egestas non lectus pellentesque nunc mattis eu ridiculus pretium maecenas ligula. Gravida facilisis sem mollis sagittis aliquet ornare bibendum, leo nec morbi tortor diam maecenas tempor.
 

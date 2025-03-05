@@ -3,16 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://juanmanuel.petrer.eu/blog/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/</loc>
-    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/bloqueo/</loc>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/</loc>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/blog/post_3/</loc>
+    <lastmod>2025-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/search/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/categories/</loc>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/</loc>
   </url>
 </urlset>
