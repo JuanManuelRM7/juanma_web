@@ -96,30 +96,31 @@ params:
       - degree: Estudiante SICUE en el grado en Física y grado en Matemáticas
         college: Universidad de Salamanca
         dates: 2022 - 2023
-  publication:
-    title: Publicaciones
-    icon: fas fa-book
-    format:
-      - date
-      - title
-      - authors
-      - journal
-    types:
-      - En desarrollo
-    list:
-      - title: >-
-        authors: 
-        date: 
-        journal: 
-        url: "#"
-        type:
-  project:
-    title: Proyectos
-    icon: fas fa-project-diagram
-    list:
-      - title: En desarrollo
-        url: "#"
-        description: 
+
+# publication:
+#   title: Publicaciones
+#   icon: fas fa-book
+#   format:
+#     - date
+#     - title
+#     - authors
+#     - journal
+#   types:
+#     - En desarrollo
+#   list:
+#     - title: >-
+#       authors: 
+#       date: 
+#       journal: 
+#       url: "#"
+#       type:
+# project:
+#   title: Proyectos
+#   icon: fas fa-project-diagram
+#   list:
+#     - title: En desarrollo
+#       url: "#"
+#       description: 
   skill:
     title: Skills
     panelId: skill-panel
