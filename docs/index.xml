@@ -13,7 +13,7 @@
       <link>https://juanmanuel.petrer.eu/blog/post_3-copy-2/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://juanmanuel.petrer.eu/blog/post_3-copy-2/</guid>
-      <description>&lt;h2 id=&#34;en-desarrollo&#34;&gt;En desarrollo&amp;hellip;&lt;/h2&gt;</description>
+      <description>&lt;h2 id=&#34;en-desarrollo&#34;&gt;En desarrollo&amp;hellip;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introducción&#34;&gt;Introducción&lt;/h3&gt;&#xA;&lt;p&gt;Las predicciones meteorológicas son una herramienta crucial para planificar actividades diarias, desde eventos al aire libre hasta la agricultura y la aviación. Sin embargo, a menudo escuchamos que las predicciones no son precisas. ¿Por qué sucede esto?&lt;/p&gt;&#xA;&lt;h3 id=&#34;modelos-deterministas&#34;&gt;Modelos deterministas&lt;/h3&gt;&#xA;&lt;p&gt;Los modelos deterministas utilizan ecuaciones matemáticas para simular la atmósfera. Aunque son muy detallados, tienen limitaciones debido a la complejidad del clima y la necesidad de simplificaciones.&lt;/p&gt;&#xA;&lt;h3 id=&#34;modelos-de-predicción-por-conjuntos&#34;&gt;Modelos de predicción por conjuntos&lt;/h3&gt;&#xA;&lt;p&gt;Estos modelos generan múltiples predicciones utilizando diferentes condiciones iniciales. Esto ayuda a capturar la incertidumbre inherente en las predicciones meteorológicas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bloqueos atmosféricos desde un punta de vista lagrangiano.</title>
