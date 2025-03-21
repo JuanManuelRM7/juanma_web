@@ -8,18 +8,21 @@ draft: False
 ---
 
 Los bloqueos atmosféricos tienen un impacto significativo en el clima y el medio ambiente. Estos eventos pueden alterar los patrones climáticos normales, resultando en condiciones meteorológicas extremas. Por ejemplo, un bloqueo atmosférico puede causar:
+
 - **Olas de calor** al evitar que las masas de aire fresco se desplacen hacia una región específica.
-- **sequías** al impedir que las masas de aire húmedo alcancen una región.
+- **Sequías** al impedir que las masas de aire húmedo alcancen una región.
 
 El impacto sobre la salud de las personas es relevante, ya que hay un aumento claro
 en el aumento de muertes en olas de calor. Especialmente en los países que no están
 preparados para el calor.
+
 Además de estos impactos directos, los bloqueos atmosféricos también pueden tener
 efectos secundarios en el medio ambiente. Por ejemplo, una sequía causada por un bloqueo
 atmosférico puede tener un impacto en la agricultura y la disponibilidad de agua.
 También puede aumentar el riesgo de incendios forestales. Por otro lado, una ola de
 calor puede aumentar el uso de aire acondicionado, lo que a su vez puede aumentar la
 demanda de energía y las emisiones de gases de efecto invernadero.
+
 Es importante destacar que, aunque los bloqueos atmosféricos pueden causar condiciones meteorológicas extremas, no todos los eventos extremos del clima son causados por
 bloqueos atmosféricos. Otros factores, como la variabilidad climática natural y el cambio
 climático inducido por el ser humano, también juegan un papel importante.
