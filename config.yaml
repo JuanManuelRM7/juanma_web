@@ -109,13 +109,11 @@ params:
     icon: fas fa-book
     format:
       - title
-      - authors
     types:
       - En desarrollo
       - Publicado
     list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-        authors: "M. Arias-González, J. M. Ruiz Muñoz, P. Armenteros-Cosme, L. Isabel-Rodríguez, J. Curto-Hernández."
         type: En desarrollo
 # project:
 #   title: Proyectos
