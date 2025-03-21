@@ -105,22 +105,18 @@ params:
         dates: 2022 - 2023
 
   publication:
-     title: Publicaciones
-     icon: fas fa-book
-     format:
-       - date
-       - title
-       - authors
-       - journal
-     types:
+    title: Publicaciones
+    icon: fas fa-book
+    format:
+      - title
+      - authors
+    types:
       - En desarrollo
       - Publicado
-     list:
-       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-         date: 2025
-         authors: "M. Arias, J. M. Ruiz, P. Armenteros, L. Isabel Rodríguez, J. Curto"
-         journal: DCAI'25 - 22nd International Conference on Distributed Computing and Artificial Intelligence
-         type: En desarrollo
+    list:
+      - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
+        authors: "M. Arias-González, J. M. Ruiz Muñoz, P. Armenteros-Cosme, L. Isabel-Rodríguez, J. Curto-Hernández."
+        type: En desarrollo
 # project:
 #   title: Proyectos
 #   icon: fas fa-project-diagram
