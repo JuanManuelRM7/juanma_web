@@ -117,10 +117,10 @@ params:
       - Publicado
      list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-        date: 2025
-        authors: "Marcos Arias-González, Juan Manuel Ruiz Muñoz, Pablo Armenteros-Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández"
-        journal: DCAI'25 - 22nd International Conference on Distributed Computing and Artificial Intelligence
-        type: En desarrollo
+      -  date: 2025
+      -  authors: "Marcos Arias-González, Juan Manuel Ruiz Muñoz, Pablo Armenteros-Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández"
+      -  journal: DCAI'25 - 22nd International Conference on Distributed Computing and Artificial Intelligence
+      -  type: En desarrollo
 # project:
 #   title: Proyectos
 #   icon: fas fa-project-diagram
