@@ -31,10 +31,9 @@ Dada la importancia de los bloqueos atmosféricos y su impacto en el clima y el 
 
 ## ¿Qué es un bloqueo atmosférico?
 
-Un bloqueo atmosférico se puede entender de diferentes maneras:
-- 
+Un bloqueo atmosférico es un fenómeno meteorológico caracterizado por la presencia de un sistema de alta presión, a veces también bajas, que impide o reduce significativamente el movimiento de las masas de aire. Esto altera los patrones climáticos normales y puede durar días, semanas o incluso más tiempo. Los bloqueos atmosféricos están frecuentemente asociados con condiciones meteorológicas extremas, como olas de calor o frío, sequías e inundaciones.
 
-Los bloqueos atmosféricos son patrones de alta presión que pueden persistir durante varios días o incluso semanas, impidiendo el movimiento normal de los sistemas meteorológicos. Estos bloqueos pueden causar condiciones climáticas extremas y afectar grandes áreas geográficas.
+En términos más técnicos, podemos caracterizar a los bloqueos atmosféricos como patrones de circulación a gran escala en la atmésfera que impiden el movimiento normal de los sistemas de baja presión a lo largo de su trayectoria típica. Estos patrones de circulación pueden ser causados por una variedad de factores, incluyendo la interacción entre las corrientes de aire en la atmósfera y las características geográficas de la Tierra, como las montañas y los océanos.
 
 ## Tipos de bloqueos atmosféricos
 
