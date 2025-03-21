@@ -45,6 +45,13 @@ params:
       - icon: fas fa-envelope
         url: "mailto:juanmanuel@petrer.eu"
         title: Email
+      - icon:
+        url: "#"
+        title: blablabla
+        #orcid
+      - icon: fab fa-orcid
+        url: "https://orcid.org/0009-0008-7529-306X"
+        title: ORCID
   showInAccordion:
     - item: aboutme
       expand: true
