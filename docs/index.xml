@@ -6,28 +6,7 @@
     <description>Recent content on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>¿Por qué &#39;fallan&#39; tanto las predicciones meteorológicas?</title>
-      <link>https://juanmanuel.petrer.eu/blog/post_3-copy-2/</link>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/post_3-copy-2/</guid>
-      <description>&lt;h3 id=&#34;introducción&#34;&gt;Introducción&lt;/h3&gt;&#xA;&lt;p&gt;Las predicciones meteorológicas son una herramienta crucial para planificar actividades diarias, desde eventos al aire libre hasta la agricultura y la aviación. Sin embargo, a menudo escuchamos que las predicciones no son precisas. ¿Por qué sucede esto? En este artículo, exploraremos las razones detrás de las inexactitudes en las predicciones meteorológicas y cómo los avances en tecnología están mejorando continuamente su precisión.&lt;/p&gt;&#xA;&lt;h3 id=&#34;modelos-deterministas&#34;&gt;Modelos deterministas&lt;/h3&gt;&#xA;&lt;p&gt;Los modelos deterministas utilizan ecuaciones matemáticas para simular la atmósfera. Estos modelos son muy detallados y pueden proporcionar predicciones precisas a corto plazo. Sin embargo, tienen limitaciones debido a la complejidad del clima y la necesidad de simplificaciones. Por ejemplo, los modelos deterministas pueden no capturar adecuadamente fenómenos atmosféricos pequeños pero significativos, como tormentas locales.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bloqueos atmosféricos desde un punta de vista lagrangiano.</title>
-      <link>https://juanmanuel.petrer.eu/blog/post_3/</link>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/post_3/</guid>
-      <description>&lt;h2 id=&#34;qué-es-un-bloqueo-atmosférico&#34;&gt;¿Qué es un bloqueo atmosférico?&lt;/h2&gt;&#xA;&lt;p&gt;Los bloqueos atmosféricos son patrones de alta presión que pueden persistir durante varios días o incluso semanas, impidiendo el movimiento normal de los sistemas meteorológicos. Estos bloqueos pueden causar condiciones climáticas extremas y afectar grandes áreas geográficas.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tipos-de-bloqueos-atmosféricos&#34;&gt;Tipos de bloqueos atmosféricos&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bloqueo-en-omega&#34;&gt;Bloqueo en Omega&lt;/h3&gt;&#xA;&lt;p&gt;El bloqueo en Omega se caracteriza por una configuración de alta presión que se asemeja a la letra griega Ω. Este tipo de bloqueo puede causar condiciones climáticas extremas, como olas de calor o sequías prolongadas.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Trabajar con datos meteorológicos. El repositorio Copernicus.</title>
-      <link>https://juanmanuel.petrer.eu/blog/post_3-copy/</link>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/post_3-copy/</guid>
-      <description>&lt;h2 id=&#34;qué-es-un-archivo-netcdf&#34;&gt;¿Qué es un archivo NetCDF?&lt;/h2&gt;&#xA;&lt;p&gt;En desarrollo&amp;hellip;&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

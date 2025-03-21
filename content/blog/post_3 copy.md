@@ -4,7 +4,7 @@ date: 2025-03-05
 tags: ["APi", "NetCDF"]
 categories: []
 description: "Descripción"
-draft: false
+draft: True
 ---
 
 ## ¿Qué es un archivo NetCDF?
