@@ -115,7 +115,8 @@ params:
     list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
         type: En desarrollo
-        authors: Juan Manuel Ruiz-Muñoz, Juan Manuel Ruiz-Muñoz, Juan Manuel Ruiz-Muñoz
+      - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
+        type: En desarrollo
 # project:
 #   title: Proyectos
 #   icon: fas fa-project-diagram
