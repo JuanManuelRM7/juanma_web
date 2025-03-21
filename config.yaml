@@ -111,10 +111,10 @@ params:
       - title
     types:
       - En desarrollo
-      - Publicado
+      - Pendiente de revisión para DCAI'25
     list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-        type: En desarrollo
+        type: Pendiente de revisión para DCAI'25
       - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
         type: En desarrollo
 # project:
