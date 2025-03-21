@@ -1,13 +1,16 @@
 ---
 title: "Bloqueos atmosféricos desde un punta de vista lagrangiano."
 date: 2025-03-05
-tags: ["bloqueo atmosférico", "bloqueo en Omega", "Bloqueo en Rex"]
+tags: ["bloqueo atmosférico", "bloqueo en Omega", "bloqueo en Rex"]
 categories: []
 description: "Descripción"
-draft: True
+draft: False
 ---
 
 ## ¿Qué es un bloqueo atmosférico?
+
+
+
 
 Los bloqueos atmosféricos son patrones de alta presión que pueden persistir durante varios días o incluso semanas, impidiendo el movimiento normal de los sistemas meteorológicos. Estos bloqueos pueden causar condiciones climáticas extremas y afectar grandes áreas geográficas.
 
