@@ -64,7 +64,7 @@ params:
   aboutme:
     title: Sobre mí
     icon: fas fa-user
-    description: Soy un apasionado de la física y de las matemáticas. Siempre me ha interesado la problemática del cambio climático y es por ello por lo que creo que encuentro una mayor afinidad con los ámbitos relacionados con la meteorología o energías renovables. Actualmente me encuentro trabajando como investigador y desarrollador en inteligencia artificial, un campo con mucho potencial en multitud de sectores, especialmente en la lucha por paliar los efectos del cambio climático.
+    description: Soy un apasionado de la física y las matemáticas, con un gran interés en el cambio climático. Esta preocupación me ha llevado a sentir una especial afinidad por áreas como la meteorología y las energías renovables. Actualmente, trabajo como investigador y desarrollador en inteligencia artificial, un campo con un enorme potencial en múltiples sectores, especialmente en la lucha para mitigar los efectos del cambio climático.
   experience:
     title: Experiencia
     icon: fas fa-briefcase
