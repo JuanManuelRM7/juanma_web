@@ -24,7 +24,7 @@ params:
   profile:
     name: "Juan Manuel"
     location: "Petrer, Alicante"
-    photo: profile.jpg
+    photo: profile.png
     position: "AI Researcher & Data Scientist"
   social:
     title: Links
