@@ -28,9 +28,6 @@ Para aplicar esta idea, utilicé el software **HYSPLIT** (Hybrid Single-Particle
 
 ## ¿Qué se mide exactamente?
 
-![Trayectoria end-to-end](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ft1.uc.ltmcdn.com%2Fes%2Fposts%2F3%2F0%2F5%2Fque_es_la_trayectoria_49503_1_600.jpg&f=1&nofb=1&ipt=8a9815bb9d34da2fdb54f5f1311149a4cfd1032dad1c61711ea3ada9a6877a49&ipo=images)
-
-
 Me centré en estas cuatro métricas:
 
 - **Longitud de la trayectoria**  
