@@ -1,48 +1,161 @@
 ---
 title: "Bloqueos atmosféricos desde un punta de vista lagrangiano."
 date: 2025-03-05
-tags: ["bloqueo atmosférico", "bloqueo en Omega", "bloqueo en Rex"]
+tags: ["Bloqueo atmosférico", "Método lagrangiano", "HYSPLIT", "Retro-trayectorias", "Cambio climático"]
 categories: []
 description: "Descripción"
 draft: False
 ---
+# Un método lagrangiano para identificar bloqueos atmosféricos (y por qué me parece emocionante)
 
-Los bloqueos atmosféricos tienen un impacto significativo en el clima y el medio ambiente. Estos eventos pueden alterar los patrones climáticos normales, resultando en condiciones meteorológicas extremas. Por ejemplo, un bloqueo atmosférico puede causar:
+Los bloqueos atmosféricos son de esos fenómenos que tienen nombre de novela de ciencia ficción, pero consecuencias muy reales: olas de calor, olas de frío, sequías, inundaciones… eventos extremos que trastocan el clima, la agricultura, el consumo energético, la salud pública y prácticamente todo lo que nos rodea.
 
-- **Olas de calor** al evitar que las masas de aire fresco se desplacen hacia una región específica.
-- **Sequías** al impedir que las masas de aire húmedo alcancen una región.
+En los últimos años, con el cambio climático acelerando la frecuencia e intensidad de estos eventos, entenderlos bien ha pasado de ser un tema de nicho a convertirse en una necesidad urgente. Y es ahí donde entra este trabajo: proponer un nuevo enfoque para identificar bloqueos atmosféricos, desde una perspectiva lagrangiana, que además de ser más explícita en la localización de estos fenómenos, es (en mi opinión) bastante más intuitiva.
 
-El impacto sobre la salud de las personas es relevante, ya que hay un aumento claro
-en el aumento de muertes en olas de calor. Especialmente en los países que no están
-preparados para el calor.
+## ¿Qué es un bloqueo atmosférico y por qué es tan importante?
 
-Además de estos impactos directos, los bloqueos atmosféricos también pueden tener
-efectos secundarios en el medio ambiente. Por ejemplo, una sequía causada por un bloqueo
-atmosférico puede tener un impacto en la agricultura y la disponibilidad de agua.
-También puede aumentar el riesgo de incendios forestales. Por otro lado, una ola de
-calor puede aumentar el uso de aire acondicionado, lo que a su vez puede aumentar la
-demanda de energía y las emisiones de gases de efecto invernadero.
+Un bloqueo atmosférico es, esencialmente, una situación en la que una gran masa de aire —usualmente asociada a un sistema de alta presión— se queda encajada durante varios días (o semanas), impidiendo que las corrientes atmosféricas fluyan como deberían. Esto produce una especie de “tapón” en la circulación general de la atmósfera.
 
-Es importante destacar que, aunque los bloqueos atmosféricos pueden causar condiciones meteorológicas extremas, no todos los eventos extremos del clima son causados por
-bloqueos atmosféricos. Otros factores, como la variabilidad climática natural y el cambio
-climático inducido por el ser humano, también juegan un papel importante.
+La consecuencia es que los sistemas meteorológicos quedan bloqueados, literalmente. Por ejemplo: una masa de aire cálido no puede disiparse, y eso genera olas de calor brutales como la de Europa en 2003. O se impide la llegada de aire húmedo, y tenemos sequías prolongadas. O se queda estancado aire frío, y se producen heladas intensas.
 
-Dada la importancia de los bloqueos atmosféricos y su impacto en el clima y el medio ambiente, es fundamental desarrollar métodos precisos y eficaces para detectar y caracterizar estos eventos meteorológicos. Esto permitirá una mejor comprensión de los bloqueos atmosféricos y sus efectos, lo que a su vez puede mejorar la predicción del tiempo a largo plazo y la gestión de los riesgos climáticos.
+Estos eventos no son fáciles de predecir. Ni siquiera de definir con claridad. Por eso, tradicionalmente, su identificación se ha basado en criterios algo arbitrarios y en variables termodinámicas. Y ahí es donde vi una oportunidad.
 
-## ¿Qué es un bloqueo atmosférico?
+## Mi propuesta: mirar el problema desde una perspectiva lagrangiana
 
-Un bloqueo atmosférico es un fenómeno meteorológico caracterizado por la presencia de un sistema de alta presión, a veces también bajas, que impide o reduce significativamente el movimiento de las masas de aire. Esto altera los patrones climáticos normales y puede durar días, semanas o incluso más tiempo. Los bloqueos atmosféricos están frecuentemente asociados con condiciones meteorológicas extremas, como olas de calor o frío, sequías e inundaciones.
+El enfoque clásico en meteorología es euleriano: se fija un punto en el espacio y se observa cómo evolucionan las variables atmosféricas allí con el tiempo. En cambio, el enfoque lagrangiano sigue el movimiento de una partícula (o parcela de aire) a lo largo del tiempo. Y eso permite ver con más claridad cómo se deforma el flujo, cómo se encierra o se desvía… en definitiva, permite detectar bloqueos de una forma más natural.
 
-En términos más técnicos, podemos caracterizar a los bloqueos atmosféricos como patrones de circulación a gran escala en la atmésfera que impiden el movimiento normal de los sistemas de baja presión a lo largo de su trayectoria típica. Estos patrones de circulación pueden ser causados por una variedad de factores, incluyendo la interacción entre las corrientes de aire en la atmósfera y las características geográficas de la Tierra, como las montañas y los océanos.
+Para aplicar esta idea, utilicé el software **HYSPLIT** (Hybrid Single-Particle Lagrangian Integrated Trajectory), una herramienta bastante potente que permite simular trayectorias de parcelas de aire. La clave está en calcular *retro-trayectorias* (es decir, mirar hacia atrás en el tiempo) para ver de dónde viene el aire que pasa por cierto punto y cómo se ha movido. Si la trayectoria es corta, tortuosa, o muestra una clara desviación del flujo zonal típico, puede ser señal de bloqueo.
 
-## Tipos de bloqueos atmosféricos
+## ¿Qué se mide exactamente?
 
-Una situación de bloqueo puede tener diferentes configuraciones. Estos patrones de circulación presentan geometrías distintas. No obstante, ambas impiden el movimiento normal de las masa de aire.
+Me centré en estas cuatro métricas:
 
-### Bloqueo en Omega
-El bloqueo en Omega se caracteriza por una configuración de alta presión que se asemeja a la letra griega Ω.
+- **Longitud de la trayectoria**  
+- **Distancia end-to-end**  
+- **Proyección zonal**  
+- **Proyección meridional**
 
-### Bloqueo en Rex
-El bloqueo en Rex ocurre cuando una alta presión se encuentra al norte de una baja presión.
+Estas métricas, combinadas con un análisis masivo de trayectorias en toda una región (Europa Occidental, en mi caso), permiten construir un mapa detallado de dónde y cuándo se están dando estos fenómenos.
 
-La naturaleza exacta de un bloqueo puede variar dependiendo de una serie de factores, incluyendo la ubicación geográfica, la estación del año y las condiciones atmosféricas específicas. Con ello, aunque se han descrito dos de las configuraciones más típicas, pueden existir configuraciones intermedias e incluso diferentes.
+## ¿Y por qué a 500 hPa?
+
+Porque es la altura mágica. A unos 5500 metros, este nivel de presión representa una capa media de la atmósfera donde se manifiestan muy claramente los patrones de circulación a gran escala. Además, es un estándar en meteorología, lo cual facilita la comparación con otros estudios.
+
+## Casos de estudio: 2003 y 2019
+
+### 🔥 Verano de 2003  
+Una ola de calor histórica. Las trayectorias mostraron una alteración masiva del flujo.
+
+### 🔥 Junio de 2019  
+Una triple ola de calor, también muy bien captada por el modelo.
+
+## ¿Y cómo se identifican automáticamente los bloqueos?
+
+Se analizan todas las trayectorias, se aplican percentiles para detectar anomalías, y luego se agrupan las trayectorias sospechosas usando un algoritmo de clustering (DBSCAN).
+
+El resultado: zonas bloqueadas claramente identificadas y caracterizadas.
+
+## En resumen
+
+- Detecta **explícitamente** zonas de bloqueo.  
+- Es **más preciso y objetivo** que los métodos tradicionales.  
+- Tiene potencial para predecir impactos climáticos.  
+
+---
+
+# El algoritmo para detectar bloqueos atmosféricos: cómo lo desarrollé y por qué funciona
+
+Ya hemos hablado de qué son los bloqueos atmosféricos. Ahora te cuento cómo desarrollé un algoritmo para detectarlos de forma automática.
+
+## ¿Cuál es el objetivo real?
+
+Detectar en qué lugar y momento ocurre un bloqueo, y además caracterizarlo: duración, intensidad, extensión, tipo (Omega o Rex), etc.
+
+## Paso 1: Simular las trayectorias
+
+Con **HYSPLIT**, lanzo retro-trayectorias desde puntos de una malla geográfica (a 500 hPa). Para cada una obtengo una serie de coordenadas y variables asociadas.
+
+## Paso 2: Calcular métricas clave
+
+- **Longitud de la trayectoria**  
+- **Distancia end-to-end**  
+- **Proyección zonal**  
+- **Proyección meridional**
+
+Estas métricas son sensibles a situaciones de flujo deformado o bloqueado.
+
+## Paso 3: Detectar trayectorias “sospechosas”
+
+Uso **percentiles** (por ejemplo, el 10%) para detectar valores anómalos. Si una trayectoria está fuera de lo común en varias métricas a la vez, es candidata a estar bloqueada.
+
+## Paso 4: Agrupar con DBSCAN
+
+Este algoritmo agrupa puntos que están cerca unos de otros y descarta ruido. Así defino **zonas bloqueadas**, no solo trayectorias sueltas.
+
+## Paso 5: Caracterizar el bloqueo
+
+Para cada región detectada:
+
+- Centro, duración, intensidad
+- Si tiene forma Omega o Rex
+- Cómo evoluciona en el tiempo
+
+## ¿Funciona?
+
+Sí. Lo probé con las olas de calor de 2003 y 2019, y el resultado fue muy bueno. Las trayectorias capturaron perfectamente el estancamiento del flujo.
+
+## Lo mejor del método
+
+- Explícito  
+- Flexible  
+- Objetivo  
+- Integrable con otros sistemas  
+
+---
+
+# ¿Y ahora qué? Aplicaciones reales del método lagrangiano y hacia dónde podría evolucionar
+
+Una vez construido el algoritmo y probado con éxito, toca mirar al futuro. ¿Qué se puede hacer con esto?
+
+## 🔎 1. Vigilancia climática y detección en tiempo real
+
+Montar un sistema automático que detecte bloqueos cada día. Útil para:
+
+- Meteorología operativa  
+- Gestión de emergencias  
+- Energía y agricultura  
+
+## 🌍 2. Aplicación global
+
+El método puede aplicarse en cualquier región del planeta. Podríamos comparar zonas, estaciones, ver dónde hay más bloqueos, cómo evolucionan, etc.
+
+## 📊 3. Estudios climáticos a largo plazo
+
+Con datos de reanálisis (ERA5, por ejemplo) se pueden estudiar tendencias históricas de bloqueos, relacionarlos con olas de calor, sequías, etc.
+
+## 🧠 4. Machine Learning
+
+El siguiente paso podría ser usar IA para mejorar el sistema:
+
+- Clasificación más robusta  
+- Ajuste dinámico de umbrales  
+- Modelos predictivos  
+
+## 🧪 5. Otros fenómenos atmosféricos
+
+El enfoque lagrangiano también sirve para estudiar:
+
+- DANAs  
+- Rupturas del chorro  
+- Transporte de polvo o cenizas  
+
+## 🛠 6. Integración con otros sistemas
+
+Visualizar estos resultados junto con mapas meteorológicos clásicos, para una comprensión mucho más rica.
+
+## En resumen
+
+Este método no es el final, sino el principio. Permite ver el flujo atmosférico con una precisión y claridad que abre muchísimas posibilidades.
+
+Si quieres colaborar, experimentar o simplemente charlar sobre todo esto, yo encantado 😉
+  
