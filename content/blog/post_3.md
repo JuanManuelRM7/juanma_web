@@ -26,7 +26,7 @@ El enfoque clásico en meteorología es euleriano: se fija un punto en el espaci
 
 | ![GIF trayectoria](https://github.com/JuanManuelRM7/tfg/raw/main/gifs/traj_25E.gif) | ![Barras](https://github.com/JuanManuelRM7/tfg/raw/main/gifs_barras/barra_traj_25E.png) |
 |:--:|:--:|
-| Trayectoria | Intensidad |
+| Trayectorias | Altura de la parcela de aire respecto al nivel del mar en metros |
 
 
 
