@@ -24,10 +24,10 @@ Estos eventos no son fáciles de predecir. Ni siquiera de definir con claridad. 
 
 El enfoque clásico en meteorología es euleriano: se fija un punto en el espacio y se observa cómo evolucionan las variables atmosféricas allí con el tiempo. En cambio, el enfoque lagrangiano sigue el movimiento de una partícula (o parcela de aire) a lo largo del tiempo. Y eso permite ver con más claridad cómo se deforma el flujo, cómo se encierra o se desvía… en definitiva, permite detectar bloqueos de una forma más natural.
 
-<p align="center">
-  <img src="https://github.com/JuanManuelRM7/tfg/raw/main/gifs/traj_25E.gif" height="400">
-  <img src="https://github.com/JuanManuelRM7/tfg/raw/main/gifs_barras/barra_traj_25E.png" height="400">
-</p>
+| ![GIF trayectoria](https://github.com/JuanManuelRM7/tfg/raw/main/gifs/traj_25E.gif) | ![Barras](https://github.com/JuanManuelRM7/tfg/raw/main/gifs_barras/barra_traj_25E.png) |
+|:--:|:--:|
+| Trayectoria | Intensidad |
+
 
 
 Para aplicar esta idea, utilicé el software **HYSPLIT** (Hybrid Single-Particle Lagrangian Integrated Trajectory), una herramienta bastante potente que permite simular trayectorias de parcelas de aire. La clave está en calcular *retro-trayectorias* (es decir, mirar hacia atrás en el tiempo) para ver de dónde viene el aire que pasa por cierto punto y cómo se ha movido. Si la trayectoria es corta, tortuosa, o muestra una clara desviación del flujo zonal típico, puede ser señal de bloqueo.
