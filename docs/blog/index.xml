@@ -6,14 +6,7 @@
     <description>Recent content in Bienvenido a mi blog! on </description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bloqueos atmosféricos desde un punta de vista lagrangiano.</title>
-      <link>https://juanmanuel.petrer.eu/blog/post_3/</link>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/post_3/</guid>
-      <description>&lt;h1 id=&#34;un-método-lagrangiano-para-identificar-bloqueos-atmosféricos-y-por-qué-me-parece-emocionante&#34;&gt;Un método lagrangiano para identificar bloqueos atmosféricos (y por qué me parece emocionante)&lt;/h1&gt;&#xA;&lt;p&gt;Los bloqueos atmosféricos son de esos fenómenos que tienen nombre de novela de ciencia ficción, pero consecuencias muy reales: olas de calor, olas de frío, sequías, inundaciones… eventos extremos que trastocan el clima, la agricultura, el consumo energético, la salud pública y prácticamente todo lo que nos rodea.&lt;/p&gt;&#xA;&lt;p&gt;En los últimos años, con el cambio climático acelerando la frecuencia e intensidad de estos eventos, entenderlos bien ha pasado de ser un tema de nicho a convertirse en una necesidad urgente. Y es ahí donde entra este trabajo: proponer un nuevo enfoque para identificar bloqueos atmosféricos, desde una perspectiva lagrangiana, que además de ser más explícita en la localización de estos fenómenos, es (en mi opinión) bastante más intuitiva.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

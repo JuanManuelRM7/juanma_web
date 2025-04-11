@@ -4,7 +4,7 @@ date: 2025-03-05
 tags: ["Bloqueo atmosférico", "Método lagrangiano", "HYSPLIT", "Retro-trayectorias", "Cambio climático"]
 categories: []
 description: "Descripción"
-draft: False
+draft: True
 ---
 # Un método lagrangiano para identificar bloqueos atmosféricos (y por qué me parece emocionante)
 
