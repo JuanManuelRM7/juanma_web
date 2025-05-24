@@ -69,8 +69,14 @@ params:
     title: Experiencia
     icon: fas fa-briefcase
     list:
+
+      - position: Junior AI Developer
+        dates: Junio 2025 - *Presente*
+        company: VRAIA
+        url: "https://vraia.com/"
+        details: |1-
       - position: Data Scientist & AI Researcher
-        dates: Junio 2024 - *Presente*
+        dates: Junio 2024 - Junio 2025
         company: AIR Institute & Grupo de Investigación BISITE
         url: "https://www.air-institute.org/"
         details: |1-
