@@ -70,7 +70,7 @@ params:
     icon: fas fa-briefcase
     list:
 
-      - position: Junior AI Developer
+      - position: AI Developer
         dates: Junio 2025 - *Presente*
         company: VRAIA
         url: "https://vraia.com/"
