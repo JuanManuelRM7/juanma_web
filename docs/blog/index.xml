@@ -10,10 +10,17 @@
     <atom:link href="https://juanmanuel.petrer.eu/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bloqueos atmosféricos desde un punta de vista lagrangiano.</title>
-      <link>https://juanmanuel.petrer.eu/blog/obras_ficcion/</link>
+      <link>https://juanmanuel.petrer.eu/blog/tfg/</link>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/obras_ficcion/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/tfg/</guid>
       <description>&lt;h1 id=&#34;un-método-lagrangiano-para-la-identificación-de-bloqueos-atmosféricos&#34;&gt;Un método lagrangiano para la identificación de bloqueos atmosféricos&lt;/h1&gt;&#xA;&lt;p&gt;Durante los últimos años, los fenómenos meteorológicos extremos —olas de calor, olas de frío, sequías o inundaciones— se han hecho cada vez más frecuentes e intensos. Detrás de muchos de ellos se encuentra un patrón atmosférico fascinante y complejo: el bloqueo atmosférico. Estos bloqueos son grandes estructuras de alta presión que interrumpen el flujo normal del aire, desviando las corrientes y haciendo que determinadas masas de aire queden estancadas sobre una región durante días o semanas. Su efecto puede ser devastador, ya que pueden generar olas de calor persistentes o impedir la llegada de frentes lluviosos durante largos periodos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Presentación del blog</title>
+      <link>https://juanmanuel.petrer.eu/blog/presentacion/</link>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/presentacion/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
