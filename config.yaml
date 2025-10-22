@@ -23,9 +23,9 @@ params:
 
   profile:
     name: "Juan Manuel"
-    location: "Petrer, Alicante"
+    location: "AI Developer en VRAIA Corp."
     photo: profile.png
-    position: "AI Researcher & Data Scientist"
+    position: "AI Developer at VRAIA Corp."
   social:
     title: Links
     list:
@@ -36,7 +36,7 @@ params:
         url: "#"
         title: StackOverflow
       - icon: fab fa-github
-        url: "https://github.com/JuanManuelRM7"
+        url: "https://github.com/juanmanuelruizm"
         title: GitHub
       - icon:
         url: "#"
@@ -64,7 +64,7 @@ params:
   aboutme:
     title: Sobre mí
     icon: fas fa-user
-    description: Soy un apasionado de la física y las matemáticas, con un gran interés en el cambio climático. Esta preocupación me ha llevado a sentir una especial afinidad por áreas como la meteorología y las energías renovables. Actualmente, trabajo como investigador y desarrollador en inteligencia artificial, un campo con un enorme potencial en múltiples sectores, especialmente en la lucha para mitigar los efectos del cambio climático.
+    description: Soy un apasionado de la física y las matemáticas, con un gran interés en el cambio climático. Esta preocupación me ha llevado a sentir una especial afinidad por áreas como la meteorología y las energías renovables. Actualmente trabajo en VRAIA Corp., donde desarrollamos, entre muchas otras cosas, soluciones de deep learning para la industria del neumático.
   experience:
     title: Experiencia
     icon: fas fa-briefcase
@@ -72,9 +72,16 @@ params:
 
       - position: AI Developer
         dates: Junio 2025 - *Presente*
-        company: VRAIA
+        company: VRAIA Corp.
         url: "https://vraia.com/"
         details: |1-
+            - Desarrollo de pipelines de extracción, transformación y carga (ETL) para bases de datos, creación de datasets y preprocesamiento de imágenes.
+            - Entrenamiento, fine-tuning y validación de modelos de visión, orientados a la detección de defectos en neumáticos.
+            - Diseño e implementación de algoritmos de aprendizaje automático personalizados para distintos proyectos de visión artificial.
+            - Definición, análisis y seguimiento de métricas de desempeño para la selección de modelos en producción.
+            - Redacción y revisión de documentación técnica.
+            - Investigación y actualización constante en avances de inteligencia artificial.
+            - Colaboración interdisciplinaria para alcanzar los objetivos del proyecto.
       - position: Data Scientist & AI Researcher
         dates: Junio 2024 - Junio 2025
         company: AIR Institute & Grupo de Investigación BISITE
@@ -117,10 +124,10 @@ params:
       - title
     types:
       - En desarrollo
-      - Pendiente de revisión para DCAI'25
+      - DCAI'25
     list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-        type: Pendiente de revisión para DCAI'25
+        type: DCAI'25
       - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
         type: En desarrollo
 # project:
@@ -136,17 +143,18 @@ params:
     icon: fas fa-cogs
     list:
       - skill: "Python"
-        skillrating: 100
       - skill: "LaTeX"
-        skillrating: 100
       - skill: "HYSPLIT"
-        skillrating: 100
       - skill: "R"
-        skillrating: 80
       - skill: "SQL"
-        skillrating: 80
       - skill: "MATLAB"
-        skillrating: 70
       - skill: "AWS"
-        skillrating: 60
+      - skill: "Git & GitHub"
+      - skill: "Docker"
+      - skill: "HTML & CSS"
+      - skill: "MLflow & Tensorboard"
+      - skill: "JavaScript"
+      - skill: "TensorFlow & Keras"
+      - skill: "PyTorch"
+      - skill: "scikit-learn, pandas, NumPy, OpenCV, Matplotlib, Transformers"
 
