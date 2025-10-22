@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="m-auto "><head>
+  
+
+
+
+<title>A Lagrangian Method for the Identification of Atmospheric Blocking</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="A Lagrangian approach to identify atmospheric blocking and visualize its dynamics." />
+<meta name="author" content="Juan Manuel" />
+<link rel="canonical" href="https://juanmanuel.petrer.eu/en/blog/tfg/" />
+
+
+<meta property="og:title" content="A Lagrangian Method for the Identification of Atmospheric Blocking" />
+<meta property="og:description" content="A Lagrangian approach to identify atmospheric blocking and visualize its dynamics." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://juanmanuel.petrer.eu/en/blog/tfg/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A Lagrangian Method for the Identification of Atmospheric Blocking" />
+<meta name="twitter:description" content="A Lagrangian approach to identify atmospheric blocking and visualize its dynamics." />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.149.1" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+
+  
+  
+  
+  
+  <link href="/main.min.b92cd9d923ed50e7aea9583786e7e39fce67fcc9b2b5394265c4cdfdf7f291c4.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/search.css" />
+  <link rel="stylesheet" href="/css/general.css" />
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("fa-moon");
+          themeToggle.classList.add("fa-sun");
+        } else {
+          themeToggle.classList.remove("fa-sun");
+          themeToggle.classList.add("fa-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
+    }
+
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
+    window.onload = () => {
+      fixThemeToggleIcon(theme);
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-700 dark:border-gray-300 justify-between"
+>
+  <div>
+    <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Home</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
+  </div>
+  <div>
+    <div class="flex flex-wrap items-center gap-2">
+  
+  
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+    
+    
+
+    
+      <a class="btn-outline" href="/blog/tfg/" hreflang="es">Español</a>
+    
+  
+    
+    
+    
+    
+
+    
+      <span class="btn-ghost cursor-default" aria-current="true">English</span>
+    
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+      <a class="btn-outline" href="/de/" hreflang="de">Deutsch</a>
+    
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+      <a class="btn-outline" href="/ca/" hreflang="ca">Valencià</a>
+    
+  
+</div>
+
+    <i
+  class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg mr-9 sm:mr-0"
+      onclick="toggleTheme()"
+    ></i>
+  </div>
+</header>
+
+
+
+    
+    <main class="grow">
+<div class="prose prose-stone dark:prose-invert max-w-none">
+<div class="mb-3">
+  <h1 class="top-h1">A Lagrangian Method for the Identification of Atmospheric Blocking</h1>
+  <p class="mb-1">October 7, 2025</p>
+  <p>&mdash;</p>
+</div>
+<div class="content">
+  <h1 id="a-lagrangian-method-for-the-identification-of-atmospheric-blocking">A Lagrangian Method for the Identification of Atmospheric Blocking</h1>
+<p>In recent years, extreme weather events—heat waves, cold spells, droughts, and floods—have become increasingly frequent and intense. Behind many of these phenomena lies a fascinating and complex atmospheric pattern: <strong>atmospheric blocking</strong>. These blocks are large high-pressure systems that interrupt the normal flow of air, deflecting currents and causing certain air masses to remain stationary over a region for days or even weeks. Their impact can be devastating, as they may trigger persistent heat waves or prevent rain-bearing fronts from arriving for long periods.</p>
+<p>As a physicist and someone passionate about meteorology, I decided to focus my undergraduate thesis on these blocking events, but from a different perspective than usual. In most studies, the atmosphere is analyzed from fixed points in space using what is known as an <strong>Eulerian approach</strong>. This type of analysis examines how variables such as the <strong>geopotential height at 500 hPa</strong> or <strong>potential vorticity</strong> change over time at a given location, which allows researchers to detect regions of high or low pressure and anomalous circulation patterns. However, this approach observes the atmosphere “from the outside,” without following the actual movement of the air.</p>
+<p>My proposal was to change that perspective and look at the atmosphere “from the inside,” following the trajectories of the air masses themselves. To do so, I adopted a <strong>Lagrangian approach</strong>, which consists of studying the motion of particles as they move through the atmosphere. This method makes it possible to observe directly where the flow slows down, deviates, or becomes trapped—without having to impose a predefined geometric or dynamical definition of what constitutes a block. In other words, it lets the trajectories speak for themselves.</p>
+<p>The development of the method was based on the use of <strong>HYSPLIT</strong> (<em>Hybrid Single-Particle Lagrangian Integrated Trajectory</em>), a NOAA tool designed to compute particle trajectories in the atmosphere. Using data from the <strong>ERA5 reanalysis</strong> (ECMWF), I generated thousands of backward trajectories of virtual air parcels in the mid-troposphere (<strong>Figure 14</strong>), around 500 hPa (roughly 5,500 meters above sea level). From these trajectories, I derived three main variables: the <strong>end-to-end distance</strong>, which measures how far the final point is from the initial one and serves as an indicator of flow stagnation (<strong>Figure 20</strong>); the <strong>total trajectory length</strong>, representing the total distance traveled by each parcel (<strong>Figure 21</strong>); and the <strong>zonal and meridional projections</strong>, which quantify how much the air has moved in the east–west and north–south directions, respectively. Under blocking conditions, the zonal projection tends to decrease while the meridional projection increases, since the air stops moving eastward and deviates toward different latitudes.</p>
+<p>From these parameters, I produced maps and time series (<strong>Figure 25 and 26</strong>) reflecting the evolution of air flows over the study region. To spatially identify blocked areas (<strong>Figure 28</strong>), I used the <strong>DBSCAN clustering algorithm</strong>, which detects groups of points with similar properties based on data density. This made it possible to isolate regions where the atmospheric flow exhibited clear stagnation and to display them directly on <strong>geopotential height maps</strong>.</p>
+<p>The method was tested on a particularly notable case: the <strong>European heat wave of summer 2003</strong>, one of the most extreme weather events recorded in recent decades. Between August 6 and 12 of that year, an intense anticyclone formed over Western Europe, blocking the entry of cooler air and producing record-breaking temperatures across much of the continent. The Lagrangian model accurately detected this blocked region, matching the high-pressure patterns visible in traditional synoptic maps. It was also applied preliminarily to the <strong>June 2019</strong> heatwave episode, which featured several consecutive heat waves. Although the method still requires refinement to generalize and capture multiple events in sequence, the results were consistent and encouraging.</p>
+<p>What makes this approach particularly interesting is that it does not depend on a fixed index or threshold (well, not yet entirely), as traditional methods do—such as the <strong>Tibaldi–Molteni index</strong>—but instead relies directly on the motion of air masses. This allows blocking to be understood as a <strong>dynamic, physical phenomenon</strong>, a natural consequence of the atmospheric flow, rather than merely as a numerical anomaly within a meteorological field. Moreover, being an explicit and quantifiable method, it can easily be adapted to automatic detection procedures and modern analytical techniques such as <strong>machine learning</strong> or <strong>convolutional neural networks (CNNs)</strong>.</p>
+<p>The results (<strong>Figure 28</strong>) show that this type of Lagrangian analysis can provide a more intuitive and physically grounded view of atmospheric dynamics. It allows us to follow how a block forms, evolves, and dissipates by observing the real motion of air masses. However, to consolidate the method, it will be necessary to apply it to a larger number of events and extend the analysis period to several decades, which will enable the study of blocking frequency, duration, and intensity in the context of <strong>climate change</strong>. There is also potential to automate the detection of the most common blocking patterns, such as the <strong>Omega</strong> and <strong>Rex</strong> types, using deep learning models.</p>
+<p>Ultimately, this work proposes a new way of studying atmospheric blocking: not by observing it from the outside, but by traveling with the air itself. The atmosphere is a dynamic, complex, and nonlinear system in which blocking represents one of its most influential manifestations. Understanding these events in detail is essential for anticipating the impacts of extreme weather on society and the environment. I am confident that <strong>Lagrangian methods</strong>, like the one I have developed, can become a key tool for improving our ability to observe, analyze, and predict such phenomena in an ever-changing climate.</p>
+<p>If you would like to explore this work in greater depth, you can visit my <strong>GitHub page</strong>, where the complete project is available in PDF format. I am currently continuing to develop this research, aiming to generalize the method to any type of blocking episode using <strong>Deep Learning</strong> techniques. If you have any questions, suggestions, or simply want to discuss any detail, feel free to contact me by email—every idea and piece of feedback is welcome.</p>
+<hr>
+<p>The maps shown do not include their corresponding color scale, which may cause some confusion about what each figure represents. Due to formatting limitations, I was unable to include them here. However, I invite anyone interested to visit my GitHub repository, where you can find the maps with their color bars as well as an in-depth discussion of each result.</p>
+<h2 id="figure-14">Figure 14</h2>
+<p><img src="/images/traj_25E.gif" alt="Animated map of End-to-End distances"></p>
+<h2 id="figure-20">Figure 20</h2>
+<p><img src="/images/Figura_20_animada.gif" alt="Figure 20 animation"></p>
+<h2 id="figure-21">Figure 21</h2>
+<p><img src="/images/Figura_21_animada.gif" alt="Figure 21 animation"></p>
+<h2 id="figure-23">Figure 23</h2>
+<p><img src="/images/Figura_23_arriba_izquierda.gif" alt="Figure 23 upper left"> <img src="/images/Figura_23_arriba_derecha.gif" alt="Figure 23 upper right"></p>
+<p><img src="/images/Figura_23_abajo_izquierda.gif" alt="Figure 23 lower left"> <img src="/images/Figura_23_abajo_derecha.gif" alt="Figure 23 lower right"></p>
+<h2 id="figure-25">Figure 25</h2>
+<p><img src="/images/Figura_25_izquierda.gif" alt="Figure 25 left"> <img src="/images/Figura_25_derecha.gif" alt="Figure 25 right"></p>
+<h2 id="figure-27">Figure 27</h2>
+<p><img src="/images/Figura_27_izquierda.gif" alt="Figure 27 left"> <img src="/images/Figura_27_derecha.gif" alt="Figure 27 right"></p>
+
+</div>
+</div>
+<div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <i class="text-gray-300 dark:text-gray-600 fas fa-chevron-circle-left"></i>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="text-gray-300 dark:text-gray-600 fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class="text-sm text-center border-t border-gray-500  py-6 ">
+  <p class="markdownify"></p>
+  <p style="font-size:0px;">
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </p>
+
+  
+</footer>
+
+    
+  </body>
+</html>
