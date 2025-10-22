@@ -1,12 +1,12 @@
 {{ range.Site.Params.experience.list }}
-<h4 style="text-decoration: underline;">{{ .position }}</h4>
-<p {{if .details }}class="mb-0"{{ end }}>
+<h4 class="text-gray-900 dark:text-gray-100" style="text-decoration: underline;">{{ .position }}</h4>
+<p {{if .details }}class="mb-0 text-gray-700 dark:text-gray-200"{{ else }}class="text-gray-700 dark:text-gray-200"{{ end }}>
   {{ .dates | markdownify }} &middot; {{ if .url }}
   <a href="{{ .url }}">{{ .company }}</a>
   {{ else }} {{ .company }} {{ end }}
 </p>
 {{ if .details }}
-<div class="prose prose-stone dark:prose-invert max-w-none">
+<div class="prose prose-stone dark:prose-invert max-w-none text-gray-800 dark:text-gray-100">
 {{ .details | markdownify }}
 </div>
 {{ end }}

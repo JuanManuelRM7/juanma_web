@@ -1,17 +1,17 @@
 {{ range .Site.Params.education.list }}
 
-<h4 style="text-decoration: underline;">{{ .degree }}</h4>
-<p {{ if .thesis_title }}class="mb-0" {{ end }}>
+<h4 class="text-gray-900 dark:text-gray-100" style="text-decoration: underline;">{{ .degree }}</h4>
+<p {{ if .thesis_title }}class="mb-0 text-gray-700 dark:text-gray-200" {{ else }}class="text-gray-700 dark:text-gray-200"{{ end }}>
   {{- .dates }} &middot; {{ .college -}}
 </p>
 {{ if .thesis_title }}
 {{ if .thesis_url }}
-<p>
+<p class="text-gray-700 dark:text-gray-200">
   Tesis:
   <a href="{{ .thesis_url }}"><i>{{ .thesis_title }}</i></a>
 </p>
 {{ else }}
-<p>
+<p class="text-gray-700 dark:text-gray-200">
   Tesis: <i>{{ .thesis_title }}</i>
 </p>
 {{ end }}

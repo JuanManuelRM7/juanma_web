@@ -1,5 +1,5 @@
 baseURL: https://juanmanuel.petrer.eu/
-languageCode: en-us
+languageCode: es
 build:
   writeStats: true
 params:

@@ -1,11 +1,11 @@
 {{ if .Site.Params.publication.types }}
 {{ range.Site.Params.publication.types }}
 {{ $type := . }}
-<h4 style="text-decoration: underline;">{{ $type }}</h4>
+<h4 class="text-gray-900 dark:text-gray-100" style="text-decoration: underline;">{{ $type }}</h4>
 {{- range $.Site.Params.publication.list -}}
 {{ if eq $type .type }}
 {{- $this_publication := . -}}
-<p class="foo indent-8">
+<p class="foo indent-8 text-gray-800 dark:text-gray-100">
   {{- range $.Site.Params.publication.format -}}
   {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
   {{- end -}}
@@ -18,7 +18,7 @@
 
 {{- range $.Site.Params.publication.list -}}
 {{- $this_publication := . -}}
-<p class="bar -indent-8">
+<p class="bar -indent-8 text-gray-800 dark:text-gray-100">
   {{- range $.Site.Params.publication.format -}}
   {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
   {{- end -}}

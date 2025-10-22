@@ -10,7 +10,7 @@
     >
       <i
         onclick="expandAccordion(this)"
-        class="cursor-pointer chevron p-2 mr-4 fas fa-chevron-right rounded-sm text-blue-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700"
+        class="cursor-pointer chevron p-2 mr-4 fas fa-chevron-right rounded-sm text-emerald-600 dark:text-emerald-300 hover:bg-gray-300 dark:hover:bg-gray-700"
       ></i>
       <a href="{{ .Permalink | relURL }}"
         ><h2 class="accordion m-0">{{- .Title -}}</h2></a
@@ -21,6 +21,9 @@
       class="panel metadata-panel overflow-hidden bg-gray-200 dark:bg-dark"
     >
       <div class="metadata p-2">{{- partial "metadata" . -}}</div>
+      {{ with .Summary }}
+      <div class="p-2 pt-0 text-sm prose dark:prose-invert max-w-none">{{ . | safeHTML }}</div>
+      {{ end }}
     </div>
   </div>
   {{ end }}

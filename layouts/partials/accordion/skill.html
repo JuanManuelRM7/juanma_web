@@ -6,9 +6,15 @@
     });
   });
 </script>
+<ul class="list-disc pl-6 space-y-2 text-gray-800 dark:text-gray-100">
 {{ range.Site.Params.skill.list }}
-<code>{{ .skill }}</code>
-<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
-  <div id="skill-percent" class="{{ .skillrating }}% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
-</div>
+  <li>
+    <code class="text-gray-900 dark:text-gray-100">{{ .skill }}</code>
+    {{ with .skillrating }}
+    <div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+      <div id="skill-percent" class="{{ . }}% bg-emerald-600 dark:bg-emerald-300 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+    </div>
+    {{ end }}
+  </li>
 {{ end }}
+</ul>

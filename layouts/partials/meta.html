@@ -1,10 +1,27 @@
-<title>{{ .Site.Params.title }}</title>
+{{ $title := cond .IsHome .Site.Params.title .Title }}
+{{ $desc := cond .IsHome .Site.Params.description (or .Description (.Summary | plainify)) }}
+{{ $url := .Permalink }}
+
+<title>{{ $title }}</title>
 
 <meta name="theme-color" content="" />
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta name="description" content="{{ .Site.Params.description }}" />
+<meta name="description" content="{{ $desc }}" />
 <meta name="author" content="{{ .Site.Params.author }}" />
+<link rel="canonical" href="{{ $url }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $desc }}" />
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+<meta property="og:url" content="{{ $url }}" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $desc }}" />
+
 {{- $hugoGenerator := index (findRE `content=\"(.+)\"` hugo.Generator) 0 }}
 <meta name="generator" content="aafu theme by Darshan in {{ replaceRE `content=|\"` `` $hugoGenerator }}" />
 
