@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Bienvenido a mi blog! on </title>
-    <link>https://juanmanuel.petrer.eu/blog/</link>
-    <description>Recent content in Bienvenido a mi blog! on </description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuel.petrer.eu/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bloqueos atmosféricos desde un punto de vista lagrangiano.</title>
-      <link>https://juanmanuel.petrer.eu/blog/tfg/</link>
-      <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/tfg/</guid>
-      <description>&lt;h1 id=&#34;un-método-lagrangiano-para-la-identificación-de-bloqueos-atmosféricos&#34;&gt;Un método lagrangiano para la identificación de bloqueos atmosféricos&lt;/h1&gt;&#xA;&lt;h2 id=&#34;figura-28&#34;&gt;Figura 28&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://juanmanuel.petrer.eu/images/Figura_28.gif&#34; alt=&#34;Figura 28&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Durante los últimos años, los fenómenos meteorológicos extremos —olas de calor, olas de frío, sequías o inundaciones— se han hecho cada vez más frecuentes e intensos. Detrás de muchos de ellos se encuentra un patrón atmosférico fascinante y complejo: el bloqueo atmosférico. Estos bloqueos son grandes estructuras de alta presión que interrumpen el flujo normal del aire, desviando las corrientes y haciendo que determinadas masas de aire queden estancadas sobre una región durante días o semanas. Su efecto puede ser devastador, ya que pueden generar olas de calor persistentes o impedir la llegada de frentes lluviosos durante largos periodos.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bienvenido a mi blog! on</title><link>https://juanmanuel.petrer.eu/blog/</link><description>Recent content in Bienvenido a mi blog! on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Bloqueos atmosféricos desde un punto de vista lagrangiano.</title><link>https://juanmanuel.petrer.eu/blog/tfg/</link><pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/tfg/</guid><description>&lt;h1 id="un-método-lagrangiano-para-la-identificación-de-bloqueos-atmosféricos"&gt;Un método lagrangiano para la identificación de bloqueos atmosféricos&lt;/h1&gt;
+&lt;h2 id="figura-28"&gt;Figura 28&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://juanmanuel.petrer.eu/images/Figura_28.gif" alt="Figura 28"&gt;&lt;/p&gt;
+&lt;p&gt;Durante los últimos años, los fenómenos meteorológicos extremos —olas de calor, olas de frío, sequías o inundaciones— se han hecho cada vez más frecuentes e intensos. Detrás de muchos de ellos se encuentra un patrón atmosférico fascinante y complejo: el bloqueo atmosférico. Estos bloqueos son grandes estructuras de alta presión que interrumpen el flujo normal del aire, desviando las corrientes y haciendo que determinadas masas de aire queden estancadas sobre una región durante días o semanas. Su efecto puede ser devastador, ya que pueden generar olas de calor persistentes o impedir la llegada de frentes lluviosos durante largos periodos.&lt;/p&gt;</description></item></channel></rss>
