@@ -13,3 +13,40 @@ html {
     max-width: 100%;
   }
 }
+
+/* Make post/content images responsive and nicely presented */
+.content img,
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 6px;
+}
+
+/* Better spacing for lists inside content */
+.content ul,
+.content ol,
+.prose ul,
+.prose ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tables: allow horizontal scroll on small screens */
+.content table,
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+/* Code blocks: subtle background */
+.content pre code,
+.prose pre code {
+  background: rgba(0,0,0,0.04);
+  display: block;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
