@@ -111,6 +111,30 @@
   .prose ol {
     @apply marker:text-gray-700 dark:marker:text-gray-200;
   }
+  /* Force dark mode high contrast colors */
+  .dark .prose {
+    color: rgb(243 244 246) !important; /* gray-100 */
+  }
+  .dark .prose h1,
+  .dark .prose h2 {
+    color: rgb(249 250 251) !important; /* gray-50 */
+  }
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose h5,
+  .dark .prose h6,
+  .dark .prose p,
+  .dark .prose li,
+  .dark .prose td {
+    color: rgb(243 244 246) !important; /* gray-100 */
+  }
+  .dark .prose strong,
+  .dark .prose th {
+    color: rgb(249 250 251) !important; /* gray-50 */
+  }
+  .dark .prose blockquote {
+    color: rgb(243 244 246) !important; /* gray-100 */
+  }
   .accordion {
     @apply text-emerald-700 dark:text-emerald-300 my-0;
     > p {
