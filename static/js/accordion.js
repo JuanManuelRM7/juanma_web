@@ -1,7 +1,13 @@
 const allPanels = Array.from(document.querySelectorAll(".panel"));
 const allAccordion = Array.from(document.querySelectorAll(".accordion"));
 const expandAccordion = (elem) => {
-  if (!elem.parentElement.classList.contains("active")) {
+  // Si el elemento ya está activo, lo cerramos
+  if (elem.parentElement.classList.contains("active")) {
+    elem.parentElement.classList.remove("active");
+    let activePanel = elem.parentElement.nextElementSibling;
+    activePanel.style.maxHeight = null;
+  } else {
+    // Si no está activo, cerramos todos y abrimos este
     allAccordion.forEach((acc) => {
       acc.classList.remove("active");
     });
@@ -22,5 +28,6 @@ const expandAccordion = (elem) => {
     activePanel.style.maxHeight = activePanel.scrollHeight + "px";
   }
 };
+
 
 
