@@ -1,15 +1,10 @@
 <footer class="text-sm text-center border-t-2 border-emerald-500 dark:border-emerald-400 {{ if .IsHome }} bg-transparent rounded-b-none py-2 {{ else }} py-6 bg-gradient-to-r from-transparent via-emerald-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent {{ end }}"
   {{ if not .IsHome }}style="box-shadow: 0 -4px 6px -1px rgba(5, 150, 105, 0.1);"{{ end }}>
   <p class="markdownify">{{ .Site.Params.copyright | markdownify }}</p>
-  <p {{ if not .Site.Params.theme.showAttribute }}style="font-size:0px;"{{ end }}>
-    <i>
-      <a href="https://github.com/darshanbaral/aafu">
-        aafu
-      </a>
-    </i>
-    by
-    <a href="https://www.darshanbaral.com/">
-      darshan
+  <p class="text-xs text-gray-500 dark:text-gray-500">
+    <i>Diseñado por</i>
+    <a href="https://github.com/JuanManuelRM7" class="hover:text-emerald-600 dark:hover:text-emerald-400">
+      JM
     </a>
   </p>
 

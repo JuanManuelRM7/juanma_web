@@ -23,7 +23,8 @@
 <meta name="twitter:description" content="{{ $desc }}" />
 
 {{- $hugoGenerator := index (findRE `content=\"(.+)\"` hugo.Generator) 0 }}
-<meta name="generator" content="aafu theme by Darshan in {{ replaceRE `content=|\"` `` $hugoGenerator }}" />
+{{ $hugoGenerator := hugo.Generator }}
+<meta name="generator" content="Sitio web por JM con {{ replaceRE `content=|\"` `` $hugoGenerator }}" />
 
 {{ if .Site.Params.favicons.use }}
 {{- $metas := .Site.Params.favicons.metas }}
