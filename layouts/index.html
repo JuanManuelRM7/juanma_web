@@ -34,7 +34,8 @@
         </button>
       </div>
       <!-- Latest post chip (mobile only, below footer border) -->
-      <div class="flex md:hidden justify-center mt-3 mb-2 text-xs relative z-10">
+      <div class="flex md:hidden flex-col gap-1 justify-center mt-3 mb-2 text-xs relative z-10">
+        <p class="text-xs text-gray-600 dark:text-gray-400 text-center m-0">Última publicación en el blog</p>
         {{ partial "latest_post_chip" . }}
       </div>
     </div>
