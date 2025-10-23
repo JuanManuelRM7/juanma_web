@@ -1,6 +1,5 @@
 <div class="px-2">
-  <h3 class="mt-2 mb-2 text-center text-base font-semibold text-emerald-700 dark:text-emerald-300">Skills</h3>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-2">
   {{ range.Site.Params.skill.list }}
     <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="block px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline break-words" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
       {{ .skill }}
