@@ -1,0 +1,120 @@
+<!-- Welcome Modal -->
+<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-emerald-500 dark:border-emerald-400 relative overflow-hidden animate-fade-in">
+    <!-- Decorative pattern -->
+    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 p-6 md:p-8">
+      <!-- Close button -->
+      <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      
+      <!-- Header -->
+      <div class="text-center mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-2">
+          ¡Bienvenido a mi blog!
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto rounded-full"></div>
+      </div>
+      
+      <!-- Message -->
+      <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-4 text-base md:text-lg leading-relaxed">
+        <p>
+          Me llamo <strong class="text-emerald-700 dark:text-emerald-300">Juan Manuel</strong> y en esta página web podrás saber más acerca de mí.
+        </p>
+        <p>
+          La iniciativa de crear este sitio fueron varias: por un lado quería aprender a cómo montar un sitio como este, por otro me gustaba la idea de poder escribir acerca de las cosas que voy aprendiendo (posts que podrás encontrar en la pestaña de <strong class="text-emerald-700 dark:text-emerald-300">blog</strong>, aunque todavía no tengo mucho subido).
+        </p>
+        <p>
+          El crear esta web me motivó a crearme tarjetas de presentación para no tener que estar dando la dirección del sitio web jajajaj, esto y que me vi un short de <em>American Psycho</em>. 😄
+        </p>
+      </div>
+      
+      <!-- Action button -->
+      <div class="mt-8 flex justify-center">
+        <button onclick="closeWelcomeModal()" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          ¡Empecemos! <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+      
+      <!-- Don't show again option -->
+      <div class="mt-4 text-center">
+        <label class="inline-flex items-center cursor-pointer text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+          <input type="checkbox" id="dont-show-again" class="mr-2 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500">
+          <span>No volver a mostrar este mensaje</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+#welcome-modal:not(.hidden) {
+  display: flex;
+}
+</style>
+
+<script>
+function showWelcomeModal() {
+  const hasVisited = localStorage.getItem('hasVisitedBefore');
+  if (!hasVisited) {
+    const modal = document.getElementById('welcome-modal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+}
+
+function closeWelcomeModal() {
+  const modal = document.getElementById('welcome-modal');
+  const dontShowAgain = document.getElementById('dont-show-again');
+  
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  
+  // Always mark as visited when closing
+  if (dontShowAgain && dontShowAgain.checked) {
+    localStorage.setItem('hasVisitedBefore', 'true');
+  } else {
+    // Mark as visited for this session only
+    localStorage.setItem('hasVisitedBefore', 'true');
+  }
+}
+
+// Show modal on page load
+document.addEventListener('DOMContentLoaded', showWelcomeModal);
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeWelcomeModal();
+  }
+});
+
+// Close on backdrop click
+document.getElementById('welcome-modal')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeWelcomeModal();
+  }
+});
+</script>
