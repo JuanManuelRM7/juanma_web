@@ -1,7 +1,7 @@
 {{ $skills := .Site.Params.skill.list }}
 <div class="mt-2 group relative">
   <!-- Left arrow (hidden by default, visible on group hover) -->
-  <button onclick="scrollSkills('left')" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
+  <button onclick="scrollSkills('left'); return false;" onmousedown="return false;" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
     <i class="fas fa-chevron-left text-xs pointer-events-none"></i>
   </button>
 
@@ -26,7 +26,7 @@
   </div>
 
   <!-- Right arrow (hidden by default, visible on group hover) -->
-  <button onclick="scrollSkills('right')" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
+  <button onclick="scrollSkills('right'); return false;" onmousedown="return false;" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
     <i class="fas fa-chevron-right text-xs pointer-events-none"></i>
   </button>
 </div>
@@ -35,14 +35,22 @@
 function scrollSkills(direction) {
   const container = document.getElementById('skills-scroll');
   const scrollAmount = 100;
+  
+  // Prevent default button behavior and blur to remove focus
+  event.preventDefault();
+  event.target.blur();
+  
   if (direction === 'left') {
     container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   } else {
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   }
+  
   // Clear any text selection that might occur
   if (window.getSelection) {
     window.getSelection().removeAllRanges();
   }
+  
+  return false;
 }
 </script>
