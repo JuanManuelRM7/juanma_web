@@ -1,9 +1,14 @@
 {{ $skills := .Site.Params.skill.list }}
-<div class="mt-2 group">
-  <div class="relative overflow-x-auto no-scrollbar">
+<div class="mt-2 group relative">
+  <!-- Left arrow -->
+  <button onclick="scrollSkills('left')" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-emerald-600 dark:bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 hover:scale-110">
+    <i class="fas fa-chevron-left text-xs"></i>
+  </button>
+
+  <div class="relative overflow-x-auto no-scrollbar" id="skills-scroll">
     <!-- Edge fades -->
-    <div class="pointer-events-none absolute left-0 top-0 h-full w-10 from-gray-200/90 to-transparent dark:from-slate-800/90 dark:to-transparent bg-gradient-to-r"></div>
-    <div class="pointer-events-none absolute right-0 top-0 h-full w-10 from-transparent to-gray-200/90 dark:from-transparent dark:to-slate-800/90 bg-gradient-to-r"></div>
+    <div class="pointer-events-none absolute left-0 top-0 h-full w-10 from-gray-200/90 to-transparent dark:from-slate-800/90 dark:to-transparent bg-gradient-to-r z-10"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-10 from-transparent to-gray-200/90 dark:from-transparent dark:to-slate-800/90 bg-gradient-to-r z-10"></div>
 
     <!-- Marquee track -->
     <div class="inline-flex gap-2 whitespace-nowrap animate-marquee pause-on-hover will-change-transform">
@@ -19,4 +24,21 @@
       {{ end }}
     </div>
   </div>
+
+  <!-- Right arrow -->
+  <button onclick="scrollSkills('right')" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-emerald-600 dark:bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 hover:scale-110">
+    <i class="fas fa-chevron-right text-xs"></i>
+  </button>
 </div>
+
+<script>
+function scrollSkills(direction) {
+  const container = document.getElementById('skills-scroll');
+  const scrollAmount = 200;
+  if (direction === 'left') {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+}
+</script>

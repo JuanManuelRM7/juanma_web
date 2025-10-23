@@ -201,7 +201,7 @@
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 /* Pause marquee when hovering the container group */
 .group:hover .pause-on-hover {
