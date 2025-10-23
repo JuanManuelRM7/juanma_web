@@ -35,23 +35,12 @@ params:
       - icon: fab fa-instagram
         url: "https://www.instagram.com/j.manuel__rm/"
         title: Instagram
-      - icon:
-        url: "#"
-        title: StackOverflow
       - icon: fab fa-github
         url: "https://github.com/juanmanuelruizm"
         title: GitHub
-      - icon:
-        url: "#"
-        title: ResearchGate
-        #email
       - icon: fas fa-envelope
         url: "mailto:juanmanuel@petrer.eu"
         title: Email
-      - icon:
-        url: "#"
-        title: blablabla
-        #orcid
       - icon: fab fa-orcid
         url: "https://orcid.org/0009-0008-7529-306X"
         title: ORCID
@@ -61,9 +50,7 @@ params:
     - item: experience
     - item: education
     - item: publication
-    - item: project
     - item: skill
-    - item: hobby
   aboutme:
     title: Sobre mí
     icon: fas fa-user
