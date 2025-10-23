@@ -73,13 +73,14 @@
 
 <script>
 function showWelcomeModal() {
-  const hasVisited = localStorage.getItem('hasVisitedBefore');
-  if (!hasVisited) {
-    const modal = document.getElementById('welcome-modal');
-    if (modal) {
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
+  // Show the modal on every visit unless the user explicitly opted out
+  const hideWelcome = localStorage.getItem('hideWelcomeModal') === 'true';
+  if (hideWelcome) return;
+
+  const modal = document.getElementById('welcome-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -92,12 +93,9 @@ function closeWelcomeModal() {
     document.body.style.overflow = '';
   }
   
-  // Always mark as visited when closing
+  // Persist opt-out only when the user checks the box
   if (dontShowAgain && dontShowAgain.checked) {
-    localStorage.setItem('hasVisitedBefore', 'true');
-  } else {
-    // Mark as visited for this session only
-    localStorage.setItem('hasVisitedBefore', 'true');
+    localStorage.setItem('hideWelcomeModal', 'true');
   }
 }
 
