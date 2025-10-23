@@ -57,6 +57,7 @@ params:
   experience:
     title: Experiencia
     icon: fas fa-briefcase
+    panelId: experience-panel
     list:
 
       - position: AI Developer
@@ -93,6 +94,7 @@ params:
   education:
     title: Educación
     icon: fas fa-graduation-cap
+    panelId: education-panel
     list:
       - degree: Grado en Física
         college: Universidad de Alicante

@@ -15,6 +15,7 @@
     </div>
   </div>
   <div class="col-span-1 md:col-span-3 relative">
+    {{ partial "section_cards" . }}
     {{ range .Site.Params.showInAccordion }}
     <div class="px-2 mb-3">
       <h2 class="accordion {{- if .expand }} active {{- end }}">
@@ -29,10 +30,11 @@
         </p>
       </h2>
 
+      {{ $panelId := or $current.panelid $current.panelId }}
       <div
         class="panel overflow-hidden px-2 ml-2"
-        {{if $current.panelid}}
-        id="{{ $current.panelid }}"
+        {{ if $panelId }}
+        id="{{ $panelId }}"
         {{ end }}
       >
         <div class="">{{ partial (print "accordion/" .item) $ }}</div>
