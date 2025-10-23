@@ -32,6 +32,9 @@ params:
       - icon: fab fa-linkedin-in
         url: "https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
         title: LinkedIn
+      - icon: fab fa-instagram
+        url: "https://www.instagram.com/j.manuel__rm/"
+        title: Instagram
       - icon:
         url: "#"
         title: StackOverflow
