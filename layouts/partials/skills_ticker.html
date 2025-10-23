@@ -1,0 +1,22 @@
+{{ $skills := .Site.Params.skill.list }}
+<div class="mt-2 group">
+  <div class="relative overflow-x-auto no-scrollbar">
+    <!-- Edge fades -->
+    <div class="pointer-events-none absolute left-0 top-0 h-full w-10 from-gray-200/90 to-transparent dark:from-slate-800/90 dark:to-transparent bg-gradient-to-r"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-10 from-transparent to-gray-200/90 dark:from-transparent dark:to-slate-800/90 bg-gradient-to-r"></div>
+
+    <!-- Marquee track -->
+    <div class="inline-flex gap-2 whitespace-nowrap animate-marquee pause-on-hover will-change-transform">
+      {{ range $skills }}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
+        {{ .skill }}
+      </a>
+      {{ end }}
+      {{ range $skills }}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
+        {{ .skill }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
