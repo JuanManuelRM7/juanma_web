@@ -1,10 +1,13 @@
 <header
-  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-emerald-500 dark:border-emerald-400 justify-between bg-gradient-to-r from-transparent via-emerald-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-emerald-500 dark:border-emerald-400 justify-between items-center bg-gradient-to-r from-transparent via-emerald-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
   <div class="flex gap-1">
     <a class="nav-menu-item" href="{{ .Site.BaseURL }}">Inicio</a>
     <a class="nav-menu-item" href="{{ `blog` | relURL }}">Blog</a>
+  </div>
+  <div class="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
+    <div id="clock" class="text-emerald-700 dark:text-emerald-300 font-semibold text-lg"></div>
   </div>
   <div>
     <i
@@ -13,5 +16,22 @@
     ></i>
   </div>
 </header>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+      clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+  }
+  
+  // Update clock immediately and then every second
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
 
 {{ partial "toggleTheme.html" . }}
