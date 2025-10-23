@@ -50,7 +50,6 @@ params:
     - item: experience
     - item: education
     - item: publication
-    - item: skill
   aboutme:
     title: Sobre mí
     icon: fas fa-user
