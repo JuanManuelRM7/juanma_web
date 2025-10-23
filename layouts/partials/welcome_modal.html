@@ -1,26 +1,26 @@
 <!-- Welcome Modal -->
-<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-  <div class="bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-emerald-500 dark:border-emerald-400 relative overflow-hidden animate-fade-in">
+<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+  <div class="bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-emerald-500 dark:border-emerald-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
     <!-- Decorative pattern -->
     <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
     
     <!-- Content -->
-    <div class="relative z-10 p-6 md:p-8">
+    <div class="relative z-10 p-4 sm:p-6 md:p-8">
       <!-- Close button -->
-      <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300">
-        <i class="fas fa-times text-xl"></i>
+      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-2">
+        <i class="fas fa-times text-lg sm:text-xl"></i>
       </button>
       
       <!-- Header -->
-      <div class="text-center mb-6">
-        <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-2 pb-1">
+      <div class="text-center mb-4 sm:mb-6">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-2 pb-1">
           ¡Bienvenido a mi sitio web!
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto rounded-full"></div>
+        <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto rounded-full"></div>
       </div>
       
       <!-- Message -->
-      <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-4 text-base md:text-lg leading-relaxed">
+      <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
         <p>
           Me llamo <strong class="text-emerald-700 dark:text-emerald-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.
         </p>
@@ -33,16 +33,16 @@
       </div>
       
       <!-- Action button -->
-      <div class="mt-8 flex justify-center">
-        <button onclick="closeWelcomeModal()" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+      <div class="mt-6 sm:mt-8 flex justify-center">
+        <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           ¡Empecemos! <i class="fas fa-arrow-right ml-2"></i>
         </button>
       </div>
       
       <!-- Don't show again option -->
       <div class="mt-4 text-center">
-        <label class="inline-flex items-center cursor-pointer text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-          <input type="checkbox" id="dont-show-again" class="mr-2 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500">
+        <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+          <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 sm:w-auto sm:h-auto rounded border-gray-300 text-emerald-600 focus:ring-emerald-500">
           <span>No volver a mostrar este mensaje</span>
         </label>
       </div>

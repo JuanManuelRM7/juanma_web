@@ -12,8 +12,8 @@
         </div>
       </div>
       {{ partial "footer" . }}
-      <!-- Experiencia y Educación chips (below footer border) -->
-      <div class="flex gap-2 justify-center mt-3 mb-2 text-xs relative z-10">
+      <!-- Experiencia y Educación chips (desktop only, below footer border) -->
+      <div class="hidden md:flex gap-2 justify-center mt-3 mb-2 text-xs relative z-10">
         <button
           type="button"
           onclick="openPanelById('experience-panel')"
@@ -32,6 +32,10 @@
           <span class="font-medium text-gray-900 dark:text-gray-100">Educación</span>
           <i class="fas fa-arrow-right text-emerald-600 dark:text-emerald-300 text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
         </button>
+      </div>
+      <!-- Latest post chip (mobile only, below footer border) -->
+      <div class="flex md:hidden justify-center mt-3 mb-2 text-xs relative z-10">
+        {{ partial "latest_post_chip" . }}
       </div>
     </div>
   </div>
