@@ -1,11 +1,11 @@
 {{ $skills := .Site.Params.skill.list }}
 <div class="mt-2 group relative">
   <!-- Left arrow (hidden by default, visible on group hover) -->
-  <button onclick="scrollSkills('left')" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110">
-    <i class="fas fa-chevron-left text-xs"></i>
+  <button onclick="scrollSkills('left')" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
+    <i class="fas fa-chevron-left text-xs pointer-events-none"></i>
   </button>
 
-  <div class="relative overflow-x-auto no-scrollbar" id="skills-scroll">
+  <div class="relative overflow-x-auto no-scrollbar select-none" id="skills-scroll">
     <!-- Edge fades -->
     <div class="pointer-events-none absolute left-0 top-0 h-full w-10 from-gray-200/90 to-transparent dark:from-slate-800/90 dark:to-transparent bg-gradient-to-r z-10"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-10 from-transparent to-gray-200/90 dark:from-transparent dark:to-slate-800/90 bg-gradient-to-r z-10"></div>
@@ -13,12 +13,12 @@
     <!-- Marquee track -->
     <div class="inline-flex gap-2 whitespace-nowrap animate-marquee pause-on-hover will-change-transform">
       {{ range $skills }}
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline select-none" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
         {{ .skill }}
       </a>
       {{ end }}
       {{ range $skills }}
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-center text-xs md:text-sm font-medium text-white dark:text-gray-900 shadow hover:shadow-lg transition-all duration-300 hover:scale-105 hover:no-underline select-none" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);">
         {{ .skill }}
       </a>
       {{ end }}
@@ -26,8 +26,8 @@
   </div>
 
   <!-- Right arrow (hidden by default, visible on group hover) -->
-  <button onclick="scrollSkills('right')" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110">
-    <i class="fas fa-chevron-right text-xs"></i>
+  <button onclick="scrollSkills('right')" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-emerald-600/70 dark:bg-emerald-500/70 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 select-none focus:outline-none">
+    <i class="fas fa-chevron-right text-xs pointer-events-none"></i>
   </button>
 </div>
 
@@ -39,6 +39,10 @@ function scrollSkills(direction) {
     container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   } else {
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+  // Clear any text selection that might occur
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges();
   }
 }
 </script>
