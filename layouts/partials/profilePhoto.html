@@ -1,9 +1,13 @@
 <div
-  class="w-full p-2 flex justify-center align-middle profile-photo-container border-2 border-emerald-500 dark:border-emerald-400 rounded-lg"
+  class="w-full p-3 flex justify-center align-middle profile-photo-container border-2 border-emerald-500 dark:border-emerald-400 rounded-lg relative group"
 >
-  <img
-    class="rounded-lg border-4 border-black"
-    src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
-    alt="{{ .Site.Params.author }}"
-  />
+  <div class="relative">
+    <!-- Soft oval shadow under the photo to simulate depth -->
+    <div class="absolute left-1/2 -translate-x-1/2 -bottom-3 w-9/12 h-5 rounded-full bg-black/25 dark:bg-black/50 blur-xl transition-all duration-300 group-hover:w-10/12 group-hover:h-6 group-hover:-bottom-4"></div>
+    <img
+      class="relative z-10 rounded-lg border-4 border-black transform-gpu transition-all duration-300 ease-out shadow-xl group-hover:-translate-y-1 group-hover:shadow-2xl"
+      src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
+      alt="{{ .Site.Params.author }}"
+    />
+  </div>
 </div>
