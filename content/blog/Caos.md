@@ -7,8 +7,6 @@ description:
 draft: false
 ---
 
-## Del Clima al Caos: una analogía entre meteorología y dinámica de poblaciones
-
 En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.  
 Ese hallazgo, conocido como **efecto mariposa**, dio origen al concepto moderno de **caos determinista**.  
 
@@ -80,7 +78,7 @@ Esto representa un entorno predecible:
 En términos meteorológicos, este escenario se asemeja a un sistema atmosférico **estable**, donde pequeñas perturbaciones se disipan y el clima retorna a su estado medio: un ejemplo de orden, equilibrio y previsibilidad.
 
 #### Representación gráfica del régimen no caótico
-![Evolución no caótica](nocaos.png)
+![Evolución no caótica](/images/nocaos.png)
 
 ---
 
@@ -98,7 +96,7 @@ el comportamiento de la atmósfera, como el de estas poblaciones, **obedece regl
 Un cambio minúsculo —una milésima en \( r \), una perturbación de temperatura— puede alterar completamente la evolución del sistema.
 
 #### Representación gráfica del régimen caótico
-![Evolución caótica](caos.png)
+![Evolución caótica](/images/caos.png)
 
 ---
 
