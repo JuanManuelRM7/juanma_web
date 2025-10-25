@@ -7,8 +7,8 @@ tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "i
 ---
 
 {{< download-banner
-    title="¿Prefieres leerlo en PDF?"
-    description="Descarga el artículo completo para leerlo sin conexión"
+    title="Lee el artículo con más detalle: descarga el PDF para consultarlo sin conexión. (Lo preparé rápidamente para una defensa universitaria; puede contener imperfecciones.)"
+    description="Obtén el documento completo en PDF para leerlo offline y con calma."
     buttonText="Descargar PDF"
     downloadUrl="/documents/predicciones-por-conjuntos.pdf"
 >}}
