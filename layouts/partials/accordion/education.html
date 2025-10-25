@@ -5,15 +5,21 @@
   {{- .dates }} &middot; {{ .college -}}
 </p>
 {{ if .thesis_title }}
-{{ if .thesis_url }}
-<p class="text-gray-700 dark:text-gray-200">
-  Tesis:
-  <a href="{{ .thesis_url }}"><i>{{ .thesis_title }}</i></a>
-</p>
-{{ else }}
-<p class="text-gray-700 dark:text-gray-200">
-  Tesis: <i>{{ .thesis_title }}</i>
-</p>
-{{ end }}
+<div class="mt-2">
+  <p class="text-gray-700 dark:text-gray-200 mb-2">
+    TFG: <i>{{ .thesis_title }}</i>
+  </p>
+  {{ if .thesis_url }}
+  <a
+    href="{{ .thesis_url }}"
+    class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+    <span class="font-medium text-gray-900 dark:text-gray-100">Descargar TFG</span>
+  </a>
+  {{ end }}
+</div>
 {{ end }}
 {{ end }}

@@ -109,7 +109,7 @@ params:
         college: Universidad de Alicante
         dates: 2020 - 2024
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
-        thesis_url: "#"
+        thesis_url: "/tfg.pdf"
       - degree: Grado en Matemáticas
         college: Universidad de Alicante
         dates: 2018 - 2023
