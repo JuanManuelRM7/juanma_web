@@ -1,7 +1,7 @@
 {{ if .Site.Params.publication.types }}
 {{ range.Site.Params.publication.types }}
 {{ $type := . }}
-<h4 class="text-gray-900 dark:text-gray-100 mt-8 mb-4" style="text-decoration: underline;">{{ $type }}</h4>
+<h4 class="text-gray-900 dark:text-gray-100 mt-5 mb-3" style="text-decoration: underline;">{{ $type }}</h4>
 {{- range $.Site.Params.publication.list -}}
 {{ if eq $type .type }}
 {{- $this_publication := . -}}
