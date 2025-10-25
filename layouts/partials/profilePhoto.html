@@ -1,4 +1,4 @@
-<div class="w-full p-3 flex justify-center align-middle profile-photo-container">
+<div class="w-full p-3 pb-1 flex justify-center align-middle profile-photo-container">
   <!-- Flip card container -->
   <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
     <div class="flip-card-inner">
@@ -8,7 +8,7 @@
           <!-- Soft oval shadow under the photo -->
           <div class="absolute left-1/2 -translate-x-1/2 -bottom-3 w-9/12 h-5 rounded-full bg-black/25 dark:bg-black/50 blur-xl transition-all duration-300 group-hover:w-10/12 group-hover:h-6 group-hover:-bottom-4"></div>
           <img
-            class="relative z-10 rounded-lg border-4 border-black transform-gpu transition-all duration-300 ease-out shadow-xl group-hover:-translate-y-1 group-hover:shadow-2xl"
+            class="relative z-10 rounded-lg border-4 border-black transform-gpu transition-all duration-300 ease-out shadow-xl group-hover:-translate-y-1 group-hover:shadow-2xl w-full h-auto"
             src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
             alt="{{ .Site.Params.author }}"
           />
@@ -16,11 +16,11 @@
       </div>
       <!-- Back: About me text -->
       <div class="flip-card-back">
-        <div class="bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-emerald-500 dark:border-emerald-400 p-4 shadow-xl h-full flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-emerald-700 dark:text-emerald-300 mb-3 text-center">
-            <i class="fas fa-user mr-2"></i>{{ .Site.Params.aboutme.title }}
+        <div class="bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-emerald-500 dark:border-emerald-400 p-3 shadow-xl h-full flex flex-col justify-center overflow-y-auto">
+          <h3 class="text-base font-bold text-emerald-700 dark:text-emerald-300 mb-2 text-center flex-shrink-0">
+            <i class="fas fa-user mr-1 text-sm"></i>{{ .Site.Params.aboutme.title }}
           </h3>
-          <p class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed text-justify">
+          <p class="text-xs text-gray-700 dark:text-gray-200 leading-snug text-justify">
             {{ .Site.Params.aboutme.description }}
           </p>
         </div>
@@ -35,7 +35,7 @@
   background-color: transparent;
   perspective: 1000px;
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
 }
 
 .flip-card-inner {
@@ -64,9 +64,21 @@
   transform: rotateY(180deg);
 }
 
-/* Ensure same height for front and back */
-.flip-card-front,
+/* Match height to the actual image */
+.flip-card-front img {
+  display: block;
+}
+
 .flip-card-back {
-  min-height: 300px;
+  height: 100%;
+}
+
+.flip-card-inner {
+  min-height: 280px;
+  max-height: 320px;
+}
+
+.flip-card-back > div {
+  height: 100%;
 }
 </style>
