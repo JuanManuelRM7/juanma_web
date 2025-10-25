@@ -46,8 +46,11 @@ params:
         title: ORCID
   showInAccordion:
     - item: experience
+      expand: true
     - item: education
+      expand: true
     - item: publication
+      expand: true
   aboutme:
     title: Sobre mí
     icon: fas fa-user
