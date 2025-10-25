@@ -12,31 +12,37 @@
         </div>
       </div>
       {{ partial "footer" . }}
-      <!-- Experiencia y Educación chips (desktop only, below footer border) -->
-      <div class="hidden md:flex gap-2 justify-center mt-3 mb-2 text-xs relative z-10">
-        <button
-          type="button"
-          onclick="openPanelById('experience-panel')"
-          class="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-200 hover:shadow-sm"
+      <!-- CV download button (desktop only, below footer border) -->
+      <div class="hidden md:flex justify-center mt-3 mb-2 relative z-10">
+        <a
+          href="{{ `/cv.pdf` | relURL }}"
+          class="group inline-flex items-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-200 hover:shadow-sm no-underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <i class="fas fa-briefcase text-emerald-600 dark:text-emerald-300 text-sm"></i>
-          <span class="font-medium text-gray-900 dark:text-gray-100">Experiencia</span>
+          <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+          <span class="font-medium text-gray-900 dark:text-gray-100">Descargar CV</span>
           <i class="fas fa-arrow-right text-emerald-600 dark:text-emerald-300 text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-        </button>
-        <button
-          type="button"
-          onclick="openPanelById('education-panel')"
-          class="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-200 hover:shadow-sm"
-        >
-          <i class="fas fa-graduation-cap text-emerald-600 dark:text-emerald-300 text-sm"></i>
-          <span class="font-medium text-gray-900 dark:text-gray-100">Educación</span>
-          <i class="fas fa-arrow-right text-emerald-600 dark:text-emerald-300 text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-        </button>
+        </a>
       </div>
-      <!-- Latest post chip (mobile only, below footer border) -->
-      <div class="flex md:hidden flex-col gap-1 justify-center mt-3 mb-2 text-xs relative z-10">
-        <p class="text-xs text-gray-600 dark:text-gray-400 text-center m-0">Última publicación en el blog</p>
-        {{ partial "latest_post_chip" . }}
+      <!-- CV button and latest post chip (mobile only, below footer border) -->
+      <div class="flex md:hidden flex-col gap-3 justify-center mt-3 mb-2 text-xs relative z-10">
+        <!-- CV Download button -->
+        <a
+          href="{{ `/cv.pdf` | relURL }}"
+          class="group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-200 hover:shadow-sm no-underline mx-auto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+          <span class="font-medium text-gray-900 dark:text-gray-100">Descargar CV</span>
+          <i class="fas fa-arrow-right text-emerald-600 dark:text-emerald-300 text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </a>
+        <!-- Latest post section -->
+        <div class="flex flex-col gap-1">
+          <p class="text-xs text-gray-600 dark:text-gray-400 text-center m-0">Última publicación en el blog</p>
+          {{ partial "latest_post_chip" . }}
+        </div>
       </div>
     </div>
   </div>
