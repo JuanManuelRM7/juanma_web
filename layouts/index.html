@@ -51,12 +51,12 @@
       <h2 class="accordion {{- if .expand }} active {{- end }}">
         {{ $current := index $.Site.Params .item }}
         <p
-         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
+          class="flex items-center gap-3"
         >
-          <i class="{{ $current.icon }}"></i>
-          {{ $current.title -}}
+          <i class="{{ $current.icon }} text-lg"></i>
+          <span>{{ $current.title -}}</span>
         </p>
       </h2>
 

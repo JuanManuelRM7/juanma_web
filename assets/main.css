@@ -29,7 +29,7 @@
     @apply text-2xl mb-3 mt-1;
   }
   h4 {
-    @apply text-xl mb-2 mt-1;
+    @apply text-xl mb-4 mt-6;
   }
   h5 {
     @apply text-lg mb-2 mt-1;
