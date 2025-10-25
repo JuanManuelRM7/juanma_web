@@ -128,6 +128,7 @@ params:
     list:
       - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
         type: DCAI'25
+        pdf_url: "/DCAI.pdf"
       - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
         type: En desarrollo
 # project:
