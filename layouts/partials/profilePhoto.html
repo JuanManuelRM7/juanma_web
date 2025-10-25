@@ -41,6 +41,8 @@
 .flip-card-inner {
   position: relative;
   width: 100%;
+  min-height: 280px;
+  max-height: 320px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -52,30 +54,26 @@
 .flip-card-front,
 .flip-card-back {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+.flip-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
 .flip-card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   transform: rotateY(180deg);
 }
 
 /* Match height to the actual image */
 .flip-card-front img {
   display: block;
-}
-
-.flip-card-back {
-  height: 100%;
-}
-
-.flip-card-inner {
-  min-height: 280px;
-  max-height: 320px;
 }
 
 .flip-card-back > div {
