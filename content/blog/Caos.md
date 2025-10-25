@@ -1,6 +1,6 @@
 ---
 title: "Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones"
-date: 2025-10-25
+date: 2025-10-24
 tags:
     - caos
     - efecto-mariposa
