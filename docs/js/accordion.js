@@ -55,17 +55,33 @@ function openPanelById(panelId) {
   if (header) expandAccordion(header);
 }
 
-// En carga: preferir hash (#id); si no hay, usar el último recordado
+// En carga: abrir paneles marcados como activos por defecto, luego preferir hash o último recordado
 document.addEventListener("DOMContentLoaded", () => {
+  // Primero, abrir todos los paneles que tienen la clase 'active' por defecto
+  allAccordion.forEach((accordion) => {
+    if (accordion.classList.contains("active")) {
+      const panel = accordion.nextElementSibling;
+      if (panel) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    }
+  });
+
+  // Luego, si hay hash específico, asegurar que ese panel también esté abierto
   const hashId = (window.location.hash || "").replace(/^#/, "");
   if (hashId) {
     openPanelById(hashId);
     return;
   }
-  try {
-    const last = localStorage.getItem("lastAccordionPanel");
-    if (last) openPanelById(last);
-  } catch {}
+  
+  // Si no hay hash y no hay paneles abiertos por defecto, usar el último recordado
+  const hasActivePanel = allAccordion.some(acc => acc.classList.contains("active"));
+  if (!hasActivePanel) {
+    try {
+      const last = localStorage.getItem("lastAccordionPanel");
+      if (last) openPanelById(last);
+    } catch {}
+  }
 });
 
 
