@@ -7,8 +7,6 @@ description: "Un método lagrangiano para identificar bloqueos atmosféricos y v
 draft: false
 ---
 
-# Un método lagrangiano para la identificación de bloqueos atmosféricos
-
 ## Figura 28
 ![Figura 28](/images/Figura_28.gif)
 
