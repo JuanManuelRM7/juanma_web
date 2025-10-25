@@ -6,6 +6,17 @@ description: "Una exploración detallada de la transición de modelos determinis
 tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "incertidumbre", "análisis estadístico"]
 ---
 
+{{< download-banner
+    title="Si deseas profundizar, consulta el artículo del que proviene este post"
+    description="Descargalo en PDF"
+    buttonText="Descargar PDF"
+    downloadUrl="/documents/caos_spc.pdf"
+>}}
+
+> La predecibilidad es a la prediccion como el romance es al sexo
+
+---
+
 ¿Has notado que a veces el pronóstico del tiempo indica lluvia y termina siendo un día soleado? ¿O que la temperatura prevista difiere significativamente de la real? Estos "fallos" en las predicciones meteorológicas no son simples errores, sino manifestaciones de la complejidad inherente a la predicción del tiempo. En este artículo, exploraremos en profundidad cómo la meteorología moderna ha evolucionado desde los modelos deterministas hacia las predicciones por conjuntos, una transformación que nos permite no solo pronosticar el tiempo, sino también entender y cuantificar la incertidumbre en nuestras predicciones.
 
 Los modelos deterministas en meteorología parten de datos medidos —temperatura, presión, humedad— y producen un único estado futuro. Esa aparente solidez choca con la realidad: pequeñas imprecisiones en las condiciones iniciales o en los parámetros del modelo, combinadas con la no linealidad de las ecuaciones atmosféricas, se propagan y amplifican con el tiempo, dando lugar a previsiones que divergen rápidamente. Para una discusión más amplia sobre la sensibilidad a las condiciones iniciales y el caos determinista, consulta el post [Caos](../caos).

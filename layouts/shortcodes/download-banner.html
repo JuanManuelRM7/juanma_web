@@ -1,0 +1,21 @@
+{{ $title := .Get "title" }}
+{{ $description := .Get "description" }}
+{{ $buttonText := .Get "buttonText" }}
+{{ $downloadUrl := .Get "downloadUrl" }}
+
+<div class="w-full p-4 mb-8 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-4 md:mb-0">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $title }}</h3>
+            <p class="text-gray-600 dark:text-gray-400">{{ $description }}</p>
+        </div>
+        <a href="{{ $downloadUrl }}" 
+           class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+           download>
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            {{ $buttonText }}
+        </a>
+    </div>
+</div>
