@@ -1,0 +1,140 @@
+/* Estilos para bloques de código */
+.highlight {
+  background: #f8f9fa !important;
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+/* Modo claro */
+.language-python {
+  color: #24292e;
+}
+
+/* Palabras clave de Python */
+.language-python .k,
+.language-python .kc,
+.language-python .kd,
+.language-python .kn,
+.language-python .kp,
+.language-python .kr,
+.language-python .kt {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+/* Cadenas de texto */
+.language-python .s,
+.language-python .sa,
+.language-python .sb,
+.language-python .sc,
+.language-python .dl,
+.language-python .sd,
+.language-python .s2,
+.language-python .se,
+.language-python .sh,
+.language-python .si,
+.language-python .sx,
+.language-python .sr,
+.language-python .s1,
+.language-python .ss {
+  color: #032f62;
+}
+
+/* Números */
+.language-python .m,
+.language-python .mb,
+.language-python .mf,
+.language-python .mh,
+.language-python .mi,
+.language-python .mo {
+  color: #005cc5;
+}
+
+/* Comentarios */
+.language-python .c,
+.language-python .ch,
+.language-python .cm,
+.language-python .c1,
+.language-python .cs,
+.language-python .cp,
+.language-python .cpf {
+  color: #6a737d;
+  font-style: italic;
+}
+
+/* Funciones */
+.language-python .nf,
+.language-python .fm {
+  color: #6f42c1;
+}
+
+/* Operadores */
+.language-python .o,
+.language-python .ow {
+  color: #d73a49;
+}
+
+/* Modo oscuro */
+.dark .language-python {
+  color: #e1e4e8;
+}
+
+.dark .highlight {
+  background: #2d333b !important;
+}
+
+.dark .language-python .k,
+.dark .language-python .kc,
+.dark .language-python .kd,
+.dark .language-python .kn,
+.dark .language-python .kp,
+.dark .language-python .kr,
+.dark .language-python .kt {
+  color: #ff7b72;
+}
+
+.dark .language-python .s,
+.dark .language-python .sa,
+.dark .language-python .sb,
+.dark .language-python .sc,
+.dark .language-python .dl,
+.dark .language-python .sd,
+.dark .language-python .s2,
+.dark .language-python .se,
+.dark .language-python .sh,
+.dark .language-python .si,
+.dark .language-python .sx,
+.dark .language-python .sr,
+.dark .language-python .s1,
+.dark .language-python .ss {
+  color: #a5d6ff;
+}
+
+.dark .language-python .m,
+.dark .language-python .mb,
+.dark .language-python .mf,
+.dark .language-python .mh,
+.dark .language-python .mi,
+.dark .language-python .mo {
+  color: #79c0ff;
+}
+
+.dark .language-python .c,
+.dark .language-python .ch,
+.dark .language-python .cm,
+.dark .language-python .c1,
+.dark .language-python .cs,
+.dark .language-python .cp,
+.dark .language-python .cpf {
+  color: #8b949e;
+}
+
+.dark .language-python .nf,
+.dark .language-python .fm {
+  color: #d2a8ff;
+}
+
+.dark .language-python .o,
+.dark .language-python .ow {
+  color: #ff7b72;
+}
