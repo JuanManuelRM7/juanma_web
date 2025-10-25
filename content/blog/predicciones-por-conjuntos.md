@@ -7,10 +7,10 @@ tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "i
 ---
 
 {{< download-banner
-    title="Si deseas profundizar, consulta el artículo del que proviene este post"
-    description="Descargalo en PDF"
+    title="¿Prefieres leerlo en PDF?"
+    description="Descarga el artículo completo para leerlo sin conexión"
     buttonText="Descargar PDF"
-    downloadUrl="/documents/caos_spc.pdf"
+    downloadUrl="/documents/predicciones-por-conjuntos.pdf"
 >}}
 
 > La predecibilidad es a la prediccion como el romance es al sexo
