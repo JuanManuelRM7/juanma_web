@@ -2,6 +2,14 @@ baseURL: https://juanmanuel.petrer.eu/
 languageCode: es
 build:
   writeStats: true
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
+    lineNumbersInTable: false
+    noClasses: false
 params:
   title: Blog de Juan Manuel
   author: Juan Manuel

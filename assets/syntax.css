@@ -1,0 +1,149 @@
+/* Modo claro */
+.chroma {
+  background-color: #f6f8fa;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.chroma .k,  /* Keyword */
+.chroma .kc, /* Keyword.Constant */
+.chroma .kd, /* Keyword.Declaration */
+.chroma .kn, /* Keyword.Namespace */
+.chroma .kp, /* Keyword.Pseudo */
+.chroma .kr, /* Keyword.Reserved */
+.chroma .kt  /* Keyword.Type */ {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+.chroma .s,  /* String */
+.chroma .sa, /* String.Affix */
+.chroma .sb, /* String.Backtick */
+.chroma .sc, /* String.Char */
+.chroma .dl, /* String.Delimiter */
+.chroma .sd, /* String.Doc */
+.chroma .s2, /* String.Double */
+.chroma .se, /* String.Escape */
+.chroma .sh, /* String.Heredoc */
+.chroma .si, /* String.Interpol */
+.chroma .sx, /* String.Other */
+.chroma .sr, /* String.Regex */
+.chroma .s1, /* String.Single */
+.chroma .ss  /* String.Symbol */ {
+  color: #032f62;
+}
+
+.chroma .m,  /* Number */
+.chroma .mb, /* Number.Bin */
+.chroma .mf, /* Number.Float */
+.chroma .mh, /* Number.Hex */
+.chroma .mi, /* Number.Integer */
+.chroma .mo  /* Number.Oct */ {
+  color: #005cc5;
+}
+
+.chroma .c,  /* Comment */
+.chroma .ch, /* Comment.Hashbang */
+.chroma .cm, /* Comment.Multiline */
+.chroma .c1, /* Comment.Single */
+.chroma .cs, /* Comment.Special */
+.chroma .cp, /* Comment.Preproc */
+.chroma .cpf /* Comment.PreprocFile */ {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.chroma .na, /* Name.Attribute */
+.chroma .nb, /* Name.Builtin */
+.chroma .nc, /* Name.Class */
+.chroma .no, /* Name.Constant */
+.chroma .nd, /* Name.Decorator */
+.chroma .ni, /* Name.Entity */
+.chroma .ne, /* Name.Exception */
+.chroma .nf, /* Name.Function */
+.chroma .nl, /* Name.Label */
+.chroma .nn, /* Name.Namespace */
+.chroma .nx, /* Name.Other */
+.chroma .py, /* Name.Property */
+.chroma .nt, /* Name.Tag */
+.chroma .nv, /* Name.Variable */
+.chroma .vc, /* Name.Variable.Class */
+.chroma .vg, /* Name.Variable.Global */
+.chroma .vi, /* Name.Variable.Instance */
+.chroma .vm  /* Name.Variable.Magic */ {
+  color: #6f42c1;
+}
+
+/* Modo oscuro */
+.dark .chroma {
+  background-color: #2d333b;
+  color: #e1e4e8;
+}
+
+.dark .chroma .k,
+.dark .chroma .kc,
+.dark .chroma .kd,
+.dark .chroma .kn,
+.dark .chroma .kp,
+.dark .chroma .kr,
+.dark .chroma .kt {
+  color: #ff7b72;
+}
+
+.dark .chroma .s,
+.dark .chroma .sa,
+.dark .chroma .sb,
+.dark .chroma .sc,
+.dark .chroma .dl,
+.dark .chroma .sd,
+.dark .chroma .s2,
+.dark .chroma .se,
+.dark .chroma .sh,
+.dark .chroma .si,
+.dark .chroma .sx,
+.dark .chroma .sr,
+.dark .chroma .s1,
+.dark .chroma .ss {
+  color: #a5d6ff;
+}
+
+.dark .chroma .m,
+.dark .chroma .mb,
+.dark .chroma .mf,
+.dark .chroma .mh,
+.dark .chroma .mi,
+.dark .chroma .mo {
+  color: #79c0ff;
+}
+
+.dark .chroma .c,
+.dark .chroma .ch,
+.dark .chroma .cm,
+.dark .chroma .c1,
+.dark .chroma .cs,
+.dark .chroma .cp,
+.dark .chroma .cpf {
+  color: #8b949e;
+}
+
+.dark .chroma .na,
+.dark .chroma .nb,
+.dark .chroma .nc,
+.dark .chroma .no,
+.dark .chroma .nd,
+.dark .chroma .ni,
+.dark .chroma .ne,
+.dark .chroma .nf,
+.dark .chroma .nl,
+.dark .chroma .nn,
+.dark .chroma .nx,
+.dark .chroma .py,
+.dark .chroma .nt,
+.dark .chroma .nv,
+.dark .chroma .vc,
+.dark .chroma .vg,
+.dark .chroma .vi,
+.dark .chroma .vm {
+  color: #d2a8ff;
+}
