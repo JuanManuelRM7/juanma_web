@@ -16,14 +16,8 @@ const expandAccordion = (elem) => {
       } catch {}
     }
   } else {
-    // Si no está activo, cerramos todos y abrimos este
-    allAccordion.forEach((acc) => {
-      acc.classList.remove("active");
-    });
+    // Abrimos este panel (sin cerrar los demás)
     elem.parentElement.classList.add("active");
-    allPanels.forEach(function (elem) {
-      elem.style.maxHeight = null;
-    });
     let activePanel = elem.parentElement.nextElementSibling;
     if (
       activePanel.id != "skill-panel" &&
