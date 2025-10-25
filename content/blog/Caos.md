@@ -1,9 +1,14 @@
 ---
-title: "Del Clima al Caos: una analogía entre meteorología y dinámica de poblaciones"
+title: "Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones"
 date: 2025-10-25
-tags: []
-categories: []
-description: 
+tags:
+    - caos
+    - efecto-mariposa
+    - ecuación-logística
+    - dinámica-poblacional
+    - meteorología
+    - modelos-matemáticos
+description: "Analogía entre el caos meteorológico y la dinámica poblacional mediante la ecuación logística; análisis de regímenes estables y caóticos con código y visualizaciones."
 draft: false
 ---
 
