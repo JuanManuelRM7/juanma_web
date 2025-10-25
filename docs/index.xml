@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title/><link>https://juanmanuel.petrer.eu/</link><description>Recent content on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 25 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>Predicciones por Conjuntos en Meteorología</title><link>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</guid><description>&lt;div class="w-full p-4 mb-8 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm"&gt;
  &lt;div class="flex flex-col md:flex-row items-center justify-between"&gt;
  &lt;div class="mb-4 md:mb-0"&gt;
- &lt;h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200"&gt;Artículo original (trabajo universitario)&lt;/h3&gt;
+ &lt;h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200"&gt;Artículo original (trabajo universitario - USAL 2023)&lt;/h3&gt;
  &lt;p class="text-gray-600 dark:text-gray-400"&gt;PDF con la versión extendida&lt;/p&gt;
  &lt;/div&gt;
  &lt;a href="https://juanmanuel.petrer.eu/caos_spc.pdf" 
@@ -15,9 +15,7 @@
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;La predecibilidad es a la prediccion como el romance es al sexo&lt;/p&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;¿Has notado que a veces el pronóstico del tiempo indica lluvia y termina siendo un día soleado? ¿O que la temperatura prevista difiere significativamente de la real? Estos &amp;ldquo;fallos&amp;rdquo; en las predicciones meteorológicas no son simples errores, sino manifestaciones de la complejidad inherente a la predicción del tiempo. En este artículo, exploraremos en profundidad cómo la meteorología moderna ha evolucionado desde los modelos deterministas hacia las predicciones por conjuntos, una transformación que nos permite no solo pronosticar el tiempo, sino también entender y cuantificar la incertidumbre en nuestras predicciones.&lt;/p&gt;</description></item><item><title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title><link>https://juanmanuel.petrer.eu/blog/caos/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/caos/</guid><description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;
+&lt;p&gt;La predecibilidad es a la prediccion como el romance es al sexo&lt;/p&gt;</description></item><item><title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title><link>https://juanmanuel.petrer.eu/blog/caos/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/caos/</guid><description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;
 Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;

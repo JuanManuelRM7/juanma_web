@@ -7,7 +7,7 @@ tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "i
 ---
 
 {{< download-banner
-    title="Artículo original (trabajo universitario)"
+    title="Artículo original (trabajo universitario - USAL 2023)"
     description="PDF con la versión extendida"
     buttonText="Descargar PDF"
     downloadUrl="/caos_spc.pdf"
