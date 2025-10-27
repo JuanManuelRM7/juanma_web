@@ -1,6 +1,6 @@
 ---
 title: "Tiempos Característicos Estelares: El Reloj Interior de las Estrellas"
-date: 2022-03-25
+date: 2025-10-27
 draft: false
 author: "Juan Manuel Ruiz Muñoz"
 tags: ["astrofísica", "estrellas", "física"]
