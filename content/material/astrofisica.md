@@ -7,8 +7,8 @@ tags: ["física", "astrofísica", "astronomía", "mecánica celeste"]
 
 ## Contenido
 
-- [Tiempos característicos estelares](/Material/astrofisica/tiempos_estelares.pdf) - Astrofísica Estelar (Universidad de Alicante).
-- [Diagrama Hertsprung-Russell](/Material/astrofisica/paper_HR.pdf) - Técnicas Experimentales III (Universidad de Alicante).
+- [Tiempos característicos estelares](../../static/material/astrofisica/tiempos_estelares.pdf) - Astrofísica Estelar (Universidad de Alicante).
+- [Diagrama Hertsprung-Russell](../../static/material/astrofisica/paper_HR.pdf) - Técnicas Experimentales III (Universidad de Alicante).
 
 ## Beamers
 - 
