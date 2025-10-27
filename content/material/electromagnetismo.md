@@ -7,13 +7,4 @@ tags: ["física", "electromagnetismo", "campos", "ondas"]
 
 ## Contenido
 
-En esta sección encontrarás material relacionado con el Electromagnetismo:
-
-- Electrostática y magnetostática
-- Campos eléctricos y magnéticos
-- Ecuaciones de Maxwell
-- Ondas electromagnéticas
-- Potenciales electromagnéticos
-- Radiación
-
 *Próximamente disponible*

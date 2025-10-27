@@ -7,12 +7,4 @@ tags: ["física", "astrofísica", "astronomía", "mecánica celeste"]
 
 ## Contenido
 
-En esta sección encontrarás material relacionado con la asignatura de Astrofísica, incluyendo:
-
-- Mecánica celeste
-- Estructura y evolución estelar
-- Cosmología
-- Sistemas planetarios
-- Galaxias y estructura a gran escala
-
 *Próximamente disponible*
