@@ -5,14 +5,12 @@
   <div class="flex gap-1">
     <a class="nav-menu-item" href="{{ .Site.BaseURL }}">Inicio</a>
     <a class="nav-menu-item" href="{{ `blog` | relURL }}">Blog</a>
-    <a class="nav-menu-item" href="{{ `material` | relURL }}">Material Universitario</a>
   </div>
-  <div class="absolute left-1/2 transform -translate-x-1/2">
+  <div class="flex items-center gap-4">
     <div id="clock" class="text-emerald-700 dark:text-emerald-300 font-semibold text-base md:text-lg"></div>
-  </div>
-  <div>
+    <a class="nav-menu-item !p-1 !px-2" href="{{ `material` | relURL }}">Material</a>
     <i
-  class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
+      class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
       onclick="toggleTheme()"
     ></i>
   </div>
