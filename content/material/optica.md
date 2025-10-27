@@ -7,4 +7,6 @@ tags: ["física", "óptica", "ondas"]
 
 ## Contenido
 
-- [Doble Rendija](/material/optica/doble_rendija.pdf) - Estudio del experimento de la doble rendija (Universidad de Alicante).
+- [Doble Rendija](/material/optica/doble_rendija.pdf) - Técnicas Experimentales III (Universidad de Alicante).
+
+Si encuentras algún error o tienes sugerencias, no dudes en contactar.

@@ -11,7 +11,7 @@ tags: ["física", "astrofísica", "astronomía", "mecánica celeste"]
 - [Diagrama HR](/material/astrofisica/paper_HR.pdf) - Técnicas Experimentales III (Universidad de Alicante).
 
 
-## Beamers
+## Beamer
 - [Diagrama HR](/material/astrofisica/diagramaHR.pdf) - Asrofísica Estelar (Universidad de Alicante).
 - [Rotación Galáctica](/material/astrofisica/rotacion_galactica.pdf) - Fundamentos de Astrofísica (Universidad de Alicante).
 

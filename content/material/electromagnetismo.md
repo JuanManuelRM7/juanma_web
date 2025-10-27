@@ -8,4 +8,6 @@ tags: ["física", "electromagnetismo", "campos"]
 ## Contenido
 
 
-- [Formulario Electromagnetismo I](/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf) - Formulario completo de Electromagnetismo I (Universidad de Alicante).
+- [Formulario Electromagnetismo I](/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf) - Electromagnetismo I (Universidad de Alicante).
+
+Si encuentras algún error o tienes sugerencias, no dudes en contactar.

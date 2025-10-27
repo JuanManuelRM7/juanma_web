@@ -8,4 +8,8 @@ tags: ["física", "computación", "simulación", "métodos numéricos"]
 ## Contenido
 
 
+
+## Beamer
 - [Planeo de un Avión](/material/fisica-computacional/planeo_avion.pdf) - Simulación del planeo de un avión (Universidad de Alicante).
+
+Si encuentras algún error o tienes sugerencias, no dudes en contactar.

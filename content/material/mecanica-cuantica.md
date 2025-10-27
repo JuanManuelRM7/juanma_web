@@ -7,5 +7,9 @@ tags: ["física", "cuántica", "física moderna", "mecánica cuántica"]
 
 ## Contenido
 
-- [Radiación del Cuerpo Negro](/material/mecanica-cuantica/cuerpo_negro.pdf) - Estudio detallado de la radiación del cuerpo negro (Universidad de Alicante).
+- [Radiación del Cuerpo Negro](/material/mecanica-cuantica/cuerpo_negro.pdf) -  Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).
+
+## Beamer
 - [Distribución Canónica](/material/mecanica-cuantica/distribucion_canonica.pdf) - Análisis de la distribución canónica en mecánica estadística (Universidad de Alicante).
+
+Si encuentras algún error o tienes sugerencias, no dudes en contactar.
