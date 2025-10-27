@@ -8,5 +8,4 @@ tags: ["física", "computación", "simulación", "métodos numéricos"]
 ## Contenido
 
 
-
 - [Planeo de un Avión](/material/fisica-computacional/planeo_avion.pdf) - Simulación del planeo de un avión (Universidad de Alicante).
