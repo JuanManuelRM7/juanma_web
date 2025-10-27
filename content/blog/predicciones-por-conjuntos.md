@@ -6,13 +6,6 @@ description: "Una exploración detallada de la transición de modelos determinis
 tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "incertidumbre", "análisis estadístico"]
 ---
 
-{{< download-banner
-    title="Artículo original (trabajo universitario - USAL 2023)"
-    description="PDF con la versión extendida"
-    buttonText="Descargar PDF"
-    downloadUrl="/caos_spc.pdf"
->}}
-
 > La predecibilidad es a la prediccion como el romance es al sexo
 
 ---
