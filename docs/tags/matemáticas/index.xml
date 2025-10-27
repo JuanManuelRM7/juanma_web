@@ -9,11 +9,11 @@
     <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/tags/matem%C3%A1ticas/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ecuaciones Diferenciales Ordinarias</title>
+      <title>Ecuaciones Diferenciales</title>
       <link>https://juanmanuel.petrer.eu/material/edos/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://juanmanuel.petrer.eu/material/edos/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Próximamente disponible&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf&#34;&gt;Curvas de Persecución&lt;/a&gt; - Problemas resueltos de curvas de persecución (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

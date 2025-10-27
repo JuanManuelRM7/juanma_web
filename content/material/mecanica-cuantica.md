@@ -1,18 +1,11 @@
-------
+---
+title: "Mecánica Cuántica"
+date: 2025-10-27
+description: "Material y recursos de Mecánica Cuántica: principios fundamentales, física moderna y teoría cuántica"
+tags: ["física", "cuántica", "física moderna", "mecánica cuántica"]
+---
 
-title: "Mecánica Cuántica"title: "Mecánica Cuántica"
-
-date: 2025-10-27date: 2025-10-27
-
-description: "Material y recursos de Mecánica Cuántica: principios fundamentales, física moderna y teoría cuántica"description: "Material de Mecánica Cuántica: principios fundamentales, formalismo matemático, aplicaciones y sistemas cuánticos"
-
-tags: ["física", "cuántica", "física moderna", "mecánica cuántica"]tags: ["física", "cuántica", "mecánica cuántica", "física moderna"]
-
-------
-
-
-
-## Contenido## Contenido
+## Contenido
 
 
 

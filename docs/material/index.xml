@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Materials on </title>
+    <title>Materiales Universitarios on </title>
     <link>https://juanmanuel.petrer.eu/material/</link>
-    <description>Recent content in Materials on </description>
+    <description>Recent content in Materiales Universitarios on </description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
@@ -14,6 +14,41 @@
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://juanmanuel.petrer.eu/material/astrofisica/</guid>
       <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/tiempos_estelares.pdf&#34;&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf&#34;&gt;Diagrama HR&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamers&#34;&gt;Beamers&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf&#34;&gt;Diagrama HR&lt;/a&gt; - Asrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/rotacion_galactica.pdf&#34;&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ecuaciones Diferenciales</title>
+      <link>https://juanmanuel.petrer.eu/material/edos/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/edos/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf&#34;&gt;Curvas de Persecución&lt;/a&gt; - Problemas resueltos de curvas de persecución (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Electromagnetismo</title>
+      <link>https://juanmanuel.petrer.eu/material/electromagnetismo/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/electromagnetismo/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf&#34;&gt;Formulario Electromagnetismo I&lt;/a&gt; - Formulario completo de Electromagnetismo I (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Física Computacional</title>
+      <link>https://juanmanuel.petrer.eu/material/fisica-computacional/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/fisica-computacional/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/planeo_avion.pdf&#34;&gt;Planeo de un Avión&lt;/a&gt; - Simulación del planeo de un avión (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Mecánica Cuántica</title>
+      <link>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/cuerpo_negro.pdf&#34;&gt;Radiación del Cuerpo Negro&lt;/a&gt; - Estudio detallado de la radiación del cuerpo negro (Universidad de Alicante).&lt;em&gt;Próximamente disponible&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/distribucion_canonica.pdf&#34;&gt;Distribución Canónica&lt;/a&gt; - Análisis de la distribución canónica en mecánica estadística (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Óptica</title>
+      <link>https://juanmanuel.petrer.eu/material/optica/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/optica/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/optica/doble_rendija.pdf&#34;&gt;Doble Rendija&lt;/a&gt; - Estudio del experimento de la doble rendija (Universidad de Alicante).&#xA;&lt;em&gt;Próximamente disponible&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
