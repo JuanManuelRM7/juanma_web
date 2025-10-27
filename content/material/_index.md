@@ -1,8 +1,11 @@
 ---
-title: "Material Universitario"
-description: "Recursos y material de estudio para diferentes asignaturas"
+---
+title: "Material universitario"
+description: "Recursos y materiales de estudio para diversas asignaturas"
 ---
 
-Bienvenido a la sección de material universitario. Aquí encontrarás recursos, apuntes y material complementario de diversas asignaturas de física y matemáticas. El contenido está organizado por temáticas para facilitar su acceso.
+Bienvenido a la sección de material universitario. Aquí encontrarás recursos que he recopilado y elaborado a lo largo de mis estudios en los grados de Matemáticas y Física.
 
-Cada sección incluye material teórico, ejercicios resueltos y, en algunos casos, notebooks interactivos para practicar los conceptos aprendidos.
+Este espacio está pensado como material de lectura y referencia para facilitar la comprensión de conceptos; también incluiré ejercicios resueltos, formularios y código en Python para la modelización y resolución de problemas.
+
+Ten en cuenta que es trabajo personal y puede contener errores o necesitar mejoras en su presentación.
