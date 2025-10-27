@@ -11,10 +11,24 @@
         hover:shadow-lg hover:shadow-emerald-500/10
         hover:-translate-y-1 hover:scale-[1.02]
         hover:border-emerald-500 dark:hover:border-emerald-400
-        relative
+        relative overflow-hidden
         after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-br after:from-emerald-500/0 after:to-emerald-500/0 after:transition-colors after:duration-300
         hover:after:from-emerald-500/5 hover:after:to-emerald-500/10
         dark:hover:after:from-emerald-400/5 dark:hover:after:to-emerald-400/10">
+        
+        {{ if eq .Title "Astrofísica" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2220%22 cy=%2220%22 r=%222%22 fill=%22currentColor%22 /><circle cx=%2260%22 cy=%2240%22 r=%223%22 fill=%22currentColor%22 /><circle cx=%2280%22 cy=%2280%22 r=%221.5%22 fill=%22currentColor%22 /><circle cx=%2240%22 cy=%2260%22 r=%222.5%22 fill=%22currentColor%22 /></svg>'); background-size: 100px 100px;"></div>
+        {{ else if eq .Title "Mecánica Cuántica" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><ellipse cx=%2250%22 cy=%2250%22 rx=%2240%22 ry=%2220%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2220%22 ry=%2240%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221%22 /><circle cx=%2250%22 cy=%2250%22 r=%223%22 fill=%22currentColor%22 /></svg>'); background-size: 80px 80px;"></div>
+        {{ else if eq .Title "Óptica" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M10 50 L90 50%22 stroke=%22currentColor%22 stroke-width=%222%22 /><path d=%22M30 30 L70 70%22 stroke=%22currentColor%22 stroke-width=%222%22 /><path d=%22M30 70 L70 30%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: 60px 60px;"></div>
+        {{ else if eq .Title "Electromagnetismo" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M20 50 Q50 20 80 50%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /><path d=%22M20 50 Q50 80 80 50%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: 70px 70px;"></div>
+        {{ else if eq .Title "Ecuaciones Diferenciales Ordinarias" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M20 80 Q35 20 50 80 Q65 20 80 80%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: 60px 60px;"></div>
+        {{ else if eq .Title "Física Computacional" }}
+        <div class="absolute inset-0 opacity-[0.15] dark:opacity-10" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2220%22 y=%2220%22 width=%2260%22 height=%2260%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /><circle cx=%2250%22 cy=%2250%22 r=%2220%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /><path d=%22M30 30 L70 70 M30 70 L70 30%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: 50px 50px;"></div>
+        {{ end }}
         
         <h3 class="text-gray-900 dark:text-gray-100 mb-2 relative z-10 transition-colors duration-300 group-hover:text-emerald-800 dark:group-hover:text-emerald-300">
           {{ .Title }}
