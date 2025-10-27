@@ -1,6 +1,7 @@
 ---
 title: "Materiales Universitarios"
-description: "Aquí podrás encontrar materiales y recursos de las distintas asignaturas que he cursado durante el grado en Física y el grado en Matemáticas."
+menu: main
+weight: 4
 ---
 
 Bienvenido a la sección de material universitario. Aquí encontrarás recursos que he recopilado y elaborado a lo largo de mis estudios en los grados de Matemáticas y Física.
