@@ -1,5 +1,4 @@
 ---
----
 title: "Material universitario"
 description: "Recursos y materiales de estudio para diversas asignaturas"
 ---
