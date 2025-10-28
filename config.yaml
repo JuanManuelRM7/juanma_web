@@ -192,4 +192,8 @@ params:
         url: "https://matplotlib.org/"
       - skill: "Transformers"
         url: "https://huggingface.co/docs/transformers/"
+      - skill: "Torchmetrics"
+        url: "https://torchmetrics.readthedocs.io/en/latest/"
+      - skill: "Pytorch Lightning"
+        url: "https://pytorch-lightning.readthedocs.io/en/stable/"
 
