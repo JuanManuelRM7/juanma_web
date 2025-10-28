@@ -9,6 +9,8 @@ tags: ["física", "astrofísica", "astronomía", "mecánica celeste"]
 
 - [Tiempos característicos estelares](/material/astrofisica/tiempos_estelares.pdf) - Astrofísica Estelar (Universidad de Alicante).
 - [Diagrama HR](/material/astrofisica/paper_HR.pdf) - Técnicas Experimentales III (Universidad de Alicante).
+- [Experimento de Eotvos](/material/astrofisica/exp_eotvos.pdf) - Gravitación (Universidad de Salamanca).
+- [Ejercicios varios a mano](/material/astrofisica/ejercicios_varios.pdf) - Gravitación (Universidad de Salamanca).
 
 
 ## Beamer

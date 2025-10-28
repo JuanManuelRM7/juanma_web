@@ -11,6 +11,6 @@ tags: ["física", "meteorología", "atmósfera", "termodinámica"]
 
 ## Beamer
 
-- [Presenación SPC](/material/fisica-atmosfera/beamer_spc.pdf) - Meteorología (Universidad de Salamanca).
+- [Presentación SPC](/material/fisica-atmosfera/beamer_spc.pdf) - Meteorología (Universidad de Salamanca).
 
 Si encuentras algún error o tienes sugerencias, no dudes en contactar.
