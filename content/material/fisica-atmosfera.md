@@ -7,7 +7,7 @@ tags: ["física", "meteorología", "atmósfera", "termodinámica"]
 
 ## Contenido
 
-- [Estudio precipitación Castilla y León](/material/fisica-atmosfera/precipitacion_cyl.clsx) - Meteorología (Universidad de Salamanca).
+- [Estudio precipitación Castilla y León](/material/fisica-atmosfera/precipitacion_cyl.xlsx) - Meteorología (Universidad de Salamanca).
 
 ## Beamer
 
