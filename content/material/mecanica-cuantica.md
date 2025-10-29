@@ -23,7 +23,7 @@ tags: ["física", "cuántica", "física moderna", "mecánica cuántica"]
 
 - [Resolución de pozos de potencial](/material/mecanica-cuantica/pozos.pdf) -  Mécanica Cuántica I (Universidad de Alicante).
 
-- [Notación de Dirac y QBITS](/material/mecanica-cuantica/pozos.pdf) -  Mécanica Cuántica I (Universidad de Alicante).
+- [Notación de Dirac y QBITS](/material/mecanica-cuantica/qbits.pdf) -  Mécanica Cuántica I (Universidad de Alicante).
 
 ## Beamer
 - [Distribución Canónica](/material/mecanica-cuantica/distribucion_canonica.pdf) - Análisis de la distribución canónica en mecánica estadística (Universidad de Alicante).
