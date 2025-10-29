@@ -5,8 +5,11 @@ description: "Material y recursos de Física de la Atmósfera: meteorología, di
 tags: ["física", "meteorología", "atmósfera", "termodinámica"]
 ---
 
-> ⚠️ **Advertencia**: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
-{: .bg-red-100 .dark:bg-red-900 .border-l-4 .border-red-500 .dark:border-red-500 .p-4 .mb-4 .text-red-700 .dark:text-red-300}
+<div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4">
+<div class="text-red-700 dark:text-red-300">
+<strong>⚠️ Advertencia</strong>: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
+</div>
+</div>
 
 ## Contenido
 
