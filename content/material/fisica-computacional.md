@@ -5,6 +5,9 @@ description: "Material y recursos de Física Computacional: simulaciones, métod
 tags: ["física", "computación", "simulación", "métodos numéricos"]
 ---
 
+> ⚠️ **Advertencia**: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
+{: .bg-red-100 .dark:bg-red-900 .border-l-4 .border-red-500 .dark:border-red-500 .p-4 .mb-4 .text-red-700 .dark:text-red-300}
+
 ## Modelización
 
 - [Resolución de problemas físicos mediante diversos métodos numéricos](/material/fisica-computacional/misc_1.pdf) - Física Computacional (Universidad de Alicante).

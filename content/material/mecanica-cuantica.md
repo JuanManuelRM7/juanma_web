@@ -5,6 +5,9 @@ description: "Material y recursos de Mecánica Cuántica: principios fundamental
 tags: ["física", "cuántica", "física moderna", "mecánica cuántica"]
 ---
 
+> ⚠️ **Advertencia**: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
+{: .bg-red-100 .dark:bg-red-900 .border-l-4 .border-red-500 .dark:border-red-500 .p-4 .mb-4 .text-red-700 .dark:text-red-300}
+
 ## Contenido
 
 - [Radiación del Cuerpo Negro](/material/mecanica-cuantica/cuerpo_negro.pdf) -  Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).
