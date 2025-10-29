@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mecánica Cuántica on </title>
+    <link>https://juanmanuel.petrer.eu/tags/mec%C3%A1nica-cu%C3%A1ntica/</link>
+    <description>Recent content in Mecánica Cuántica on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/mec%C3%A1nica-cu%C3%A1ntica/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mecánica Cuántica</title>
+      <link>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;⚠️ &lt;strong&gt;Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xA;{: .bg-red-100 .dark:bg-red-900 .border-l-4 .border-red-500 .dark:border-red-500 .p-4 .mb-4 .text-red-700 .dark:text-red-300}&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/cuerpo_negro.pdf&#34;&gt;Radiación del Cuerpo Negro&lt;/a&gt; -  Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/moleculas_diatomicas.pdf&#34;&gt;Simulación y análisis de espectros (MW, IR y RAMAN) de moléculas diatómicas&lt;/a&gt; -  Física nuclear y de partículas (Universidad de Alicante).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

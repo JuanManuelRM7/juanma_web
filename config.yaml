@@ -4,6 +4,9 @@ publishDir: docs
 build:
   writeStats: true
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     codeFences: true
     guessSyntax: true

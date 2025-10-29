@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es" class="m-auto "><head>
+  
+
+
+
+<title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="Analogía entre el caos meteorológico y la dinámica poblacional mediante la ecuación logística; análisis de regímenes estables y caóticos con código y visualizaciones." />
+<meta name="author" content="Juan Manuel" />
+<link rel="canonical" href="https://juanmanuel.petrer.eu/blog/caos/" />
+
+
+<meta property="og:title" content="Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones" />
+<meta property="og:description" content="Analogía entre el caos meteorológico y la dinámica poblacional mediante la ecuación logística; análisis de regímenes estables y caóticos con código y visualizaciones." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://juanmanuel.petrer.eu/blog/caos/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones" />
+<meta name="twitter:description" content="Analogía entre el caos meteorológico y la dinámica poblacional mediante la ecuación logística; análisis de regímenes estables y caóticos con código y visualizaciones." />
+
+<meta name="generator" content="Sitio web por JM con &lt;meta name=generator Hugo 0.149.1&gt;" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+
+  
+  
+  
+  
+  <link href="/main.min.64771dd28bf461bb089da81da7730f82008df2a37b248c50d7786b2e00176a7b.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/search.css" />
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/syntax.css" />
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("fa-moon");
+          themeToggle.classList.add("fa-sun");
+        } else {
+          themeToggle.classList.remove("fa-sun");
+          themeToggle.classList.add("fa-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
+    }
+
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
+    window.onload = () => {
+      fixThemeToggleIcon(theme);
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-emerald-500 dark:border-emerald-400 justify-between items-center bg-gradient-to-r from-transparent via-emerald-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
+>
+  <div class="flex gap-1">
+    <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Inicio</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
+    <a class="nav-menu-item hidden md:block" href="/material">Material Universitario</a>
+  </div>
+  <div class="absolute left-1/2 transform -translate-x-1/2">
+    <div id="clock" class="text-emerald-700 dark:text-emerald-300 font-semibold text-base md:text-lg"></div>
+  </div>
+  <div class="flex items-center">
+    <a class="nav-menu-item md:hidden !p-1 !px-2 mx-5" href="/material">Material</a>
+    <i
+      class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
+      onclick="toggleTheme()"
+    ></i>
+  </div>
+</header>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    const day = now.getDate();
+    const monthNum = String(now.getMonth() + 1).padStart(2, '0');
+    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 
+                    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    const monthName = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    
+    const isMobile = window.innerWidth < 768;
+    const dateStr = isMobile ? `${day}/${monthNum}/${year}` : `${day} de ${monthName} de ${year}`;
+    
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+      clockElement.innerHTML = `<div class="text-center"><div class="text-xs md:text-base">${dateStr}</div><div>${hours}:${minutes}:${seconds}</div></div>`;
+    }
+  }
+  
+  
+  updateClock();
+  setInterval(updateClock, 1000);
+  
+  
+  window.addEventListener('resize', updateClock);
+</script>
+
+
+
+    
+    <main class="grow">
+<div class="prose prose-stone dark:prose-invert max-w-none">
+<div class="mb-3">
+  <h1 class="top-h1">Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</h1>
+  <p class="mb-1">October 24, 2025</p>
+  <p>&mdash;</p>
+</div>
+<div class="content">
+  <p>En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.<br>
+Ese hallazgo, conocido como <strong>efecto mariposa</strong>, dio origen al concepto moderno de <strong>caos determinista</strong>.</p>
+<p>Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la <strong>dinámica poblacional</strong> descrita por la <strong>ecuación logística</strong>:</p>
+<!-- raw HTML omitted -->
+<p>X_{n+1} = r * X_n(1 - X_n)</p>
+<!-- raw HTML omitted -->
+<p>donde:</p>
+<ul>
+<li>( x_n ) representa la población normalizada en el tiempo ( n ),</li>
+<li>( r ) es el parámetro de crecimiento,</li>
+<li>y el término ( (1 - x_n) ) introduce un límite ambiental.</li>
+</ul>
+<hr>
+<p>Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">poblacion</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">x_0</span><span class="p">,</span> <span class="n">cota</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calcula la evolución de una población según el modelo logístico:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        x_{n+1} = r * x_n * (1 - x_n)
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Parámetros:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        r (float): Tasa de crecimiento.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        x_0 (float): Valor inicial de la población (entre 0 y 1).
+</span></span></span><span class="line"><span class="cl"><span class="s2">        cota (float): Tolerancia para considerar que se alcanzó la estabilización.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Retorna:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        valor_estable (float): Valor final de estabilización.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        iteraciones (int): Número de iteraciones realizadas.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        evolucion (list): Lista con los valores de evolución.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">evolucion</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_p</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">evolucion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">evolucion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">evolucion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Condición de estabilidad</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">evolucion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">evolucion</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">cota</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Evita bucles infinitos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">evolucion</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">valor_estable</span> <span class="o">=</span> <span class="n">evolucion</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">iteraciones</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">evolucion</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valor_estable</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="n">evolucion</span>
+</span></span></code></pre></div><h3 id="régimen-no-caótico-equilibrio-y-estabilidad">Régimen no caótico: equilibrio y estabilidad</h3>
+<p>Cuando los valores de ( r ) son pequeños —por ejemplo, ( r = 1.0 ) o ( r = 1.5 )— el sistema converge rápidamente hacia un punto de equilibrio.<br>
+En este <strong>régimen no caótico</strong>, cualquier población inicial tenderá a estabilizarse en un mismo valor final, independientemente de pequeñas diferencias en ( x_0 ).</p>
+<p>Visualmente, las trayectorias se <strong>aplanan</strong> hacia un valor fijo.<br>
+Esto representa un entorno predecible:</p>
+<ul>
+<li>La población alcanza un tamaño estable.</li>
+<li>El comportamiento a largo plazo puede anticiparse fácilmente.</li>
+</ul>
+<p>En términos meteorológicos, este escenario se asemeja a un sistema atmosférico <strong>estable</strong>, donde pequeñas perturbaciones se disipan y el clima retorna a su estado medio: un ejemplo de orden, equilibrio y previsibilidad.</p>
+<h4 id="representación-gráfica-del-régimen-no-caótico">Representación gráfica del régimen no caótico</h4>
+<p><img src="/images/nocaos.png" alt="Evolución no caótica"></p>
+<hr>
+<h3 id="régimen-caótico-sensibilidad-y-divergencia">Régimen caótico: sensibilidad y divergencia</h3>
+<p>Cuando aumentamos ligeramente el parámetro a valores como ( r = 3.0 ) o ( r = 3.005 ), la situación cambia radicalmente.<br>
+El sistema deja de estabilizarse: aparece una <strong>oscilación periódica</strong> que luego se vuelve <strong>aperiódica y caótica</strong>.<br>
+Pequeñas diferencias en ( r ) o en la condición inicial generan trayectorias que <strong>divergen rápidamente</strong> con el tiempo.</p>
+<p>En la gráfica, ambas curvas parten del mismo punto pero acaban describiendo movimientos completamente diferentes.<br>
+Aunque la ecuación es determinista, su evolución se vuelve <strong>prácticamente impredecible</strong>.</p>
+<p>Aquí es donde la analogía meteorológica se hace evidente:<br>
+el comportamiento de la atmósfera, como el de estas poblaciones, <strong>obedece reglas deterministas</strong>, pero la extrema sensibilidad a las condiciones iniciales hace que el pronóstico a largo plazo se vuelva imposible.<br>
+Un cambio minúsculo —una milésima en ( r ), una perturbación de temperatura— puede alterar completamente la evolución del sistema.</p>
+<h4 id="representación-gráfica-del-régimen-caótico">Representación gráfica del régimen caótico</h4>
+<p><img src="/images/caos.png" alt="Evolución caótica"></p>
+<hr>
+<p>Tanto en las ecuaciones meteorológicas como en el modelo logístico, el <strong>caos no significa desorden absoluto</strong>, sino <strong>complejidad dentro de un sistema perfectamente determinista</strong>.<br>
+La ecuación sigue siendo la misma; lo que cambia es la relación entre sus variables.<br>
+Este paralelismo entre el clima y las poblaciones revela una verdad profunda:</p>
+<blockquote>
+<p>La predictibilidad no depende de conocer las leyes, sino de la estabilidad del sistema que esas leyes describen.</p></blockquote>
+
+</div>
+</div>
+<div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/tfg/"
+      title="Bloqueos atmosféricos desde un punto de vista lagrangiano."
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <a
+      href="/blog/predicciones-por-conjuntos/"
+      title="Predicciones por Conjuntos en Meteorología"
+    >
+      <i class="nav-menu fas fa-chevron-circle-right"></i>
+    </a>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class="text-sm text-center border-t-2 border-emerald-500 dark:border-emerald-400  py-6 bg-gradient-to-r from-transparent via-emerald-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent "
+  style="box-shadow: 0 -4px 6px -1px rgba(5, 150, 105, 0.1);">
+  <p class="markdownify"></p>
+  <p class="text-xs text-gray-500 dark:text-gray-500">
+    <i>Diseñado por</i>
+    <a href="https://github.com/JuanManuelRM7" class="hover:text-emerald-600 dark:hover:text-emerald-400">
+      JM
+    </a>
+  </p>
+
+  
+</footer>
+
+    
+  </body>
+</html>
