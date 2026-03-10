@@ -2,7 +2,7 @@
 {{ partial "welcome_modal" . }}
 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-2 px-2 md:px-0">
   <div class="col-span-1 md:col-span-2">
-  <div class="bg-gradient-to-br from-gray-200 via-gray-300 to-emerald-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 drop-shadow-lg p-4 rounded-lg relative overflow-hidden border-2 border-emerald-500 dark:border-emerald-400">
+  <div class="bg-gradient-to-br from-cyan-50 via-cyan-100 to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 drop-shadow-lg p-4 rounded-lg relative overflow-hidden border-2 border-cyan-500 dark:border-cyan-400">
       <div class="absolute inset-0 opacity-10 dark:opacity-5" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
       <div class="flex flex-col justify-center relative z-10">
         {{ partial "profilePhoto" . }}
@@ -16,7 +16,7 @@
       <div class="hidden md:flex justify-center mt-3 mb-2 relative z-10">
         <a
           href="{{ `/cv.pdf` | relURL }}"
-          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline min-w-[160px]"
+          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline min-w-[160px]"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -29,11 +29,11 @@
         <!-- CV Download button -->
         <a
           href="{{ `/cv.pdf` | relURL }}"
-          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline mx-auto min-w-[160px]"
+          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline mx-auto min-w-[160px]"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+          <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
           <span class="font-medium text-gray-900 dark:text-gray-100">Descargar CV</span>
         </a>
         <!-- Latest post section -->

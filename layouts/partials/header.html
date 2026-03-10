@@ -1,5 +1,5 @@
 <header
-  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-emerald-500 dark:border-emerald-400 justify-between items-center bg-gradient-to-r from-transparent via-emerald-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 justify-between items-center bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
   <div class="flex gap-1">
@@ -8,12 +8,12 @@
     <a class="nav-menu-item hidden md:block" href="{{ `material` | relURL }}">Material Universitario</a>
   </div>
   <div class="absolute left-1/2 transform -translate-x-1/2">
-    <div id="clock" class="text-emerald-700 dark:text-emerald-300 font-semibold text-base md:text-lg"></div>
+    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-base md:text-lg"></div>
   </div>
   <div class="flex items-center">
     <a class="nav-menu-item md:hidden !p-1 !px-2 mx-5" href="{{ `material` | relURL }}">Material</a>
     <i
-      class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
+      class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
       onclick="toggleTheme()"
     ></i>
   </div>
@@ -52,3 +52,4 @@
 </script>
 
 {{ partial "toggleTheme.html" . }}
+

@@ -35,9 +35,9 @@ params:
 
   profile:
     name: "Juan Manuel"
-    location: "AI Developer en VRAIA Corp."
+    location: "AI Developer - Computer Vision Specialist at VRAIA Corp."
     photo: profile.png
-    position: "AI Developer at VRAIA Corp."
+    position: "AI Developer - Computer Vision Specialist at VRAIA Corp."
   social:
     title: Links
     list:
@@ -66,14 +66,14 @@ params:
   aboutme:
     title: Sobre mí
     icon: fas fa-user
-    description: Soy un apasionado de la física y las matemáticas, con un gran interés en el cambio climático. Esta preocupación me ha llevado a sentir una especial afinidad por áreas como la meteorología y las energías renovables. Actualmente trabajo en VRAIA Corp., donde desarrollamos, entre muchas otras cosas, soluciones de deep learning para la industria del neumático.
+    description: Físico e ingeniero en inteligencia artificial especializado en visión computacional y deep learning. Mi motivación es emplear IA avanzada para resolver problemas complejos del mundo real y generar un impacto positivo. Actualmente trabajo en VRAIA Corp. desarrollando modelos de Deep Learning para detección de defectos en la industria del neumático. Interesado en física computacional, meteorología y energías renovables.
   experience:
     title: Experiencia
     icon: fas fa-briefcase
     panelId: experience-panel
     list:
 
-      - position: AI Developer
+      - position: AI Developer - Computer Vision Specialist
         dates: Junio 2025 - *Presente*
         company: VRAIA Corp.
         url: "https://vraia.com/"
@@ -85,6 +85,8 @@ params:
             - Redacción y revisión de documentación técnica.
             - Investigación y actualización constante en avances de inteligencia artificial.
             - Colaboración interdisciplinaria para alcanzar los objetivos del proyecto.
+            
+            Skills: PyTorch | TensorFlow | Computer Vision | Deep Learning | CNN | Transformers | Object Detection | OpenCV | MLflow | Docker | AWS
       - position: Data Scientist & AI Researcher
         dates: Junio 2024 - Junio 2025
         company: AIR Institute & Grupo de Investigación BISITE
@@ -114,12 +116,17 @@ params:
         dates: 2020 - 2024
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "/tfg.pdf"
+        specialization: "Física Computacional, Métodos Numéricos, Física de la Atmósfera"
+        skills: "Computational Physics | Numerical Methods | Python | MATLAB | Data Analysis"
       - degree: Grado en Matemáticas
         college: Universidad de Alicante
         dates: 2018 - 2023
-      - degree: Estudiante SICUE en el grado en Física y grado en Matemáticas
+        specialization: "Análisis Numérico, Ecuaciones Diferenciales, Computación Científica"
+        skills: "Linear Algebra | Numerical Analysis | Optimization | Statistics | Probability"
+      - degree: Estudiante SICUE
         college: Universidad de Salamanca
         dates: 2022 - 2023
+        details: "Intercambio académico internacional"
 
   publication:
     title: Publicaciones
@@ -147,56 +154,64 @@ params:
     panelId: skill-panel
     icon: fas fa-cogs
     list:
-      - skill: "Python"
-        url: "https://www.python.org/"
-      - skill: "LaTeX"
-        url: "https://www.latex-project.org/"
-      - skill: "HYSPLIT"
-        url: "https://www.ready.noaa.gov/HYSPLIT.php"
-      - skill: "R"
-        url: "https://www.r-project.org/"
-      - skill: "SQL"
-        url: "https://www.sql.org/"
-      - skill: "MATLAB"
-        url: "https://www.mathworks.com/products/matlab.html"
-      - skill: "AWS"
-        url: "https://aws.amazon.com/"
-      - skill: "Git"
-        url: "https://git-scm.com/"
-      - skill: "GitHub"
-        url: "https://github.com/"
-      - skill: "Docker"
-        url: "https://www.docker.com/"
-      - skill: "HTML"
-        url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
-      - skill: "CSS"
-        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
-      - skill: "MLflow"
-        url: "https://mlflow.org/"
-      - skill: "Tensorboard"
-        url: "https://www.tensorflow.org/tensorboard"
-      - skill: "JavaScript"
-        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-      - skill: "TensorFlow"
-        url: "https://www.tensorflow.org/"
-      - skill: "Keras"
-        url: "https://keras.io/"
       - skill: "PyTorch"
         url: "https://pytorch.org/"
+      - skill: "TensorFlow"
+        url: "https://www.tensorflow.org/"
+      - skill: "Computer Vision"
+        url: "https://en.wikipedia.org/wiki/Computer_vision"
+      - skill: "OpenCV"
+        url: "https://opencv.org/"
+      - skill: "Deep Learning"
+        url: "https://en.wikipedia.org/wiki/Deep_learning"
+      - skill: "Keras"
+        url: "https://keras.io/"
+      - skill: "Convolutional Neural Networks"
+        url: "https://en.wikipedia.org/wiki/Convolutional_neural_network"
+      - skill: "Pytorch Lightning"
+        url: "https://pytorch-lightning.readthedocs.io/en/stable/"
+      - skill: "Machine Learning"
+        url: "https://en.wikipedia.org/wiki/Machine_learning"
       - skill: "scikit-learn"
         url: "https://scikit-learn.org/"
       - skill: "pandas"
         url: "https://pandas.pydata.org/"
       - skill: "NumPy"
         url: "https://numpy.org/"
-      - skill: "OpenCV"
-        url: "https://opencv.org/"
+      - skill: "Python"
+        url: "https://www.python.org/"
+      - skill: "Docker"
+        url: "https://www.docker.com/"
+      - skill: "AWS"
+        url: "https://aws.amazon.com/"
+      - skill: "MLflow"
+        url: "https://mlflow.org/"
+      - skill: "Git"
+        url: "https://git-scm.com/"
+      - skill: "GitHub"
+        url: "https://github.com/"
       - skill: "Matplotlib"
         url: "https://matplotlib.org/"
+      - skill: "Tensorboard"
+        url: "https://www.tensorflow.org/tensorboard"
+      - skill: "SQL"
+        url: "https://www.sql.org/"
       - skill: "Transformers"
         url: "https://huggingface.co/docs/transformers/"
       - skill: "Torchmetrics"
         url: "https://torchmetrics.readthedocs.io/en/latest/"
-      - skill: "Pytorch Lightning"
-        url: "https://pytorch-lightning.readthedocs.io/en/stable/"
+      - skill: "LaTeX"
+        url: "https://www.latex-project.org/"
+      - skill: "R"
+        url: "https://www.r-project.org/"
+      - skill: "MATLAB"
+        url: "https://www.mathworks.com/products/matlab.html"
+      - skill: "HYSPLIT"
+        url: "https://www.ready.noaa.gov/HYSPLIT.php"
+      - skill: "HTML"
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+      - skill: "CSS"
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      - skill: "JavaScript"
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
 

@@ -46,7 +46,7 @@
   
   
   
-  <link href="/main.min.64771dd28bf461bb089da81da7730f82008df2a37b248c50d7786b2e00176a7b.css" rel="stylesheet" />
+  <link href="/main.min.23522b01b5bff5aa8fb9a6bcce75fb4a90dcd0f501fbf841e6d467a43fc8ad66.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -124,10 +124,11 @@
     };
   </script>
 </head>
+
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
     
     <header
-  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-emerald-500 dark:border-emerald-400 justify-between items-center bg-gradient-to-r from-transparent via-emerald-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 justify-between items-center bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
   <div class="flex gap-1">
@@ -136,12 +137,12 @@
     <a class="nav-menu-item hidden md:block" href="/material">Material Universitario</a>
   </div>
   <div class="absolute left-1/2 transform -translate-x-1/2">
-    <div id="clock" class="text-emerald-700 dark:text-emerald-300 font-semibold text-base md:text-lg"></div>
+    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-base md:text-lg"></div>
   </div>
   <div class="flex items-center">
     <a class="nav-menu-item md:hidden !p-1 !px-2 mx-5" href="/material">Material</a>
     <i
-      class="fas fa-sun theme-toggle text-emerald-600 hover:text-emerald-800 dark:text-emerald-300 dark:hover:text-emerald-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
+      class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110"
       onclick="toggleTheme()"
     ></i>
   </div>
@@ -181,36 +182,37 @@
 
 
 
+
     
     <main class="grow">
 
 <div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden">
-  <div class="bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-emerald-500 dark:border-emerald-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
+  <div class="bg-gradient-to-br from-gray-50 via-white to-cyan-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-cyan-500 dark:border-cyan-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
     
     <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
     
     
     <div class="relative z-10 p-4 sm:p-6 md:p-8">
       
-      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-2">
+      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors duration-300 p-2">
         <i class="fas fa-times text-lg sm:text-xl"></i>
       </button>
       
       
       <div class="text-center mb-4 sm:mb-6">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-2 pb-1">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent mb-2 pb-1">
           ¡Bienvenido a mi sitio web!
         </h2>
-        <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-emerald-600 to-emerald-400 mx-auto rounded-full"></div>
+        <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-cyan-600 to-cyan-400 mx-auto rounded-full"></div>
       </div>
       
       
       <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
         <p>
-          Me llamo <strong class="text-emerald-700 dark:text-emerald-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.
+          Me llamo <strong class="text-cyan-700 dark:text-cyan-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.
         </p>
         <p>
-          Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-emerald-700 dark:text-emerald-300">blog</strong> (aunque aún estoy empezando con el contenido).
+          Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-cyan-700 dark:text-cyan-300">blog</strong> (aunque aún estoy empezando con el contenido).
         </p>
         <p>
           Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄
@@ -219,15 +221,15 @@
       
       
       <div class="mt-6 sm:mt-8 flex justify-center">
-        <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           ¡Empecemos! <i class="fas fa-arrow-right ml-2"></i>
         </button>
       </div>
       
       
       <div class="mt-4 text-center">
-        <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-          <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 sm:w-auto sm:h-auto rounded border-gray-300 text-emerald-600 focus:ring-emerald-500">
+        <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+          <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 sm:w-auto sm:h-auto rounded border-gray-300 text-cyan-600 focus:ring-cyan-500">
           <span>No volver a mostrar este mensaje</span>
         </label>
       </div>
@@ -302,9 +304,11 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 });
 </script>
 
+
+
 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 py-2 px-2 md:px-0">
   <div class="col-span-1 md:col-span-2">
-  <div class="bg-gradient-to-br from-gray-200 via-gray-300 to-emerald-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 drop-shadow-lg p-4 rounded-lg relative overflow-hidden border-2 border-emerald-500 dark:border-emerald-400">
+  <div class="bg-gradient-to-br from-cyan-50 via-cyan-100 to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 drop-shadow-lg p-4 rounded-lg relative overflow-hidden border-2 border-cyan-500 dark:border-cyan-400">
       <div class="absolute inset-0 opacity-10 dark:opacity-5" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
       <div class="flex flex-col justify-center relative z-10">
         <div class="w-full p-3 pb-1 flex justify-center align-middle profile-photo-container">
@@ -325,8 +329,8 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
       </div>
       
       <div class="flip-card-back">
-        <div class="bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-emerald-500 dark:border-emerald-400 p-3 shadow-xl h-full flex flex-col justify-center overflow-y-auto">
-          <h3 class="text-base font-bold text-emerald-700 dark:text-emerald-300 mb-2 text-center flex-shrink-0">
+        <div class="bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-cyan-500 dark:border-cyan-400 p-3 shadow-xl h-full flex flex-col justify-center overflow-y-auto">
+          <h3 class="text-base font-bold text-cyan-700 dark:text-cyan-300 mb-2 text-center flex-shrink-0">
             <i class="fas fa-user mr-1 text-sm"></i>Sobre mí
           </h3>
           <p class="text-xs text-gray-700 dark:text-gray-200 leading-snug text-justify">
@@ -389,6 +393,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   height: 100%;
 }
 </style>
+
 
         
 <div class="mt-2 group relative">
@@ -645,6 +650,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   </div>
 </div>
 
+
         <div class="px-2 text-center">
           <h1 class="mb-0">Juan Manuel</h1>
 <h2 class="mb-0"></h2>
@@ -683,14 +689,15 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   
 </div>
 
+
         </div>
       </div>
-      <footer class="text-sm text-center border-t-2 border-emerald-500 dark:border-emerald-400  bg-transparent rounded-b-none py-2 "
+      <footer class="text-sm text-center border-t-2 border-cyan-500 dark:border-cyan-400  bg-transparent rounded-b-none py-2 "
   >
   <p class="markdownify"></p>
   <p class="text-xs text-gray-500 dark:text-gray-500">
     <i>Diseñado por</i>
-    <a href="https://github.com/JuanManuelRM7" class="hover:text-emerald-600 dark:hover:text-emerald-400">
+    <a href="https://github.com/JuanManuelRM7" class="hover:text-cyan-600 dark:hover:text-cyan-400">
       JM
     </a>
   </p>
@@ -698,11 +705,12 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   
 </footer>
 
+
       
       <div class="hidden md:flex justify-center mt-3 mb-2 relative z-10">
         <a
           href="/cv.pdf"
-          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline min-w-[160px]"
+          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline min-w-[160px]"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -715,11 +723,11 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
         
         <a
           href="/cv.pdf"
-          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline mx-auto min-w-[160px]"
+          class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline mx-auto min-w-[160px]"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+          <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
           <span class="font-medium text-gray-900 dark:text-gray-100">Descargar CV</span>
         </a>
         
@@ -728,9 +736,9 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
           
 <a
   href="/blog/tiempos-caracteristicos-estelares/"
-  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
+  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
 >
-  <i class="fas fa-newspaper text-emerald-600 dark:text-emerald-300 text-sm flex-shrink-0"></i>
+  <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-300 text-sm flex-shrink-0"></i>
   <span class="font-medium text-gray-900 dark:text-gray-100 truncate">Tiempos Característicos Estelares: El Reloj Interior de las Estrellas</span>
 </a>
         </div>
@@ -744,12 +752,13 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   
 <a
   href="/blog/tiempos-caracteristicos-estelares/"
-  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
+  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
 >
-  <i class="fas fa-newspaper text-emerald-600 dark:text-emerald-300 text-sm flex-shrink-0"></i>
+  <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-300 text-sm flex-shrink-0"></i>
   <span class="font-medium text-gray-900 dark:text-gray-100 truncate">Tiempos Característicos Estelares: El Reloj Interior de las Estrellas</span>
 </a>
 </div>
+
 
     
     <div class="px-2 mb-3">
@@ -833,6 +842,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 
 
 
+
 </div>
       </div>
     </div>
@@ -869,11 +879,11 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   
   <a
     href="/tfg.pdf"
-    class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
+    class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+    <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
     <span class="font-medium text-gray-900 dark:text-gray-100">Descargar TFG</span>
   </a>
   
@@ -888,6 +898,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 
 <h4 class="text-gray-900 dark:text-gray-100 mt-5 mb-3" style="text-decoration: underline;">Estudiante SICUE</h4>
 <p class="text-gray-700 dark:text-gray-200">2022 - 2023 &middot; Universidad de Salamanca</p>
+
 
 
 </div>
@@ -937,16 +948,18 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   <div class="ml-8">
     <a
       href="/DCAI.pdf"
-      class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-emerald-500/50 dark:border-emerald-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
+      class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i class="fas fa-file-download text-emerald-600 dark:text-emerald-300"></i>
+      <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
       <span class="font-medium text-gray-900 dark:text-gray-100">Descargar Paper</span>
     </a>
   </div>
   
 </div>
+
+
 
 
 
