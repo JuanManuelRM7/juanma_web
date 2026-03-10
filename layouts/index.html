@@ -2,7 +2,7 @@
 {{ partial "welcome_modal" . }}
 
 <!-- Hero Section -->
-<div class="w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
+<div class="hero-section w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
@@ -91,6 +91,11 @@
     </div>
     
   </div>
+</div>
+
+<!-- Mobile Sticky Header -->
+<div data-sticky-header>
+  {{ partial "mobile_sticky_header" . }}
 </div>
 
 {{ end }}

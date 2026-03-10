@@ -46,7 +46,7 @@
   
   
   
-  <link href="/main.min.151438521ca83cb31300da4478e4d9e92c144d301594e1da0de9c5a27f6d552d.css" rel="stylesheet" />
+  <link href="/main.min.fc3f44996260023097a2b71b6d365b70467d2d9395e2f81721ceb453303f8ec4.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -308,7 +308,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 
 
 
-<div class="w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
+<div class="hero-section w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">Juan Manuel</h1>
@@ -991,6 +991,126 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
     </div>
     
   </div>
+</div>
+
+
+<div data-sticky-header>
+  
+<div class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-700 shadow-2xl z-40 p-3">
+  <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+    
+    <div class="flex items-center gap-2 min-w-0">
+      <img
+        src="/images/profile.png"
+        alt="Juan Manuel"
+        class="w-12 h-12 rounded-lg border-2 border-cyan-600 dark:border-cyan-400 flex-shrink-0"
+      />
+      <div class="min-w-0">
+        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+          Juan Manuel
+        </p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 truncate">
+          Computer Vision
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="flex gap-2 flex-shrink-0">
+      
+      <a
+        href="/cv.pdf"
+        class="inline-flex items-center justify-center p-2.5 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
+        title="Descargar CV"
+      >
+        <i class="fas fa-file-download text-sm"></i>
+      </a>
+
+      
+      
+        
+        <a
+          href="https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/"
+          class="inline-flex items-center justify-center p-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in text-sm"></i>
+        </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+        <a
+          href="mailto:juanmanuel@petrer.eu"
+          class="inline-flex items-center justify-center p-2.5 rounded-md bg-red-600 hover:bg-red-700 text-white transition-all duration-300"
+          title="Email"
+        >
+          <i class="fas fa-envelope text-sm"></i>
+        </a>
+        
+      
+        
+      
+    </div>
+  </div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const stickyHeader = document.querySelector('[data-sticky-header]');
+  if (!stickyHeader) return;
+
+  let ticking = false;
+  let lastScrollY = 0;
+
+  window.addEventListener('scroll', function() {
+    lastScrollY = window.scrollY;
+    
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        
+        if (lastScrollY > 300) {
+          stickyHeader.style.transform = 'translateY(0)';
+          stickyHeader.style.opacity = '1';
+        } else {
+          stickyHeader.style.transform = 'translateY(100px)';
+          stickyHeader.style.opacity = '0';
+          stickyHeader.style.pointerEvents = 'none';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+});
+</script>
+
+<style>
+[data-sticky-header] {
+  transition: all 0.3s ease-out;
+  pointer-events: auto;
+}
+</style>
+
 </div>
 
 

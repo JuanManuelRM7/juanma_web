@@ -1,0 +1,99 @@
+<!-- Mobile Sticky Header (appears on scroll down) -->
+<div class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-700 shadow-2xl z-40 p-3">
+  <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+    <!-- Photo + Name -->
+    <div class="flex items-center gap-2 min-w-0">
+      <img
+        src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
+        alt="{{ .Site.Params.author }}"
+        class="w-12 h-12 rounded-lg border-2 border-cyan-600 dark:border-cyan-400 flex-shrink-0"
+      />
+      <div class="min-w-0">
+        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+          {{ .Site.Params.profile.name }}
+        </p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 truncate">
+          Computer Vision
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Action Buttons -->
+    <div class="flex gap-2 flex-shrink-0">
+      <!-- CV Button -->
+      <a
+        href="{{ `/cv.pdf` | relURL }}"
+        class="inline-flex items-center justify-center p-2.5 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
+        title="Descargar CV"
+      >
+        <i class="fas fa-file-download text-sm"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      {{ range .Site.Params.social.list }}
+        {{ if eq .icon "fab fa-linkedin-in" }}
+        <a
+          href="{{ .url }}"
+          class="inline-flex items-center justify-center p-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in text-sm"></i>
+        </a>
+        {{ end }}
+      {{ end }}
+
+      <!-- Email -->
+      {{ range .Site.Params.social.list }}
+        {{ if eq .icon "fas fa-envelope" }}
+        <a
+          href="{{ .url }}"
+          class="inline-flex items-center justify-center p-2.5 rounded-md bg-red-600 hover:bg-red-700 text-white transition-all duration-300"
+          title="Email"
+        >
+          <i class="fas fa-envelope text-sm"></i>
+        </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<script>
+// Show/hide sticky header based on scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const stickyHeader = document.querySelector('[data-sticky-header]');
+  if (!stickyHeader) return;
+
+  let ticking = false;
+  let lastScrollY = 0;
+
+  window.addEventListener('scroll', function() {
+    lastScrollY = window.scrollY;
+    
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        // Show sticky header only after scrolling down 300px
+        if (lastScrollY > 300) {
+          stickyHeader.style.transform = 'translateY(0)';
+          stickyHeader.style.opacity = '1';
+        } else {
+          stickyHeader.style.transform = 'translateY(100px)';
+          stickyHeader.style.opacity = '0';
+          stickyHeader.style.pointerEvents = 'none';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+});
+</script>
+
+<style>
+[data-sticky-header] {
+  transition: all 0.3s ease-out;
+  pointer-events: auto;
+}
+</style>

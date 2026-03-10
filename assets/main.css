@@ -20,22 +20,25 @@
 
 @layer utilities {
   h1 {
-    @apply text-4xl mb-5 mt-1;
+    @apply text-4xl md:text-5xl mb-5 mt-1 font-bold leading-tight;
   }
   h2 {
-    @apply text-3xl mb-4 mt-1;
+    @apply text-3xl md:text-4xl mb-4 mt-1 font-bold leading-snug;
   }
   h3 {
-    @apply text-2xl mb-3 mt-1;
+    @apply text-2xl md:text-3xl mb-4 mt-1 font-semibold leading-snug;
   }
   h4 {
-    @apply text-xl mb-4 mt-6;
+    @apply text-lg md:text-xl mb-4 mt-6 font-semibold;
   }
   h5 {
-    @apply text-lg mb-2 mt-1;
+    @apply text-base md:text-lg mb-2 mt-1 font-semibold;
+  }
+  p {
+    @apply leading-relaxed;
   }
   a {
-    @apply text-cyan-600 hover:text-cyan-800 hover:underline dark:text-cyan-300 dark:hover:text-cyan-400;
+    @apply text-cyan-600 hover:text-cyan-800 hover:underline dark:text-cyan-300 dark:hover:text-cyan-400 transition-colors duration-200;
   }
   body {
     background: linear-gradient(135deg, rgb(250 250 249) 0%, rgb(245 245 244) 50%, rgb(236 253 245) 100%);
@@ -225,11 +228,73 @@
 
 /* Card improvements */
 .card {
-  @apply rounded-lg border transition-all duration-300;
+  @apply rounded-lg border transition-all duration-300 p-5 md:p-6;
 }
 
 .card:hover {
-  @apply shadow-lg;
+  @apply shadow-lg transform -translate-y-1;
+}
+
+.card + .card {
+  @apply mt-4;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Hero section improvements with animations */
+.hero-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section h1 {
+  animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.hero-section p {
+  animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+/* Section spacing consistency */
+.section-spacing {
+  @apply mb-8 md:mb-10;
 }
 
 /* Mobile adjustments */
@@ -237,6 +302,10 @@
   .sticky.top-20 {
     position: relative;
     top: 0;
+  }
+  
+  body {
+    padding-bottom: 80px;
   }
 }
 
