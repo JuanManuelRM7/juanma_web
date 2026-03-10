@@ -1,0 +1,56 @@
+<!-- Skills organized by category -->
+<div class="space-y-6">
+  <!-- Computer Vision & Deep Learning (Primary Skills) -->
+  <div>
+    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
+      Computer Vision & Deep Learning
+    </h4>
+    <div class="flex flex-wrap gap-2">
+      {{ $cvSkills := slice "Computer Vision" "Deep Learning" "Convolutional Neural Networks" "PyTorch" "TensorFlow" "Keras" "Pytorch Lightning" "OpenCV" }}
+      {{ range .Site.Params.skill.list }}
+        {{ if in $cvSkills .skill }}
+        <span class="px-3 py-1.5 rounded-lg text-sm font-medium text-white dark:text-gray-900 bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-600 dark:to-blue-600 shadow-sm">
+          {{ .skill }}
+        </span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Engineering & Tools -->
+  <div>
+    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+      Engineering & Tools
+    </h4>
+    <div class="flex flex-wrap gap-2">
+      {{ $engSkills := slice "Python" "Docker" "AWS" "MLflow" "Git" "GitHub" "Matplotlib" "Tensorboard" }}
+      {{ range .Site.Params.skill.list }}
+        {{ if in $engSkills .skill }}
+        <span class="px-3 py-1.5 rounded-lg text-sm font-medium text-white dark:text-gray-900 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-600 dark:to-indigo-600 shadow-sm">
+          {{ .skill }}
+        </span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Data Science -->
+  <div>
+    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
+      Data Science & Analytics
+    </h4>
+    <div class="flex flex-wrap gap-2">
+      {{ $dataSkills := slice "Machine Learning" "scikit-learn" "pandas" "NumPy" }}
+      {{ range .Site.Params.skill.list }}
+        {{ if in $dataSkills .skill }}
+        <span class="px-3 py-1.5 rounded-lg text-sm font-medium text-white dark:text-gray-900 bg-gradient-to-r from-indigo-500 to-purple-500 dark:from-indigo-600 dark:to-purple-600 shadow-sm">
+          {{ .skill }}
+        </span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
