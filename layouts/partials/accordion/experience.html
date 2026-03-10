@@ -1,15 +1,19 @@
 {{ range.Site.Params.experience.list }}
-<h4 class="text-gray-900 dark:text-gray-100 mt-5 mb-3" style="text-decoration: underline;">{{ .position }}</h4>
-<p {{if .details }}class="mb-0 text-gray-700 dark:text-gray-200"{{ else }}class="text-gray-700 dark:text-gray-200"{{ end }}>
-  {{ .dates | markdownify }} &middot; {{ if .url }}
-  <a href="{{ .url }}">{{ .company }}</a>
-  {{ else }} {{ .company }} {{ end }}
-</p>
-{{ if .details }}
-<div class="prose prose-stone dark:prose-invert max-w-none text-gray-800 dark:text-gray-100">
-{{ .details | markdownify }}
+<div class="card border-l-4 border-l-cyan-600 dark:border-l-cyan-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
+  <div class="flex justify-between items-start mb-2">
+    <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">{{ .position }}</h4>
+    <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0 ml-2">{{ .dates | markdownify }}</span>
+  </div>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 m-0 flex items-center gap-1">
+    {{ if .url }}
+    <a href="{{ .url }}" class="hover:text-cyan-600 dark:hover:text-cyan-400">{{ .company }}</a>
+    {{ else }} {{ .company }} {{ end }}
+  </p>
+  {{ if .details }}
+  <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300">
+  {{ .details | markdownify }}
+  </div>
+  {{ end }}
 </div>
-{{ end }}
-
 {{ end }}
 
