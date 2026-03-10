@@ -35,7 +35,7 @@ params:
 
   profile:
     name: "Juan Manuel"
-    location: "AI Developer - Computer Vision Specialist at VRAIA Corp."
+    location: "Madrid, España"
     photo: profile.png
     position: "AI Developer - Computer Vision Specialist at VRAIA Corp."
   social:
