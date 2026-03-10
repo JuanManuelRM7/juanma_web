@@ -1,11 +1,12 @@
 <!-- Profile Stats -->
 <div class="grid grid-cols-3 gap-3 text-center py-4">
+  <!-- Dynamic Experience Calculator -->
   <div class="flex flex-col items-center">
-    <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">3+</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400">Años Exp.</p>
+    {{ partial "experience_calculator" . }}
+    <p class="text-xs text-gray-600 dark:text-gray-400">Experiencia</p>
   </div>
   <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
-    <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">15+</p>
+    <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">7</p>
     <p class="text-xs text-gray-600 dark:text-gray-400">Proyectos</p>
   </div>
   <div class="flex flex-col items-center">
