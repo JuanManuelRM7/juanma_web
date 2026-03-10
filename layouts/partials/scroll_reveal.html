@@ -1,0 +1,71 @@
+<!-- Scroll Reveal Animation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Intersection Observer para reveal animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add animation class
+        entry.target.classList.add('animate-fade-in-up');
+        // Stop observing once animated
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards and sections
+  document.querySelectorAll('.card, .card-group, [data-reveal]').forEach(el => {
+    // Set initial opacity to 0
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    observer.observe(el);
+  });
+
+  // Stagger animation for multiple cards
+  const cardGroups = document.querySelectorAll('[data-card-group]');
+  cardGroups.forEach(group => {
+    const cards = group.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.1}s`;
+      observer.observe(card);
+    });
+  });
+});
+</script>
+
+<style>
+.card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
+}
+
+.card.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-reveal].animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+</style>

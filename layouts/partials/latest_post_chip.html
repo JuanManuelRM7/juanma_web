@@ -1,13 +1,43 @@
 {{- $blog := where .Site.RegularPages "Section" "blog" -}}
 {{- $latest := index (sort $blog "Date" "desc") 0 -}}
 {{- if $latest -}}
-<!-- Latest Post Chip -->
+<!-- Latest Post Chip (Enhanced) -->
 <a
   href="{{ $latest.RelPermalink }}"
-  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
+  class="group block h-full p-4 bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-700/50 rounded-lg hover:border-cyan-400 dark:hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline"
+  aria-label="Ver último post: {{ $latest.Title }}"
 >
-  <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-300 text-sm flex-shrink-0"></i>
-  <span class="font-medium text-gray-900 dark:text-gray-100 truncate">{{ $latest.Title }}</span>
+  <div class="flex flex-col h-full">
+    <!-- Meta Info -->
+    <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
+      <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
+      <time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date.Format "2 Jan 2006" }}</time>
+      <span>•</span>
+      <span>{{ math.Ceil (div (len (split $latest.Plain " ")) 200) }} min read</span>
+    </div>
+    
+    <!-- Title -->
+    <h3 class="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
+      {{ $latest.Title }}
+    </h3>
+    
+    <!-- Description/Summary -->
+    {{ if $latest.Description }}
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow line-clamp-2">
+      {{ $latest.Description }}
+    </p>
+    {{ else if $latest.Summary }}
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow line-clamp-2">
+      {{ $latest.Summary }}
+    </p>
+    {{ end }}
+    
+    <!-- CTA -->
+    <div class="flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 group-hover:gap-2 transition-all">
+      <span>Leer más</span>
+      <i class="fas fa-arrow-right text-xs"></i>
+    </div>
+  </div>
 </a>
 {{- end -}}
 

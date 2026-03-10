@@ -8,7 +8,19 @@
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
     <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">{{ .Site.Params.profile.position }}</p>
     <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400">{{ .Site.Params.profile.location }}</p>
-    <p class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
+    <p class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
+    
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+      <a href="#experience" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-cyan-700 font-semibold hover:bg-cyan-50 transition-all duration-300 hover:shadow-xl no-underline">
+        <i class="fas fa-briefcase"></i>
+        <span>Ver Portafolio</span>
+      </a>
+      <a href="mailto:juanmanuel@petrer.eu" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-white text-white hover:bg-white/10 transition-all duration-300 no-underline">
+        <i class="fas fa-envelope"></i>
+        <span>Contactar</span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -23,7 +35,8 @@
         {{ partial "profilePhoto" . }}
       </div>
       
-      <!-- Social Links -->
+      <!-- Profile Stats -->
+      {{ partial "profile_stats" . }}
       <div class="flex justify-center gap-4 mb-5 flex-wrap">
         {{ range .Site.Params.social.list }}
         <a href="{{ .url }}" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" title="{{ .title }}">
@@ -97,5 +110,8 @@
 <div data-sticky-header>
   {{ partial "mobile_sticky_header" . }}
 </div>
+
+<!-- Scroll Reveal Animations -->
+{{ partial "scroll_reveal" . }}
 
 {{ end }}
