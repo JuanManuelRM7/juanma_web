@@ -46,7 +46,7 @@
   
   
   
-  <link href="/main.min.20d17b7ec1038f4c49f1ac91cac186919008d5096f7e989b52726521b37dcc18.css" rel="stylesheet" />
+  <link href="/main.min.151438521ca83cb31300da4478e4d9e92c144d301594e1da0de9c5a27f6d552d.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -332,7 +332,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
     <div class="flip-card-inner">
       
       <div class="flip-card-front">
-        <div class="relative group w-full px-3">
+        <div class="relative group w-full px-3 py-4 flex flex-col justify-center">
           
           <div class="absolute left-1/2 -translate-x-1/2 -bottom-3 w-9/12 h-5 rounded-full bg-black/25 dark:bg-black/50 blur-xl transition-all duration-300 group-hover:w-10/12 group-hover:h-6 group-hover:-bottom-4"></div>
           <img
@@ -393,8 +393,9 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   z-index: 2;
   transform: rotateY(0deg);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+  padding: 0;
 }
 
 .flip-card-back {

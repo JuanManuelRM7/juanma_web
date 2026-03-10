@@ -4,7 +4,7 @@
     <div class="flip-card-inner">
       <!-- Front: Photo -->
       <div class="flip-card-front">
-        <div class="relative group w-full px-3">
+        <div class="relative group w-full px-3 py-4 flex flex-col justify-center">
           <!-- Soft oval shadow under the photo -->
           <div class="absolute left-1/2 -translate-x-1/2 -bottom-3 w-9/12 h-5 rounded-full bg-black/25 dark:bg-black/50 blur-xl transition-all duration-300 group-hover:w-10/12 group-hover:h-6 group-hover:-bottom-4"></div>
           <img
@@ -65,8 +65,9 @@
   z-index: 2;
   transform: rotateY(0deg);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+  padding: 0;
 }
 
 .flip-card-back {
