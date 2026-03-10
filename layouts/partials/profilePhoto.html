@@ -16,7 +16,7 @@
       </div>
       <!-- Back: About me text -->
       <div class="flip-card-back">
-        <div class="bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-cyan-500 dark:border-cyan-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-y-auto">
+        <div class="bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-cyan-500 dark:border-cyan-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-hidden">
           <h3 class="text-sm font-bold text-cyan-700 dark:text-cyan-300 mb-2 text-center">
             <i class="fas fa-user mr-1 text-xs"></i>{{ .Site.Params.aboutme.title }}
           </h3>
@@ -44,6 +44,7 @@
   height: 340px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .flip-card.flipped .flip-card-inner {

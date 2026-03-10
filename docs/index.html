@@ -344,7 +344,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
       </div>
       
       <div class="flip-card-back">
-        <div class="bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-cyan-500 dark:border-cyan-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-y-auto">
+        <div class="bg-gradient-to-br from-cyan-50 via-white to-cyan-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-cyan-500 dark:border-cyan-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-hidden">
           <h3 class="text-sm font-bold text-cyan-700 dark:text-cyan-300 mb-2 text-center">
             <i class="fas fa-user mr-1 text-xs"></i>Sobre mí
           </h3>
@@ -372,6 +372,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   height: 340px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -457,22 +458,6 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
         <span>Descargar CV</span>
       </a>
       
-      
-      <div class="hidden md:block mb-6 p-4 bg-white dark:bg-slate-800 rounded-lg border border-cyan-200 dark:border-cyan-700">
-        <h4 class="text-sm font-bold text-cyan-600 dark:text-cyan-400 mb-3 flex items-center gap-2">
-          <i class="fas fa-newspaper text-xs"></i>
-          Último Post
-        </h4>
-        
-<a
-  href="/blog/tiempos-caracteristicos-estelares/"
-  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline max-w-full"
->
-  <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-300 text-sm flex-shrink-0"></i>
-  <span class="font-medium text-gray-900 dark:text-gray-100 truncate">Tiempos Característicos Estelares: El Reloj Interior de las Estrellas</span>
-</a>
-      </div>
-      
       <footer class="text-sm text-center border-t-2 border-cyan-500 dark:border-cyan-400  bg-transparent rounded-b-none py-2 "
   >
   <p class="markdownify"></p>
@@ -494,7 +479,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   <div class="lg:col-span-2">
     
     
-    <div class="md:hidden mb-8">
+    <div class="mb-8">
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400"></i>
         Último Post del Blog
