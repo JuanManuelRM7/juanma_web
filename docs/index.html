@@ -432,7 +432,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   
   <div class="flex flex-col items-center">
     <div id="experience-stats">
-  <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+  <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">
     <span id="total-experience">...</span>
   </p>
 </div>
@@ -503,12 +503,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
     
+    
+    const monthNames = ['meses', 'mes', 'meses'];
+    const yearNames = ['años', 'año', 'años'];
+    
     if (years === 0) {
-      return `${months}m`;
+      return `${months} ${months === 1 ? 'mes' : 'meses'}`;
     } else if (months === 0) {
-      return `${years}y`;
+      return `${years} ${years === 1 ? 'año' : 'años'}`;
     } else {
-      return `${years}y ${months}m`;
+      return `${years} ${years === 1 ? 'año' : 'años'} y ${months} ${months === 1 ? 'mes' : 'meses'}`;
     }
   }
 
@@ -519,11 +523,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <p class="text-xs text-gray-600 dark:text-gray-400">Experiencia</p>
   </div>
   <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
-    <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">7</p>
+    <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">7+</p>
     <p class="text-xs text-gray-600 dark:text-gray-400">Proyectos</p>
   </div>
   <div class="flex flex-col items-center">
-    <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">AI</p>
+    <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">AI</p>
     <p class="text-xs text-gray-600 dark:text-gray-400">Especialista</p>
   </div>
 </div>

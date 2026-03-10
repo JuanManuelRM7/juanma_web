@@ -1,5 +1,5 @@
 <div id="experience-stats">
-  <p class="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+  <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">
     <span id="total-experience">...</span>
   </p>
 </div>
@@ -70,12 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
     
+    // Formato en español
+    const monthNames = ['meses', 'mes', 'meses'];
+    const yearNames = ['años', 'año', 'años'];
+    
     if (years === 0) {
-      return `${months}m`;
+      return `${months} ${months === 1 ? 'mes' : 'meses'}`;
     } else if (months === 0) {
-      return `${years}y`;
+      return `${years} ${years === 1 ? 'año' : 'años'}`;
     } else {
-      return `${years}y ${months}m`;
+      return `${years} ${years === 1 ? 'año' : 'años'} y ${months} ${months === 1 ? 'mes' : 'meses'}`;
     }
   }
 
