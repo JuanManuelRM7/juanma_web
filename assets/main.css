@@ -343,12 +343,12 @@ a {
   position: relative;
 }
 
-a:not(.btn):not([class*="flex"]):not([class*="inline-flex"]) {
+a:not(.btn):not(.skill-chip):not([class*="flex"]):not([class*="inline-flex"]) {
   @apply text-cyan-600 dark:text-cyan-300;
 }
 
 /* Underline animation on hover */
-a:not(.btn):not([class*="flex"]):not([class*="inline-flex"])::after {
+a:not(.btn):not(.skill-chip):not([class*="flex"]):not([class*="inline-flex"])::after {
   content: '';
   position: absolute;
   width: 0;
@@ -359,11 +359,11 @@ a:not(.btn):not([class*="flex"]):not([class*="inline-flex"])::after {
   transition: width 0.3s ease-out;
 }
 
-a:not(.btn):not([class*="flex"]):not([class*="inline-flex"]):hover::after {
+a:not(.btn):not(.skill-chip):not([class*="flex"]):not([class*="inline-flex"]):hover::after {
   width: 100%;
 }
 
-a:not(.btn):not([class*="flex"]):not([class*="inline-flex"]):hover {
+a:not(.btn):not(.skill-chip):not([class*="flex"]):not([class*="inline-flex"]):hover {
   @apply text-cyan-800 dark:text-cyan-400;
 }
 
