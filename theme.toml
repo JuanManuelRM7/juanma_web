@@ -1,14 +1,14 @@
-name = "aafu"
+name = "jm-portfolio"
 license = "MIT"
-licenselink = "https://github.com/darshanbaral/aafu/blob/master/LICENSE"
-description = "Portfolio and blog theme with search and dark/light theme."
-homepage = "https://github.com/darshanbaral/aafu"
-demosite = "https://aafu.pages.dev/"
-tags = ["portfolio", "accordion", "resume", "blog", "tailwind"]
-features = ["responsive", "dark", "clean"]
+licenselink = "https://github.com/JuanManuelRM7/juanma_web/blob/master/LICENSE"
+description = "Portfolio personal y blog con SEO, dark/light mode, i18n y animaciones."
+homepage = "https://github.com/JuanManuelRM7/juanma_web"
+demosite = "https://juanmanuel.petrer.eu/"
+tags = ["portfolio", "blog", "tailwind", "responsive", "seo", "i18n"]
+features = ["responsive", "dark", "seo", "i18n", "animations"]
 min_version = "0.134.3"
-theme_version = "2024.10.13"
+theme_version = "2026.03.11"
 
 [author]
-  name = "Darshan Baral"
-  homepage = "https://www.darshanbaral.com/"
+  name = "Juan Manuel Ruiz Muñoz"
+  homepage = "https://juanmanuel.petrer.eu/"
