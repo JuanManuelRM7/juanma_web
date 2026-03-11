@@ -10,7 +10,7 @@
       {{ $cvSkills := slice "Computer Vision" "Deep Learning" "Convolutional Neural Networks" "PyTorch" "TensorFlow" "Keras" "Pytorch Lightning" "OpenCV" }}
       {{ range .Site.Params.skill.list }}
         {{ if in $cvSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-primary no-underline" title="{{ .skill }}">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-primary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
           {{ .skill }}
         </a>
         {{ end }}
@@ -28,7 +28,7 @@
       {{ $engSkills := slice "Python" "Docker" "AWS" "MLflow" "Git" "GitHub" "Matplotlib" "Tensorboard" }}
       {{ range .Site.Params.skill.list }}
         {{ if in $engSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-secondary no-underline" title="{{ .skill }}">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-secondary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
           {{ .skill }}
         </a>
         {{ end }}
@@ -46,7 +46,7 @@
       {{ $dataSkills := slice "Machine Learning" "scikit-learn" "pandas" "NumPy" }}
       {{ range .Site.Params.skill.list }}
         {{ if in $dataSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-tertiary no-underline" title="{{ .skill }}">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-tertiary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
           {{ .skill }}
         </a>
         {{ end }}
