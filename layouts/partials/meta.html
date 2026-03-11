@@ -72,9 +72,7 @@
 </script>
 {{ end }}
 
-{{- $hugoGenerator := index (findRE `content=\"(.+)\"` hugo.Generator) 0 }}
-{{ $hugoGenerator := hugo.Generator }}
-<meta name="generator" content="Sitio web por JM con {{ replaceRE `content=|\"` `` $hugoGenerator }}" />
+<meta name="generator" content="Sitio web por JM con Hugo {{ hugo.Version }}" />
 
 {{ if .Site.Params.favicons.use }}
 {{- $metas := .Site.Params.favicons.metas }}
