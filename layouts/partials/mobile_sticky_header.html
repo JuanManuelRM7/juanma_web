@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (lastScrollY > 300) {
           stickyHeader.style.transform = 'translateY(0)';
           stickyHeader.style.opacity = '1';
+          stickyHeader.style.pointerEvents = 'auto';
         } else {
           stickyHeader.style.transform = 'translateY(100px)';
           stickyHeader.style.opacity = '0';
