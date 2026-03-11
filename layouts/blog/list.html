@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="max-w-4xl mx-auto px-4">
+  <!-- Blog Header -->
+  <div class="mb-10 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
+      <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400 mr-2"></i>Blog
+    </h1>
+    <p class="text-gray-600 dark:text-gray-400 text-lg">Artículos sobre física, IA, meteorología y más</p>
+  </div>
+
+  <!-- Blog Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    {{ range $i, $page := (.Paginator 10).Pages }}
+    <a href="{{ .Permalink | relURL }}" class="blog-card group no-underline {{ if eq $i 0 }}md:col-span-2{{ end }}">
+      <!-- Gradient Header -->
+      <div class="blog-card-header
+        {{ if in (delimit .Params.tags ",") "caos" }}blog-gradient-red
+        {{ else if in (delimit .Params.tags ",") "meteorología" }}blog-gradient-blue
+        {{ else if in (delimit .Params.tags ",") "bloqueo" }}blog-gradient-amber
+        {{ else if in (delimit .Params.tags ",") "astrofísica" }}blog-gradient-violet
+        {{ else }}blog-gradient-cyan
+        {{ end }}">
+        <div class="blog-card-header-icon">
+          {{ if in (delimit .Params.tags ",") "caos" }}<i class="fas fa-random"></i>
+          {{ else if in (delimit .Params.tags ",") "meteorología" }}<i class="fas fa-cloud-sun-rain"></i>
+          {{ else if in (delimit .Params.tags ",") "bloqueo" }}<i class="fas fa-wind"></i>
+          {{ else if in (delimit .Params.tags ",") "astrofísica" }}<i class="fas fa-star"></i>
+          {{ else }}<i class="fas fa-flask"></i>
+          {{ end }}
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="blog-card-body">
+        <h2 class="font-bold text-gray-900 dark:text-gray-100 {{ if eq $i 0 }}text-xl{{ else }}text-base{{ end }} mb-2 leading-snug group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+          {{ .Title }}
+        </h2>
+        <p class="text-xs text-gray-500 dark:text-gray-500 mb-2 flex items-center gap-2">
+          <i class="far fa-calendar-alt"></i>
+          {{ .Date.Format "2 January 2006" }}
+          <span class="text-gray-300 dark:text-gray-600">·</span>
+          <i class="far fa-clock"></i>
+          {{ math.Round (div (countwords .Content) 200.0) }} min lectura
+        </p>
+        {{ with .Description }}
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 line-clamp-3">{{ . }}</p>
+        {{ else }}
+        {{ with .Summary }}
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 line-clamp-3">{{ . | plainify | truncate 150 }}</p>
+        {{ end }}
+        {{ end }}
+        <!-- Tags -->
+        {{ if .Params.tags }}
+        <div class="flex flex-wrap gap-1.5 mt-auto">
+          {{ range first 4 .Params.tags }}
+          <span class="blog-tag">{{ . }}</span>
+          {{ end }}
+          {{ if gt (len .Params.tags) 4 }}
+          <span class="blog-tag">+{{ sub (len .Params.tags) 4 }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+
+  <!-- Pagination -->
+  <div class="my-6 flex justify-center pagination-links">
+    {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+  </div>
+</div>
+{{ end }}

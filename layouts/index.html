@@ -55,6 +55,9 @@
       <a href="#skills" class="hero-nav-pill no-underline">
         <i class="fas fa-cogs text-xs"></i> Skills
       </a>
+      <a href="#proyectos" class="hero-nav-pill no-underline">
+        <i class="fas fa-project-diagram text-xs"></i> <span data-i18n="nav_projects">Proyectos</span>
+      </a>
       <a href="#contacto" class="hero-nav-pill no-underline">
         <i class="fas fa-envelope text-xs"></i> <span data-i18n="nav_contact">Contacto</span>
       </a>
@@ -177,6 +180,18 @@ document.addEventListener('DOMContentLoaded', function() {
         Skills
       </h3>
       {{ partial "skills_by_category" . }}
+    </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Projects Section -->
+    <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400"></i>
+        <span data-i18n="section_projects">Proyectos</span>
+      </h3>
+      {{ partial "projects" . }}
     </div>
 
     <!-- Section Separator -->
@@ -353,6 +368,8 @@ document.addEventListener('DOMContentLoaded', function() {
       section_exp: 'Experience',
       section_edu: 'Education',
       section_pub: 'Publications',
+      section_projects: 'Projects',
+      nav_projects: 'Projects',
       section_contact: 'Contact'
     },
     es: {
@@ -365,8 +382,8 @@ document.addEventListener('DOMContentLoaded', function() {
       section_blog: 'Último Post del Blog',
       section_exp: 'Experiencia',
       section_edu: 'Educación',
-      section_pub: 'Publicaciones',
-      section_contact: 'Contacto'
+      section_pub: 'Publicaciones',      section_projects: 'Proyectos',
+      nav_projects: 'Proyectos',      section_contact: 'Contacto'
     }
   };
 

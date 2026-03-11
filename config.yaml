@@ -146,13 +146,54 @@ params:
         pdf_url: "/DCAI.pdf"
       - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
         type: En desarrollo
-# project:
-#   title: Proyectos
-#   icon: fas fa-project-diagram
-#   list:
-#     - title: En desarrollo
-#       url: "#"
-#       description: 
+  project:
+    title: Proyectos
+    icon: fas fa-project-diagram
+    list:
+      - title: "Detección de Defectos en Neumáticos"
+        description: "Pipeline de visión computacional para detección automática de defectos en la industria del neumático usando deep learning."
+        icon: "fas fa-eye"
+        color: "cyan"
+        tech:
+          - PyTorch
+          - OpenCV
+          - Docker
+          - AWS
+        url: ""
+        status: "En producción"
+      - title: "Detección de Desinformación con IA"
+        description: "Arquitectura basada en ontologías e IA para detectar desinformación en obras de ficción. Publicado en DCAI'25."
+        icon: "fas fa-shield-alt"
+        color: "violet"
+        tech:
+          - NLP
+          - Transformers
+          - Python
+          - Ontologías
+        url: "/DCAI.pdf"
+        status: "Publicado"
+      - title: "Bloqueos Atmosféricos Lagrangianos"
+        description: "Método lagrangiano para la identificación automática de situaciones de bloqueo atmosférico usando trayectorias HYSPLIT."
+        icon: "fas fa-cloud-sun"
+        color: "amber"
+        tech:
+          - Python
+          - HYSPLIT
+          - ERA5
+          - MATLAB
+        url: "/tfg.pdf"
+        status: "TFG completado"
+      - title: "Portfolio Personal"
+        description: "Este sitio web: portfolio estático construido con Hugo, Tailwind CSS y desplegado en GitHub Pages con CI/CD."
+        icon: "fas fa-code"
+        color: "emerald"
+        tech:
+          - Hugo
+          - Tailwind CSS
+          - JavaScript
+          - GitHub Pages
+        url: "https://github.com/juanmanuelruizm/juanma_web"
+        status: "Activo"
   skill:
     title: Skills
     panelId: skill-panel
