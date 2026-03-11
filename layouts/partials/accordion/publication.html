@@ -1,29 +1,44 @@
 {{ if .Site.Params.publication.types }}
-{{ range.Site.Params.publication.types }}
+{{ range .Site.Params.publication.types }}
 {{ $type := . }}
-<h4 class="text-gray-900 dark:text-gray-100 mt-5 mb-3" style="text-decoration: underline;">{{ $type }}</h4>
 {{- range $.Site.Params.publication.list -}}
 {{ if eq $type .type }}
 {{- $this_publication := . -}}
-<div class="mb-4">
-  <p class="foo indent-8 text-gray-800 dark:text-gray-100 mb-2">
-    {{- range $.Site.Params.publication.format -}}
-    {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
-    {{- end -}}
-  </p>
-  {{ if .pdf_url }}
-  <div class="ml-8">
-    <a
-      href="{{ .pdf_url }}"
-      class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
-      <span class="font-medium text-gray-900 dark:text-gray-100">Descargar Paper</span>
-    </a>
+<div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+      <i class="fas fa-file-alt text-cyan-600 dark:text-cyan-400"></i>
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2 mb-2 flex-wrap">
+        {{ if eq $type "DCAI'25" }}
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-300 dark:border-green-700">
+          <i class="fas fa-check-circle mr-1"></i>{{ $type }}
+        </span>
+        {{ else }}
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
+          <i class="fas fa-spinner mr-1"></i>{{ $type }}
+        </span>
+        {{ end }}
+      </div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 leading-snug">
+        {{- range $.Site.Params.publication.format -}}
+        {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
+        {{- end -}}
+      </p>
+      {{ if .pdf_url }}
+      <a
+        href="{{ .pdf_url }}"
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-cyan-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
+        Descargar Paper
+      </a>
+      {{ end }}
+    </div>
   </div>
-  {{ end }}
 </div>
 {{ end }}
 {{- end -}}
@@ -33,25 +48,30 @@
 
 {{- range $.Site.Params.publication.list -}}
 {{- $this_publication := . -}}
-<div class="mb-4">
-  <p class="bar -indent-8 text-gray-800 dark:text-gray-100 mb-2">
-    {{- range $.Site.Params.publication.format -}}
-    {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
-    {{- end -}}
-  </p>
-  {{ if .pdf_url }}
-  <div class="ml-8">
-    <a
-      href="{{ .pdf_url }}"
-      class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-800/80 hover:bg-cyan-50 dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105 hover:shadow-md no-underline"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
-      <span class="font-medium text-gray-900 dark:text-gray-100">Descargar Paper</span>
-    </a>
+<div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+      <i class="fas fa-file-alt text-cyan-600 dark:text-cyan-400"></i>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 leading-snug">
+        {{- range $.Site.Params.publication.format -}}
+        {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
+        {{- end -}}
+      </p>
+      {{ if .pdf_url }}
+      <a
+        href="{{ .pdf_url }}"
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-cyan-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
+        Descargar Paper
+      </a>
+      {{ end }}
+    </div>
   </div>
-  {{ end }}
 </div>
 {{ end }}
 {{ end }}

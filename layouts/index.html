@@ -1,16 +1,66 @@
 {{ define "main" }}
 {{ partial "welcome_modal" . }}
 
+<!-- Reading Progress Bar -->
+<div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 z-50 transition-all duration-150" style="width: 0%;"></div>
+
+<!-- Page Load Transition -->
+<div id="page-loader" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] flex items-center justify-center transition-opacity duration-500">
+  <div class="animate-pulse text-cyan-600 dark:text-cyan-400 text-3xl font-bold">JM</div>
+</div>
+
 <!-- Hero Section -->
 <div class="hero-section w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
-    <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">{{ .Site.Params.profile.position }}</p>
+    <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
+      <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
+    </p>
     <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400">{{ .Site.Params.profile.location }}</p>
     <p class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
+    <!-- Quick Navigation -->
+    <div class="flex flex-wrap gap-3 mt-4">
+      <a href="#experiencia" class="hero-nav-pill no-underline">
+        <i class="fas fa-briefcase text-xs"></i> Experiencia
+      </a>
+      <a href="#educacion" class="hero-nav-pill no-underline">
+        <i class="fas fa-graduation-cap text-xs"></i> Educación
+      </a>
+      <a href="#publicaciones" class="hero-nav-pill no-underline">
+        <i class="fas fa-book text-xs"></i> Publicaciones
+      </a>
+      <a href="#skills" class="hero-nav-pill no-underline">
+        <i class="fas fa-cogs text-xs"></i> Skills
+      </a>
+      <a href="#contacto" class="hero-nav-pill no-underline">
+        <i class="fas fa-envelope text-xs"></i> Contacto
+      </a>
+    </div>
   </div>
 </div>
+
+<!-- Typing Effect Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var text = {{ .Site.Params.profile.position }};
+  var el = document.getElementById('typing-text');
+  var cursor = document.getElementById('typing-cursor');
+  if (!el) return;
+  var i = 0;
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    } else {
+      // Blink cursor then hide
+      setTimeout(function() { if (cursor) cursor.style.display = 'none'; }, 2000);
+    }
+  }
+  setTimeout(type, 800);
+});
+</script>
 
 <!-- Main Content Grid: 40% sidebar | 60% content -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 md:px-0 max-w-6xl mx-auto mb-12">
@@ -47,52 +97,122 @@
   <div class="lg:col-span-2">
     
     <!-- Featured Blog Post -->
-    <div class="mb-8">
+    <div class="mb-8" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400"></i>
         Último Post del Blog
       </h3>
       {{ partial "latest_post_chip" . }}
     </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
     
-    <!-- Experience Section (Cards) -->
-    <div class="mb-8">
+    <!-- Experience Section (Timeline) -->
+    <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
         Experiencia
       </h3>
-      {{ partial "accordion/experience" . }}
+      <div class="timeline-container">
+        {{ partial "accordion/experience" . }}
+      </div>
     </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
     
-    <!-- Education Section (Cards) -->
-    <div class="mb-8">
+    <!-- Education Section (Timeline) -->
+    <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
         Educación
       </h3>
-      {{ partial "accordion/education" . }}
+      <div class="timeline-container">
+        {{ partial "accordion/education" . }}
+      </div>
     </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
     
     <!-- Publications Section -->
-    <div class="mb-8">
+    <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-book text-cyan-600 dark:text-cyan-400"></i>
         Publicaciones
       </h3>
       {{ partial "accordion/publication" . }}
     </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
     
     <!-- Skills Section by Category -->
-    <div class="mb-8">
+    <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400"></i>
         Skills
       </h3>
       {{ partial "skills_by_category" . }}
     </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Contact Section -->
+    <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400"></i>
+        Contacto
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="mailto:juanmanuel@petrer.eu" class="contact-card group no-underline">
+          <div class="contact-card-icon bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+            <i class="fas fa-envelope text-lg"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Email</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">juanmanuel@petrer.eu</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
+          <div class="contact-card-icon bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+            <i class="fab fa-linkedin-in text-lg"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">LinkedIn</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Juan Manuel Ruiz</p>
+          </div>
+        </a>
+        <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
+          <div class="contact-card-icon bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+            <i class="fab fa-github text-lg"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">GitHub</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">juanmanuelruizm</p>
+          </div>
+        </a>
+        <a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
+          <div class="contact-card-icon bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+            <i class="fab fa-orcid text-lg"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">ORCID</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">0009-0008-7529-306X</p>
+          </div>
+        </a>
+      </div>
+    </div>
     
   </div>
 </div>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <!-- Mobile Sticky Header -->
 <div data-sticky-header>
@@ -101,5 +221,52 @@
 
 <!-- Scroll Reveal Animations -->
 {{ partial "scroll_reveal" . }}
+
+<!-- Reading Progress + Scroll-to-Top + Page Loader Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Page loader fade out
+  var loader = document.getElementById('page-loader');
+  if (loader) {
+    setTimeout(function() {
+      loader.style.opacity = '0';
+      setTimeout(function() { loader.style.display = 'none'; }, 500);
+    }, 300);
+  }
+
+  // Reading progress bar
+  var progressBar = document.getElementById('reading-progress');
+  var scrollTopBtn = document.getElementById('scroll-to-top');
+  
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = progress + '%';
+    
+    // Scroll to top button visibility
+    if (scrollTopBtn) {
+      if (scrollTop > 400) {
+        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.style.pointerEvents = 'auto';
+      } else {
+        scrollTopBtn.style.opacity = '0';
+        scrollTopBtn.style.pointerEvents = 'none';
+      }
+    }
+  }, { passive: true });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+});
+</script>
 
 {{ end }}
