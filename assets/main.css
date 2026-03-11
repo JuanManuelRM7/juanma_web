@@ -557,15 +557,17 @@ button:focus-visible {
   padding: 0.375rem 0.75rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
   color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .dark .skill-chip {
   color: rgb(17 24 39);
+  text-shadow: none;
 }
 
 .skill-chip:hover {
@@ -579,7 +581,7 @@ button:focus-visible {
 }
 
 .skill-chip-primary {
-  background: linear-gradient(135deg, rgb(6 182 212), rgb(59 130 246));
+  background: linear-gradient(135deg, rgb(8 145 178), rgb(37 99 235));
 }
 
 .dark .skill-chip-primary {
@@ -587,7 +589,7 @@ button:focus-visible {
 }
 
 .skill-chip-secondary {
-  background: linear-gradient(135deg, rgb(59 130 246), rgb(99 102 241));
+  background: linear-gradient(135deg, rgb(37 99 235), rgb(79 70 229));
 }
 
 .dark .skill-chip-secondary {
@@ -595,7 +597,7 @@ button:focus-visible {
 }
 
 .skill-chip-tertiary {
-  background: linear-gradient(135deg, rgb(99 102 241), rgb(168 85 247));
+  background: linear-gradient(135deg, rgb(79 70 229), rgb(147 51 234));
 }
 
 .dark .skill-chip-tertiary {
