@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Modelos-Matemáticos on </title>
-    <link>https://juanmanuel.petrer.eu/tags/modelos-matem%C3%A1ticos/</link>
-    <description>Recent content in Modelos-Matemáticos on </description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuel.petrer.eu/tags/modelos-matem%C3%A1ticos/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title>
-      <link>https://juanmanuel.petrer.eu/blog/caos/</link>
-      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/caos/</guid>
-      <description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;&#xA;Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;div align=&#34;center&#34;&gt;&#xD;&#xA;&lt;p&gt;X_{n+1} = r * X_n(1 - X_n)&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;p&gt;donde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;( x_n ) representa la población normalizada en el tiempo ( n ),&lt;/li&gt;&#xA;&lt;li&gt;( r ) es el parámetro de crecimiento,&lt;/li&gt;&#xA;&lt;li&gt;y el término ( (1 - x_n) ) introduce un límite ambiental.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Modelos-Matemáticos on</title><link>https://juanmanuel.petrer.eu/tags/modelos-matem%C3%A1ticos/</link><description>Recent content in Modelos-Matemáticos on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/modelos-matem%C3%A1ticos/index.xml" rel="self" type="application/rss+xml"/><item><title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title><link>https://juanmanuel.petrer.eu/blog/caos/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/caos/</guid><description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;
+Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;
+&lt;div align="center"&gt;
+&lt;p&gt;X_{n+1} = r * X_n(1 - X_n)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;donde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;( x_n ) representa la población normalizada en el tiempo ( n ),&lt;/li&gt;
+&lt;li&gt;( r ) es el parámetro de crecimiento,&lt;/li&gt;
+&lt;li&gt;y el término ( (1 - x_n) ) introduce un límite ambiental.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:&lt;/p&gt;</description></item></channel></rss>

@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Simulación on </title>
-    <link>https://juanmanuel.petrer.eu/tags/simulaci%C3%B3n/</link>
-    <description>Recent content in Simulación on </description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuel.petrer.eu/tags/simulaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Física Computacional</title>
-      <link>https://juanmanuel.petrer.eu/material/fisica-computacional/</link>
-      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/material/fisica-computacional/</guid>
-      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xD;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xD;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;h2 id=&#34;modelización&#34;&gt;Modelización&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/misc_1.pdf&#34;&gt;Resolución de problemas físicos mediante diversos métodos numéricos&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/redes_cristalinas.pdf&#34;&gt;Redes cristalinas&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/orbita_terrestre.pdf&#34;&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simulación on</title><link>https://juanmanuel.petrer.eu/tags/simulaci%C3%B3n/</link><description>Recent content in Simulación on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/simulaci%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>Física Computacional</title><link>https://juanmanuel.petrer.eu/material/fisica-computacional/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/fisica-computacional/</guid><description>&lt;div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4"&gt;
+&lt;div class="text-red-700 dark:text-red-300"&gt;
+&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="modelización"&gt;Modelización&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/misc_1.pdf"&gt;Resolución de problemas físicos mediante diversos métodos numéricos&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/redes_cristalinas.pdf"&gt;Redes cristalinas&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/orbita_terrestre.pdf"&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description></item></channel></rss>

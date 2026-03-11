@@ -1,11 +1,39 @@
-<div class="prose prose-stone dark:prose-invert max-w-none">
-  <div class="mb-3">
-    <h1 class="top-h1" style="font-size: 2.75em">Page not found</h1>
+<div class="min-h-[60vh] flex flex-col items-center justify-center px-4 py-16 text-center">
+  <!-- Animated 404 illustration -->
+  <div class="relative mb-8">
+    <div class="text-[8rem] md:text-[10rem] font-black leading-none select-none" style="background: linear-gradient(135deg, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+      404
+    </div>
+    <div class="absolute -top-2 -right-4 text-4xl animate-bounce">🔭</div>
   </div>
-  <div class="content">
-    <p>
-      <a href="{{ .Site.Home.RelPermalink }}"> Return to the home page </a>
-    </p>
+
+  <!-- Message -->
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3" style="font-size: 1.75rem !important;">
+    ¡Página no encontrada!
+  </h1>
+  <p class="text-gray-600 dark:text-gray-400 max-w-md mb-8 leading-relaxed">
+    Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.
+  </p>
+
+  <!-- Action buttons -->
+  <div class="flex flex-col sm:flex-row gap-3">
+    <a href="{{ .Site.Home.RelPermalink }}" class="btn btn-primary no-underline">
+      <i class="fas fa-home"></i>
+      Volver al inicio
+    </a>
+    <a href="/blog/" class="btn btn-outline no-underline">
+      <i class="fas fa-newspaper"></i>
+      Ver el blog
+    </a>
+    <a href="/search/" class="btn btn-ghost no-underline">
+      <i class="fas fa-search"></i>
+      Buscar
+    </a>
   </div>
+
+  <!-- Fun physics fact -->
+  <p class="text-xs text-gray-400 dark:text-gray-600 mt-12 max-w-sm italic">
+    «En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»
+  </p>
 </div>
 

@@ -281,4 +281,57 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- Easter Egg: Konami Code ↑↑↓↓←→←→BA -->
+<script>
+(function() {
+  var konamiCode = [38,38,40,40,37,39,37,39,66,65];
+  var konamiIndex = 0;
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        konamiIndex = 0;
+        activateEasterEgg();
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+  function activateEasterEgg() {
+    // Create particle burst
+    var container = document.createElement('div');
+    container.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden;';
+    document.body.appendChild(container);
+    var emojis = ['🚀','⚡','🌟','🎯','💡','🔬','🧠','🎉','✨','🌌'];
+    for (var i = 0; i < 40; i++) {
+      (function(idx) {
+        setTimeout(function() {
+          var particle = document.createElement('div');
+          particle.textContent = emojis[idx % emojis.length];
+          particle.style.cssText = 'position:absolute;font-size:' + (20 + Math.random()*20) + 'px;left:' + Math.random()*100 + '%;top:100%;transition:none;';
+          container.appendChild(particle);
+          requestAnimationFrame(function() {
+            particle.style.transition = 'all ' + (1.5 + Math.random()*2) + 's ease-out';
+            particle.style.top = -10 + Math.random()*50 + '%';
+            particle.style.left = Math.random()*100 + '%';
+            particle.style.opacity = '0';
+            particle.style.transform = 'rotate(' + (Math.random()*720 - 360) + 'deg) scale(0.3)';
+          });
+        }, idx * 50);
+      })(i);
+    }
+    // Show secret message
+    var msg = document.createElement('div');
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(6,182,212,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
+    msg.innerHTML = '🎮 ¡Has descubierto el secreto!<br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;">— Konami Code activado —</span>';
+    container.appendChild(msg);
+    requestAnimationFrame(function() { msg.style.opacity = '1'; });
+    setTimeout(function() {
+      msg.style.opacity = '0';
+      setTimeout(function() { container.remove(); }, 600);
+    }, 3500);
+  }
+})();
+</script>
+
 {{ end }}
