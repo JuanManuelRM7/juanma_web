@@ -5,6 +5,19 @@
   <p class="mb-1">{{ .Date.Format "January 2, 2006" }}</p>
   <p>&mdash;</p>
 </div>
+
+{{ if .TableOfContents }}
+<details class="toc-container mb-6" open>
+  <summary class="toc-toggle cursor-pointer select-none font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2 text-base">
+    <i class="fas fa-list-ul text-sm"></i>
+    Tabla de contenidos
+  </summary>
+  <nav class="toc mt-3">
+    {{ .TableOfContents }}
+  </nav>
+</details>
+{{ end }}
+
 <div class="content">
   {{ .Content }}
 </div>

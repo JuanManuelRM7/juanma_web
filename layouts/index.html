@@ -28,31 +28,35 @@
 </script>
 
 <!-- Hero Section -->
-<div class="hero-section w-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden">
+<div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #06b6d4, #3b82f6, #0891b2, #6366f1); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <!-- Language Toggle -->
+  <button id="lang-toggle" onclick="toggleLang()" class="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-xs font-bold bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma">
+    <span id="lang-label">EN</span> <i class="fas fa-globe ml-1"></i>
+  </button>
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
     <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
       <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
     </p>
     <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400">{{ .Site.Params.profile.location }}</p>
-    <p class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
+    <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
     <!-- Quick Navigation -->
     <div class="flex flex-wrap gap-3 mt-4">
       <a href="#experiencia" class="hero-nav-pill no-underline">
-        <i class="fas fa-briefcase text-xs"></i> Experiencia
+        <i class="fas fa-briefcase text-xs"></i> <span data-i18n="nav_exp">Experiencia</span>
       </a>
       <a href="#educacion" class="hero-nav-pill no-underline">
-        <i class="fas fa-graduation-cap text-xs"></i> Educación
+        <i class="fas fa-graduation-cap text-xs"></i> <span data-i18n="nav_edu">Educación</span>
       </a>
       <a href="#publicaciones" class="hero-nav-pill no-underline">
-        <i class="fas fa-book text-xs"></i> Publicaciones
+        <i class="fas fa-book text-xs"></i> <span data-i18n="nav_pub">Publicaciones</span>
       </a>
       <a href="#skills" class="hero-nav-pill no-underline">
         <i class="fas fa-cogs text-xs"></i> Skills
       </a>
       <a href="#contacto" class="hero-nav-pill no-underline">
-        <i class="fas fa-envelope text-xs"></i> Contacto
+        <i class="fas fa-envelope text-xs"></i> <span data-i18n="nav_contact">Contacto</span>
       </a>
     </div>
   </div>
@@ -104,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- CV Button -->
       <a href="{{ `/cv.pdf` | relURL }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
         <i class="fas fa-file-download"></i>
-        <span>Descargar CV</span>
+        <span data-i18n="download_cv">Descargar CV</span>
       </a>
       
       {{ partial "footer" . }}
@@ -118,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mb-8" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400"></i>
-        Último Post del Blog
+        <span data-i18n="section_blog">Último Post del Blog</span>
       </h3>
       {{ partial "latest_post_chip" . }}
     </div>
@@ -130,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
-        Experiencia
+        <span data-i18n="section_exp">Experiencia</span>
       </h3>
       <div class="timeline-container">
         {{ partial "accordion/experience" . }}
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
-        Educación
+        <span data-i18n="section_edu">Educación</span>
       </h3>
       <div class="timeline-container">
         {{ partial "accordion/education" . }}
@@ -158,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-book text-cyan-600 dark:text-cyan-400"></i>
-        Publicaciones
+        <span data-i18n="section_pub">Publicaciones</span>
       </h3>
       {{ partial "accordion/publication" . }}
     </div>
@@ -182,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400"></i>
-        Contacto
+        <span data-i18n="section_contact">Contacto</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a href="mailto:juanmanuelruiz383@gmail.com" class="contact-card group no-underline">
@@ -330,6 +334,68 @@ document.addEventListener('DOMContentLoaded', function() {
       msg.style.opacity = '0';
       setTimeout(function() { container.remove(); }, 600);
     }, 3500);
+  }
+})();
+</script>
+
+<!-- Multi-language ES/EN Toggle -->
+<script>
+(function() {
+  var translations = {
+    en: {
+      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
+      nav_exp: 'Experience',
+      nav_edu: 'Education',
+      nav_pub: 'Publications',
+      nav_contact: 'Contact',
+      download_cv: 'Download CV',
+      section_blog: 'Latest Blog Post',
+      section_exp: 'Experience',
+      section_edu: 'Education',
+      section_pub: 'Publications',
+      section_contact: 'Contact'
+    },
+    es: {
+      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
+      nav_exp: 'Experiencia',
+      nav_edu: 'Educación',
+      nav_pub: 'Publicaciones',
+      nav_contact: 'Contacto',
+      download_cv: 'Descargar CV',
+      section_blog: 'Último Post del Blog',
+      section_exp: 'Experiencia',
+      section_edu: 'Educación',
+      section_pub: 'Publicaciones',
+      section_contact: 'Contacto'
+    }
+  };
+
+  function applyLang(lang) {
+    var strings = translations[lang];
+    if (!strings) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key]) el.textContent = strings[key];
+    });
+    var label = document.getElementById('lang-label');
+    if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
+    window.localStorage.setItem('lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  window.toggleLang = function() {
+    var current = window.localStorage.getItem('lang') || 'es';
+    applyLang(current === 'es' ? 'en' : 'es');
+  };
+
+  // Apply saved language on load
+  var saved = window.localStorage.getItem('lang');
+  if (saved && saved !== 'es') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
+    } else {
+      applyLang(saved);
+    }
   }
 })();
 </script>

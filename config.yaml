@@ -7,6 +7,10 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
   highlight:
     codeFences: true
     guessSyntax: true
@@ -15,9 +19,9 @@ markup:
     lineNumbersInTable: false
     noClasses: false
 params:
-  title: Blog de Juan Manuel
-  author: Juan Manuel
-  description: Blog personal de Juan Manuel
+  title: Juan Manuel Ruiz – AI Developer & Computer Vision Specialist
+  author: Juan Manuel Ruiz Muñoz
+  description: "Físico e ingeniero en IA especializado en visión computacional y deep learning. Portfolio, publicaciones y blog de Juan Manuel Ruiz Muñoz."
   copyright:
   theme:
     mainTheme: null

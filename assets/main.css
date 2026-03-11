@@ -226,6 +226,19 @@
   }
 }
 
+/* Animated gradient for hero */
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dark .hero-section {
+  background: linear-gradient(-45deg, #1e293b, #0f172a, #164e63, #1e1b4b) !important;
+  background-size: 400% 400% !important;
+  animation: heroGradient 12s ease infinite !important;
+}
+
 /* Card improvements */
 .card {
   @apply rounded-lg border transition-all duration-300 p-5 md:p-6;
@@ -679,6 +692,65 @@ button:focus-visible {
 /* Smooth scroll for the whole page */
 html {
   scroll-behavior: smooth;
+}
+
+/* ---------- TABLE OF CONTENTS ---------- */
+.toc-container {
+  background: linear-gradient(135deg, rgb(236 254 255 / 0.5), rgb(240 249 255 / 0.5));
+  border: 1px solid rgb(6 182 212 / 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.dark .toc-container {
+  background: linear-gradient(135deg, rgb(15 23 42 / 0.5), rgb(30 41 59 / 0.5));
+  border-color: rgb(34 211 238 / 0.2);
+}
+
+.toc-container[open] .toc-toggle::after {
+  transform: rotate(90deg);
+}
+
+.toc nav ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.toc nav > ul > li {
+  margin-bottom: 0.25rem;
+}
+
+.toc nav ul ul {
+  padding-left: 1.25rem !important;
+  border-left: 2px solid rgb(6 182 212 / 0.2);
+  margin-top: 0.25rem;
+}
+
+.dark .toc nav ul ul {
+  border-left-color: rgb(34 211 238 / 0.2);
+}
+
+.toc nav a {
+  font-size: 0.875rem;
+  color: rgb(71 85 105) !important;
+  text-decoration: none !important;
+  transition: color 0.2s, padding-left 0.2s;
+  display: inline-block;
+  padding: 0.1rem 0;
+}
+
+.toc nav a:hover {
+  color: rgb(6 182 212) !important;
+  padding-left: 4px;
+}
+
+.dark .toc nav a {
+  color: rgb(148 163 184) !important;
+}
+
+.dark .toc nav a:hover {
+  color: rgb(34 211 238) !important;
 }
 
 /* ---------- LAZY LOADING BLUR PLACEHOLDER ---------- */
