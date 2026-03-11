@@ -562,17 +562,22 @@ button:focus-visible {
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .skill-chip:hover {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  color: #ffffff;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.dark .skill-chip {
+  color: #ffffff !important;
 }
 
 .dark .skill-chip:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /* Light mode: vibrant saturated backgrounds */
