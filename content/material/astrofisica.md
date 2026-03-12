@@ -14,7 +14,7 @@ tags: ["física", "astrofísica", "astronomía", "mecánica celeste"]
 
 
 ## Beamer
-- [Diagrama HR](/material/astrofisica/diagramaHR.pdf) - Asrofísica Estelar (Universidad de Alicante).
+- [Diagrama HR](/material/astrofisica/diagramaHR.pdf) - Astrofísica Estelar (Universidad de Alicante).
 - [Rotación Galáctica](/material/astrofisica/rotacion_galactica.pdf) - Fundamentos de Astrofísica (Universidad de Alicante).
 
 Si encuentras algún error o tienes sugerencias, no dudes en contactar.
