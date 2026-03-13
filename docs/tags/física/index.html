@@ -79,7 +79,7 @@
   
   
   
-  <link href="/main.min.6716b5c1c96ba641a6e0c331df944d6c560c444b1ad2fc605b78fcdeee62a8c6.css" rel="stylesheet" />
+  <link href="/main.min.b6272657715a9e1ec8d1f20d6df4619a1592249efe69c97d77fe3562d196c6e2.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -163,20 +163,49 @@
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
     
     <header
-  class="nav py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
   
-  <div class="flex items-center justify-between md:grid md:grid-cols-3">
+  <div class="flex justify-evenly items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400 md:hidden">
+    <a class="nav-menu-item !p-1 !px-2" href="https://juanmanuel.petrer.eu/">Inicio</a>
+    <a class="nav-menu-item !p-1 !px-2" href="/blog">Blog</a>
+    <a class="nav-menu-item !p-1 !px-2" href="/material">Material</a>
+    <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
+      <i class="fas fa-search"></i>
+    </a>
+    <i
+      class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
+      onclick="toggleTheme()"
+      role="button"
+      tabindex="0"
+      aria-label="Cambiar tema"
+      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
+    ></i>
+  </div>
+
+  
+  <div class="flex md:hidden justify-center -mt-[13px] mb-2 relative z-10">
+    <div id="clock-mobile"
+      class="text-cyan-700 dark:text-cyan-300 text-xs font-semibold tracking-wide
+             bg-white dark:bg-slate-900
+             border border-cyan-400 dark:border-cyan-500
+             rounded-full px-4 py-0.5 shadow-sm
+             flex items-center gap-2">
+    </div>
+  </div>
+
+  
+  <div class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Inicio</a>
       <a class="nav-menu-item" href="/blog">Blog</a>
-      <a class="nav-menu-item" href="/material">Material<span class="hidden md:inline"> Universitario</span></a>
+      <a class="nav-menu-item" href="/material">Material Universitario</a>
     </div>
-    <div class="hidden md:flex justify-center">
-      <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg"></div>
+    <div class="flex justify-center">
+      <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg text-center"></div>
     </div>
-    <div class="flex items-center justify-end gap-2 md:gap-3">
+    <div class="flex items-center justify-end gap-3">
       <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
         <i class="fas fa-search"></i>
       </a>
@@ -190,10 +219,6 @@
       ></i>
     </div>
   </div>
-  
-  <div class="flex md:hidden justify-center mt-1.5">
-    <div id="clock-mobile" class="text-cyan-700 dark:text-cyan-300 font-semibold text-sm"></div>
-  </div>
 </header>
 
 <script>
@@ -202,30 +227,29 @@
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    
+
     const day = now.getDate();
     const monthNum = String(now.getMonth() + 1).padStart(2, '0');
-    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 
+    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
                     'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
     const monthName = months[now.getMonth()];
     const year = now.getFullYear();
-    
-    
+
     const isMobile = window.innerWidth < 768;
-    const dateStr = isMobile ? `${day}/${monthNum}/${year}` : `${day} de ${monthName} de ${year}`;
-    
-    const html = `<div class="text-center"><div>${dateStr}</div><div>${hours}:${minutes}:${seconds}</div></div>`;
-    const clockElement = document.getElementById('clock');
-    if (clockElement) clockElement.innerHTML = html;
+
+    const clockEl = document.getElementById('clock');
+    if (clockEl) {
+      clockEl.innerHTML = `<div>${day} de ${monthName} de ${year}</div><div>${hours}:${minutes}:${seconds}</div>`;
+    }
+
     const clockMobile = document.getElementById('clock-mobile');
-    if (clockMobile) clockMobile.innerHTML = html;
+    if (clockMobile) {
+      clockMobile.innerHTML = `<span>${day}/${monthNum}/${year}</span><span class="text-cyan-300 dark:text-cyan-600 mx-0.5">·</span><span>${hours}:${minutes}:${seconds}</span>`;
+    }
   }
-  
-  
+
   updateClock();
   setInterval(updateClock, 1000);
-  
-  
   window.addEventListener('resize', updateClock);
 </script>
 
