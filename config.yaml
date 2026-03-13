@@ -183,6 +183,17 @@ params:
           - MATLAB
         url: "/tfg.pdf"
         status: "TFG completado"
+      - title: "Talk to Me"
+        description: "CLI para practicar inglés conversacional con un tutor IA. Hablas por el micrófono, Whisper transcribe tu voz en tiempo real y un LLM local (Ollama) mantiene la conversación."
+        icon: "fas fa-microphone"
+        color: "rose"
+        tech:
+          - Python
+          - Whisper
+          - Ollama
+          - CLI
+        url: "https://github.com/juanmanuelruizm/talk-to-me"
+        status: "Activo"
       - title: "Agente Local con Ollama"
         description: "Agente conversacional por consola que corre 100% en local usando Ollama. Tool calling nativo: lectura/escritura de archivos, búsqueda web con DuckDuckGo, ejecución de código Python y RAG con ChromaDB para consultar documentos propios."
         icon: "fas fa-robot"
