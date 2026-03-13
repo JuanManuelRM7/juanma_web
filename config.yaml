@@ -183,6 +183,28 @@ params:
           - MATLAB
         url: "/tfg.pdf"
         status: "TFG completado"
+      - title: "Agente Local con Ollama"
+        description: "Agente conversacional por consola que corre 100% en local usando Ollama. Tool calling nativo: lectura/escritura de archivos, búsqueda web con DuckDuckGo, ejecución de código Python y RAG con ChromaDB para consultar documentos propios."
+        icon: "fas fa-robot"
+        color: "cyan"
+        tech:
+          - Python
+          - Ollama
+          - ChromaDB
+          - RAG
+        url: "https://github.com/juanmanuelruizm/chatbot"
+        status: "Activo"
+      - title: "Frontend: An Introductory Course"
+        description: "Repositorio educativo de desarrollo web frontend. Cubre HTML, CSS y layouts modernos (Flexbox/Grid) con teoría detallada y ejemplos comentados. En desarrollo progresivo."
+        icon: "fas fa-laptop-code"
+        color: "indigo"
+        tech:
+          - HTML
+          - CSS
+          - Flexbox
+          - Grid
+        url: "https://github.com/juanmanuelruizm/frontend-an-introductory-course"
+        status: "En desarrollo"
       - title: "Portfolio Personal"
         description: "Este sitio web: portfolio estático construido con Hugo, Tailwind CSS y desplegado en GitHub Pages con CI/CD."
         icon: "fas fa-code"
