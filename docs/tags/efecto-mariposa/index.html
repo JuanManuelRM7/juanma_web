@@ -79,7 +79,7 @@
   
   
   
-  <link href="/main.min.03d1e772fffdba4e0f68bfbce0a0b6343f0cd1a1b02f8538d9c1740d8a50c7c7.css" rel="stylesheet" />
+  <link href="/main.min.6716b5c1c96ba641a6e0c331df944d6c560c444b1ad2fc605b78fcdeee62a8c6.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -163,19 +163,18 @@
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
     
     <header
-  class="nav grid grid-cols-3 py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 items-center bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav flex md:grid md:grid-cols-3 py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 items-center justify-between bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
   <div class="flex gap-1 items-center">
     <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Inicio</a>
     <a class="nav-menu-item" href="/blog">Blog</a>
-    <a class="nav-menu-item hidden md:block" href="/material">Material Universitario</a>
+    <a class="nav-menu-item" href="/material">Material<span class="hidden md:inline"> Universitario</span></a>
   </div>
-  <div class="flex justify-center">
-    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-base md:text-lg"></div>
+  <div class="hidden md:flex justify-center">
+    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg"></div>
   </div>
   <div class="flex items-center justify-end gap-2 md:gap-3">
-    <a class="nav-menu-item md:hidden !p-1 !px-2" href="/material">Material</a>
     <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
       <i class="fas fa-search"></i>
     </a>
