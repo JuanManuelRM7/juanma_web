@@ -1,27 +1,34 @@
 <header
-  class="nav flex md:grid md:grid-cols-3 py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 items-center justify-between bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  class="nav py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
 >
-  <div class="flex gap-1 items-center">
-    <a class="nav-menu-item" href="{{ .Site.BaseURL }}">Inicio</a>
-    <a class="nav-menu-item" href="{{ `blog` | relURL }}">Blog</a>
-    <a class="nav-menu-item" href="{{ `material` | relURL }}">Material<span class="hidden md:inline"> Universitario</span></a>
+  <!-- Fila única en desktop (grid 3 cols), 2 filas en móvil -->
+  <div class="flex items-center justify-between md:grid md:grid-cols-3">
+    <div class="flex gap-1 items-center">
+      <a class="nav-menu-item" href="{{ .Site.BaseURL }}">Inicio</a>
+      <a class="nav-menu-item" href="{{ `blog` | relURL }}">Blog</a>
+      <a class="nav-menu-item" href="{{ `material` | relURL }}">Material<span class="hidden md:inline"> Universitario</span></a>
+    </div>
+    <div class="hidden md:flex justify-center">
+      <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg"></div>
+    </div>
+    <div class="flex items-center justify-end gap-2 md:gap-3">
+      <a href="{{ `search` | relURL }}" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
+        <i class="fas fa-search"></i>
+      </a>
+      <i
+        class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
+        onclick="toggleTheme()"
+        role="button"
+        tabindex="0"
+        aria-label="Cambiar tema"
+        onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
+      ></i>
+    </div>
   </div>
-  <div class="hidden md:flex justify-center">
-    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg"></div>
-  </div>
-  <div class="flex items-center justify-end gap-2 md:gap-3">
-    <a href="{{ `search` | relURL }}" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
-      <i class="fas fa-search"></i>
-    </a>
-    <i
-      class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme()"
-      role="button"
-      tabindex="0"
-      aria-label="Cambiar tema"
-      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-    ></i>
+  <!-- Reloj en móvil: segunda fila centrada -->
+  <div class="flex md:hidden justify-center mt-1.5">
+    <div id="clock-mobile" class="text-cyan-700 dark:text-cyan-300 font-semibold text-sm"></div>
   </div>
 </header>
 
@@ -43,10 +50,11 @@
     const isMobile = window.innerWidth < 768;
     const dateStr = isMobile ? `${day}/${monthNum}/${year}` : `${day} de ${monthName} de ${year}`;
     
+    const html = `<div class="text-center"><div>${dateStr}</div><div>${hours}:${minutes}:${seconds}</div></div>`;
     const clockElement = document.getElementById('clock');
-    if (clockElement) {
-      clockElement.innerHTML = `<div class="text-center"><div class="text-xs md:text-base">${dateStr}</div><div>${hours}:${minutes}:${seconds}</div></div>`;
-    }
+    if (clockElement) clockElement.innerHTML = html;
+    const clockMobile = document.getElementById('clock-mobile');
+    if (clockMobile) clockMobile.innerHTML = html;
   }
   
   // Update clock immediately and then every second
