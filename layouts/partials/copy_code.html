@@ -1,0 +1,60 @@
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('pre').forEach(function (pre) {
+    var button = document.createElement('button');
+    button.className = 'copy-code-btn';
+    button.setAttribute('aria-label', 'Copiar código');
+    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.addEventListener('click', function () {
+      var code = pre.querySelector('code');
+      if (!code) return;
+      navigator.clipboard.writeText(code.innerText).then(function () {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      }).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = code.innerText;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(button);
+  });
+});
+</script>
+
+<style>
+.copy-code-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+  line-height: 1;
+}
+pre:hover .copy-code-btn {
+  opacity: 1;
+}
+.copy-code-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+.copy-code-btn:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.8);
+  opacity: 1;
+}
+</style>

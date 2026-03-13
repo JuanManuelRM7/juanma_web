@@ -1,5 +1,5 @@
 <!-- Mobile Sticky Header (appears on scroll down) -->
-<div class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-700 shadow-2xl z-40 p-3">
+<div data-sticky-header class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-700 shadow-2xl z-40 p-3" style="transform: translateY(100px); opacity: 0; pointer-events: none;">
   <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
     <!-- Photo + Name -->
     <div class="flex items-center gap-2 min-w-0">
@@ -25,6 +25,7 @@
         href="{{ `/cv.pdf` | relURL }}"
         class="inline-flex items-center justify-center p-2.5 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
         title="Descargar CV"
+        aria-label="Descargar CV"
       >
         <i class="fas fa-file-download text-sm"></i>
       </a>
@@ -38,6 +39,7 @@
           target="_blank"
           rel="noopener noreferrer"
           title="LinkedIn"
+          aria-label="LinkedIn"
         >
           <i class="fab fa-linkedin-in text-sm"></i>
         </a>
@@ -51,6 +53,7 @@
           href="{{ .url }}"
           class="inline-flex items-center justify-center p-2.5 rounded-md bg-red-600 hover:bg-red-700 text-white transition-all duration-300"
           title="Email"
+          aria-label="Contactar por email"
         >
           <i class="fas fa-envelope text-sm"></i>
         </a>

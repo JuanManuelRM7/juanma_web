@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Astronomía on</title><link>https://juanmanuel.petrer.eu/tags/astronom%C3%ADa/</link><description>Recent content in Astronomía on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/astronom%C3%ADa/index.xml" rel="self" type="application/rss+xml"/><item><title>Astrofísica</title><link>https://juanmanuel.petrer.eu/material/astrofisica/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/astrofisica/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/tiempos_estelares.pdf"&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf"&gt;Diagrama HR&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/exp_eotvos.pdf"&gt;Experimento de Eotvos&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/ejercicios_varios.pdf"&gt;Ejercicios varios a mano&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="beamer"&gt;Beamer&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf"&gt;Diagrama HR&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/rotacion_galactica.pdf"&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Astronomía on </title>
+    <link>https://juanmanuel.petrer.eu/tags/astronom%C3%ADa/</link>
+    <description>Recent content in Astronomía on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/astronom%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Astrofísica</title>
+      <link>https://juanmanuel.petrer.eu/material/astrofisica/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/astrofisica/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/tiempos_estelares.pdf&#34;&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf&#34;&gt;Diagrama HR&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/exp_eotvos.pdf&#34;&gt;Experimento de Eotvos&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/ejercicios_varios.pdf&#34;&gt;Ejercicios varios a mano&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf&#34;&gt;Diagrama HR&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/rotacion_galactica.pdf&#34;&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

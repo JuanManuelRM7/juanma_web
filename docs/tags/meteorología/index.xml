@@ -1,30 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Meteorología on</title><link>https://juanmanuel.petrer.eu/tags/meteorolog%C3%ADa/</link><description>Recent content in Meteorología on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/meteorolog%C3%ADa/index.xml" rel="self" type="application/rss+xml"/><item><title>Física de la Atmósfera</title><link>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</guid><description>&lt;div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4"&gt;
-&lt;div class="text-red-700 dark:text-red-300"&gt;
-&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-atmosfera/precipitacion_cyl.xlsx"&gt;Estudio precipitación Castilla y León&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="beamer"&gt;Beamer&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-atmosfera/beamer_spc.pdf"&gt;Presentación SPC&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item><item><title>Predicciones por Conjuntos en Meteorología</title><link>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;La predecibilidad es a la prediccion como el romance es al sexo&lt;/p&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;¿Has notado que a veces el pronóstico del tiempo indica lluvia y termina siendo un día soleado? ¿O que la temperatura prevista difiere significativamente de la real? Estos &amp;ldquo;fallos&amp;rdquo; en las predicciones meteorológicas no son simples errores, sino manifestaciones de la complejidad inherente a la predicción del tiempo. En este artículo, exploraremos en profundidad cómo la meteorología moderna ha evolucionado desde los modelos deterministas hacia las predicciones por conjuntos, una transformación que nos permite no solo pronosticar el tiempo, sino también entender y cuantificar la incertidumbre en nuestras predicciones.&lt;/p&gt;</description></item><item><title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title><link>https://juanmanuel.petrer.eu/blog/caos/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/caos/</guid><description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;
-Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;
-&lt;div align="center"&gt;
-&lt;p&gt;X_{n+1} = r * X_n(1 - X_n)&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;donde:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;( x_n ) representa la población normalizada en el tiempo ( n ),&lt;/li&gt;
-&lt;li&gt;( r ) es el parámetro de crecimiento,&lt;/li&gt;
-&lt;li&gt;y el término ( (1 - x_n) ) introduce un límite ambiental.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meteorología on </title>
+    <link>https://juanmanuel.petrer.eu/tags/meteorolog%C3%ADa/</link>
+    <description>Recent content in Meteorología on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/meteorolog%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Física de la Atmósfera</title>
+      <link>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</guid>
+      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xD;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xD;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-atmosfera/precipitacion_cyl.xlsx&#34;&gt;Estudio precipitación Castilla y León&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-atmosfera/beamer_spc.pdf&#34;&gt;Presentación SPC&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Predicciones por Conjuntos en Meteorología</title>
+      <link>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;La predecibilidad es a la prediccion como el romance es al sexo&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;¿Has notado que a veces el pronóstico del tiempo indica lluvia y termina siendo un día soleado? ¿O que la temperatura prevista difiere significativamente de la real? Estos &amp;ldquo;fallos&amp;rdquo; en las predicciones meteorológicas no son simples errores, sino manifestaciones de la complejidad inherente a la predicción del tiempo. En este artículo, exploraremos en profundidad cómo la meteorología moderna ha evolucionado desde los modelos deterministas hacia las predicciones por conjuntos, una transformación que nos permite no solo pronosticar el tiempo, sino también entender y cuantificar la incertidumbre en nuestras predicciones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Del Clima al caos: una analogía entre meteorología y dinámica de poblaciones</title>
+      <link>https://juanmanuel.petrer.eu/blog/caos/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/caos/</guid>
+      <description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;&#xA;Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;div align=&#34;center&#34;&gt;&#xD;&#xA;&lt;p&gt;X_{n+1} = r * X_n(1 - X_n)&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;p&gt;donde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;( x_n ) representa la población normalizada en el tiempo ( n ),&lt;/li&gt;&#xA;&lt;li&gt;( r ) es el parámetro de crecimiento,&lt;/li&gt;&#xA;&lt;li&gt;y el término ( (1 - x_n) ) introduce un límite ambiental.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

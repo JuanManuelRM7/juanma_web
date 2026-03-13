@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EDOs on</title><link>https://juanmanuel.petrer.eu/tags/edos/</link><description>Recent content in EDOs on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/edos/index.xml" rel="self" type="application/rss+xml"/><item><title>Ecuaciones Diferenciales</title><link>https://juanmanuel.petrer.eu/material/edos/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/edos/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf"&gt;Curvas de Persecución&lt;/a&gt; - Métodos Análiticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EDOs on </title>
+    <link>https://juanmanuel.petrer.eu/tags/edos/</link>
+    <description>Recent content in EDOs on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/edos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ecuaciones Diferenciales</title>
+      <link>https://juanmanuel.petrer.eu/material/edos/</link>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/material/edos/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf&#34;&gt;Curvas de Persecución&lt;/a&gt; - Métodos Análiticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

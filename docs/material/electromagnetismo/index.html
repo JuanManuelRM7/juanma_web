@@ -1,14 +1,461 @@
-<!doctype html><html lang=es class=m-auto><head><title>Electromagnetismo</title><meta name=theme-color content="#06b6d4"><meta charset=utf-8><meta content="width=device-width,initial-scale=1" name=viewport><meta name=description content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos"><meta name=author content="Juan Manuel Ruiz Muñoz"><meta name=robots content="index, follow"><link rel=canonical href=https://juanmanuel.petrer.eu/material/electromagnetismo/><meta property="og:title" content="Electromagnetismo"><meta property="og:description" content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos"><meta property="og:type" content="article"><meta property="og:url" content="https://juanmanuel.petrer.eu/material/electromagnetismo/"><meta property="og:image" content="https://juanmanuel.petrer.eu/images/profile.png"><meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - AI Developer - Computer Vision Specialist at VRAIA Corp."><meta property="og:site_name" content="Juan Manuel Ruiz – AI Developer & Computer Vision Specialist"><meta property="og:locale" content="es_ES"><meta property="article:author" content="Juan Manuel Ruiz Muñoz"><meta property="article:published_time" content="2025-10-27T00:00:00Z"><meta property="article:modified_time" content="2025-10-27T00:00:00Z"><meta property="article:tag" content="física"><meta property="article:tag" content="electromagnetismo"><meta property="article:tag" content="campos"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Electromagnetismo"><meta name=twitter:description content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos"><meta name=twitter:image content="https://juanmanuel.petrer.eu/images/profile.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Electromagnetismo","description":"Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos","author":{"@type":"Person","name":"Juan Manuel Ruiz Muñoz"},"datePublished":"2025-10-27","url":"https:\/\/juanmanuel.petrer.eu\/material\/electromagnetismo\/"}</script><meta name=generator content="Sitio web por JM con Hugo 0.149.1"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#252627><link rel="shortcut icon" href=/favicon.ico><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.15.2/css/all.css integrity=sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu crossorigin=anonymous><link rel=stylesheet href=https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css><link rel=stylesheet href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"><link href="/main.min.ec737d7fae3cc984d213d7b08c4faf5454a26e86ab6172a03f5d768539764b65.css" rel=stylesheet><link rel=stylesheet href=/css/main.css><link rel=stylesheet href=/css/search.css><link rel=stylesheet href=/css/general.css><link rel=stylesheet href=/css/syntax.css><script>let html=document.querySelector("html"),theme=window.localStorage.getItem("theme");const setTheme=e=>{html.classList.remove("light"),e==="dark"?(html.classList.add("dark"),window.localStorage.setItem("theme","dark")):(html.classList.remove("dark"),window.localStorage.setItem("theme","light")),fixThemeToggleIcon(e)},fixThemeToggleIcon=e=>{let t=document.querySelector(".theme-toggle");t&&(e==="dark"?(t.classList.remove("fa-moon"),t.classList.add("fa-sun")):(t.classList.remove("fa-sun"),t.classList.add("fa-moon")))};if(theme==null)if(html.classList.contains("dark"))theme="dark";else if(html.classList.contains("light"))theme="light";else{const e=window.matchMedia("(prefers-color-scheme: dark)").matches;e?theme="dark":theme="light"}setTheme(theme);const toggleTheme=()=>{setTheme(html.classList.contains("dark")?"light":"dark")};window.onload=()=>{fixThemeToggleIcon(theme);let e=document.querySelector(".accordion.active");e&&(e.nextElementSibling.style.maxHeight=e.nextElementSibling.scrollHeight+"px")},window.onresize=()=>{let e=document.querySelector(".accordion.active");e&&(e.nextElementSibling.style.maxHeight=e.nextElementSibling.scrollHeight+"px")}</script></head><body class="h-screen p-2 m-auto max-w-4xl flex flex-col"><header class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 justify-between items-center bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent" style="box-shadow:0 4px 6px -1px rgba(5,150,105,.1)"><div class="flex gap-1"><a class=nav-menu-item href=https://juanmanuel.petrer.eu/>Inicio</a>
-<a class=nav-menu-item href=/blog>Blog</a>
-<a class="nav-menu-item hidden md:block" href=/material>Material Universitario</a></div><div class="absolute left-1/2 transform -translate-x-1/2"><div id=clock class="text-cyan-700 dark:text-cyan-300 font-semibold text-base md:text-lg"></div></div><div class="flex items-center"><a class="nav-menu-item md:hidden !p-1 !px-2 mx-5" href=/material>Material</a>
-<i class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110" onclick=toggleTheme()></i></div></header><script>function updateClock(){const e=new Date,o=String(e.getHours()).padStart(2,"0"),i=String(e.getMinutes()).padStart(2,"0"),a=String(e.getSeconds()).padStart(2,"0"),t=e.getDate(),r=String(e.getMonth()+1).padStart(2,"0"),c=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],l=c[e.getMonth()],n=e.getFullYear(),d=window.innerWidth<768,u=d?`${t}/${r}/${n}`:`${t} de ${l} de ${n}`,s=document.getElementById("clock");s&&(s.innerHTML=`<div class="text-center"><div class="text-xs md:text-base">${u}</div><div>${o}:${i}:${a}</div></div>`)}updateClock(),setInterval(updateClock,1e3),window.addEventListener("resize",updateClock)</script><main class=grow><div class="prose prose-stone dark:prose-invert max-w-none"><div class=mb-3><h1 class=top-h1>Electromagnetismo</h1><p class=mb-1>October 27, 2025</p><p>&mdash;</p></div><details class="toc-container mb-6" open><summary class="toc-toggle cursor-pointer select-none font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2 text-base"><i class="fas fa-list-ul text-sm"></i>
-Tabla de contenidos</summary><nav class="toc mt-3"><nav id=TableOfContents><ul><li><a href=#contenido>Contenido</a></li></ul></nav></nav></details><div class=content><h2 id=contenido>Contenido</h2><ul><li><a href=/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf>Formulario Electromagnetismo I</a> - Electromagnetismo I (Universidad de Alicante).</li></ul><p>Si encuentras algún error o tienes sugerencias, no dudes en contactar.</p></div></div><div class="flex flex-row justify-around my-2"><h3 class="mb-1 mt-1 text-left mr-4"><a href=/material/fisica-computacional/ title="Física Computacional"><i class="nav-menu fas fa-chevron-circle-left"></i></a></h3><h3 class="mb-1 mt-1 text-left ml-4"><a href=/material/edos/ title="Ecuaciones Diferenciales"><i class="nav-menu fas fa-chevron-circle-right"></i></a></h3></div></main><footer class="text-sm border-t-2 border-cyan-500 dark:border-cyan-400 py-6 bg-gradient-to-r from-transparent via-cyan-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent" style="box-shadow:0 -4px 6px -1px rgba(6,182,212,.1)"><div class="max-w-4xl mx-auto px-4"><div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left mb-4"><div><h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Secciones</h4><div class="flex flex-col gap-1"><a href=/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Inicio</a>
-<a href=/blog/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Blog</a>
-<a href=/material/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Material</a></div></div><div><h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Recursos</h4><div class="flex flex-col gap-1"><a href=/cv.pdf class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">CV (PDF)</a>
-<a href=/search/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Buscar</a></div></div><div><h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Contacto</h4><div class="flex flex-col gap-1"><a href=https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">LinkedIn</a>
-<a href=https://www.instagram.com/j.manuel__rm/ class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Instagram</a>
-<a href=https://github.com/juanmanuelruizm class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">GitHub</a>
-<a href=mailto:juanmanuelruiz383@gmail.com class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Email</a>
-<a href=https://orcid.org/0009-0008-7529-306X class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">ORCID</a></div></div></div><div class="border-t border-gray-200 dark:border-gray-700 pt-3 text-center"><p class="text-xs text-gray-400 dark:text-gray-500">© 2026
-<a href=https://github.com/juanmanuelruizm class="hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Juan Manuel</a>
-· Hecho con <span class=text-red-400>♥</span> y <a href=https://gohugo.io class="hover:text-cyan-600 dark:hover:text-cyan-400 no-underline" target=_blank rel="noopener noreferrer">Hugo</a></p></div></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="es" class="m-auto "><head>
+  
+
+
+
+
+<title>Electromagnetismo</title>
+
+<meta name="theme-color" content="#06b6d4" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos" />
+<meta name="author" content="Juan Manuel Ruiz Muñoz" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://juanmanuel.petrer.eu/material/electromagnetismo/" />
+
+
+<meta property="og:title" content="Electromagnetismo" />
+<meta property="og:description" content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://juanmanuel.petrer.eu/material/electromagnetismo/" />
+<meta property="og:image" content="https://juanmanuel.petrer.eu/images/profile.png" />
+<meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - AI Developer - Computer Vision Specialist at VRAIA Corp." />
+<meta property="og:site_name" content="Juan Manuel Ruiz – AI Developer &amp; Computer Vision Specialist" />
+<meta property="og:locale" content="es_ES" />
+
+<meta property="article:author" content="Juan Manuel Ruiz Muñoz" />
+<meta property="article:published_time" content="2025-10-27T00:00:00Z" />
+<meta property="article:modified_time" content="2025-10-27T00:00:00Z" />
+<meta property="article:tag" content="física" /><meta property="article:tag" content="electromagnetismo" /><meta property="article:tag" content="campos" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Electromagnetismo" />
+<meta name="twitter:description" content="Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos" />
+<meta name="twitter:image" content="https://juanmanuel.petrer.eu/images/profile.png" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Electromagnetismo",
+  "description": "Material y recursos de Electromagnetismo: campos eléctricos, campos magnéticos, y fenómenos electromagnéticos",
+  "author": {
+    "@type": "Person",
+    "name": "Juan Manuel Ruiz Muñoz"
+  },
+  "datePublished": "2025-10-27",
+  "url": "https:\/\/juanmanuel.petrer.eu\/material\/electromagnetismo\/"
+}
+</script>
+
+
+<meta name="generator" content="Sitio web por JM con Hugo 0.149.1" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+
+  
+  
+  
+  
+  <link href="/main.min.b3eb9ee71dafb865599a134a74ca06d29284d263a5e003ed198645bec69de2d0.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/search.css" />
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/syntax.css" />
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("fa-moon");
+          themeToggle.classList.add("fa-sun");
+        } else {
+          themeToggle.classList.remove("fa-sun");
+          themeToggle.classList.add("fa-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
+    }
+
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
+    window.onload = () => {
+      fixThemeToggleIcon(theme);
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+  
+  <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-3 px-4 mb-6 w-full border-b-2 border-cyan-500 dark:border-cyan-400 justify-between items-center bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent"
+  style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
+>
+  <div class="flex gap-1">
+    <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Inicio</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
+    <a class="nav-menu-item hidden md:block" href="/material">Material Universitario</a>
+  </div>
+  <div class="absolute left-1/2 transform -translate-x-1/2">
+    <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-base md:text-lg"></div>
+  </div>
+  <div class="flex items-center gap-3">
+    <a class="nav-menu-item md:hidden !p-1 !px-2" href="/material">Material</a>
+    <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
+      <i class="fas fa-search"></i>
+    </a>
+    <i
+      class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
+      onclick="toggleTheme()"
+      role="button"
+      tabindex="0"
+      aria-label="Cambiar tema"
+      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
+    ></i>
+  </div>
+</header>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    const day = now.getDate();
+    const monthNum = String(now.getMonth() + 1).padStart(2, '0');
+    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 
+                    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    const monthName = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    
+    const isMobile = window.innerWidth < 768;
+    const dateStr = isMobile ? `${day}/${monthNum}/${year}` : `${day} de ${monthName} de ${year}`;
+    
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+      clockElement.innerHTML = `<div class="text-center"><div class="text-xs md:text-base">${dateStr}</div><div>${hours}:${minutes}:${seconds}</div></div>`;
+    }
+  }
+  
+  
+  updateClock();
+  setInterval(updateClock, 1000);
+  
+  
+  window.addEventListener('resize', updateClock);
+</script>
+
+
+
+
+    
+    <main class="grow">
+<nav aria-label="Miga de pan" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
+  <a href="https://juanmanuel.petrer.eu/" class="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors" aria-label="Inicio">
+    <i class="fas fa-home text-xs"></i>
+  </a>
+  
+  <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>
+  <a href="/material/" class="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors capitalize">Materiales Universitarios</a>
+  
+  <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>
+  <span class="text-gray-700 dark:text-gray-300 font-medium truncate max-w-[220px] sm:max-w-xs" aria-current="page">Electromagnetismo</span>
+</nav>
+
+<div class="mb-5">
+  <h1 class="top-h1">Electromagnetismo</h1>
+  <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
+    <span class="flex items-center gap-1.5">
+      <i class="far fa-calendar-alt text-cyan-500 dark:text-cyan-400 text-xs"></i>
+      27 October 2025
+    </span>
+    <span class="flex items-center gap-1.5">
+      <i class="far fa-clock text-cyan-500 dark:text-cyan-400 text-xs"></i>
+      0 min lectura
+    </span>
+  </div>
+  
+  <div class="flex flex-wrap gap-1.5 mb-3">
+    
+    <a href="/tags/f%C3%ADsica" class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 hover:bg-cyan-100 dark:hover:bg-cyan-800/50 transition-colors no-underline">#física</a>
+    
+    <a href="/tags/electromagnetismo" class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 hover:bg-cyan-100 dark:hover:bg-cyan-800/50 transition-colors no-underline">#electromagnetismo</a>
+    
+    <a href="/tags/campos" class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800 hover:bg-cyan-100 dark:hover:bg-cyan-800/50 transition-colors no-underline">#campos</a>
+    
+  </div>
+  
+  <hr class="border-gray-200 dark:border-gray-700">
+</div>
+
+<div class="lg:grid lg:grid-cols-[1fr_14rem] lg:gap-8 items-start">
+  <div class="prose prose-stone dark:prose-invert max-w-none min-w-0">
+    
+    <details class="toc-container mb-6 lg:hidden" open>
+      <summary class="toc-toggle cursor-pointer select-none font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2 text-base">
+        <i class="fas fa-list-ul text-sm"></i>
+        Tabla de contenidos
+      </summary>
+      <nav class="toc mt-3">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contenido">Contenido</a></li>
+  </ul>
+</nav>
+      </nav>
+    </details>
+    
+
+    <div class="content">
+      <h2 id="contenido">Contenido</h2>
+<ul>
+<li><a href="/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf">Formulario Electromagnetismo I</a> - Electromagnetismo I (Universidad de Alicante).</li>
+</ul>
+<p>Si encuentras algún error o tienes sugerencias, no dudes en contactar.</p>
+
+    </div>
+
+    
+
+    
+  </div>
+
+  
+  <aside class="hidden lg:block self-start sticky top-4">
+    <div class="rounded-lg border border-cyan-200 dark:border-cyan-700 p-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+      <p class="font-semibold text-sm text-cyan-700 dark:text-cyan-300 mb-3 flex items-center gap-1.5">
+        <i class="fas fa-list-ul text-xs"></i>
+        Índice
+      </p>
+      <nav class="toc text-sm toc-sidebar">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contenido">Contenido</a></li>
+  </ul>
+</nav>
+      </nav>
+    </div>
+  </aside>
+  
+</div>
+<div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/material/fisica-computacional/"
+      title="Física Computacional"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <a
+      href="/material/edos/"
+      title="Ecuaciones Diferenciales"
+    >
+      <i class="nav-menu fas fa-chevron-circle-right"></i>
+    </a>
+    
+  </h3>
+</div>
+
+
+
+    </main>
+    
+    <footer class="text-sm border-t-2 border-cyan-500 dark:border-cyan-400  py-6 bg-gradient-to-r from-transparent via-cyan-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent "
+  style="box-shadow: 0 -4px 6px -1px rgba(6, 182, 212, 0.1);">
+
+  
+  
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left mb-4">
+      <div>
+        <h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Secciones</h4>
+        <div class="flex flex-col gap-1">
+          <a href="/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Inicio</a>
+          <a href="/blog/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Blog</a>
+          <a href="/material/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Material</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Recursos</h4>
+        <div class="flex flex-col gap-1">
+          <a href="/cv.pdf" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">CV (PDF)</a>
+          <a href="/search/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Buscar</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">Contacto</h4>
+        <div class="flex flex-col gap-1">
+          
+          <a href="https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">LinkedIn</a>
+          
+          <a href="https://www.instagram.com/j.manuel__rm/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Instagram</a>
+          
+          <a href="https://github.com/juanmanuelruizm" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">GitHub</a>
+          
+          <a href="mailto:juanmanuelruiz383@gmail.com" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Email</a>
+          
+          <a href="https://orcid.org/0009-0008-7529-306X" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">ORCID</a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-200 dark:border-gray-700 pt-3 text-center">
+      <p class="text-xs text-gray-400 dark:text-gray-500">
+        © 2026
+        <a href="https://github.com/juanmanuelruizm" class="hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Juan Manuel</a>
+        · Hecho con <span class="text-red-400">♥</span> y <a href="https://gohugo.io" class="hover:text-cyan-600 dark:hover:text-cyan-400 no-underline" target="_blank" rel="noopener noreferrer">Hugo</a>
+      </p>
+    </div>
+  </div>
+  
+
+  
+</footer>
+
+
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('pre').forEach(function (pre) {
+    var button = document.createElement('button');
+    button.className = 'copy-code-btn';
+    button.setAttribute('aria-label', 'Copiar código');
+    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.addEventListener('click', function () {
+      var code = pre.querySelector('code');
+      if (!code) return;
+      navigator.clipboard.writeText(code.innerText).then(function () {
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      }).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = code.innerText;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+      });
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(button);
+  });
+});
+</script>
+
+<style>
+.copy-code-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+  line-height: 1;
+}
+pre:hover .copy-code-btn {
+  opacity: 1;
+}
+.copy-code-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+.copy-code-btn:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.8);
+  opacity: 1;
+}
+</style>
+
+  </body>
+</html>
