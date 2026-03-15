@@ -84,7 +84,7 @@
   
   
   
-  <link href="/main.min.2fbc333dc392a6a8b84061cfc718ddc8682b542553ad7e2dbf66ca5193e4476f.css" rel="stylesheet" />
+  <link href="/main.min.750409e4889192d0a10d0b1f8df521c7702998114cb161f9b4ef03581cb413a4.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -167,7 +167,7 @@
 
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
     
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-md focus:outline-none">Skip to content</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Ir al contenido</a>
     
     <header
   class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
@@ -445,7 +445,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
     <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
       <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
     </p>
-    <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400">Elche, Alicante, España</p>
+    <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400" data-i18n="profile_location">Elche, Alicante, España</p>
     <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
     
     <div class="flex flex-wrap gap-3 mt-4">
@@ -616,84 +616,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const display = document.getElementById('total-experience');
-  
-  
-  const experiences = [
-    { start: 'Junio 2025', end: 'Presente' },      
-    { start: 'Junio 2024', end: 'Junio 2025' },    
-    { start: 'Enero 2024', end: 'Julio 2024' }     
+  var display = document.getElementById('total-experience');
+
+  var experiences = [
+    { start: 'Junio 2025', end: 'Presente' },
+    { start: 'Junio 2024', end: 'Junio 2025' },
+    { start: 'Enero 2024', end: 'Julio 2024' }
   ];
+
+  var meses = {
+    'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
+    'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
+    'septiembre': 9, 'octubre': 10, 'noviembre': 11, 'diciembre': 12
+  };
 
   function parseDate(dateStr) {
     dateStr = dateStr.trim().toLowerCase();
-    
-    
-    const meses = {
-      'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
-      'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
-      'septiembre': 9, 'octubre': 10, 'noviembre': 11, 'diciembre': 12
-    };
-    
-    
-    if (/^\d{4}$/.test(dateStr)) {
-      return new Date(parseInt(dateStr), 0, 1);
-    }
-    
-    
-    const parts = dateStr.split(/\s+/);
+    if (/^\d{4}$/.test(dateStr)) return new Date(parseInt(dateStr), 0, 1);
+    var parts = dateStr.split(/\s+/);
     if (parts.length >= 2) {
-      const month = meses[parts[0]] || 1;
-      const year = parseInt(parts[1]);
+      var month = meses[parts[0]] || 1;
+      var year = parseInt(parts[1]);
       return new Date(year, month - 1, 1);
     }
-    
     return new Date();
   }
 
-  function calculateTotalExperience(experiences) {
-    const now = new Date();
-    
-    
-    let earliestDate = now;
-    let latestDate = now;
-    
-    experiences.forEach(exp => {
-      const startDate = parseDate(exp.start);
-      const endDate = exp.end.includes('Presente') ? now : parseDate(exp.end);
-      
-      if (startDate < earliestDate) earliestDate = startDate;
-      if (endDate > latestDate) latestDate = endDate;
-    });
-    
-    
-    let totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12;
-    totalMonths += latestDate.getMonth() - earliestDate.getMonth();
-    
-    
-    if (latestDate.getDate() < earliestDate.getDate()) {
-      totalMonths -= 1;
-    }
-    
-    totalMonths = Math.max(1, totalMonths);
-    
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    
-    
-    const monthNames = ['meses', 'mes', 'meses'];
-    const yearNames = ['años', 'año', 'años'];
-    
-    if (years === 0) {
-      return `${months} ${months === 1 ? 'mes' : 'meses'}`;
-    } else if (months === 0) {
-      return `${years} ${years === 1 ? 'año' : 'años'}`;
+  var now = new Date();
+  var earliestDate = now;
+  var latestDate = now;
+  experiences.forEach(function(exp) {
+    var startDate = parseDate(exp.start);
+    var endDate = exp.end.indexOf('Presente') !== -1 ? now : parseDate(exp.end);
+    if (startDate < earliestDate) earliestDate = startDate;
+    if (endDate > latestDate) latestDate = endDate;
+  });
+
+  var totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12;
+  totalMonths += latestDate.getMonth() - earliestDate.getMonth();
+  if (latestDate.getDate() < earliestDate.getDate()) totalMonths -= 1;
+  totalMonths = Math.max(1, totalMonths);
+
+  function updateDisplay() {
+    var lang = (window.localStorage && window.localStorage.getItem('lang')) || 'es';
+    var years = Math.floor(totalMonths / 12);
+    var months = totalMonths % 12;
+    var yWord, mWord, andWord;
+    if (lang === 'en') {
+      yWord = years === 1 ? 'year' : 'years';
+      mWord = months === 1 ? 'month' : 'months';
+      andWord = 'and';
     } else {
-      return `${years} ${years === 1 ? 'año' : 'años'} y ${months} ${months === 1 ? 'mes' : 'meses'}`;
+      yWord = years === 1 ? 'año' : 'años';
+      mWord = months === 1 ? 'mes' : 'meses';
+      andWord = 'y';
+    }
+    if (years === 0) {
+      display.textContent = months + ' ' + mWord;
+    } else if (months === 0) {
+      display.textContent = years + ' ' + yWord;
+    } else {
+      display.textContent = years + ' ' + yWord + ' ' + andWord + ' ' + months + ' ' + mWord;
     }
   }
 
-  display.textContent = calculateTotalExperience(experiences);
+  updateDisplay();
+  window.updateExperienceDisplay = updateDisplay;
 });
 </script>
 
@@ -826,7 +814,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
       <time datetime="2025-10-27">27 Oct 2025</time>
       <span>•</span>
-      <span>3 min read</span>
+      <span>3 <span data-i18n="content_reading_time">min lectura</span></span>
     </div>
     
     
@@ -868,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">AI Developer - Computer Vision Specialist</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_1">AI Developer - Computer Vision Specialist</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -876,11 +864,11 @@ document.addEventListener('DOMContentLoaded', function() {
           
         </p>
       </div>
-      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0">Junio 2025 - <em>Presente</em></span>
+      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0" data-i18n="exp_dates_1" data-i18n-html>Junio 2025 - <em>Presente</em></span>
     </div>
     
     
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3">
+    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_1" data-i18n-html>
     <ul>
 <li>Desarrollo de pipelines de extracción, transformación y carga (ETL) para bases de datos, creación de datasets y preprocesamiento de imágenes.</li>
 <li>Entrenamiento, fine-tuning y validación de modelos de visión, orientados a la detección de defectos en neumáticos.</li>
@@ -913,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">Data Scientist &amp; AI Researcher</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -921,11 +909,11 @@ document.addEventListener('DOMContentLoaded', function() {
           
         </p>
       </div>
-      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0">Junio 2024 - Junio 2025</span>
+      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0" data-i18n="exp_dates_2" data-i18n-html>Junio 2024 - Junio 2025</span>
     </div>
     
     
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3">
+    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_2" data-i18n-html>
     <ul>
 <li>Analizar y definir los requisitos del proyecto, diseñando y desarrollando soluciones de aprendizaje automático utilizando algoritmos de vanguardia.</li>
 <li>Diseñar e implementar algoritmos de aprendizaje automático personalizados para una variedad de proyectos, incluyendo procesamiento del lenguaje natural, redes neuronales y visión computacional, entre otros.</li>
@@ -950,7 +938,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">Investigador en Universidad Miguel Hernández</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_3">Investigador en Universidad Miguel Hernández</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -958,11 +946,11 @@ document.addEventListener('DOMContentLoaded', function() {
           
         </p>
       </div>
-      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0">Enero 2024 - Julio 2024</span>
+      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0" data-i18n="exp_dates_3" data-i18n-html>Enero 2024 - Julio 2024</span>
     </div>
     
     
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3">
+    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_3" data-i18n-html>
     <ul>
 <li>Desarrollo e investigación de técnicas Lagrangianas para la identificación automática de situaciones de bloqueo atmosférico.</li>
 <li>Colaboración en otros proyectos del grupo relacionados con la física atmosférica.</li>
@@ -999,7 +987,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">Grado en Física</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_1">Grado en Física</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Alicante</p>
       </div>
@@ -1009,7 +997,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
       <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-        <strong data-i18n="edu_thesis">TFG:</strong> <i>Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</i>
+        <strong data-i18n="edu_thesis">TFG:</strong> <i><span data-i18n="edu_thesis_1">Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</span></i>
       </p>
       
       <a
@@ -1035,7 +1023,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">Grado en Matemáticas</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_2">Grado en Matemáticas</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Alicante</p>
       </div>
@@ -1053,7 +1041,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">Estudiante SICUE</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_3">Estudiante SICUE</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Salamanca</p>
       </div>
@@ -1089,7 +1077,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="flex items-center gap-2 mb-2 flex-wrap">
         
         <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
-          <i class="fas fa-spinner mr-1"></i>En desarrollo
+          <i class="fas fa-spinner mr-1"></i><span data-i18n="pub_type_dev">En desarrollo</span>
         </span>
         
       </div>
@@ -1473,21 +1461,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-eye text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400
         ">
-        En producción
+        <span data-i18n="status_production">En producción</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      Detección de Defectos en Neumáticos
+      <span data-i18n="proj_title_1">Detección de Defectos en Neumáticos</span>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Pipeline de visión computacional para detección automática de defectos en la industria del neumático usando deep learning.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_1">Pipeline de visión computacional para detección automática de defectos en la industria del neumático usando deep learning.</p>
 
     
     
@@ -1515,21 +1504,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-shield-alt text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400
         ">
-        Publicado
+        <span data-i18n="status_published">Publicado</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="/DCAI.pdf" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" >Detección de Desinformación con IA</a>
+      <a href="/DCAI.pdf" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" ><span data-i18n="proj_title_2">Detección de Desinformación con IA</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Arquitectura basada en ontologías e IA para detectar desinformación en obras de ficción. Publicado en DCAI&#39;25.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_2">Arquitectura basada en ontologías e IA para detectar desinformación en obras de ficción. Publicado en DCAI&#39;25.</p>
 
     
     
@@ -1563,21 +1553,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-cloud-sun text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400
         ">
-        TFG completado
+        <span data-i18n="status_completed">TFG completado</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="/tfg.pdf" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" >Bloqueos Atmosféricos Lagrangianos</a>
+      <a href="/tfg.pdf" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" ><span data-i18n="proj_title_3">Bloqueos Atmosféricos Lagrangianos</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Método lagrangiano para la identificación automática de situaciones de bloqueo atmosférico usando trayectorias HYSPLIT.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_3">Método lagrangiano para la identificación automática de situaciones de bloqueo atmosférico usando trayectorias HYSPLIT.</p>
 
     
     
@@ -1611,21 +1602,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-microphone text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400
         ">
-        Activo
+        <span data-i18n="status_active">Activo</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/talk-to-me" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer">Talk to Me</a>
+      <a href="https://github.com/juanmanuelruizm/talk-to-me" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_4">Talk to Me</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">CLI para practicar inglés conversacional con un tutor IA. Hablas por el micrófono, Whisper transcribe tu voz en tiempo real y un LLM local (Ollama) mantiene la conversación.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_4">CLI para practicar inglés conversacional con un tutor IA. Hablas por el micrófono, Whisper transcribe tu voz en tiempo real y un LLM local (Ollama) mantiene la conversación.</p>
 
     
     
@@ -1659,21 +1651,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-robot text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400
         ">
-        Activo
+        <span data-i18n="status_active">Activo</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/chatbot" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer">Agente Local con Ollama</a>
+      <a href="https://github.com/juanmanuelruizm/chatbot" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_5">Agente Local con Ollama</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Agente conversacional por consola que corre 100% en local usando Ollama. Tool calling nativo: lectura/escritura de archivos, búsqueda web con DuckDuckGo, ejecución de código Python y RAG con ChromaDB para consultar documentos propios.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_5">Agente conversacional por consola que corre 100% en local usando Ollama. Tool calling nativo: lectura/escritura de archivos, búsqueda web con DuckDuckGo, ejecución de código Python y RAG con ChromaDB para consultar documentos propios.</p>
 
     
     
@@ -1707,21 +1700,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-laptop-code text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400
         ">
-        En desarrollo
+        <span data-i18n="status_development">En desarrollo</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/frontend-an-introductory-course" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer">Frontend: An Introductory Course</a>
+      <a href="https://github.com/juanmanuelruizm/frontend-an-introductory-course" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_6">Frontend: An Introductory Course</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Repositorio educativo de desarrollo web frontend. Cubre HTML, CSS y layouts modernos (Flexbox/Grid) con teoría detallada y ejemplos comentados. En desarrollo progresivo.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_6">Repositorio educativo de desarrollo web frontend. Cubre HTML, CSS y layouts modernos (Flexbox/Grid) con teoría detallada y ejemplos comentados. En desarrollo progresivo.</p>
 
     
     
@@ -1755,21 +1749,22 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-code text-lg"></i>
       </div>
       
+      
       <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
         bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400
         ">
-        Activo
+        <span data-i18n="status_active">Activo</span>
       </span>
       
     </div>
 
     
     <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/JuanManuelRM7/juanma_web" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer">Portfolio Personal</a>
+      <a href="https://github.com/JuanManuelRM7/juanma_web" class="no-underline hover:text-cyan-600 dark:hover:text-cyan-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_7">Portfolio Personal</span></a>
     </h4>
 
     
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Este sitio web: portfolio estático construido con Hugo, Tailwind CSS y desplegado en GitHub Pages con CI/CD.</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_7">Este sitio web: portfolio estático construido con Hugo, Tailwind CSS y desplegado en GitHub Pages con CI/CD.</p>
 
     
     
@@ -2320,7 +2315,43 @@ pre:hover .copy-code-btn {
 
       
       prev_post: 'Previous',
-      next_post: 'Next'
+      next_post: 'Next',
+
+      
+      action_skip_content: 'Skip to content',
+      profile_location: 'Elche, Alicante, Spain',
+
+      
+      edu_degree_1: "Bachelor's Degree in Physics",
+      edu_degree_2: "Bachelor's Degree in Mathematics",
+      edu_degree_3: 'SICUE Exchange Student',
+      edu_thesis_1: 'A Lagrangian method for the identification of atmospheric blocking situations',
+
+      
+      exp_position_3: 'Researcher at Universidad Miguel Hernández',
+      exp_dates_1: 'June 2025 - <em>Present</em>',
+      exp_dates_2: 'June 2024 - June 2025',
+      exp_dates_3: 'January 2024 - July 2024',
+      exp_details_1: '<ul><li>Development of extraction, transformation, and loading (ETL) pipelines for databases, dataset creation, and image preprocessing.</li><li>Training, fine-tuning, and validation of computer vision models focused on tire defect detection.</li><li>Design and implementation of custom machine learning algorithms for various computer vision projects.</li><li>Definition, analysis, and monitoring of performance metrics for model selection in production.</li><li>Writing and reviewing technical documentation.</li><li>Continuous research and updates on artificial intelligence advances.</li><li>Cross-functional collaboration to achieve project objectives.</li></ul><p>Skills: PyTorch | TensorFlow | Computer Vision | Deep Learning | CNN | Transformers | Object Detection | OpenCV | MLflow | Docker | AWS</p>',
+      exp_details_2: '<ul><li>Analyze and define project requirements, designing and developing machine learning solutions using state-of-the-art algorithms.</li><li>Design and implement custom machine learning algorithms for various projects, including natural language processing, neural networks, and computer vision, among others.</li><li>Stay up to date with the latest research advances in various fields of artificial intelligence.</li><li>Write and review technical documentation.</li><li>Meet with clients to understand their requirements and tailor solutions to their needs.</li><li>Collaborate with other team members to achieve project objectives.</li></ul>',
+      exp_details_3: '<ul><li>Development and research of Lagrangian techniques for automatic identification of atmospheric blocking situations.</li><li>Collaboration on other group projects related to atmospheric physics.</li></ul>',
+
+      
+      proj_title_1: 'Tire Defect Detection',
+      proj_desc_1: 'Computer vision pipeline for automatic defect detection in the tire industry using deep learning.',
+      proj_title_2: 'AI Misinformation Detection',
+      proj_desc_2: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25.",
+      proj_title_3: 'Lagrangian Atmospheric Blocking',
+      proj_desc_3: 'Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories.',
+      proj_desc_4: 'CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) maintains the conversation.',
+      proj_title_5: 'Local Agent with Ollama',
+      proj_desc_5: 'Conversational console agent running 100% locally using Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB for querying your own documents.',
+      proj_desc_6: 'Educational frontend web development repository. Covers HTML, CSS, and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development.',
+      proj_title_7: 'Personal Portfolio',
+      proj_desc_7: 'This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD.',
+
+      
+      pub_type_dev: 'In development'
     },
     es: {
       
@@ -2433,11 +2464,22 @@ pre:hover .copy-code-btn {
     if (!strings) return;
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
-      if (strings[key]) {
-        if (el.hasAttribute('data-i18n-html')) {
+      var isHtml = el.hasAttribute('data-i18n-html');
+      
+      if (!el.hasAttribute('data-i18n-orig')) {
+        el.setAttribute('data-i18n-orig', isHtml ? el.innerHTML : el.textContent);
+      }
+      if (strings[key] !== undefined) {
+        if (isHtml) {
           el.innerHTML = strings[key];
         } else {
           el.textContent = strings[key];
+        }
+      } else {
+        
+        var orig = el.getAttribute('data-i18n-orig');
+        if (orig !== null) {
+          if (isHtml) { el.innerHTML = orig; } else { el.textContent = orig; }
         }
       }
     });
@@ -2453,6 +2495,16 @@ pre:hover .copy-code-btn {
 
     
     if (typeof window.updateClock === 'function') window.updateClock();
+    
+    if (typeof window.updateExperienceDisplay === 'function') window.updateExperienceDisplay();
+    
+    var gf = document.querySelector('iframe.giscus-frame');
+    if (gf) {
+      gf.contentWindow.postMessage(
+        { giscus: { setConfig: { lang: lang } } },
+        'https://giscus.app'
+      );
+    }
   }
 
   window.applyLang = applyLang;

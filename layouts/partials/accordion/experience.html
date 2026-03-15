@@ -1,4 +1,4 @@
-{{ range .Site.Params.experience.list }}
+{{ range $idx, $el := .Site.Params.experience.list }}
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-cyan-600 dark:border-l-cyan-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
@@ -6,7 +6,7 @@
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">{{ .position }}</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_{{ add $idx 1 }}">{{ .position }}</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           {{ if .url }}
@@ -14,11 +14,11 @@
           {{ else }} {{ .company }} {{ end }}
         </p>
       </div>
-      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0">{{ .dates | markdownify }}</span>
+      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0" data-i18n="exp_dates_{{ add $idx 1 }}" data-i18n-html>{{ .dates | markdownify }}</span>
     </div>
     
     {{ if .details }}
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3">
+    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_{{ add $idx 1 }}" data-i18n-html>
     {{ .details | markdownify }}
     </div>
     {{ end }}

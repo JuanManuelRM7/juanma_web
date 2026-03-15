@@ -101,7 +101,43 @@
 
       // Prev/Next
       prev_post: 'Previous',
-      next_post: 'Next'
+      next_post: 'Next',
+
+      // Profile & content data
+      action_skip_content: 'Skip to content',
+      profile_location: 'Elche, Alicante, Spain',
+
+      // Education data
+      edu_degree_1: "Bachelor's Degree in Physics",
+      edu_degree_2: "Bachelor's Degree in Mathematics",
+      edu_degree_3: 'SICUE Exchange Student',
+      edu_thesis_1: 'A Lagrangian method for the identification of atmospheric blocking situations',
+
+      // Experience data
+      exp_position_3: 'Researcher at Universidad Miguel Hernández',
+      exp_dates_1: 'June 2025 - <em>Present</em>',
+      exp_dates_2: 'June 2024 - June 2025',
+      exp_dates_3: 'January 2024 - July 2024',
+      exp_details_1: '<ul><li>Development of extraction, transformation, and loading (ETL) pipelines for databases, dataset creation, and image preprocessing.</li><li>Training, fine-tuning, and validation of computer vision models focused on tire defect detection.</li><li>Design and implementation of custom machine learning algorithms for various computer vision projects.</li><li>Definition, analysis, and monitoring of performance metrics for model selection in production.</li><li>Writing and reviewing technical documentation.</li><li>Continuous research and updates on artificial intelligence advances.</li><li>Cross-functional collaboration to achieve project objectives.</li></ul><p>Skills: PyTorch | TensorFlow | Computer Vision | Deep Learning | CNN | Transformers | Object Detection | OpenCV | MLflow | Docker | AWS</p>',
+      exp_details_2: '<ul><li>Analyze and define project requirements, designing and developing machine learning solutions using state-of-the-art algorithms.</li><li>Design and implement custom machine learning algorithms for various projects, including natural language processing, neural networks, and computer vision, among others.</li><li>Stay up to date with the latest research advances in various fields of artificial intelligence.</li><li>Write and review technical documentation.</li><li>Meet with clients to understand their requirements and tailor solutions to their needs.</li><li>Collaborate with other team members to achieve project objectives.</li></ul>',
+      exp_details_3: '<ul><li>Development and research of Lagrangian techniques for automatic identification of atmospheric blocking situations.</li><li>Collaboration on other group projects related to atmospheric physics.</li></ul>',
+
+      // Project data
+      proj_title_1: 'Tire Defect Detection',
+      proj_desc_1: 'Computer vision pipeline for automatic defect detection in the tire industry using deep learning.',
+      proj_title_2: 'AI Misinformation Detection',
+      proj_desc_2: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25.",
+      proj_title_3: 'Lagrangian Atmospheric Blocking',
+      proj_desc_3: 'Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories.',
+      proj_desc_4: 'CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) maintains the conversation.',
+      proj_title_5: 'Local Agent with Ollama',
+      proj_desc_5: 'Conversational console agent running 100% locally using Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB for querying your own documents.',
+      proj_desc_6: 'Educational frontend web development repository. Covers HTML, CSS, and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development.',
+      proj_title_7: 'Personal Portfolio',
+      proj_desc_7: 'This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD.',
+
+      // Publication types
+      pub_type_dev: 'In development'
     },
     es: {
       // Navigation
@@ -214,11 +250,22 @@
     if (!strings) return;
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
-      if (strings[key]) {
-        if (el.hasAttribute('data-i18n-html')) {
+      var isHtml = el.hasAttribute('data-i18n-html');
+      // Cache original Hugo-rendered content on first interaction
+      if (!el.hasAttribute('data-i18n-orig')) {
+        el.setAttribute('data-i18n-orig', isHtml ? el.innerHTML : el.textContent);
+      }
+      if (strings[key] !== undefined) {
+        if (isHtml) {
           el.innerHTML = strings[key];
         } else {
           el.textContent = strings[key];
+        }
+      } else {
+        // Restore original Hugo-rendered content
+        var orig = el.getAttribute('data-i18n-orig');
+        if (orig !== null) {
+          if (isHtml) { el.innerHTML = orig; } else { el.textContent = orig; }
         }
       }
     });
@@ -234,6 +281,16 @@
 
     // Update clock if present
     if (typeof window.updateClock === 'function') window.updateClock();
+    // Update experience calculator if present
+    if (typeof window.updateExperienceDisplay === 'function') window.updateExperienceDisplay();
+    // Update Giscus language if present
+    var gf = document.querySelector('iframe.giscus-frame');
+    if (gf) {
+      gf.contentWindow.postMessage(
+        { giscus: { setConfig: { lang: lang } } },
+        'https://giscus.app'
+      );
+    }
   }
 
   window.applyLang = applyLang;

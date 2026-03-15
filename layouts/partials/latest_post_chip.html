@@ -13,7 +13,7 @@
       <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
       <time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date.Format "2 Jan 2006" }}</time>
       <span>•</span>
-      <span>{{ math.Ceil (div (len (split $latest.Plain " ")) 200) }} min read</span>
+      <span>{{ math.Ceil (div (len (split $latest.Plain " ")) 200) }} <span data-i18n="content_reading_time">min lectura</span></span>
     </div>
     
     <!-- Title -->

@@ -1,4 +1,4 @@
-{{ range .Site.Params.education.list }}
+{{ range $idx, $el := .Site.Params.education.list }}
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-cyan-600 dark:border-l-cyan-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
@@ -6,7 +6,7 @@
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0">{{ .degree }}</h4>
+          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_{{ add $idx 1 }}">{{ .degree }}</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">{{ .college }}</p>
       </div>
@@ -16,7 +16,7 @@
     {{ if .thesis_title }}
     <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
       <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-        <strong data-i18n="edu_thesis">TFG:</strong> <i>{{ .thesis_title }}</i>
+        <strong data-i18n="edu_thesis">TFG:</strong> <i><span data-i18n="edu_thesis_{{ add $idx 1 }}">{{ .thesis_title }}</span></i>
       </p>
       {{ if .thesis_url }}
       <a

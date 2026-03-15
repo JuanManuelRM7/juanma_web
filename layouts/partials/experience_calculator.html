@@ -6,83 +6,71 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const display = document.getElementById('total-experience');
-  
-  // Solo experiencias LABORALES (no educación)
-  const experiences = [
-    { start: 'Junio 2025', end: 'Presente' },      // VRAIA Corp (actual)
-    { start: 'Junio 2024', end: 'Junio 2025' },    // AIR Institute
-    { start: 'Enero 2024', end: 'Julio 2024' }     // AIR Institute (primer trabajo)
+  var display = document.getElementById('total-experience');
+
+  var experiences = [
+    { start: 'Junio 2025', end: 'Presente' },
+    { start: 'Junio 2024', end: 'Junio 2025' },
+    { start: 'Enero 2024', end: 'Julio 2024' }
   ];
+
+  var meses = {
+    'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
+    'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
+    'septiembre': 9, 'octubre': 10, 'noviembre': 11, 'diciembre': 12
+  };
 
   function parseDate(dateStr) {
     dateStr = dateStr.trim().toLowerCase();
-    
-    // Meses en español
-    const meses = {
-      'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
-      'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
-      'septiembre': 9, 'octubre': 10, 'noviembre': 11, 'diciembre': 12
-    };
-    
-    // Si es solo año
-    if (/^\d{4}$/.test(dateStr)) {
-      return new Date(parseInt(dateStr), 0, 1);
-    }
-    
-    // Si es mes + año
-    const parts = dateStr.split(/\s+/);
+    if (/^\d{4}$/.test(dateStr)) return new Date(parseInt(dateStr), 0, 1);
+    var parts = dateStr.split(/\s+/);
     if (parts.length >= 2) {
-      const month = meses[parts[0]] || 1;
-      const year = parseInt(parts[1]);
+      var month = meses[parts[0]] || 1;
+      var year = parseInt(parts[1]);
       return new Date(year, month - 1, 1);
     }
-    
     return new Date();
   }
 
-  function calculateTotalExperience(experiences) {
-    const now = new Date();
-    
-    // Encontrar la fecha más antigua (inicio del primer trabajo)
-    let earliestDate = now;
-    let latestDate = now;
-    
-    experiences.forEach(exp => {
-      const startDate = parseDate(exp.start);
-      const endDate = exp.end.includes('Presente') ? now : parseDate(exp.end);
-      
-      if (startDate < earliestDate) earliestDate = startDate;
-      if (endDate > latestDate) latestDate = endDate;
-    });
-    
-    // Calcular diferencia total en meses
-    let totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12;
-    totalMonths += latestDate.getMonth() - earliestDate.getMonth();
-    
-    // Ajustar si es días (pequeña diferencia)
-    if (latestDate.getDate() < earliestDate.getDate()) {
-      totalMonths -= 1;
-    }
-    
-    totalMonths = Math.max(1, totalMonths);
-    
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    
-    // Formato en español
-    const monthNames = ['meses', 'mes', 'meses'];
-    const yearNames = ['años', 'año', 'años'];
-    
-    if (years === 0) {
-      return `${months} ${months === 1 ? 'mes' : 'meses'}`;
-    } else if (months === 0) {
-      return `${years} ${years === 1 ? 'año' : 'años'}`;
+  var now = new Date();
+  var earliestDate = now;
+  var latestDate = now;
+  experiences.forEach(function(exp) {
+    var startDate = parseDate(exp.start);
+    var endDate = exp.end.indexOf('Presente') !== -1 ? now : parseDate(exp.end);
+    if (startDate < earliestDate) earliestDate = startDate;
+    if (endDate > latestDate) latestDate = endDate;
+  });
+
+  var totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12;
+  totalMonths += latestDate.getMonth() - earliestDate.getMonth();
+  if (latestDate.getDate() < earliestDate.getDate()) totalMonths -= 1;
+  totalMonths = Math.max(1, totalMonths);
+
+  function updateDisplay() {
+    var lang = (window.localStorage && window.localStorage.getItem('lang')) || 'es';
+    var years = Math.floor(totalMonths / 12);
+    var months = totalMonths % 12;
+    var yWord, mWord, andWord;
+    if (lang === 'en') {
+      yWord = years === 1 ? 'year' : 'years';
+      mWord = months === 1 ? 'month' : 'months';
+      andWord = 'and';
     } else {
-      return `${years} ${years === 1 ? 'año' : 'años'} y ${months} ${months === 1 ? 'mes' : 'meses'}`;
+      yWord = years === 1 ? 'año' : 'años';
+      mWord = months === 1 ? 'mes' : 'meses';
+      andWord = 'y';
+    }
+    if (years === 0) {
+      display.textContent = months + ' ' + mWord;
+    } else if (months === 0) {
+      display.textContent = years + ' ' + yWord;
+    } else {
+      display.textContent = years + ' ' + yWord + ' ' + andWord + ' ' + months + ' ' + mWord;
     }
   }
 
-  display.textContent = calculateTotalExperience(experiences);
+  updateDisplay();
+  window.updateExperienceDisplay = updateDisplay;
 });
 </script>
