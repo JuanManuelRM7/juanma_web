@@ -1,6 +1,6 @@
 <div class="w-full flex justify-center align-middle profile-photo-container">
   <!-- Flip card container -->
-  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" tabindex="0" role="button" aria-label="Flip card to see about me">
     <div class="flip-card-inner">
       <!-- Front: Photo -->
       <div class="flip-card-front">

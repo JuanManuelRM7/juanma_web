@@ -1,7 +1,7 @@
 {{ if and (not .IsHome) (.IsPage) }}
-<nav aria-label="Miga de pan" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
-  <a href="{{ .Site.BaseURL }}" class="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors" aria-label="Inicio">
-    <i class="fas fa-home text-xs"></i>
+<nav aria-label="Breadcrumb" data-i18n-aria="aria_breadcrumb" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
+  <a href="{{ .Site.BaseURL }}" class="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors" aria-label="Home">
+    <i class="fas fa-home text-xs" aria-hidden="true"></i>
   </a>
   {{ with .Parent }}
   <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>

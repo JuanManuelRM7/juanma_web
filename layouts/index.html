@@ -30,10 +30,7 @@
 <!-- Hero Section -->
 <div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #06b6d4, #3b82f6, #0891b2, #6366f1); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
-  <!-- Language Toggle -->
-  <button id="lang-toggle" onclick="toggleLang()" class="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-xs font-bold bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma">
-    <span id="lang-label">EN</span> <i class="fas fa-globe ml-1"></i>
-  </button>
+
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
     <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
@@ -44,22 +41,22 @@
     <!-- Quick Navigation -->
     <div class="flex flex-wrap gap-3 mt-4">
       <a href="#experiencia" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-briefcase text-xs"></i> <span data-i18n="nav_exp">Experiencia</span>
+        <i class="fas fa-briefcase text-xs" aria-hidden="true"></i> <span data-i18n="nav_exp">Experiencia</span>
       </a>
       <a href="#educacion" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-graduation-cap text-xs"></i> <span data-i18n="nav_edu">Educación</span>
+        <i class="fas fa-graduation-cap text-xs" aria-hidden="true"></i> <span data-i18n="nav_edu">Educación</span>
       </a>
       <a href="#publicaciones" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-book text-xs"></i> <span data-i18n="nav_pub">Publicaciones</span>
+        <i class="fas fa-book text-xs" aria-hidden="true"></i> <span data-i18n="nav_pub">Publicaciones</span>
       </a>
       <a href="#skills" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-cogs text-xs"></i> Skills
+        <i class="fas fa-cogs text-xs" aria-hidden="true"></i> Skills
       </a>
       <a href="#proyectos" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-project-diagram text-xs"></i> <span data-i18n="nav_projects">Proyectos</span>
+        <i class="fas fa-project-diagram text-xs" aria-hidden="true"></i> <span data-i18n="nav_projects">Proyectos</span>
       </a>
       <a href="#contacto" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-envelope text-xs"></i> <span data-i18n="nav_contact">Contacto</span>
+        <i class="fas fa-envelope text-xs" aria-hidden="true"></i> <span data-i18n="nav_contact">Contacto</span>
       </a>
     </div>
   </div>
@@ -110,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       <!-- CV Button -->
       <a href="{{ `/cv.pdf` | relURL }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
-        <i class="fas fa-file-download"></i>
+        <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">Descargar CV</span>
       </a>
       
@@ -124,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Featured Blog Post -->
     <div class="mb-8" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_blog">Último Post del Blog</span>
       </h3>
       {{ partial "latest_post_chip" . }}
@@ -136,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Experience Section (Timeline) -->
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_exp">Experiencia</span>
       </h3>
       <div class="timeline-container">
@@ -150,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Education Section (Timeline) -->
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_edu">Educación</span>
       </h3>
       <div class="timeline-container">
@@ -164,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Publications Section -->
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-book text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-book text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_pub">Publicaciones</span>
       </h3>
       {{ partial "accordion/publication" . }}
@@ -176,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Skills Section by Category -->
     <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         Skills
       </h3>
       {{ partial "skills_by_category" . }}
@@ -188,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Projects Section -->
     <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_projects">Proyectos</span>
       </h3>
       {{ partial "projects" . }}
@@ -200,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Contact Section -->
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">Contacto</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -247,8 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Scroll to Top Button -->
-<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center">
-  <i class="fas fa-chevron-up"></i>
+<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-cyan-400">
+  <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>
 
 <!-- Mobile Sticky Header -->
@@ -342,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show secret message
     var msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(6,182,212,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
-    msg.innerHTML = '🎮 ¡Has descubierto el secreto!<br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;">— Konami Code activado —</span>';
+    msg.innerHTML = '<span data-i18n="easter_secret">' + (window.getI18n ? window.getI18n('easter_secret') : '🎮 ¡Has descubierto el secreto!') + '</span><br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;" data-i18n="easter_konami">' + (window.getI18n ? window.getI18n('easter_konami') : '— Konami Code activado —') + '</span>';
     container.appendChild(msg);
     requestAnimationFrame(function() { msg.style.opacity = '1'; });
     setTimeout(function() {
@@ -353,68 +350,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<!-- Multi-language ES/EN Toggle -->
-<script>
-(function() {
-  var translations = {
-    en: {
-      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
-      nav_exp: 'Experience',
-      nav_edu: 'Education',
-      nav_pub: 'Publications',
-      nav_contact: 'Contact',
-      download_cv: 'Download CV',
-      section_blog: 'Latest Blog Post',
-      section_exp: 'Experience',
-      section_edu: 'Education',
-      section_pub: 'Publications',
-      section_projects: 'Projects',
-      nav_projects: 'Projects',
-      section_contact: 'Contact'
-    },
-    es: {
-      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
-      nav_exp: 'Experiencia',
-      nav_edu: 'Educación',
-      nav_pub: 'Publicaciones',
-      nav_contact: 'Contacto',
-      download_cv: 'Descargar CV',
-      section_blog: 'Último Post del Blog',
-      section_exp: 'Experiencia',
-      section_edu: 'Educación',
-      section_pub: 'Publicaciones',      section_projects: 'Proyectos',
-      nav_projects: 'Proyectos',      section_contact: 'Contacto'
-    }
-  };
 
-  function applyLang(lang) {
-    var strings = translations[lang];
-    if (!strings) return;
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      var key = el.getAttribute('data-i18n');
-      if (strings[key]) el.textContent = strings[key];
-    });
-    var label = document.getElementById('lang-label');
-    if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
-    window.localStorage.setItem('lang', lang);
-    document.documentElement.setAttribute('lang', lang);
-  }
-
-  window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || 'es';
-    applyLang(current === 'es' ? 'en' : 'es');
-  };
-
-  // Apply saved language on load
-  var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== 'es') {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
-    } else {
-      applyLang(saved);
-    }
-  }
-})();
-</script>
 
 {{ end }}

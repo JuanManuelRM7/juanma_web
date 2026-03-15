@@ -75,10 +75,16 @@
   />
 
   
+  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – AI Developer &amp; Computer Vision Specialist – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
+  
+  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – AI Developer &amp; Computer Vision Specialist" href="/index.xml" />
+  
+
   
   
   
-  <link href="/main.min.cb8892316ee039018fee09134d9a36b6235e4b9ad5cef8cbc032a79c9e2064f3.css" rel="stylesheet" />
+  
+  <link href="/main.min.2fbc333dc392a6a8b84061cfc718ddc8682b542553ad7e2dbf66ca5193e4476f.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -161,27 +167,37 @@
 
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
     
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-md focus:outline-none">Skip to content</a>
+    
     <header
   class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-cyan-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
   style="box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.1);"
+  role="banner"
 >
   
-  <div class="flex justify-evenly items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400 md:hidden">
-    <a class="nav-menu-item !p-1 !px-2" href="https://juanmanuel.petrer.eu/">Inicio</a>
-    <a class="nav-menu-item !p-1 !px-2" href="/blog">Blog</a>
-    <a class="nav-menu-item !p-1 !px-2" href="/material">Material</a>
-    <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
-      <i class="fas fa-search"></i>
+  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400 md:hidden" aria-label="Navegación principal">
+    <a class="nav-menu-item !p-1 !px-2" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="/material"><span data-i18n="nav_material">Material</span></a>
+    <a href="/search" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+      <i class="fas fa-search" aria-hidden="true"></i>
     </a>
+    <button
+      class="fas fa-globe text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
+      onclick="toggleLang()"
+      aria-label="Cambiar idioma"
+      data-i18n-aria="aria_toggle_lang"
+    ></button>
     <i
       class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
       onclick="toggleTheme()"
       role="button"
       tabindex="0"
       aria-label="Cambiar tema"
+      data-i18n-aria="aria_toggle_theme"
       onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
     ></i>
-  </div>
+  </nav>
 
   
   <div class="flex md:hidden justify-center -mt-[13px] mb-2 relative z-10">
@@ -190,89 +206,96 @@
              bg-white dark:bg-slate-900
              border border-cyan-400 dark:border-cyan-500
              rounded-full px-4 py-0.5 shadow-sm
-             flex items-center gap-2">
+             flex items-center gap-2"
+      aria-live="off" aria-label="Reloj">
     </div>
   </div>
 
   
-  <div class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400">
+  <nav class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/">Inicio</a>
-      <a class="nav-menu-item" href="/blog">Blog</a>
-      <a class="nav-menu-item" href="/material">Material Universitario</a>
+      <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
+      <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
+      <a class="nav-menu-item" href="/material"><span data-i18n="nav_material_desktop">Material Universitario</span></a>
     </div>
     <div class="flex justify-center">
-      <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg text-center"></div>
+      <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg text-center" aria-live="off" aria-label="Reloj"></div>
     </div>
     <div class="flex items-center justify-end gap-3">
-      <a href="/search" aria-label="Buscar" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1">
-        <i class="fas fa-search"></i>
+      <a href="/search" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+        <i class="fas fa-search" aria-hidden="true"></i>
       </a>
+      
+      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-cyan-100 hover:bg-cyan-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">EN</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+      </button>
       <i
         class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
         onclick="toggleTheme()"
         role="button"
         tabindex="0"
         aria-label="Cambiar tema"
+        data-i18n-aria="aria_toggle_theme"
         onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
       ></i>
     </div>
-  </div>
+  </nav>
 </header>
 
 <script>
-  function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+  window.updateClock = function() {
+    var now = new Date();
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var seconds = String(now.getSeconds()).padStart(2, '0');
 
-    const day = now.getDate();
-    const monthNum = String(now.getMonth() + 1).padStart(2, '0');
-    const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-                    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-    const monthName = months[now.getMonth()];
-    const year = now.getFullYear();
+    var day = now.getDate();
+    var monthNum = String(now.getMonth() + 1).padStart(2, '0');
+    var lang = window.localStorage.getItem('lang') || 'es';
+    var t = (window.__i18n && window.__i18n[lang]) || {};
+    var monthName = t['month_' + now.getMonth()] || ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][now.getMonth()];
+    var year = now.getFullYear();
 
-    const isMobile = window.innerWidth < 768;
+    var fmt = t['clock_format'] || '{day} de {month} de {year}';
+    var dateStr = fmt.replace('{day}', day).replace('{month}', monthName).replace('{year}', year);
 
-    const clockEl = document.getElementById('clock');
+    var clockEl = document.getElementById('clock');
     if (clockEl) {
-      clockEl.innerHTML = `<div>${day} de ${monthName} de ${year}</div><div>${hours}:${minutes}:${seconds}</div>`;
+      clockEl.innerHTML = '<div>' + dateStr + '</div><div>' + hours + ':' + minutes + ':' + seconds + '</div>';
     }
 
-    const clockMobile = document.getElementById('clock-mobile');
+    var clockMobile = document.getElementById('clock-mobile');
     if (clockMobile) {
-      clockMobile.innerHTML = `<span>${day}/${monthNum}/${year}</span><span class="text-cyan-300 dark:text-cyan-600 mx-0.5">·</span><span>${hours}:${minutes}:${seconds}</span>`;
+      clockMobile.innerHTML = '<span>' + day + '/' + monthNum + '/' + year + '</span><span class="text-cyan-300 dark:text-cyan-600 mx-0.5">\u00b7</span><span>' + hours + ':' + minutes + ':' + seconds + '</span>';
     }
-  }
+  };
 
-  updateClock();
-  setInterval(updateClock, 1000);
-  window.addEventListener('resize', updateClock);
+  window.updateClock();
+  setInterval(window.updateClock, 1000);
+  window.addEventListener('resize', window.updateClock);
 </script>
 
 
 
 
     
-    <main class="grow">
+    <main id="main-content" class="grow">
 
-<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-title">
   <div class="bg-gradient-to-br from-gray-50 via-white to-cyan-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-cyan-500 dark:border-cyan-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
     
-    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
+    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;" aria-hidden="true"></div>
     
     
     <div class="relative z-10 p-4 sm:p-6 md:p-8">
       
-      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors duration-300 p-2">
-        <i class="fas fa-times text-lg sm:text-xl"></i>
+      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors duration-300 p-2" aria-label="Close">
+        <i class="fas fa-times text-lg sm:text-xl" aria-hidden="true"></i>
       </button>
       
       
       <div class="text-center mb-4 sm:mb-6">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent mb-2 pb-1">
+        <h2 id="welcome-modal-title" class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent mb-2 pb-1" data-i18n="welcome_title">
           ¡Bienvenido a mi sitio web!
         </h2>
         <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-cyan-600 to-cyan-400 mx-auto rounded-full"></div>
@@ -280,13 +303,13 @@
       
       
       <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
-        <p>
+        <p data-i18n="welcome_intro_1" data-i18n-html>
           Me llamo <strong class="text-cyan-700 dark:text-cyan-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.
         </p>
-        <p>
+        <p data-i18n="welcome_intro_2" data-i18n-html>
           Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-cyan-700 dark:text-cyan-300">blog</strong> (aunque aún estoy empezando con el contenido).
         </p>
-        <p>
+        <p data-i18n="welcome_intro_3" data-i18n-html>
           Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄
         </p>
       </div>
@@ -294,7 +317,7 @@
       
       <div class="mt-6 sm:mt-8 flex justify-center">
         <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          ¡Empecemos! <i class="fas fa-arrow-right ml-2"></i>
+          <span data-i18n="action_get_started">¡Empecemos!</span> <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
         </button>
       </div>
       
@@ -302,7 +325,7 @@
       <div class="mt-4 text-center">
         <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
           <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 sm:w-auto sm:h-auto rounded border-gray-300 text-cyan-600 focus:ring-cyan-500">
-          <span>No volver a mostrar este mensaje</span>
+          <span data-i18n="welcome_dont_show">No volver a mostrar este mensaje</span>
         </label>
       </div>
     </div>
@@ -337,6 +360,14 @@ function showWelcomeModal() {
   if (hideWelcome) return;
 
   const modal = document.getElementById('welcome-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) firstFocusable.focus();
+  }
+}
   if (modal) {
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -408,10 +439,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 
 <div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #06b6d4, #3b82f6, #0891b2, #6366f1); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
-  
-  <button id="lang-toggle" onclick="toggleLang()" class="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-xs font-bold bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma">
-    <span id="lang-label">EN</span> <i class="fas fa-globe ml-1"></i>
-  </button>
+
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">Juan Manuel</h1>
     <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
@@ -422,22 +450,22 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
     
     <div class="flex flex-wrap gap-3 mt-4">
       <a href="#experiencia" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-briefcase text-xs"></i> <span data-i18n="nav_exp">Experiencia</span>
+        <i class="fas fa-briefcase text-xs" aria-hidden="true"></i> <span data-i18n="nav_exp">Experiencia</span>
       </a>
       <a href="#educacion" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-graduation-cap text-xs"></i> <span data-i18n="nav_edu">Educación</span>
+        <i class="fas fa-graduation-cap text-xs" aria-hidden="true"></i> <span data-i18n="nav_edu">Educación</span>
       </a>
       <a href="#publicaciones" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-book text-xs"></i> <span data-i18n="nav_pub">Publicaciones</span>
+        <i class="fas fa-book text-xs" aria-hidden="true"></i> <span data-i18n="nav_pub">Publicaciones</span>
       </a>
       <a href="#skills" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-cogs text-xs"></i> Skills
+        <i class="fas fa-cogs text-xs" aria-hidden="true"></i> Skills
       </a>
       <a href="#proyectos" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-project-diagram text-xs"></i> <span data-i18n="nav_projects">Proyectos</span>
+        <i class="fas fa-project-diagram text-xs" aria-hidden="true"></i> <span data-i18n="nav_projects">Proyectos</span>
       </a>
       <a href="#contacto" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-envelope text-xs"></i> <span data-i18n="nav_contact">Contacto</span>
+        <i class="fas fa-envelope text-xs" aria-hidden="true"></i> <span data-i18n="nav_contact">Contacto</span>
       </a>
     </div>
   </div>
@@ -475,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="text-center mb-2">
         <div class="w-full flex justify-center align-middle profile-photo-container">
   
-  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')">
+  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" tabindex="0" role="button" aria-label="Flip card to see about me">
     <div class="flip-card-inner">
       
       <div class="flip-card-front">
@@ -669,17 +697,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-    <p class="text-xs text-gray-600 dark:text-gray-400">Experiencia</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_experience">Experiencia</p>
   </div>
   <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
     <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">
       <span data-counter="7" data-suffix="+">0</span>
     </p>
-    <p class="text-xs text-gray-600 dark:text-gray-400">Proyectos</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_projects">Proyectos</p>
   </div>
   <div class="flex flex-col items-center">
     <p class="text-lg font-bold text-cyan-600 dark:text-cyan-400">AI</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400">Especialista</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_specialist">Especialista</p>
   </div>
 </div>
 <div class="border-t border-gray-200 dark:border-gray-700"></div>
@@ -738,29 +766,34 @@ document.addEventListener('DOMContentLoaded', function() {
       
       
       <a href="/cv.pdf" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
-        <i class="fas fa-file-download"></i>
+        <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">Descargar CV</span>
       </a>
       
       <footer class="text-sm border-t-2 border-cyan-500 dark:border-cyan-400  bg-transparent rounded-b-none py-3 "
-  >
+  
+  role="contentinfo">
 
   
   
   <div class="text-center">
     <div class="flex justify-center gap-3 mb-2">
-      <a href="/blog/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Blog</a>
-      <span class="text-gray-300 dark:text-gray-600">·</span>
-      <a href="/material/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Material</a>
-      <span class="text-gray-300 dark:text-gray-600">·</span>
-      <a href="/search/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Buscar</a>
+      <a href="/blog/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
+      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
+      <a href="/material/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline"><span data-i18n="nav_material">Material</span></a>
+      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
+      <a href="/search/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline"><span data-i18n="nav_search">Buscar</span></a>
+      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
+      <a href="https://juanmanuel.petrer.eu/index.xml" class="text-xs text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline" aria-label="RSS Feed">
+        <i class="fas fa-rss" aria-hidden="true"></i> RSS
+      </a>
     </div>
     <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">
       © 2026
       <a href="https://github.com/juanmanuelruizm" class="hover:text-cyan-600 dark:hover:text-cyan-400 no-underline">Juan Manuel</a>
     </p>
     <p class="text-[10px] text-gray-400 dark:text-gray-600">
-      Hecho con <span class="text-red-400">♥</span> y Hugo
+      <span data-i18n="footer_made_with">Hecho con</span> <span class="text-red-400">♥</span> y Hugo
     </p>
   </div>
   
@@ -778,7 +811,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mb-8" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_blog">Último Post del Blog</span>
       </h3>
       
@@ -810,8 +843,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 group-hover:gap-2 transition-all">
-      <span>Leer más</span>
-      <i class="fas fa-arrow-right text-xs"></i>
+      <span data-i18n="content_read_more">Leer más</span>
+      <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
     </div>
   </div>
 </a>
@@ -823,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_exp">Experiencia</span>
       </h3>
       <div class="timeline-container">
@@ -954,7 +987,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_edu">Educación</span>
       </h3>
       <div class="timeline-container">
@@ -976,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
       <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-        <strong>TFG:</strong> <i>Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</i>
+        <strong data-i18n="edu_thesis">TFG:</strong> <i>Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</i>
       </p>
       
       <a
@@ -986,8 +1019,8 @@ document.addEventListener('DOMContentLoaded', function() {
         rel="noopener noreferrer"
         aria-label="Ver TFG de Grado en Física"
       >
-        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
-        <span class="font-medium text-gray-900 dark:text-gray-100">Ver TFG</span>
+        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300" aria-hidden="true"></i>
+        <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_view_thesis">Ver TFG</span>
       </a>
       
     </div>
@@ -1042,7 +1075,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-book text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-book text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_pub">Publicaciones</span>
       </h3>
       
@@ -1097,8 +1130,8 @@ document.addEventListener('DOMContentLoaded', function() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
-        Descargar Paper
+        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300" aria-hidden="true"></i>
+        <span data-i18n="action_download_paper">Descargar Paper</span>
       </a>
       
     </div>
@@ -1118,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         Skills
       </h3>
       
@@ -1428,7 +1461,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_projects">Proyectos</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1517,7 +1550,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="/DCAI.pdf" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" >
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1565,7 +1598,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="/tfg.pdf" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" >
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1613,7 +1646,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="https://github.com/juanmanuelruizm/talk-to-me" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" target="_blank" rel="noopener noreferrer">
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1661,7 +1694,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="https://github.com/juanmanuelruizm/chatbot" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" target="_blank" rel="noopener noreferrer">
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1709,7 +1742,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="https://github.com/juanmanuelruizm/frontend-an-introductory-course" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" target="_blank" rel="noopener noreferrer">
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1757,7 +1790,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="mt-3 text-right">
       <a href="https://github.com/JuanManuelRM7/juanma_web" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" target="_blank" rel="noopener noreferrer">
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     
@@ -1773,7 +1806,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400"></i>
+        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">Contacto</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1820,8 +1853,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 
-<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center">
-  <i class="fas fa-chevron-up"></i>
+<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-cyan-400">
+  <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>
 
 
@@ -1854,8 +1887,9 @@ document.addEventListener('DOMContentLoaded', function() {
         class="inline-flex items-center justify-center p-2.5 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
         title="Descargar CV"
         aria-label="Descargar CV"
+        data-i18n-aria="download_cv"
       >
-        <i class="fas fa-file-download text-sm"></i>
+        <i class="fas fa-file-download text-sm" aria-hidden="true"></i>
       </a>
 
       
@@ -2105,7 +2139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     var msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(6,182,212,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
-    msg.innerHTML = '🎮 ¡Has descubierto el secreto!<br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;">— Konami Code activado —</span>';
+    msg.innerHTML = '<span data-i18n="easter_secret">' + (window.getI18n ? window.getI18n('easter_secret') : '🎮 ¡Has descubierto el secreto!') + '</span><br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;" data-i18n="easter_konami">' + (window.getI18n ? window.getI18n('easter_konami') : '— Konami Code activado —') + '</span>';
     container.appendChild(msg);
     requestAnimationFrame(function() { msg.style.opacity = '1'; });
     setTimeout(function() {
@@ -2117,68 +2151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-<script>
-(function() {
-  var translations = {
-    en: {
-      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
-      nav_exp: 'Experience',
-      nav_edu: 'Education',
-      nav_pub: 'Publications',
-      nav_contact: 'Contact',
-      download_cv: 'Download CV',
-      section_blog: 'Latest Blog Post',
-      section_exp: 'Experience',
-      section_edu: 'Education',
-      section_pub: 'Publications',
-      section_projects: 'Projects',
-      nav_projects: 'Projects',
-      section_contact: 'Contact'
-    },
-    es: {
-      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
-      nav_exp: 'Experiencia',
-      nav_edu: 'Educación',
-      nav_pub: 'Publicaciones',
-      nav_contact: 'Contacto',
-      download_cv: 'Descargar CV',
-      section_blog: 'Último Post del Blog',
-      section_exp: 'Experiencia',
-      section_edu: 'Educación',
-      section_pub: 'Publicaciones',      section_projects: 'Proyectos',
-      nav_projects: 'Proyectos',      section_contact: 'Contacto'
-    }
-  };
-
-  function applyLang(lang) {
-    var strings = translations[lang];
-    if (!strings) return;
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      var key = el.getAttribute('data-i18n');
-      if (strings[key]) el.textContent = strings[key];
-    });
-    var label = document.getElementById('lang-label');
-    if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
-    window.localStorage.setItem('lang', lang);
-    document.documentElement.setAttribute('lang', lang);
-  }
-
-  window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || 'es';
-    applyLang(current === 'es' ? 'en' : 'es');
-  };
-
-  
-  var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== 'es') {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
-    } else {
-      applyLang(saved);
-    }
-  }
-})();
-</script>
 
 
     </main>
@@ -2188,14 +2160,15 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('pre').forEach(function (pre) {
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
-    button.setAttribute('aria-label', 'Copiar código');
-    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.setAttribute('aria-label', 'Copy code');
+    button.setAttribute('data-i18n-aria', 'action_copy_code');
+    button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
     button.addEventListener('click', function () {
       var code = pre.querySelector('code');
       if (!code) return;
       navigator.clipboard.writeText(code.innerText).then(function () {
-        button.innerHTML = '<i class="fas fa-check"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = code.innerText;
@@ -2205,8 +2178,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        button.innerHTML = '<i class="fas fa-check"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
       });
     });
     pre.style.position = 'relative';
@@ -2243,6 +2216,268 @@ pre:hover .copy-code-btn {
   opacity: 1;
 }
 </style>
+
+    
+<script>
+(function() {
+  var translations = {
+    en: {
+      
+      nav_home: 'Home',
+      nav_blog: 'Blog',
+      nav_material: 'Resources',
+      nav_material_desktop: 'University Resources',
+      nav_search: 'Search',
+      aria_toggle_theme: 'Toggle theme',
+      aria_toggle_lang: 'Change language',
+
+      
+      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
+      nav_exp: 'Experience',
+      nav_edu: 'Education',
+      nav_pub: 'Publications',
+      nav_projects: 'Projects',
+      nav_contact: 'Contact',
+      section_blog: 'Latest Blog Post',
+      section_exp: 'Experience',
+      section_edu: 'Education',
+      section_pub: 'Publications',
+      section_projects: 'Projects',
+      section_contact: 'Contact',
+
+      
+      download_cv: 'Download CV',
+      action_get_started: "Let's go!",
+      action_view_more: 'View more',
+      action_view_thesis: 'View Thesis',
+      action_download_paper: 'Download Paper',
+      action_home: 'Go to homepage',
+      action_view_blog: 'View blog',
+      action_copy_code: 'Copy code',
+      aria_scroll_top: 'Scroll to top',
+
+      
+      content_reading_time: 'min read',
+      content_toc: 'Table of contents',
+      content_index: 'Index',
+      content_related: 'You might also like',
+      content_comments: 'Comments',
+      content_read_more: 'Read more',
+
+      
+      blog_title: 'Blog',
+      blog_description: 'Articles about physics, AI, meteorology and more',
+
+      
+      profile_experience: 'Experience',
+      profile_projects: 'Projects',
+      profile_specialist: 'Specialist',
+
+      
+      footer_sections: 'Sections',
+      footer_resources: 'Resources',
+      footer_contact: 'Contact',
+      footer_made_with: 'Made with',
+
+      
+      welcome_title: 'Welcome to my website!',
+      welcome_intro_1: 'My name is <strong class="text-cyan-700 dark:text-cyan-300">Juan Manuel</strong> and on this website you can learn more about me.',
+      welcome_intro_2: 'I created this site with several goals in mind: on one hand, I wanted to learn how to build and manage a website from scratch; on the other, I was drawn to the idea of documenting and sharing the things I learn on a daily basis. You can find these posts in the <strong class="text-cyan-700 dark:text-cyan-300">blog</strong> tab (although I\'m still just getting started with content).',
+      welcome_intro_3: 'All of this also led me to design personalized business cards — you may have even arrived here thanks to one of them. This way I avoid having to spell out the URL every time someone asks... that, and one day I saw an <em>American Psycho</em> short and it stuck with me. 😄',
+      welcome_dont_show: "Don't show this message again",
+
+      
+      error_title: 'Page not found!',
+      error_message: "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
+      error_quote: '"In a universe of infinite pages, this one simply doesn\'t exist in your branch of the multiverse."',
+
+      
+      edu_thesis: 'Thesis:',
+
+      
+      status_production: 'In production',
+      status_published: 'Published',
+      status_active: 'Active',
+      status_development: 'In development',
+      status_completed: 'Completed',
+
+      
+      search_title: 'Search',
+
+      
+      aria_breadcrumb: 'Breadcrumb',
+
+      
+      month_0: 'January', month_1: 'February', month_2: 'March',
+      month_3: 'April', month_4: 'May', month_5: 'June',
+      month_6: 'July', month_7: 'August', month_8: 'September',
+      month_9: 'October', month_10: 'November', month_11: 'December',
+      clock_format: '{day} {month} {year}',
+
+      
+      easter_secret: "\u{1F3AE} You found the secret!",
+      easter_konami: '— Konami Code activated —',
+
+      
+      prev_post: 'Previous',
+      next_post: 'Next'
+    },
+    es: {
+      
+      nav_home: 'Inicio',
+      nav_blog: 'Blog',
+      nav_material: 'Material',
+      nav_material_desktop: 'Material Universitario',
+      nav_search: 'Buscar',
+      aria_toggle_theme: 'Cambiar tema',
+      aria_toggle_lang: 'Cambiar idioma',
+
+      
+      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
+      nav_exp: 'Experiencia',
+      nav_edu: 'Educación',
+      nav_pub: 'Publicaciones',
+      nav_projects: 'Proyectos',
+      nav_contact: 'Contacto',
+      section_blog: 'Último Post del Blog',
+      section_exp: 'Experiencia',
+      section_edu: 'Educación',
+      section_pub: 'Publicaciones',
+      section_projects: 'Proyectos',
+      section_contact: 'Contacto',
+
+      
+      download_cv: 'Descargar CV',
+      action_get_started: '¡Empecemos!',
+      action_view_more: 'Ver más',
+      action_view_thesis: 'Ver TFG',
+      action_download_paper: 'Descargar Paper',
+      action_home: 'Volver al inicio',
+      action_view_blog: 'Ver el blog',
+      action_copy_code: 'Copiar código',
+      aria_scroll_top: 'Volver arriba',
+
+      
+      content_reading_time: 'min lectura',
+      content_toc: 'Tabla de contenidos',
+      content_index: 'Índice',
+      content_related: 'Te puede interesar',
+      content_comments: 'Comentarios',
+      content_read_more: 'Leer más',
+
+      
+      blog_title: 'Blog',
+      blog_description: 'Artículos sobre física, IA, meteorología y más',
+
+      
+      profile_experience: 'Experiencia',
+      profile_projects: 'Proyectos',
+      profile_specialist: 'Especialista',
+
+      
+      footer_sections: 'Secciones',
+      footer_resources: 'Recursos',
+      footer_contact: 'Contacto',
+      footer_made_with: 'Hecho con',
+
+      
+      welcome_title: '¡Bienvenido a mi sitio web!',
+      welcome_intro_1: 'Me llamo <strong class="text-cyan-700 dark:text-cyan-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.',
+      welcome_intro_2: 'Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-cyan-700 dark:text-cyan-300">blog</strong> (aunque aún estoy empezando con el contenido).',
+      welcome_intro_3: 'Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄',
+      welcome_dont_show: 'No volver a mostrar este mensaje',
+
+      
+      error_title: '¡Página no encontrada!',
+      error_message: 'Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.',
+      error_quote: '«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»',
+
+      
+      edu_thesis: 'TFG:',
+
+      
+      status_production: 'En producción',
+      status_published: 'Publicado',
+      status_active: 'Activo',
+      status_development: 'En desarrollo',
+      status_completed: 'TFG completado',
+
+      
+      search_title: 'Buscar',
+
+      
+      aria_breadcrumb: 'Miga de pan',
+
+      
+      month_0: 'enero', month_1: 'febrero', month_2: 'marzo',
+      month_3: 'abril', month_4: 'mayo', month_5: 'junio',
+      month_6: 'julio', month_7: 'agosto', month_8: 'septiembre',
+      month_9: 'octubre', month_10: 'noviembre', month_11: 'diciembre',
+      clock_format: '{day} de {month} de {year}',
+
+      
+      easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
+      easter_konami: '— Konami Code activado —',
+
+      
+      prev_post: 'Anterior',
+      next_post: 'Siguiente'
+    }
+  };
+
+  
+  window.__i18n = translations;
+
+  function applyLang(lang) {
+    var strings = translations[lang];
+    if (!strings) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key]) {
+        if (el.hasAttribute('data-i18n-html')) {
+          el.innerHTML = strings[key];
+        } else {
+          el.textContent = strings[key];
+        }
+      }
+    });
+    
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (strings[key]) el.setAttribute('aria-label', strings[key]);
+    });
+    var label = document.getElementById('lang-label');
+    if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
+    window.localStorage.setItem('lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+
+    
+    if (typeof window.updateClock === 'function') window.updateClock();
+  }
+
+  window.applyLang = applyLang;
+
+  window.toggleLang = function() {
+    var current = window.localStorage.getItem('lang') || 'es';
+    applyLang(current === 'es' ? 'en' : 'es');
+  };
+
+  window.getI18n = function(key) {
+    var lang = window.localStorage.getItem('lang') || 'es';
+    return (translations[lang] && translations[lang][key]) || key;
+  };
+
+  
+  var saved = window.localStorage.getItem('lang');
+  if (saved && saved !== 'es') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
+    } else {
+      applyLang(saved);
+    }
+  }
+})();
+</script>
 
   </body>
 </html>

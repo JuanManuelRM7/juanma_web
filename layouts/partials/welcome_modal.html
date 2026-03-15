@@ -1,19 +1,19 @@
 <!-- Welcome Modal -->
-<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-title">
   <div class="bg-gradient-to-br from-gray-50 via-white to-cyan-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-cyan-500 dark:border-cyan-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
     <!-- Decorative pattern -->
-    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;"></div>
+    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;" aria-hidden="true"></div>
     
     <!-- Content -->
     <div class="relative z-10 p-4 sm:p-6 md:p-8">
       <!-- Close button -->
-      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors duration-300 p-2">
-        <i class="fas fa-times text-lg sm:text-xl"></i>
+      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-cyan-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors duration-300 p-2" aria-label="Close">
+        <i class="fas fa-times text-lg sm:text-xl" aria-hidden="true"></i>
       </button>
       
       <!-- Header -->
       <div class="text-center mb-4 sm:mb-6">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent mb-2 pb-1">
+        <h2 id="welcome-modal-title" class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-400 bg-clip-text text-transparent mb-2 pb-1" data-i18n="welcome_title">
           ¡Bienvenido a mi sitio web!
         </h2>
         <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-cyan-600 to-cyan-400 mx-auto rounded-full"></div>
@@ -21,13 +21,13 @@
       
       <!-- Message -->
       <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
-        <p>
+        <p data-i18n="welcome_intro_1" data-i18n-html>
           Me llamo <strong class="text-cyan-700 dark:text-cyan-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.
         </p>
-        <p>
+        <p data-i18n="welcome_intro_2" data-i18n-html>
           Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-cyan-700 dark:text-cyan-300">blog</strong> (aunque aún estoy empezando con el contenido).
         </p>
-        <p>
+        <p data-i18n="welcome_intro_3" data-i18n-html>
           Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄
         </p>
       </div>
@@ -35,7 +35,7 @@
       <!-- Action button -->
       <div class="mt-6 sm:mt-8 flex justify-center">
         <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          ¡Empecemos! <i class="fas fa-arrow-right ml-2"></i>
+          <span data-i18n="action_get_started">¡Empecemos!</span> <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
         </button>
       </div>
       
@@ -43,7 +43,7 @@
       <div class="mt-4 text-center">
         <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
           <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 sm:w-auto sm:h-auto rounded border-gray-300 text-cyan-600 focus:ring-cyan-500">
-          <span>No volver a mostrar este mensaje</span>
+          <span data-i18n="welcome_dont_show">No volver a mostrar este mensaje</span>
         </label>
       </div>
     </div>
@@ -78,6 +78,14 @@ function showWelcomeModal() {
   if (hideWelcome) return;
 
   const modal = document.getElementById('welcome-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    // Focus trap: focus the first button inside the modal
+    const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) firstFocusable.focus();
+  }
+}
   if (modal) {
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';

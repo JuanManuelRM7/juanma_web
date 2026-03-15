@@ -39,7 +39,7 @@
     {{ if .url }}
     <div class="mt-3 text-right">
       <a href="{{ .url }}" class="text-xs text-cyan-600 dark:text-cyan-400 no-underline hover:text-cyan-800 dark:hover:text-cyan-300 font-medium" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
-        Ver más <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1"></i>
+        <span data-i18n="action_view_more">Ver más</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
       </a>
     </div>
     {{ end }}

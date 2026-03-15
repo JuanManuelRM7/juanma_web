@@ -17,6 +17,12 @@
     href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
   />
 
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Params.title }} – RSS" href="{{ `index.xml` | absURL }}" />
+  {{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Params.title }}" href="{{ .RelPermalink }}" />
+  {{ end }}
+
   {{ $css := resources.Get "main.css" | postCSS }}
   {{ if hugo.IsProduction }}
   {{ $css = $css | minify | fingerprint | resources.PostProcess }}

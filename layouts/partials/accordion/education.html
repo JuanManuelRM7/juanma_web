@@ -16,7 +16,7 @@
     {{ if .thesis_title }}
     <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
       <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-        <strong>TFG:</strong> <i>{{ .thesis_title }}</i>
+        <strong data-i18n="edu_thesis">TFG:</strong> <i>{{ .thesis_title }}</i>
       </p>
       {{ if .thesis_url }}
       <a
@@ -26,8 +26,8 @@
         rel="noopener noreferrer"
         aria-label="Ver TFG de {{ .degree }}"
       >
-        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300"></i>
-        <span class="font-medium text-gray-900 dark:text-gray-100">Ver TFG</span>
+        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300" aria-hidden="true"></i>
+        <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_view_thesis">Ver TFG</span>
       </a>
       {{ end }}
     </div>

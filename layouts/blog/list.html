@@ -3,9 +3,9 @@
   <!-- Blog Header -->
   <div class="mb-10 text-center">
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
-      <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400 mr-2"></i>Blog
+      <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400 mr-2" aria-hidden="true"></i><span data-i18n="blog_title">Blog</span>
     </h1>
-    <p class="text-gray-600 dark:text-gray-400 text-lg">Artículos sobre física, IA, meteorología y más</p>
+    <p class="text-gray-600 dark:text-gray-400 text-lg" data-i18n="blog_description">Artículos sobre física, IA, meteorología y más</p>
   </div>
 
   <!-- Blog Grid -->
@@ -39,7 +39,7 @@
           {{ .Date.Format "2 January 2006" }}
           <span class="text-gray-300 dark:text-gray-600">·</span>
           <i class="far fa-clock"></i>
-          {{ math.Round (div (countwords .Content) 200.0) }} min lectura
+          {{ math.Round (div (countwords .Content) 200.0) }} <span data-i18n="content_reading_time">min lectura</span>
         </p>
         {{ with .Description }}
         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3 line-clamp-3">{{ . }}</p>

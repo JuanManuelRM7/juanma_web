@@ -3,14 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('pre').forEach(function (pre) {
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
-    button.setAttribute('aria-label', 'Copiar código');
-    button.innerHTML = '<i class="fas fa-copy"></i>';
+    button.setAttribute('aria-label', 'Copy code');
+    button.setAttribute('data-i18n-aria', 'action_copy_code');
+    button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
     button.addEventListener('click', function () {
       var code = pre.querySelector('code');
       if (!code) return;
       navigator.clipboard.writeText(code.innerText).then(function () {
-        button.innerHTML = '<i class="fas fa-check"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = code.innerText;
@@ -20,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        button.innerHTML = '<i class="fas fa-check"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy"></i>'; }, 2000);
+        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
       });
     });
     pre.style.position = 'relative';
