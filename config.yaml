@@ -1,6 +1,8 @@
 baseURL: https://juanmanuel.petrer.eu/
 languageCode: es
 publishDir: docs
+outputs:
+  home: [HTML, RSS, JSON]
 build:
   writeStats: true
 markup:

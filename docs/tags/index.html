@@ -3,8 +3,6 @@
   
 
 
-
-
 <title>Tags</title>
 
 <meta name="theme-color" content="#06b6d4" />
@@ -55,6 +53,17 @@
   "url": "https:\/\/juanmanuel.petrer.eu\/tags\/"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https:\/\/juanmanuel.petrer.eu\/" },
+    { "@type": "ListItem", "position": 2, "name": "\"Tags\"", "item": "https:\/\/juanmanuel.petrer.eu\/tags\/" },
+    { "@type": "ListItem", "position": 3, "name": "\"Tags\"", "item": "https:\/\/juanmanuel.petrer.eu\/tags\/" }
+  ]
+}
+</script>
 
 
 <meta name="generator" content="Sitio web por JM con Hugo 0.151.0" />
@@ -83,7 +92,7 @@
   
   
   
-  <link href="/main.min.76d2770756358f0a4bcee47a29454471dedf5358d7be51fa9a211eca34de030f.css" rel="stylesheet" />
+  <link href="/main.min.dfb9585affbb3b9c4c43b7e124c5167baaf44e8e8a014f3a26a5e042b22ec045.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -138,8 +147,31 @@
 
     setTheme(theme);
 
-    const toggleTheme = () => {
-      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    const toggleTheme = (evt) => {
+      const next = html.classList.contains("dark") ? "light" : "dark";
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!document.startViewTransition || reduceMotion) {
+        setTheme(next);
+        return;
+      }
+      
+      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
+      const y = evt && evt.clientY ? evt.clientY : 40;
+      html.classList.add("theme-vt");
+      const vt = document.startViewTransition(() => setTheme(next));
+      vt.ready
+        .then(() => {
+          const r = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+          );
+          return html.animate(
+            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
+            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
+          ).finished;
+        })
+        .catch(() => {})
+        .finally(() => html.classList.remove("theme-vt"));
     };
 
     window.onload = () => {
@@ -189,7 +221,7 @@
     ></button>
     <i
       class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme()"
+      onclick="toggleTheme(event)"
       role="button"
       tabindex="0"
       aria-label="Cambiar tema"
@@ -234,7 +266,7 @@
       </button>
       <i
         class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-        onclick="toggleTheme()"
+        onclick="toggleTheme(event)"
         role="button"
         tabindex="0"
         aria-label="Cambiar tema"
@@ -1104,6 +1136,8 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="open" data-target="https://orcid.org/0009-0008-7529-306X" data-keywords="orcid social"><i class="fab fa-orcid"></i><span>ORCID</span></button>
       
 
+      <div id="cmdk-content-results"></div>
+
       <div id="cmdk-empty" class="cmdk-empty" hidden>Sin resultados</div>
     </div>
     <div class="cmdk-footer">
@@ -1223,12 +1257,55 @@ pre:hover .copy-code-btn {
   var items = Array.prototype.slice.call(list.querySelectorAll('.cmdk-item'));
   var groups = Array.prototype.slice.call(list.querySelectorAll('[data-group]'));
   var activeIdx = -1;
+  var contentBox = document.getElementById('cmdk-content-results');
+  var searchIndex = null;
+  var indexRequested = false;
+
+  function loadIndex() {
+    if (indexRequested) return;
+    indexRequested = true;
+    fetch('\/index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) { searchIndex = data; filter(input.value); })
+      .catch(function () {});
+  }
+
+  
+  function searchContent(q) {
+    contentBox.innerHTML = '';
+    if (!searchIndex || q.length < 3) return [];
+    var staticUrls = items.map(function (el) { return el.dataset.target; });
+    var results = searchIndex.filter(function (page) {
+      if (staticUrls.indexOf(page.url) !== -1 && normalize(page.title).indexOf(q) !== -1) return false;
+      return normalize(page.title + ' ' + page.tags.join(' ') + ' ' + page.content).indexOf(q) !== -1;
+    }).slice(0, 6);
+    if (!results.length) return [];
+    var header = document.createElement('div');
+    header.className = 'cmdk-group';
+    header.textContent = 'Contenido';
+    contentBox.appendChild(header);
+    return results.map(function (page) {
+      var idx = normalize(page.content).indexOf(q);
+      var snippet = idx >= 0 ? page.content.substr(Math.max(0, idx - 30), 90).trim() : '';
+      var btn = document.createElement('button');
+      btn.className = 'cmdk-item';
+      btn.dataset.action = 'goto';
+      btn.dataset.target = page.url;
+      btn.innerHTML = '<i class="fas fa-file-alt"></i><span></span>';
+      btn.querySelector('span').innerHTML = page.title.replace(/</g, '&lt;') +
+        (snippet ? ' <small style="opacity:0.6">— …' + snippet.replace(/</g, '&lt;') + '…</small>' : '');
+      btn.addEventListener('click', function () { run(btn); });
+      contentBox.appendChild(btn);
+      return btn;
+    });
+  }
 
   function open() {
     overlay.hidden = false;
     input.value = '';
     filter('');
     input.focus();
+    loadIndex();
   }
   function close() {
     overlay.hidden = true;
@@ -1237,7 +1314,7 @@ pre:hover .copy-code-btn {
   window.openCmdk = open;
 
   function visibleItems() {
-    return items.filter(function (el) { return !el.hidden; });
+    return Array.prototype.slice.call(list.querySelectorAll('.cmdk-item')).filter(function (el) { return !el.hidden; });
   }
 
   function normalize(s) {
@@ -1259,13 +1336,14 @@ pre:hover .copy-code-btn {
       }
       g.hidden = !any;
     });
+    searchContent(q);
     empty.hidden = visibleItems().length > 0;
     setActive(q === '' ? -1 : 0);
   }
 
   function setActive(idx) {
     var vis = visibleItems();
-    items.forEach(function (el) { el.classList.remove('active'); });
+    Array.prototype.forEach.call(list.querySelectorAll('.cmdk-item'), function (el) { el.classList.remove('active'); });
     activeIdx = Math.max(-1, Math.min(idx, vis.length - 1));
     if (activeIdx >= 0) {
       vis[activeIdx].classList.add('active');
@@ -1316,6 +1394,20 @@ pre:hover .copy-code-btn {
 
   overlay.addEventListener('click', function (e) {
     if (e.target === overlay) close();
+  });
+
+  
+  overlay.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var focusables = [input].concat(visibleItems());
+    var first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
 })();
 </script>
@@ -1538,6 +1630,10 @@ pre:hover .copy-code-btn {
 
   body.addEventListener('click', function () { input.focus(); });
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  
+  overlay.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') { e.preventDefault(); input.focus(); }
+  });
   document.addEventListener('keydown', function (e) {
     if (!overlay.hidden && e.key === 'Escape') close();
   });

@@ -216,6 +216,10 @@
 
   body.addEventListener('click', function () { input.focus(); });
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  // Focus trap: the input is the only focus target inside the terminal
+  overlay.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') { e.preventDefault(); input.focus(); }
+  });
   document.addEventListener('keydown', function (e) {
     if (!overlay.hidden && e.key === 'Escape') close();
   });

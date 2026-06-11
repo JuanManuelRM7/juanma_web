@@ -41,6 +41,8 @@
       <button class="cmdk-item" data-action="open" data-target="{{ .url }}" data-keywords="{{ lower .title }} social"><i class="{{ .icon }}"></i><span>{{ .title }}</span></button>
       {{ end }}
 
+      <div id="cmdk-content-results"></div>
+
       <div id="cmdk-empty" class="cmdk-empty" hidden>Sin resultados</div>
     </div>
     <div class="cmdk-footer">
@@ -160,12 +162,55 @@
   var items = Array.prototype.slice.call(list.querySelectorAll('.cmdk-item'));
   var groups = Array.prototype.slice.call(list.querySelectorAll('[data-group]'));
   var activeIdx = -1;
+  var contentBox = document.getElementById('cmdk-content-results');
+  var searchIndex = null;
+  var indexRequested = false;
+
+  function loadIndex() {
+    if (indexRequested) return;
+    indexRequested = true;
+    fetch('{{ `index.json` | relURL }}')
+      .then(function (r) { return r.json(); })
+      .then(function (data) { searchIndex = data; filter(input.value); })
+      .catch(function () {});
+  }
+
+  // Full-text search over the Hugo-generated JSON index (lazy-loaded)
+  function searchContent(q) {
+    contentBox.innerHTML = '';
+    if (!searchIndex || q.length < 3) return [];
+    var staticUrls = items.map(function (el) { return el.dataset.target; });
+    var results = searchIndex.filter(function (page) {
+      if (staticUrls.indexOf(page.url) !== -1 && normalize(page.title).indexOf(q) !== -1) return false;
+      return normalize(page.title + ' ' + page.tags.join(' ') + ' ' + page.content).indexOf(q) !== -1;
+    }).slice(0, 6);
+    if (!results.length) return [];
+    var header = document.createElement('div');
+    header.className = 'cmdk-group';
+    header.textContent = 'Contenido';
+    contentBox.appendChild(header);
+    return results.map(function (page) {
+      var idx = normalize(page.content).indexOf(q);
+      var snippet = idx >= 0 ? page.content.substr(Math.max(0, idx - 30), 90).trim() : '';
+      var btn = document.createElement('button');
+      btn.className = 'cmdk-item';
+      btn.dataset.action = 'goto';
+      btn.dataset.target = page.url;
+      btn.innerHTML = '<i class="fas fa-file-alt"></i><span></span>';
+      btn.querySelector('span').innerHTML = page.title.replace(/</g, '&lt;') +
+        (snippet ? ' <small style="opacity:0.6">— …' + snippet.replace(/</g, '&lt;') + '…</small>' : '');
+      btn.addEventListener('click', function () { run(btn); });
+      contentBox.appendChild(btn);
+      return btn;
+    });
+  }
 
   function open() {
     overlay.hidden = false;
     input.value = '';
     filter('');
     input.focus();
+    loadIndex();
   }
   function close() {
     overlay.hidden = true;
@@ -174,7 +219,7 @@
   window.openCmdk = open;
 
   function visibleItems() {
-    return items.filter(function (el) { return !el.hidden; });
+    return Array.prototype.slice.call(list.querySelectorAll('.cmdk-item')).filter(function (el) { return !el.hidden; });
   }
 
   function normalize(s) {
@@ -196,13 +241,14 @@
       }
       g.hidden = !any;
     });
+    searchContent(q);
     empty.hidden = visibleItems().length > 0;
     setActive(q === '' ? -1 : 0);
   }
 
   function setActive(idx) {
     var vis = visibleItems();
-    items.forEach(function (el) { el.classList.remove('active'); });
+    Array.prototype.forEach.call(list.querySelectorAll('.cmdk-item'), function (el) { el.classList.remove('active'); });
     activeIdx = Math.max(-1, Math.min(idx, vis.length - 1));
     if (activeIdx >= 0) {
       vis[activeIdx].classList.add('active');
@@ -253,6 +299,20 @@
 
   overlay.addEventListener('click', function (e) {
     if (e.target === overlay) close();
+  });
+
+  // Focus trap: keep Tab cycling inside the dialog while open
+  overlay.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var focusables = [input].concat(visibleItems());
+    var first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
 })();
 </script>

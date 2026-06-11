@@ -78,8 +78,31 @@
 
     setTheme(theme);
 
-    const toggleTheme = () => {
-      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    const toggleTheme = (evt) => {
+      const next = html.classList.contains("dark") ? "light" : "dark";
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!document.startViewTransition || reduceMotion) {
+        setTheme(next);
+        return;
+      }
+      // Circular reveal from the click position (or top-right corner as fallback)
+      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
+      const y = evt && evt.clientY ? evt.clientY : 40;
+      html.classList.add("theme-vt");
+      const vt = document.startViewTransition(() => setTheme(next));
+      vt.ready
+        .then(() => {
+          const r = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+          );
+          return html.animate(
+            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
+            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
+          ).finished;
+        })
+        .catch(() => {})
+        .finally(() => html.classList.remove("theme-vt"));
     };
 
     window.onload = () => {

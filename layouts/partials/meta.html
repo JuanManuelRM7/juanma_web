@@ -2,6 +2,7 @@
 {{ $desc := cond .IsHome .Site.Params.description (or .Description (.Summary | plainify)) }}
 {{ $url := .Permalink }}
 {{ $image := absURL "og-image.png" }}
+{{- if not .IsHome }}{{ with .File }}{{ $postOg := printf "og/%s.png" .ContentBaseName }}{{ if fileExists (printf "static/%s" $postOg) }}{{ $image = absURL $postOg }}{{ end }}{{ end }}{{ end -}}
 
 <title>{{ $title }}</title>
 
@@ -70,6 +71,19 @@
   },
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "url": "{{ $url }}"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ .Site.BaseURL }}" }
+    {{- with .CurrentSection }},
+    { "@type": "ListItem", "position": 2, "name": {{ .Title | jsonify }}, "item": "{{ .Permalink }}" }
+    {{- end }},
+    { "@type": "ListItem", "position": {{ if .CurrentSection }}3{{ else }}2{{ end }}, "name": {{ .Title | jsonify }}, "item": "{{ $url }}" }
+  ]
 }
 </script>
 {{ end }}

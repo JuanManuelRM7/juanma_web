@@ -1166,3 +1166,15 @@ html {
     navigation: none;
   }
 }
+
+/* Theme toggle: circular reveal. While html has .theme-vt, the default
+   crossfade is disabled and the new snapshot is clipped by JS animation. */
+.theme-vt::view-transition-old(root),
+.theme-vt::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.theme-vt::view-transition-new(root) {
+  z-index: 1;
+}
