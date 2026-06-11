@@ -75,7 +75,7 @@
         var mdx = a.x - mouse.x, mdy = a.y - mouse.y;
         var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
         if (mdist < MOUSE_DIST) {
-          ctx.strokeStyle = 'rgba(255,255,255,' + (0.45 * (1 - mdist / MOUSE_DIST)).toFixed(3) + ')';
+          ctx.strokeStyle = 'rgba(103,232,249,' + (0.55 * (1 - mdist / MOUSE_DIST)).toFixed(3) + ')';
           ctx.lineWidth = 1.2;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);

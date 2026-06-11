@@ -1,16 +1,16 @@
 {{ range $idx, $el := .Site.Params.education.list }}
 <div class="timeline-item">
   <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-cyan-600 dark:border-l-cyan-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
+  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
     <div class="flex items-start justify-between mb-2 gap-3">
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400"></i>
+          <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
           <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_{{ add $idx 1 }}">{{ .degree }}</span></h4>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">{{ .college }}</p>
       </div>
-      <span class="text-sm text-cyan-600 dark:text-cyan-400 font-medium flex-shrink-0">{{ .dates }}</span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0">{{ .dates }}</span>
     </div>
     
     {{ if .thesis_title }}
@@ -21,12 +21,12 @@
       {{ if .thesis_url }}
       <a
         href="{{ .thesis_url }}"
-        class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-cyan-50 dark:hover:bg-slate-600 transition-all duration-300 text-sm no-underline"
+        class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 text-sm no-underline"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Ver TFG de {{ .degree }}"
       >
-        <i class="fas fa-file-download text-cyan-600 dark:text-cyan-300" aria-hidden="true"></i>
+        <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
         <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_view_thesis">{{ i18n "action_view_thesis" }}</span>
       </a>
       {{ end }}

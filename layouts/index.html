@@ -2,11 +2,11 @@
 {{ partial "welcome_modal" . }}
 
 <!-- Reading Progress Bar -->
-<div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 z-50 transition-all duration-150" style="width: 0%;"></div>
+<div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-150" style="width: 0%;"></div>
 
 <!-- Page Load Transition -->
 <div id="page-loader" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] flex items-center justify-center transition-opacity duration-500" style="pointer-events: auto;">
-  <div class="animate-pulse text-cyan-600 dark:text-cyan-400 text-3xl font-bold">JM</div>
+  <div class="animate-pulse text-violet-600 dark:text-violet-400 text-3xl font-bold">JM</div>
 </div>
 <script>
 // Immediately schedule loader removal (don't wait for DOMContentLoaded)
@@ -28,39 +28,36 @@
 </script>
 
 <!-- Hero Section -->
-<div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #06b6d4, #3b82f6, #0891b2, #6366f1); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
+<div class="hero-section w-full text-white dark:text-gray-100 py-20 md:py-28 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <!-- Blobs aurora -->
+  <div class="hero-aurora" style="width: 340px; height: 340px; top: -120px; right: -60px; background: radial-gradient(circle, #22d3ee, transparent 70%);"></div>
+  <div class="hero-aurora" style="width: 300px; height: 300px; bottom: -140px; left: -80px; background: radial-gradient(circle, #c4b5fd, transparent 70%); animation-delay: -7s;"></div>
   <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
 
   <div class="max-w-4xl mx-auto relative z-10">
-    <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
-    <p class="text-lg md:text-xl mb-2 text-cyan-100 dark:text-gray-300">
+    <h1 class="text-5xl md:text-6xl font-bold mb-3 text-gradient-animated">{{ .Site.Params.profile.name }}</h1>
+    <p class="text-lg md:text-xl mb-2 text-violet-100 dark:text-gray-300">
       <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
     </p>
-    <p class="text-base md:text-lg mb-6 text-cyan-50 dark:text-gray-400" data-i18n="profile_location">{{ .Site.Params.profile.location }}</p>
-    <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-cyan-100 dark:text-gray-300 mb-8">{{ i18n "hero_desc" }}</p>
-    <!-- Quick Navigation -->
+    <p class="text-base md:text-lg mb-6 text-violet-50 dark:text-gray-400" data-i18n="profile_location">{{ .Site.Params.profile.location }}</p>
+    <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-violet-100 dark:text-gray-300 mb-8">{{ i18n "hero_desc" }}</p>
+    <!-- CTAs -->
     <div class="flex flex-wrap gap-3 mt-4">
-      <a href="#experiencia" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-briefcase text-xs" aria-hidden="true"></i> <span data-i18n="nav_exp">{{ i18n "nav_exp" }}</span>
+      <a href="#proyectos" class="hero-cta hero-cta-primary">
+        <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span>
       </a>
-      <a href="#educacion" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-graduation-cap text-xs" aria-hidden="true"></i> <span data-i18n="nav_edu">{{ i18n "nav_edu" }}</span>
+      <a href="{{ `blog` | relURL }}" class="hero-cta hero-cta-secondary">
+        <i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span>
       </a>
-      <a href="#publicaciones" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-book text-xs" aria-hidden="true"></i> <span data-i18n="nav_pub">{{ i18n "nav_pub" }}</span>
-      </a>
-      <a href="#skills" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-cogs text-xs" aria-hidden="true"></i> Skills
-      </a>
-      <a href="#proyectos" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-project-diagram text-xs" aria-hidden="true"></i> <span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span>
-      </a>
-      <a href="#contacto" class="hero-nav-pill no-underline" style="color: #ffffff !important;">
-        <i class="fas fa-envelope text-xs" aria-hidden="true"></i> <span data-i18n="nav_contact">{{ i18n "nav_contact" }}</span>
+      <a href="{{ `/cv.pdf` | relURL }}" class="hero-cta hero-cta-secondary">
+        <i class="fas fa-file-download" aria-hidden="true"></i> <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>
     </div>
   </div>
+  <a href="#proyectos" class="scroll-indicator" aria-label="Bajar al contenido" style="color: rgba(255,255,255,0.7) !important;">
+    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+  </a>
 </div>
 
 <!-- Neural Network Hero Animation -->
@@ -94,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- LEFT SIDEBAR (40%) -->
   <div class="lg:col-span-1">
     <!-- Profile Card -->
-    <div class="bg-gradient-to-br from-cyan-50 via-white to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 rounded-lg shadow-md border border-cyan-200 dark:border-cyan-700 p-5 mb-6 sticky top-20">
+    <div class="bg-gradient-to-br from-violet-50 via-white to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 rounded-lg shadow-md border border-violet-200 dark:border-violet-700 p-5 mb-6 sticky top-20">
       <div class="text-center mb-2">
         {{ partial "profilePhoto" . }}
       </div>
@@ -103,14 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
       {{ partial "profile_stats" . }}
       <div class="flex justify-center gap-4 mb-5 flex-wrap">
         {{ range .Site.Params.social.list }}
-        <a href="{{ .url }}" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors" title="{{ .title }}">
+        <a href="{{ .url }}" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="{{ .title }}">
           <i class="{{ .icon }}"></i>
         </a>
         {{ end }}
       </div>
       
       <!-- CV Button -->
-      <a href="{{ `/cv.pdf` | relURL }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
+      <a href="{{ `/cv.pdf` | relURL }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
         <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>
@@ -122,22 +119,22 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- RIGHT CONTENT (60%) -->
   <div class="lg:col-span-2">
     
-    <!-- Featured Blog Post -->
-    <div class="mb-8" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-newspaper text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
-        <span data-i18n="section_blog">{{ i18n "section_blog" }}</span>
+    <!-- Projects Section -->
+    <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
+        <span data-i18n="section_projects">{{ i18n "section_projects" }}</span>
       </h3>
-      {{ partial "latest_post_chip" . }}
+      {{ partial "projects" . }}
     </div>
 
     <!-- Section Separator -->
     <div class="section-separator"></div>
-    
+
     <!-- Experience Section (Timeline) -->
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-briefcase text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-briefcase section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_exp">{{ i18n "section_exp" }}</span>
       </h3>
       <div class="timeline-container">
@@ -148,10 +145,22 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Section Separator -->
     <div class="section-separator"></div>
     
+    <!-- Featured Blog Post -->
+    <div class="mb-8" data-reveal>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
+        <span data-i18n="section_blog">{{ i18n "section_blog" }}</span>
+      </h3>
+      {{ partial "latest_post_chip" . }}
+    </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+    
     <!-- Education Section (Timeline) -->
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-graduation-cap text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-graduation-cap section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_edu">{{ i18n "section_edu" }}</span>
       </h3>
       <div class="timeline-container">
@@ -164,8 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <!-- Publications Section -->
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-book text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_pub">{{ i18n "section_pub" }}</span>
       </h3>
       {{ partial "accordion/publication" . }}
@@ -176,23 +185,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <!-- Skills Section by Category -->
     <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-cogs text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-cogs section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         Skills
       </h3>
       {{ partial "skills_by_category" . }}
-    </div>
-
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-
-    <!-- Projects Section -->
-    <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-project-diagram text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
-        <span data-i18n="section_projects">{{ i18n "section_projects" }}</span>
-      </h3>
-      {{ partial "projects" . }}
     </div>
 
     <!-- Section Separator -->
@@ -203,11 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Contact Section -->
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-envelope text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">{{ i18n "section_contact" }}</span>
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
         <a href="mailto:juanmanuelruiz383@gmail.com" class="contact-card group no-underline">
           <div class="contact-card-icon bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
             <i class="fas fa-envelope text-lg"></i>
@@ -251,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Scroll to Top Button -->
-<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-cyan-400">
+<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-violet-400">
   <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>
 
@@ -289,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { passive: true });
 
   // Smooth scroll ONLY for hero nav pills (not all # links)
-  document.querySelectorAll('.hero-nav-pill[href^="#"]').forEach(function(anchor) {
+  document.querySelectorAll('.hero-cta[href^="#"], .scroll-indicator[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       var href = this.getAttribute('href');
       if (href && href.length > 1) {
@@ -345,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // Show secret message
     var msg = document.createElement('div');
-    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(6,182,212,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#8b5cf6,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(139,92,246,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
     msg.innerHTML = '<span data-i18n="easter_secret">{{ i18n "easter_secret" }}</span><br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;" data-i18n="easter_konami">{{ i18n "easter_konami" }}</span>';
     container.appendChild(msg);
     requestAnimationFrame(function() { msg.style.opacity = '1'; });

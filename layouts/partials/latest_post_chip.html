@@ -4,20 +4,20 @@
 <!-- Latest Post Chip (Enhanced) -->
 <a
   href="{{ $latest.RelPermalink }}"
-  class="group block h-full p-4 bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-700/50 rounded-lg hover:border-cyan-400 dark:hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline"
+  class="group block h-full p-4 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline"
   aria-label="Ver último post: {{ $latest.Title }}"
 >
   <div class="flex flex-col h-full">
     <!-- Meta Info -->
     <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
-      <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
+      <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400"></i>
       <time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date | time.Format ":date_medium" }}</time>
       <span>•</span>
       <span>{{ math.Ceil (div (len (split $latest.Plain " ")) 200) }} <span data-i18n="content_reading_time">{{ i18n "content_reading_time" }}</span></span>
     </div>
     
     <!-- Title -->
-    <h3 class="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
+    <h3 class="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-2">
       {{ $latest.Title }}
     </h3>
     
@@ -33,7 +33,7 @@
     {{ end }}
     
     <!-- CTA -->
-    <div class="flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 group-hover:gap-2 transition-all">
+    <div class="flex items-center gap-1 text-sm font-medium text-violet-600 dark:text-violet-400 group-hover:gap-2 transition-all">
       <span data-i18n="content_read_more">{{ i18n "content_read_more" }}</span>
       <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
     </div>

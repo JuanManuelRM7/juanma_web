@@ -1,12 +1,12 @@
 <!-- Mobile Sticky Header (appears on scroll down) -->
-<div data-sticky-header class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-700 shadow-2xl z-40 p-3" style="transform: translateY(100px); opacity: 0; pointer-events: none;">
+<div data-sticky-header class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-violet-200 dark:border-violet-700 shadow-2xl z-40 p-3" style="transform: translateY(100px); opacity: 0; pointer-events: none;">
   <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
     <!-- Photo + Name -->
     <div class="flex items-center gap-2 min-w-0">
       <img
         src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
         alt="{{ .Site.Params.author }}"
-        class="w-12 h-12 rounded-lg border-2 border-cyan-600 dark:border-cyan-400 flex-shrink-0"
+        class="w-12 h-12 rounded-lg border-2 border-violet-600 dark:border-violet-400 flex-shrink-0"
       />
       <div class="min-w-0">
         <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
@@ -23,7 +23,7 @@
       <!-- CV Button -->
       <a
         href="{{ `/cv.pdf` | relURL }}"
-        class="inline-flex items-center justify-center p-2.5 rounded-md bg-cyan-600 hover:bg-cyan-700 text-white transition-all duration-300"
+        class="inline-flex items-center justify-center p-2.5 rounded-md bg-violet-600 hover:bg-violet-700 text-white transition-all duration-300"
         title="Descargar CV"
         aria-label="Descargar CV"
         data-i18n-aria="download_cv"
