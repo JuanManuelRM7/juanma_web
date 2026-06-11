@@ -30,10 +30,25 @@
     <loc>https://juanmanuel.petrer.eu/tags/deep-learning/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/glm-ocr/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/grad-cam/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/interpretabilidad/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/modelos-locales/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/ocr/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/opencv/</loc>
@@ -59,9 +74,6 @@
     <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</loc>
-    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</loc>
     <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/vision-transformers/</loc>

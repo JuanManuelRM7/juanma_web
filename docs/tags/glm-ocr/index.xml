@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GLM-OCR on </title>
+    <link>https://juanmanuel.petrer.eu/tags/glm-ocr/</link>
+    <description>Recent content in GLM-OCR on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/glm-ocr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OCR en condiciones extremas: leer texto donde no hay tinta</title>
+      <link>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;El OCR lleva décadas declarándose resuelto. Luego te piden leer caracteres negros, en relieve, sobre caucho negro, en una superficie curva que se mueve, y descubres dónde estaban escondidos los problemas.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Trabajo en visión por computador para inspección industrial en la industria del neumático, y hace poco estuve experimentando por mi cuenta con &lt;strong&gt;GLM-OCR&lt;/strong&gt;, un modelo multimodal de OCR pequeño y abierto. La combinación de ambas cosas —el benchmark mental de &amp;ldquo;qué exigiría mi entorno de trabajo&amp;rdquo; aplicado a un modelo que cabe en un portátil— me dejó varias reflexiones sobre el estado del OCR que creo que merecen un post. Sin datos ni detalles de proyectos concretos: lo que sigue es la naturaleza del problema, que es pública y fascinante, y lo que aprendí del modelo, que es abierto.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
