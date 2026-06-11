@@ -1,0 +1,159 @@
+# Generado desde layouts/partials/i18n.html — mantener sincronizado
+nav_home:
+  other: "Inicio"
+nav_blog:
+  other: "Blog"
+nav_material:
+  other: "Material"
+nav_material_desktop:
+  other: "Material Universitario"
+nav_search:
+  other: "Buscar"
+aria_toggle_theme:
+  other: "Cambiar tema"
+aria_toggle_lang:
+  other: "Cambiar idioma"
+hero_desc:
+  other: "Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto."
+nav_exp:
+  other: "Experiencia"
+nav_edu:
+  other: "Educación"
+nav_pub:
+  other: "Publicaciones"
+nav_projects:
+  other: "Proyectos"
+nav_contact:
+  other: "Contacto"
+section_blog:
+  other: "Último Post del Blog"
+section_exp:
+  other: "Experiencia"
+section_edu:
+  other: "Educación"
+section_pub:
+  other: "Publicaciones"
+section_projects:
+  other: "Proyectos"
+section_contact:
+  other: "Contacto"
+section_github:
+  other: "Actividad en GitHub"
+gh_contributions:
+  other: "contribuciones en el último año"
+gh_view_profile:
+  other: "Ver perfil"
+download_cv:
+  other: "Descargar CV"
+action_get_started:
+  other: "¡Empecemos!"
+action_view_more:
+  other: "Ver más"
+action_view_thesis:
+  other: "Ver TFG"
+action_download_paper:
+  other: "Descargar Paper"
+action_home:
+  other: "Volver al inicio"
+action_view_blog:
+  other: "Ver el blog"
+action_copy_code:
+  other: "Copiar código"
+aria_scroll_top:
+  other: "Volver arriba"
+content_reading_time:
+  other: "min lectura"
+content_toc:
+  other: "Tabla de contenidos"
+content_index:
+  other: "Índice"
+content_related:
+  other: "Te puede interesar"
+content_comments:
+  other: "Comentarios"
+content_read_more:
+  other: "Leer más"
+blog_title:
+  other: "Blog"
+blog_description:
+  other: "Artículos sobre física, IA, meteorología y más"
+profile_experience:
+  other: "Experiencia"
+profile_projects:
+  other: "Proyectos"
+profile_specialist:
+  other: "Especialista"
+footer_sections:
+  other: "Secciones"
+footer_resources:
+  other: "Recursos"
+footer_contact:
+  other: "Contacto"
+footer_made_with:
+  other: "Hecho con"
+welcome_title:
+  other: "¡Bienvenido a mi sitio web!"
+welcome_intro_1:
+  other: "Me llamo <strong class=\"text-cyan-700 dark:text-cyan-300\">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí."
+welcome_intro_2:
+  other: "Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class=\"text-cyan-700 dark:text-cyan-300\">blog</strong> (aunque aún estoy empezando con el contenido)."
+welcome_intro_3:
+  other: "Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄"
+welcome_dont_show:
+  other: "No volver a mostrar este mensaje"
+error_title:
+  other: "¡Página no encontrada!"
+error_message:
+  other: "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas."
+error_quote:
+  other: "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»"
+edu_thesis:
+  other: "TFG:"
+status_production:
+  other: "En producción"
+status_published:
+  other: "Publicado"
+status_active:
+  other: "Activo"
+status_development:
+  other: "En desarrollo"
+status_completed:
+  other: "TFG completado"
+search_title:
+  other: "Buscar"
+aria_breadcrumb:
+  other: "Miga de pan"
+month_0:
+  other: "enero"
+month_1:
+  other: "febrero"
+month_2:
+  other: "marzo"
+month_3:
+  other: "abril"
+month_4:
+  other: "mayo"
+month_5:
+  other: "junio"
+month_6:
+  other: "julio"
+month_7:
+  other: "agosto"
+month_8:
+  other: "septiembre"
+month_9:
+  other: "octubre"
+month_10:
+  other: "noviembre"
+month_11:
+  other: "diciembre"
+clock_format:
+  other: "{day} de {month} de {year}"
+easter_secret:
+  other: "🎮 ¡Has descubierto el secreto!"
+easter_konami:
+  other: "— Konami Code activado —"
+prev_post:
+  other: "Anterior"
+next_post:
+  other: "Siguiente"

@@ -83,6 +83,16 @@
   />
 
   
+  
+  
+  <link rel="alternate" hreflang="es" href="https://juanmanuel.petrer.eu/404.html" />
+  
+  <link rel="alternate" hreflang="en" href="https://juanmanuel.petrer.eu/en/404.html" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://juanmanuel.petrer.eu/404.html" />
+  
+
+  
   <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – ML Engineer &amp; Computer Vision Specialist – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
   
 
@@ -90,7 +100,7 @@
   
   
   
-  <link href="/main.min.dfb9585affbb3b9c4c43b7e124c5167baaf44e8e8a014f3a26a5e042b22ec045.css" rel="stylesheet" />
+  <link href="/main.min.c1f5c6a854e08e6c35ce9b1460aaa25b7420b5ee3f0ff0e6a35bc9c31be29f62.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -323,12 +333,8 @@
   </div>
 
   
-  <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3" style="font-size: 1.75rem !important;" data-i18n="error_title">
-    ¡Página no encontrada!
-  </h1>
-  <p class="text-gray-600 dark:text-gray-400 max-w-md mb-8 leading-relaxed" data-i18n="error_message">
-    Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.
-  </p>
+  <h1 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3" style="font-size: 1.75rem !important;" data-i18n="error_title">¡Página no encontrada!</h1>
+  <p class="text-gray-600 dark:text-gray-400 max-w-md mb-8 leading-relaxed" data-i18n="error_message">Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.</p>
 
   
   <div class="flex flex-col sm:flex-row gap-3">
@@ -347,9 +353,7 @@
   </div>
 
   
-  <p class="text-xs text-gray-400 dark:text-gray-600 mt-12 max-w-sm italic" data-i18n="error_quote">
-    «En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»
-  </p>
+  <p class="text-xs text-gray-400 dark:text-gray-600 mt-12 max-w-sm italic" data-i18n="error_quote">«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»</p>
 </div>
 
 
@@ -779,8 +783,11 @@ pre:hover .copy-code-btn {
 
   window.applyLang = applyLang;
 
+  
+  var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
+
   window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || 'es';
+    var current = window.localStorage.getItem('lang') || pageLang;
     applyLang(current === 'es' ? 'en' : 'es');
   };
 
@@ -791,7 +798,7 @@ pre:hover .copy-code-btn {
 
   
   var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== 'es') {
+  if (saved && saved !== pageLang) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
     } else {

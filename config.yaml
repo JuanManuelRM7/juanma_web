@@ -1,8 +1,156 @@
 baseURL: https://juanmanuel.petrer.eu/
 languageCode: es
 publishDir: docs
+defaultContentLanguage: es
+defaultContentLanguageInSubdir: false
 outputs:
   home: [HTML, RSS, JSON]
+languages:
+  es:
+    languageName: Español
+    languageCode: es
+    weight: 1
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+    params:
+      title: Juan Manuel Ruiz – ML Engineer & Computer Vision Specialist
+      description: "ML Engineer with a physics and mathematics background, specialized in Computer Vision and Deep Learning. Portfolio, projects, publications and blog of Juan Manuel Ruiz Muñoz."
+      profile:
+        name: "Juan Manuel"
+        location: "Elche, Alicante, Spain"
+        photo: profile.png
+        position: "ML Engineer · Computer Vision | Physicist & Mathematician"
+      aboutme:
+        title: About me
+        icon: fas fa-user
+        description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I build computer vision systems that work in real production: from data capture and preprocessing to model deployment. I am drawn to the intersection between mathematical rigor and AI solutions with tangible impact. When I am not training models, I write about physics, chaos and meteorology on this blog."
+      experience:
+        title: Experience
+        icon: fas fa-briefcase
+        panelId: experience-panel
+        list:
+          - position: AI Developer - Computer Vision Specialist
+            dates: June 2025 - *Present*
+            company: VRAIA Corp.
+            url: "https://vraia.com/"
+            details: |1-
+                - End-to-end computer vision pipeline for tire defect detection, processing over 10,000 high-resolution images/hour (768×768 px) across linear RGB and laser channels.
+                - Training and fine-tuning of models with over 300M parameters (Transformer and CNN architectures), achieving over 90% accuracy in multiclass classification across more than 10 categories with complex features.
+                - Systematic research of training and preprocessing configurations to improve production performance: class imbalance analysis, data augmentation and hyperparameter optimization.
+                - Development of ETL pipelines for building and versioning visual datasets at industrial scale.
+                - Definition and implementation of evaluation metrics (Precision, Recall, F1-Score, mAP, IoU) and tracking with MLflow and TensorBoard.
+                - Production model deployment with Docker and AWS.
+                - Writing technical documentation for architectures, datasets and pipelines.
+
+                Skills: PyTorch | TensorFlow | Computer Vision | Deep Learning | CNN | Transformers | Object Detection | OpenCV | MLflow | Docker | AWS
+          - position: Data Scientist & AI Researcher
+            dates: June 2024 - June 2025
+            company: AIR Institute & BISITE Research Group
+            url: "https://www.air-institute.org/"
+            details: |1-
+                - Analyze and define project requirements, designing and developing machine learning solutions using state-of-the-art algorithms.
+                - Design and implement custom machine learning algorithms for a variety of projects, including natural language processing, neural networks and computer vision, among others.
+                - Stay up to date with the latest research advances in various fields of artificial intelligence.
+                - Write and review technical documentation.
+                - Meet with clients to understand their requirements and tailor solutions to their needs.
+                - Collaborate with other team members to achieve project objectives.
+          - position: Researcher at Universidad Miguel Hernández
+            dates: January 2024 - July 2024
+            company: SCOLAb Group
+            url: "https://seneca.umh.es/"
+            details: |1-
+                - Development and research of Lagrangian techniques for automatic identification of atmospheric blocking situations.
+                - Collaboration on other group projects related to atmospheric physics.
+      education:
+        title: Education
+        icon: fas fa-graduation-cap
+        panelId: education-panel
+        list:
+          - degree: Bachelor's Degree in Physics
+            college: Universidad de Alicante
+            dates: 2020 - 2024
+            thesis_title: "A Lagrangian method for the identification of atmospheric blocking situations"
+            thesis_url: "/tfg.pdf"
+            specialization: "Computational Physics, Numerical Methods, Atmospheric Physics"
+            skills: "Computational Physics | Numerical Methods | Python | MATLAB | Data Analysis"
+          - degree: Bachelor's Degree in Mathematics
+            college: Universidad de Alicante
+            dates: 2018 - 2023
+            specialization: "Numerical Analysis, Differential Equations, Scientific Computing"
+            skills: "Linear Algebra | Numerical Analysis | Optimization | Statistics | Probability"
+          - degree: SICUE Exchange Student
+            college: Universidad de Salamanca
+            dates: 2022 - 2023
+            details: "International academic exchange"
+      publication:
+        title: Publications
+        icon: fas fa-book
+        format:
+          - title
+        types:
+          - In development
+          - DCAI'25
+        list:
+          - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
+            type: DCAI'25
+            pdf_url: "/DCAI.pdf"
+          - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
+            type: In development
+      project:
+        title: Projects
+        icon: fas fa-project-diagram
+        list:
+          - title: "Tire Defect Detection"
+            description: "Computer vision pipeline for automatic defect detection in the tire industry using deep learning."
+            icon: "fas fa-eye"
+            color: "cyan"
+            tech: [PyTorch, OpenCV, Docker, AWS]
+            url: ""
+            status: "En producción"
+          - title: "AI Misinformation Detection"
+            description: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25."
+            icon: "fas fa-shield-alt"
+            color: "violet"
+            tech: [NLP, Transformers, Python, Ontologies]
+            url: "/DCAI.pdf"
+            status: "Publicado"
+          - title: "Lagrangian Atmospheric Blocking"
+            description: "Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories."
+            icon: "fas fa-cloud-sun"
+            color: "amber"
+            tech: [Python, HYSPLIT, ERA5, MATLAB]
+            url: "/tfg.pdf"
+            status: "TFG completado"
+          - title: "Talk to Me"
+            description: "CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) keeps the conversation going."
+            icon: "fas fa-microphone"
+            color: "rose"
+            tech: [Python, Whisper, Ollama, CLI]
+            url: "https://github.com/juanmanuelruizm/talk-to-me"
+            status: "Activo"
+          - title: "Local Agent with Ollama"
+            description: "Conversational console agent running 100% locally on Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB to query your own documents."
+            icon: "fas fa-robot"
+            color: "cyan"
+            tech: [Python, Ollama, ChromaDB, RAG]
+            url: "https://github.com/juanmanuelruizm/chatbot"
+            status: "Activo"
+          - title: "Frontend: An Introductory Course"
+            description: "Educational frontend web development repository. Covers HTML, CSS and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development."
+            icon: "fas fa-laptop-code"
+            color: "indigo"
+            tech: [HTML, CSS, Flexbox, Grid]
+            url: "https://github.com/juanmanuelruizm/frontend-an-introductory-course"
+            status: "En desarrollo"
+          - title: "Personal Portfolio"
+            description: "This website: a static portfolio built with Hugo and Tailwind CSS, deployed on GitHub Pages with CI/CD."
+            icon: "fas fa-code"
+            color: "emerald"
+            tech: [Hugo, Tailwind CSS, JavaScript, GitHub Pages]
+            url: "https://github.com/JuanManuelRM7/juanma_web"
+            status: "Activo"
 build:
   writeStats: true
 markup:

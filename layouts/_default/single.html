@@ -9,7 +9,7 @@
     </span>
     <span class="flex items-center gap-1.5">
       <i class="far fa-clock text-cyan-500 dark:text-cyan-400 text-xs" aria-hidden="true"></i>
-      {{ math.Round (div (countwords .Content) 200.0) }} <span data-i18n="content_reading_time">min lectura</span>
+      {{ math.Round (div (countwords .Content) 200.0) }} <span data-i18n="content_reading_time">{{ i18n "content_reading_time" }}</span>
     </span>
   </div>
   {{ if .Params.tags }}
@@ -28,7 +28,7 @@
     <details class="toc-container mb-6 lg:hidden" open>
       <summary class="toc-toggle cursor-pointer select-none font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2 text-base">
         <i class="fas fa-list-ul text-sm" aria-hidden="true"></i>
-        <span data-i18n="content_toc">Tabla de contenidos</span>
+        <span data-i18n="content_toc">{{ i18n "content_toc" }}</span>
       </summary>
       <nav class="toc mt-3">
         {{ .TableOfContents }}
@@ -46,7 +46,7 @@
     <div class="not-prose mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
       <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2">
         <i class="fas fa-book-open text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
-        <span data-i18n="content_related">Te puede interesar</span>
+        <span data-i18n="content_related">{{ i18n "content_related" }}</span>
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {{ range . }}
@@ -70,7 +70,7 @@
     <div class="rounded-lg border border-cyan-200 dark:border-cyan-700 p-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
       <p class="font-semibold text-sm text-cyan-700 dark:text-cyan-300 mb-3 flex items-center gap-1.5">
         <i class="fas fa-list-ul text-xs" aria-hidden="true"></i>
-        <span data-i18n="content_index">Índice</span>
+        <span data-i18n="content_index">{{ i18n "content_index" }}</span>
       </p>
       <nav class="toc text-sm toc-sidebar">
         {{ .TableOfContents }}

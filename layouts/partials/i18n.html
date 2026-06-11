@@ -301,8 +301,11 @@
 
   window.applyLang = applyLang;
 
+  // Language the page was statically rendered in (Hugo multilingual)
+  var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
+
   window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || 'es';
+    var current = window.localStorage.getItem('lang') || pageLang;
     applyLang(current === 'es' ? 'en' : 'es');
   };
 
@@ -311,9 +314,9 @@
     return (translations[lang] && translations[lang][key]) || key;
   };
 
-  // Apply saved language on load
+  // Apply saved language on load (only if it differs from the page's own language)
   var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== 'es') {
+  if (saved && saved !== pageLang) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
     } else {

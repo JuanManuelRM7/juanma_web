@@ -83,6 +83,16 @@
   />
 
   
+  
+  
+  <link rel="alternate" hreflang="es" href="https://juanmanuel.petrer.eu/tags/" />
+  
+  <link rel="alternate" hreflang="en" href="https://juanmanuel.petrer.eu/en/tags/" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://juanmanuel.petrer.eu/tags/" />
+  
+
+  
   <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – ML Engineer &amp; Computer Vision Specialist – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
   
   <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – ML Engineer &amp; Computer Vision Specialist" href="/tags/index.xml" />
@@ -92,7 +102,7 @@
   
   
   
-  <link href="/main.min.dfb9585affbb3b9c4c43b7e124c5167baaf44e8e8a014f3a26a5e042b22ec045.css" rel="stylesheet" />
+  <link href="/main.min.c1f5c6a854e08e6c35ce9b1460aaa25b7420b5ee3f0ff0e6a35bc9c31be29f62.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -883,8 +893,11 @@ pre:hover .copy-code-btn {
 
   window.applyLang = applyLang;
 
+  
+  var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
+
   window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || 'es';
+    var current = window.localStorage.getItem('lang') || pageLang;
     applyLang(current === 'es' ? 'en' : 'es');
   };
 
@@ -895,7 +908,7 @@ pre:hover .copy-code-btn {
 
   
   var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== 'es') {
+  if (saved && saved !== pageLang) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
     } else {

@@ -5,9 +5,9 @@
 >
   <!-- MÓVIL: fila con 5 elementos equiespaciados + borde inferior -->
   <nav class="flex justify-evenly items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400 md:hidden" aria-label="Navegación principal">
-    <a class="nav-menu-item !p-1 !px-2" href="{{ .Site.BaseURL }}"><span data-i18n="nav_home">Inicio</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">Blog</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `material` | relURL }}"><span data-i18n="nav_material">Material</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="{{ .Site.BaseURL }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="{{ `material` | relURL }}"><span data-i18n="nav_material">{{ i18n "nav_material" }}</span></a>
     <a href="{{ `search` | relURL }}" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
       <i class="fas fa-search" aria-hidden="true"></i>
     </a>
@@ -43,9 +43,9 @@
   <!-- DESKTOP: grid 3 columnas + borde inferior en el header -->
   <nav class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-cyan-500 dark:border-cyan-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="{{ .Site.BaseURL }}"><span data-i18n="nav_home">Inicio</span></a>
-      <a class="nav-menu-item" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">Blog</span></a>
-      <a class="nav-menu-item" href="{{ `material` | relURL }}"><span data-i18n="nav_material_desktop">Material Universitario</span></a>
+      <a class="nav-menu-item" href="{{ .Site.BaseURL }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
+      <a class="nav-menu-item" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
+      <a class="nav-menu-item" href="{{ `material` | relURL }}"><span data-i18n="nav_material_desktop">{{ i18n "nav_material_desktop" }}</span></a>
     </div>
     <div class="flex justify-center">
       <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg text-center" aria-live="off" aria-label="Reloj"></div>
@@ -60,7 +60,7 @@
       </a>
       <!-- Language Toggle -->
       <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-cyan-100 hover:bg-cyan-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
-        <span id="lang-label">EN</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+        <span id="lang-label">{{ if eq .Site.Language.Lang "en" }}ES{{ else }}EN{{ end }}</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
       </button>
       <i
         class="fas fa-sun theme-toggle text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"

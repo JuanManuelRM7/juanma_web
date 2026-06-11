@@ -1,0 +1,211 @@
+# Generado desde layouts/partials/i18n.html — mantener sincronizado
+nav_home:
+  other: "Home"
+nav_blog:
+  other: "Blog"
+nav_material:
+  other: "Resources"
+nav_material_desktop:
+  other: "University Resources"
+nav_search:
+  other: "Search"
+aria_toggle_theme:
+  other: "Toggle theme"
+aria_toggle_lang:
+  other: "Change language"
+hero_desc:
+  other: "Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI."
+nav_exp:
+  other: "Experience"
+nav_edu:
+  other: "Education"
+nav_pub:
+  other: "Publications"
+nav_projects:
+  other: "Projects"
+nav_contact:
+  other: "Contact"
+section_blog:
+  other: "Latest Blog Post"
+section_exp:
+  other: "Experience"
+section_edu:
+  other: "Education"
+section_pub:
+  other: "Publications"
+section_projects:
+  other: "Projects"
+section_contact:
+  other: "Contact"
+section_github:
+  other: "GitHub Activity"
+gh_contributions:
+  other: "contributions in the last year"
+gh_view_profile:
+  other: "View profile"
+download_cv:
+  other: "Download CV"
+action_get_started:
+  other: "Let's go!"
+action_view_more:
+  other: "View more"
+action_view_thesis:
+  other: "View Thesis"
+action_download_paper:
+  other: "Download Paper"
+action_home:
+  other: "Go to homepage"
+action_view_blog:
+  other: "View blog"
+action_copy_code:
+  other: "Copy code"
+aria_scroll_top:
+  other: "Scroll to top"
+content_reading_time:
+  other: "min read"
+content_toc:
+  other: "Table of contents"
+content_index:
+  other: "Index"
+content_related:
+  other: "You might also like"
+content_comments:
+  other: "Comments"
+content_read_more:
+  other: "Read more"
+blog_title:
+  other: "Blog"
+blog_description:
+  other: "Articles about physics, AI, meteorology and more"
+profile_experience:
+  other: "Experience"
+profile_projects:
+  other: "Projects"
+profile_specialist:
+  other: "Specialist"
+footer_sections:
+  other: "Sections"
+footer_resources:
+  other: "Resources"
+footer_contact:
+  other: "Contact"
+footer_made_with:
+  other: "Made with"
+welcome_title:
+  other: "Welcome to my website!"
+welcome_intro_1:
+  other: "My name is <strong class=\"text-cyan-700 dark:text-cyan-300\">Juan Manuel</strong> and on this website you can learn more about me."
+welcome_intro_2:
+  other: "I created this site with several goals in mind: on one hand, I wanted to learn how to build and manage a website from scratch; on the other, I was drawn to the idea of documenting and sharing the things I learn on a daily basis. You can find these posts in the <strong class=\"text-cyan-700 dark:text-cyan-300\">blog</strong> tab (although I'm still just getting started with content)."
+welcome_intro_3:
+  other: "All of this also led me to design personalized business cards — you may have even arrived here thanks to one of them. This way I avoid having to spell out the URL every time someone asks... that, and one day I saw an <em>American Psycho</em> short and it stuck with me. 😄"
+welcome_dont_show:
+  other: "Don't show this message again"
+error_title:
+  other: "Page not found!"
+error_message:
+  other: "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates."
+error_quote:
+  other: "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\""
+edu_thesis:
+  other: "Thesis:"
+status_production:
+  other: "In production"
+status_published:
+  other: "Published"
+status_active:
+  other: "Active"
+status_development:
+  other: "In development"
+status_completed:
+  other: "Completed"
+search_title:
+  other: "Search"
+aria_breadcrumb:
+  other: "Breadcrumb"
+month_0:
+  other: "January"
+month_1:
+  other: "February"
+month_2:
+  other: "March"
+month_3:
+  other: "April"
+month_4:
+  other: "May"
+month_5:
+  other: "June"
+month_6:
+  other: "July"
+month_7:
+  other: "August"
+month_8:
+  other: "September"
+month_9:
+  other: "October"
+month_10:
+  other: "November"
+month_11:
+  other: "December"
+clock_format:
+  other: "{day} {month} {year}"
+easter_secret:
+  other: "🎮 You found the secret!"
+easter_konami:
+  other: "— Konami Code activated —"
+prev_post:
+  other: "Previous"
+next_post:
+  other: "Next"
+action_skip_content:
+  other: "Skip to content"
+profile_location:
+  other: "Elche, Alicante, Spain"
+edu_degree_1:
+  other: "Bachelor's Degree in Physics"
+edu_degree_2:
+  other: "Bachelor's Degree in Mathematics"
+edu_degree_3:
+  other: "SICUE Exchange Student"
+edu_thesis_1:
+  other: "A Lagrangian method for the identification of atmospheric blocking situations"
+exp_position_3:
+  other: "Researcher at Universidad Miguel Hernández"
+exp_dates_1:
+  other: "June 2025 - <em>Present</em>"
+exp_dates_2:
+  other: "June 2024 - June 2025"
+exp_dates_3:
+  other: "January 2024 - July 2024"
+exp_details_1:
+  other: "<ul><li>Development of extraction, transformation, and loading (ETL) pipelines for databases, dataset creation, and image preprocessing.</li><li>Training, fine-tuning, and validation of computer vision models focused on tire defect detection.</li><li>Design and implementation of custom machine learning algorithms for various computer vision projects.</li><li>Definition, analysis, and monitoring of performance metrics for model selection in production.</li><li>Writing and reviewing technical documentation.</li><li>Continuous research and updates on artificial intelligence advances.</li><li>Cross-functional collaboration to achieve project objectives.</li></ul><p>Skills: PyTorch | TensorFlow | Computer Vision | Deep Learning | CNN | Transformers | Object Detection | OpenCV | MLflow | Docker | AWS</p>"
+exp_details_2:
+  other: "<ul><li>Analyze and define project requirements, designing and developing machine learning solutions using state-of-the-art algorithms.</li><li>Design and implement custom machine learning algorithms for various projects, including natural language processing, neural networks, and computer vision, among others.</li><li>Stay up to date with the latest research advances in various fields of artificial intelligence.</li><li>Write and review technical documentation.</li><li>Meet with clients to understand their requirements and tailor solutions to their needs.</li><li>Collaborate with other team members to achieve project objectives.</li></ul>"
+exp_details_3:
+  other: "<ul><li>Development and research of Lagrangian techniques for automatic identification of atmospheric blocking situations.</li><li>Collaboration on other group projects related to atmospheric physics.</li></ul>"
+proj_title_1:
+  other: "Tire Defect Detection"
+proj_desc_1:
+  other: "Computer vision pipeline for automatic defect detection in the tire industry using deep learning."
+proj_title_2:
+  other: "AI Misinformation Detection"
+proj_desc_2:
+  other: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25."
+proj_title_3:
+  other: "Lagrangian Atmospheric Blocking"
+proj_desc_3:
+  other: "Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories."
+proj_desc_4:
+  other: "CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) maintains the conversation."
+proj_title_5:
+  other: "Local Agent with Ollama"
+proj_desc_5:
+  other: "Conversational console agent running 100% locally using Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB for querying your own documents."
+proj_desc_6:
+  other: "Educational frontend web development repository. Covers HTML, CSS, and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development."
+proj_title_7:
+  other: "Personal Portfolio"
+proj_desc_7:
+  other: "This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD."
+pub_type_dev:
+  other: "In development"
