@@ -22,7 +22,8 @@
     >
       <div class="metadata p-3">{{- partial "metadata" . -}}</div>
       {{ with .Summary }}
-      <div class="p-3 pt-0 text-sm prose dark:prose-invert max-w-none">{{ . | safeHTML }}</div>
+      {{/* Sin ids: varios resúmenes en la misma página duplicarían los anclajes de los títulos */}}
+      <div class="p-3 pt-0 text-sm prose dark:prose-invert max-w-none">{{ . | replaceRE ` id="[^"]*"` "" | safeHTML }}</div>
       {{ end }}
     </div>
   </div>

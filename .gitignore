@@ -7,3 +7,6 @@ hugo_stats.json
 .hugo_build.lock
 public/*
 build.ps1
+
+# Copias de conflicto de iCloud/Finder ("archivo 2.ext")
+* 2.*

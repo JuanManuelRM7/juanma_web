@@ -10,7 +10,7 @@
   "author": "Juan Manuel (JM)",
   "license": "MIT",
   "scripts": {
-    "build": "hugo --gc && pagefind --site docs",
+    "build": "hugo --gc --cleanDestinationDir && pagefind --site docs",
     "og": "node scripts/generate-og-image.mjs"
   },
   "devDependencies": {

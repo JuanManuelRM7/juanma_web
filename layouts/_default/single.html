@@ -31,7 +31,8 @@
         <span data-i18n="content_toc">{{ i18n "content_toc" }}</span>
       </summary>
       <nav class="toc mt-3">
-        {{ .TableOfContents }}
+        {{/* El TOC de escritorio ya usa id="TableOfContents"; aquí se elimina para no duplicar ids */}}
+        {{ .TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML }}
       </nav>
     </details>
     {{ end }}
