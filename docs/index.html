@@ -396,11 +396,6 @@ function showWelcomeModal() {
     if (firstFocusable) firstFocusable.focus();
   }
 }
-  if (modal) {
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-}
 
 function closeWelcomeModal() {
   const modal = document.getElementById('welcome-modal');
