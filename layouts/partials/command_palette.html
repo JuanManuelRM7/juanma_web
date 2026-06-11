@@ -27,6 +27,7 @@
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles"><i class="fas fa-globe"></i><span>Cambiar idioma (ES/EN)</span></button>
       <button class="cmdk-item" data-action="goto" data-target="{{ `/cv.pdf` | relURL }}" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
+      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
 
       {{ with .Site.GetPage "/blog" }}{{ if .Pages }}
       <div class="cmdk-group" data-group>Posts del blog</div>
@@ -222,6 +223,8 @@
       window.toggleLang();
     } else if (action === 'copy-email') {
       navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
+    } else if (action === 'terminal' && window.openTerminal) {
+      window.openTerminal();
     }
   }
 

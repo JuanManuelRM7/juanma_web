@@ -81,7 +81,7 @@
   
   
   
-  <link href="/main.min.140eb2dbeaa080c923129e501620b653f4510130f3d3c617ee3e14d039ec8f3b.css" rel="stylesheet" />
+  <link href="/main.min.76d2770756358f0a4bcee47a29454471dedf5358d7be51fa9a211eca34de030f.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
@@ -556,6 +556,9 @@ pre:hover .copy-code-btn {
       section_pub: 'Publications',
       section_projects: 'Projects',
       section_contact: 'Contact',
+      section_github: 'GitHub Activity',
+      gh_contributions: 'contributions in the last year',
+      gh_view_profile: 'View profile',
 
       
       download_cv: 'Download CV',
@@ -693,6 +696,9 @@ pre:hover .copy-code-btn {
       section_pub: 'Publicaciones',
       section_projects: 'Proyectos',
       section_contact: 'Contacto',
+      section_github: 'Actividad en GitHub',
+      gh_contributions: 'contribuciones en el último año',
+      gh_view_profile: 'Ver perfil',
 
       
       download_cv: 'Descargar CV',
@@ -877,6 +883,7 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles"><i class="fas fa-globe"></i><span>Cambiar idioma (ES/EN)</span></button>
       <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
+      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
 
       
       <div class="cmdk-group" data-group>Posts del blog</div>
@@ -1086,6 +1093,8 @@ pre:hover .copy-code-btn {
       window.toggleLang();
     } else if (action === 'copy-email') {
       navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
+    } else if (action === 'terminal' && window.openTerminal) {
+      window.openTerminal();
     }
   }
 
@@ -1114,6 +1123,230 @@ pre:hover .copy-code-btn {
 
   overlay.addEventListener('click', function (e) {
     if (e.target === overlay) close();
+  });
+})();
+</script>
+
+    
+<div id="term-overlay" class="term-overlay" hidden>
+  <div class="term-window" role="dialog" aria-modal="true" aria-label="Terminal interactivo">
+    <div class="term-titlebar">
+      <span class="term-dot" style="background:#ef4444" onclick="window.closeTerminal()"></span>
+      <span class="term-dot" style="background:#f59e0b"></span>
+      <span class="term-dot" style="background:#22c55e"></span>
+      <span class="term-title">juanma@web — zsh</span>
+    </div>
+    <div id="term-body" class="term-body" tabindex="-1">
+      <div id="term-output"></div>
+      <div class="term-input-line">
+        <span class="term-prompt">juanma@web:~$</span>
+        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Comando" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.term-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.term-window {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(51 65 85);
+  animation: cmdkIn 0.15s ease-out;
+}
+.term-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 0.9rem;
+  background: #1e293b;
+  border-bottom: 1px solid rgb(51 65 85);
+}
+.term-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; cursor: pointer; }
+.term-title {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  color: rgb(148 163 184);
+}
+.term-body {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  padding: 0.9rem;
+  height: 50vh;
+  max-height: 420px;
+  overflow-y: auto;
+  cursor: text;
+}
+.term-body a { color: #22d3ee; }
+.term-output-cmd { color: #94a3b8; }
+.term-accent { color: #22d3ee; }
+.term-warn { color: #fbbf24; }
+.term-input-line { display: flex; gap: 0.5rem; align-items: center; }
+.term-prompt { color: #4ade80; white-space: nowrap; }
+#term-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #22d3ee;
+}
+</style>
+
+<script>
+(function () {
+  var overlay = document.getElementById('term-overlay');
+  var output = document.getElementById('term-output');
+  var input = document.getElementById('term-input');
+  var body = document.getElementById('term-body');
+  if (!overlay) return;
+
+  var history = [];
+  var histIdx = -1;
+  var base = '\/' || '/';
+
+  var BANNER =
+    '<span class="term-accent">     ██╗███╗   ███╗</span>\n' +
+    '<span class="term-accent">     ██║████╗ ████║</span>   Juan Manuel Ruiz\n' +
+    '<span class="term-accent">     ██║██╔████╔██║</span>   ML Engineer · Computer Vision\n' +
+    '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; Mathematician\n' +
+    '<span class="term-accent">╚█████╔╝██║ ╚═╝ ██║</span>\n' +
+    '<span class="term-accent"> ╚════╝ ╚═╝     ╚═╝</span>\n\n' +
+    'Escribe <span class="term-accent">help</span> para ver los comandos disponibles.\n';
+
+  var commands = {
+    help: function () {
+      return [
+        '<span class="term-accent">whoami</span>      sobre mí',
+        '<span class="term-accent">projects</span>    proyectos destacados',
+        '<span class="term-accent">skills</span>      stack técnico',
+        '<span class="term-accent">cv</span>          descargar CV',
+        '<span class="term-accent">blog</span>        ir al blog',
+        '<span class="term-accent">contact</span>     formas de contacto',
+        '<span class="term-accent">neofetch</span>    info del sistema',
+        '<span class="term-accent">clear</span>       limpiar pantalla',
+        '<span class="term-accent">exit</span>        cerrar terminal'
+      ].join('\n');
+    },
+    whoami: function () {
+      return 'Físico y matemático especializado en ML e ingeniería de Computer Vision.\nConstruyo sistemas de visión artificial que funcionan en producción real:\ndesde la captura del dato hasta el despliegue del modelo.';
+    },
+    projects: function () {
+      return [
+        '• Detección de defectos en neumáticos  <span class="term-output-cmd">(PyTorch · producción)</span>',
+        '• Detección de desinformación con IA   <span class="term-output-cmd">(DCAI\'25)</span>',
+        '• Bloqueos atmosféricos lagrangianos   <span class="term-output-cmd">(TFG)</span>',
+        '• talk-to-me — tutor de inglés por voz <span class="term-output-cmd">(Whisper + Ollama)</span>',
+        '• Agente local con tool calling        <span class="term-output-cmd">(Ollama + RAG)</span>',
+        '',
+        'Más en <a href="' + base + '#proyectos">la sección de proyectos</a>.'
+      ].join('\n');
+    },
+    skills: function () {
+      return 'PyTorch · TensorFlow · OpenCV · Transformers · CNN\nDocker · AWS · MLflow · Python · SQL · Git';
+    },
+    cv: function () {
+      window.open(base + 'cv.pdf', '_blank');
+      return 'Abriendo cv.pdf…';
+    },
+    blog: function () {
+      window.location.href = base + 'blog/';
+      return 'Navegando al blog…';
+    },
+    contact: function () {
+      return 'email:    <a href="mailto:juanmanuelruiz383@gmail.com">juanmanuelruiz383@gmail.com</a>\nlinkedin: <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener">juanmanuelruizmunoz</a>\ngithub:   <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener">juanmanuelruizm</a>';
+    },
+    neofetch: function () {
+      var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      return BANNER +
+        '<span class="term-accent">OS:</span> juanmanuel.petrer.eu\n' +
+        '<span class="term-accent">Host:</span> GitHub Pages\n' +
+        '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
+        '<span class="term-accent">Theme:</span> ' + theme + '\n' +
+        '<span class="term-accent">Uptime:</span> desde 2024';
+    },
+    pwd: function () { return '/home/juanma/web'; },
+    ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },
+    date: function () { return new Date().toString(); },
+    sudo: function () { return '<span class="term-warn">juanma is not in the sudoers file. This incident will be reported.</span> 😏'; },
+    echo: function (args) { return args.join(' '); },
+    clear: function () { output.innerHTML = ''; return null; },
+    exit: function () { close(); return null; }
+  };
+
+  function print(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    div.style.whiteSpace = 'pre-wrap';
+    output.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function exec(line) {
+    print('<span class="term-prompt">juanma@web:~$</span> <span class="term-output-cmd">' + line.replace(/</g, '&lt;') + '</span>');
+    var parts = line.trim().split(/\s+/);
+    var cmd = parts[0].toLowerCase();
+    if (!cmd) return;
+    var fn = commands[cmd];
+    if (fn) {
+      var out = fn(parts.slice(1));
+      if (out !== null) print(out + '\n');
+    } else {
+      print('zsh: command not found: ' + cmd.replace(/</g, '&lt;') + '. Prueba <span class="term-accent">help</span>.\n');
+    }
+  }
+
+  function open() {
+    overlay.hidden = false;
+    if (!output.innerHTML) print(BANNER);
+    input.focus();
+  }
+  function close() { overlay.hidden = true; }
+  window.openTerminal = open;
+  window.closeTerminal = close;
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      var line = input.value;
+      input.value = '';
+      if (line.trim()) { history.push(line); histIdx = history.length; }
+      exec(line);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx > 0) { histIdx--; input.value = history[histIdx]; }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx < history.length - 1) { histIdx++; input.value = history[histIdx]; }
+      else { histIdx = history.length; input.value = ''; }
+    } else if (e.key === 'Escape') {
+      close();
+    }
+  });
+
+  body.addEventListener('click', function () { input.focus(); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.hidden && e.key === 'Escape') close();
   });
 })();
 </script>

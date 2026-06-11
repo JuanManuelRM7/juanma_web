@@ -1,0 +1,65 @@
+<!-- GitHub contributions calendar, rendered client-side.
+     The whole section stays hidden unless the API call succeeds. -->
+<div id="gh-activity" class="mb-8 scroll-mt-24" hidden>
+  <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+    <i class="fab fa-github text-cyan-600 dark:text-cyan-400" aria-hidden="true"></i>
+    <span data-i18n="section_github">Actividad en GitHub</span>
+  </h3>
+  <div class="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-4">
+    <div id="gh-grid" class="gh-grid-wrap" aria-label="Calendario de contribuciones de GitHub"></div>
+    <div class="flex items-center justify-between mt-3 text-xs text-gray-600 dark:text-gray-400">
+      <span><strong id="gh-total" class="text-cyan-700 dark:text-cyan-300"></strong> <span data-i18n="gh_contributions">contribuciones en el último año</span></span>
+      <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer" class="no-underline text-cyan-600 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium">
+        <span data-i18n="gh_view_profile">Ver perfil</span> <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="section-separator"></div>
+</div>
+
+<style>
+.gh-grid-wrap { overflow-x: auto; padding-bottom: 0.25rem; }
+.gh-grid {
+  display: grid;
+  grid-template-rows: repeat(7, 10px);
+  grid-auto-flow: column;
+  grid-auto-columns: 10px;
+  gap: 3px;
+  width: max-content;
+}
+.gh-cell { width: 10px; height: 10px; border-radius: 2px; background: #e5e7eb; }
+.dark .gh-cell { background: rgb(51 65 85); }
+.gh-cell[data-level="1"] { background: #a5f3fc; }
+.gh-cell[data-level="2"] { background: #22d3ee; }
+.gh-cell[data-level="3"] { background: #0891b2; }
+.gh-cell[data-level="4"] { background: #155e75; }
+.dark .gh-cell[data-level="1"] { background: #164e63; }
+.dark .gh-cell[data-level="2"] { background: #0e7490; }
+.dark .gh-cell[data-level="3"] { background: #06b6d4; }
+.dark .gh-cell[data-level="4"] { background: #67e8f9; }
+</style>
+
+<script>
+(function () {
+  fetch('https://github-contributions-api.jogruber.de/v4/juanmanuelruizm?y=last')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      var grid = document.createElement('div');
+      grid.className = 'gh-grid';
+      data.contributions.forEach(function (day) {
+        var cell = document.createElement('div');
+        cell.className = 'gh-cell';
+        cell.dataset.level = day.level;
+        cell.title = day.date + ': ' + day.count;
+        grid.appendChild(cell);
+      });
+      document.getElementById('gh-grid').appendChild(grid);
+      document.getElementById('gh-total').textContent = data.total.lastYear;
+      document.getElementById('gh-activity').hidden = false;
+      // Scroll to the most recent weeks on narrow screens
+      var wrap = document.querySelector('.gh-grid-wrap');
+      wrap.scrollLeft = wrap.scrollWidth;
+    })
+    .catch(function () { /* leave section hidden */ });
+})();
+</script>

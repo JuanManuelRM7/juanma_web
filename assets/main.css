@@ -1148,3 +1148,21 @@ html {
   padding-left: 0;
 }
 
+
+/* ---------- VIEW TRANSITIONS (MPA) ---------- */
+/* Crossfade suave entre páginas en navegadores que lo soportan (Chrome/Edge).
+   En el resto no tiene efecto. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
