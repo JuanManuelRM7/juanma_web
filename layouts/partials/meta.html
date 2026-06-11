@@ -1,7 +1,7 @@
 {{ $title := cond .IsHome .Site.Params.title .Title }}
 {{ $desc := cond .IsHome .Site.Params.description (or .Description (.Summary | plainify)) }}
 {{ $url := .Permalink }}
-{{ $image := (.Site.Params.profile.photo | printf "images/%s" | absURL) }}
+{{ $image := absURL "og-image.png" }}
 
 <title>{{ $title }}</title>
 
@@ -19,6 +19,8 @@
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
 <meta property="og:url" content="{{ $url }}" />
 <meta property="og:image" content="{{ $image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="{{ .Site.Params.author }} - {{ .Site.Params.profile.position }}" />
 <meta property="og:site_name" content="{{ .Site.Params.title }}" />
 <meta property="og:locale" content="es_ES" />
@@ -45,7 +47,7 @@
   "url": "{{ .Site.BaseURL }}",
   "jobTitle": "{{ .Site.Params.profile.position }}",
   "description": "{{ .Site.Params.description }}",
-  "image": "{{ $image }}",
+  "image": "{{ .Site.Params.profile.photo | printf "images/%s" | absURL }}",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{ .Site.Params.profile.location }}"

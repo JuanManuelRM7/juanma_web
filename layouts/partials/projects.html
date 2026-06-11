@@ -47,3 +47,16 @@
   </div>
   {{ end }}
 </div>
+
+<!-- Spotlight effect: track cursor position per card -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.project-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      card.style.setProperty('--spot-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--spot-y', (e.clientY - rect.top) + 'px');
+    });
+  });
+});
+</script>

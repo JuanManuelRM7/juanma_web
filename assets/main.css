@@ -629,12 +629,34 @@ button:focus-visible {
   border: 1px solid rgb(229 231 235);
   background: white;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cursor-tracking spotlight: --spot-x/--spot-y set via JS */
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(220px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(6, 182, 212, 0.10), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card:hover {
   border-color: rgb(6 182 212 / 0.4);
   box-shadow: 0 8px 24px rgba(6, 182, 212, 0.12);
   transform: translateY(-3px);
+}
+
+.dark .project-card::before {
+  background: radial-gradient(220px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(34, 211, 238, 0.12), transparent 65%);
 }
 
 .dark .project-card {

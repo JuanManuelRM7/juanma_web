@@ -51,6 +51,10 @@
       <div id="clock" class="text-cyan-700 dark:text-cyan-300 font-semibold text-lg text-center" aria-live="off" aria-label="Reloj"></div>
     </div>
     <div class="flex items-center justify-end gap-3">
+      <!-- Command Palette trigger -->
+      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-100 hover:bg-cyan-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos">
+        <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
+      </button>
       <a href="{{ `search` | relURL }}" class="text-cyan-600 hover:text-cyan-800 dark:text-cyan-300 dark:hover:text-cyan-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
         <i class="fas fa-search" aria-hidden="true"></i>
       </a>

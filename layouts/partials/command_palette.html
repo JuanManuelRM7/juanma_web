@@ -1,0 +1,255 @@
+<!-- Command Palette (⌘K / Ctrl+K) -->
+<div id="cmdk-overlay" class="cmdk-overlay" hidden>
+  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Paleta de comandos" class="cmdk-panel">
+    <div class="cmdk-input-row">
+      <i class="fas fa-search cmdk-input-icon" aria-hidden="true"></i>
+      <input id="cmdk-input" type="text" placeholder="Buscar o ejecutar un comando…" autocomplete="off" spellcheck="false" />
+      <kbd class="cmdk-kbd">esc</kbd>
+    </div>
+    <div id="cmdk-list" class="cmdk-list" role="listbox">
+
+      <div class="cmdk-group" data-group>Navegación</div>
+      <button class="cmdk-item" data-action="goto" data-target="{{ .Site.BaseURL }}" data-keywords="inicio home portada"><i class="fas fa-home"></i><span>Inicio</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `blog` | relURL }}" data-keywords="blog posts articulos"><i class="fas fa-newspaper"></i><span>Blog</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `material` | relURL }}" data-keywords="material apuntes universidad notes"><i class="fas fa-book-open"></i><span>Material Universitario</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `search` | relURL }}" data-keywords="buscar search"><i class="fas fa-search"></i><span>Búsqueda</span></button>
+
+      <div class="cmdk-group" data-group>Secciones</div>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#experiencia` | relURL }}" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span>Experiencia</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#educacion` | relURL }}" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span>Educación</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#publicaciones` | relURL }}" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span>Publicaciones</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#skills` | relURL }}" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#proyectos` | relURL }}" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span>Proyectos</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/#contacto` | relURL }}" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span>Contacto</span></button>
+
+      <div class="cmdk-group" data-group>Acciones</div>
+      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo"><i class="fas fa-moon"></i><span>Cambiar tema</span></button>
+      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles"><i class="fas fa-globe"></i><span>Cambiar idioma (ES/EN)</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/cv.pdf` | relURL }}" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
+      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
+
+      {{ with .Site.GetPage "/blog" }}{{ if .Pages }}
+      <div class="cmdk-group" data-group>Posts del blog</div>
+      {{ range first 8 .Pages.ByDate.Reverse }}
+      <button class="cmdk-item" data-action="goto" data-target="{{ .RelPermalink }}" data-keywords="blog post {{ delimit (.Params.tags | default slice) " " }}"><i class="fas fa-file-alt"></i><span>{{ .Title }}</span></button>
+      {{ end }}
+      {{ end }}{{ end }}
+
+      <div class="cmdk-group" data-group>Enlaces</div>
+      {{ range .Site.Params.social.list }}
+      <button class="cmdk-item" data-action="open" data-target="{{ .url }}" data-keywords="{{ lower .title }} social"><i class="{{ .icon }}"></i><span>{{ .title }}</span></button>
+      {{ end }}
+
+      <div id="cmdk-empty" class="cmdk-empty" hidden>Sin resultados</div>
+    </div>
+    <div class="cmdk-footer">
+      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> navegar</span>
+      <span><kbd class="cmdk-kbd">↵</kbd> abrir</span>
+      <span><kbd class="cmdk-kbd">esc</kbd> cerrar</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.cmdk-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh 1rem 1rem;
+}
+.cmdk-panel {
+  width: 100%;
+  max-width: 560px;
+  background: white;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 0.875rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: cmdkIn 0.15s ease-out;
+}
+@keyframes cmdkIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.dark .cmdk-panel { background: rgb(15 23 42); border-color: rgb(51 65 85); }
+.cmdk-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgb(229 231 235);
+}
+.dark .cmdk-input-row { border-color: rgb(51 65 85); }
+.cmdk-input-icon { color: #06b6d4; font-size: 0.9rem; }
+#cmdk-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: rgb(17 24 39);
+}
+.dark #cmdk-input { color: rgb(243 244 246); }
+.cmdk-list { max-height: 46vh; overflow-y: auto; padding: 0.4rem; }
+.cmdk-group {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgb(107 114 128);
+  padding: 0.6rem 0.75rem 0.25rem;
+}
+.dark .cmdk-group { color: rgb(148 163 184); }
+.cmdk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(31 41 55);
+  cursor: pointer;
+}
+.dark .cmdk-item { color: rgb(226 232 240); }
+.cmdk-item i { width: 1.1rem; text-align: center; color: #0891b2; font-size: 0.85rem; }
+.dark .cmdk-item i { color: #22d3ee; }
+.cmdk-item.active, .cmdk-item:hover { background: rgba(6, 182, 212, 0.12); }
+.cmdk-empty { padding: 1.5rem; text-align: center; font-size: 0.85rem; color: rgb(107 114 128); }
+.cmdk-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgb(229 231 235);
+  font-size: 0.7rem;
+  color: rgb(107 114 128);
+}
+.dark .cmdk-footer { border-color: rgb(51 65 85); color: rgb(148 163 184); }
+.cmdk-kbd {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  margin-right: 0.25rem;
+  border: 1px solid rgb(209 213 219);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  font-size: 0.65rem;
+  font-family: monospace;
+  color: rgb(75 85 99);
+  background: rgb(249 250 251);
+}
+.dark .cmdk-kbd { background: rgb(30 41 59); border-color: rgb(71 85 105); color: rgb(203 213 225); }
+</style>
+
+<script>
+(function () {
+  var overlay = document.getElementById('cmdk-overlay');
+  var input = document.getElementById('cmdk-input');
+  var list = document.getElementById('cmdk-list');
+  var empty = document.getElementById('cmdk-empty');
+  if (!overlay || !input) return;
+
+  var items = Array.prototype.slice.call(list.querySelectorAll('.cmdk-item'));
+  var groups = Array.prototype.slice.call(list.querySelectorAll('[data-group]'));
+  var activeIdx = -1;
+
+  function open() {
+    overlay.hidden = false;
+    input.value = '';
+    filter('');
+    input.focus();
+  }
+  function close() {
+    overlay.hidden = true;
+    activeIdx = -1;
+  }
+  window.openCmdk = open;
+
+  function visibleItems() {
+    return items.filter(function (el) { return !el.hidden; });
+  }
+
+  function normalize(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  function filter(q) {
+    q = normalize(q.trim());
+    items.forEach(function (el) {
+      var haystack = normalize(el.textContent + ' ' + (el.dataset.keywords || ''));
+      el.hidden = q !== '' && haystack.indexOf(q) === -1;
+    });
+    // Hide group headers with no visible items before the next header
+    groups.forEach(function (g) {
+      var sib = g.nextElementSibling, any = false;
+      while (sib && !sib.hasAttribute('data-group')) {
+        if (sib.classList.contains('cmdk-item') && !sib.hidden) { any = true; break; }
+        sib = sib.nextElementSibling;
+      }
+      g.hidden = !any;
+    });
+    empty.hidden = visibleItems().length > 0;
+    setActive(q === '' ? -1 : 0);
+  }
+
+  function setActive(idx) {
+    var vis = visibleItems();
+    items.forEach(function (el) { el.classList.remove('active'); });
+    activeIdx = Math.max(-1, Math.min(idx, vis.length - 1));
+    if (activeIdx >= 0) {
+      vis[activeIdx].classList.add('active');
+      vis[activeIdx].scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function run(el) {
+    var action = el.dataset.action, target = el.dataset.target;
+    close();
+    if (action === 'goto') {
+      window.location.href = target;
+    } else if (action === 'open') {
+      window.open(target, '_blank', 'noopener');
+    } else if (action === 'theme' && typeof toggleTheme === 'function') {
+      toggleTheme();
+    } else if (action === 'lang' && window.toggleLang) {
+      window.toggleLang();
+    } else if (action === 'copy-email') {
+      navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
+    }
+  }
+
+  items.forEach(function (el) {
+    el.addEventListener('click', function () { run(el); });
+  });
+
+  input.addEventListener('input', function () { filter(input.value); });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      overlay.hidden ? open() : close();
+      return;
+    }
+    if (overlay.hidden) return;
+    if (e.key === 'Escape') { close(); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); }
+    else if (e.key === 'Enter') {
+      var vis = visibleItems();
+      var el = activeIdx >= 0 ? vis[activeIdx] : vis[0];
+      if (el) { e.preventDefault(); run(el); }
+    }
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+})();
+</script>

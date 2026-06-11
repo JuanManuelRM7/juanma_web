@@ -2,19 +2,15 @@
   {{ partial "meta" . }}
   <!-- Favicon JM -->
   <link rel="icon" type="image/svg+xml" href="{{ `favicon.svg` | relURL }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Font Awesome 6 self-hosted (v5 class names siguen funcionando) -->
+  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-solid-900.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-brands-400.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="{{ `/fontawesome/css/all.min.css` | relURL }}" />
   <link
     rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+    href="https://fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono&display=swap"
   />
 
   <!-- RSS Feed -->

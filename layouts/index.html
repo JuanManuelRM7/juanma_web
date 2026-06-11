@@ -30,6 +30,7 @@
 <!-- Hero Section -->
 <div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #06b6d4, #3b82f6, #0891b2, #6366f1); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
 
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">{{ .Site.Params.profile.name }}</h1>
@@ -61,6 +62,9 @@
     </div>
   </div>
 </div>
+
+<!-- Neural Network Hero Animation -->
+<script defer src="{{ `/js/neural-hero.js` | relURL }}"></script>
 
 <!-- Typing Effect Script -->
 <script>
