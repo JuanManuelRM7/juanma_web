@@ -8,5 +8,5 @@ hugo_stats.json
 public/*
 build.ps1
 
-# Copias de conflicto de iCloud/Finder ("archivo 2.ext")
-* 2.*
+# Copias de conflicto de iCloud/Finder ("archivo 2.ext", "archivo 3.ext", ...)
+* [0-9].*

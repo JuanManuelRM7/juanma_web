@@ -11,7 +11,7 @@
     <!-- Meta Info -->
     <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
       <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
-      <time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date.Format "2 Jan 2006" }}</time>
+      <time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date | time.Format ":date_medium" }}</time>
       <span>•</span>
       <span>{{ math.Ceil (div (len (split $latest.Plain " ")) 200) }} <span data-i18n="content_reading_time">{{ i18n "content_reading_time" }}</span></span>
     </div>

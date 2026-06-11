@@ -2,231 +2,231 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://juanmanuel.petrer.eu/material/</loc>
+    <loc>http://localhost:1414/material/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/</loc>
+    <loc>http://localhost:1414/blog/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/"
-                />
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/computer-vision/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/deep-learning/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/glm-ocr/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/grad-cam/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/interpretabilidad/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/modelos-locales/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/ocr/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/opencv/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/pytorch/</loc>
-    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/</loc>
+    <loc>http://localhost:1414/</loc>
     <lastmod>2026-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/tags/"
+                href="http://localhost:1414/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://juanmanuel.petrer.eu/tags/"
+                href="http://localhost:1414/"
                 />
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/cnn/</loc>
+    <loc>http://localhost:1414/blog/que-ve-una-red-neuronal/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/computer-vision/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/deep-learning/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/glm-ocr/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/grad-cam/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/inspecci%C3%B3n-industrial/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/interpretabilidad/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/modelos-locales/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/ocr/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/blog/ocr-industrial-glm-ocr/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/opencv/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/pytorch/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1414/tags/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1414/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1414/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1414/tags/cnn/</loc>
     <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</loc>
+    <loc>http://localhost:1414/blog/cnn-vs-vision-transformers-inspeccion-industrial/</loc>
     <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/vision-transformers/</loc>
+    <loc>http://localhost:1414/tags/vision-transformers/</loc>
     <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/astrofisica/</loc>
+    <loc>http://localhost:1414/material/astrofisica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/astrof%C3%ADsica/</loc>
+    <loc>http://localhost:1414/tags/astrof%C3%ADsica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/astronom%C3%ADa/</loc>
+    <loc>http://localhost:1414/tags/astronom%C3%ADa/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/atm%C3%B3sfera/</loc>
+    <loc>http://localhost:1414/tags/atm%C3%B3sfera/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/campos/</loc>
+    <loc>http://localhost:1414/tags/campos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/computaci%C3%B3n/</loc>
+    <loc>http://localhost:1414/tags/computaci%C3%B3n/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/cu%C3%A1ntica/</loc>
+    <loc>http://localhost:1414/tags/cu%C3%A1ntica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/edos/</loc>
+    <loc>http://localhost:1414/material/edos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/edos/</loc>
+    <loc>http://localhost:1414/tags/edos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/electromagnetismo/</loc>
+    <loc>http://localhost:1414/material/electromagnetismo/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/electromagnetismo/</loc>
+    <loc>http://localhost:1414/tags/electromagnetismo/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/estrellas/</loc>
+    <loc>http://localhost:1414/tags/estrellas/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/f%C3%ADsica/</loc>
+    <loc>http://localhost:1414/tags/f%C3%ADsica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/fisica-computacional/</loc>
+    <loc>http://localhost:1414/material/fisica-computacional/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</loc>
+    <loc>http://localhost:1414/material/fisica-atmosfera/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/f%C3%ADsica-moderna/</loc>
+    <loc>http://localhost:1414/tags/f%C3%ADsica-moderna/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/matem%C3%A1ticas/</loc>
+    <loc>http://localhost:1414/tags/matem%C3%A1ticas/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/mec%C3%A1nica-celeste/</loc>
+    <loc>http://localhost:1414/tags/mec%C3%A1nica-celeste/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</loc>
+    <loc>http://localhost:1414/material/mecanica-cuantica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/mec%C3%A1nica-cu%C3%A1ntica/</loc>
+    <loc>http://localhost:1414/tags/mec%C3%A1nica-cu%C3%A1ntica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/meteorolog%C3%ADa/</loc>
+    <loc>http://localhost:1414/tags/meteorolog%C3%ADa/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/m%C3%A9todos-num%C3%A9ricos/</loc>
+    <loc>http://localhost:1414/tags/m%C3%A9todos-num%C3%A9ricos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/ondas/</loc>
+    <loc>http://localhost:1414/tags/ondas/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/material/optica/</loc>
+    <loc>http://localhost:1414/material/optica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/%C3%B3ptica/</loc>
+    <loc>http://localhost:1414/tags/%C3%B3ptica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/simulaci%C3%B3n/</loc>
+    <loc>http://localhost:1414/tags/simulaci%C3%B3n/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/sistemas-din%C3%A1micos/</loc>
+    <loc>http://localhost:1414/tags/sistemas-din%C3%A1micos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/termodin%C3%A1mica/</loc>
+    <loc>http://localhost:1414/tags/termodin%C3%A1mica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/tiempos-caracteristicos-estelares/</loc>
+    <loc>http://localhost:1414/blog/tiempos-caracteristicos-estelares/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/an%C3%A1lisis-estad%C3%ADstico/</loc>
+    <loc>http://localhost:1414/tags/an%C3%A1lisis-estad%C3%ADstico/</loc>
     <lastmod>2025-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/incertidumbre/</loc>
+    <loc>http://localhost:1414/tags/incertidumbre/</loc>
     <lastmod>2025-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/modelos-deterministas/</loc>
+    <loc>http://localhost:1414/tags/modelos-deterministas/</loc>
     <lastmod>2025-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/predicci%C3%B3n-por-conjuntos/</loc>
+    <loc>http://localhost:1414/tags/predicci%C3%B3n-por-conjuntos/</loc>
     <lastmod>2025-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</loc>
+    <loc>http://localhost:1414/blog/predicciones-por-conjuntos/</loc>
     <lastmod>2025-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/caos/</loc>
+    <loc>http://localhost:1414/tags/caos/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/caos/</loc>
+    <loc>http://localhost:1414/blog/caos/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/din%C3%A1mica-poblacional/</loc>
+    <loc>http://localhost:1414/tags/din%C3%A1mica-poblacional/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/ecuaci%C3%B3n-log%C3%ADstica/</loc>
+    <loc>http://localhost:1414/tags/ecuaci%C3%B3n-log%C3%ADstica/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/efecto-mariposa/</loc>
+    <loc>http://localhost:1414/tags/efecto-mariposa/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/modelos-matem%C3%A1ticos/</loc>
+    <loc>http://localhost:1414/tags/modelos-matem%C3%A1ticos/</loc>
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/bloqueo-atmosf%C3%A9rico/</loc>
+    <loc>http://localhost:1414/tags/bloqueo-atmosf%C3%A9rico/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/bloqueo-en-omega/</loc>
+    <loc>http://localhost:1414/tags/bloqueo-en-omega/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/bloqueo-en-rex/</loc>
+    <loc>http://localhost:1414/tags/bloqueo-en-rex/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/blog/tfg/</loc>
+    <loc>http://localhost:1414/blog/tfg/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/m%C3%A9todo-lagrangiano/</loc>
+    <loc>http://localhost:1414/tags/m%C3%A9todo-lagrangiano/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/search/</loc>
+    <loc>http://localhost:1414/search/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/categories/</loc>
+    <loc>http://localhost:1414/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/categories/"
+                href="http://localhost:1414/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://juanmanuel.petrer.eu/categories/"
+                href="http://localhost:1414/categories/"
                 />
   </url>
 </urlset>

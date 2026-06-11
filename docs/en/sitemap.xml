@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://juanmanuel.petrer.eu/en/</loc>
+    <loc>http://localhost:1414/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://juanmanuel.petrer.eu/"
+                href="http://localhost:1414/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/"
+                href="http://localhost:1414/en/"
                 />
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/categories/</loc>
+    <loc>http://localhost:1414/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://juanmanuel.petrer.eu/categories/"
+                href="http://localhost:1414/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/categories/"
+                href="http://localhost:1414/en/categories/"
                 />
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/tags/</loc>
+    <loc>http://localhost:1414/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://juanmanuel.petrer.eu/tags/"
+                href="http://localhost:1414/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/tags/"
+                href="http://localhost:1414/en/tags/"
                 />
   </url>
 </urlset>

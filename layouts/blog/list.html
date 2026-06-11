@@ -36,7 +36,7 @@
         </h2>
         <p class="text-xs text-gray-500 dark:text-gray-500 mb-2 flex items-center gap-2">
           <i class="far fa-calendar-alt"></i>
-          {{ .Date.Format "2 January 2006" }}
+          {{ .Date | time.Format ":date_long" }}
           <span class="text-gray-300 dark:text-gray-600">·</span>
           <i class="far fa-clock"></i>
           {{ math.Round (div (countwords .Content) 200.0) }} <span data-i18n="content_reading_time">{{ i18n "content_reading_time" }}</span>
