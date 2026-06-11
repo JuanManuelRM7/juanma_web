@@ -6,10 +6,10 @@
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/blog/</loc>
-    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/</loc>
-    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,6 +20,52 @@
                 hreflang="es"
                 href="https://juanmanuel.petrer.eu/"
                 />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/computer-vision/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/deep-learning/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/grad-cam/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/interpretabilidad/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/opencv/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/pytorch/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/</loc>
+    <lastmod>2026-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/cnn/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/tags/vision-transformers/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://juanmanuel.petrer.eu/material/astrofisica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
@@ -101,19 +147,6 @@
   </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/sistemas-din%C3%A1micos/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/tags/</loc>
-    <lastmod>2025-10-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/tags/"
-                />
   </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/termodin%C3%A1mica/</loc>
     <lastmod>2025-10-27T00:00:00+00:00</lastmod>

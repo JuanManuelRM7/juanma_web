@@ -6,8 +6,71 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Vision</title>
+      <link>https://juanmanuel.petrer.eu/tags/computer-vision/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deep Learning</title>
+      <link>https://juanmanuel.petrer.eu/tags/deep-learning/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grad-CAM</title>
+      <link>https://juanmanuel.petrer.eu/tags/grad-cam/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/grad-cam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interpretabilidad</title>
+      <link>https://juanmanuel.petrer.eu/tags/interpretabilidad/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/interpretabilidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenCV</title>
+      <link>https://juanmanuel.petrer.eu/tags/opencv/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/opencv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PyTorch</title>
+      <link>https://juanmanuel.petrer.eu/tags/pytorch/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CNN</title>
+      <link>https://juanmanuel.petrer.eu/tags/cnn/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/cnn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inspección Industrial</title>
+      <link>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vision Transformers</title>
+      <link>https://juanmanuel.petrer.eu/tags/vision-transformers/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/tags/vision-transformers/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Astrofísica</title>
       <link>https://juanmanuel.petrer.eu/tags/astrof%C3%ADsica/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grad-CAM on </title>
+    <link>https://juanmanuel.petrer.eu/tags/grad-cam/</link>
+    <description>Recent content in Grad-CAM on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/grad-cam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</title>
+      <link>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;El modelo acierta&amp;rdquo; y &amp;ldquo;el modelo entiende&amp;rdquo; no son la misma frase. La diferencia se descubre visualizando.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Cuando un modelo de visión clasifica una imagen, ¿en qué se está fijando? La pregunta parece filosófica pero es brutalmente práctica: he visto modelos con métricas excelentes en validación que en realidad habían aprendido a mirar &lt;em&gt;otra cosa&lt;/em&gt; —un reflejo, una marca de la cámara, la esquina de la imagen donde casualmente aparecían los defectos del dataset—. Este post es un recorrido por las herramientas que uso para responder esa pregunta, de las más clásicas a las más actuales.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

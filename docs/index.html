@@ -828,28 +828,28 @@ document.addEventListener('DOMContentLoaded', function() {
       </h3>
       
 <a
-  href="/blog/tiempos-caracteristicos-estelares/"
+  href="/blog/que-ve-una-red-neuronal/"
   class="group block h-full p-4 bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-700/50 rounded-lg hover:border-cyan-400 dark:hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline"
-  aria-label="Ver último post: Tiempos Característicos Estelares: El Reloj Interior de las Estrellas"
+  aria-label="Ver último post: ¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención"
 >
   <div class="flex flex-col h-full">
     
     <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
       <i class="fas fa-calendar-alt text-cyan-600 dark:text-cyan-400"></i>
-      <time datetime="2025-10-27">27 Oct 2025</time>
+      <time datetime="2026-06-11">11 Jun 2026</time>
       <span>•</span>
-      <span>3 <span data-i18n="content_reading_time">min lectura</span></span>
+      <span>4 <span data-i18n="content_reading_time">min lectura</span></span>
     </div>
     
     
     <h3 class="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
-      Tiempos Característicos Estelares: El Reloj Interior de las Estrellas
+      ¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención
     </h3>
     
     
     
     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow line-clamp-2">
-      <p>¿Alguna vez te has preguntado cómo medir el tiempo de vida de una estrella? ¿O cuánto tarda en adaptarse a los cambios en su interior? Las estrellas, esos inmensos reactores naturales que pueblan nuestro universo, tienen sus propios &ldquo;relojes internos&rdquo; que marcan diferentes aspectos de su evolución. En este artículo, vamos a explorar tres tiempos característicos fundamentales que nos ayudan a entender la vida y el comportamiento de las estrellas.</p>
+      Un recorrido por la interpretabilidad en visión por computador: filtros clásicos, mapas de características, Grad-CAM y atención. Y por qué visualizar lo que ve tu modelo no es opcional en producción
     </p>
     
     
@@ -2674,9 +2674,14 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
       <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
+      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos computer cv mode camara easter egg"><i class="fas fa-eye"></i><span>CV Mode — detección de objetos</span></button>
 
       
       <div class="cmdk-group" data-group>Posts del blog</div>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/que-ve-una-red-neuronal/" data-keywords="blog post computer vision interpretabilidad Grad-CAM deep learning OpenCV PyTorch"><i class="fas fa-file-alt"></i><span>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/cnn-vs-vision-transformers-inspeccion-industrial/" data-keywords="blog post computer vision deep learning vision transformers CNN inspección industrial PyTorch"><i class="fas fa-file-alt"></i><span>CNNs vs Vision Transformers: lecciones desde la inspección industrial</span></button>
       
       <button class="cmdk-item" data-action="goto" data-target="/blog/tiempos-caracteristicos-estelares/" data-keywords="blog post astrofísica estrellas física"><i class="fas fa-file-alt"></i><span>Tiempos Característicos Estelares: El Reloj Interior de las Estrellas</span></button>
       
@@ -2931,6 +2936,8 @@ pre:hover .copy-code-btn {
       navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
     } else if (action === 'terminal' && window.openTerminal) {
       window.openTerminal();
+    } else if (action === 'cvmode' && window.toggleCvMode) {
+      window.toggleCvMode();
     }
   }
 
@@ -3094,6 +3101,7 @@ pre:hover .copy-code-btn {
         '<span class="term-accent">blog</span>        ir al blog',
         '<span class="term-accent">contact</span>     formas de contacto',
         '<span class="term-accent">neofetch</span>    info del sistema',
+        '<span class="term-accent">yolo</span>        modo detección de objetos',
         '<span class="term-accent">clear</span>       limpiar pantalla',
         '<span class="term-accent">exit</span>        cerrar terminal'
       ].join('\n');
@@ -3134,6 +3142,14 @@ pre:hover .copy-code-btn {
         '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
         '<span class="term-accent">Theme:</span> ' + theme + '\n' +
         '<span class="term-accent">Uptime:</span> desde 2024';
+    },
+    yolo: function () {
+      if (window.toggleCvMode) {
+        close();
+        window.toggleCvMode();
+        return null;
+      }
+      return '<span class="term-warn">cv-mode.js no cargado.</span>';
     },
     pwd: function () { return '/home/juanma/web'; },
     ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },
@@ -3205,5 +3221,6 @@ pre:hover .copy-code-btn {
 })();
 </script>
 
+    <script defer src="/js/cv-mode.js"></script>
   </body>
 </html>

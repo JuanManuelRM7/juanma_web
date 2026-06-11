@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PyTorch on </title>
+    <link>https://juanmanuel.petrer.eu/tags/pytorch/</link>
+    <description>Recent content in PyTorch on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</title>
+      <link>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</link>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;El modelo acierta&amp;rdquo; y &amp;ldquo;el modelo entiende&amp;rdquo; no son la misma frase. La diferencia se descubre visualizando.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Cuando un modelo de visión clasifica una imagen, ¿en qué se está fijando? La pregunta parece filosófica pero es brutalmente práctica: he visto modelos con métricas excelentes en validación que en realidad habían aprendido a mirar &lt;em&gt;otra cosa&lt;/em&gt; —un reflejo, una marca de la cámara, la esquina de la imagen donde casualmente aparecían los defectos del dataset—. Este post es un recorrido por las herramientas que uso para responder esa pregunta, de las más clásicas a las más actuales.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CNNs vs Vision Transformers: lecciones desde la inspección industrial</title>
+      <link>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

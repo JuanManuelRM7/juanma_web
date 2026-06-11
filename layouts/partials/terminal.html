@@ -115,6 +115,7 @@
         '<span class="term-accent">blog</span>        ir al blog',
         '<span class="term-accent">contact</span>     formas de contacto',
         '<span class="term-accent">neofetch</span>    info del sistema',
+        '<span class="term-accent">yolo</span>        modo detección de objetos',
         '<span class="term-accent">clear</span>       limpiar pantalla',
         '<span class="term-accent">exit</span>        cerrar terminal'
       ].join('\n');
@@ -155,6 +156,14 @@
         '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
         '<span class="term-accent">Theme:</span> ' + theme + '\n' +
         '<span class="term-accent">Uptime:</span> desde 2024';
+    },
+    yolo: function () {
+      if (window.toggleCvMode) {
+        close();
+        window.toggleCvMode();
+        return null;
+      }
+      return '<span class="term-warn">cv-mode.js no cargado.</span>';
     },
     pwd: function () { return '/home/juanma/web'; },
     ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },

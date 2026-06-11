@@ -864,9 +864,14 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
       <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
+      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos computer cv mode camara easter egg"><i class="fas fa-eye"></i><span>CV Mode — detección de objetos</span></button>
 
       
       <div class="cmdk-group" data-group>Posts del blog</div>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/que-ve-una-red-neuronal/" data-keywords="blog post computer vision interpretabilidad Grad-CAM deep learning OpenCV PyTorch"><i class="fas fa-file-alt"></i><span>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/cnn-vs-vision-transformers-inspeccion-industrial/" data-keywords="blog post computer vision deep learning vision transformers CNN inspección industrial PyTorch"><i class="fas fa-file-alt"></i><span>CNNs vs Vision Transformers: lecciones desde la inspección industrial</span></button>
       
       <button class="cmdk-item" data-action="goto" data-target="/blog/tiempos-caracteristicos-estelares/" data-keywords="blog post astrofísica estrellas física"><i class="fas fa-file-alt"></i><span>Tiempos Característicos Estelares: El Reloj Interior de las Estrellas</span></button>
       
@@ -1121,6 +1126,8 @@ pre:hover .copy-code-btn {
       navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
     } else if (action === 'terminal' && window.openTerminal) {
       window.openTerminal();
+    } else if (action === 'cvmode' && window.toggleCvMode) {
+      window.toggleCvMode();
     }
   }
 
@@ -1284,6 +1291,7 @@ pre:hover .copy-code-btn {
         '<span class="term-accent">blog</span>        ir al blog',
         '<span class="term-accent">contact</span>     formas de contacto',
         '<span class="term-accent">neofetch</span>    info del sistema',
+        '<span class="term-accent">yolo</span>        modo detección de objetos',
         '<span class="term-accent">clear</span>       limpiar pantalla',
         '<span class="term-accent">exit</span>        cerrar terminal'
       ].join('\n');
@@ -1324,6 +1332,14 @@ pre:hover .copy-code-btn {
         '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
         '<span class="term-accent">Theme:</span> ' + theme + '\n' +
         '<span class="term-accent">Uptime:</span> desde 2024';
+    },
+    yolo: function () {
+      if (window.toggleCvMode) {
+        close();
+        window.toggleCvMode();
+        return null;
+      }
+      return '<span class="term-warn">cv-mode.js no cargado.</span>';
     },
     pwd: function () { return '/home/juanma/web'; },
     ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },
@@ -1395,5 +1411,6 @@ pre:hover .copy-code-btn {
 })();
 </script>
 
+    <script defer src="/js/cv-mode.js"></script>
   </body>
 </html>

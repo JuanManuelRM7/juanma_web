@@ -17,7 +17,7 @@ Portfolio y blog personal de **Juan Manuel Ruiz Muñoz** — físico e ingeniero
 | **i18n** | Toggle ES/EN en tiempo real con persistencia en localStorage |
 | **Dark mode** | Tema claro/oscuro con detección automática del sistema y toggle manual |
 | **UX** | Barra de progreso de lectura, scroll-to-top, page loader, smooth scroll, typing effect |
-| **Easter egg** | 🎮 Código Konami (`↑↑↓↓←→←→BA`) — pruébalo |
+| **Easter eggs** | 🎮 Código Konami (`↑↑↓↓←→←→BA`) · 👁️ CV Mode: escribe `yolo` y la web se "auto-detecta" estilo YOLO |
 | **Print** | CSS optimizado para impresión / exportar a PDF |
 
 ## Stack técnico
