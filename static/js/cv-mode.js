@@ -27,7 +27,7 @@
   };
 
   var CSS = [
-    '#cvm-boxes { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; pointer-events: none; }',
+    '#cvm-boxes { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; pointer-events: none; overflow: hidden; }',
     '.cvm-box { position: absolute; border: 1.5px solid; border-radius: 2px; opacity: 0; }',
     '.cvm-box.cvm-on { animation: cvmPop 0.25s ease-out forwards; }',
     '@keyframes cvmPop { 0% { opacity: 0; transform: scale(1.06); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }',
@@ -110,6 +110,8 @@
       tag.className = 'cvm-tag';
       tag.style.background = color;
       tag.textContent = d.label + ' ' + conf(i);
+      // Pegada al borde superior del documento la etiqueta se saldría del lienzo: dentro de la caja
+      if (d.y < 24) { tag.style.top = '0'; tag.style.borderRadius = '0 0 2px 0'; }
       box.appendChild(tag);
       // Cada caja aparece cuando el barrido pasa por su posición en pantalla
       var delay = REDUCED ? 0 : Math.max(0, Math.min(d.vy / vh, 1)) * 1.2 + 0.1;
