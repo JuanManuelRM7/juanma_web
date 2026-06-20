@@ -4,6 +4,8 @@ date: 2026-06-11
 draft: false
 description: "Qué pasa cuando llevas el OCR a un entorno industrial real —texto en relieve negro sobre negro, polvo, brillos y cadencia de línea— y qué aprendí probando GLM-OCR, un modelo multimodal de 0.9B parámetros que corre en local"
 tags: ["OCR", "computer vision", "inspección industrial", "GLM-OCR", "modelos locales", "deep learning"]
+icon: "fa-font"
+cardGradient: "blog-gradient-violet"
 ---
 
 > El OCR lleva décadas declarándose resuelto. Luego te piden leer caracteres negros, en relieve, sobre caucho negro, en una superficie curva que se mueve, y descubres dónde estaban escondidos los problemas.

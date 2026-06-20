@@ -14,14 +14,16 @@
     <a href="{{ .Permalink | relURL }}" class="blog-card group no-underline {{ if eq $i 0 }}md:col-span-2{{ end }}">
       <!-- Gradient Header -->
       <div class="blog-card-header
-        {{ if in (delimit .Params.tags ",") "caos" }}blog-gradient-red
+        {{ if .Params.cardGradient }}{{ .Params.cardGradient }}
+        {{ else if in (delimit .Params.tags ",") "caos" }}blog-gradient-red
         {{ else if in (delimit .Params.tags ",") "meteorología" }}blog-gradient-blue
         {{ else if in (delimit .Params.tags ",") "bloqueo" }}blog-gradient-amber
         {{ else if in (delimit .Params.tags ",") "astrofísica" }}blog-gradient-violet
         {{ else }}blog-gradient-cyan
         {{ end }}">
         <div class="blog-card-header-icon">
-          {{ if in (delimit .Params.tags ",") "caos" }}<i class="fas fa-random"></i>
+          {{ if .Params.icon }}<i class="fas {{ .Params.icon }}"></i>
+          {{ else if in (delimit .Params.tags ",") "caos" }}<i class="fas fa-random"></i>
           {{ else if in (delimit .Params.tags ",") "meteorología" }}<i class="fas fa-cloud-sun-rain"></i>
           {{ else if in (delimit .Params.tags ",") "bloqueo" }}<i class="fas fa-wind"></i>
           {{ else if in (delimit .Params.tags ",") "astrofísica" }}<i class="fas fa-star"></i>

@@ -4,6 +4,8 @@ date: 2026-06-20
 draft: false
 description: "Cómo construimos, en un trabajo publicado en DCAI'25, un sistema que genera automáticamente una base de conocimiento (ontología) con LLMs y RAG, y la usa para detectar información falsa en películas, podcasts y otros formatos de ficción."
 tags: ["LLMs", "NLP", "RAG", "ontologías", "desinformación", "deep learning"]
+icon: "fa-clapperboard"
+cardGradient: "blog-gradient-indigo"
 math: true
 ---
 

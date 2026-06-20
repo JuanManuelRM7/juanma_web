@@ -4,6 +4,8 @@ date: 2026-06-11
 draft: false
 description: "Un recorrido por la interpretabilidad en visión por computador: filtros clásicos, mapas de características, Grad-CAM y atención. Y por qué visualizar lo que ve tu modelo no es opcional en producción"
 tags: ["computer vision", "interpretabilidad", "Grad-CAM", "deep learning", "OpenCV", "PyTorch"]
+icon: "fa-eye"
+cardGradient: "blog-gradient-cyan"
 ---
 
 > "El modelo acierta" y "el modelo entiende" no son la misma frase. La diferencia se descubre visualizando.

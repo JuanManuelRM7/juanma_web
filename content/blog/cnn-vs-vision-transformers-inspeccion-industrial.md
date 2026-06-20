@@ -4,6 +4,8 @@ date: 2026-05-28
 draft: false
 description: "Qué he aprendido entrenando ambas familias de arquitecturas para detección de defectos en producción real: sesgos inductivos, datos desbalanceados, latencia y cuándo elegir cada una"
 tags: ["computer vision", "deep learning", "vision transformers", "CNN", "inspección industrial", "PyTorch"]
+icon: "fa-network-wired"
+cardGradient: "blog-gradient-blue"
 ---
 
 > En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.
