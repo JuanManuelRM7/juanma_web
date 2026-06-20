@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="{{ `/css/search.css` | relURL }}" />
   <link rel="stylesheet" href="{{ `/css/general.css` | relURL }}" />
   <link rel="stylesheet" href="{{ `/css/syntax.css` | relURL }}" />
+  {{ if .Param "math" }}{{ partial "katex.html" . }}{{ end }}
 
   <script>
     let html = document.querySelector("html");

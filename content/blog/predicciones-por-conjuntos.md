@@ -1,12 +1,13 @@
 ---
-title: "Predicciones por Conjuntos en Meteorología"
+title: "Predicciones por conjuntos en meteorología"
 date: 2025-10-25
 draft: false
 description: "Una exploración detallada de la transición de modelos deterministas a predicciones por conjuntos, sus fundamentos matemáticos y aplicaciones prácticas en meteorología"
 tags: ["meteorología", "predicción por conjuntos", "modelos deterministas", "incertidumbre", "análisis estadístico"]
+math: true
 ---
 
-> La predecibilidad es a la prediccion como el romance es al sexo
+> La predictibilidad es a la predicción como el romance es al sexo
 
 ---
 
@@ -16,41 +17,35 @@ Los modelos deterministas en meteorología parten de datos medidos —temperatur
 
 Para ilustrar la sensibilidad a las condiciones iniciales puede servir un análogo en dinámica de poblaciones, por ejemplo:
 
-```
-Xn = r X0 (1 - X0)
-```
+$$x_{n+1} = r\,x_n\,(1 - x_n)$$
 
-donde X0 ∈ (0,1) es la población inicial, r el parámetro de reproducción y Xn la población en el tiempo n. Según r, el sistema muestra regímenes distintos e incluso comportamiento caótico: pequeñas diferencias en X0 pueden producir trayectorias muy diferentes.
+donde $x_n \in (0,1)$ es la población normalizada en el tiempo $n$, $r$ el parámetro de reproducción y $x_{n+1}$ la población en el paso siguiente. Según $r$, el sistema muestra regímenes distintos e incluso comportamiento caótico: pequeñas diferencias en $x_0$ pueden producir trayectorias muy diferentes.
 
-La predicción por conjuntos surge como respuesta práctica a esta incertidumbre. En lugar de aceptar un único resultado X(t0 + t'), buscamos una distribución de probabilidad ρ(t0 + t') que describa los estados posibles:
+La predicción por conjuntos surge como respuesta práctica a esta incertidumbre. En lugar de aceptar un único resultado $X(t_0 + t')$, buscamos una distribución de probabilidad $\rho(t_0 + t')$ que describa los estados posibles:
 
-```
-X(t0 + t') ⟹ ρ(t0 + t')
-```
+$$X(t_0 + t') \;\Longrightarrow\; \rho(t_0 + t')$$
 
 ![Discreto a continuo](/images/dist_to_cont.png)
 
 En la práctica esto se hace generando muchas simulaciones con ligeras variaciones en las condiciones iniciales o en parámetros. El proceso habitual consiste en definir intervalos plausibles para cada variable medida, por ejemplo:
 
-```
-Temperatura: [T0 - ΔT, T0 + ΔT]
-Presión:     [P0 - ΔP, P0 + ΔP]
-Humedad:     [H0 - ΔH, H0 + ΔH]
-```
+$$
+\begin{aligned}
+\text{Temperatura:}\;& [T_0 - \Delta T,\; T_0 + \Delta T] \\
+\text{Presión:}\;& [P_0 - \Delta P,\; P_0 + \Delta P] \\
+\text{Humedad:}\;& [H_0 - \Delta H,\; H_0 + \Delta H]
+\end{aligned}
+$$
 
-y crear vectores de estado local Vᵢ = (xᵢ, yᵢ, ..., zᵢ) que, al integrarse en el modelo, generan una colección de estados Xᵢ que conforman la distribución empírica del futuro atmosférico.
+y crear vectores de estado local $V_i = (x_i, y_i, \ldots, z_i)$ que, al integrarse en el modelo, generan una colección de estados $X_i$ que conforman la distribución empírica del futuro atmosférico.
 
 Esta distribución permite cuantificar incertidumbre y extraer estadísticas útiles. La media, por ejemplo, puede calcularse en el caso continuo como
 
-```
-x = ∫ x ρ(x) dx
-```
+$$\bar{x} = \int x\,\rho(x)\,dx$$
 
 o en el caso discreto a partir de un conjunto finito de predicciones como
 
-```
-x = (1/ N) Σ xᵢ
-```
+$$\bar{x} = \frac{1}{N} \sum_{i=1}^{N} x_i$$
 
 ![Media](/images/media.png)
 
@@ -61,14 +56,20 @@ Sin embargo, conviene recordar la paradoja del valor medio: la media puede situa
 
 ---
 
-La manera en que las predicciones se dispersan nos revela aspectos fundamentales sobre la atmósfera y nuestra capacidad de predicción. Para cuantificar esta dispersión, utilizamos la varianza, que se puede calcular de dos formas según trabajemos con datos discretos (σ² = (1/√(N-1)) Σ(xᵢ - x)²) o continuos (σ² = ∫(x - x)²ρ(x)dx).
+La manera en que las predicciones se dispersan nos revela aspectos fundamentales sobre la atmósfera y nuestra capacidad de predicción. Para cuantificar esta dispersión utilizamos la varianza, que se puede calcular según trabajemos con datos discretos
+
+$$\sigma^2 = \frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2$$
+
+o continuos
+
+$$\sigma^2 = \int (x - \bar{x})^2\,\rho(x)\,dx.$$
 
 Pero más allá de las fórmulas, lo verdaderamente fascinante es su interpretación. Cuando encontramos una baja dispersión, generalmente estamos ante una atmósfera estable, típica de situaciones anticiclónicas donde las predicciones tienden a ser más fiables. Por otro lado, una alta dispersión nos alerta de una situación más compleja: la atmósfera está inestable, y nuestras predicciones son menos certeras.
 
 Los valores atípicos que encontramos en estas distribuciones merecen una atención especial. Aunque podríamos estar tentados a descartarlos como errores, a menudo son señales de posibles eventos extremos que, aunque poco probables, podrían tener un impacto significativo. Por ejemplo, una predicción que se desvía considerablemente podría estar anticipando una tormenta severa o un cambio brusco de temperatura.
 
 
-## Métodos Alternativos y su Evolución
+## Métodos alternativos y su evolución
 
 Antes de que se establecieran los fundamentos matemáticos de los Sistemas de Predicción por Conjuntos (SPC), los meteorólogos ya exploraban formas ingeniosas de mejorar sus predicciones. Uno de los métodos más interesantes consistía en ejecutar el mismo modelo meteorológico múltiples veces, pero con diferentes datos de partida. Este enfoque, aunque más subjetivo, permitía a los expertos desarrollar una intuición sobre la consistencia de sus predicciones.
 
@@ -76,7 +77,7 @@ Sin embargo, este método tenía sus limitaciones. Al depender fuertemente de la
 
 Una aproximación alternativa, que aún hoy resulta valiosa, es la comparación entre diferentes modelos de predicción. Esta técnica reconoce una realidad fundamental: no todos los modelos se comportan igual en todas las situaciones. De hecho, un mismo modelo puede mostrar discrepancias considerables ante situaciones aparentemente similares. La clave está en considerar las características específicas de cada modelo, como su resolución o su capacidad para tener en cuenta la orografía del terreno, algo especialmente crucial cuando se trata de predecir precipitaciones.
 
-## El Huerto: Un Caso Práctico que lo Ilustra Todo
+## El huerto: un caso práctico que lo ilustra todo
 
 Para entender mejor cómo estos conceptos se aplican en el mundo real, consideremos el caso de un pequeño huerto. Imaginemos que necesitamos saber si las temperaturas nocturnas bajarán del punto de congelación, lo que podría devastar nuestra cosecha. Es aquí donde la diferencia entre los enfoques determinista y probabilístico se vuelve crucial.
 
