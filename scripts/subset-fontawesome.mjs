@@ -50,10 +50,13 @@ await fontawesomeSubset(resolved, 'static/fontawesome/webfonts', {
   targetFormats: ['woff2'],
 });
 
+// Bump FONT_VER whenever the subset changes, to bust caches on the fixed
+// woff2 filenames (the preload links in head.html must use the same value).
+const FONT_VER = '2';
 const css = `/* Font Awesome 6 Free subset — generado por scripts/subset-fontawesome.mjs */
-@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.woff2) format("woff2")}
-@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-regular-400.woff2) format("woff2")}
-@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-brands-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.woff2?v=${FONT_VER}) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-regular-400.woff2?v=${FONT_VER}) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-brands-400.woff2?v=${FONT_VER}) format("woff2")}
 .fa,.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
 .fa,.fas,.far,.fa-solid,.fa-regular{font-family:"Font Awesome 6 Free"}
 .fa,.fas,.fa-solid{font-weight:900}
