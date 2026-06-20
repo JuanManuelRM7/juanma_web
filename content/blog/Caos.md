@@ -27,44 +27,68 @@ donde:
 
 ---
 
-Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:
+Para analizar la evolución de este sistema y visualizar sus distintos comportamientos —estables, periódicos o caóticos— basta una función sencilla que itere la ecuación un número fijo de pasos y devuelva la secuencia poblacional. La misma función sirve para los tres regímenes: lo único que cambia es el valor de $r$.
 
 ```python
-def poblacion(r, x_0, cota):
+def poblacion(r, x_0, n_iter=60):
     """
-    Calcula la evolución de una población según el modelo logístico:
-        x_{n+1} = r * x_n * (1 - x_n)
+    Itera la ecuación logística x_{n+1} = r * x_n * (1 - x_n).
 
     Parámetros:
-        r (float): Tasa de crecimiento.
-        x_0 (float): Valor inicial de la población (entre 0 y 1).
-        cota (float): Tolerancia para considerar que se alcanzó la estabilización.
+        r (float):     tasa de crecimiento.
+        x_0 (float):   población inicial normalizada, en (0, 1).
+        n_iter (int):  número de iteraciones a calcular.
 
     Retorna:
-        valor_estable (float): Valor final de estabilización.
-        iteraciones (int): Número de iteraciones realizadas.
-        evolucion (list): Lista con los valores de evolución.
+        list[float]: la secuencia [x_0, x_1, ..., x_{n_iter}].
     """
-
     evolucion = [x_0]
-
-    while True:
-        x_p = r * evolucion[-1] * (1 - evolucion[-1])
-        evolucion.append(x_p)
-
-        # Condición de estabilidad
-        if abs(evolucion[-1] - evolucion[-2]) <= cota:
-            break
-
-        # Evita bucles infinitos
-        if len(evolucion) > 500:
-            break
-
-    valor_estable = evolucion[-1]
-    iteraciones = len(evolucion)
-
-    return valor_estable, iteraciones, evolucion
+    for _ in range(n_iter):
+        x = evolucion[-1]
+        evolucion.append(r * x * (1 - x))
+    return evolucion
 ```
+
+Iterar siempre un número fijo de pasos —en vez de cortar cuando la serie "se estabiliza"— es lo que hace que la función valga para los tres regímenes: en el estable la secuencia converge, en el periódico oscila y en el caótico nunca se repite. Por ejemplo, `poblacion(2.8, 0.2)` converge a un valor fijo, `poblacion(3.2, 0.2)` acaba alternando entre dos, y `poblacion(3.9, 0.2)` no se asienta nunca.
+
+Podemos ir un paso más allá y pedirle al código que **identifique el régimen** automáticamente. La idea es sencilla: se descarta el transitorio inicial, se observa el atractor y se mide cada cuántos pasos se repite (su **periodo**). Un periodo de 1 es un punto fijo; 2, 4, 8… son ciclos; si no se repite nunca, es caos.
+
+```python
+def clasificar_regimen(r, x_0=0.314, transitorio=2000, ventana=600, tol=1e-6):
+    """
+    Identifica el régimen de la ecuación logística para un r dado.
+
+    Descarta el transitorio, observa el atractor y mide su periodo:
+    devuelve 1 (punto fijo estable), 2, 4, 8, ... (ciclo periódico)
+    o None (sin periodo detectable: régimen caótico).
+    """
+    x = x_0
+    for _ in range(transitorio):          # dejar que el sistema se asiente
+        x = r * x * (1 - x)
+
+    cola = []
+    for _ in range(ventana):              # registrar el atractor
+        x = r * x * (1 - x)
+        cola.append(x)
+
+    for periodo in range(1, 65):          # buscar el periodo más corto
+        if abs(cola[-1] - cola[-1 - periodo]) < tol:
+            return periodo
+    return None                           # aperiódico -> caos
+```
+
+Si recorremos el parámetro, el código dibuja por sí solo la cascada de duplicaciones de periodo:
+
+```text
+r = 2.8   -> periodo 1     (estable)
+r = 3.2   -> periodo 2
+r = 3.5   -> periodo 4
+r = 3.55  -> periodo 8
+r = 3.83  -> periodo 3     (una ventana ordenada dentro del caos)
+r = 3.9   -> None          (caótico)
+```
+
+Esa secuencia $1 \to 2 \to 4 \to 8 \to \dots$ es exactamente la ruta al caos que vamos a recorrer a continuación. Y fíjate en $r = 3.83$: dentro de la región caótica reaparecen **ventanas periódicas**, una pista de que el caos no es un bloque uniforme, sino una estructura sorprendentemente rica.
 
 A medida que se aumenta el parámetro $r$, este sistema tan simple atraviesa tres comportamientos cualitativamente distintos. No se pasa del orden al caos de golpe: hay una transición gradual, la **cascada de duplicaciones de periodo**, que merece la pena recorrer paso a paso.
 

@@ -24,12 +24,11 @@
     {{ end }}
     
     <!-- Quick skills tags -->
-    {{ if eq .position "AI Developer - Computer Vision Specialist" }}
+    {{ with .tags }}
     <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300">PyTorch</span>
-      <span class="px-2 py-1 rounded text-xs font-medium bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">TensorFlow</span>
-      <span class="px-2 py-1 rounded text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">Vision Transformer</span>
-      <span class="px-2 py-1 rounded text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">CNN</span>
+      {{ range . }}
+      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300">{{ . }}</span>
+      {{ end }}
     </div>
     {{ end }}
   </div>

@@ -8,4 +8,4 @@ $$x_{n+1} = r\,x_n\,(1 - x_n)$$&lt;p&gt;donde:&lt;/p&gt;
 &lt;li&gt;y el término $(1 - x_n)$ introduce un límite ambiental.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus comportamientos (estables o caóticos), se puede implementar una función en Python que calcule la secuencia poblacional:&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus distintos comportamientos —estables, periódicos o caóticos— basta una función sencilla que itere la ecuación un número fijo de pasos y devuelva la secuencia poblacional. La misma función sirve para los tres regímenes: lo único que cambia es el valor de $r$.&lt;/p&gt;</description></item></channel></rss>
