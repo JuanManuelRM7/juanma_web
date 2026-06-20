@@ -5,12 +5,6 @@ description: "Material y recursos de Física de la Atmósfera: meteorología, di
 tags: ["física", "meteorología", "atmósfera", "termodinámica"]
 ---
 
-<div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4">
-<div class="text-red-700 dark:text-red-300">
-<strong>⚠️ Advertencia</strong>: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
-</div>
-</div>
-
 ## Contenido
 
 - [Estudio precipitación Castilla y León](/material/fisica-atmosfera/precipitacion_cyl.xlsx) - Meteorología (Universidad de Salamanca).
@@ -18,5 +12,7 @@ tags: ["física", "meteorología", "atmósfera", "termodinámica"]
 ## Beamer
 
 - [Presentación SPC](/material/fisica-atmosfera/beamer_spc.pdf) - Meteorología (Universidad de Salamanca).
+
+💡 Relacionado en el blog: [Predicciones por conjuntos](/blog/predicciones-por-conjuntos/), [Del clima al caos](/blog/caos/) y [Bloqueos atmosféricos](/blog/tfg/).
 
 Si encuentras algún error o tienes sugerencias, no dudes en contactar.

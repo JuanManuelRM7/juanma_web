@@ -10,18 +10,19 @@
 &lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description></item><item><title>Astrofísica</title><link>https://juanmanuel.petrer.eu/material/astrofisica/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/astrofisica/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/tiempos_estelares.pdf"&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf"&gt;Diagrama HR&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/exp_eotvos.pdf"&gt;Experimento de Eotvos&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf"&gt;Diagrama HR (paper)&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/exp_eotvos.pdf"&gt;Experimento de Eötvös&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/ejercicios_varios.pdf"&gt;Ejercicios varios a mano&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="beamer"&gt;Beamer&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf"&gt;Diagrama HR&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf"&gt;Diagrama HR (presentación)&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/astrofisica/rotacion_galactica.pdf"&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;💡 Relacionado en el blog: &lt;a href="https://juanmanuel.petrer.eu/blog/tiempos-caracteristicos-estelares/"&gt;Tiempos característicos estelares&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item><item><title>Ecuaciones Diferenciales</title><link>https://juanmanuel.petrer.eu/material/edos/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/edos/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf"&gt;Curvas de Persecución&lt;/a&gt; - Métodos Análiticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf"&gt;Curvas de Persecución&lt;/a&gt; - Métodos Analíticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item><item><title>Electromagnetismo</title><link>https://juanmanuel.petrer.eu/material/electromagnetismo/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/electromagnetismo/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
 &lt;ul&gt;
@@ -41,12 +42,7 @@
 &lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/redes_cristalinas.pdf"&gt;Redes cristalinas&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/orbita_terrestre.pdf"&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description></item><item><title>Física de la Atmósfera</title><link>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</guid><description>&lt;div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4"&gt;
-&lt;div class="text-red-700 dark:text-red-300"&gt;
-&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-computacional/orbita_terrestre.pdf"&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description></item><item><title>Física de la Atmósfera</title><link>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-atmosfera/precipitacion_cyl.xlsx"&gt;Estudio precipitación Castilla y León&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;
 &lt;/ul&gt;
@@ -54,6 +50,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/fisica-atmosfera/beamer_spc.pdf"&gt;Presentación SPC&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;💡 Relacionado en el blog: &lt;a href="https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/"&gt;Predicciones por conjuntos&lt;/a&gt;, &lt;a href="https://juanmanuel.petrer.eu/blog/caos/"&gt;Del clima al caos&lt;/a&gt; y &lt;a href="https://juanmanuel.petrer.eu/blog/tfg/"&gt;Bloqueos atmosféricos&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description></item><item><title>Mecánica Cuántica</title><link>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</guid><description>&lt;div class="bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4"&gt;
 &lt;div class="text-red-700 dark:text-red-300"&gt;
 &lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.
@@ -65,7 +62,7 @@
 &lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/mecanica-cuantica/cuerpo_negro.pdf"&gt;Radiación del Cuerpo Negro&lt;/a&gt; - Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/mecanica-cuantica/moleculas_diatomicas.pdf"&gt;Simulación y análisis de espectros (MW, IR y RAMAN) de moléculas diatómicas&lt;/a&gt; - Física nuclear y de partículas (Universidad de Alicante).&lt;/p&gt;</description></item><item><title>Óptica</title><link>https://juanmanuel.petrer.eu/material/optica/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/optica/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://juanmanuel.petrer.eu/material/mecanica-cuantica/moleculas_diatomicas.pdf"&gt;Simulación y análisis de espectros (MW, IR y RAMAN) de moléculas diatómicas&lt;/a&gt; - Estructura de la Materia (Universidad de Alicante).&lt;/p&gt;</description></item><item><title>Óptica</title><link>https://juanmanuel.petrer.eu/material/optica/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/material/optica/</guid><description>&lt;h2 id="contenido"&gt;Contenido&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://juanmanuel.petrer.eu/material/optica/doble_rendija.pdf"&gt;Doble Rendija&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;
 &lt;/ul&gt;
