@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Inspección Industrial on </title>
-    <link>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</link>
-    <description>Recent content in Inspección Industrial on </description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OCR en condiciones extremas: leer texto donde no hay tinta</title>
-      <link>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;El OCR lleva décadas declarándose resuelto. Luego te piden leer caracteres negros, en relieve, sobre caucho negro, en una superficie curva que se mueve, y descubres dónde estaban escondidos los problemas.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Trabajo en visión por computador para inspección industrial en la industria del neumático, y hace poco estuve experimentando por mi cuenta con &lt;strong&gt;GLM-OCR&lt;/strong&gt;, un modelo multimodal de OCR pequeño y abierto. La combinación de ambas cosas —el benchmark mental de &amp;ldquo;qué exigiría mi entorno de trabajo&amp;rdquo; aplicado a un modelo que cabe en un portátil— me dejó varias reflexiones sobre el estado del OCR que creo que merecen un post. Sin datos ni detalles de proyectos concretos: lo que sigue es la naturaleza del problema, que es pública y fascinante, y lo que aprendí del modelo, que es abierto.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>CNNs vs Vision Transformers: lecciones desde la inspección industrial</title>
-      <link>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inspección Industrial on</title><link>https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/</link><description>Recent content in Inspección Industrial on</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://juanmanuel.petrer.eu/tags/inspecci%C3%B3n-industrial/index.xml" rel="self" type="application/rss+xml"/><item><title>OCR en condiciones extremas: leer texto donde no hay tinta</title><link>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</link><pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;El OCR lleva décadas declarándose resuelto. Luego te piden leer caracteres negros, en relieve, sobre caucho negro, en una superficie curva que se mueve, y descubres dónde estaban escondidos los problemas.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Trabajo en visión por computador para inspección industrial en la industria del neumático, y hace poco estuve experimentando por mi cuenta con &lt;strong&gt;GLM-OCR&lt;/strong&gt;, un modelo multimodal de OCR pequeño y abierto. La combinación de ambas cosas —el benchmark mental de &amp;ldquo;qué exigiría mi entorno de trabajo&amp;rdquo; aplicado a un modelo que cabe en un portátil— me dejó varias reflexiones sobre el estado del OCR que creo que merecen un post. Sin datos ni detalles de proyectos concretos: lo que sigue es la naturaleza del problema, que es pública y fascinante, y lo que aprendí del modelo, que es abierto.&lt;/p&gt;</description></item><item><title>CNNs vs Vision Transformers: lecciones desde la inspección industrial</title><link>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link><pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate><guid>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description></item></channel></rss>
