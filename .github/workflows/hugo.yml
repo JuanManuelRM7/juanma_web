@@ -1,12 +1,11 @@
 # Builds the site and deploys it to GitHub Pages.
-# NOTE: only takes effect once Pages is set to "GitHub Actions" as the source
-# (repo Settings → Pages → Build and deployment → Source). Until then the
-# site keeps deploying from /docs on master.
+# Manual-only for now: while Pages deploys from /docs on master, an automatic
+# run here would collide with that deployment ("in progress deployment" error).
+# To switch to Actions-based deploys later: set repo Settings → Pages → Source
+# to "GitHub Actions", stop committing /docs, and re-add the `push` trigger.
 name: Build & Deploy
 
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
 
 permissions:
