@@ -1,149 +1,149 @@
 ---
-title: "Contexto para agentes"
+title: "Agent context"
 date: 2025-01-01
-description: "Guía de referencia del repo juanma_web para agentes de IA. Estructura, convenciones y cómo modificar cada sección del sitio."
+description: "Quick reference guide for AI agents working on the juanma_web repo. Structure, conventions, and how to modify each section of the site."
 tags: ["meta", "docs"]
 ---
 
-> Esta página existe para dar contexto rápido a un agente de IA sin que tenga que leer todo el repositorio. La guía completa para modificaciones está en [`CLAUDE.md`](https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md) en la raíz del repo.
+> This page exists to give an AI agent quick context about the repo without having to read everything. The full guide for modifications lives in [`CLAUDE.md`](https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md) at the repo root.
 
 ## Stack
 
-**Hugo** (generador estático) + **Tailwind CSS 4** + JS vanilla. Desplegado en **GitHub Pages** desde la carpeta `docs/`.
+**Hugo** (static site generator) + **Tailwind CSS 4** + vanilla JS. Deployed to **GitHub Pages** from the `docs/` folder.
 
 ```bash
-npm install          # dependencias
-hugo server          # dev en localhost:1313
-npm run build        # build producción (Hugo + Pagefind)
+npm install          # install dependencies
+hugo server          # dev server at localhost:1313
+npm run build        # production build (Hugo + Pagefind)
 ```
 
-## Dónde está cada cosa
+## Where everything lives
 
-### Datos del perfil → `config.yaml`
+### Profile data → `config.yaml`
 
-Toda la información del sitio vive en `config.yaml` bajo `params`. No hay base de datos ni CMS — es puro YAML.
+All site content lives in `config.yaml` under `params`. No database, no CMS — pure YAML.
 
-| Sección | Clave en `config.yaml` |
-|---------|------------------------|
-| Experiencia laboral | `params.experience.list` |
-| Educación | `params.education.list` |
-| Proyectos | `params.project.list` |
-| Skills / tecnologías | `params.skill.list` |
-| Publicaciones | `params.publication.list` |
-| Redes sociales | `params.social.list` |
-| Nombre, bio, foto | `params.profile` |
+| Section | Key in `config.yaml` |
+|---------|----------------------|
+| Work experience | `params.experience.list` |
+| Education | `params.education.list` |
+| Projects | `params.project.list` |
+| Skills / tech | `params.skill.list` |
+| Publications | `params.publication.list` |
+| Social links | `params.social.list` |
+| Name, bio, photo | `params.profile` |
 
-### Contenido en markdown → `content/`
+### Markdown content → `content/`
 
 ```
 content/
-├── blog/         ← posts del blog (con frontmatter: title, date, tags, description)
-├── material/     ← apuntes universitarios
-└── search/       ← solo existe el _index.md, la búsqueda la gestiona Pagefind
+├── blog/         ← blog posts (frontmatter: title, date, tags, description)
+├── material/     ← university notes
+└── search/       ← only _index.md exists here; search is handled by Pagefind
 ```
 
 ### Layouts → `layouts/`
 
 ```
 layouts/
-├── index.html              ← Homepage (todas las secciones)
+├── index.html              ← Homepage (all sections)
 ├── _default/
-│   ├── baseof.html         ← Plantilla base HTML
-│   ├── single.html         ← Post individual
-│   └── search.html         ← Página de búsqueda
-├── blog/list.html          ← Índice del blog (grid paginado)
-├── material/list.html      ← Índice de material
-└── partials/               ← Componentes reutilizables
-    ├── head.html           ← Meta tags, CSS, fuentes
-    ├── header.html         ← Navegación + reloj
-    ├── i18n.html           ← Sistema de traducciones JS
-    ├── command_palette.html ← Paleta ⌘K
-    └── accordion/          ← Secciones colapsables
+│   ├── baseof.html         ← Base HTML template
+│   ├── single.html         ← Individual post layout
+│   └── search.html         ← Search page
+├── blog/list.html          ← Blog index (paginated grid)
+├── material/list.html      ← Material index
+└── partials/               ← Reusable components
+    ├── head.html           ← Meta tags, CSS, fonts
+    ├── header.html         ← Nav bar + clock
+    ├── i18n.html           ← JS translation system
+    ├── command_palette.html ← ⌘K palette
+    └── accordion/          ← Collapsible sections
 ```
 
-### Estilos
+### Styles
 
-- `assets/main.css` — fuente principal (Tailwind imports + custom)
-- `static/css/general.css` — clases de componentes
-- `tailwind.config.js` — configuración de Tailwind
+- `assets/main.css` — main source (Tailwind imports + custom utilities)
+- `static/css/general.css` — component classes
+- `tailwind.config.js` — Tailwind configuration
 
 ---
 
-## Cómo modificar cosas
+## How to modify things
 
-### Añadir un post de blog
+### Add a blog post
 
-Crear `content/blog/nombre-del-post.md`:
+Create `content/blog/my-post-slug.md`:
 
 ```markdown
 ---
-title: "Título"
+title: "Post title"
 date: 2025-01-15
-description: "Descripción corta"
+description: "Short description"
 tags: ["python", "ml"]
 ---
 
-Contenido aquí...
+Content here...
 ```
 
-### Editar experiencia / educación / proyectos
+### Edit experience / education / projects
 
-Editar directamente en `config.yaml`. Ejemplo para proyectos:
+Edit directly in `config.yaml`. Example for projects:
 
 ```yaml
 params:
   project:
     list:
-      - title: "Nombre del proyecto"
-        description: "Qué hace"
-        icon: "fas fa-eye"       # Font Awesome
+      - title: "Project name"
+        description: "What it does"
+        icon: "fas fa-eye"       # Font Awesome icon class
         color: "cyan"            # cyan | violet | emerald | amber
         tech: [Python, Docker]
         url: ""
-        status: "En producción"
+        status: "In production"
 ```
 
-### Añadir traducciones (i18n)
+### Add translations (i18n)
 
-El sitio tiene i18n dual:
+The site uses a dual i18n system:
 
-1. **Hugo** (estático): claves en `i18n/es.yaml` + `i18n/en.yaml` → `{{ i18n "clave" }}`
-2. **JS runtime** (toggle sin reload): en `layouts/partials/i18n.html` → `data-i18n="clave"` en HTML
+1. **Hugo static**: keys in `i18n/es.yaml` + `i18n/en.yaml` → `{{ i18n "key" }}` in templates
+2. **JS runtime** (language toggle without reload): in `layouts/partials/i18n.html` → `data-i18n="key"` on HTML elements
 
-### Añadir una página nueva
+### Add a new page
 
-1. Crear `content/nueva-seccion.md` (o `content/nueva-seccion/index.md`)
-2. Hugo usará `layouts/_default/single.html` por defecto
-3. Para layout custom: crear `layouts/nueva-seccion/single.html`
-4. Añadir al nav en `layouts/partials/header.html` y a la paleta en `layouts/partials/command_palette.html`
-
----
-
-## Arquitectura de la homepage
-
-`layouts/index.html` usa un grid 40/60:
-
-- **40% izquierda (sticky):** foto + stats + redes sociales
-- **60% derecha (scroll):** proyectos → experiencia → último post → educación → publicaciones → skills → GitHub activity → contacto
-
-En mobile colapsa a una sola columna.
+1. Create `content/new-section.md` (or `content/new-section/index.md`)
+2. Hugo will use `layouts/_default/single.html` by default
+3. For a custom layout: create `layouts/new-section/single.html`
+4. Add it to the nav in `layouts/partials/header.html` and to the palette in `layouts/partials/command_palette.html`
 
 ---
 
-## Estado y persistencia
+## Homepage architecture
 
-| Feature | Clave en `localStorage` |
-|---------|-------------------------|
+`layouts/index.html` uses a 40/60 grid:
+
+- **40% left (sticky):** photo + stats + social links
+- **60% right (scroll):** projects → experience → latest post → education → publications → skills → GitHub activity → contact
+
+Collapses to a single column on mobile.
+
+---
+
+## State & persistence
+
+| Feature | `localStorage` key |
+|---------|-------------------|
 | Dark/light mode | `theme` |
-| Idioma ES/EN | `lang` |
-| Panel de acordeón abierto | `lastAccordionPanel` |
-| Modal de bienvenida vista | `welcomeShown` |
+| Language ES/EN | `lang` |
+| Open accordion panel | `lastAccordionPanel` |
+| Welcome modal seen | `welcomeShown` |
 
 ---
 
-## Rutas del sitio
+## Site routes
 
-| URL | Fuente |
+| URL | Source |
 |-----|--------|
 | `/` | `layouts/index.html` |
 | `/blog/` | `content/blog/_index.md` + `layouts/blog/list.html` |
@@ -151,17 +151,17 @@ En mobile colapsa a una sola columna.
 | `/material/` | `content/material/_index.md` |
 | `/material/{slug}/` | `content/material/*.md` |
 | `/search/` | Pagefind UI |
-| `/agent-context/` | Esta página |
+| `/agent-context/` | This page |
 
 ---
 
-## Reglas importantes
+## Hard rules
 
-- **No editar `docs/`** — es output del build, se sobreescribe con `npm run build`
-- **No editar `resources/`** — caché interna de Hugo
-- Los datos del perfil van siempre en `config.yaml`, no en archivos de contenido
-- El build requiere tanto Hugo como Pagefind — usar siempre `npm run build`, no `hugo` solo
+- **Do not edit `docs/`** — it's build output, overwritten by `npm run build`
+- **Do not edit `resources/`** — Hugo's internal cache
+- Profile data always goes in `config.yaml`, not in content files
+- The build requires both Hugo and Pagefind — always use `npm run build`, not `hugo` alone
 
 ---
 
-*Guía completa con más detalles en [`CLAUDE.md`](https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md) en la raíz del repo.*
+*Full guide with more detail in [`CLAUDE.md`](https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md) at the repo root.*

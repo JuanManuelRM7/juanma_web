@@ -3,19 +3,19 @@
   
 
 
-<title>Contexto para agentes</title>
+<title>Agent context</title>
 
 <meta name="theme-color" content="#8b5cf6" />
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta name="description" content="Guía de referencia del repo juanma_web para agentes de IA. Estructura, convenciones y cómo modificar cada sección del sitio." />
+<meta name="description" content="Quick reference guide for AI agents working on the juanma_web repo. Structure, conventions, and how to modify each section of the site." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://juanmanuel.petrer.eu/agent-context/" />
 
 
-<meta property="og:title" content="Contexto para agentes" />
-<meta property="og:description" content="Guía de referencia del repo juanma_web para agentes de IA. Estructura, convenciones y cómo modificar cada sección del sitio." />
+<meta property="og:title" content="Agent context" />
+<meta property="og:description" content="Quick reference guide for AI agents working on the juanma_web repo. Structure, conventions, and how to modify each section of the site." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://juanmanuel.petrer.eu/agent-context/" />
 <meta property="og:image" content="https://juanmanuel.petrer.eu/og-image.png" />
@@ -33,8 +33,8 @@
 
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Contexto para agentes" />
-<meta name="twitter:description" content="Guía de referencia del repo juanma_web para agentes de IA. Estructura, convenciones y cómo modificar cada sección del sitio." />
+<meta name="twitter:title" content="Agent context" />
+<meta name="twitter:description" content="Quick reference guide for AI agents working on the juanma_web repo. Structure, conventions, and how to modify each section of the site." />
 <meta name="twitter:image" content="https://juanmanuel.petrer.eu/og-image.png" />
 
 
@@ -43,8 +43,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Contexto para agentes",
-  "description": "Guía de referencia del repo juanma_web para agentes de IA. Estructura, convenciones y cómo modificar cada sección del sitio.",
+  "headline": "Agent context",
+  "description": "Quick reference guide for AI agents working on the juanma_web repo. Structure, conventions, and how to modify each section of the site.",
   "author": {
     "@type": "Person",
     "name": "Juan Manuel Ruiz Muñoz"
@@ -60,7 +60,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https:\/\/juanmanuel.petrer.eu\/" },
     { "@type": "ListItem", "position": 2, "name": "\"\"", "item": "https:\/\/juanmanuel.petrer.eu\/" },
-    { "@type": "ListItem", "position": 3, "name": "\"Contexto para agentes\"", "item": "https:\/\/juanmanuel.petrer.eu\/agent-context\/" }
+    { "@type": "ListItem", "position": 3, "name": "\"Agent context\"", "item": "https:\/\/juanmanuel.petrer.eu\/agent-context\/" }
   ]
 }
 </script>
@@ -325,11 +325,11 @@
   <a href="/" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors capitalize"></a>
   
   <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>
-  <span class="text-gray-700 dark:text-gray-300 font-medium truncate max-w-[220px] sm:max-w-xs" aria-current="page">Contexto para agentes</span>
+  <span class="text-gray-700 dark:text-gray-300 font-medium truncate max-w-[220px] sm:max-w-xs" aria-current="page">Agent context</span>
 </nav>
 
 <div class="mb-5">
-  <h1 class="top-h1">Contexto para agentes</h1>
+  <h1 class="top-h1">Agent context</h1>
   <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
     <span class="flex items-center gap-1.5">
       <i class="far fa-calendar-alt text-violet-500 dark:text-violet-400 text-xs"></i>
@@ -365,26 +365,26 @@
         <nav>
   <ul>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#dónde-está-cada-cosa">Dónde está cada cosa</a>
+    <li><a href="#where-everything-lives">Where everything lives</a>
       <ul>
-        <li><a href="#datos-del-perfil--configyaml">Datos del perfil → <code>config.yaml</code></a></li>
-        <li><a href="#contenido-en-markdown--content">Contenido en markdown → <code>content/</code></a></li>
+        <li><a href="#profile-data--configyaml">Profile data → <code>config.yaml</code></a></li>
+        <li><a href="#markdown-content--content">Markdown content → <code>content/</code></a></li>
         <li><a href="#layouts--layouts">Layouts → <code>layouts/</code></a></li>
-        <li><a href="#estilos">Estilos</a></li>
+        <li><a href="#styles">Styles</a></li>
       </ul>
     </li>
-    <li><a href="#cómo-modificar-cosas">Cómo modificar cosas</a>
+    <li><a href="#how-to-modify-things">How to modify things</a>
       <ul>
-        <li><a href="#añadir-un-post-de-blog">Añadir un post de blog</a></li>
-        <li><a href="#editar-experiencia--educación--proyectos">Editar experiencia / educación / proyectos</a></li>
-        <li><a href="#añadir-traducciones-i18n">Añadir traducciones (i18n)</a></li>
-        <li><a href="#añadir-una-página-nueva">Añadir una página nueva</a></li>
+        <li><a href="#add-a-blog-post">Add a blog post</a></li>
+        <li><a href="#edit-experience--education--projects">Edit experience / education / projects</a></li>
+        <li><a href="#add-translations-i18n">Add translations (i18n)</a></li>
+        <li><a href="#add-a-new-page">Add a new page</a></li>
       </ul>
     </li>
-    <li><a href="#arquitectura-de-la-homepage">Arquitectura de la homepage</a></li>
-    <li><a href="#estado-y-persistencia">Estado y persistencia</a></li>
-    <li><a href="#rutas-del-sitio">Rutas del sitio</a></li>
-    <li><a href="#reglas-importantes">Reglas importantes</a></li>
+    <li><a href="#homepage-architecture">Homepage architecture</a></li>
+    <li><a href="#state--persistence">State &amp; persistence</a></li>
+    <li><a href="#site-routes">Site routes</a></li>
+    <li><a href="#hard-rules">Hard rules</a></li>
   </ul>
 </nav>
       </nav>
@@ -393,131 +393,131 @@
 
     <div class="content">
       <blockquote>
-<p>Esta página existe para dar contexto rápido a un agente de IA sin que tenga que leer todo el repositorio. La guía completa para modificaciones está en <a href="https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md"><code>CLAUDE.md</code></a> en la raíz del repo.</p></blockquote>
+<p>This page exists to give an AI agent quick context about the repo without having to read everything. The full guide for modifications lives in <a href="https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md"><code>CLAUDE.md</code></a> at the repo root.</p></blockquote>
 <h2 id="stack">Stack</h2>
-<p><strong>Hugo</strong> (generador estático) + <strong>Tailwind CSS 4</strong> + JS vanilla. Desplegado en <strong>GitHub Pages</strong> desde la carpeta <code>docs/</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install          <span class="c1"># dependencias</span>
-</span></span><span class="line"><span class="cl">hugo server          <span class="c1"># dev en localhost:1313</span>
-</span></span><span class="line"><span class="cl">npm run build        <span class="c1"># build producción (Hugo + Pagefind)</span>
-</span></span></code></pre></div><h2 id="dónde-está-cada-cosa">Dónde está cada cosa</h2>
-<h3 id="datos-del-perfil--configyaml">Datos del perfil → <code>config.yaml</code></h3>
-<p>Toda la información del sitio vive en <code>config.yaml</code> bajo <code>params</code>. No hay base de datos ni CMS — es puro YAML.</p>
+<p><strong>Hugo</strong> (static site generator) + <strong>Tailwind CSS 4</strong> + vanilla JS. Deployed to <strong>GitHub Pages</strong> from the <code>docs/</code> folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install          <span class="c1"># install dependencies</span>
+</span></span><span class="line"><span class="cl">hugo server          <span class="c1"># dev server at localhost:1313</span>
+</span></span><span class="line"><span class="cl">npm run build        <span class="c1"># production build (Hugo + Pagefind)</span>
+</span></span></code></pre></div><h2 id="where-everything-lives">Where everything lives</h2>
+<h3 id="profile-data--configyaml">Profile data → <code>config.yaml</code></h3>
+<p>All site content lives in <code>config.yaml</code> under <code>params</code>. No database, no CMS — pure YAML.</p>
 <table>
   <thead>
       <tr>
-          <th>Sección</th>
-          <th>Clave en <code>config.yaml</code></th>
+          <th>Section</th>
+          <th>Key in <code>config.yaml</code></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Experiencia laboral</td>
+          <td>Work experience</td>
           <td><code>params.experience.list</code></td>
       </tr>
       <tr>
-          <td>Educación</td>
+          <td>Education</td>
           <td><code>params.education.list</code></td>
       </tr>
       <tr>
-          <td>Proyectos</td>
+          <td>Projects</td>
           <td><code>params.project.list</code></td>
       </tr>
       <tr>
-          <td>Skills / tecnologías</td>
+          <td>Skills / tech</td>
           <td><code>params.skill.list</code></td>
       </tr>
       <tr>
-          <td>Publicaciones</td>
+          <td>Publications</td>
           <td><code>params.publication.list</code></td>
       </tr>
       <tr>
-          <td>Redes sociales</td>
+          <td>Social links</td>
           <td><code>params.social.list</code></td>
       </tr>
       <tr>
-          <td>Nombre, bio, foto</td>
+          <td>Name, bio, photo</td>
           <td><code>params.profile</code></td>
       </tr>
   </tbody>
 </table>
-<h3 id="contenido-en-markdown--content">Contenido en markdown → <code>content/</code></h3>
+<h3 id="markdown-content--content">Markdown content → <code>content/</code></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">content/
-</span></span><span class="line"><span class="cl">├── blog/         ← posts del blog (con frontmatter: title, date, tags, description)
-</span></span><span class="line"><span class="cl">├── material/     ← apuntes universitarios
-</span></span><span class="line"><span class="cl">└── search/       ← solo existe el _index.md, la búsqueda la gestiona Pagefind
+</span></span><span class="line"><span class="cl">├── blog/         ← blog posts (frontmatter: title, date, tags, description)
+</span></span><span class="line"><span class="cl">├── material/     ← university notes
+</span></span><span class="line"><span class="cl">└── search/       ← only _index.md exists here; search is handled by Pagefind
 </span></span></code></pre></div><h3 id="layouts--layouts">Layouts → <code>layouts/</code></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">layouts/
-</span></span><span class="line"><span class="cl">├── index.html              ← Homepage (todas las secciones)
+</span></span><span class="line"><span class="cl">├── index.html              ← Homepage (all sections)
 </span></span><span class="line"><span class="cl">├── _default/
-</span></span><span class="line"><span class="cl">│   ├── baseof.html         ← Plantilla base HTML
-</span></span><span class="line"><span class="cl">│   ├── single.html         ← Post individual
-</span></span><span class="line"><span class="cl">│   └── search.html         ← Página de búsqueda
-</span></span><span class="line"><span class="cl">├── blog/list.html          ← Índice del blog (grid paginado)
-</span></span><span class="line"><span class="cl">├── material/list.html      ← Índice de material
-</span></span><span class="line"><span class="cl">└── partials/               ← Componentes reutilizables
-</span></span><span class="line"><span class="cl">    ├── head.html           ← Meta tags, CSS, fuentes
-</span></span><span class="line"><span class="cl">    ├── header.html         ← Navegación + reloj
-</span></span><span class="line"><span class="cl">    ├── i18n.html           ← Sistema de traducciones JS
-</span></span><span class="line"><span class="cl">    ├── command_palette.html ← Paleta ⌘K
-</span></span><span class="line"><span class="cl">    └── accordion/          ← Secciones colapsables
-</span></span></code></pre></div><h3 id="estilos">Estilos</h3>
+</span></span><span class="line"><span class="cl">│   ├── baseof.html         ← Base HTML template
+</span></span><span class="line"><span class="cl">│   ├── single.html         ← Individual post layout
+</span></span><span class="line"><span class="cl">│   └── search.html         ← Search page
+</span></span><span class="line"><span class="cl">├── blog/list.html          ← Blog index (paginated grid)
+</span></span><span class="line"><span class="cl">├── material/list.html      ← Material index
+</span></span><span class="line"><span class="cl">└── partials/               ← Reusable components
+</span></span><span class="line"><span class="cl">    ├── head.html           ← Meta tags, CSS, fonts
+</span></span><span class="line"><span class="cl">    ├── header.html         ← Nav bar + clock
+</span></span><span class="line"><span class="cl">    ├── i18n.html           ← JS translation system
+</span></span><span class="line"><span class="cl">    ├── command_palette.html ← ⌘K palette
+</span></span><span class="line"><span class="cl">    └── accordion/          ← Collapsible sections
+</span></span></code></pre></div><h3 id="styles">Styles</h3>
 <ul>
-<li><code>assets/main.css</code> — fuente principal (Tailwind imports + custom)</li>
-<li><code>static/css/general.css</code> — clases de componentes</li>
-<li><code>tailwind.config.js</code> — configuración de Tailwind</li>
+<li><code>assets/main.css</code> — main source (Tailwind imports + custom utilities)</li>
+<li><code>static/css/general.css</code> — component classes</li>
+<li><code>tailwind.config.js</code> — Tailwind configuration</li>
 </ul>
 <hr>
-<h2 id="cómo-modificar-cosas">Cómo modificar cosas</h2>
-<h3 id="añadir-un-post-de-blog">Añadir un post de blog</h3>
-<p>Crear <code>content/blog/nombre-del-post.md</code>:</p>
+<h2 id="how-to-modify-things">How to modify things</h2>
+<h3 id="add-a-blog-post">Add a blog post</h3>
+<p>Create <code>content/blog/my-post-slug.md</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: &#34;Título&#34;
+</span></span><span class="line"><span class="cl">title: &#34;Post title&#34;
 </span></span><span class="line"><span class="cl">date: 2025-01-15
-</span></span><span class="line"><span class="cl">description: &#34;Descripción corta&#34;
+</span></span><span class="line"><span class="cl">description: &#34;Short description&#34;
 </span></span><span class="line"><span class="cl">tags: [&#34;python&#34;, &#34;ml&#34;]
 </span></span><span class="line"><span class="cl">---
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Contenido aquí...
-</span></span></code></pre></div><h3 id="editar-experiencia--educación--proyectos">Editar experiencia / educación / proyectos</h3>
-<p>Editar directamente en <code>config.yaml</code>. Ejemplo para proyectos:</p>
+</span></span><span class="line"><span class="cl">Content here...
+</span></span></code></pre></div><h3 id="edit-experience--education--projects">Edit experience / education / projects</h3>
+<p>Edit directly in <code>config.yaml</code>. Example for projects:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">list</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Nombre del proyecto&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Qué hace&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fas fa-eye&#34;</span><span class="w">       </span><span class="c"># Font Awesome</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Project name&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;What it does&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fas fa-eye&#34;</span><span class="w">       </span><span class="c"># Font Awesome icon class</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cyan&#34;</span><span class="w">            </span><span class="c"># cyan | violet | emerald | amber</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tech</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">Python, Docker]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;En producción&#34;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="añadir-traducciones-i18n">Añadir traducciones (i18n)</h3>
-<p>El sitio tiene i18n dual:</p>
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;In production&#34;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="add-translations-i18n">Add translations (i18n)</h3>
+<p>The site uses a dual i18n system:</p>
 <ol>
-<li><strong>Hugo</strong> (estático): claves en <code>i18n/es.yaml</code> + <code>i18n/en.yaml</code> → <code>{{ i18n &quot;clave&quot; }}</code></li>
-<li><strong>JS runtime</strong> (toggle sin reload): en <code>layouts/partials/i18n.html</code> → <code>data-i18n=&quot;clave&quot;</code> en HTML</li>
+<li><strong>Hugo static</strong>: keys in <code>i18n/es.yaml</code> + <code>i18n/en.yaml</code> → <code>{{ i18n &quot;key&quot; }}</code> in templates</li>
+<li><strong>JS runtime</strong> (language toggle without reload): in <code>layouts/partials/i18n.html</code> → <code>data-i18n=&quot;key&quot;</code> on HTML elements</li>
 </ol>
-<h3 id="añadir-una-página-nueva">Añadir una página nueva</h3>
+<h3 id="add-a-new-page">Add a new page</h3>
 <ol>
-<li>Crear <code>content/nueva-seccion.md</code> (o <code>content/nueva-seccion/index.md</code>)</li>
-<li>Hugo usará <code>layouts/_default/single.html</code> por defecto</li>
-<li>Para layout custom: crear <code>layouts/nueva-seccion/single.html</code></li>
-<li>Añadir al nav en <code>layouts/partials/header.html</code> y a la paleta en <code>layouts/partials/command_palette.html</code></li>
+<li>Create <code>content/new-section.md</code> (or <code>content/new-section/index.md</code>)</li>
+<li>Hugo will use <code>layouts/_default/single.html</code> by default</li>
+<li>For a custom layout: create <code>layouts/new-section/single.html</code></li>
+<li>Add it to the nav in <code>layouts/partials/header.html</code> and to the palette in <code>layouts/partials/command_palette.html</code></li>
 </ol>
 <hr>
-<h2 id="arquitectura-de-la-homepage">Arquitectura de la homepage</h2>
-<p><code>layouts/index.html</code> usa un grid 40/60:</p>
+<h2 id="homepage-architecture">Homepage architecture</h2>
+<p><code>layouts/index.html</code> uses a 40/60 grid:</p>
 <ul>
-<li><strong>40% izquierda (sticky):</strong> foto + stats + redes sociales</li>
-<li><strong>60% derecha (scroll):</strong> proyectos → experiencia → último post → educación → publicaciones → skills → GitHub activity → contacto</li>
+<li><strong>40% left (sticky):</strong> photo + stats + social links</li>
+<li><strong>60% right (scroll):</strong> projects → experience → latest post → education → publications → skills → GitHub activity → contact</li>
 </ul>
-<p>En mobile colapsa a una sola columna.</p>
+<p>Collapses to a single column on mobile.</p>
 <hr>
-<h2 id="estado-y-persistencia">Estado y persistencia</h2>
+<h2 id="state--persistence">State &amp; persistence</h2>
 <table>
   <thead>
       <tr>
           <th>Feature</th>
-          <th>Clave en <code>localStorage</code></th>
+          <th><code>localStorage</code> key</th>
       </tr>
   </thead>
   <tbody>
@@ -526,26 +526,26 @@
           <td><code>theme</code></td>
       </tr>
       <tr>
-          <td>Idioma ES/EN</td>
+          <td>Language ES/EN</td>
           <td><code>lang</code></td>
       </tr>
       <tr>
-          <td>Panel de acordeón abierto</td>
+          <td>Open accordion panel</td>
           <td><code>lastAccordionPanel</code></td>
       </tr>
       <tr>
-          <td>Modal de bienvenida vista</td>
+          <td>Welcome modal seen</td>
           <td><code>welcomeShown</code></td>
       </tr>
   </tbody>
 </table>
 <hr>
-<h2 id="rutas-del-sitio">Rutas del sitio</h2>
+<h2 id="site-routes">Site routes</h2>
 <table>
   <thead>
       <tr>
           <th>URL</th>
-          <th>Fuente</th>
+          <th>Source</th>
       </tr>
   </thead>
   <tbody>
@@ -575,20 +575,20 @@
       </tr>
       <tr>
           <td><code>/agent-context/</code></td>
-          <td>Esta página</td>
+          <td>This page</td>
       </tr>
   </tbody>
 </table>
 <hr>
-<h2 id="reglas-importantes">Reglas importantes</h2>
+<h2 id="hard-rules">Hard rules</h2>
 <ul>
-<li><strong>No editar <code>docs/</code></strong> — es output del build, se sobreescribe con <code>npm run build</code></li>
-<li><strong>No editar <code>resources/</code></strong> — caché interna de Hugo</li>
-<li>Los datos del perfil van siempre en <code>config.yaml</code>, no en archivos de contenido</li>
-<li>El build requiere tanto Hugo como Pagefind — usar siempre <code>npm run build</code>, no <code>hugo</code> solo</li>
+<li><strong>Do not edit <code>docs/</code></strong> — it&rsquo;s build output, overwritten by <code>npm run build</code></li>
+<li><strong>Do not edit <code>resources/</code></strong> — Hugo&rsquo;s internal cache</li>
+<li>Profile data always goes in <code>config.yaml</code>, not in content files</li>
+<li>The build requires both Hugo and Pagefind — always use <code>npm run build</code>, not <code>hugo</code> alone</li>
 </ul>
 <hr>
-<p><em>Guía completa con más detalles en <a href="https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md"><code>CLAUDE.md</code></a> en la raíz del repo.</em></p>
+<p><em>Full guide with more detail in <a href="https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md"><code>CLAUDE.md</code></a> at the repo root.</em></p>
 
     </div>
 
@@ -608,26 +608,26 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#dónde-está-cada-cosa">Dónde está cada cosa</a>
+    <li><a href="#where-everything-lives">Where everything lives</a>
       <ul>
-        <li><a href="#datos-del-perfil--configyaml">Datos del perfil → <code>config.yaml</code></a></li>
-        <li><a href="#contenido-en-markdown--content">Contenido en markdown → <code>content/</code></a></li>
+        <li><a href="#profile-data--configyaml">Profile data → <code>config.yaml</code></a></li>
+        <li><a href="#markdown-content--content">Markdown content → <code>content/</code></a></li>
         <li><a href="#layouts--layouts">Layouts → <code>layouts/</code></a></li>
-        <li><a href="#estilos">Estilos</a></li>
+        <li><a href="#styles">Styles</a></li>
       </ul>
     </li>
-    <li><a href="#cómo-modificar-cosas">Cómo modificar cosas</a>
+    <li><a href="#how-to-modify-things">How to modify things</a>
       <ul>
-        <li><a href="#añadir-un-post-de-blog">Añadir un post de blog</a></li>
-        <li><a href="#editar-experiencia--educación--proyectos">Editar experiencia / educación / proyectos</a></li>
-        <li><a href="#añadir-traducciones-i18n">Añadir traducciones (i18n)</a></li>
-        <li><a href="#añadir-una-página-nueva">Añadir una página nueva</a></li>
+        <li><a href="#add-a-blog-post">Add a blog post</a></li>
+        <li><a href="#edit-experience--education--projects">Edit experience / education / projects</a></li>
+        <li><a href="#add-translations-i18n">Add translations (i18n)</a></li>
+        <li><a href="#add-a-new-page">Add a new page</a></li>
       </ul>
     </li>
-    <li><a href="#arquitectura-de-la-homepage">Arquitectura de la homepage</a></li>
-    <li><a href="#estado-y-persistencia">Estado y persistencia</a></li>
-    <li><a href="#rutas-del-sitio">Rutas del sitio</a></li>
-    <li><a href="#reglas-importantes">Reglas importantes</a></li>
+    <li><a href="#homepage-architecture">Homepage architecture</a></li>
+    <li><a href="#state--persistence">State &amp; persistence</a></li>
+    <li><a href="#site-routes">Site routes</a></li>
+    <li><a href="#hard-rules">Hard rules</a></li>
   </ul>
 </nav>
       </nav>
