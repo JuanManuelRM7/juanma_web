@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on </title>
+    <link>https://juanmanuel.petrer.eu/tags/docs/</link>
+    <description>Recent content in Docs on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Contexto para agentes</title>
+      <link>https://juanmanuel.petrer.eu/agent-context/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/agent-context/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Esta página existe para dar contexto rápido a un agente de IA sin que tenga que leer todo el repositorio. La guía completa para modificaciones está en &lt;a href=&#34;https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md&#34;&gt;&lt;code&gt;CLAUDE.md&lt;/code&gt;&lt;/a&gt; en la raíz del repo.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; (generador estático) + &lt;strong&gt;Tailwind CSS 4&lt;/strong&gt; + JS vanilla. Desplegado en &lt;strong&gt;GitHub Pages&lt;/strong&gt; desde la carpeta &lt;code&gt;docs/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install          &lt;span class=&#34;c1&#34;&gt;# dependencias&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server          &lt;span class=&#34;c1&#34;&gt;# dev en localhost:1313&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm run build        &lt;span class=&#34;c1&#34;&gt;# build producción (Hugo + Pagefind)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dónde-está-cada-cosa&#34;&gt;Dónde está cada cosa&lt;/h2&gt;&#xA;&lt;h3 id=&#34;datos-del-perfil--configyaml&#34;&gt;Datos del perfil → &lt;code&gt;config.yaml&lt;/code&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Toda la información del sitio vive en &lt;code&gt;config.yaml&lt;/code&gt; bajo &lt;code&gt;params&lt;/code&gt;. No hay base de datos ni CMS — es puro YAML.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

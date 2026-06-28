@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vision Transformers on </title>
-    <link>http://localhost:1313/tags/vision-transformers/</link>
+    <link>https://juanmanuel.petrer.eu/tags/vision-transformers/</link>
     <description>Recent content in Vision Transformers on </description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vision-transformers/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://juanmanuel.petrer.eu/tags/vision-transformers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CNNs vs Vision Transformers: lecciones desde la inspección industrial</title>
-      <link>http://localhost:1313/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
+      <link>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description>
     </item>
   </channel>

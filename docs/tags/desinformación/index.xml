@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Desinformación on </title>
-    <link>http://localhost:1313/tags/desinformaci%C3%B3n/</link>
+    <link>https://juanmanuel.petrer.eu/tags/desinformaci%C3%B3n/</link>
     <description>Recent content in Desinformación on </description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/desinformaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://juanmanuel.petrer.eu/tags/desinformaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detectar desinformación en la ficción: una ontología que se construye sola</title>
-      <link>http://localhost:1313/blog/desinformacion-en-la-ficcion-ontologias-llm/</link>
+      <link>https://juanmanuel.petrer.eu/blog/desinformacion-en-la-ficcion-ontologias-llm/</link>
       <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/desinformacion-en-la-ficcion-ontologias-llm/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/desinformacion-en-la-ficcion-ontologias-llm/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Una serie puede colarte un dato falso sin que pestañees. El problema no es solo la mentira: es que la recuerdas como si fuera verdad.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;La mayoría de las herramientas contra la desinformación apuntan a las &lt;em&gt;fake news&lt;/em&gt;: tuits, titulares, artículos. Pero hay un flanco mucho más silencioso: la &lt;strong&gt;ficción&lt;/strong&gt;. Películas, documentales, podcasts y series mezclan hechos y licencias creativas, y nuestro cerebro no siempre separa unos de otras. Los datos asustan un poco: la gente es un &lt;strong&gt;40% más propensa a creer&lt;/strong&gt; información falsa cuando se presenta de forma visual, y la desinformación, una vez asimilada, sigue influyéndonos en torno a un &lt;strong&gt;50%&lt;/strong&gt; de las veces &lt;em&gt;incluso después&lt;/em&gt; de corregirla.&lt;/p&gt;</description>
     </item>
   </channel>

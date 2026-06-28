@@ -2,116 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:1313/</link>
+    <link>https://juanmanuel.petrer.eu/</link>
     <description>Recent content on </description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://juanmanuel.petrer.eu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Detectar desinformación en la ficción: una ontología que se construye sola</title>
-      <link>http://localhost:1313/blog/desinformacion-en-la-ficcion-ontologias-llm/</link>
+      <link>https://juanmanuel.petrer.eu/blog/desinformacion-en-la-ficcion-ontologias-llm/</link>
       <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/desinformacion-en-la-ficcion-ontologias-llm/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/desinformacion-en-la-ficcion-ontologias-llm/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Una serie puede colarte un dato falso sin que pestañees. El problema no es solo la mentira: es que la recuerdas como si fuera verdad.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;La mayoría de las herramientas contra la desinformación apuntan a las &lt;em&gt;fake news&lt;/em&gt;: tuits, titulares, artículos. Pero hay un flanco mucho más silencioso: la &lt;strong&gt;ficción&lt;/strong&gt;. Películas, documentales, podcasts y series mezclan hechos y licencias creativas, y nuestro cerebro no siempre separa unos de otras. Los datos asustan un poco: la gente es un &lt;strong&gt;40% más propensa a creer&lt;/strong&gt; información falsa cuando se presenta de forma visual, y la desinformación, una vez asimilada, sigue influyéndonos en torno a un &lt;strong&gt;50%&lt;/strong&gt; de las veces &lt;em&gt;incluso después&lt;/em&gt; de corregirla.&lt;/p&gt;</description>
     </item>
     <item>
       <title>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</title>
-      <link>http://localhost:1313/blog/que-ve-una-red-neuronal/</link>
+      <link>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</link>
       <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/que-ve-una-red-neuronal/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/que-ve-una-red-neuronal/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;El modelo acierta&amp;rdquo; y &amp;ldquo;el modelo entiende&amp;rdquo; no son la misma frase. La diferencia se descubre visualizando.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Cuando un modelo de visión clasifica una imagen, ¿en qué se está fijando? La pregunta parece filosófica pero es brutalmente práctica: he visto modelos con métricas excelentes en validación que en realidad habían aprendido a mirar &lt;em&gt;otra cosa&lt;/em&gt; —un reflejo, una marca de la cámara, la esquina de la imagen donde casualmente aparecían los defectos del dataset—. Este post es un recorrido por las herramientas que uso para responder esa pregunta, de las más clásicas a las más actuales.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OCR en condiciones extremas: leer texto donde no hay tinta</title>
-      <link>http://localhost:1313/blog/ocr-industrial-glm-ocr/</link>
+      <link>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</link>
       <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/ocr-industrial-glm-ocr/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/ocr-industrial-glm-ocr/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;El OCR lleva décadas declarándose resuelto. Luego te piden leer caracteres negros, en relieve, sobre caucho negro, en una superficie curva que se mueve, y descubres dónde estaban escondidos los problemas.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Trabajo en visión por computador para inspección industrial en la industria del neumático, y hace poco estuve experimentando por mi cuenta con &lt;strong&gt;GLM-OCR&lt;/strong&gt;, un modelo multimodal de OCR pequeño y abierto. La combinación de ambas cosas —el benchmark mental de &amp;ldquo;qué exigiría mi entorno de trabajo&amp;rdquo; aplicado a un modelo que cabe en un portátil— me dejó varias reflexiones sobre el estado del OCR que creo que merecen un post. Sin datos ni detalles de proyectos concretos: lo que sigue es la naturaleza del problema, que es pública y fascinante, y lo que aprendí del modelo, que es abierto.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CNNs vs Vision Transformers: lecciones desde la inspección industrial</title>
-      <link>http://localhost:1313/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
+      <link>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/cnn-vs-vision-transformers-inspeccion-industrial/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;En el paper todo funciona. En la fábrica, el modelo se encuentra con polvo, reflejos, vibraciones y un defecto que aparece una vez cada 50.000 imágenes.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Llevo tiempo entrenando modelos de detección de defectos para inspección industrial, y una de las preguntas que más me hacen es: &lt;em&gt;¿CNN o Vision Transformer?&lt;/em&gt; La respuesta corta es &amp;ldquo;depende&amp;rdquo;. La respuesta larga es este post: qué dice la teoría, qué he visto en la práctica y qué criterios uso para decidir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Astrofísica</title>
-      <link>http://localhost:1313/material/astrofisica/</link>
+      <link>https://juanmanuel.petrer.eu/material/astrofisica/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/astrofisica/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/tiempos_estelares.pdf&#34;&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/paper_HR.pdf&#34;&gt;Diagrama HR (paper)&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/exp_eotvos.pdf&#34;&gt;Experimento de Eötvös&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/ejercicios_varios.pdf&#34;&gt;Ejercicios varios a mano&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/diagramaHR.pdf&#34;&gt;Diagrama HR (presentación)&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/astrofisica/rotacion_galactica.pdf&#34;&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;💡 Relacionado en el blog: &lt;a href=&#34;http://localhost:1313/blog/tiempos-caracteristicos-estelares/&#34;&gt;Tiempos característicos estelares&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/astrofisica/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/tiempos_estelares.pdf&#34;&gt;Tiempos característicos estelares&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/paper_HR.pdf&#34;&gt;Diagrama HR (paper)&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/exp_eotvos.pdf&#34;&gt;Experimento de Eötvös&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/ejercicios_varios.pdf&#34;&gt;Ejercicios varios a mano&lt;/a&gt; - Gravitación (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/diagramaHR.pdf&#34;&gt;Diagrama HR (presentación)&lt;/a&gt; - Astrofísica Estelar (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/astrofisica/rotacion_galactica.pdf&#34;&gt;Rotación Galáctica&lt;/a&gt; - Fundamentos de Astrofísica (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;💡 Relacionado en el blog: &lt;a href=&#34;https://juanmanuel.petrer.eu/blog/tiempos-caracteristicos-estelares/&#34;&gt;Tiempos característicos estelares&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ecuaciones Diferenciales</title>
-      <link>http://localhost:1313/material/edos/</link>
+      <link>https://juanmanuel.petrer.eu/material/edos/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/edos/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/edos/curvas_persecucion.pdf&#34;&gt;Curvas de Persecución&lt;/a&gt; - Métodos Analíticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/edos/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/edos/curvas_persecucion.pdf&#34;&gt;Curvas de Persecución&lt;/a&gt; - Métodos Analíticos para Ecuaciones Diferenciales Ordinarias, MAEDO (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Electromagnetismo</title>
-      <link>http://localhost:1313/material/electromagnetismo/</link>
+      <link>https://juanmanuel.petrer.eu/material/electromagnetismo/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/electromagnetismo/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf&#34;&gt;Formulario Electromagnetismo I&lt;/a&gt; - Electromagnetismo I (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/electromagnetismo/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/electromagnetismo/FORMULARIO_ELECTRO_I_20_21.pdf&#34;&gt;Formulario Electromagnetismo I&lt;/a&gt; - Electromagnetismo I (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Física Computacional</title>
-      <link>http://localhost:1313/material/fisica-computacional/</link>
+      <link>https://juanmanuel.petrer.eu/material/fisica-computacional/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/fisica-computacional/</guid>
-      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;modelización&#34;&gt;Modelización&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/material/fisica-computacional/misc_1.pdf&#34;&gt;Resolución de problemas físicos mediante diversos métodos numéricos&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/material/fisica-computacional/redes_cristalinas.pdf&#34;&gt;Redes cristalinas&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/material/fisica-computacional/orbita_terrestre.pdf&#34;&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/fisica-computacional/</guid>
+      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;modelización&#34;&gt;Modelización&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/misc_1.pdf&#34;&gt;Resolución de problemas físicos mediante diversos métodos numéricos&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/redes_cristalinas.pdf&#34;&gt;Redes cristalinas&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-computacional/orbita_terrestre.pdf&#34;&gt;Órbita de la Tierra&lt;/a&gt; - Física Computacional (Universidad de Alicante).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Física de la Atmósfera</title>
-      <link>http://localhost:1313/material/fisica-atmosfera/</link>
+      <link>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/fisica-atmosfera/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/fisica-atmosfera/precipitacion_cyl.xlsx&#34;&gt;Estudio precipitación Castilla y León&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/fisica-atmosfera/beamer_spc.pdf&#34;&gt;Presentación SPC&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;💡 Relacionado en el blog: &lt;a href=&#34;http://localhost:1313/blog/predicciones-por-conjuntos/&#34;&gt;Predicciones por conjuntos&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/blog/caos/&#34;&gt;Del clima al caos&lt;/a&gt; y &lt;a href=&#34;http://localhost:1313/blog/tfg/&#34;&gt;Bloqueos atmosféricos&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/fisica-atmosfera/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-atmosfera/precipitacion_cyl.xlsx&#34;&gt;Estudio precipitación Castilla y León&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;beamer&#34;&gt;Beamer&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/fisica-atmosfera/beamer_spc.pdf&#34;&gt;Presentación SPC&lt;/a&gt; - Meteorología (Universidad de Salamanca).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;💡 Relacionado en el blog: &lt;a href=&#34;https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/&#34;&gt;Predicciones por conjuntos&lt;/a&gt;, &lt;a href=&#34;https://juanmanuel.petrer.eu/blog/caos/&#34;&gt;Del clima al caos&lt;/a&gt; y &lt;a href=&#34;https://juanmanuel.petrer.eu/blog/tfg/&#34;&gt;Bloqueos atmosféricos&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mecánica Cuántica</title>
-      <link>http://localhost:1313/material/mecanica-cuantica/</link>
+      <link>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/mecanica-cuantica/</guid>
-      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/material/mecanica-cuantica/cuerpo_negro.pdf&#34;&gt;Radiación del Cuerpo Negro&lt;/a&gt; -  Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/material/mecanica-cuantica/moleculas_diatomicas.pdf&#34;&gt;Simulación y análisis de espectros (MW, IR y RAMAN) de moléculas diatómicas&lt;/a&gt; -  Estructura de la Materia (Universidad de Alicante).&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/mecanica-cuantica/</guid>
+      <description>&lt;div class=&#34;bg-red-100 dark:bg-red-900 border-l-4 border-red-500 dark:border-red-500 p-4 mb-4&#34;&gt;&#xA;&lt;div class=&#34;text-red-700 dark:text-red-300&#34;&gt;&#xA;&lt;strong&gt;⚠️ Advertencia&lt;/strong&gt;: Los notebooks y códigos presentados en esta sección tienen una finalidad puramente educativa. No han sido optimizados ni estructurados siguiendo las mejores prácticas de desarrollo, ya que su objetivo principal es ilustrar conceptos físicos y matemáticos.&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/cuerpo_negro.pdf&#34;&gt;Radiación del Cuerpo Negro&lt;/a&gt; -  Estudio de la radiación del cuerpo negro en una bombilla (Universidad de Alicante).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/mecanica-cuantica/moleculas_diatomicas.pdf&#34;&gt;Simulación y análisis de espectros (MW, IR y RAMAN) de moléculas diatómicas&lt;/a&gt; -  Estructura de la Materia (Universidad de Alicante).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Óptica</title>
-      <link>http://localhost:1313/material/optica/</link>
+      <link>https://juanmanuel.petrer.eu/material/optica/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/material/optica/</guid>
-      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/material/optica/doble_rendija.pdf&#34;&gt;Doble Rendija&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
+      <guid>https://juanmanuel.petrer.eu/material/optica/</guid>
+      <description>&lt;h2 id=&#34;contenido&#34;&gt;Contenido&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://juanmanuel.petrer.eu/material/optica/doble_rendija.pdf&#34;&gt;Doble Rendija&lt;/a&gt; - Técnicas Experimentales III (Universidad de Alicante).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Si encuentras algún error o tienes sugerencias, no dudes en contactar.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tiempos característicos estelares: el reloj interior de las estrellas</title>
-      <link>http://localhost:1313/blog/tiempos-caracteristicos-estelares/</link>
+      <link>https://juanmanuel.petrer.eu/blog/tiempos-caracteristicos-estelares/</link>
       <pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tiempos-caracteristicos-estelares/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/tiempos-caracteristicos-estelares/</guid>
       <description>&lt;p&gt;¿Alguna vez te has preguntado cómo medir el tiempo de vida de una estrella? ¿O cuánto tarda en adaptarse a los cambios en su interior? Las estrellas, esos inmensos reactores naturales que pueblan nuestro universo, tienen sus propios &amp;ldquo;relojes internos&amp;rdquo; que marcan diferentes aspectos de su evolución. En este artículo, vamos a explorar tres tiempos característicos fundamentales que nos ayudan a entender la vida y el comportamiento de las estrellas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Predicciones por conjuntos en meteorología</title>
-      <link>http://localhost:1313/blog/predicciones-por-conjuntos/</link>
+      <link>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/predicciones-por-conjuntos/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/predicciones-por-conjuntos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;La predictibilidad es a la predicción como el romance es al sexo&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;¿Has notado que a veces el pronóstico del tiempo indica lluvia y termina siendo un día soleado? ¿O que la temperatura prevista difiere significativamente de la real? Estos &amp;ldquo;fallos&amp;rdquo; en las predicciones meteorológicas no son simples errores, sino manifestaciones de la complejidad inherente a la predicción del tiempo. En este artículo, exploraremos en profundidad cómo la meteorología moderna ha evolucionado desde los modelos deterministas hacia las predicciones por conjuntos, una transformación que nos permite no solo pronosticar el tiempo, sino también entender y cuantificar la incertidumbre en nuestras predicciones.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Del clima al caos: una analogía entre meteorología y dinámica de poblaciones</title>
-      <link>http://localhost:1313/blog/caos/</link>
+      <link>https://juanmanuel.petrer.eu/blog/caos/</link>
       <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/caos/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/caos/</guid>
       <description>&lt;p&gt;En el estudio del clima, Edward Lorenz descubrió que pequeñas variaciones en las condiciones iniciales podían generar resultados drásticamente diferentes, incluso dentro de sistemas deterministas.&lt;br&gt;&#xA;Ese hallazgo, conocido como &lt;strong&gt;efecto mariposa&lt;/strong&gt;, dio origen al concepto moderno de &lt;strong&gt;caos determinista&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Curiosamente, esa misma lógica puede observarse en un sistema mucho más simple: la &lt;strong&gt;dinámica poblacional&lt;/strong&gt; descrita por la &lt;strong&gt;ecuación logística&lt;/strong&gt;:&lt;/p&gt;&#xA;$$x_{n+1} = r\,x_n\,(1 - x_n)$$&lt;p&gt;donde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;$x_n$ representa la población normalizada en el tiempo $n$,&lt;/li&gt;&#xA;&lt;li&gt;$r$ es el parámetro de crecimiento,&lt;/li&gt;&#xA;&lt;li&gt;y el término $(1 - x_n)$ introduce un límite ambiental.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Para analizar la evolución de este sistema y visualizar sus distintos comportamientos —estables, periódicos o caóticos— basta una función sencilla que itere la ecuación un número fijo de pasos y devuelva la secuencia poblacional. La misma función sirve para los tres regímenes: lo único que cambia es el valor de $r$.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bloqueos atmosféricos desde un punto de vista lagrangiano</title>
-      <link>http://localhost:1313/blog/tfg/</link>
+      <link>https://juanmanuel.petrer.eu/blog/tfg/</link>
       <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tfg/</guid>
+      <guid>https://juanmanuel.petrer.eu/blog/tfg/</guid>
       <description>&lt;p&gt;Durante los últimos años, los fenómenos meteorológicos extremos —olas de calor, olas de frío, sequías o inundaciones— se han hecho cada vez más frecuentes e intensos. Detrás de muchos de ellos se encuentra un patrón atmosférico fascinante y complejo: el bloqueo atmosférico. Estos bloqueos son grandes estructuras de alta presión que interrumpen el flujo normal del aire, desviando las corrientes y haciendo que determinadas masas de aire queden estancadas sobre una región durante días o semanas. Su efecto puede ser devastador, ya que pueden generar olas de calor persistentes o impedir la llegada de frentes lluviosos durante largos periodos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contexto para agentes</title>
+      <link>https://juanmanuel.petrer.eu/agent-context/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/agent-context/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Esta página existe para dar contexto rápido a un agente de IA sin que tenga que leer todo el repositorio. La guía completa para modificaciones está en &lt;a href=&#34;https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md&#34;&gt;&lt;code&gt;CLAUDE.md&lt;/code&gt;&lt;/a&gt; en la raíz del repo.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; (generador estático) + &lt;strong&gt;Tailwind CSS 4&lt;/strong&gt; + JS vanilla. Desplegado en &lt;strong&gt;GitHub Pages&lt;/strong&gt; desde la carpeta &lt;code&gt;docs/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install          &lt;span class=&#34;c1&#34;&gt;# dependencias&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server          &lt;span class=&#34;c1&#34;&gt;# dev en localhost:1313&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm run build        &lt;span class=&#34;c1&#34;&gt;# build producción (Hugo + Pagefind)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;dónde-está-cada-cosa&#34;&gt;Dónde está cada cosa&lt;/h2&gt;&#xA;&lt;h3 id=&#34;datos-del-perfil--configyaml&#34;&gt;Datos del perfil → &lt;code&gt;config.yaml&lt;/code&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Toda la información del sitio vive en &lt;code&gt;config.yaml&lt;/code&gt; bajo &lt;code&gt;params&lt;/code&gt;. No hay base de datos ni CMS — es puro YAML.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
