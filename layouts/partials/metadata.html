@@ -6,7 +6,7 @@
   {{ $name | humanize }}: {{ range index $params $name }}
   <a
     class="metadata-tags hover:no-underline"
-    href="{{ $name | relURL }}/{{ . | urlize }}"
+    href="{{ $name | relLangURL }}/{{ . | urlize }}"
     title="{{ $name }}"
   >
     #{{- . -}}
