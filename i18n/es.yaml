@@ -100,7 +100,7 @@ status_active:
 status_development:
   other: "En desarrollo"
 status_completed:
-  other: "TFG completado"
+  other: "Completado"
 search_title:
   other: "Buscar"
 aria_breadcrumb:
@@ -121,3 +121,25 @@ cta_projects:
   other: "Ver proyectos"
 cta_contact:
   other: "Contactar"
+action_case_study:
+  other: "Caso de estudio"
+action_repo:
+  other: "Código"
+action_paper:
+  other: "Paper"
+action_post:
+  other: "Post"
+project_case_study:
+  other: "Caso de estudio"
+project_role:
+  other: "Rol"
+project_period:
+  other: "Periodo"
+project_org:
+  other: "Organización"
+project_stack:
+  other: "Stack"
+project_links:
+  other: "Enlaces"
+project_metrics:
+  other: "Resultados"

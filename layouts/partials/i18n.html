@@ -12,6 +12,13 @@ window.__i18nDyn = {
     {{ printf "hero_metric_%d_value" (add $i 1) }}: {{ $m.value }},
     {{ printf "hero_metric_%d_label" (add $i 1) }}: {{ $m.label }},
     {{- end }}
+    {{- range $p := .Site.Params.project.list }}
+    {{ printf "proj_title_%s" $p.id }}: {{ $p.title }},
+    {{ printf "proj_desc_%s" $p.id }}: {{ $p.description }},
+    {{- range $i, $m := $p.metrics }}
+    {{ printf "proj_metric_%s_%d" $p.id (add $i 1) }}: {{ $m }},
+    {{- end }}
+    {{- end }}
   },
   {{- end }}
 };
@@ -74,6 +81,17 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'View projects',
       cta_contact: 'Contact',
+      action_case_study: 'Case study',
+      action_repo: 'Code',
+      action_paper: 'Paper',
+      action_post: 'Post',
+      project_case_study: 'Case study',
+      project_role: 'Role',
+      project_period: 'Period',
+      project_org: 'Organization',
+      project_stack: 'Stack',
+      project_links: 'Links',
+      project_metrics: 'Results',
 
       // Footer
       footer_sections: 'Sections',
@@ -133,18 +151,6 @@ window.__i18nDyn = {
       exp_details_3: '<p>I developed <strong>Lagrangian methods</strong> to automatically identify <strong>atmospheric blocking</strong> situations — the basis of my thesis and a publication in progress.</p><p>I tell the full story in <a href="/blog/tfg/">Atmospheric blocking, a Lagrangian view</a>.</p>',
 
       // Project data
-      proj_title_1: 'Tire Defect Detection',
-      proj_desc_1: 'Computer vision pipeline for automatic defect detection in the tire industry using deep learning.',
-      proj_title_2: 'AI Misinformation Detection',
-      proj_desc_2: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25.",
-      proj_title_3: 'Lagrangian Atmospheric Blocking',
-      proj_desc_3: 'Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories.',
-      proj_desc_4: 'CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) maintains the conversation.',
-      proj_title_5: 'Local Agent with Ollama',
-      proj_desc_5: 'Conversational console agent running 100% locally using Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB for querying your own documents.',
-      proj_desc_6: 'Educational frontend web development repository. Covers HTML, CSS, and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development.',
-      proj_title_7: 'Personal Portfolio',
-      proj_desc_7: 'This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD.',
 
       // Publication types
       pub_type_dev: 'In development'
@@ -203,6 +209,17 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'Ver proyectos',
       cta_contact: 'Contactar',
+      action_case_study: 'Caso de estudio',
+      action_repo: 'Código',
+      action_paper: 'Paper',
+      action_post: 'Post',
+      project_case_study: 'Caso de estudio',
+      project_role: 'Rol',
+      project_period: 'Periodo',
+      project_org: 'Organización',
+      project_stack: 'Stack',
+      project_links: 'Enlaces',
+      project_metrics: 'Resultados',
 
       // Footer
       footer_sections: 'Secciones',
@@ -240,7 +257,7 @@ window.__i18nDyn = {
       status_published: 'Publicado',
       status_active: 'Activo',
       status_development: 'En desarrollo',
-      status_completed: 'TFG completado',
+      status_completed: 'Completado',
 
       // Search
       search_title: 'Buscar',
@@ -319,9 +336,23 @@ window.__i18nDyn = {
   // Language the page was statically rendered in (Hugo multilingual)
   var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
 
+  // Pages that have a Hugo translation (case studies) navigate to it; the rest swap strings in place.
+  function altUrl(lang) {
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    return link ? link.getAttribute('href') : null;
+  }
+  var isHome = document.body && document.body.getAttribute('data-kind') === 'home';
+
   window.toggleLang = function() {
     var current = window.localStorage.getItem('lang') || pageLang;
-    applyLang(current === 'es' ? 'en' : 'es');
+    var next = current === 'es' ? 'en' : 'es';
+    var alt = !isHome && altUrl(next);
+    if (alt) {
+      window.localStorage.setItem('lang', next);
+      window.location.href = alt;
+      return;
+    }
+    applyLang(next);
   };
 
   window.getI18n = function(key) {
@@ -332,7 +363,10 @@ window.__i18nDyn = {
   // Apply saved language on load (only if it differs from the page's own language)
   var saved = window.localStorage.getItem('lang');
   if (saved && saved !== pageLang) {
-    if (document.readyState === 'loading') {
+    var savedAlt = !isHome && altUrl(saved);
+    if (savedAlt) {
+      window.location.replace(savedAlt);
+    } else if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
     } else {
       applyLang(saved);

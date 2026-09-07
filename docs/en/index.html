@@ -90,7 +90,7 @@
   
   
   
-  <link href="/main.min.c4d23bf48c3505b8e8d0a6bc5df720160a403f2ffbd707b92d62aa284016498c.css" rel="stylesheet" />
+  <link href="/main.min.f7825e7b3a18f8aa193f3059c29a65bfc172203beab643668ef78b2289b699ef.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -194,7 +194,7 @@
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="home">
     
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Ir al contenido</a>
     
@@ -206,7 +206,7 @@
   
   <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal">
     <a class="nav-menu-item !p-1 !px-2" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Home</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/#proyectos"><span data-i18n="nav_projects">Projects</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="/proyectos"><span data-i18n="nav_projects">Projects</span></a>
     <a class="nav-menu-item !p-1 !px-2" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
     <a href="/search" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
       <i class="fas fa-search" aria-hidden="true"></i>
@@ -232,7 +232,7 @@
   <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-menu-item" href="/#proyectos"><span data-i18n="nav_projects">Projects</span></a>
+      <a class="nav-menu-item" href="/proyectos"><span data-i18n="nav_projects">Projects</span></a>
       <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
     </div>
     <div class="flex items-center justify-end gap-3">
@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_publications">Publications</p>
   </div>
   <div class="flex flex-col items-center">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">4</p>
+    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">5</p>
     <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_oss">Open source</p>
   </div>
 </div>
@@ -602,345 +602,366 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_projects">Projects</span>
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
+      
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400">
-        <i class="fas fa-eye text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400
-        ">
-        <span data-i18n="status_production">In production</span>
-      </span>
-      
-    </div>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <span data-i18n="proj_title_1">Tire Defect Detection</span>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_1">Computer vision pipeline for automatic defect detection in the tire industry using deep learning.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">OpenCV</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Docker</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">AWS</span>
-      
+
+
+
+<article class="project-card group project-card-featured">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-cyan">
+      <i class="fas fa-network-wired text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-active" data-i18n="status_active">Active</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
+    
+    <a href="/en/proyectos/vcalib/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_vcalib">vcalib: calibration filters for RF-DETR under illumination shift</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vcalib">A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.</p>
+
+  
+  <ul class="project-metrics">
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_1">35.9% activation recovery on real held-out image pairs</span></li>
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_2">Closes the AP gap on level_2 (SAM3 pseudo-GT)</span></li>
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_3">~3.5 min to fit on a laptop CPU</span></li>
+    
+  </ul>
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SAM3</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">uv</span>
+  </div>
+  
+
+  
+  <div class="project-links">
+    
+    <a href="/en/proyectos/vcalib/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Case study</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
+    
+    
+    <a href="https://github.com/juanmanuelruizm/vcalib" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
+    
+    
     
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400">
-        <i class="fas fa-shield-alt text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400
-        ">
-        <span data-i18n="status_published">Published</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="/DCAI.pdf" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" ><span data-i18n="proj_title_2">AI Misinformation Detection</span></a>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_2">Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI&#39;25.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">NLP</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Transformers</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Ontologies</span>
-      
+
+
+
+
+<article class="project-card group project-card-featured">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-violet">
+      <i class="fas fa-shield-alt text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-published" data-i18n="status_published">Published</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
+    
+    <a href="/en/proyectos/desinformacion-ontologias-llm/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_desinformacion-ontologias">Misinformation detection in fiction with LLM-generated ontologies</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_desinformacion-ontologias">An LLM &#43; RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI&#39;25.</p>
+
+  
+  <ul class="project-metrics">
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_1">Precision 0.98 · F1 0.86 on 320 evaluation sentences</span></li>
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_2">246-class ontology generated without supervision</span></li>
+    
+  </ul>
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LLMs</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SBERT</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GPT-4o</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
+  </div>
+  
+
+  
+  <div class="project-links">
+    
+    <a href="/en/proyectos/desinformacion-ontologias-llm/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Case study</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
     
     
-    <div class="mt-3 text-right">
-      <a href="/DCAI.pdf" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" >
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    
+    <a href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">Paper</span></a>
+    
+    
+    <a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><i class="fas fa-newspaper" aria-hidden="true"></i> Post (ES)</a>
+    
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
-        <i class="fas fa-cloud-sun text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400
-        ">
-        <span data-i18n="status_completed">Completed</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="/tfg.pdf" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" ><span data-i18n="proj_title_3">Lagrangian Atmospheric Blocking</span></a>
-    </h4>
+  
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_3">Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">HYSPLIT</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ERA5</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">MATLAB</span>
-      
+
+
+
+
+<article class="project-card group">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-emerald">
+      <i class="fas fa-eye text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-production" data-i18n="status_production">In production</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+    
+    <span data-i18n="proj_title_inspeccion-neumaticos">Industrial tire inspection with vision models and multimodal OCR</span>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_inspeccion-neumaticos">Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.</p>
+
+  
+  <ul class="project-metrics">
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_1">mAP@50:95 of 0.83 on multi-class segmentation</span></li>
+    
+    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_2">98.56% exact match on sidewall OCR</span></li>
+    
+  </ul>
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GLM-OCR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LoRA</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">vLLM</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Docker</span>
+  </div>
+  
+
+  
+  <div class="project-links">
     
     
-    <div class="mt-3 text-right">
-      <a href="/tfg.pdf" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" >
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    
+    
+    <a href="/blog/ocr-industrial-glm-ocr/"><i class="fas fa-newspaper" aria-hidden="true"></i> OCR in extreme conditions (ES)</a>
+    
+    <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/"><i class="fas fa-newspaper" aria-hidden="true"></i> CNNs vs Vision Transformers (ES)</a>
+    
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400">
-        <i class="fas fa-microphone text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400
-        ">
-        <span data-i18n="status_active">Active</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/talk-to-me" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_4">Talk to Me</span></a>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_4">CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) keeps the conversation going.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Whisper</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Ollama</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">CLI</span>
-      
+
+
+
+
+<article class="project-card group">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-amber">
+      <i class="fas fa-font text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-development" data-i18n="status_development">In development</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+    
+    <a href="https://github.com/juanmanuelruizm/ocr-tickets" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_glm-ocr-lora">GLM-OCR &#43; LoRA for key information extraction on receipts and invoices</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_glm-ocr-lora">LoRA adaptation of the multimodal GLM-OCR model (LLaMA-Factory) that returns structured JSON from the image of a receipt or an invoice. Fully local inference.</p>
+
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GLM-OCR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LoRA</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LLaMA-Factory</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
+  </div>
+  
+
+  
+  <div class="project-links">
     
     
-    <div class="mt-3 text-right">
-      <a href="https://github.com/juanmanuelruizm/talk-to-me" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" target="_blank" rel="noopener noreferrer">
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    <a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
+    
+    
+    
+    
+    <a href="https://github.com/juanmanuelruizm/invoice-ocr" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> invoice-ocr</a>
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400">
-        <i class="fas fa-robot text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400
-        ">
-        <span data-i18n="status_active">Active</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/chatbot" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_5">Local Agent with Ollama</span></a>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_5">Conversational console agent running 100% locally on Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB to query your own documents.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Ollama</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ChromaDB</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span>
-      
+
+
+
+
+<article class="project-card group">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-indigo">
+      <i class="fas fa-code text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-development" data-i18n="status_development">In development</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+    
+    <a href="https://github.com/juanmanuelruizm/vision-pytorch" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_vision-pytorch">vision-pytorch: DINOv2/v3 pipelines for classification and features</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vision-pytorch">Training, evaluation and embedding extraction with Meta&#39;s ViT backbones: full fine-tuning, linear probe or raw feature extractor, with per-class metrics and checkpoints.</p>
+
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DINOv2</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DINOv3</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ViT</span>
+  </div>
+  
+
+  
+  <div class="project-links">
     
     
-    <div class="mt-3 text-right">
-      <a href="https://github.com/juanmanuelruizm/chatbot" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" target="_blank" rel="noopener noreferrer">
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    <a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
+    
+    
+    
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
-        <i class="fas fa-laptop-code text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400
-        ">
-        <span data-i18n="status_development">In development</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/juanmanuelruizm/frontend-an-introductory-course" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_6">Frontend: An Introductory Course</span></a>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_6">Educational frontend web development repository. Covers HTML, CSS and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">HTML</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">CSS</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Flexbox</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Grid</span>
-      
+
+
+
+
+<article class="project-card group">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-amber">
+      <i class="fas fa-cloud-sun text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-completed" data-i18n="status_completed">Completed</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+    
+    <a href="https://github.com/juanmanuelruizm/TFG" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_tfg-bloqueos">Lagrangian identification of atmospheric blocking (bachelor&#39;s thesis)</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_tfg-bloqueos">Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves.</p>
+
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">HYSPLIT</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ERA5</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DBSCAN</span>
+  </div>
+  
+
+  
+  <div class="project-links">
     
     
-    <div class="mt-3 text-right">
-      <a href="https://github.com/juanmanuelruizm/frontend-an-introductory-course" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" target="_blank" rel="noopener noreferrer">
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    <a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
+    
+    
+    <a href="/tfg.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">Paper</span></a>
+    
+    
+    <a href="/blog/tfg/"><i class="fas fa-newspaper" aria-hidden="true"></i> Post (ES)</a>
+    
     
   </div>
   
-  <div class="project-card group">
-    
-    <div class="flex items-start justify-between mb-3">
-      <div class="project-card-icon bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
-        <i class="fas fa-code text-lg"></i>
-      </div>
-      
-      
-      <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full
-        bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400
-        ">
-        <span data-i18n="status_active">Active</span>
-      </span>
-      
-    </div>
+</article>
 
-    
-    <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-      <a href="https://github.com/JuanManuelRM7/juanma_web" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_7">Personal Portfolio</span></a>
-    </h4>
 
-    
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_7">This website: a static portfolio built with Hugo and Tailwind CSS, deployed on GitHub Pages with CI/CD.</p>
 
-    
-    
-    <div class="flex flex-wrap gap-1.5 mt-auto">
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Hugo</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Tailwind CSS</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">JavaScript</span>
-      
-      <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GitHub Pages</span>
-      
+
+
+
+
+<article class="project-card group">
+  <div class="flex items-start justify-between mb-3 gap-2">
+    <div class="project-card-icon project-color-rose">
+      <i class="fas fa-robot text-lg" aria-hidden="true"></i>
     </div>
     
+    <span class="project-status project-status-active" data-i18n="status_active">Active</span>
+    
+  </div>
 
+  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+    
+    <a href="https://github.com/juanmanuelruizm/chatbot" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_agente-ollama">Local agent with Ollama: tool calling and RAG</span></a>
+    
+  </h4>
+
+  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_agente-ollama">A fully local console agent with native tools (files, web search, Python execution) and RAG over your own documents with ChromaDB.</p>
+
+  
+
+  
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Ollama</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ChromaDB</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span>
+  </div>
+  
+
+  
+  <div class="project-links">
     
     
-    <div class="mt-3 text-right">
-      <a href="https://github.com/JuanManuelRM7/juanma_web" class="text-xs text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300 font-medium" target="_blank" rel="noopener noreferrer">
-        <span data-i18n="action_view_more">View more</span> <i class="fas fa-arrow-right text-[10px] ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
-      </a>
-    </div>
+    <a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
+    
+    
+    
     
   </div>
   
+</article>
+
 </div>
 
 
@@ -2100,6 +2121,27 @@ window.__i18nDyn = {
     "hero_metric_3_label": "paper sobre detección de desinformación con LLMs y RAG",
     "hero_metric_4_value": "35,9 %",
     "hero_metric_4_label": "recuperación de activaciones con un filtro de ~2 KB (vcalib)",
+    "proj_title_vcalib": "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación",
+    "proj_desc_vcalib": "Un filtro diferenciable de ~2 KB que corrige el cambio de iluminación antes de que la imagen llegue a un detector congelado. Sin reentrenar, sin etiquetas, minutos en CPU.",
+    "proj_metric_vcalib_1": "35,9 % de recuperación de activaciones en pares reales held-out",
+    "proj_metric_vcalib_2": "Cierra el gap de AP en level_2 (pseudo-GT de SAM3)",
+    "proj_metric_vcalib_3": "~3,5 min de ajuste en la CPU de un portátil",
+    "proj_title_desinformacion-ontologias": "Detección de desinformación en ficción con ontologías generadas por LLMs",
+    "proj_desc_desinformacion-ontologias": "Arquitectura LLM + RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI'25.",
+    "proj_metric_desinformacion-ontologias_1": "Precisión 0,98 · F1 0,86 sobre 320 frases de evaluación",
+    "proj_metric_desinformacion-ontologias_2": "Ontología de 246 clases generada sin supervisión",
+    "proj_title_inspeccion-neumaticos": "Inspección industrial de neumáticos con visión y OCR multimodal",
+    "proj_desc_inspeccion-neumaticos": "Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.",
+    "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 de 0,83 en segmentación multiclase",
+    "proj_metric_inspeccion-neumaticos_2": "98,56 % de exact match en OCR sobre flancos",
+    "proj_title_glm-ocr-lora": "GLM-OCR + LoRA para extraer campos de tickets y facturas",
+    "proj_desc_glm-ocr-lora": "Adaptación del modelo multimodal GLM-OCR con LoRA (LLaMA-Factory) para devolver JSON estructurado a partir de la imagen de un ticket o una factura. Inferencia 100 % local.",
+    "proj_title_vision-pytorch": "vision-pytorch: pipelines DINOv2/v3 para clasificación y features",
+    "proj_desc_vision-pytorch": "Entrenamiento, evaluación y extracción de embeddings con backbones ViT de Meta: fine-tuning completo, linear probe o extractor de características, con métricas por clase y checkpoints.",
+    "proj_title_tfg-bloqueos": "Identificación lagrangiana de bloqueos atmosféricos (TFG)",
+    "proj_desc_tfg-bloqueos": "Miles de retrotrayectorias HYSPLIT sobre ERA5 y clustering DBSCAN para localizar bloqueos por el estancamiento real del aire, sin umbrales eulerianos. Validado en las olas de calor de 2003 y 2019.",
+    "proj_title_agente-ollama": "Agente local con Ollama: tool calling y RAG",
+    "proj_desc_agente-ollama": "Agente de consola 100 % local con herramientas nativas (ficheros, búsqueda web, ejecución de Python) y RAG sobre documentos propios con ChromaDB.",
   },
   "en": {
     profile_position: "ML Engineer · Computer Vision \u0026 LLMs",
@@ -2114,6 +2156,27 @@ window.__i18nDyn = {
     "hero_metric_3_label": "paper on misinformation detection with LLMs and RAG",
     "hero_metric_4_value": "35.9%",
     "hero_metric_4_label": "activation recovery with a ~2 KB calibration filter (vcalib)",
+    "proj_title_vcalib": "vcalib: calibration filters for RF-DETR under illumination shift",
+    "proj_desc_vcalib": "A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.",
+    "proj_metric_vcalib_1": "35.9% activation recovery on real held-out image pairs",
+    "proj_metric_vcalib_2": "Closes the AP gap on level_2 (SAM3 pseudo-GT)",
+    "proj_metric_vcalib_3": "~3.5 min to fit on a laptop CPU",
+    "proj_title_desinformacion-ontologias": "Misinformation detection in fiction with LLM-generated ontologies",
+    "proj_desc_desinformacion-ontologias": "An LLM + RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI'25.",
+    "proj_metric_desinformacion-ontologias_1": "Precision 0.98 · F1 0.86 on 320 evaluation sentences",
+    "proj_metric_desinformacion-ontologias_2": "246-class ontology generated without supervision",
+    "proj_title_inspeccion-neumaticos": "Industrial tire inspection with vision models and multimodal OCR",
+    "proj_desc_inspeccion-neumaticos": "Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.",
+    "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 of 0.83 on multi-class segmentation",
+    "proj_metric_inspeccion-neumaticos_2": "98.56% exact match on sidewall OCR",
+    "proj_title_glm-ocr-lora": "GLM-OCR + LoRA for key information extraction on receipts and invoices",
+    "proj_desc_glm-ocr-lora": "LoRA adaptation of the multimodal GLM-OCR model (LLaMA-Factory) that returns structured JSON from the image of a receipt or an invoice. Fully local inference.",
+    "proj_title_vision-pytorch": "vision-pytorch: DINOv2/v3 pipelines for classification and features",
+    "proj_desc_vision-pytorch": "Training, evaluation and embedding extraction with Meta's ViT backbones: full fine-tuning, linear probe or raw feature extractor, with per-class metrics and checkpoints.",
+    "proj_title_tfg-bloqueos": "Lagrangian identification of atmospheric blocking (bachelor's thesis)",
+    "proj_desc_tfg-bloqueos": "Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves.",
+    "proj_title_agente-ollama": "Local agent with Ollama: tool calling and RAG",
+    "proj_desc_agente-ollama": "A fully local console agent with native tools (files, web search, Python execution) and RAG over your own documents with ChromaDB.",
   },
 };
 </script>
@@ -2175,6 +2238,17 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'View projects',
       cta_contact: 'Contact',
+      action_case_study: 'Case study',
+      action_repo: 'Code',
+      action_paper: 'Paper',
+      action_post: 'Post',
+      project_case_study: 'Case study',
+      project_role: 'Role',
+      project_period: 'Period',
+      project_org: 'Organization',
+      project_stack: 'Stack',
+      project_links: 'Links',
+      project_metrics: 'Results',
 
       
       footer_sections: 'Sections',
@@ -2234,18 +2308,6 @@ window.__i18nDyn = {
       exp_details_3: '<p>I developed <strong>Lagrangian methods</strong> to automatically identify <strong>atmospheric blocking</strong> situations — the basis of my thesis and a publication in progress.</p><p>I tell the full story in <a href="/blog/tfg/">Atmospheric blocking, a Lagrangian view</a>.</p>',
 
       
-      proj_title_1: 'Tire Defect Detection',
-      proj_desc_1: 'Computer vision pipeline for automatic defect detection in the tire industry using deep learning.',
-      proj_title_2: 'AI Misinformation Detection',
-      proj_desc_2: "Ontology-based AI architecture for detecting misinformation in fiction works. Published at DCAI'25.",
-      proj_title_3: 'Lagrangian Atmospheric Blocking',
-      proj_desc_3: 'Lagrangian method for automatic identification of atmospheric blocking situations using HYSPLIT trajectories.',
-      proj_desc_4: 'CLI for practicing conversational English with an AI tutor. Speak through your microphone, Whisper transcribes your voice in real time, and a local LLM (Ollama) maintains the conversation.',
-      proj_title_5: 'Local Agent with Ollama',
-      proj_desc_5: 'Conversational console agent running 100% locally using Ollama. Native tool calling: file read/write, web search with DuckDuckGo, Python code execution, and RAG with ChromaDB for querying your own documents.',
-      proj_desc_6: 'Educational frontend web development repository. Covers HTML, CSS, and modern layouts (Flexbox/Grid) with detailed theory and commented examples. Under progressive development.',
-      proj_title_7: 'Personal Portfolio',
-      proj_desc_7: 'This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD.',
 
       
       pub_type_dev: 'In development'
@@ -2304,6 +2366,17 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'Ver proyectos',
       cta_contact: 'Contactar',
+      action_case_study: 'Caso de estudio',
+      action_repo: 'Código',
+      action_paper: 'Paper',
+      action_post: 'Post',
+      project_case_study: 'Caso de estudio',
+      project_role: 'Rol',
+      project_period: 'Periodo',
+      project_org: 'Organización',
+      project_stack: 'Stack',
+      project_links: 'Enlaces',
+      project_metrics: 'Resultados',
 
       
       footer_sections: 'Secciones',
@@ -2341,7 +2414,7 @@ window.__i18nDyn = {
       status_published: 'Publicado',
       status_active: 'Activo',
       status_development: 'En desarrollo',
-      status_completed: 'TFG completado',
+      status_completed: 'Completado',
 
       
       search_title: 'Buscar',
@@ -2420,9 +2493,23 @@ window.__i18nDyn = {
   
   var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
 
+  
+  function altUrl(lang) {
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    return link ? link.getAttribute('href') : null;
+  }
+  var isHome = document.body && document.body.getAttribute('data-kind') === 'home';
+
   window.toggleLang = function() {
     var current = window.localStorage.getItem('lang') || pageLang;
-    applyLang(current === 'es' ? 'en' : 'es');
+    var next = current === 'es' ? 'en' : 'es';
+    var alt = !isHome && altUrl(next);
+    if (alt) {
+      window.localStorage.setItem('lang', next);
+      window.location.href = alt;
+      return;
+    }
+    applyLang(next);
   };
 
   window.getI18n = function(key) {
@@ -2433,7 +2520,10 @@ window.__i18nDyn = {
   
   var saved = window.localStorage.getItem('lang');
   if (saved && saved !== pageLang) {
-    if (document.readyState === 'loading') {
+    var savedAlt = !isHome && altUrl(saved);
+    if (savedAlt) {
+      window.location.replace(savedAlt);
+    } else if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
     } else {
       applyLang(saved);
@@ -2477,7 +2567,14 @@ window.__i18nDyn = {
 
       
 
-      <div class="cmdk-group" data-group>Enlaces</div>
+      
+      <div class="cmdk-group" data-group>Casos de estudio</div>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/en/proyectos/vcalib/" data-keywords="proyecto project caso estudio case study computer vision RF-DETR domain shift PyTorch"><i class="fas fa-project-diagram"></i><span>vcalib: differentiable calibration filters for RF-DETR under illumination shift</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/en/proyectos/desinformacion-ontologias-llm/" data-keywords="proyecto project caso estudio case study LLMs RAG NLP ontologies misinformation"><i class="fas fa-project-diagram"></i><span>Misinformation detection in fiction works with LLM-generated ontologies</span></button>
+      
+            <div class="cmdk-group" data-group>Enlaces</div>
       
       <button class="cmdk-item" data-action="open" data-target="https://www.linkedin.com/in/juanmanuelruizmunoz/" data-keywords="linkedin social"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
       
@@ -2895,13 +2992,15 @@ window.__i18nDyn = {
     },
     projects: function () {
       return [
-        '• Detección de defectos en neumáticos  <span class="term-output-cmd">(PyTorch · producción)</span>',
-        '• Detección de desinformación con IA   <span class="term-output-cmd">(DCAI\'25)</span>',
-        '• Bloqueos atmosféricos lagrangianos   <span class="term-output-cmd">(TFG)</span>',
-        '• talk-to-me — tutor de inglés por voz <span class="term-output-cmd">(Whisper + Ollama)</span>',
-        '• Agente local con tool calling        <span class="term-output-cmd">(Ollama + RAG)</span>',
+        '• vcalib: calibration filters for RF-DETR under illumination shift  <span class="term-output-cmd">(PyTorch · RF-DETR · SAM3)</span>',
+        '• Misinformation detection in fiction with LLM-generated ontologies  <span class="term-output-cmd">(LLMs · RAG · SBERT)</span>',
+        '• Industrial tire inspection with vision models and multimodal OCR  <span class="term-output-cmd">(PyTorch · RF-DETR · GLM-OCR)</span>',
+        '• GLM-OCR \u002b LoRA for key information extraction on receipts and invoices  <span class="term-output-cmd">(GLM-OCR · LoRA · LLaMA-Factory)</span>',
+        '• vision-pytorch: DINOv2\/v3 pipelines for classification and features  <span class="term-output-cmd">(PyTorch · DINOv2 · DINOv3)</span>',
+        '• Lagrangian identification of atmospheric blocking (bachelor\u0027s thesis)  <span class="term-output-cmd">(Python · HYSPLIT · ERA5)</span>',
+        '• Local agent with Ollama: tool calling and RAG  <span class="term-output-cmd">(Python · Ollama · ChromaDB)</span>',
         '',
-        'Más en <a href="' + base + '#proyectos">la sección de proyectos</a>.'
+        'Más en <a href="' + base + 'proyectos/">la página de proyectos</a>.'
       ].join('\n');
     },
     skills: function () {

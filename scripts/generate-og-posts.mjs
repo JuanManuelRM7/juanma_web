@@ -1,4 +1,4 @@
-// Generates static/og/<slug>.png (1200x630) for every blog post, using the
+// Generates static/og/<slug>.png (1200x630) for every blog post and case study, using the
 // same aesthetic as the main og-image. Re-run when adding posts.
 // Run: npm i --no-save sharp && node scripts/generate-og-posts.mjs
 import sharp from 'sharp';
@@ -6,7 +6,7 @@ import { readdirSync, readFileSync, mkdirSync } from 'fs';
 import { join, basename } from 'path';
 
 const W = 1200, H = 630;
-const BLOG_DIR = 'content/blog';
+const CONTENT_DIRS = ['content/blog', 'content/proyectos'];
 const OUT_DIR = 'static/og';
 mkdirSync(OUT_DIR, { recursive: true });
 
@@ -50,10 +50,14 @@ function wrap(text, maxChars) {
   return lines;
 }
 
-const posts = readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md') && !f.startsWith('_'));
+const entries = CONTENT_DIRS.flatMap((dir) =>
+  readdirSync(dir)
+    .filter((f) => f.endsWith('.md') && !f.endsWith('.en.md') && !f.startsWith('_'))
+    .map((f) => ({ dir, file: f, kind: dir.endsWith('proyectos') ? 'Proyectos' : 'Blog' }))
+);
 
-for (const file of posts) {
-  const raw = readFileSync(join(BLOG_DIR, file), 'utf8');
+for (const { dir, file, kind } of entries) {
+  const raw = readFileSync(join(dir, file), 'utf8');
   const m = raw.match(/^title:\s*["']?(.+?)["']?\s*$/m);
   if (!m) { console.warn(`skip ${file}: no title`); continue; }
   const title = m[1];
@@ -81,7 +85,7 @@ for (const file of posts) {
     </defs>
     <rect width="${W}" height="${H}" fill="url(#bg)"/>
     ${NET}
-    <text x="80" y="160" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#a5f3fc">Juan Manuel Ruiz · Blog</text>
+    <text x="80" y="160" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#a5f3fc">Juan Manuel Ruiz · ${kind}</text>
     ${titleSvg}
     <rect x="80" y="${(startY + (lines.length - 0.4) * lineHeight).toFixed(0)}" width="120" height="6" rx="3" fill="url(#accent)"/>
     <text x="80" y="560" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#cbd5e1">juanmanuel.petrer.eu</text>

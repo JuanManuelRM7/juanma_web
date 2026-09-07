@@ -173,3 +173,25 @@ cta_projects:
   other: "View projects"
 cta_contact:
   other: "Contact"
+action_case_study:
+  other: "Case study"
+action_repo:
+  other: "Code"
+action_paper:
+  other: "Paper"
+action_post:
+  other: "Post"
+project_case_study:
+  other: "Case study"
+project_role:
+  other: "Role"
+project_period:
+  other: "Period"
+project_org:
+  other: "Organization"
+project_stack:
+  other: "Stack"
+project_links:
+  other: "Links"
+project_metrics:
+  other: "Results"

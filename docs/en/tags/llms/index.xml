@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLMs on </title>
+    <link>https://juanmanuel.petrer.eu/en/tags/llms/</link>
+    <description>Recent content in LLMs on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/en/tags/llms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Misinformation detection in fiction works with LLM-generated ontologies</title>
+      <link>https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Most anti-misinformation tools target fake news. Films, series and podcasts blend facts with creative license, and the brain does not always tell them apart: people are 40% more likely to believe a false claim when it arrives visually, and once absorbed it keeps influencing them about half of the time even after a correction.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;Work carried out at the &lt;strong&gt;BISITE&lt;/strong&gt; research group (University of Salamanca) within the &lt;strong&gt;TRUESTORIES&lt;/strong&gt; project (CPP2021-008358), funded by MICIU/AEI and the European Union (NextGenerationEU/PRTR), and published at &lt;strong&gt;DCAI 2025&lt;/strong&gt;, the International Conference on Distributed Computing and Artificial Intelligence: &lt;a href=&#34;https://juanmanuel.petrer.eu/DCAI.pdf&#34;&gt;&lt;em&gt;AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

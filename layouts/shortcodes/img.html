@@ -1,0 +1,13 @@
+{{/* Responsive, processed image from assets/.
+     Usage: {{< img src="images/proyectos/vcalib/pipeline_diagram.png" alt="..." caption="..." width="1200" >}}
+     Produces a webp resized to `width` (never upscaled) with explicit dimensions. */}}
+{{ $src := .Get "src" }}
+{{ $img := resources.Get $src }}
+{{ if not $img }}{{ errorf "img shortcode: %q not found under assets/ (page %s)" $src $.Page.File.Path }}{{ end }}
+{{ $want := int (.Get "width" | default 1200) }}
+{{ $w := $want }}{{ if lt $img.Width $want }}{{ $w = $img.Width }}{{ end }}
+{{ $out := $img.Resize (printf "%dx webp q85" $w) }}
+<figure class="my-6">
+  <img src="{{ $out.RelPermalink }}" width="{{ $out.Width }}" height="{{ $out.Height }}" alt="{{ .Get "alt" }}" loading="lazy" decoding="async" class="rounded-lg shadow-md mx-auto" />
+  {{ with .Get "caption" }}<figcaption class="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

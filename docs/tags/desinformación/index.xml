@@ -15,5 +15,12 @@
       <guid>https://juanmanuel.petrer.eu/blog/desinformacion-en-la-ficcion-ontologias-llm/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Una serie puede colarte un dato falso sin que pestañees. El problema no es solo la mentira: es que la recuerdas como si fuera verdad.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;La mayoría de las herramientas contra la desinformación apuntan a las &lt;em&gt;fake news&lt;/em&gt;: tuits, titulares, artículos. Pero hay un flanco mucho más silencioso: la &lt;strong&gt;ficción&lt;/strong&gt;. Películas, documentales, podcasts y series mezclan hechos y licencias creativas, y nuestro cerebro no siempre separa unos de otras. Los datos asustan un poco: la gente es un &lt;strong&gt;40% más propensa a creer&lt;/strong&gt; información falsa cuando se presenta de forma visual, y la desinformación, una vez asimilada, sigue influyéndonos en torno a un &lt;strong&gt;50%&lt;/strong&gt; de las veces &lt;em&gt;incluso después&lt;/em&gt; de corregirla.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Detección de desinformación en obras de ficción con ontologías generadas por LLMs</title>
+      <link>https://juanmanuel.petrer.eu/proyectos/desinformacion-ontologias-llm/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/proyectos/desinformacion-ontologias-llm/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;La mayoría de las herramientas contra la desinformación miran a las &lt;em&gt;fake news&lt;/em&gt;. Las películas, series y podcasts mezclan hechos con licencias creativas, y el cerebro no siempre las separa: somos un 40 % más propensos a creer un dato falso cuando llega en formato visual, y una vez asimilado sigue influyendo en torno a la mitad de las veces incluso después de corregirlo.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;contexto&#34;&gt;Contexto&lt;/h2&gt;&#xA;&lt;p&gt;Trabajo realizado en el grupo de investigación &lt;strong&gt;BISITE&lt;/strong&gt; (Universidad de Salamanca) dentro del proyecto &lt;strong&gt;TRUESTORIES&lt;/strong&gt; (CPP2021-008358), financiado por MICIU/AEI y por la Unión Europea (NextGenerationEU/PRTR), y publicado en &lt;strong&gt;DCAI 2025&lt;/strong&gt;, la International Conference on Distributed Computing and Artificial Intelligence: &lt;a href=&#34;https://juanmanuel.petrer.eu/DCAI.pdf&#34;&gt;&lt;em&gt;AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

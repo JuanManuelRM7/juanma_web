@@ -125,13 +125,11 @@
     },
     projects: function () {
       return [
-        '• Detección de defectos en neumáticos  <span class="term-output-cmd">(PyTorch · producción)</span>',
-        '• Detección de desinformación con IA   <span class="term-output-cmd">(DCAI\'25)</span>',
-        '• Bloqueos atmosféricos lagrangianos   <span class="term-output-cmd">(TFG)</span>',
-        '• talk-to-me — tutor de inglés por voz <span class="term-output-cmd">(Whisper + Ollama)</span>',
-        '• Agente local con tool calling        <span class="term-output-cmd">(Ollama + RAG)</span>',
+        {{- range .Site.Params.project.list }}
+        '• {{ .title }}  <span class="term-output-cmd">({{ delimit (first 3 .tech) " · " }})</span>',
+        {{- end }}
         '',
-        'Más en <a href="' + base + '#proyectos">la sección de proyectos</a>.'
+        'Más en <a href="' + base + 'proyectos/">la página de proyectos</a>.'
       ].join('\n');
     },
     skills: function () {

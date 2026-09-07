@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{- partial "breadcrumb.html" . -}}
+<article class="project-page mb-8">
+  <header class="mb-6">
+    <p class="text-xs font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400 mb-2">{{ i18n "project_case_study" }}</p>
+    <h1 class="top-h1">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.metrics }}
+    <ul class="project-hero-metrics" aria-label="{{ i18n "project_metrics" }}">
+      {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
+    </ul>
+    {{ end }}
+    <hr class="border-gray-200 dark:border-gray-700 mt-6">
+  </header>
+
+  <div class="lg:grid lg:grid-cols-[1fr_16rem] lg:gap-8 items-start">
+    <div class="prose prose-stone dark:prose-invert max-w-none min-w-0">
+      {{ if .TableOfContents }}
+      <details class="toc-container mb-6 lg:hidden" open>
+        <summary class="toc-toggle cursor-pointer select-none font-semibold text-violet-700 dark:text-violet-300 flex items-center gap-2 text-base">
+          <i class="fas fa-list-ul text-sm" aria-hidden="true"></i>
+          <span>{{ i18n "content_toc" }}</span>
+        </summary>
+        <nav class="toc mt-3">
+          {{/* The desktop TOC already uses id="TableOfContents" */}}
+          {{ .TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML }}
+        </nav>
+      </details>
+      {{ end }}
+
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <aside class="mt-8 lg:mt-0 lg:sticky lg:top-4 space-y-4 not-prose">
+      <div class="project-facts">
+        <dl>
+          {{ with .Params.role }}<div><dt>{{ i18n "project_role" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .Params.period }}<div><dt>{{ i18n "project_period" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .Params.org }}<div><dt>{{ i18n "project_org" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .Params.stack }}
+          <div><dt>{{ i18n "project_stack" }}</dt><dd class="flex flex-wrap gap-1.5">{{ range . }}<span class="project-tech">{{ . }}</span>{{ end }}</dd></div>
+          {{ end }}
+        </dl>
+        {{ with .Params.links }}
+        <div class="project-facts-links">
+          {{ with .repo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> {{ i18n "action_repo" }}</a>{{ end }}
+          {{ with .paper }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> {{ i18n "action_paper" }}</a>{{ end }}
+          {{ with .post }}<a href="{{ . }}"><i class="fas fa-newspaper" aria-hidden="true"></i> {{ i18n "action_post" }}</a>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      {{ if .TableOfContents }}
+      <div class="hidden lg:block rounded-lg border border-violet-200 dark:border-violet-700 p-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+        <p class="font-semibold text-sm text-violet-700 dark:text-violet-300 mb-3 flex items-center gap-1.5">
+          <i class="fas fa-list-ul text-xs" aria-hidden="true"></i>
+          <span>{{ i18n "content_index" }}</span>
+        </p>
+        <nav class="toc text-sm toc-sidebar">
+          {{ .TableOfContents }}
+        </nav>
+      </div>
+      {{ end }}
+    </aside>
+  </div>
+</article>
+{{ partial "prevnext" . }}
+{{ end }}

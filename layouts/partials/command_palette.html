@@ -38,7 +38,12 @@
       {{ end }}
       {{ end }}{{ end }}
 
-      <div class="cmdk-group" data-group>Enlaces</div>
+      {{ with .Site.GetPage "/proyectos" }}{{ if .Pages }}
+      <div class="cmdk-group" data-group>Casos de estudio</div>
+      {{ range .Pages.ByDate.Reverse }}
+      <button class="cmdk-item" data-action="goto" data-target="{{ .RelPermalink }}" data-keywords="proyecto project caso estudio case study {{ delimit (.Params.tags | default slice) " " }}"><i class="fas fa-project-diagram"></i><span>{{ .Title }}</span></button>
+      {{ end }}
+      {{ end }}{{ end }}      <div class="cmdk-group" data-group>Enlaces</div>
       {{ range .Site.Params.social.list }}
       <button class="cmdk-item" data-action="open" data-target="{{ .url }}" data-keywords="{{ lower .title }} social"><i class="{{ .icon }}"></i><span>{{ .title }}</span></button>
       {{ end }}

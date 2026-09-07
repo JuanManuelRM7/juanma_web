@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://juanmanuel.petrer.eu/en/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
@@ -14,7 +15,73 @@
                 href="https://juanmanuel.petrer.eu/en/"
                 />
   </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/computer-vision/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/computer-vision/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/computer-vision/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/domain-shift/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/domain-shift/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/domain-shift/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/proyectos/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/proyectos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/proyectos/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/pytorch/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/pytorch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/pytorch/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/rf-detr/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/rf-detr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/rf-detr/"
+                />
+  </url><url>
     <loc>https://juanmanuel.petrer.eu/en/tags/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
@@ -24,6 +91,77 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://juanmanuel.petrer.eu/en/tags/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/proyectos/vcalib/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/proyectos/vcalib/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/proyectos/vcalib/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/llms/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/llms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/llms/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/misinformation/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/proyectos/desinformacion-ontologias-llm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/nlp/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/nlp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/nlp/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/ontologies/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/rag/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/rag/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/rag/"
                 />
   </url>
 </urlset>

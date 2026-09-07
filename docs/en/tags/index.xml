@@ -6,6 +6,70 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Vision</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/computer-vision/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Domain Shift</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/domain-shift/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/domain-shift/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PyTorch</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/pytorch/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RF-DETR</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/rf-detr/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/rf-detr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLMs</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/llms/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/llms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Misinformation</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/misinformation/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/misinformation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NLP</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/nlp/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/nlp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ontologies</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/ontologies/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/ontologies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>https://juanmanuel.petrer.eu/en/tags/rag/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/tags/rag/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

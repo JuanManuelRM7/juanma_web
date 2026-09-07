@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RF-DETR on </title>
+    <link>https://juanmanuel.petrer.eu/tags/rf-detr/</link>
+    <description>Recent content in RF-DETR on </description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://juanmanuel.petrer.eu/tags/rf-detr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vcalib: filtros de calibración diferenciables para RF-DETR bajo cambios de iluminación</title>
+      <link>https://juanmanuel.petrer.eu/proyectos/vcalib/</link>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/proyectos/vcalib/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cuando cambia la luz, un detector entrenado en otras condiciones se degrada. La respuesta habitual es recoger datos, etiquetar, reentrenar y redesplegar. vcalib explora la respuesta barata: dejar el modelo congelado y ajustar, en minutos y sin etiquetas, un filtro diminuto que corrige la entrada.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;el-problema&#34;&gt;El problema&lt;/h2&gt;&#xA;&lt;p&gt;RF-DETR es un detector en tiempo real del estado del arte y, como casi cualquier modelo de visión, es sensible a la iluminación: amanecer frente a atardecer, interior frente a nublado, una cámara nueva, una planta nueva. Cuando la distribución de entrada se aleja de la de entrenamiento, la calidad de detección cae. Reentrenar o hacer fine-tuning es caro, necesita etiquetas y es poco práctico en dispositivos edge.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
