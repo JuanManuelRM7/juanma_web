@@ -1,0 +1,12 @@
+{{/* Certifications from params.certifications.list (ES) / languages.en.params.certifications.list (EN). */}}
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3" data-stagger>
+  {{ range $i, $c := .Site.Params.certifications.list }}
+  <div class="cert-card">
+    <i class="fas fa-check-circle" aria-hidden="true"></i>
+    <div>
+      <p class="cert-title" data-i18n="cert_title_{{ add $i 1 }}">{{ $c.title }}</p>
+      {{ with $c.issuer }}<p class="cert-issuer" data-i18n="cert_issuer_{{ add $i 1 }}">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>

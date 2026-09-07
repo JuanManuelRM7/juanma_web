@@ -24,7 +24,8 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="{{ .Site.Params.author }} - {{ .Site.Params.profile.position }}" />
 <meta property="og:site_name" content="{{ .Site.Params.title }}" />
-<meta property="og:locale" content="es_ES" />
+<meta property="og:locale" content="{{ if eq .Site.Language.Lang "en" }}en_US{{ else }}es_ES{{ end }}" />
+{{ if .IsTranslated }}<meta property="og:locale:alternate" content="{{ if eq .Site.Language.Lang "en" }}es_ES{{ else }}en_US{{ end }}" />{{ end }}
 {{ if not .IsHome }}
 <meta property="article:author" content="{{ .Site.Params.author }}" />
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
@@ -40,6 +41,8 @@
 
 <!-- JSON-LD Structured Data -->
 {{ if .IsHome }}
+{{ $exp := index .Site.Params.experience.list 0 }}
+{{ $knows := slice }}{{ range .Site.Params.skill.categories }}{{ range first 4 .items }}{{ $knows = $knows | append (replaceRE `\s*\(.*\)|&` "" . | replaceRE `\s+` " ") }}{{ end }}{{ end }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,6 +56,11 @@
     "@type": "PostalAddress",
     "addressLocality": "{{ .Site.Params.profile.location }}"
   },
+  "worksFor": { "@type": "Organization", "name": "{{ $exp.company }}", "url": "{{ $exp.url }}" },
+  "alumniOf": [
+    {{ range $i, $e := .Site.Params.education.list }}{{ if $i }},{{ end }}{ "@type": "CollegeOrUniversity", "name": "{{ $e.college }}" }{{ end }}
+  ],
+  "knowsAbout": [{{ range $i, $s := $knows }}{{ if $i }},{{ end }}"{{ $s }}"{{ end }}],
   "sameAs": [
     {{ range $i, $s := .Site.Params.social.list }}{{ if $i }},{{ end }}"{{ $s.url }}"{{ end }}
   ]

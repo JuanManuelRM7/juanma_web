@@ -105,7 +105,7 @@
         <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_blog">{{ i18n "section_blog" }}</span>
       </h3>
-      {{ partial "latest_post_chip" . }}
+      {{ partial "latest_posts" . }}
     </div>
 
     <!-- Section Separator -->
@@ -125,7 +125,19 @@
     <!-- Section Separator -->
     <div class="section-separator"></div>
     
-    <!-- Publications Section -->
+    <!-- Certifications -->
+    {{ with .Site.Params.certifications.list }}
+    <div id="certificaciones" class="mb-8 scroll-mt-24" data-reveal>
+      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <i class="fas fa-check-circle section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
+        <span data-i18n="section_certs">{{ i18n "section_certs" }}</span>
+      </h3>
+      {{ partial "certifications" $ }}
+    </div>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+    {{ end }}    <!-- Publications Section -->
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
       <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
@@ -158,43 +170,22 @@
         <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">{{ i18n "section_contact" }}</span>
       </h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="contact_intro">{{ i18n "contact_intro" }}</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-        <a href="mailto:juanmanuelruiz383@gmail.com" class="contact-card group no-underline">
-          <div class="contact-card-icon bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
-            <i class="fas fa-envelope text-lg"></i>
+        {{ range .Site.Params.social.list }}
+        {{ if ne .icon "fab fa-instagram" }}
+        {{ $tone := "contact-tone-gray" }}{{ if eq .icon "fas fa-envelope" }}{{ $tone = "contact-tone-red" }}{{ else if eq .icon "fab fa-linkedin-in" }}{{ $tone = "contact-tone-blue" }}{{ else if eq .icon "fab fa-orcid" }}{{ $tone = "contact-tone-green" }}{{ end }}
+        <a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }} class="contact-card group no-underline">
+          <div class="contact-card-icon {{ $tone }}">
+            <i class="{{ .icon }} text-lg" aria-hidden="true"></i>
           </div>
-          <div>
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Email</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">juanmanuelruiz383@gmail.com</p>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-            <i class="fab fa-linkedin-in text-lg"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">LinkedIn</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">Juan Manuel Ruiz</p>
+          <div class="min-w-0">
+            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">{{ .title }}</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">{{ .label | default .url }}</p>
           </div>
         </a>
-        <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
-            <i class="fab fa-github text-lg"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">GitHub</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">juanmanuelruizm</p>
-          </div>
-        </a>
-        <a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
-            <i class="fab fa-orcid text-lg"></i>
-          </div>
-          <div>
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">ORCID</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">0009-0008-7529-306X</p>
-          </div>
-        </a>
+        {{ end }}
+        {{ end }}
       </div>
     </div>
     

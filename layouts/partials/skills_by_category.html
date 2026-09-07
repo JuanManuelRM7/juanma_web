@@ -1,56 +1,17 @@
-<!-- Skills organized by category -->
+{{/* Skills grouped by category, mirroring the CV. Data: params.skill.categories (ES) / languages.en.params.skill.categories (EN).
+     Each category: key, name, chip (primary|secondary|tertiary), items[] */}}
 <div class="space-y-6">
-  <!-- Computer Vision & Deep Learning (Primary Skills) -->
+  {{ range $cat := .Site.Params.skill.categories }}
   <div>
     <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-violet-600 dark:bg-violet-400"></span>
-      Computer Vision & Deep Learning
+      <span class="inline-block w-2 h-2 rounded-full skill-dot-{{ $cat.chip | default "primary" }}" aria-hidden="true"></span>
+      <span data-i18n="skill_cat_{{ $cat.key }}">{{ $cat.name }}</span>
     </h4>
     <div class="flex flex-wrap gap-2">
-      {{ $cvSkills := slice "Computer Vision" "Deep Learning" "Convolutional Neural Networks" "PyTorch" "TensorFlow" "Keras" "Pytorch Lightning" "OpenCV" }}
-      {{ range .Site.Params.skill.list }}
-        {{ if in $cvSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-primary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
-          {{ .skill }}
-        </a>
-        {{ end }}
+      {{ range $j, $s := $cat.items }}
+      <span class="skill-chip skill-chip-{{ $cat.chip | default "primary" }}" data-i18n="skill_{{ $cat.key }}_{{ add $j 1 }}">{{ $s }}</span>
       {{ end }}
     </div>
   </div>
-
-  <!-- Engineering & Tools -->
-  <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
-      Engineering & Tools
-    </h4>
-    <div class="flex flex-wrap gap-2">
-      {{ $engSkills := slice "Python" "Docker" "AWS" "MLflow" "Git" "GitHub" "Matplotlib" "Tensorboard" }}
-      {{ range .Site.Params.skill.list }}
-        {{ if in $engSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-secondary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
-          {{ .skill }}
-        </a>
-        {{ end }}
-      {{ end }}
-    </div>
-  </div>
-
-  <!-- Data Science -->
-  <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-      Data Science & Analytics
-    </h4>
-    <div class="flex flex-wrap gap-2">
-      {{ $dataSkills := slice "Machine Learning" "scikit-learn" "pandas" "NumPy" }}
-      {{ range .Site.Params.skill.list }}
-        {{ if in $dataSkills .skill }}
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="skill-chip skill-chip-tertiary no-underline" style="color: #ffffff !important; text-decoration: none !important;" title="{{ .skill }}">
-          {{ .skill }}
-        </a>
-        {{ end }}
-      {{ end }}
-    </div>
-  </div>
+  {{ end }}
 </div>

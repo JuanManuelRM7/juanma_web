@@ -1,79 +1,53 @@
-{{ if .Site.Params.publication.types }}
-{{ range .Site.Params.publication.types }}
-{{ $type := . }}
-{{- range $.Site.Params.publication.list -}}
-{{ if eq $type .type }}
-{{- $this_publication := . -}}
+{{/* Publications from params.publication.list: id, title, authors, venue, org, status, status_label, pdf_url, links{case_study, post, repo, pdf} */}}
+{{ $me := .Site.Params.author }}
+{{ range $pub := .Site.Params.publication.list }}
 <div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
   <div class="flex items-start gap-4">
     <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
-      <i class="fas fa-file-alt text-violet-600 dark:text-violet-400"></i>
+      <i class="fas fa-file-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
     </div>
     <div class="flex-1 min-w-0">
       <div class="flex items-center gap-2 mb-2 flex-wrap">
-        {{ if eq $type "DCAI'25" }}
-        <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-300 dark:border-green-700">
-          <i class="fas fa-check-circle mr-1"></i>{{ $type }}
-        </span>
-        {{ else }}
-        <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
-          <i class="fas fa-spinner mr-1"></i><span data-i18n="pub_type_dev">{{ $type }}</span>
-        </span>
+        {{ with $pub.status }}<span class="project-status project-status-{{ . }}" data-i18n="pub_status_{{ $pub.id }}">{{ $pub.status_label | default . }}</span>{{ end }}
+        {{ with $pub.venue }}<span class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pub_venue_{{ $pub.id }}">{{ . }}</span>{{ end }}
+      </div>
+      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1 leading-snug">{{ $pub.title }}</p>
+      {{ with $pub.authors }}<p class="text-xs text-gray-600 dark:text-gray-400 mb-1">{{ . | replaceRE (printf "(%s)" $me) "<strong>$1</strong>" | safeHTML }}</p>{{ end }}
+      {{ with $pub.org }}<p class="text-xs text-gray-500 dark:text-gray-400 mb-2" data-i18n="pub_org_{{ $pub.id }}">{{ . }}</p>{{ end }}
+      {{ $links := $pub.links | default dict }}
+      <div class="flex flex-wrap gap-2 mt-2">
+        {{ with $pub.pdf_url }}
+        <a href="{{ . }}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+          <span data-i18n="action_download_paper">{{ i18n "action_download_paper" }}</span>
+        </a>
+        {{ end }}
+        {{ with $links.case_study }}
+        <a href="{{ . }}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100">
+          <i class="fas fa-project-diagram text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+          <span data-i18n="action_case_study">{{ i18n "action_case_study" }}</span>
+        </a>
+        {{ end }}
+        {{ with $links.pdf }}
+        <a href="{{ . }}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+          <span data-i18n="action_view_thesis">{{ i18n "action_view_thesis" }}</span>
+        </a>
+        {{ end }}
+        {{ with $links.repo }}
+        <a href="{{ . }}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+          <span data-i18n="action_repo">{{ i18n "action_repo" }}</span>
+        </a>
+        {{ end }}
+        {{ with $links.post }}
+        <a href="{{ . }}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100">
+          <i class="fas fa-newspaper text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+          <span data-i18n="action_post">{{ i18n "action_post" }}</span>
+        </a>
         {{ end }}
       </div>
-      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 leading-snug">
-        {{- range $.Site.Params.publication.format -}}
-        {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
-        {{- end -}}
-      </p>
-      {{ if .pdf_url }}
-      <a
-        href="{{ .pdf_url }}"
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-        <span data-i18n="action_download_paper">{{ i18n "action_download_paper" }}</span>
-      </a>
-      {{ end }}
     </div>
   </div>
 </div>
 {{ end }}
-{{- end -}}
-{{ end }}
-
-{{ else }}
-
-{{- range $.Site.Params.publication.list -}}
-{{- $this_publication := . -}}
-<div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
-  <div class="flex items-start gap-4">
-    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
-      <i class="fas fa-file-alt text-violet-600 dark:text-violet-400"></i>
-    </div>
-    <div class="flex-1 min-w-0">
-      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 leading-snug">
-        {{- range $.Site.Params.publication.format -}}
-        {{- partial "accordion/supportingPartials/addTitle" (dict "all" $this_publication "ind" .) -}}
-        {{- end -}}
-      </p>
-      {{ if .pdf_url }}
-      <a
-        href="{{ .pdf_url }}"
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-        <span data-i18n="action_download_paper">{{ i18n "action_download_paper" }}</span>
-      </a>
-      {{ end }}
-    </div>
-  </div>
-</div>
-{{ end }}
-{{ end }}
-
-

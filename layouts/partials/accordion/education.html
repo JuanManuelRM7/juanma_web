@@ -19,6 +19,7 @@
       <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
         <strong data-i18n="edu_thesis">{{ i18n "edu_thesis" }}</strong> <i><span data-i18n="edu_thesis_{{ add $idx 1 }}">{{ .thesis_title }}</span></i>
       </p>
+      <div class="flex flex-wrap gap-2">
       {{ if .thesis_url }}
       <a
         href="{{ .thesis_url }}"
@@ -31,6 +32,18 @@
         <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_view_thesis">{{ i18n "action_view_thesis" }}</span>
       </a>
       {{ end }}
+      {{ if .thesis_repo }}
+      <a
+        href="{{ .thesis_repo }}"
+        class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 text-sm no-underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fab fa-github text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
+        <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_repo">{{ i18n "action_repo" }}</span>
+      </a>
+      {{ end }}
+      </div>
     </div>
     {{ end }}
   </div>

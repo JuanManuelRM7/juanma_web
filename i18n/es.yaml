@@ -24,7 +24,7 @@ nav_projects:
 nav_contact:
   other: "Contacto"
 section_blog:
-  other: "Último Post del Blog"
+  other: "Del blog"
 section_exp:
   other: "Experiencia"
 section_edu:
@@ -143,3 +143,7 @@ project_links:
   other: "Enlaces"
 project_metrics:
   other: "Resultados"
+section_certs:
+  other: "Certificaciones"
+contact_intro:
+  other: "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme."

@@ -36,6 +36,75 @@ languages:
             label: "paper on misinformation detection with LLMs and RAG"
           - value: "35.9%"
             label: "activation recovery with a ~2 KB calibration filter (vcalib)"
+      skill:
+        title: Skills
+        panelId: skill-panel
+        icon: fas fa-cogs
+        categories:
+          - key: llm
+            name: "LLMs & NLP"
+            chip: primary
+            items:
+              - "Fine-tuning (LoRA)"
+              - "LLaMA-Factory"
+              - "RAG"
+              - "Transformers"
+              - "vLLM"
+              - "Ollama"
+              - "Embeddings & semantic search"
+              - "ChromaDB"
+              - "FAISS"
+              - "Prompt engineering"
+          - key: cv
+            name: "Computer Vision"
+            chip: primary
+            items:
+              - "PyTorch"
+              - "TensorFlow"
+              - "Keras"
+              - "OpenCV"
+              - "CNNs"
+              - "Vision Transformers"
+              - "YOLO"
+              - "RF-DETR"
+              - "Diffusion models (FLUX.1)"
+              - "Detection & segmentation"
+          - key: lang
+            name: "Languages & analysis"
+            chip: tertiary
+            items:
+              - "Python"
+              - "NumPy"
+              - "Pandas"
+              - "scikit-learn"
+              - "Matplotlib"
+              - "C++ (reading & specs)"
+              - "R"
+              - "Statistical analysis"
+              - "LaTeX"
+          - key: mlops
+            name: "MLOps & tools"
+            chip: secondary
+            items:
+              - "Docker"
+              - "MLflow"
+              - "TensorBoard"
+              - "Git & GitHub"
+              - "AWS (Cloud Technical Essentials)"
+              - "Linux / SSH"
+              - "uv"
+              - "Jupyter"
+      certifications:
+        title: Certifications
+        list:
+          - title: "AWS Cloud Technical Essentials"
+            issuer: "Amazon Web Services"
+          - title: "Build Basic Generative Adversarial Networks (GANs)"
+            issuer: "DeepLearning.AI"
+          - title: "Introduction to Front-End Development"
+            issuer: "Meta"
+          - title: "Cambridge English B1 Preliminary"
+            issuer: "Cambridge Assessment English"
       aboutme:
         title: About me
         icon: fas fa-user
@@ -55,7 +124,14 @@ languages:
                 I take **defect detection and segmentation** models (CNNs, ViT, YOLO, RF-DETR) and a **multimodal OCR** (GLM-OCR) to production for industrial tire inspection: mAP@50:95 of 0.83 and 98.56% exact match reading sidewalls.
 
                 I write about this work in [OCR in extreme conditions](/blog/ocr-industrial-glm-ocr/) and [CNNs vs Vision Transformers](/blog/cnn-vs-vision-transformers-inspeccion-industrial/).
-            tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "vLLM", "Docker"]
+            tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "LLaMA-Factory", "vLLM", "MLflow", "Docker", "C++"]
+            highlights:
+              - "Design and training of **defect detection and segmentation** models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection: **mAP@50:95 of 0.83** on multi-class segmentation over in-house datasets of thousands of images."
+              - "Fine-tuning of a multimodal language model (**GLM-OCR**) with **LoRA** via LLaMA-Factory to read text on tire sidewalls: **98.56% exact match** in production; served with vLLM and Ollama."
+              - "**Synthetic defect generation** pipeline with generative models to enlarge scarce datasets and improve detection robustness."
+              - "**Technical appraisal** with CNNs and Vision Transformers to compare products objectively and reproducibly from their structural and appearance parts."
+              - "**ETL** pipelines for extracting, transforming and augmenting visual datasets at industrial scale."
+              - "Deployment and monitoring with **Docker, MLflow and TensorBoard**; evaluation metrics (precision, recall, F1, mAP, IoU) for real-time validation; technical documentation and **algorithm specification in C++** for the client team."
           - position: Data Scientist & AI Researcher
             dates: June 2024 - June 2025
             start: "2024-06"
@@ -67,6 +143,11 @@ languages:
 
                 Publication: [DCAI'25 paper](/DCAI.pdf).
             tags: ["NLP", "LLMs", "RAG", "ChromaDB", "Multi-agent", "Ollama", "Computer Vision", "Python"]
+            highlights:
+              - "Research and development of **NLP and LLM** solutions, including a misinformation-detection architecture based on ontologies generated with language models (**published at DCAI'25**)."
+              - "**RAG** and semantic-retrieval pipelines with vector databases (ChromaDB) and **multi-agent** systems (Ollama, DeepSeek, GPT-4o-mini), focused on cutting cost and latency."
+              - "Computer vision projects (detection, classification and segmentation) and end-to-end ML project management: requirements, development, validation and documentation."
+              - "Direct interaction with clients to capture requirements and adapt state-of-the-art solutions to real use cases."
           - position: Researcher · Internship
             dates: January 2024 - July 2024
             start: "2024-01"
@@ -78,6 +159,9 @@ languages:
 
                 I tell the full story in [Atmospheric blocking, a Lagrangian view](/blog/tfg/).
             tags: ["Python", "Atmospheric Physics", "HYSPLIT", "ERA5", "DBSCAN"]
+            highlights:
+              - "Development of **Lagrangian methods** for the automatic identification of **atmospheric blocking** situations, the basis of my thesis and of a publication in progress."
+              - "Collaboration on projects of the atmospheric physics group."
       education:
         title: Education
         icon: fas fa-graduation-cap
@@ -89,6 +173,7 @@ languages:
             details: "+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program)."
             thesis_title: "A Lagrangian method for the identification of atmospheric blocking situations"
             thesis_url: "/tfg.pdf"
+            thesis_repo: "https://github.com/juanmanuelruizm/TFG"
           - degree: SICUE Exchange — Physics & Mathematics
             college: Universidad de Salamanca
             dates: 2022 - 2023
@@ -96,17 +181,27 @@ languages:
       publication:
         title: Publications
         icon: fas fa-book
-        format:
-          - title
-        types:
-          - In development
-          - DCAI'25
         list:
-          - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-            type: DCAI'25
+          - id: dcai25
+            title: "AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works"
+            authors: "Marcos Arias-González, Juan Manuel Ruiz Muñoz, Pablo Armenteros Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández"
+            venue: "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence"
+            org: "BISITE Research Group, University of Salamanca · TRUESTORIES project (CPP2021-008358)"
+            status: published
+            status_label: "DCAI'25"
             pdf_url: "/DCAI.pdf"
-          - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
-            type: In development
+            links:
+              case_study: "/en/proyectos/desinformacion-ontologias-llm/"
+              post: "/blog/desinformacion-en-la-ficcion-ontologias-llm/"
+          - id: lagrangian-blocking
+            title: "A Lagrangian Method for the Identification of Atmospheric Blocking Situations"
+            venue: "Publication in progress based on the bachelor's thesis (University of Alicante · SCOLAb group, UMH)"
+            status: development
+            status_label: "In progress"
+            links:
+              repo: "https://github.com/juanmanuelruizm/TFG"
+              post: "/blog/tfg/"
+              pdf: "/tfg.pdf"
       project:
         title: Projects
         icon: fas fa-project-diagram
@@ -265,24 +360,40 @@ params:
         label: "paper sobre detección de desinformación con LLMs y RAG"
       - value: "35,9 %"
         label: "recuperación de activaciones con un filtro de ~2 KB (vcalib)"
+  certifications:
+    title: Certificaciones
+    list:
+      - title: "AWS Cloud Technical Essentials"
+        issuer: "Amazon Web Services"
+      - title: "Build Basic Generative Adversarial Networks (GANs)"
+        issuer: "DeepLearning.AI"
+      - title: "Introduction to Front-End Development"
+        issuer: "Meta"
+      - title: "Cambridge English B1 Preliminary"
+        issuer: "Cambridge Assessment English"
   social:
     title: Links
     list:
       - icon: fab fa-linkedin-in
         url: "https://www.linkedin.com/in/juanmanuelruizmunoz/"
         title: LinkedIn
+        label: "in/juanmanuelruizmunoz"
       - icon: fab fa-instagram
         url: "https://www.instagram.com/j.manuel__rm/"
         title: Instagram
+        label: "@j.manuel__rm"
       - icon: fab fa-github
         url: "https://github.com/juanmanuelruizm"
         title: GitHub
+        label: "juanmanuelruizm"
       - icon: fas fa-envelope
         url: "mailto:juanmanuelruiz383@gmail.com"
         title: Email
+        label: "juanmanuelruiz383@gmail.com"
       - icon: fab fa-orcid
         url: "https://orcid.org/0009-0008-7529-306X"
         title: ORCID
+        label: "0009-0008-7529-306X"
   showInAccordion:
     - item: experience
       expand: true
@@ -310,7 +421,14 @@ params:
             Llevo a producción modelos de **detección y segmentación de defectos** (CNNs, ViT, YOLO, RF-DETR) y un **OCR multimodal** (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.
 
             Escribo sobre este trabajo en [OCR en condiciones extremas](/blog/ocr-industrial-glm-ocr/) y [CNNs vs Vision Transformers](/blog/cnn-vs-vision-transformers-inspeccion-industrial/).
-        tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "vLLM", "Docker"]
+        tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "LLaMA-Factory", "vLLM", "MLflow", "Docker", "C++"]
+        highlights:
+          - "Diseño y entrenamiento de modelos de **detección y segmentación de defectos** (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: **mAP@50:95 de 0,83** en segmentación multiclase sobre datasets propios de miles de imágenes."
+          - "Fine-tuning de un modelo de lenguaje multimodal (**GLM-OCR**) con **LoRA** vía LLaMA-Factory para leer texto en flancos de neumático: **98,56 % de exact match** en producción; serving con vLLM y Ollama."
+          - "Pipeline de **generación sintética de defectos** con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección."
+          - "**Peritaje técnico** con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia."
+          - "Pipelines **ETL** de extracción, transformación y aumento de datasets visuales a escala industrial."
+          - "Despliegue y monitorización con **Docker, MLflow y TensorBoard**; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y **especificación algorítmica en C++** para el equipo cliente."
       - position: Data Scientist & AI Researcher
         dates: Junio 2024 - Junio 2025
         start: "2024-06"
@@ -322,6 +440,11 @@ params:
 
             Publicación: [paper en DCAI'25](/DCAI.pdf).
         tags: ["NLP", "LLMs", "RAG", "ChromaDB", "Multiagente", "Ollama", "Computer Vision", "Python"]
+        highlights:
+          - "Investigación y desarrollo de soluciones de **NLP y LLMs**, incluida una arquitectura de detección de desinformación basada en ontologías generadas con modelos de lenguaje (**publicada en DCAI'25**)."
+          - "Pipelines **RAG** y de recuperación semántica con bases de datos vectoriales (ChromaDB) y sistemas **multiagente** (Ollama, DeepSeek, GPT-4o-mini), con foco en reducir coste y latencia."
+          - "Proyectos de Computer Vision (detección, clasificación y segmentación) y gestión del ciclo completo de proyectos ML: requisitos, desarrollo, validación y documentación."
+          - "Interacción directa con clientes para captura de requisitos y adaptación de soluciones state-of-the-art a casos de uso reales."
       - position: Investigador · Contrato de prácticas
         dates: Enero 2024 - Julio 2024
         start: "2024-01"
@@ -333,6 +456,9 @@ params:
 
             Lo cuento en detalle en [Bloqueos atmosféricos, punto de vista lagrangiano](/blog/tfg/).
         tags: ["Python", "Física Atmosférica", "HYSPLIT", "ERA5", "DBSCAN"]
+        highlights:
+          - "Desarrollo de **métodos lagrangianos** para la identificación automática de situaciones de **bloqueo atmosférico**, base del TFG y de una publicación en desarrollo."
+          - "Colaboración en proyectos del grupo de física atmosférica."
   education:
     title: Educación
     icon: fas fa-graduation-cap
@@ -344,6 +470,7 @@ params:
         details: "+120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA)."
         thesis_title: "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico"
         thesis_url: "/tfg.pdf"
+        thesis_repo: "https://github.com/juanmanuelruizm/TFG"
       - degree: Beca SICUE — Física y Matemáticas
         college: Universidad de Salamanca
         dates: 2022 - 2023
@@ -352,17 +479,27 @@ params:
   publication:
     title: Publicaciones
     icon: fas fa-book
-    format:
-      - title
-    types:
-      - En desarrollo
-      - DCAI'25
     list:
-      - title: AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works
-        type: DCAI'25
+      - id: dcai25
+        title: "AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works"
+        authors: "Marcos Arias-González, Juan Manuel Ruiz Muñoz, Pablo Armenteros Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández"
+        venue: "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence"
+        org: "BISITE Research Group, Universidad de Salamanca · Proyecto TRUESTORIES (CPP2021-008358)"
+        status: published
+        status_label: "DCAI'25"
         pdf_url: "/DCAI.pdf"
-      - title: A Lagrangian Method for the Identification of Atmospheric Blocking Situations
-        type: En desarrollo
+        links:
+          case_study: "/proyectos/desinformacion-ontologias-llm/"
+          post: "/blog/desinformacion-en-la-ficcion-ontologias-llm/"
+      - id: lagrangian-blocking
+        title: "A Lagrangian Method for the Identification of Atmospheric Blocking Situations"
+        venue: "Publicación en desarrollo a partir del TFG (Universidad de Alicante · Grupo SCOLAb, UMH)"
+        status: development
+        status_label: "En desarrollo"
+        links:
+          repo: "https://github.com/juanmanuelruizm/TFG"
+          post: "/blog/tfg/"
+          pdf: "/tfg.pdf"
   project:
     title: Proyectos
     icon: fas fa-project-diagram
@@ -462,65 +599,57 @@ params:
     title: Skills
     panelId: skill-panel
     icon: fas fa-cogs
-    list:
-      - skill: "PyTorch"
-        url: "https://pytorch.org/"
-      - skill: "TensorFlow"
-        url: "https://www.tensorflow.org/"
-      - skill: "Computer Vision"
-        url: "https://en.wikipedia.org/wiki/Computer_vision"
-      - skill: "OpenCV"
-        url: "https://opencv.org/"
-      - skill: "Deep Learning"
-        url: "https://en.wikipedia.org/wiki/Deep_learning"
-      - skill: "Keras"
-        url: "https://keras.io/"
-      - skill: "Convolutional Neural Networks"
-        url: "https://en.wikipedia.org/wiki/Convolutional_neural_network"
-      - skill: "Pytorch Lightning"
-        url: "https://pytorch-lightning.readthedocs.io/en/stable/"
-      - skill: "Machine Learning"
-        url: "https://en.wikipedia.org/wiki/Machine_learning"
-      - skill: "scikit-learn"
-        url: "https://scikit-learn.org/"
-      - skill: "pandas"
-        url: "https://pandas.pydata.org/"
-      - skill: "NumPy"
-        url: "https://numpy.org/"
-      - skill: "Python"
-        url: "https://www.python.org/"
-      - skill: "Docker"
-        url: "https://www.docker.com/"
-      - skill: "AWS"
-        url: "https://aws.amazon.com/"
-      - skill: "MLflow"
-        url: "https://mlflow.org/"
-      - skill: "Git"
-        url: "https://git-scm.com/"
-      - skill: "GitHub"
-        url: "https://github.com/"
-      - skill: "Matplotlib"
-        url: "https://matplotlib.org/"
-      - skill: "Tensorboard"
-        url: "https://www.tensorflow.org/tensorboard"
-      - skill: "SQL"
-        url: "https://www.sql.org/"
-      - skill: "Transformers"
-        url: "https://huggingface.co/docs/transformers/"
-      - skill: "Torchmetrics"
-        url: "https://torchmetrics.readthedocs.io/en/latest/"
-      - skill: "LaTeX"
-        url: "https://www.latex-project.org/"
-      - skill: "R"
-        url: "https://www.r-project.org/"
-      - skill: "MATLAB"
-        url: "https://www.mathworks.com/products/matlab.html"
-      - skill: "HYSPLIT"
-        url: "https://www.ready.noaa.gov/HYSPLIT.php"
-      - skill: "HTML"
-        url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
-      - skill: "CSS"
-        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
-      - skill: "JavaScript"
-        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-
+    categories:
+      - key: llm
+        name: "LLMs & NLP"
+        chip: primary
+        items:
+          - "Fine-tuning (LoRA)"
+          - "LLaMA-Factory"
+          - "RAG"
+          - "Transformers"
+          - "vLLM"
+          - "Ollama"
+          - "Embeddings y búsqueda semántica"
+          - "ChromaDB"
+          - "FAISS"
+          - "Prompt engineering"
+      - key: cv
+        name: "Computer Vision"
+        chip: primary
+        items:
+          - "PyTorch"
+          - "TensorFlow"
+          - "Keras"
+          - "OpenCV"
+          - "CNNs"
+          - "Vision Transformers"
+          - "YOLO"
+          - "RF-DETR"
+          - "Modelos de difusión (FLUX.1)"
+          - "Detección y segmentación"
+      - key: lang
+        name: "Lenguajes y análisis"
+        chip: tertiary
+        items:
+          - "Python"
+          - "NumPy"
+          - "Pandas"
+          - "scikit-learn"
+          - "Matplotlib"
+          - "C++ (lectura y especificación)"
+          - "R"
+          - "Análisis estadístico"
+          - "LaTeX"
+      - key: mlops
+        name: "MLOps y herramientas"
+        chip: secondary
+        items:
+          - "Docker"
+          - "MLflow"
+          - "TensorBoard"
+          - "Git y GitHub"
+          - "AWS (Cloud Technical Essentials)"
+          - "Linux / SSH"
+          - "uv"
+          - "Jupyter"

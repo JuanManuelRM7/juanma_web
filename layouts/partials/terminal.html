@@ -121,7 +121,7 @@
       ].join('\n');
     },
     whoami: function () {
-      return 'Físico y matemático especializado en ML e ingeniería de Computer Vision.\nConstruyo sistemas de visión artificial que funcionan en producción real:\ndesde la captura del dato hasta el despliegue del modelo.';
+      return {{ .Site.Params.aboutme.description }};
     },
     projects: function () {
       return [
@@ -133,7 +133,11 @@
       ].join('\n');
     },
     skills: function () {
-      return 'PyTorch · TensorFlow · OpenCV · Transformers · CNN\nDocker · AWS · MLflow · Python · SQL · Git';
+      return [
+        {{- range .Site.Params.skill.categories }}
+        '{{ .name }}: {{ delimit .items " · " }}',
+        {{- end }}
+      ].join('\n');
     },
     cv: function () {
       window.open(base + 'cv.pdf', '_blank');

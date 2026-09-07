@@ -1482,3 +1482,38 @@ html {
 .project-page .content figure { margin: 1.5rem 0; }
 .project-page .content figure img { margin: 0 auto; }
 .project-page .content table { font-size: 0.9rem; }
+
+/* ---------- EXPERIENCIA: bullets con métricas ---------- */
+.exp-highlights { list-style: none; margin: 0 0 0.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8rem; line-height: 1.45; color: #374151; }
+.dark .exp-highlights { color: #d1d5db; }
+.exp-highlights li { position: relative; padding-left: 1rem; }
+.exp-highlights li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: #8b5cf6; }
+.exp-highlights strong { color: #111827; }
+.dark .exp-highlights strong { color: #f9fafb; }
+
+/* ---------- SKILLS: puntos de categoría ---------- */
+.skill-dot-primary { background: #2563eb; }
+.skill-dot-secondary { background: #059669; }
+.skill-dot-tertiary { background: #7c3aed; }
+.skill-chip { cursor: default; }
+
+/* ---------- CERTIFICACIONES ---------- */
+.cert-card { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.85rem 1rem; border-radius: 0.65rem; border: 1px solid #e5e7eb; background: #ffffff; transition: all 0.3s ease; }
+.cert-card:hover { border-color: rgba(139, 92, 246, 0.6); box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12); transform: translateY(-2px); }
+.dark .cert-card { border-color: rgb(51 65 85); background: rgb(30 41 59); }
+.cert-card > i { color: #7c3aed; margin-top: 0.15rem; }
+.dark .cert-card > i { color: #a78bfa; }
+.cert-title { font-size: 0.85rem; font-weight: 600; color: #111827; line-height: 1.3; }
+.dark .cert-title { color: #f3f4f6; }
+.cert-issuer { font-size: 0.72rem; color: #6b7280; margin-top: 0.15rem; }
+.dark .cert-issuer { color: #9ca3af; }
+
+/* ---------- CONTACTO: tonos de icono ---------- */
+.contact-tone-red { background: #fee2e2; color: #dc2626; }
+.contact-tone-blue { background: #dbeafe; color: #2563eb; }
+.contact-tone-green { background: #dcfce7; color: #16a34a; }
+.contact-tone-gray { background: #f3f4f6; color: #374151; }
+.dark .contact-tone-red { background: rgba(127, 29, 29, 0.3); color: #f87171; }
+.dark .contact-tone-blue { background: rgba(30, 58, 138, 0.3); color: #60a5fa; }
+.dark .contact-tone-green { background: rgba(20, 83, 45, 0.3); color: #4ade80; }
+.dark .contact-tone-gray { background: rgb(31 41 55); color: #d1d5db; }

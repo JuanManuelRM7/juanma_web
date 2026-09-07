@@ -19,6 +19,33 @@ window.__i18nDyn = {
     {{ printf "proj_metric_%s_%d" $p.id (add $i 1) }}: {{ $m }},
     {{- end }}
     {{- end }}
+    {{- range $i, $e := .Site.Params.experience.list }}
+    {{ printf "exp_position_%d" (add $i 1) }}: {{ $e.position }},
+    {{ printf "exp_dates_%d" (add $i 1) }}: {{ $e.dates | markdownify }},
+    {{ printf "exp_details_%d" (add $i 1) }}: {{ $e.details | markdownify }},
+    {{- $hl := "" }}{{ range $e.highlights }}{{ $hl = printf "%s<li>%s</li>" $hl (. | markdownify) }}{{ end }}
+    {{ printf "exp_hl_%d" (add $i 1) }}: {{ $hl }},
+    {{- end }}
+    {{- range $i, $e := .Site.Params.education.list }}
+    {{ printf "edu_degree_%d" (add $i 1) }}: {{ $e.degree }},
+    {{ printf "edu_details_%d" (add $i 1) }}: {{ $e.details | default "" }},
+    {{ printf "edu_thesis_%d" (add $i 1) }}: {{ $e.thesis_title | default "" }},
+    {{- end }}
+    {{- range $p := .Site.Params.publication.list }}
+    {{ printf "pub_status_%s" $p.id }}: {{ $p.status_label | default $p.status }},
+    {{ printf "pub_venue_%s" $p.id }}: {{ $p.venue | default "" }},
+    {{ printf "pub_org_%s" $p.id }}: {{ $p.org | default "" }},
+    {{- end }}
+    {{- range $c := .Site.Params.skill.categories }}
+    {{ printf "skill_cat_%s" $c.key }}: {{ $c.name }},
+    {{- range $j, $s := $c.items }}
+    {{ printf "skill_%s_%d" $c.key (add $j 1) }}: {{ $s }},
+    {{- end }}
+    {{- end }}
+    {{- range $i, $c := .Site.Params.certifications.list }}
+    {{ printf "cert_title_%d" (add $i 1) }}: {{ $c.title }},
+    {{ printf "cert_issuer_%d" (add $i 1) }}: {{ $c.issuer | default "" }},
+    {{- end }}
   },
   {{- end }}
 };
@@ -43,7 +70,7 @@ window.__i18nDyn = {
       nav_pub: 'Publications',
       nav_projects: 'Projects',
       nav_contact: 'Contact',
-      section_blog: 'Latest Blog Post',
+      section_blog: 'From the blog',
       section_exp: 'Experience',
       section_edu: 'Education',
       section_pub: 'Publications',
@@ -81,6 +108,8 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'View projects',
       cta_contact: 'Contact',
+      section_certs: 'Certifications',
+      contact_intro: 'Got a computer vision or LLM problem to take to production? Drop me a line.',
       action_case_study: 'Case study',
       action_repo: 'Code',
       action_paper: 'Paper',
@@ -135,25 +164,12 @@ window.__i18nDyn = {
       profile_location: 'Elche, Alicante, Spain',
 
       // Education data
-      edu_degree_1: "Bachelor's Degree in Physics",
-      edu_degree_2: 'SICUE Exchange — Physics & Mathematics',
-      edu_thesis_1: 'A Lagrangian method for the identification of atmospheric blocking situations',
-      edu_details_1: '+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).',
-      edu_details_2: 'International mobility scholarship.',
 
       // Experience data
-      exp_position_3: 'Researcher · Internship',
-      exp_dates_1: 'June 2025 - <em>Present</em>',
-      exp_dates_2: 'June 2024 - June 2025',
-      exp_dates_3: 'January 2024 - July 2024',
-      exp_details_1: '<p>I take <strong>defect detection and segmentation</strong> models (CNNs, ViT, YOLO, RF-DETR) and a <strong>multimodal OCR</strong> (GLM-OCR) to production for industrial tire inspection: mAP@50:95 of 0.83 and 98.56% exact match reading sidewalls.</p><p>I write about this work in <a href="/blog/ocr-industrial-glm-ocr/">OCR in extreme conditions</a> and <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/">CNNs vs Vision Transformers</a>.</p>',
-      exp_details_2: '<p>Research in <strong>NLP and LLMs</strong>: an ontology-based misinformation-detection architecture built with LLM-generated ontologies (published at DCAI&#39;25), <strong>RAG</strong> pipelines and <strong>multi-agent</strong> systems, plus computer vision projects.</p><p>Publication: <a href="/DCAI.pdf">DCAI&#39;25 paper</a>.</p>',
-      exp_details_3: '<p>I developed <strong>Lagrangian methods</strong> to automatically identify <strong>atmospheric blocking</strong> situations — the basis of my thesis and a publication in progress.</p><p>I tell the full story in <a href="/blog/tfg/">Atmospheric blocking, a Lagrangian view</a>.</p>',
 
       // Project data
 
       // Publication types
-      pub_type_dev: 'In development'
     },
     es: {
       // Navigation
@@ -171,7 +187,7 @@ window.__i18nDyn = {
       nav_pub: 'Publicaciones',
       nav_projects: 'Proyectos',
       nav_contact: 'Contacto',
-      section_blog: 'Último Post del Blog',
+      section_blog: 'Del blog',
       section_exp: 'Experiencia',
       section_edu: 'Educación',
       section_pub: 'Publicaciones',
@@ -209,6 +225,8 @@ window.__i18nDyn = {
       profile_oss: 'Open source',
       cta_projects: 'Ver proyectos',
       cta_contact: 'Contactar',
+      section_certs: 'Certificaciones',
+      contact_intro: '¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.',
       action_case_study: 'Caso de estudio',
       action_repo: 'Código',
       action_paper: 'Paper',
@@ -237,20 +255,8 @@ window.__i18nDyn = {
       edu_thesis: 'TFG:',
 
       // Education data
-      edu_degree_1: 'Grado en Física',
-      edu_degree_2: 'Beca SICUE — Física y Matemáticas',
-      edu_thesis_1: 'Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico',
-      edu_details_1: '+120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA).',
-      edu_details_2: 'Beca de movilidad nacional.',
 
       // Experience data
-      exp_position_3: 'Investigador · Contrato de prácticas',
-      exp_dates_1: 'Junio 2025 - <em>Presente</em>',
-      exp_dates_2: 'Junio 2024 - Junio 2025',
-      exp_dates_3: 'Enero 2024 - Julio 2024',
-      exp_details_1: '<p>Llevo a producción modelos de <strong>detección y segmentación de defectos</strong> (CNNs, ViT, YOLO, RF-DETR) y un <strong>OCR multimodal</strong> (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.</p><p>Escribo sobre este trabajo en <a href="/blog/ocr-industrial-glm-ocr/">OCR en condiciones extremas</a> y <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/">CNNs vs Vision Transformers</a>.</p>',
-      exp_details_2: '<p>Investigación en <strong>NLP y LLMs</strong>: una arquitectura de detección de desinformación basada en ontologías generadas con LLMs (publicada en DCAI&#39;25), pipelines <strong>RAG</strong> y sistemas <strong>multiagente</strong>, además de proyectos de visión por computador.</p><p>Publicación: <a href="/DCAI.pdf">paper en DCAI&#39;25</a>.</p>',
-      exp_details_3: '<p>Desarrollé <strong>métodos lagrangianos</strong> para identificar automáticamente situaciones de <strong>bloqueo atmosférico</strong>: la base de mi TFG y de una publicación en desarrollo.</p><p>Lo cuento en detalle en <a href="/blog/tfg/">Bloqueos atmosféricos, punto de vista lagrangiano</a>.</p>',
 
       // Project statuses
       status_production: 'En producción',

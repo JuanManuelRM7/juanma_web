@@ -22,6 +22,12 @@
     {{ .details | markdownify }}
     </div>
     {{ end }}
+
+    {{ with .highlights }}
+    <ul class="exp-highlights" data-i18n="exp_hl_{{ add $idx 1 }}" data-i18n-html>
+      {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+    </ul>
+    {{ end }}
     
     <!-- Quick skills tags -->
     {{ with .tags }}
