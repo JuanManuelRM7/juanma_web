@@ -848,19 +848,6 @@ button:focus-visible {
   color: white;
 }
 
-/* ---------- TYPING CURSOR ---------- */
-.typing-cursor {
-  display: inline-block;
-  animation: blink 1s step-end infinite;
-  font-weight: 300;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 /* ---------- READING PROGRESS BAR ---------- */
 #reading-progress {
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
@@ -975,7 +962,6 @@ html {
 @media print {
   /* Hide non-essential UI */
   #reading-progress,
-  #page-loader,
   #scroll-to-top,
   [data-sticky-header],
   .hero-nav-pill,
@@ -1020,10 +1006,6 @@ html {
     animation: none !important;
     margin-bottom: 0.1cm !important;
     font-size: 10pt !important;
-  }
-
-  #typing-cursor {
-    display: none !important;
   }
 
   /* Grid: single column for print */

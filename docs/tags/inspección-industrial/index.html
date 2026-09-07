@@ -95,7 +95,7 @@
   
   
   
-  <link href="/main.min.06b689bcacd8eb99a98f54f3f2908871c5265f3d6f307365bc61c2dce3134cba.css" rel="stylesheet" />
+  <link href="/main.min.0a67240fe9da830b5f9e1ad937d88c55380bdb69d8090e25e78314f88452447d.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -234,26 +234,11 @@
   </nav>
 
   
-  <div class="flex md:hidden justify-center -mt-[13px] mb-2 relative z-10">
-    <div id="clock-mobile"
-      class="text-violet-700 dark:text-violet-300 text-xs font-semibold tracking-wide
-             bg-white dark:bg-slate-900
-             border border-violet-400 dark:border-violet-500
-             rounded-full px-4 py-0.5 shadow-sm
-             flex items-center gap-2"
-      aria-live="off" aria-label="Reloj">
-    </div>
-  </div>
-
-  
-  <nav class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
+  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
       <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
       <a class="nav-menu-item" href="/material"><span data-i18n="nav_material_desktop">Material Universitario</span></a>
-    </div>
-    <div class="flex justify-center">
-      <div id="clock" class="text-violet-700 dark:text-violet-300 font-semibold text-lg text-center" aria-live="off" aria-label="Reloj"></div>
     </div>
     <div class="flex items-center justify-end gap-3">
       
@@ -279,39 +264,6 @@
     </div>
   </nav>
 </header>
-
-<script>
-  window.updateClock = function() {
-    var now = new Date();
-    var hours = String(now.getHours()).padStart(2, '0');
-    var minutes = String(now.getMinutes()).padStart(2, '0');
-    var seconds = String(now.getSeconds()).padStart(2, '0');
-
-    var day = now.getDate();
-    var monthNum = String(now.getMonth() + 1).padStart(2, '0');
-    var lang = window.localStorage.getItem('lang') || 'es';
-    var t = (window.__i18n && window.__i18n[lang]) || {};
-    var monthName = t['month_' + now.getMonth()] || ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][now.getMonth()];
-    var year = now.getFullYear();
-
-    var fmt = t['clock_format'] || '{day} de {month} de {year}';
-    var dateStr = fmt.replace('{day}', day).replace('{month}', monthName).replace('{year}', year);
-
-    var clockEl = document.getElementById('clock');
-    if (clockEl) {
-      clockEl.innerHTML = '<div>' + dateStr + '</div><div>' + hours + ':' + minutes + ':' + seconds + '</div>';
-    }
-
-    var clockMobile = document.getElementById('clock-mobile');
-    if (clockMobile) {
-      clockMobile.innerHTML = '<span>' + day + '/' + monthNum + '/' + year + '</span><span class="text-violet-300 dark:text-violet-600 mx-0.5">\u00b7</span><span>' + hours + ':' + minutes + ':' + seconds + '</span>';
-    }
-  };
-
-  window.updateClock();
-  setInterval(window.updateClock, 1000);
-  window.addEventListener('resize', window.updateClock);
-</script>
 
 
 
@@ -341,8 +293,6 @@
       <div class="metadata p-3"><p class="mt-0 mb-0 text-sm">11 de junio de 2026</p>
 <p class="mt-1 mb-0 text-sm">6 <span data-i18n="content_reading_time">min lectura</span></p>
  
-
-
 
 <p class="metadata-value mt-1 mb-0 text-sm taxa taxa-container-div list-tags">
   Tags: 
@@ -422,8 +372,6 @@
       <div class="metadata p-3"><p class="mt-0 mb-0 text-sm">28 de mayo de 2026</p>
 <p class="mt-1 mb-0 text-sm">5 <span data-i18n="content_reading_time">min lectura</span></p>
  
-
-
 
 <p class="metadata-value mt-1 mb-0 text-sm taxa taxa-container-div list-tags">
   Tags: 
@@ -645,7 +593,6 @@ pre:hover .copy-code-btn {
 
       
       download_cv: 'Download CV',
-      action_get_started: "Let's go!",
       action_view_more: 'View more',
       action_view_thesis: 'View Thesis',
       action_download_paper: 'Download Paper',
@@ -677,12 +624,6 @@ pre:hover .copy-code-btn {
       footer_contact: 'Contact',
       footer_made_with: 'Made with',
 
-      
-      welcome_title: 'Welcome to my website!',
-      welcome_intro_1: 'My name is <strong class="text-violet-700 dark:text-violet-300">Juan Manuel</strong> and on this website you can learn more about me.',
-      welcome_intro_2: 'I created this site with several goals in mind: on one hand, I wanted to learn how to build and manage a website from scratch; on the other, I was drawn to the idea of documenting and sharing the things I learn on a daily basis. You can find these posts in the <strong class="text-violet-700 dark:text-violet-300">blog</strong> tab (although I\'m still just getting started with content).',
-      welcome_intro_3: 'All of this also led me to design personalized business cards — you may have even arrived here thanks to one of them. This way I avoid having to spell out the URL every time someone asks... that, and one day I saw an <em>American Psycho</em> short and it stuck with me. 😄',
-      welcome_dont_show: "Don't show this message again",
 
       
       error_title: 'Page not found!',
@@ -705,12 +646,6 @@ pre:hover .copy-code-btn {
       
       aria_breadcrumb: 'Breadcrumb',
 
-      
-      month_0: 'January', month_1: 'February', month_2: 'March',
-      month_3: 'April', month_4: 'May', month_5: 'June',
-      month_6: 'July', month_7: 'August', month_8: 'September',
-      month_9: 'October', month_10: 'November', month_11: 'December',
-      clock_format: '{day} {month} {year}',
 
       
       easter_secret: "\u{1F3AE} You found the secret!",
@@ -786,7 +721,6 @@ pre:hover .copy-code-btn {
 
       
       download_cv: 'Descargar CV',
-      action_get_started: '¡Empecemos!',
       action_view_more: 'Ver más',
       action_view_thesis: 'Ver TFG',
       action_download_paper: 'Descargar Paper',
@@ -818,12 +752,6 @@ pre:hover .copy-code-btn {
       footer_contact: 'Contacto',
       footer_made_with: 'Hecho con',
 
-      
-      welcome_title: '¡Bienvenido a mi sitio web!',
-      welcome_intro_1: 'Me llamo <strong class="text-violet-700 dark:text-violet-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.',
-      welcome_intro_2: 'Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-violet-700 dark:text-violet-300">blog</strong> (aunque aún estoy empezando con el contenido).',
-      welcome_intro_3: 'Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄',
-      welcome_dont_show: 'No volver a mostrar este mensaje',
 
       
       error_title: '¡Página no encontrada!',
@@ -862,12 +790,6 @@ pre:hover .copy-code-btn {
       
       aria_breadcrumb: 'Miga de pan',
 
-      
-      month_0: 'enero', month_1: 'febrero', month_2: 'marzo',
-      month_3: 'abril', month_4: 'mayo', month_5: 'junio',
-      month_6: 'julio', month_7: 'agosto', month_8: 'septiembre',
-      month_9: 'octubre', month_10: 'noviembre', month_11: 'diciembre',
-      clock_format: '{day} de {month} de {year}',
 
       
       easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
@@ -916,8 +838,6 @@ pre:hover .copy-code-btn {
     window.localStorage.setItem('lang', lang);
     document.documentElement.setAttribute('lang', lang);
 
-    
-    if (typeof window.updateClock === 'function') window.updateClock();
     
     if (typeof window.updateExperienceDisplay === 'function') window.updateExperienceDisplay();
     

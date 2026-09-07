@@ -90,7 +90,7 @@
   
   
   
-  <link href="/main.min.06b689bcacd8eb99a98f54f3f2908871c5265f3d6f307365bc61c2dce3134cba.css" rel="stylesheet" />
+  <link href="/main.min.0a67240fe9da830b5f9e1ad937d88c55380bdb69d8090e25e78314f88452447d.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -229,26 +229,11 @@
   </nav>
 
   
-  <div class="flex md:hidden justify-center -mt-[13px] mb-2 relative z-10">
-    <div id="clock-mobile"
-      class="text-violet-700 dark:text-violet-300 text-xs font-semibold tracking-wide
-             bg-white dark:bg-slate-900
-             border border-violet-400 dark:border-violet-500
-             rounded-full px-4 py-0.5 shadow-sm
-             flex items-center gap-2"
-      aria-live="off" aria-label="Reloj">
-    </div>
-  </div>
-
-  
-  <nav class="hidden md:grid md:grid-cols-3 items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
+  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
       <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
       <a class="nav-menu-item" href="/material"><span data-i18n="nav_material_desktop">Material Universitario</span></a>
-    </div>
-    <div class="flex justify-center">
-      <div id="clock" class="text-violet-700 dark:text-violet-300 font-semibold text-lg text-center" aria-live="off" aria-label="Reloj"></div>
     </div>
     <div class="flex items-center justify-end gap-3">
       
@@ -275,186 +260,14 @@
   </nav>
 </header>
 
-<script>
-  window.updateClock = function() {
-    var now = new Date();
-    var hours = String(now.getHours()).padStart(2, '0');
-    var minutes = String(now.getMinutes()).padStart(2, '0');
-    var seconds = String(now.getSeconds()).padStart(2, '0');
-
-    var day = now.getDate();
-    var monthNum = String(now.getMonth() + 1).padStart(2, '0');
-    var lang = window.localStorage.getItem('lang') || 'es';
-    var t = (window.__i18n && window.__i18n[lang]) || {};
-    var monthName = t['month_' + now.getMonth()] || ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][now.getMonth()];
-    var year = now.getFullYear();
-
-    var fmt = t['clock_format'] || '{day} de {month} de {year}';
-    var dateStr = fmt.replace('{day}', day).replace('{month}', monthName).replace('{year}', year);
-
-    var clockEl = document.getElementById('clock');
-    if (clockEl) {
-      clockEl.innerHTML = '<div>' + dateStr + '</div><div>' + hours + ':' + minutes + ':' + seconds + '</div>';
-    }
-
-    var clockMobile = document.getElementById('clock-mobile');
-    if (clockMobile) {
-      clockMobile.innerHTML = '<span>' + day + '/' + monthNum + '/' + year + '</span><span class="text-violet-300 dark:text-violet-600 mx-0.5">\u00b7</span><span>' + hours + ':' + minutes + ':' + seconds + '</span>';
-    }
-  };
-
-  window.updateClock();
-  setInterval(window.updateClock, 1000);
-  window.addEventListener('resize', window.updateClock);
-</script>
-
 
 
 
     
     <main id="main-content" class="grow">
 
-<div id="welcome-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-title">
-  <div class="bg-gradient-to-br from-gray-50 via-white to-violet-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full border-2 border-violet-500 dark:border-violet-400 relative overflow-hidden animate-fade-in max-h-[90vh] overflow-y-auto">
-    
-    <div class="absolute inset-0 opacity-5 dark:opacity-3" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 20px 20px;" aria-hidden="true"></div>
-    
-    
-    <div class="relative z-10 p-4 sm:p-6 md:p-8">
-      
-      <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-violet-600 dark:text-gray-400 dark:hover:text-violet-400 transition-colors duration-300 p-2" aria-label="Close">
-        <i class="fas fa-times text-lg sm:text-xl" aria-hidden="true"></i>
-      </button>
-      
-      
-      <div class="text-center mb-4 sm:mb-6 px-8 sm:px-10">
-        <h2 id="welcome-modal-title" class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-600 to-violet-400 bg-clip-text text-transparent mb-2 pb-1" data-i18n="welcome_title">¡Bienvenido a mi sitio web!</h2>
-        <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-violet-600 to-violet-400 mx-auto rounded-full"></div>
-      </div>
-      
-      
-      <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-200 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg leading-relaxed">
-        <p data-i18n="welcome_intro_1" data-i18n-html>Me llamo <strong class="text-violet-700 dark:text-violet-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.</p>
-        <p data-i18n="welcome_intro_2" data-i18n-html>Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-violet-700 dark:text-violet-300">blog</strong> (aunque aún estoy empezando con el contenido).</p>
-        <p data-i18n="welcome_intro_3" data-i18n-html>Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄</p>
-      </div>
-      
-      
-      <div class="mt-6 sm:mt-8 flex justify-center">
-        <button onclick="closeWelcomeModal()" class="px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-700 hover:to-violet-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <span data-i18n="action_get_started">¡Empecemos!</span> <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
-        </button>
-      </div>
-      
-      
-      <div class="mt-4 text-center">
-        <label class="inline-flex items-center cursor-pointer text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
-          <input type="checkbox" id="dont-show-again" class="mr-2 w-4 h-4 rounded border-gray-300 text-violet-600 focus:ring-violet-500">
-          <span data-i18n="welcome_dont_show">No volver a mostrar este mensaje</span>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.3s ease-out;
-}
-
-#welcome-modal:not(.hidden) {
-  display: flex;
-}
-</style>
-
-<script>
-function showWelcomeModal() {
-  
-  const hideWelcome = localStorage.getItem('hideWelcomeModal') === 'true';
-  if (hideWelcome) return;
-
-  const modal = document.getElementById('welcome-modal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    
-    const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (firstFocusable) firstFocusable.focus();
-  }
-}
-
-function closeWelcomeModal() {
-  const modal = document.getElementById('welcome-modal');
-  const dontShowAgain = document.getElementById('dont-show-again');
-  
-  if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-  
-  
-  if (dontShowAgain && dontShowAgain.checked) {
-    localStorage.setItem('hideWelcomeModal', 'true');
-  }
-}
-
-
-document.addEventListener('DOMContentLoaded', showWelcomeModal);
-
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeWelcomeModal();
-  }
-});
-
-
-document.getElementById('welcome-modal')?.addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeWelcomeModal();
-  }
-});
-</script>
-
-
-
-
 
 <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-150" style="width: 0%;"></div>
-
-
-<div id="page-loader" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] flex items-center justify-center transition-opacity duration-500" style="pointer-events: auto;">
-  <div class="animate-pulse text-violet-600 dark:text-violet-400 text-3xl font-bold">JM</div>
-</div>
-<script>
-
-(function() {
-  function hideLoader() {
-    var loader = document.getElementById('page-loader');
-    if (loader) {
-      loader.style.opacity = '0';
-      loader.style.pointerEvents = 'none';
-      setTimeout(function() { loader.remove(); }, 500);
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() { setTimeout(hideLoader, 200); });
-  } else {
-    setTimeout(hideLoader, 200);
-  }
-})();
-</script>
 
 
 <div class="hero-section w-full text-white dark:text-gray-100 py-20 md:py-28 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
@@ -467,7 +280,7 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
   <div class="max-w-4xl mx-auto relative z-10">
     <h1 class="text-5xl md:text-6xl font-bold mb-3 text-gradient-animated">Juan Manuel</h1>
     <p class="text-lg md:text-xl mb-2 text-violet-100 dark:text-gray-300">
-      <span id="typing-text"></span><span id="typing-cursor" class="typing-cursor">|</span>
+      ML Engineer · Computer Vision | Physicist &amp; Mathematician
     </p>
     <p class="text-base md:text-lg mb-6 text-violet-50 dark:text-gray-400" data-i18n="profile_location">Elche, Alicante, España</p>
     <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-violet-100 dark:text-gray-300 mb-8">Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.</p>
@@ -491,28 +304,6 @@ document.getElementById('welcome-modal')?.addEventListener('click', function(e) 
 
 
 <script defer src="/js/neural-hero.js"></script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var text = "ML Engineer · Computer Vision | Physicist \u0026 Mathematician";
-  var el = document.getElementById('typing-text');
-  var cursor = document.getElementById('typing-cursor');
-  if (!el) return;
-  var i = 0;
-  function type() {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, 50);
-    } else {
-      
-      setTimeout(function() { if (cursor) cursor.style.display = 'none'; }, 2000);
-    }
-  }
-  setTimeout(type, 800);
-});
-</script>
 
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 md:px-0 max-w-6xl mx-auto mb-12">
@@ -1931,7 +1722,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p class="text-xs text-gray-600 dark:text-gray-400">juanmanuelruiz383@gmail.com</p>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/juan-manuel-ruiz-mu%C3%B1oz/" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
+        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
           <div class="contact-card-icon bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
             <i class="fab fa-linkedin-in text-lg"></i>
           </div>
@@ -2369,7 +2160,6 @@ pre:hover .copy-code-btn {
 
       
       download_cv: 'Download CV',
-      action_get_started: "Let's go!",
       action_view_more: 'View more',
       action_view_thesis: 'View Thesis',
       action_download_paper: 'Download Paper',
@@ -2401,12 +2191,6 @@ pre:hover .copy-code-btn {
       footer_contact: 'Contact',
       footer_made_with: 'Made with',
 
-      
-      welcome_title: 'Welcome to my website!',
-      welcome_intro_1: 'My name is <strong class="text-violet-700 dark:text-violet-300">Juan Manuel</strong> and on this website you can learn more about me.',
-      welcome_intro_2: 'I created this site with several goals in mind: on one hand, I wanted to learn how to build and manage a website from scratch; on the other, I was drawn to the idea of documenting and sharing the things I learn on a daily basis. You can find these posts in the <strong class="text-violet-700 dark:text-violet-300">blog</strong> tab (although I\'m still just getting started with content).',
-      welcome_intro_3: 'All of this also led me to design personalized business cards — you may have even arrived here thanks to one of them. This way I avoid having to spell out the URL every time someone asks... that, and one day I saw an <em>American Psycho</em> short and it stuck with me. 😄',
-      welcome_dont_show: "Don't show this message again",
 
       
       error_title: 'Page not found!',
@@ -2429,12 +2213,6 @@ pre:hover .copy-code-btn {
       
       aria_breadcrumb: 'Breadcrumb',
 
-      
-      month_0: 'January', month_1: 'February', month_2: 'March',
-      month_3: 'April', month_4: 'May', month_5: 'June',
-      month_6: 'July', month_7: 'August', month_8: 'September',
-      month_9: 'October', month_10: 'November', month_11: 'December',
-      clock_format: '{day} {month} {year}',
 
       
       easter_secret: "\u{1F3AE} You found the secret!",
@@ -2510,7 +2288,6 @@ pre:hover .copy-code-btn {
 
       
       download_cv: 'Descargar CV',
-      action_get_started: '¡Empecemos!',
       action_view_more: 'Ver más',
       action_view_thesis: 'Ver TFG',
       action_download_paper: 'Descargar Paper',
@@ -2542,12 +2319,6 @@ pre:hover .copy-code-btn {
       footer_contact: 'Contacto',
       footer_made_with: 'Hecho con',
 
-      
-      welcome_title: '¡Bienvenido a mi sitio web!',
-      welcome_intro_1: 'Me llamo <strong class="text-violet-700 dark:text-violet-300">Juan Manuel</strong> y en esta página web podrás conocer más acerca de mí.',
-      welcome_intro_2: 'Creé este sitio con varios objetivos en mente: por un lado, quería aprender a montar y gestionar una web desde cero; por otro, me atraía la idea de documentar y compartir las cosas que voy aprendiendo en mi día a día. Puedes encontrar estos posts en la pestaña de <strong class="text-violet-700 dark:text-violet-300">blog</strong> (aunque aún estoy empezando con el contenido).',
-      welcome_intro_3: 'Todo esto también me llevó a diseñar tarjetas de presentación personalizadas —puede que incluso hayas llegado aquí gracias a una de ellas—. Así evito tener que deletrear la URL cada vez que alguien me pregunta... eso, y que un día vi un <em>short</em> de <em>American Psycho</em> y se me quedó grabado. 😄',
-      welcome_dont_show: 'No volver a mostrar este mensaje',
 
       
       error_title: '¡Página no encontrada!',
@@ -2586,12 +2357,6 @@ pre:hover .copy-code-btn {
       
       aria_breadcrumb: 'Miga de pan',
 
-      
-      month_0: 'enero', month_1: 'febrero', month_2: 'marzo',
-      month_3: 'abril', month_4: 'mayo', month_5: 'junio',
-      month_6: 'julio', month_7: 'agosto', month_8: 'septiembre',
-      month_9: 'octubre', month_10: 'noviembre', month_11: 'diciembre',
-      clock_format: '{day} de {month} de {year}',
 
       
       easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
@@ -2640,8 +2405,6 @@ pre:hover .copy-code-btn {
     window.localStorage.setItem('lang', lang);
     document.documentElement.setAttribute('lang', lang);
 
-    
-    if (typeof window.updateClock === 'function') window.updateClock();
     
     if (typeof window.updateExperienceDisplay === 'function') window.updateExperienceDisplay();
     

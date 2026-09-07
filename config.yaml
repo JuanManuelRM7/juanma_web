@@ -3,6 +3,8 @@ languageCode: es
 publishDir: docs
 defaultContentLanguage: es
 defaultContentLanguageInSubdir: false
+taxonomies:
+  tag: tags
 outputs:
   home: [HTML, RSS, JSON]
 languages:

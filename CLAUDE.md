@@ -6,11 +6,11 @@ Portfolio personal de Juan Manuel Ruiz (ML Engineer & Computer Vision). **Hugo**
 
 ```bash
 npm install          # instalar dependencias
-hugo server          # dev en localhost:1313
+hugo server -M       # dev en localhost:1313 (-M: renderiza en memoria, no pisa docs/)
 npm run build        # build producción (Hugo + Pagefind)
 ```
 
-> El build escribe en `docs/`. Nunca edites `docs/` manualmente.
+> El build escribe en `docs/`. Nunca edites `docs/` manualmente. `hugo server` sin `-M` también escribe en `docs/` y deja un build de desarrollo (URLs localhost:1313, livereload): usa siempre `-M`.
 
 ---
 

@@ -44,7 +44,7 @@ GitHub Pages         Hosting desde /docs
 
 ```bash
 npm install
-hugo server
+hugo server -M   # -M renderiza en memoria; sin él, hugo server sobrescribe docs/
 ```
 
 ## Despliegue

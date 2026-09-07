@@ -14,18 +14,6 @@
                 href="https://juanmanuel.petrer.eu/en/"
                 />
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/categories/"
-                />
-  </url><url>
     <loc>https://juanmanuel.petrer.eu/en/tags/</loc>
     <xhtml:link
                 rel="alternate"

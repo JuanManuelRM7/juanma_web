@@ -13,7 +13,7 @@ tags: ["meta", "docs"]
 
 ```bash
 npm install          # install dependencies
-hugo server          # dev server at localhost:1313
+hugo server -M       # dev server at localhost:1313 (-M renders in memory, never writes docs/)
 npm run build        # production build (Hugo + Pagefind)
 ```
 

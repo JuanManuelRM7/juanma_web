@@ -243,17 +243,5 @@
   </url><url>
     <loc>https://juanmanuel.petrer.eu/search/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/categories/"
-                />
   </url>
 </urlset>
