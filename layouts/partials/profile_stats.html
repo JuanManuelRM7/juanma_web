@@ -1,47 +1,18 @@
-<!-- Profile Stats (Animated Counters) -->
+<!-- Profile stats: all three values are derived from config.yaml -->
+{{ $pubs := 0 }}{{ range .Site.Params.publication.list }}{{ if or .pdf_url .doi }}{{ $pubs = add $pubs 1 }}{{ end }}{{ end }}
+{{ $oss := 0 }}{{ range .Site.Params.project.list }}{{ $repo := "" }}{{ with .links }}{{ $repo = .repo | default "" }}{{ end }}{{ $u := .url | default "" }}{{ if or $repo (in $u "github.com") }}{{ $oss = add $oss 1 }}{{ end }}{{ end }}
 <div class="grid grid-cols-3 gap-3 text-center py-4">
-  <!-- Dynamic Experience Calculator -->
   <div class="flex flex-col items-center">
     {{ partial "experience_calculator" . }}
     <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_experience">{{ i18n "profile_experience" }}</p>
   </div>
   <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">
-      <span data-counter="7" data-suffix="+">0</span>
-    </p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_projects">{{ i18n "profile_projects" }}</p>
+    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">{{ $pubs }}</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_publications">{{ i18n "profile_publications" }}</p>
   </div>
   <div class="flex flex-col items-center">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">AI</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_specialist">{{ i18n "profile_specialist" }}</p>
+    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">{{ $oss }}</p>
+    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_oss">{{ i18n "profile_oss" }}</p>
   </div>
 </div>
 <div class="border-t border-gray-200 dark:border-gray-700"></div>
-
-<script>
-// Animated counter with Intersection Observer
-document.addEventListener('DOMContentLoaded', function() {
-  const counters = document.querySelectorAll('[data-counter]');
-  const counterObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.counter);
-        const suffix = el.dataset.suffix || '';
-        let current = 0;
-        const step = Math.max(1, Math.floor(target / 30));
-        const timer = setInterval(function() {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          el.textContent = current + suffix;
-        }, 40);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(function(c) { counterObserver.observe(c); });
-});
-</script>

@@ -3,17 +3,19 @@
   <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
     <!-- Photo + Name -->
     <div class="flex items-center gap-2 min-w-0">
+      {{ $thumb := (resources.Get (printf "images/%s" .Site.Params.profile.photo)).Fill "96x96 webp q80" }}
       <img
-        src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}"
+        src="{{ $thumb.RelPermalink }}"
+        width="48" height="48"
         alt="{{ .Site.Params.author }}"
         class="w-12 h-12 rounded-lg border-2 border-violet-600 dark:border-violet-400 flex-shrink-0"
       />
       <div class="min-w-0">
         <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
-          {{ .Site.Params.profile.name }}
+          {{ .Site.Params.profile.short_name | default .Site.Params.profile.name }}
         </p>
-        <p class="text-xs text-gray-600 dark:text-gray-400 truncate">
-          Computer Vision
+        <p class="text-xs text-gray-600 dark:text-gray-400 truncate" data-i18n="profile_position">
+          {{ .Site.Params.profile.position }}
         </p>
       </div>
     </div>

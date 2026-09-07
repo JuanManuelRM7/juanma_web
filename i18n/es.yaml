@@ -13,8 +13,6 @@ aria_toggle_theme:
   other: "Cambiar tema"
 aria_toggle_lang:
   other: "Cambiar idioma"
-hero_desc:
-  other: "Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto."
 nav_exp:
   other: "Experiencia"
 nav_edu:
@@ -77,10 +75,6 @@ blog_description:
   other: "Artículos sobre física, IA, meteorología y más"
 profile_experience:
   other: "Experiencia"
-profile_projects:
-  other: "Proyectos"
-profile_specialist:
-  other: "Especialista"
 footer_sections:
   other: "Secciones"
 footer_resources:
@@ -119,3 +113,11 @@ prev_post:
   other: "Anterior"
 next_post:
   other: "Siguiente"
+profile_publications:
+  other: "Publicaciones"
+profile_oss:
+  other: "Open source"
+cta_projects:
+  other: "Ver proyectos"
+cta_contact:
+  other: "Contactar"

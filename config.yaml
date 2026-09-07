@@ -17,17 +17,29 @@ languages:
     languageCode: en
     weight: 2
     params:
-      title: Juan Manuel Ruiz – ML Engineer & Computer Vision Specialist
-      description: "ML Engineer with a physics and mathematics background, specialized in Computer Vision and Deep Learning. Portfolio, projects, publications and blog of Juan Manuel Ruiz Muñoz."
+      title: Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision & LLMs
+      description: "ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz."
       profile:
-        name: "Juan Manuel"
+        name: "Juan Manuel Ruiz Muñoz"
+        short_name: "Juan Manuel"
         location: "Elche, Alicante, Spain"
         photo: profile.png
-        position: "ML Engineer · Computer Vision | Physicist & Mathematician"
+        position: "ML Engineer · Computer Vision & LLMs"
+      hero:
+        value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist and mathematician, I care about understanding why a model works before shipping it."
+        metrics:
+          - value: "0.83"
+            label: "mAP@50:95 on multi-class segmentation, in production"
+          - value: "98.56%"
+            label: "exact match of a multimodal OCR (GLM-OCR + LoRA) in production"
+          - value: "DCAI'25"
+            label: "paper on misinformation detection with LLMs and RAG"
+          - value: "35.9%"
+            label: "activation recovery with a ~2 KB calibration filter (vcalib)"
       aboutme:
         title: About me
         icon: fas fa-user
-        description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I build computer vision systems that work in real production: from data capture and preprocessing to model deployment. I am drawn to the intersection between mathematical rigor and AI solutions with tangible impact. When I am not training models, I write about physics, chaos and meteorology on this blog."
+        description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog."
       experience:
         title: Experience
         icon: fas fa-briefcase
@@ -35,6 +47,8 @@ languages:
         list:
           - position: ML Engineer · Computer Vision & LLMs
             dates: June 2025 - *Present*
+            start: "2025-06"
+            end: ""
             company: VRAIA Corp.
             url: "https://vraia.com/"
             details: |1-
@@ -44,6 +58,8 @@ languages:
             tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "vLLM", "Docker"]
           - position: Data Scientist & AI Researcher
             dates: June 2024 - June 2025
+            start: "2024-06"
+            end: "2025-06"
             company: AIR Institute & BISITE Research Group
             url: "https://www.air-institute.org/"
             details: |1-
@@ -53,6 +69,8 @@ languages:
             tags: ["NLP", "LLMs", "RAG", "ChromaDB", "Multi-agent", "Ollama", "Computer Vision", "Python"]
           - position: Researcher · Internship
             dates: January 2024 - July 2024
+            start: "2024-01"
+            end: "2024-07"
             company: Universidad Miguel Hernández — SCOLAb Group
             url: "https://seneca.umh.es/"
             details: |1-
@@ -170,9 +188,9 @@ markup:
     lineNumbersInTable: false
     noClasses: false
 params:
-  title: Juan Manuel Ruiz – ML Engineer & Computer Vision Specialist
+  title: Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision & LLMs
   author: Juan Manuel Ruiz Muñoz
-  description: "ML Engineer y físico-matemático especializado en Computer Vision y Deep Learning. Portfolio, proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz."
+  description: "ML Engineer especializado en Computer Vision y LLMs: detección de defectos industriales, OCR multimodal con LoRA y sistemas RAG en producción. Físico y matemático. Proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz."
   copyright:
   theme:
     mainTheme: null
@@ -189,10 +207,22 @@ params:
               <link rel="shortcut icon" href="favicon.ico">
 
   profile:
-    name: "Juan Manuel"
+    name: "Juan Manuel Ruiz Muñoz"
+    short_name: "Juan Manuel"
     location: "Elche, Alicante, España"
     photo: profile.png
-    position: "ML Engineer · Computer Vision | Physicist & Mathematician"
+    position: "ML Engineer · Computer Vision & LLMs"
+  hero:
+    value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico y matemático de formación: me importa entender por qué funciona un modelo antes de desplegarlo."
+    metrics:
+      - value: "0,83"
+        label: "mAP@50:95 en segmentación multiclase, en producción"
+      - value: "98,56 %"
+        label: "exact match de un OCR multimodal (GLM-OCR + LoRA) en producción"
+      - value: "DCAI'25"
+        label: "paper sobre detección de desinformación con LLMs y RAG"
+      - value: "35,9 %"
+        label: "recuperación de activaciones con un filtro de ~2 KB (vcalib)"
   social:
     title: Links
     list:
@@ -221,7 +251,7 @@ params:
   aboutme:
     title: Sobre mí
     icon: fas fa-user
-    description: "Físico y matemático especializado en Machine Learning e ingeniería de Computer Vision. Construyo sistemas de visión artificial que funcionan en producción real: desde la captura y preprocesado del dato hasta el despliegue del modelo. Me atrae la intersección entre rigor matemático y soluciones de IA con impacto tangible. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog."
+    description: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog."
   experience:
     title: Experiencia
     icon: fas fa-briefcase
@@ -230,6 +260,8 @@ params:
 
       - position: ML Engineer · Computer Vision & LLMs
         dates: Junio 2025 - *Presente*
+        start: "2025-06"
+        end: ""
         company: VRAIA Corp.
         url: "https://vraia.com/"
         details: |1-
@@ -239,6 +271,8 @@ params:
         tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "vLLM", "Docker"]
       - position: Data Scientist & AI Researcher
         dates: Junio 2024 - Junio 2025
+        start: "2024-06"
+        end: "2025-06"
         company: AIR Institute & Grupo de Investigación BISITE
         url: "https://www.air-institute.org/"
         details: |1-
@@ -248,6 +282,8 @@ params:
         tags: ["NLP", "LLMs", "RAG", "ChromaDB", "Multiagente", "Ollama", "Computer Vision", "Python"]
       - position: Investigador · Contrato de prácticas
         dates: Enero 2024 - Julio 2024
+        start: "2024-01"
+        end: "2024-07"
         company: Universidad Miguel Hernández — Grupo SCOLAb
         url: "https://seneca.umh.es/"
         details: |1-

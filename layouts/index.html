@@ -4,7 +4,8 @@
 <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-150" style="width: 0%;"></div>
 
 <!-- Hero Section -->
-<div class="hero-section w-full text-white dark:text-gray-100 py-20 md:py-28 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
+{{ $mail := "" }}{{ range .Site.Params.social.list }}{{ if eq .icon "fas fa-envelope" }}{{ $mail = .url }}{{ end }}{{ end }}
+<div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
   <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
   <!-- Blobs aurora -->
   <div class="hero-aurora" style="width: 340px; height: 340px; top: -120px; right: -60px; background: radial-gradient(circle, #22d3ee, transparent 70%);"></div>
@@ -12,31 +13,30 @@
   <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
 
   <div class="max-w-4xl mx-auto relative z-10">
-    <h1 class="text-5xl md:text-6xl font-bold mb-3 text-gradient-animated">{{ .Site.Params.profile.name }}</h1>
-    <p class="text-lg md:text-xl mb-2 text-violet-100 dark:text-gray-300">
-      {{ .Site.Params.profile.position }}
-    </p>
-    <p class="text-base md:text-lg mb-6 text-violet-50 dark:text-gray-400" data-i18n="profile_location">{{ .Site.Params.profile.location }}</p>
-    <p data-i18n="hero_desc" class="text-sm md:text-base max-w-2xl leading-relaxed text-violet-100 dark:text-gray-300 mb-8">{{ i18n "hero_desc" }}</p>
+    <p class="hero-kicker" data-i18n="profile_position">{{ .Site.Params.profile.position }}</p>
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gradient-animated">{{ .Site.Params.profile.name }}</h1>
+    <p class="text-base md:text-lg max-w-3xl leading-relaxed text-violet-50 dark:text-gray-200 mb-6" data-i18n="hero_value">{{ .Site.Params.hero.value }}</p>
+    {{ partial "hero_metrics" . }}
     <!-- CTAs -->
-    <div class="flex flex-wrap gap-3 mt-4">
+    <div class="flex flex-wrap gap-3 mt-8">
       <a href="#proyectos" class="hero-cta hero-cta-primary">
-        <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span>
-      </a>
-      <a href="{{ `blog` | relURL }}" class="hero-cta hero-cta-secondary">
-        <i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span>
+        <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="cta_projects">{{ i18n "cta_projects" }}</span>
       </a>
       <a href="{{ `/cv.pdf` | relURL }}" class="hero-cta hero-cta-secondary">
         <i class="fas fa-file-download" aria-hidden="true"></i> <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>
+      {{ with $mail }}
+      <a href="{{ . }}" class="hero-cta hero-cta-secondary">
+        <i class="fas fa-envelope" aria-hidden="true"></i> <span data-i18n="cta_contact">{{ i18n "cta_contact" }}</span>
+      </a>
+      {{ end }}
     </div>
+    <p class="mt-5 text-sm text-violet-100 dark:text-gray-400" data-i18n="profile_location">{{ .Site.Params.profile.location }}</p>
   </div>
   <a href="#proyectos" class="scroll-indicator" aria-label="Bajar al contenido" style="color: rgba(255,255,255,0.7) !important;">
     <i class="fas fa-chevron-down" aria-hidden="true"></i>
   </a>
-</div>
-
-<!-- Neural Network Hero Animation -->
+</div><!-- Neural Network Hero Animation -->
 <script defer src="{{ `/js/neural-hero.js` | relURL }}"></script>
 
 <!-- Main Content Grid: 40% sidebar | 60% content -->

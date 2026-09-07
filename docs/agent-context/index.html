@@ -21,8 +21,8 @@
 <meta property="og:image" content="https://juanmanuel.petrer.eu/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - ML Engineer · Computer Vision | Physicist &amp; Mathematician" />
-<meta property="og:site_name" content="Juan Manuel Ruiz – ML Engineer &amp; Computer Vision Specialist" />
+<meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - ML Engineer · Computer Vision &amp; LLMs" />
+<meta property="og:site_name" content="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs" />
 <meta property="og:locale" content="es_ES" />
 
 <meta property="article:author" content="Juan Manuel Ruiz Muñoz" />
@@ -86,14 +86,14 @@
   
 
   
-  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz – ML Engineer &amp; Computer Vision Specialist – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
   
 
   
   
   
   
-  <link href="/main.min.0a67240fe9da830b5f9e1ad937d88c55380bdb69d8090e25e78314f88452447d.css" rel="stylesheet" />
+  <link href="/main.min.c4d23bf48c3505b8e8d0a6bc5df720160a403f2ffbd707b92d62aa284016498c.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -209,8 +209,8 @@
   
   <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal">
     <a class="nav-menu-item !p-1 !px-2" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="/#proyectos"><span data-i18n="nav_projects">Proyectos</span></a>
     <a class="nav-menu-item !p-1 !px-2" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/material"><span data-i18n="nav_material">Material</span></a>
     <a href="/search" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
       <i class="fas fa-search" aria-hidden="true"></i>
     </a>
@@ -235,8 +235,8 @@
   <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="https://juanmanuel.petrer.eu/"><span data-i18n="nav_home">Inicio</span></a>
+      <a class="nav-menu-item" href="/#proyectos"><span data-i18n="nav_projects">Proyectos</span></a>
       <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
-      <a class="nav-menu-item" href="/material"><span data-i18n="nav_material_desktop">Material Universitario</span></a>
     </div>
     <div class="flex items-center justify-end gap-3">
       
@@ -726,6 +726,39 @@ pre:hover .copy-code-btn {
 
     
 <script>
+window.__i18nDyn = {
+  "es": {
+    profile_position: "ML Engineer · Computer Vision \u0026 LLMs",
+    profile_location: "Elche, Alicante, España",
+    aboutme_description: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
+    hero_value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico y matemático de formación: me importa entender por qué funciona un modelo antes de desplegarlo.",
+    "hero_metric_1_value": "0,83",
+    "hero_metric_1_label": "mAP@50:95 en segmentación multiclase, en producción",
+    "hero_metric_2_value": "98,56 %",
+    "hero_metric_2_label": "exact match de un OCR multimodal (GLM-OCR + LoRA) en producción",
+    "hero_metric_3_value": "DCAI'25",
+    "hero_metric_3_label": "paper sobre detección de desinformación con LLMs y RAG",
+    "hero_metric_4_value": "35,9 %",
+    "hero_metric_4_label": "recuperación de activaciones con un filtro de ~2 KB (vcalib)",
+  },
+  "en": {
+    profile_position: "ML Engineer · Computer Vision \u0026 LLMs",
+    profile_location: "Elche, Alicante, Spain",
+    aboutme_description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
+    hero_value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist and mathematician, I care about understanding why a model works before shipping it.",
+    "hero_metric_1_value": "0.83",
+    "hero_metric_1_label": "mAP@50:95 on multi-class segmentation, in production",
+    "hero_metric_2_value": "98.56%",
+    "hero_metric_2_label": "exact match of a multimodal OCR (GLM-OCR + LoRA) in production",
+    "hero_metric_3_value": "DCAI'25",
+    "hero_metric_3_label": "paper on misinformation detection with LLMs and RAG",
+    "hero_metric_4_value": "35.9%",
+    "hero_metric_4_label": "activation recovery with a ~2 KB calibration filter (vcalib)",
+  },
+};
+</script>
+
+<script>
 (function() {
   var translations = {
     en: {
@@ -739,7 +772,6 @@ pre:hover .copy-code-btn {
       aria_toggle_lang: 'Change language',
 
       
-      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
       nav_exp: 'Experience',
       nav_edu: 'Education',
       nav_pub: 'Publications',
@@ -779,8 +811,10 @@ pre:hover .copy-code-btn {
 
       
       profile_experience: 'Experience',
-      profile_projects: 'Projects',
-      profile_specialist: 'Specialist',
+      profile_publications: 'Publications',
+      profile_oss: 'Open source',
+      cta_projects: 'View projects',
+      cta_contact: 'Contact',
 
       
       footer_sections: 'Sections',
@@ -867,7 +901,6 @@ pre:hover .copy-code-btn {
       aria_toggle_lang: 'Cambiar idioma',
 
       
-      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
       nav_exp: 'Experiencia',
       nav_edu: 'Educación',
       nav_pub: 'Publicaciones',
@@ -907,8 +940,10 @@ pre:hover .copy-code-btn {
 
       
       profile_experience: 'Experiencia',
-      profile_projects: 'Proyectos',
-      profile_specialist: 'Especialista',
+      profile_publications: 'Publicaciones',
+      profile_oss: 'Open source',
+      cta_projects: 'Ver proyectos',
+      cta_contact: 'Contactar',
 
       
       footer_sections: 'Secciones',
@@ -966,6 +1001,12 @@ pre:hover .copy-code-btn {
   };
 
   
+  
+  if (window.__i18nDyn) {
+    Object.keys(window.__i18nDyn).forEach(function (l) {
+      translations[l] = Object.assign(translations[l] || {}, window.__i18nDyn[l]);
+    });
+  }
   window.__i18n = translations;
 
   function applyLang(lang) {

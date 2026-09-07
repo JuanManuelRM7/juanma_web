@@ -1,3 +1,21 @@
+<!-- Translations generated from config.yaml: params (es) and languages.en.params (en).
+     Keys here are data-driven so hero, profile, projects and experience never need manual duplication. -->
+<script>
+window.__i18nDyn = {
+  {{- range .Site.Home.AllTranslations }}
+  {{ .Language.Lang }}: {
+    profile_position: {{ .Site.Params.profile.position }},
+    profile_location: {{ .Site.Params.profile.location }},
+    aboutme_description: {{ .Site.Params.aboutme.description }},
+    hero_value: {{ .Site.Params.hero.value }},
+    {{- range $i, $m := .Site.Params.hero.metrics }}
+    {{ printf "hero_metric_%d_value" (add $i 1) }}: {{ $m.value }},
+    {{ printf "hero_metric_%d_label" (add $i 1) }}: {{ $m.label }},
+    {{- end }}
+  },
+  {{- end }}
+};
+</script>
 <!-- Global i18n translation system -->
 <script>
 (function() {
@@ -13,7 +31,6 @@
       aria_toggle_lang: 'Change language',
 
       // Hero & Homepage sections
-      hero_desc: 'Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI.',
       nav_exp: 'Experience',
       nav_edu: 'Education',
       nav_pub: 'Publications',
@@ -53,8 +70,10 @@
 
       // Profile stats
       profile_experience: 'Experience',
-      profile_projects: 'Projects',
-      profile_specialist: 'Specialist',
+      profile_publications: 'Publications',
+      profile_oss: 'Open source',
+      cta_projects: 'View projects',
+      cta_contact: 'Contact',
 
       // Footer
       footer_sections: 'Sections',
@@ -141,7 +160,6 @@
       aria_toggle_lang: 'Cambiar idioma',
 
       // Hero & Homepage sections
-      hero_desc: 'Físico e ingeniero en inteligencia artificial especializado en visión computacional. Resolviendo problemas complejos con IA de alto impacto.',
       nav_exp: 'Experiencia',
       nav_edu: 'Educación',
       nav_pub: 'Publicaciones',
@@ -181,8 +199,10 @@
 
       // Profile stats
       profile_experience: 'Experiencia',
-      profile_projects: 'Proyectos',
-      profile_specialist: 'Especialista',
+      profile_publications: 'Publicaciones',
+      profile_oss: 'Open source',
+      cta_projects: 'Ver proyectos',
+      cta_contact: 'Contactar',
 
       // Footer
       footer_sections: 'Secciones',
@@ -240,6 +260,12 @@
   };
 
   // Make translations globally available
+  // Merge translations generated from config.yaml (see block above)
+  if (window.__i18nDyn) {
+    Object.keys(window.__i18nDyn).forEach(function (l) {
+      translations[l] = Object.assign(translations[l] || {}, window.__i18nDyn[l]);
+    });
+  }
   window.__i18n = translations;
 
   function applyLang(lang) {

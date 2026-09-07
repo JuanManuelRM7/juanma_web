@@ -48,7 +48,7 @@
   "url": "{{ .Site.BaseURL }}",
   "jobTitle": "{{ .Site.Params.profile.position }}",
   "description": "{{ .Site.Params.description }}",
-  "image": "{{ .Site.Params.profile.photo | printf "images/%s" | absURL }}",
+  "image": "{{ ((resources.Get (printf "images/%s" .Site.Params.profile.photo)).Resize "560x webp q82").Permalink }}",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "{{ .Site.Params.profile.location }}"

@@ -7,48 +7,34 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var display = document.getElementById('total-experience');
+  if (!display) return;
 
+  // start/end come from config.yaml (params.experience.list[].start/end, "YYYY-MM"; empty end = present)
   var experiences = [
-    { start: 'Junio 2025', end: 'Presente' },
-    { start: 'Junio 2024', end: 'Junio 2025' },
-    { start: 'Enero 2024', end: 'Julio 2024' }
+    {{- range .Site.Params.experience.list }}
+    { start: {{ .start | default "" }}, end: {{ .end | default "" }} },
+    {{- end }}
   ];
 
-  var meses = {
-    'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
-    'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
-    'septiembre': 9, 'octubre': 10, 'noviembre': 11, 'diciembre': 12
-  };
-
-  function parseDate(dateStr) {
-    dateStr = dateStr.trim().toLowerCase();
-    if (/^\d{4}$/.test(dateStr)) return new Date(parseInt(dateStr), 0, 1);
-    var parts = dateStr.split(/\s+/);
-    if (parts.length >= 2) {
-      var month = meses[parts[0]] || 1;
-      var year = parseInt(parts[1]);
-      return new Date(year, month - 1, 1);
-    }
-    return new Date();
+  function parseYM(s) {
+    var m = /^(\d{4})-(\d{2})$/.exec(s || '');
+    return m ? new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, 1) : null;
   }
 
   var now = new Date();
-  var earliestDate = now;
-  var latestDate = now;
+  var earliest = now, latest = now;
   experiences.forEach(function(exp) {
-    var startDate = parseDate(exp.start);
-    var endDate = exp.end.indexOf('Presente') !== -1 ? now : parseDate(exp.end);
-    if (startDate < earliestDate) earliestDate = startDate;
-    if (endDate > latestDate) latestDate = endDate;
+    var s = parseYM(exp.start);
+    var e = exp.end ? parseYM(exp.end) : now;
+    if (s && s < earliest) earliest = s;
+    if (e && e > latest) latest = e;
   });
 
-  var totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12;
-  totalMonths += latestDate.getMonth() - earliestDate.getMonth();
-  if (latestDate.getDate() < earliestDate.getDate()) totalMonths -= 1;
+  var totalMonths = (latest.getFullYear() - earliest.getFullYear()) * 12 + (latest.getMonth() - earliest.getMonth());
   totalMonths = Math.max(1, totalMonths);
 
   function updateDisplay() {
-    var lang = (window.localStorage && window.localStorage.getItem('lang')) || 'es';
+    var lang = (window.localStorage && window.localStorage.getItem('lang')) || document.documentElement.getAttribute('lang') || 'es';
     var years = Math.floor(totalMonths / 12);
     var months = totalMonths % 12;
     var yWord, mWord, andWord;
@@ -61,13 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
       mWord = months === 1 ? 'mes' : 'meses';
       andWord = 'y';
     }
-    if (years === 0) {
-      display.textContent = months + ' ' + mWord;
-    } else if (months === 0) {
-      display.textContent = years + ' ' + yWord;
-    } else {
-      display.textContent = years + ' ' + yWord + ' ' + andWord + ' ' + months + ' ' + mWord;
-    }
+    if (years === 0) display.textContent = months + ' ' + mWord;
+    else if (months === 0) display.textContent = years + ' ' + yWord;
+    else display.textContent = years + ' ' + yWord + ' ' + andWord + ' ' + months + ' ' + mWord;
   }
 
   updateDisplay();

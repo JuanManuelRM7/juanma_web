@@ -13,8 +13,6 @@ aria_toggle_theme:
   other: "Toggle theme"
 aria_toggle_lang:
   other: "Change language"
-hero_desc:
-  other: "Physicist and AI engineer specialized in computer vision. Solving complex problems with high-impact AI."
 nav_exp:
   other: "Experience"
 nav_edu:
@@ -77,10 +75,6 @@ blog_description:
   other: "Articles about physics, AI, meteorology and more"
 profile_experience:
   other: "Experience"
-profile_projects:
-  other: "Projects"
-profile_specialist:
-  other: "Specialist"
 footer_sections:
   other: "Sections"
 footer_resources:
@@ -171,3 +165,11 @@ proj_desc_7:
   other: "This website: static portfolio built with Hugo, Tailwind CSS, and deployed on GitHub Pages with CI/CD."
 pub_type_dev:
   other: "In development"
+profile_publications:
+  other: "Publications"
+profile_oss:
+  other: "Open source"
+cta_projects:
+  other: "View projects"
+cta_contact:
+  other: "Contact"
