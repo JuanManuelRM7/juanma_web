@@ -10,3 +10,6 @@ build.ps1
 
 # Copias de conflicto de iCloud/Finder ("archivo 2.ext", "archivo 3.ext", ...)
 * [0-9].*
+
+# Carpetas de conflicto de iCloud ("carpeta 2/", "carpeta 3/", ...)
+* [0-9]/
