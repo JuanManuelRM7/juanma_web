@@ -14,154 +14,89 @@ tags: ["meta", "docs"]
 ```bash
 npm install          # install dependencies
 hugo server -M       # dev server at localhost:1313 (-M renders in memory, never writes docs/)
-npm run build        # production build (Hugo + Pagefind)
+npm run build        # production build (Hugo + Pagefind) → docs/
 ```
+
+Never edit `docs/` by hand; it is build output. After adding a post or a case study, regenerate the Open Graph images with `npm i --no-save sharp && node scripts/generate-og-posts.mjs`.
 
 ## Where everything lives
 
 ### Profile data → `config.yaml`
 
-All site content lives in `config.yaml` under `params`. No database, no CMS — pure YAML.
+All profile data lives in `config.yaml`: Spanish under `params`, English under `languages.en.params`, same keys. The runtime ES/EN toggle strings for hero, projects, experience, education, publications, skills and certifications are **generated** from those two branches, so editing the YAML is enough.
 
-| Section | Key in `config.yaml` |
-|---------|----------------------|
-| Work experience | `params.experience.list` |
-| Education | `params.education.list` |
-| Projects | `params.project.list` |
-| Skills / tech | `params.skill.list` |
-| Publications | `params.publication.list` |
-| Social links | `params.social.list` |
-| Name, bio, photo | `params.profile` |
+| Section | Key | Rendered by |
+|---|---|---|
+| Hero (headline, value proposition, metrics) | `params.profile`, `params.hero` | `layouts/index.html`, `partials/hero_metrics.html` |
+| Project cards | `params.project.list` | `partials/projects.html` → `project_card.html` |
+| Experience (summary + `highlights`) | `params.experience.list` | `partials/accordion/experience.html` |
+| Education | `params.education.list` | `partials/accordion/education.html` |
+| Certifications | `params.certifications.list` | `partials/certifications.html` |
+| Publications | `params.publication.list` | `partials/accordion/publication.html` |
+| Skills by category | `params.skill.categories` | `partials/skills_by_category.html` |
+| Social / contact | `params.social.list` | homepage contact, sidebar, footer |
 
-### Markdown content → `content/`
+### Content → `content/`
 
-```
-content/
-├── blog/         ← blog posts (frontmatter: title, date, tags, description)
-├── material/     ← university notes
-└── search/       ← only _index.md exists here; search is handled by Pagefind
-```
+- `blog/` — blog posts (Spanish only)
+- `proyectos/` — case studies: `<slug>.md` (ES) and `<slug>.en.md` (EN); front matter carries `role`, `period`, `org`, `stack`, `links`, `metrics`
+- `material/` — university notes
+- `search/` — search page
 
 ### Layouts → `layouts/`
 
+- `index.html` — homepage
+- `proyectos/list.html`, `proyectos/single.html` — projects index and case-study page (sticky fact sheet + TOC)
+- `blog/list.html`, `material/list.html`, `_default/single.html`
+- `shortcodes/img.html` — processed webp images from `assets/images/`
+- `partials/` — `head`, `meta` (OG + JSON-LD), `header`, `footer`, `i18n` (static UI strings + generated `window.__i18nDyn`), `projects`/`project_card`, `hero_metrics`, `latest_posts`, `certifications`, `command_palette`, `terminal`, `accordion/*`
+
+### Images
+
+Processed images (profile photo, case-study figures) live in `assets/images/` and are converted to webp by Hugo. PDFs, OG images and icons are in `static/`.
+
+### Styles and JS
+
+- `assets/main.css` — Tailwind imports, self-hosted `@font-face` (`static/fonts/`), custom components. Project colors and status badges are plain CSS: do not build Tailwind classes dynamically from config data (the purge cannot see them).
+- `static/js/` — `accordion.js`, `cv-mode.js` (YOLO easter egg), `neural-hero.js`, `cmdk.js` (⌘K palette), `terminal.js` (terminal easter egg)
+
+## Common tasks
+
+### Add a project card
+
+Add an entry with a stable `id` to **both** `params.project.list` and `languages.en.params.project.list`:
+
+```yaml
+- id: my-project
+  featured: false
+  title: "..."
+  description: "..."
+  metrics: ["one short line with a number"]
+  tech: [Python]
+  icon: "fas fa-eye"      # must exist in the Font Awesome subset (scripts/subset-fontawesome.mjs)
+  color: "cyan"           # cyan | violet | amber | rose | indigo | emerald
+  status: active          # production | published | active | development | completed
+  links: { repo: "...", case_study: "/proyectos/my-project/", paper: "...", posts: [{ title: "...", url: "..." }] }
 ```
-layouts/
-├── index.html              ← Homepage (all sections)
-├── _default/
-│   ├── baseof.html         ← Base HTML template
-│   ├── single.html         ← Individual post layout
-│   └── search.html         ← Search page
-├── blog/list.html          ← Blog index (paginated grid)
-├── material/list.html      ← Material index
-└── partials/               ← Reusable components
-    ├── head.html           ← Meta tags, CSS, fonts
-    ├── header.html         ← Nav bar + clock
-    ├── i18n.html           ← JS translation system
-    ├── command_palette.html ← ⌘K palette
-    └── accordion/          ← Collapsible sections
-```
 
-### Styles
+### Add a case study
 
-- `assets/main.css` — main source (Tailwind imports + custom utilities)
-- `static/css/general.css` — component classes
-- `tailwind.config.js` — Tailwind configuration
-
----
-
-## How to modify things
+Create `content/proyectos/<slug>.md` and `<slug>.en.md`, put figures in `assets/images/proyectos/<slug>/`, use `{{</* img src="images/proyectos/<slug>/fig.png" alt="..." caption="..." */>}}`, link it from the card via `links.case_study`, regenerate OG images.
 
 ### Add a blog post
 
-Create `content/blog/my-post-slug.md`:
+Create `content/blog/<slug>.md` with `title`, `date`, `description`, `tags`. Regenerate OG images.
 
-```markdown
----
-title: "Post title"
-date: 2025-01-15
-description: "Short description"
-tags: ["python", "ml"]
----
+### Edit experience or skills
 
-Content here...
-```
+Edit `params.experience.list[].highlights` (bullets, markdown bold for metrics) or `params.skill.categories[].items` in both languages.
 
-### Edit experience / education / projects
+### UI strings
 
-Edit directly in `config.yaml`. Example for projects:
+Interface strings (buttons, section titles) live in `i18n/es.yaml`, `i18n/en.yaml` and the two static objects in `layouts/partials/i18n.html`. Profile content strings are generated; never write them by hand.
 
-```yaml
-params:
-  project:
-    list:
-      - title: "Project name"
-        description: "What it does"
-        icon: "fas fa-eye"       # Font Awesome icon class
-        color: "cyan"            # cyan | violet | emerald | amber
-        tech: [Python, Docker]
-        url: ""
-        status: "In production"
-```
+## Rules
 
-### Add translations (i18n)
-
-The site uses a dual i18n system:
-
-1. **Hugo static**: keys in `i18n/es.yaml` + `i18n/en.yaml` → `{{ i18n "key" }}` in templates
-2. **JS runtime** (language toggle without reload): in `layouts/partials/i18n.html` → `data-i18n="key"` on HTML elements
-
-### Add a new page
-
-1. Create `content/new-section.md` (or `content/new-section/index.md`)
-2. Hugo will use `layouts/_default/single.html` by default
-3. For a custom layout: create `layouts/new-section/single.html`
-4. Add it to the nav in `layouts/partials/header.html` and to the palette in `layouts/partials/command_palette.html`
-
----
-
-## Homepage architecture
-
-`layouts/index.html` uses a 40/60 grid:
-
-- **40% left (sticky):** photo + stats + social links
-- **60% right (scroll):** projects → experience → latest post → education → publications → skills → GitHub activity → contact
-
-Collapses to a single column on mobile.
-
----
-
-## State & persistence
-
-| Feature | `localStorage` key |
-|---------|-------------------|
-| Dark/light mode | `theme` |
-| Language ES/EN | `lang` |
-| Open accordion panel | `lastAccordionPanel` |
-| Welcome modal seen | `welcomeShown` |
-
----
-
-## Site routes
-
-| URL | Source |
-|-----|--------|
-| `/` | `layouts/index.html` |
-| `/blog/` | `content/blog/_index.md` + `layouts/blog/list.html` |
-| `/blog/{slug}/` | `content/blog/*.md` + `layouts/_default/single.html` |
-| `/material/` | `content/material/_index.md` |
-| `/material/{slug}/` | `content/material/*.md` |
-| `/search/` | Pagefind UI |
-| `/agent-context/` | This page |
-
----
-
-## Hard rules
-
-- **Do not edit `docs/`** — it's build output, overwritten by `npm run build`
-- **Do not edit `resources/`** — Hugo's internal cache
-- Profile data always goes in `config.yaml`, not in content files
-- The build requires both Hugo and Pagefind — always use `npm run build`, not `hugo` alone
-
----
-
-*Full guide with more detail in [`CLAUDE.md`](https://github.com/juanmanuelrm7/juanma_web/blob/master/CLAUDE.md) at the repo root.*
+- Every claim on the site comes from the CV (`static/cv.pdf`), the repos' READMEs or the paper. Do not invent metrics.
+- Keep `params` and `languages.en.params` in sync.
+- Do not touch `docs/`, `resources/`, `static/fontawesome/` or `static/fonts/`.
