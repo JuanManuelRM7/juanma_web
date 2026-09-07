@@ -72,16 +72,13 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
   <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-  />
+  
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   
   
@@ -101,7 +98,7 @@
   
   
   
-  <link href="/main.min.26ba3c857591d46b3067b4e59e70313d7e7fc2fb4f8778bbc330699d4c3391e3.css" rel="stylesheet" />
+  <link href="/main.min.3368530be6ac36d47cf96c755df6f5d736eeacc2a7a0af786adc0fee737d89f5.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -1417,173 +1414,8 @@ window.__i18nDyn = {
 .dark .cmdk-kbd { background: rgb(30 41 59); border-color: rgb(71 85 105); color: rgb(203 213 225); }
 </style>
 
-<script>
-(function () {
-  var overlay = document.getElementById('cmdk-overlay');
-  var input = document.getElementById('cmdk-input');
-  var list = document.getElementById('cmdk-list');
-  var empty = document.getElementById('cmdk-empty');
-  if (!overlay || !input) return;
-
-  var items = Array.prototype.slice.call(list.querySelectorAll('.cmdk-item'));
-  var groups = Array.prototype.slice.call(list.querySelectorAll('[data-group]'));
-  var activeIdx = -1;
-  var contentBox = document.getElementById('cmdk-content-results');
-  var searchIndex = null;
-  var indexRequested = false;
-
-  function loadIndex() {
-    if (indexRequested) return;
-    indexRequested = true;
-    fetch('\/index.json')
-      .then(function (r) { return r.json(); })
-      .then(function (data) { searchIndex = data; filter(input.value); })
-      .catch(function () {});
-  }
-
-  
-  function searchContent(q) {
-    contentBox.innerHTML = '';
-    if (!searchIndex || q.length < 3) return [];
-    var staticUrls = items.map(function (el) { return el.dataset.target; });
-    var results = searchIndex.filter(function (page) {
-      if (staticUrls.indexOf(page.url) !== -1 && normalize(page.title).indexOf(q) !== -1) return false;
-      return normalize(page.title + ' ' + page.tags.join(' ') + ' ' + page.content).indexOf(q) !== -1;
-    }).slice(0, 6);
-    if (!results.length) return [];
-    var header = document.createElement('div');
-    header.className = 'cmdk-group';
-    header.textContent = 'Contenido';
-    contentBox.appendChild(header);
-    return results.map(function (page) {
-      var idx = normalize(page.content).indexOf(q);
-      var snippet = idx >= 0 ? page.content.substr(Math.max(0, idx - 30), 90).trim() : '';
-      var btn = document.createElement('button');
-      btn.className = 'cmdk-item';
-      btn.dataset.action = 'goto';
-      btn.dataset.target = page.url;
-      btn.innerHTML = '<i class="fas fa-file-alt"></i><span></span>';
-      btn.querySelector('span').innerHTML = page.title.replace(/</g, '&lt;') +
-        (snippet ? ' <small style="opacity:0.6">— …' + snippet.replace(/</g, '&lt;') + '…</small>' : '');
-      btn.addEventListener('click', function () { run(btn); });
-      contentBox.appendChild(btn);
-      return btn;
-    });
-  }
-
-  function open() {
-    overlay.hidden = false;
-    input.value = '';
-    filter('');
-    input.focus();
-    loadIndex();
-  }
-  function close() {
-    overlay.hidden = true;
-    activeIdx = -1;
-  }
-  window.openCmdk = open;
-
-  function visibleItems() {
-    return Array.prototype.slice.call(list.querySelectorAll('.cmdk-item')).filter(function (el) { return !el.hidden; });
-  }
-
-  function normalize(s) {
-    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  }
-
-  function filter(q) {
-    q = normalize(q.trim());
-    items.forEach(function (el) {
-      var haystack = normalize(el.textContent + ' ' + (el.dataset.keywords || ''));
-      el.hidden = q !== '' && haystack.indexOf(q) === -1;
-    });
-    
-    groups.forEach(function (g) {
-      var sib = g.nextElementSibling, any = false;
-      while (sib && !sib.hasAttribute('data-group')) {
-        if (sib.classList.contains('cmdk-item') && !sib.hidden) { any = true; break; }
-        sib = sib.nextElementSibling;
-      }
-      g.hidden = !any;
-    });
-    searchContent(q);
-    empty.hidden = visibleItems().length > 0;
-    setActive(q === '' ? -1 : 0);
-  }
-
-  function setActive(idx) {
-    var vis = visibleItems();
-    Array.prototype.forEach.call(list.querySelectorAll('.cmdk-item'), function (el) { el.classList.remove('active'); });
-    activeIdx = Math.max(-1, Math.min(idx, vis.length - 1));
-    if (activeIdx >= 0) {
-      vis[activeIdx].classList.add('active');
-      vis[activeIdx].scrollIntoView({ block: 'nearest' });
-    }
-  }
-
-  function run(el) {
-    var action = el.dataset.action, target = el.dataset.target;
-    close();
-    if (action === 'goto') {
-      window.location.href = target;
-    } else if (action === 'open') {
-      window.open(target, '_blank', 'noopener');
-    } else if (action === 'theme' && typeof toggleTheme === 'function') {
-      toggleTheme();
-    } else if (action === 'lang' && window.toggleLang) {
-      window.toggleLang();
-    } else if (action === 'copy-email') {
-      navigator.clipboard.writeText('juanmanuelruiz383@gmail.com');
-    } else if (action === 'terminal' && window.openTerminal) {
-      window.openTerminal();
-    } else if (action === 'cvmode' && window.toggleCvMode) {
-      window.toggleCvMode();
-    }
-  }
-
-  items.forEach(function (el) {
-    el.addEventListener('click', function () { run(el); });
-  });
-
-  input.addEventListener('input', function () { filter(input.value); });
-
-  document.addEventListener('keydown', function (e) {
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      overlay.hidden ? open() : close();
-      return;
-    }
-    if (overlay.hidden) return;
-    if (e.key === 'Escape') { close(); }
-    else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); }
-    else if (e.key === 'Enter') {
-      var vis = visibleItems();
-      var el = activeIdx >= 0 ? vis[activeIdx] : vis[0];
-      if (el) { e.preventDefault(); run(el); }
-    }
-  });
-
-  overlay.addEventListener('click', function (e) {
-    if (e.target === overlay) close();
-  });
-
-  
-  overlay.addEventListener('keydown', function (e) {
-    if (e.key !== 'Tab') return;
-    var focusables = [input].concat(visibleItems());
-    var first = focusables[0], last = focusables[focusables.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  });
-})();
-</script>
+<script>window.__cmdkIndexUrl = '\/index.json';</script>
+<script defer src="/js/cmdk.js"></script>
 
     
 <div id="term-overlay" class="term-overlay" hidden>
@@ -1672,162 +1504,35 @@ window.__i18nDyn = {
 </style>
 
 <script>
-(function () {
-  var overlay = document.getElementById('term-overlay');
-  var output = document.getElementById('term-output');
-  var input = document.getElementById('term-input');
-  var body = document.getElementById('term-body');
-  if (!overlay) return;
-
-  var history = [];
-  var histIdx = -1;
-  var base = '\/' || '/';
-
-  var BANNER =
-    '<span class="term-accent">     ██╗███╗   ███╗</span>\n' +
-    '<span class="term-accent">     ██║████╗ ████║</span>   Juan Manuel Ruiz\n' +
-    '<span class="term-accent">     ██║██╔████╔██║</span>   ML Engineer · Computer Vision\n' +
-    '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; Mathematician\n' +
-    '<span class="term-accent">╚█████╔╝██║ ╚═╝ ██║</span>\n' +
-    '<span class="term-accent"> ╚════╝ ╚═╝     ╚═╝</span>\n\n' +
-    'Escribe <span class="term-accent">help</span> para ver los comandos disponibles.\n';
-
-  var commands = {
-    help: function () {
-      return [
-        '<span class="term-accent">whoami</span>      sobre mí',
-        '<span class="term-accent">projects</span>    proyectos destacados',
-        '<span class="term-accent">skills</span>      stack técnico',
-        '<span class="term-accent">cv</span>          descargar CV',
-        '<span class="term-accent">blog</span>        ir al blog',
-        '<span class="term-accent">contact</span>     formas de contacto',
-        '<span class="term-accent">neofetch</span>    info del sistema',
-        '<span class="term-accent">yolo</span>        modo detección de objetos',
-        '<span class="term-accent">clear</span>       limpiar pantalla',
-        '<span class="term-accent">exit</span>        cerrar terminal'
-      ].join('\n');
-    },
-    whoami: function () {
-      return "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.";
-    },
-    projects: function () {
-      return [
-        '• vcalib: calibration filters for RF-DETR under illumination shift  <span class="term-output-cmd">(PyTorch · RF-DETR · SAM3)</span>',
-        '• Misinformation detection in fiction with LLM-generated ontologies  <span class="term-output-cmd">(LLMs · RAG · SBERT)</span>',
-        '• Industrial tire inspection with vision models and multimodal OCR  <span class="term-output-cmd">(PyTorch · RF-DETR · GLM-OCR)</span>',
-        '• GLM-OCR \u002b LoRA for key information extraction on receipts and invoices  <span class="term-output-cmd">(GLM-OCR · LoRA · LLaMA-Factory)</span>',
-        '• vision-pytorch: DINOv2\/v3 pipelines for classification and features  <span class="term-output-cmd">(PyTorch · DINOv2 · DINOv3)</span>',
-        '• Lagrangian identification of atmospheric blocking (bachelor\u0027s thesis)  <span class="term-output-cmd">(Python · HYSPLIT · ERA5)</span>',
-        '• Local agent with Ollama: tool calling and RAG  <span class="term-output-cmd">(Python · Ollama · ChromaDB)</span>',
-        '',
-        'Más en <a href="' + base + 'proyectos/">la página de proyectos</a>.'
-      ].join('\n');
-    },
-    skills: function () {
-      return [
-        'LLMs \u0026 NLP: Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering',
-        'Computer Vision: PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Diffusion models (FLUX.1) · Detection \u0026 segmentation',
-        'Languages \u0026 analysis: Python · NumPy · Pandas · scikit-learn · Matplotlib · C\u002b\u002b (reading \u0026 specs) · R · Statistical analysis · LaTeX',
-        'MLOps \u0026 tools: Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux \/ SSH · uv · Jupyter',
-      ].join('\n');
-    },
-    cv: function () {
-      window.open(base + 'cv.pdf', '_blank');
-      return 'Abriendo cv.pdf…';
-    },
-    blog: function () {
-      window.location.href = base + 'blog/';
-      return 'Navegando al blog…';
-    },
-    contact: function () {
-      return 'email:    <a href="mailto:juanmanuelruiz383@gmail.com">juanmanuelruiz383@gmail.com</a>\nlinkedin: <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener">juanmanuelruizmunoz</a>\ngithub:   <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener">juanmanuelruizm</a>';
-    },
-    neofetch: function () {
-      var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      return BANNER +
-        '<span class="term-accent">OS:</span> juanmanuel.petrer.eu\n' +
-        '<span class="term-accent">Host:</span> GitHub Pages\n' +
-        '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
-        '<span class="term-accent">Theme:</span> ' + theme + '\n' +
-        '<span class="term-accent">Uptime:</span> desde 2024';
-    },
-    yolo: function () {
-      if (window.toggleCvMode) {
-        close();
-        window.toggleCvMode();
-        return null;
-      }
-      return '<span class="term-warn">cv-mode.js no cargado.</span>';
-    },
-    pwd: function () { return '/home/juanma/web'; },
-    ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },
-    date: function () { return new Date().toString(); },
-    sudo: function () { return '<span class="term-warn">juanma is not in the sudoers file. This incident will be reported.</span> 😏'; },
-    echo: function (args) { return args.join(' '); },
-    clear: function () { output.innerHTML = ''; return null; },
-    exit: function () { close(); return null; }
-  };
-
-  function print(html) {
-    var div = document.createElement('div');
-    div.innerHTML = html;
-    div.style.whiteSpace = 'pre-wrap';
-    output.appendChild(div);
-    body.scrollTop = body.scrollHeight;
-  }
-
-  function exec(line) {
-    print('<span class="term-prompt">juanma@web:~$</span> <span class="term-output-cmd">' + line.replace(/</g, '&lt;') + '</span>');
-    var parts = line.trim().split(/\s+/);
-    var cmd = parts[0].toLowerCase();
-    if (!cmd) return;
-    var fn = commands[cmd];
-    if (fn) {
-      var out = fn(parts.slice(1));
-      if (out !== null) print(out + '\n');
-    } else {
-      print('zsh: command not found: ' + cmd.replace(/</g, '&lt;') + '. Prueba <span class="term-accent">help</span>.\n');
-    }
-  }
-
-  function open() {
-    overlay.hidden = false;
-    if (!output.innerHTML) print(BANNER);
-    input.focus();
-  }
-  function close() { overlay.hidden = true; }
-  window.openTerminal = open;
-  window.closeTerminal = close;
-
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-      var line = input.value;
-      input.value = '';
-      if (line.trim()) { history.push(line); histIdx = history.length; }
-      exec(line);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (histIdx > 0) { histIdx--; input.value = history[histIdx]; }
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (histIdx < history.length - 1) { histIdx++; input.value = history[histIdx]; }
-      else { histIdx = history.length; input.value = ''; }
-    } else if (e.key === 'Escape') {
-      close();
-    }
-  });
-
-  body.addEventListener('click', function () { input.focus(); });
-  overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
-  
-  overlay.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab') { e.preventDefault(); input.focus(); }
-  });
-  document.addEventListener('keydown', function (e) {
-    if (!overlay.hidden && e.key === 'Escape') close();
-  });
-})();
+window.__terminalData = {
+  base: '\/' || '/',
+  headline: "ML Engineer · Computer Vision \u0026 LLMs",
+  whoami: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
+  projects: [
+    { title: "vcalib: calibration filters for RF-DETR under illumination shift", tech: "PyTorch · RF-DETR · SAM3" },
+    { title: "Misinformation detection in fiction with LLM-generated ontologies", tech: "LLMs · RAG · SBERT" },
+    { title: "Industrial tire inspection with vision models and multimodal OCR", tech: "PyTorch · RF-DETR · GLM-OCR" },
+    { title: "GLM-OCR + LoRA for key information extraction on receipts and invoices", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
+    { title: "vision-pytorch: DINOv2/v3 pipelines for classification and features", tech: "PyTorch · DINOv2 · DINOv3" },
+    { title: "Lagrangian identification of atmospheric blocking (bachelor's thesis)", tech: "Python · HYSPLIT · ERA5" },
+    { title: "Local agent with Ollama: tool calling and RAG", tech: "Python · Ollama · ChromaDB" },
+  ],
+  skills: [
+    { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering" },
+    { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Diffusion models (FLUX.1) · Detection \u0026 segmentation" },
+    { name: "Languages \u0026 analysis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (reading \u0026 specs) · R · Statistical analysis · LaTeX" },
+    { name: "MLOps \u0026 tools", items: "Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
+  ],
+  social: [
+    { title: "LinkedIn", url: "https://www.linkedin.com/in/juanmanuelruizmunoz/", label: "in/juanmanuelruizmunoz" },
+    { title: "Instagram", url: "https://www.instagram.com/j.manuel__rm/", label: "@j.manuel__rm" },
+    { title: "GitHub", url: "https://github.com/juanmanuelruizm", label: "juanmanuelruizm" },
+    { title: "Email", url: "mailto:juanmanuelruiz383@gmail.com", label: "juanmanuelruiz383@gmail.com" },
+    { title: "ORCID", url: "https://orcid.org/0009-0008-7529-306X", label: "0009-0008-7529-306X" },
+  ]
+};
 </script>
+<script defer src="/js/terminal.js"></script>
 
     <script defer src="/js/cv-mode.js"></script>
   </body>

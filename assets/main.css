@@ -7,6 +7,31 @@
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
+/* Fuentes variables self-hosted (subconjunto latin), servidas desde static/fonts */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/fonts/jetbrains-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
@@ -224,12 +249,7 @@
   }
 }
 
-/* Skills ticker (marquee) */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-marquee {
+/* Skills ticker (marquee) */.animate-marquee {
   animation: marquee 50s linear infinite;
 }
 /* Pause marquee when hovering the container group */
@@ -237,9 +257,6 @@
   animation-play-state: paused;
 }
 /* Hide horizontal scrollbar in ticker container (still scrollable) */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
 /* Hero Section */
 @keyframes fadeInDown {
   from {
@@ -314,10 +331,6 @@
   animation: fadeInUp 0.6s ease-out;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
-}
-
 /* Hero section improvements with animations */
 .hero-section {
   animation: fadeInUp 0.8s ease-out;
@@ -363,35 +376,6 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
-}
-
-/* ---------- GLASS MORPHISM & BLUR EFFECTS ---------- */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark .glass-effect {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(139, 92, 246, 0.1);
-}
-
-/* Blur background for cards on hover */
-@keyframes blurIn {
-  from {
-    opacity: 0;
-    filter: blur(5px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.blur-animation {
-  animation: blurIn 0.3s ease-out;
 }
 
 /* ---------- IMPROVED LINK HOVER EFFECTS ---------- */
@@ -827,27 +811,6 @@ button:focus-visible {
 }
 
 /* ---------- HERO NAV PILLS ---------- */
-.hero-nav-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.375rem 0.875rem;
-  border-radius: 9999px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: all 0.3s ease;
-}
-
-.hero-nav-pill:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-  color: white;
-}
-
 /* ---------- READING PROGRESS BAR ---------- */
 #reading-progress {
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
@@ -964,7 +927,6 @@ html {
   #reading-progress,
   #scroll-to-top,
   [data-sticky-header],
-  .hero-nav-pill,
   .section-separator,
   .theme-toggle,
   .contact-card-icon,

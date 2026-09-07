@@ -2,16 +2,13 @@
   {{ partial "meta" . }}
   <!-- Favicon JM -->
   <link rel="icon" type="image/svg+xml" href="{{ `favicon.svg` | relURL }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Font Awesome 6 self-hosted (v5 class names siguen funcionando) -->
   <link rel="preload" href="{{ `/fontawesome/webfonts/fa-solid-900.woff2?v=2` | relURL }}" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="{{ `/fontawesome/webfonts/fa-brands-400.woff2?v=2` | relURL }}" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="{{ `/fontawesome/css/all.min.css` | relURL }}" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-  />
+  <!-- Fuentes self-hosted (ver @font-face en assets/main.css) -->
+  <link rel="preload" href="{{ `/fonts/inter-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ `/fonts/space-grotesk-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
 
   <!-- Language alternates (SEO) -->
   {{ if .IsTranslated }}
