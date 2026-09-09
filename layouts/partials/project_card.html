@@ -8,13 +8,14 @@
 {{ with $links.case_study }}{{ $primary = . }}{{ else }}{{ with $links.repo }}{{ $primary = . }}{{ else }}{{ with $links.paper }}{{ $primary = . }}{{ end }}{{ end }}{{ end }}
 {{ $external := hasPrefix $primary "http" }}
 {{ $cover := "" }}
-{{ with $p.cover }}{{ with resources.Get . }}{{ $cover = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}{{ end }}
+{{ $cover2 := "" }}
+{{ with $p.cover }}{{ with resources.Get . }}{{ $cover = .Fill (cond $featured "450x180 webp q80" "350x140 webp q80") }}{{ $cover2 = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}{{ end }}
 <article class="project-card group{{ if $featured }} project-card-featured{{ end }}">
   {{/* Portada: imagen procesada (cover en config) o gradiente del color del proyecto con su icono */}}
   <div class="project-cover{{ if not $cover }} project-cover-{{ $p.color | default "violet" }}{{ end }}">
     {{ if $primary }}<a href="{{ $primary }}" class="project-cover-link flex" aria-hidden="true" tabindex="-1"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
     {{ if $cover }}
-    <img src="{{ $cover.RelPermalink }}" width="{{ $cover.Width }}" height="{{ $cover.Height }}" alt="" loading="lazy" decoding="async" />
+    <img src="{{ $cover.RelPermalink }}" srcset="{{ $cover.RelPermalink }} {{ $cover.Width }}w, {{ $cover2.RelPermalink }} {{ $cover2.Width }}w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="{{ $cover2.Width }}" height="{{ $cover2.Height }}" alt="" loading="lazy" decoding="async" />
     {{ else }}
     <i class="{{ $p.icon | default "fas fa-code" }}" aria-hidden="true"></i>
     {{ end }}
@@ -24,13 +25,13 @@
     {{ end }}
   </div>
 
-  <h4 class="font-bold text-gray-900 dark:text-gray-100 {{ if $featured }}text-base{{ else }}text-sm{{ end }} mb-2 leading-snug">
+  <h3 class="font-bold text-gray-900 dark:text-gray-100 {{ if $featured }}text-base{{ else }}text-sm{{ end }} mb-2 leading-snug">
     {{ if $primary }}
     <a href="{{ $primary }}" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}><span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span></a>
     {{ else }}
     <span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span>
     {{ end }}
-  </h4>
+  </h3>
 
   <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_{{ $p.id }}">{{ $p.description }}</p>
 

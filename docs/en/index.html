@@ -95,7 +95,7 @@
   
   
   
-  <link href="/main.min.1cb439f2bb91fa95266780867b9b9dca5de5da055796cc91be78c0fcb584699c.css" rel="stylesheet" />
+  <link href="/main.min.6d81655b85700c0ee66f541f172161c9fd89117e81e83aee862586f76425b0c3.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -199,7 +199,7 @@
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="home">
+<body class="min-h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="home">
     
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Ir al contenido</a>
     
@@ -346,7 +346,7 @@
       <div class="text-center mb-2">
         <div class="w-full flex justify-center align-middle profile-photo-container">
   
-  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" tabindex="0" role="button" aria-label="Flip card to see about me">
+  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" tabindex="0" role="button">
     <div class="flip-card-inner">
       
       <div class="flip-card-front">
@@ -374,9 +374,9 @@
       
       <div class="flip-card-back">
         <div class="bg-gradient-to-br from-violet-50 via-white to-violet-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-violet-500 dark:border-violet-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-hidden">
-          <h3 class="text-sm font-bold text-violet-700 dark:text-violet-300 mb-2 text-center">
-            <i class="fas fa-user mr-1 text-xs"></i>About me
-          </h3>
+          <p class="text-sm font-bold text-violet-700 dark:text-violet-300 mb-2 text-center">
+            <i class="fas fa-user mr-1 text-xs" aria-hidden="true"></i>About me
+            </p>
           <p class="text-xs text-gray-700 dark:text-gray-200 leading-tight text-justify" data-i18n="aboutme_description">
             Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.
           </p>
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       
       
-      <a href="/cv.pdf" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
+      <a href="/cv.pdf" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
         <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">Download CV</span>
       </a>
@@ -571,13 +571,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="text-center">
     <div class="flex justify-center gap-3 mb-2">
-      <a href="/blog/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
+      <a href="/blog/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
       <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/material/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Resources</span></a>
+      <a href="/material/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Resources</span></a>
       <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/search/" class="text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Search</span></a>
+      <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Search</span></a>
       <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="https://juanmanuel.petrer.eu/index.xml" class="text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
+      <a href="https://juanmanuel.petrer.eu/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
         <i class="fas fa-rss" aria-hidden="true"></i> RSS
       </a>
     </div>
@@ -603,10 +603,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_projects">Projects</span>
-      </h3>
+      </h2>
       
 
 
@@ -623,12 +623,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 <article class="project-card group project-card-featured">
   
   <div class="project-cover">
     <a href="/en/proyectos/vcalib/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
     
-    <img src="/images/proyectos/vcalib/money_shot_level2_hu_3f533fedc96342d5.webp" width="900" height="360" alt="" loading="lazy" decoding="async" />
+    <img src="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp" srcset="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp 450w, /images/proyectos/vcalib/money_shot_level2_hu_3f533fedc96342d5.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
     
     </a>
     
@@ -636,11 +637,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
   </div>
 
-  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
+  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
     
     <a href="/en/proyectos/vcalib/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_vcalib">vcalib: calibration filters for RF-DETR under illumination shift</span></a>
     
-  </h4>
+  </h3>
 
   <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vcalib">A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.</p>
 
@@ -685,12 +686,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 <article class="project-card group project-card-featured">
   
   <div class="project-cover">
     <a href="/en/proyectos/desinformacion-ontologias-llm/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
     
-    <img src="/images/proyectos/desinformacion/pipeline_hu_c724f0d0f0f60a86.webp" width="900" height="360" alt="" loading="lazy" decoding="async" />
+    <img src="/images/proyectos/desinformacion/pipeline_hu_4876023c47071ee6.webp" srcset="/images/proyectos/desinformacion/pipeline_hu_4876023c47071ee6.webp 450w, /images/proyectos/desinformacion/pipeline_hu_c724f0d0f0f60a86.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
     
     </a>
     
@@ -698,11 +700,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
   </div>
 
-  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
+  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
     
     <a href="/en/proyectos/desinformacion-ontologias-llm/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_desinformacion-ontologias">Misinformation detection in fiction with LLM-generated ontologies</span></a>
     
-  </h4>
+  </h3>
 
   <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_desinformacion-ontologias">An LLM &#43; RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI&#39;25.</p>
 
@@ -751,6 +753,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 <article class="project-card group">
   
   <div class="project-cover project-cover-emerald">
@@ -764,11 +767,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
   </div>
 
-  <h4 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
+  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
     
     <span data-i18n="proj_title_inspeccion-neumaticos">Industrial tire inspection with vision models and multimodal OCR</span>
     
-  </h4>
+  </h3>
 
   <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_inspeccion-neumaticos">Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.</p>
 
@@ -832,10 +835,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-briefcase section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_exp">Experience</span>
-      </h3>
+      </h2>
       <div class="timeline-container">
         
 <div class="timeline-item">
@@ -845,7 +848,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</span></h4>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</span></h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -908,7 +911,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</span></h4>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</span></h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -965,7 +968,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_3">Researcher · Internship</span></h4>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_3">Researcher · Internship</span></h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
           
@@ -1019,10 +1022,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     <div class="mb-8" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_blog">From the blog</span>
-      </h3>
+      </h2>
       
 
 
@@ -1034,7 +1037,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
       <time datetime="2026-06-20">Jun 20, 2026</time>
     </p>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">Detectar desinformación en la ficción: una ontología que se construye sola</h4>
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">Detectar desinformación en la ficción: una ontología que se construye sola</h3>
     <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Cómo construimos, en un trabajo publicado en DCAI&#39;25, un sistema que genera automáticamente una base de conocimiento (ontología) con LLMs y RAG, y la usa para detectar información falsa en películas, podcasts y otros formatos de ficción.</p>
   </a>
   
@@ -1043,7 +1046,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
       <time datetime="2026-06-11">Jun 11, 2026</time>
     </p>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">OCR en condiciones extremas: leer texto donde no hay tinta</h4>
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">OCR en condiciones extremas: leer texto donde no hay tinta</h3>
     <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Qué pasa cuando llevas el OCR a un entorno industrial real —texto en relieve negro sobre negro, polvo, brillos y cadencia de línea— y qué aprendí probando GLM-OCR, un modelo multimodal de 0.9B parámetros que corre en local</p>
   </a>
   
@@ -1052,7 +1055,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
       <time datetime="2026-06-11">Jun 11, 2026</time>
     </p>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</h4>
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</h3>
     <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Un recorrido por la interpretabilidad en visión por computador: filtros clásicos, mapas de características, Grad-CAM y atención. Y por qué visualizar lo que ve tu modelo no es opcional en producción</p>
   </a>
   
@@ -1069,10 +1072,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-graduation-cap section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_edu">Education</span>
-      </h3>
+      </h2>
       <div class="timeline-container">
         
 <div class="timeline-item">
@@ -1082,7 +1085,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_1">Bachelor&#39;s Degree in Physics</span></h4>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_1">Bachelor&#39;s Degree in Physics</span></h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Alicante</p>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_1">&#43;120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).</p>
@@ -1132,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
-          <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_2">SICUE Exchange — Physics &amp; Mathematics</span></h4>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_2">SICUE Exchange — Physics &amp; Mathematics</span></h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Salamanca</p>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_2">International mobility scholarship.</p>
@@ -1155,10 +1158,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     <div id="certificaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-check-circle section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_certs">Certifications</span>
-      </h3>
+      </h2>
       
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" data-stagger>
   
@@ -1202,10 +1205,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="section-separator"></div>
         
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_pub">Publications</span>
-      </h3>
+      </h2>
       
 
 
@@ -1297,18 +1300,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-cogs section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         Skills
-      </h3>
+      </h2>
       
 <div class="space-y-6">
   
   <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full skill-dot-primary" aria-hidden="true"></span>
       <span data-i18n="skill_cat_llm">LLMs &amp; NLP</span>
-    </h4>
+    </h3>
     <div class="flex flex-wrap gap-2">
       
       <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_1">Fine-tuning (LoRA)</span>
@@ -1335,10 +1338,10 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
   
   <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full skill-dot-primary" aria-hidden="true"></span>
       <span data-i18n="skill_cat_cv">Computer Vision</span>
-    </h4>
+    </h3>
     <div class="flex flex-wrap gap-2">
       
       <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_1">PyTorch</span>
@@ -1365,10 +1368,10 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
   
   <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full skill-dot-tertiary" aria-hidden="true"></span>
       <span data-i18n="skill_cat_lang">Languages &amp; analysis</span>
-    </h4>
+    </h3>
     <div class="flex flex-wrap gap-2">
       
       <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_1">Python</span>
@@ -1393,10 +1396,10 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
   
   <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full skill-dot-secondary" aria-hidden="true"></span>
       <span data-i18n="skill_cat_mlops">MLOps &amp; tools</span>
-    </h4>
+    </h3>
     <div class="flex flex-wrap gap-2">
       
       <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_1">Docker</span>
@@ -1428,10 +1431,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 <div id="gh-activity" class="mb-8 scroll-mt-24" hidden>
-  <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
     <i class="fab fa-github text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
     <span data-i18n="section_github">GitHub Activity</span>
-  </h3>
+  </h2>
   <div class="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-4">
     <div id="gh-grid" class="gh-grid-wrap" aria-label="Calendario de contribuciones de GitHub"></div>
     <div class="flex items-center justify-between mt-3 text-xs text-gray-600 dark:text-gray-400">
@@ -1494,10 +1497,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">Contact</span>
-      </h3>
+      </h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="contact_intro">Got a computer vision or LLM problem to take to production? Drop me a line.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
         

@@ -1495,3 +1495,10 @@ html {
 .project-cover-indigo  { background: linear-gradient(135deg, #3730a3, #818cf8); }
 .project-cover-emerald { background: linear-gradient(135deg, #047857, #34d399); }
 .project-cover[class*="project-cover-"]::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0); background-size: 18px 18px; pointer-events: none; }
+
+/* Color sólido en html (fallback del degradado del body; permite a las herramientas de contraste resolver el fondo) */
+html { background-color: rgb(250 250 250); }
+html.dark { background-color: rgb(15 23 42); }
+
+/* Botón CV de la sidebar: texto blanco también en oscuro */
+.sidebar-cv, .sidebar-cv span, .dark .sidebar-cv, .dark .sidebar-cv span { color: #ffffff !important; }

@@ -61,7 +61,7 @@
       </div>
       
       <!-- CV Button -->
-      <a href="{{ `/cv.pdf` | relURL }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
+      <a href="{{ `/cv.pdf` | relURL }}" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
         <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>
@@ -75,10 +75,10 @@
     
     <!-- Projects Section -->
     <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_projects">{{ i18n "section_projects" }}</span>
-      </h3>
+      </h2>
       {{ partial "projects" (dict "page" . "homeOnly" true) }}
     </div>
 
@@ -87,10 +87,10 @@
 
     <!-- Experience Section (Timeline) -->
     <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-briefcase section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_exp">{{ i18n "section_exp" }}</span>
-      </h3>
+      </h2>
       <div class="timeline-container">
         {{ partial "accordion/experience" . }}
       </div>
@@ -101,10 +101,10 @@
     
     <!-- Featured Blog Post -->
     <div class="mb-8" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_blog">{{ i18n "section_blog" }}</span>
-      </h3>
+      </h2>
       {{ partial "latest_posts" . }}
     </div>
 
@@ -113,10 +113,10 @@
     
     <!-- Education Section (Timeline) -->
     <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-graduation-cap section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_edu">{{ i18n "section_edu" }}</span>
-      </h3>
+      </h2>
       <div class="timeline-container">
         {{ partial "accordion/education" . }}
       </div>
@@ -128,10 +128,10 @@
     <!-- Certifications -->
     {{ with .Site.Params.certifications.list }}
     <div id="certificaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-check-circle section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_certs">{{ i18n "section_certs" }}</span>
-      </h3>
+      </h2>
       {{ partial "certifications" $ }}
     </div>
 
@@ -139,10 +139,10 @@
     <div class="section-separator"></div>
     {{ end }}    <!-- Publications Section -->
     <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_pub">{{ i18n "section_pub" }}</span>
-      </h3>
+      </h2>
       {{ partial "accordion/publication" . }}
     </div>
 
@@ -151,10 +151,10 @@
     
     <!-- Skills Section by Category -->
     <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-cogs section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         Skills
-      </h3>
+      </h2>
       {{ partial "skills_by_category" . }}
     </div>
 
@@ -166,10 +166,10 @@
 
     <!-- Contact Section -->
     <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
-      <h3 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
         <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
         <span data-i18n="section_contact">{{ i18n "section_contact" }}</span>
-      </h3>
+      </h2>
       <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="contact_intro">{{ i18n "contact_intro" }}</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
         {{ range .Site.Params.social.list }}

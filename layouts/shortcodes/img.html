@@ -7,7 +7,8 @@
 {{ $want := int (.Get "width" | default 1200) }}
 {{ $w := $want }}{{ if lt $img.Width $want }}{{ $w = $img.Width }}{{ end }}
 {{ $out := $img.Resize (printf "%dx webp q85" $w) }}
+{{ $half := $img.Resize (printf "%dx webp q85" (div $w 2)) }}
 <figure class="my-6">
-  <img src="{{ $out.RelPermalink }}" width="{{ $out.Width }}" height="{{ $out.Height }}" alt="{{ .Get "alt" }}" loading="lazy" decoding="async" class="rounded-lg shadow-md mx-auto" />
+  <img src="{{ $out.RelPermalink }}" srcset="{{ $half.RelPermalink }} {{ $half.Width }}w, {{ $out.RelPermalink }} {{ $out.Width }}w" sizes="(min-width: 1024px) 680px, 92vw" width="{{ $out.Width }}" height="{{ $out.Height }}" alt="{{ .Get "alt" }}" loading="lazy" decoding="async" class="rounded-lg shadow-md mx-auto" />
   {{ with .Get "caption" }}<figcaption class="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">{{ . | markdownify }}</figcaption>{{ end }}
 </figure>

@@ -3,10 +3,10 @@
 <div class="space-y-6">
   {{ range $cat := .Site.Params.skill.categories }}
   <div>
-    <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full skill-dot-{{ $cat.chip | default "primary" }}" aria-hidden="true"></span>
       <span data-i18n="skill_cat_{{ $cat.key }}">{{ $cat.name }}</span>
-    </h4>
+    </h3>
     <div class="flex flex-wrap gap-2">
       {{ range $j, $s := $cat.items }}
       <span class="skill-chip skill-chip-{{ $cat.chip | default "primary" }}" data-i18n="skill_{{ $cat.key }}_{{ add $j 1 }}">{{ $s }}</span>

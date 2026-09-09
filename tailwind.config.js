@@ -26,10 +26,10 @@ module.exports = {
             "code::after": false,
             color: theme(`colors.gray.900`),
             a: {
-              color: theme(`colors.cyan.600`),
+              color: theme(`colors.violet.700`),
               textDecoration: "none",
               "&:hover": {
-                color: theme(`colors.cyan.800`),
+                color: theme(`colors.violet.900`),
                 textDecoration: "underline",
               },
             },
@@ -56,8 +56,8 @@ module.exports = {
           css: {
             color: theme(`colors.gray.100`),
             a: {
-              color: theme(`colors.cyan.300`),
-              "&:hover": { color: theme(`colors.cyan.400`) },
+              color: theme(`colors.violet.300`),
+              "&:hover": { color: theme(`colors.violet.200`) },
             },
             h1: { color: theme(`colors.gray.50`) },
             h2: { color: theme(`colors.gray.50`) },
