@@ -207,6 +207,7 @@ languages:
         icon: fas fa-project-diagram
         list:
           - id: vcalib
+            home: true
             cover: "images/proyectos/vcalib/money_shot_level2.jpg"
             featured: true
             title: "vcalib: calibration filters for RF-DETR under illumination shift"
@@ -223,6 +224,7 @@ languages:
               repo: "https://github.com/juanmanuelruizm/vcalib"
               case_study: "/en/proyectos/vcalib/"
           - id: desinformacion-ontologias
+            home: true
             cover: "images/proyectos/desinformacion/pipeline.png"
             featured: true
             title: "Misinformation detection in fiction with LLM-generated ontologies"
@@ -241,6 +243,7 @@ languages:
                 - title: "Post (ES)"
                   url: "/blog/desinformacion-en-la-ficcion-ontologias-llm/"
           - id: inspeccion-neumaticos
+            home: true
             title: "Industrial tire inspection with vision models and multimodal OCR"
             description: "Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker."
             metrics:
@@ -508,6 +511,7 @@ params:
     icon: fas fa-project-diagram
     list:
       - id: vcalib
+        home: true
         cover: "images/proyectos/vcalib/money_shot_level2.jpg"
         featured: true
         title: "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación"
@@ -524,6 +528,7 @@ params:
           repo: "https://github.com/juanmanuelruizm/vcalib"
           case_study: "/proyectos/vcalib/"
       - id: desinformacion-ontologias
+        home: true
         cover: "images/proyectos/desinformacion/pipeline.png"
         featured: true
         title: "Detección de desinformación en ficción con ontologías generadas por LLMs"
@@ -542,6 +547,7 @@ params:
             - title: "Post"
               url: "/blog/desinformacion-en-la-ficcion-ontologias-llm/"
       - id: inspeccion-neumaticos
+        home: true
         title: "Inspección industrial de neumáticos con visión y OCR multimodal"
         description: "Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker."
         metrics:

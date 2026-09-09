@@ -147,3 +147,5 @@ section_certs:
   other: "Certificaciones"
 contact_intro:
   other: "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme."
+action_all_projects:
+  other: "Ver todos los proyectos"

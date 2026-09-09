@@ -1,10 +1,26 @@
 {{/* Project cards. Data lives in config.yaml (params.project.list for ES, languages.en.params.project.list for EN).
+     Call with the page context for the full grid ({{ partial "projects" . }}) or with
+     (dict "page" . "homeOnly" true) to show only the projects marked `home: true` plus a link to all of them.
      Projects with `featured: true` render first with a highlighted card. */}}
-{{ $list := .Site.Params.project.list }}
+{{ $page := . }}{{ $homeOnly := false }}
+{{ if reflect.IsMap . }}{{ $page = .page }}{{ $homeOnly = .homeOnly | default false }}{{ end }}
+{{ $all := $page.Site.Params.project.list }}
+{{ $list := slice }}
+{{ range $all }}{{ if or (not $homeOnly) .home }}{{ $list = $list | append . }}{{ end }}{{ end }}
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
   {{ range $list }}{{ if .featured }}{{ partial "project_card" (dict "p" . "featured" true) }}{{ end }}{{ end }}
-  {{ range $list }}{{ if not .featured }}{{ partial "project_card" (dict "p" . "featured" false) }}{{ end }}{{ end }}
+  {{ range $i, $p := $list }}{{ if not $p.featured }}
+  {{ $wide := and $homeOnly (eq (add $i 1) (len $list)) (eq (mod (len $list) 2) 1) }}
+  {{ if $wide }}<div class="sm:col-span-2">{{ end }}
+  {{ partial "project_card" (dict "p" $p "featured" false) }}
+  {{ if $wide }}</div>{{ end }}
+  {{ end }}{{ end }}
 </div>
+{{ if $homeOnly }}
+<div class="mt-4 text-right">
+  <a href="{{ `proyectos` | relLangURL }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_all_projects">{{ i18n "action_all_projects" }}</span> ({{ len $all }}) <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i></a>
+</div>
+{{ end }}
 
 <!-- Spotlight effect: track cursor position per card -->
 <script>

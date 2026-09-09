@@ -199,3 +199,5 @@ section_certs:
   other: "Certifications"
 contact_intro:
   other: "Got a computer vision or LLM problem to take to production? Drop me a line."
+action_all_projects:
+  other: "View all projects"

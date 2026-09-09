@@ -144,6 +144,7 @@ En `config.yaml` bajo `params.project.list` **y** `languages.en.params.project.l
 ```yaml
 - id: mi-proyecto            # clave estable; se usa para las traducciones
   featured: true             # opcional: tarjeta grande al principio
+  home: true                 # opcional: aparece también en la portada (el resto solo en /proyectos/)
   title: "Nombre del proyecto"
   description: "Qué hace y qué resultado tiene"
   metrics:                   # opcional, 1-3 líneas cortas con números

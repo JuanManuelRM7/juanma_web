@@ -69,6 +69,7 @@ Add an entry with a stable `id` to **both** `params.project.list` and `languages
 ```yaml
 - id: my-project
   featured: false
+  home: false             # true = also shown on the homepage (the rest only on /proyectos/)
   title: "..."
   description: "..."
   metrics: ["one short line with a number"]
