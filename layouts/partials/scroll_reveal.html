@@ -33,7 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(el);
   });
 
-  // Stagger animation for multiple cards
+  // Grupos data-stagger que no cuelgan de un data-reveal (p. ej. /proyectos/): se revelan solos
+  document.querySelectorAll('[data-stagger]').forEach(group => {
+    if (group.closest('[data-reveal]')) return;
+    const groupObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        Array.from(entry.target.children).forEach((child, i) => {
+          child.style.transitionDelay = (i * 90) + 'ms';
+        });
+        entry.target.classList.add('stagger-in');
+        groupObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.05 });
+    groupObserver.observe(group);
+  });  // Stagger animation for multiple cards
   const cardGroups = document.querySelectorAll('[data-card-group]');
   cardGroups.forEach(group => {
     const cards = group.querySelectorAll('.card');
@@ -45,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<noscript><style>[data-reveal], [data-stagger] > * { opacity: 1 !important; transform: none !important; }</style></noscript>
 <style>
 .card {
   opacity: 1;

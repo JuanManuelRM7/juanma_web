@@ -14,6 +14,7 @@
     {{ if and (not .IsHome) (not .Site.Params.theme.singlepage) }}
     {{ partial "footer" . }}
     {{ end }}
+    {{ partial "scroll_reveal" . }}
     {{ partial "copy_code.html" . }}
     {{ partial "i18n.html" . }}
     {{ partial "command_palette.html" . }}
