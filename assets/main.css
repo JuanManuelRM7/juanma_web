@@ -1479,3 +1479,19 @@ html {
 .dark .contact-tone-blue { background: rgba(30, 58, 138, 0.3); color: #60a5fa; }
 .dark .contact-tone-green { background: rgba(20, 83, 45, 0.3); color: #4ade80; }
 .dark .contact-tone-gray { background: rgb(31 41 55); color: #d1d5db; }
+
+/* ---------- PROYECTOS: portada de la tarjeta (imagen o gradiente + icono) ---------- */
+.project-cover { position: relative; margin: -1.25rem -1.25rem 1rem; height: 7rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+.project-card-featured .project-cover { height: 10rem; }
+.project-cover-link { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.project-cover img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; transition: transform 0.4s ease; }
+.project-card:hover .project-cover img { transform: scale(1.03); }
+.project-cover > i, .project-cover-link > i { font-size: 2.25rem; color: #ffffff; opacity: 0.92; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25); }
+.project-cover-status { position: absolute; top: 0.6rem; right: 0.6rem; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18); }
+.project-cover-cyan    { background: linear-gradient(135deg, #0e7490, #22d3ee); }
+.project-cover-violet  { background: linear-gradient(135deg, #5b21b6, #a78bfa); }
+.project-cover-amber   { background: linear-gradient(135deg, #b45309, #fbbf24); }
+.project-cover-rose    { background: linear-gradient(135deg, #be123c, #fb7185); }
+.project-cover-indigo  { background: linear-gradient(135deg, #3730a3, #818cf8); }
+.project-cover-emerald { background: linear-gradient(135deg, #047857, #34d399); }
+.project-cover[class*="project-cover-"]::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0); background-size: 18px 18px; pointer-events: none; }

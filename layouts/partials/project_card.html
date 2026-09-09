@@ -7,13 +7,20 @@
 {{ $primary := "" }}
 {{ with $links.case_study }}{{ $primary = . }}{{ else }}{{ with $links.repo }}{{ $primary = . }}{{ else }}{{ with $links.paper }}{{ $primary = . }}{{ end }}{{ end }}{{ end }}
 {{ $external := hasPrefix $primary "http" }}
+{{ $cover := "" }}
+{{ with $p.cover }}{{ with resources.Get . }}{{ $cover = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}{{ end }}
 <article class="project-card group{{ if $featured }} project-card-featured{{ end }}">
-  <div class="flex items-start justify-between mb-3 gap-2">
-    <div class="project-card-icon project-color-{{ $p.color | default "violet" }}">
-      <i class="{{ $p.icon | default "fas fa-code" }} text-lg" aria-hidden="true"></i>
-    </div>
+  {{/* Portada: imagen procesada (cover en config) o gradiente del color del proyecto con su icono */}}
+  <div class="project-cover{{ if not $cover }} project-cover-{{ $p.color | default "violet" }}{{ end }}">
+    {{ if $primary }}<a href="{{ $primary }}" class="project-cover-link flex" aria-hidden="true" tabindex="-1"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
+    {{ if $cover }}
+    <img src="{{ $cover.RelPermalink }}" width="{{ $cover.Width }}" height="{{ $cover.Height }}" alt="" loading="lazy" decoding="async" />
+    {{ else }}
+    <i class="{{ $p.icon | default "fas fa-code" }}" aria-hidden="true"></i>
+    {{ end }}
+    {{ if $primary }}</a>{{ end }}
     {{ with $p.status }}
-    <span class="project-status project-status-{{ . }}" data-i18n="status_{{ . }}">{{ i18n (printf "status_%s" .) }}</span>
+    <span class="project-status project-status-{{ . }} project-cover-status" data-i18n="status_{{ . }}">{{ i18n (printf "status_%s" .) }}</span>
     {{ end }}
   </div>
 

@@ -207,6 +207,7 @@ languages:
         icon: fas fa-project-diagram
         list:
           - id: vcalib
+            cover: "images/proyectos/vcalib/money_shot_level2.jpg"
             featured: true
             title: "vcalib: calibration filters for RF-DETR under illumination shift"
             description: "A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU."
@@ -222,6 +223,7 @@ languages:
               repo: "https://github.com/juanmanuelruizm/vcalib"
               case_study: "/en/proyectos/vcalib/"
           - id: desinformacion-ontologias
+            cover: "images/proyectos/desinformacion/pipeline.png"
             featured: true
             title: "Misinformation detection in fiction with LLM-generated ontologies"
             description: "An LLM + RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI'25."
@@ -276,6 +278,7 @@ languages:
             links:
               repo: "https://github.com/juanmanuelruizm/vision-pytorch"
           - id: tfg-bloqueos
+            cover: "images/proyectos/tfg/dbscan.png"
             title: "Lagrangian identification of atmospheric blocking (bachelor's thesis)"
             description: "Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves."
             tech: [Python, HYSPLIT, ERA5, DBSCAN]
@@ -505,6 +508,7 @@ params:
     icon: fas fa-project-diagram
     list:
       - id: vcalib
+        cover: "images/proyectos/vcalib/money_shot_level2.jpg"
         featured: true
         title: "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación"
         description: "Un filtro diferenciable de ~2 KB que corrige el cambio de iluminación antes de que la imagen llegue a un detector congelado. Sin reentrenar, sin etiquetas, minutos en CPU."
@@ -520,6 +524,7 @@ params:
           repo: "https://github.com/juanmanuelruizm/vcalib"
           case_study: "/proyectos/vcalib/"
       - id: desinformacion-ontologias
+        cover: "images/proyectos/desinformacion/pipeline.png"
         featured: true
         title: "Detección de desinformación en ficción con ontologías generadas por LLMs"
         description: "Arquitectura LLM + RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI'25."
@@ -574,6 +579,7 @@ params:
         links:
           repo: "https://github.com/juanmanuelruizm/vision-pytorch"
       - id: tfg-bloqueos
+        cover: "images/proyectos/tfg/dbscan.png"
         title: "Identificación lagrangiana de bloqueos atmosféricos (TFG)"
         description: "Miles de retrotrayectorias HYSPLIT sobre ERA5 y clustering DBSCAN para localizar bloqueos por el estancamiento real del aire, sin umbrales eulerianos. Validado en las olas de calor de 2003 y 2019."
         tech: [Python, HYSPLIT, ERA5, DBSCAN]
