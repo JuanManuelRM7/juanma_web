@@ -68,8 +68,8 @@
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
-  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=3" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -95,7 +95,7 @@
   
   
   
-  <link href="/main.min.6d81655b85700c0ee66f541f172161c9fd89117e81e83aee862586f76425b0c3.css" rel="stylesheet" />
+  <link href="/main.min.78005acb232922e9656c408efd97165646f368c3899dcd6b86c65fcb6ff07cf4.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -118,8 +118,8 @@
     };
 
     const fixThemeToggleIcon = (theme) => {
-      let themeToggle = document.querySelector(".theme-toggle");
-      if (themeToggle) {
+      
+      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
         if (theme === "dark") {
           themeToggle.classList.remove("fa-moon");
           themeToggle.classList.add("fa-sun");
@@ -127,7 +127,7 @@
           themeToggle.classList.remove("fa-sun");
           themeToggle.classList.add("fa-moon");
         }
-      }
+      });
     };
 
     if (theme == null) {
@@ -149,6 +149,8 @@
     }
 
     setTheme(theme);
+    
+    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
 
     const toggleTheme = (evt) => {
       const next = html.classList.contains("dark") ? "light" : "dark";
@@ -844,8 +846,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex items-start justify-between mb-2 gap-3">
-      <div class="flex-1">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
+      <div class="sm:flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
           <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</span></h3>
@@ -856,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
           
         </p>
       </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0" data-i18n="exp_dates_1" data-i18n-html>Junio 2025 - <em>Presente</em></span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_1" data-i18n-html>Junio 2025 - <em>Presente</em></span>
     </div>
     
     
@@ -907,8 +909,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex items-start justify-between mb-2 gap-3">
-      <div class="flex-1">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
+      <div class="sm:flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
           <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</span></h3>
@@ -919,7 +921,7 @@ document.addEventListener('DOMContentLoaded', function () {
           
         </p>
       </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0" data-i18n="exp_dates_2" data-i18n-html>Junio 2024 - Junio 2025</span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_2" data-i18n-html>Junio 2024 - Junio 2025</span>
     </div>
     
     
@@ -964,8 +966,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex items-start justify-between mb-2 gap-3">
-      <div class="flex-1">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
+      <div class="sm:flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
           <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_3">Investigador · Contrato de prácticas</span></h3>
@@ -976,7 +978,7 @@ document.addEventListener('DOMContentLoaded', function () {
           
         </p>
       </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0" data-i18n="exp_dates_3" data-i18n-html>Enero 2024 - Julio 2024</span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_3" data-i18n-html>Enero 2024 - Julio 2024</span>
     </div>
     
     
@@ -1081,8 +1083,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex items-start justify-between mb-2 gap-3">
-      <div class="flex-1">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
+      <div class="sm:flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
           <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_1">Grado en Física</span></h3>
@@ -1090,7 +1092,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Alicante</p>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_1">&#43;120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA).</p>
       </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0">2020 - 2024</span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0">2020 - 2024</span>
     </div>
     
     
@@ -1131,8 +1133,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="timeline-item">
   <div class="timeline-dot"></div>
   <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex items-start justify-between mb-2 gap-3">
-      <div class="flex-1">
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
+      <div class="sm:flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-1">
           <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
           <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_2">Beca SICUE — Física y Matemáticas</span></h3>
@@ -1140,7 +1142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Salamanca</p>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_2">Beca de movilidad nacional.</p>
       </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium flex-shrink-0">2022 - 2023</span>
+      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0">2022 - 2023</span>
     </div>
     
     
@@ -2112,7 +2114,7 @@ window.__i18nDyn = {
     "edu_details_1": "+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).",
     "edu_thesis_1": "A Lagrangian method for the identification of atmospheric blocking situations",
     "edu_degree_2": "SICUE Exchange — Physics \u0026 Mathematics",
-    "edu_details_2": "International mobility scholarship.",
+    "edu_details_2": "National mobility scholarship.",
     "edu_thesis_2": "",
     "pub_status_dcai25": "DCAI'25",
     "pub_venue_dcai25": "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence",

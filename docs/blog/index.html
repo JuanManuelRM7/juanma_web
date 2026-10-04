@@ -3,19 +3,19 @@
   
 
 
-<title>Bienvenido a mi blog!</title>
+<title>Blog</title>
 
 <meta name="theme-color" content="#8b5cf6" />
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta name="description" content="" />
+<meta name="description" content="Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://juanmanuel.petrer.eu/blog/" />
 
 
-<meta property="og:title" content="Bienvenido a mi blog!" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Blog" />
+<meta property="og:description" content="Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://juanmanuel.petrer.eu/blog/" />
 <meta property="og:image" content="https://juanmanuel.petrer.eu/og-image.png" />
@@ -34,8 +34,8 @@
 
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Bienvenido a mi blog!" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:title" content="Blog" />
+<meta name="twitter:description" content="Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología." />
 <meta name="twitter:image" content="https://juanmanuel.petrer.eu/og-image.png" />
 
 
@@ -44,8 +44,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Bienvenido a mi blog!",
-  "description": "",
+  "headline": "Blog",
+  "description": "Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología.",
   "author": {
     "@type": "Person",
     "name": "Juan Manuel Ruiz Muñoz"
@@ -60,8 +60,8 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https:\/\/juanmanuel.petrer.eu\/" },
-    { "@type": "ListItem", "position": 2, "name": "\"Bienvenido a mi blog!\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" },
-    { "@type": "ListItem", "position": 3, "name": "\"Bienvenido a mi blog!\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" }
+    { "@type": "ListItem", "position": 2, "name": "\"Blog\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" },
+    { "@type": "ListItem", "position": 3, "name": "\"Blog\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" }
   ]
 }
 </script>
@@ -73,8 +73,8 @@
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
-  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=3" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -93,7 +93,7 @@
   
   
   
-  <link href="/main.min.6d81655b85700c0ee66f541f172161c9fd89117e81e83aee862586f76425b0c3.css" rel="stylesheet" />
+  <link href="/main.min.78005acb232922e9656c408efd97165646f368c3899dcd6b86c65fcb6ff07cf4.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -116,8 +116,8 @@
     };
 
     const fixThemeToggleIcon = (theme) => {
-      let themeToggle = document.querySelector(".theme-toggle");
-      if (themeToggle) {
+      
+      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
         if (theme === "dark") {
           themeToggle.classList.remove("fa-moon");
           themeToggle.classList.add("fa-sun");
@@ -125,7 +125,7 @@
           themeToggle.classList.remove("fa-sun");
           themeToggle.classList.add("fa-moon");
         }
-      }
+      });
     };
 
     if (theme == null) {
@@ -147,6 +147,8 @@
     }
 
     setTheme(theme);
+    
+    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
 
     const toggleTheme = (evt) => {
       const next = html.classList.contains("dark") ? "light" : "dark";
@@ -1021,7 +1023,7 @@ window.__i18nDyn = {
     "edu_details_1": "+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).",
     "edu_thesis_1": "A Lagrangian method for the identification of atmospheric blocking situations",
     "edu_degree_2": "SICUE Exchange — Physics \u0026 Mathematics",
-    "edu_details_2": "International mobility scholarship.",
+    "edu_details_2": "National mobility scholarship.",
     "edu_thesis_2": "",
     "pub_status_dcai25": "DCAI'25",
     "pub_venue_dcai25": "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence",

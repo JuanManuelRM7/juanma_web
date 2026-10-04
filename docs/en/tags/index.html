@@ -73,8 +73,8 @@
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
-  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=3" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -100,7 +100,7 @@
   
   
   
-  <link href="/main.min.6d81655b85700c0ee66f541f172161c9fd89117e81e83aee862586f76425b0c3.css" rel="stylesheet" />
+  <link href="/main.min.78005acb232922e9656c408efd97165646f368c3899dcd6b86c65fcb6ff07cf4.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -123,8 +123,8 @@
     };
 
     const fixThemeToggleIcon = (theme) => {
-      let themeToggle = document.querySelector(".theme-toggle");
-      if (themeToggle) {
+      
+      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
         if (theme === "dark") {
           themeToggle.classList.remove("fa-moon");
           themeToggle.classList.add("fa-sun");
@@ -132,7 +132,7 @@
           themeToggle.classList.remove("fa-sun");
           themeToggle.classList.add("fa-moon");
         }
-      }
+      });
     };
 
     if (theme == null) {
@@ -154,6 +154,8 @@
     }
 
     setTheme(theme);
+    
+    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
 
     const toggleTheme = (evt) => {
       const next = html.classList.contains("dark") ? "light" : "dark";
@@ -905,7 +907,7 @@ window.__i18nDyn = {
     "edu_details_1": "+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).",
     "edu_thesis_1": "A Lagrangian method for the identification of atmospheric blocking situations",
     "edu_degree_2": "SICUE Exchange — Physics \u0026 Mathematics",
-    "edu_details_2": "International mobility scholarship.",
+    "edu_details_2": "National mobility scholarship.",
     "edu_thesis_2": "",
     "pub_status_dcai25": "DCAI'25",
     "pub_venue_dcai25": "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence",

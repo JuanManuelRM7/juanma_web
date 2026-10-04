@@ -1,4 +1,7 @@
-@import "tailwindcss";
+/* source(none): sin detección automática, que escanea todo el repo (incluido docs/, el propio
+   build, y el JS de Pagefind) y hace que el CSS cambie de un build a otro. Las fuentes de clases
+   son las de `content` en tailwind.config.js (layouts/ y content/). */
+@import "tailwindcss" source(none);
 @config './tailwind.config.js';
 
 :root {
@@ -88,7 +91,9 @@
   p {
     @apply leading-relaxed;
   }
-  a {
+  /* Los botones con color propio quedan fuera: esta regla sale con !important dentro de una capa,
+     y eso gana a cualquier color declarado fuera de capa (aunque también lleve !important). */
+  a:where(:not(.hero-cta, .sidebar-cv)) {
     @apply text-violet-600 hover:text-violet-800 hover:underline dark:text-violet-300 dark:hover:text-violet-400 transition-colors duration-200;
   }
   body {

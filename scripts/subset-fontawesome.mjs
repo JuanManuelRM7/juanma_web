@@ -9,8 +9,8 @@ import { readFileSync, writeFileSync } from 'fs';
 const USED = {
   solid: [
     'arrow-right', 'book', 'book-open', 'briefcase', 'calendar-alt', 'check',
-    'check-circle', 'chevron-circle-left', 'chevron-circle-right', 'chevron-right',
-    'chevron-up', 'clapperboard', 'cloud-sun', 'cloud-sun-rain', 'code', 'cogs',
+    'check-circle', 'chevron-circle-left', 'chevron-circle-right', 'chevron-down',
+    'chevron-right', 'chevron-up', 'clapperboard', 'cloud-sun', 'cloud-sun-rain', 'code', 'cogs',
     'comments', 'copy', 'envelope', 'eye', 'file-alt', 'file-download', 'flask',
     'font', 'globe', 'graduation-cap', 'home', 'laptop-code', 'list-ul',
     'microphone', 'moon', 'network-wired', 'newspaper', 'project-diagram',
@@ -52,7 +52,7 @@ await fontawesomeSubset(resolved, 'static/fontawesome/webfonts', {
 
 // Bump FONT_VER whenever the subset changes, to bust caches on the fixed
 // woff2 filenames (the preload links in head.html must use the same value).
-const FONT_VER = '2';
+const FONT_VER = '3';
 const css = `/* Font Awesome 6 Free subset — generado por scripts/subset-fontawesome.mjs */
 @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.woff2?v=${FONT_VER}) format("woff2")}
 @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-regular-400.woff2?v=${FONT_VER}) format("woff2")}

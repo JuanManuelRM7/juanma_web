@@ -3,8 +3,8 @@
   <!-- Favicon JM -->
   <link rel="icon" type="image/svg+xml" href="{{ `favicon.svg` | relURL }}" />
   <!-- Font Awesome 6 self-hosted (v5 class names siguen funcionando) -->
-  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-solid-900.woff2?v=2` | relURL }}" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-brands-400.woff2?v=2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-solid-900.woff2?v=3` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ `/fontawesome/webfonts/fa-brands-400.woff2?v=3` | relURL }}" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="{{ `/fontawesome/css/all.min.css` | relURL }}" />
   <!-- Fuentes self-hosted (ver @font-face en assets/main.css) -->
   <link rel="preload" href="{{ `/fonts/inter-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
@@ -51,8 +51,8 @@
     };
 
     const fixThemeToggleIcon = (theme) => {
-      let themeToggle = document.querySelector(".theme-toggle");
-      if (themeToggle) {
+      // Hay dos toggles (nav móvil y nav de escritorio)
+      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
         if (theme === "dark") {
           themeToggle.classList.remove("fa-moon");
           themeToggle.classList.add("fa-sun");
@@ -60,7 +60,7 @@
           themeToggle.classList.remove("fa-sun");
           themeToggle.classList.add("fa-moon");
         }
-      }
+      });
     };
 
     if (theme == null) {
@@ -82,6 +82,8 @@
     }
 
     setTheme(theme);
+    // Los toggles aún no existen aquí; se corrige el icono al tener DOM, sin esperar a window.onload
+    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
 
     const toggleTheme = (evt) => {
       const next = html.classList.contains("dark") ? "light" : "dark";
