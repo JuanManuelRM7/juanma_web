@@ -12,7 +12,7 @@
       <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
       <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">{{ i18n "nav_search" }}</span></a>
       <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="{{ `index.xml` | absURL }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
+      <a href="{{ with .Site.Home.OutputFormats.Get "rss" }}{{ .RelPermalink }}{{ end }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
         <i class="fas fa-rss" aria-hidden="true"></i> RSS
       </a>
     </div>
@@ -41,7 +41,7 @@
         <div class="flex flex-col gap-1">
           <a href="/cv.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
           <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">{{ i18n "nav_search" }}</span></a>
-          <a href="{{ `index.xml` | absURL }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
+          <a href="{{ with .Site.Home.OutputFormats.Get "rss" }}{{ .RelPermalink }}{{ end }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
             <i class="fas fa-rss" aria-hidden="true"></i> RSS
           </a>
         </div>

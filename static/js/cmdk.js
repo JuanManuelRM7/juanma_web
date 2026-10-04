@@ -36,7 +36,8 @@
     if (!results.length) return [];
     var header = document.createElement('div');
     header.className = 'cmdk-group';
-    header.textContent = 'Contenido';
+    var lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
+    header.textContent = ((window.__i18n || {})[lang] || {}).cmdk_group_content || 'Contenido';
     contentBox.appendChild(header);
     return results.map(function (page) {
       var idx = normalize(page.content).indexOf(q);

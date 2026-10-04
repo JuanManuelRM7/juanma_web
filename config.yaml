@@ -1,4 +1,5 @@
 baseURL: https://juanmanuel.petrer.eu/
+title: Juan Manuel Ruiz Muñoz
 languageCode: es
 publishDir: docs
 defaultContentLanguage: es
@@ -227,6 +228,7 @@ languages:
           - id: desinformacion-ontologias
             home: true
             cover: "images/proyectos/desinformacion/pipeline.png"
+            cover_fit: contain
             featured: true
             title: "Misinformation detection in fiction with LLM-generated ontologies"
             description: "An LLM + RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI'25."
@@ -531,6 +533,7 @@ params:
       - id: desinformacion-ontologias
         home: true
         cover: "images/proyectos/desinformacion/pipeline.png"
+        cover_fit: contain
         featured: true
         title: "Detección de desinformación en ficción con ontologías generadas por LLMs"
         description: "Arquitectura LLM + RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI'25."

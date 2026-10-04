@@ -8,19 +8,6 @@
     <loc>https://juanmanuel.petrer.eu/blog/</loc>
     <lastmod>2026-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/</loc>
-    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/"
-                />
-  </url><url>
     <loc>https://juanmanuel.petrer.eu/tags/computer-vision/</loc>
     <lastmod>2026-07-04T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -45,6 +32,19 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://juanmanuel.petrer.eu/tags/domain-shift/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/</loc>
+    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/"
                 />
   </url><url>
     <loc>https://juanmanuel.petrer.eu/proyectos/</loc>

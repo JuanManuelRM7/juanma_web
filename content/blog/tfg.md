@@ -34,30 +34,30 @@ Los mapas mostrados no incluyen su correspondiente escala de color, lo que puede
 
 ### Figura 14
 
-![Mapa animado distancias End-to-End](/images/traj_25E.gif)
+![Mapa animado distancias End-to-End](/images/traj_25E.mp4)
 
 ### Figura 20
 
-![Figura 20 animada](/images/Figura_20_animada.gif)
+![Figura 20 animada](/images/Figura_20_animada.mp4)
 
 ### Figura 21
 
-![Figura 21 animada](/images/Figura_21_animada.gif)
+![Figura 21 animada](/images/Figura_21_animada.mp4)
 
 ### Figura 23
 
-![Figura 23 arriba izquierda](/images/Figura_23_arriba_izquierda.gif) ![Figura 23 arriba derecha](/images/Figura_23_arriba_derecha.gif)
+![Figura 23 arriba izquierda](/images/Figura_23_arriba_izquierda.mp4) ![Figura 23 arriba derecha](/images/Figura_23_arriba_derecha.mp4)
 
-![Figura 23 abajo izquierda](/images/Figura_23_abajo_izquierda.gif) ![Figura 23 abajo derecha](/images/Figura_23_abajo_derecha.gif)
+![Figura 23 abajo izquierda](/images/Figura_23_abajo_izquierda.mp4) ![Figura 23 abajo derecha](/images/Figura_23_abajo_derecha.mp4)
 
 ### Figura 25
 
-![Figura 25 izquierda](/images/Figura_25_izquierda.gif) ![Figura 25 derecha](/images/Figura_25_derecha.gif)
+![Figura 25 izquierda](/images/Figura_25_izquierda.mp4) ![Figura 25 derecha](/images/Figura_25_derecha.mp4)
 
 ### Figura 27
 
-![Figura 27 izquierda](/images/Figura_27_izquierda.gif) ![Figura 27 derecha](/images/Figura_27_derecha.gif)
+![Figura 27 izquierda](/images/Figura_27_izquierda.mp4) ![Figura 27 derecha](/images/Figura_27_derecha.mp4)
 
 ### Figura 28
 
-![Figura 28](/images/Figura_28.gif)
+![Figura 28](/images/Figura_28.mp4)

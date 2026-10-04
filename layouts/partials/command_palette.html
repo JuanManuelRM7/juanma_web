@@ -1,61 +1,65 @@
 <!-- Command Palette (⌘K / Ctrl+K) -->
 <div id="cmdk-overlay" class="cmdk-overlay" hidden>
-  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Paleta de comandos" class="cmdk-panel">
+  <div id="cmdk" role="dialog" aria-modal="true" aria-label="{{ i18n "cmdk_label" }}" data-i18n-aria="cmdk_label" class="cmdk-panel">
     <div class="cmdk-input-row">
       <i class="fas fa-search cmdk-input-icon" aria-hidden="true"></i>
-      <input id="cmdk-input" type="text" placeholder="Buscar o ejecutar un comando…" autocomplete="off" spellcheck="false" />
+      <input id="cmdk-input" type="text" placeholder="{{ i18n "cmdk_placeholder" }}" data-i18n-placeholder="cmdk_placeholder" autocomplete="off" spellcheck="false" />
       <kbd class="cmdk-kbd">esc</kbd>
     </div>
     <div id="cmdk-list" class="cmdk-list" role="listbox">
+      {{/* Los textos salen de i18n/*.yaml (y siguen al toggle con data-i18n); las keywords cubren los dos idiomas */}}
+      {{ $home := .Site.Home.RelPermalink }}
 
-      <div class="cmdk-group" data-group>Navegación</div>
-      <button class="cmdk-item" data-action="goto" data-target="{{ .Site.BaseURL }}" data-keywords="inicio home portada"><i class="fas fa-home"></i><span>Inicio</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `blog/` | relURL }}" data-keywords="blog posts articulos"><i class="fas fa-newspaper"></i><span>Blog</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `material/` | relURL }}" data-keywords="material apuntes universidad notes"><i class="fas fa-book-open"></i><span>Material Universitario</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `search/` | relURL }}" data-keywords="buscar search"><i class="fas fa-search"></i><span>Búsqueda</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `agent-context/` | relURL }}" data-keywords="agente contexto docs documentacion llm ia agent guide repo"><i class="fas fa-robot"></i><span>Contexto para agentes</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_nav">{{ i18n "cmdk_group_nav" }}</div>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}" data-keywords="inicio home portada"><i class="fas fa-home"></i><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `blog/` | relURL }}" data-keywords="blog posts articulos articles"><i class="fas fa-newspaper"></i><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `material/` | relURL }}" data-keywords="material apuntes universidad notes university"><i class="fas fa-book-open"></i><span data-i18n="cmdk_material">{{ i18n "cmdk_material" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `search/` | relURL }}" data-keywords="buscar busqueda search"><i class="fas fa-search"></i><span data-i18n="nav_search">{{ i18n "nav_search" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `agent-context/` | relURL }}" data-keywords="agente contexto docs documentacion llm ia agent context guide repo"><i class="fas fa-robot"></i><span data-i18n="cmdk_agent_context">{{ i18n "cmdk_agent_context" }}</span></button>
 
-      <div class="cmdk-group" data-group>Secciones</div>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#experiencia` | relURL }}" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span>Experiencia</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#educacion` | relURL }}" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span>Educación</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#publicaciones` | relURL }}" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span>Publicaciones</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#skills` | relURL }}" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#proyectos` | relURL }}" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span>Proyectos</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/#contacto` | relURL }}" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span>Contacto</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_sections">{{ i18n "cmdk_group_sections" }}</div>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#experiencia" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span data-i18n="section_exp">{{ i18n "section_exp" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#educacion" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span data-i18n="section_edu">{{ i18n "section_edu" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#publicaciones" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span data-i18n="section_pub">{{ i18n "section_pub" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#skills" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#proyectos" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span data-i18n="section_projects">{{ i18n "section_projects" }}</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ $home }}#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">{{ i18n "section_contact" }}</span></button>
 
-      <div class="cmdk-group" data-group>Acciones</div>
-      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo"><i class="fas fa-moon"></i><span>Cambiar tema</span></button>
-      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles"><i class="fas fa-globe"></i><span>Cambiar idioma (ES/EN)</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="{{ `/cv.pdf` | relURL }}" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
-      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
-      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
-      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos computer cv mode camara easter egg"><i class="fas fa-eye"></i><span>CV Mode — detección de objetos</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">{{ i18n "cmdk_group_actions" }}</div>
+      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">{{ i18n "aria_toggle_theme" }}</span></button>
+      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">{{ i18n "aria_toggle_lang" }}</span> (ES/EN)</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="{{ `/cv.pdf` | relURL }}" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">{{ i18n "download_cv" }}</span></button>
+      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">{{ i18n "cmdk_copy_email" }}</span></button>
+      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh console"><i class="fas fa-terminal"></i><span data-i18n="cmdk_terminal">{{ i18n "cmdk_terminal" }}</span></button>
+      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos object detection computer cv mode camara easter egg"><i class="fas fa-eye"></i><span data-i18n="cmdk_cvmode">{{ i18n "cmdk_cvmode" }}</span></button>
 
       {{ with .Site.GetPage "/blog" }}{{ if .Pages }}
-      <div class="cmdk-group" data-group>Posts del blog</div>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_posts">{{ i18n "cmdk_group_posts" }}</div>
       {{ range first 8 .Pages.ByDate.Reverse }}
       <button class="cmdk-item" data-action="goto" data-target="{{ .RelPermalink }}" data-keywords="blog post {{ delimit (.Params.tags | default slice) " " }}"><i class="fas fa-file-alt"></i><span>{{ .Title }}</span></button>
       {{ end }}
       {{ end }}{{ end }}
 
       {{ with .Site.GetPage "/proyectos" }}{{ if .Pages }}
-      <div class="cmdk-group" data-group>Casos de estudio</div>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_cases">{{ i18n "cmdk_group_cases" }}</div>
       {{ range .Pages.ByDate.Reverse }}
       <button class="cmdk-item" data-action="goto" data-target="{{ .RelPermalink }}" data-keywords="proyecto project caso estudio case study {{ delimit (.Params.tags | default slice) " " }}"><i class="fas fa-project-diagram"></i><span>{{ .Title }}</span></button>
       {{ end }}
-      {{ end }}{{ end }}      <div class="cmdk-group" data-group>Enlaces</div>
+      {{ end }}{{ end }}
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_links">{{ i18n "cmdk_group_links" }}</div>
       {{ range .Site.Params.social.list }}
       <button class="cmdk-item" data-action="open" data-target="{{ .url }}" data-keywords="{{ lower .title }} social"><i class="{{ .icon }}"></i><span>{{ .title }}</span></button>
       {{ end }}
 
       <div id="cmdk-content-results"></div>
 
-      <div id="cmdk-empty" class="cmdk-empty" hidden>Sin resultados</div>
+      <div id="cmdk-empty" class="cmdk-empty" data-i18n="cmdk_empty" hidden>{{ i18n "cmdk_empty" }}</div>
     </div>
     <div class="cmdk-footer">
-      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> navegar</span>
-      <span><kbd class="cmdk-kbd">↵</kbd> abrir</span>
-      <span><kbd class="cmdk-kbd">esc</kbd> cerrar</span>
+      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> <span data-i18n="cmdk_hint_nav">{{ i18n "cmdk_hint_nav" }}</span></span>
+      <span><kbd class="cmdk-kbd">↵</kbd> <span data-i18n="cmdk_hint_open">{{ i18n "cmdk_hint_open" }}</span></span>
+      <span><kbd class="cmdk-kbd">esc</kbd> <span data-i18n="cmdk_hint_close">{{ i18n "cmdk_hint_close" }}</span></span>
     </div>
   </div>
 </div>

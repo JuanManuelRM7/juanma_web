@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs</title>
     <link>https://juanmanuel.petrer.eu/en/</link>
-    <description>Recent content on </description>
+    <description>ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz.</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
@@ -13,14 +13,14 @@
       <link>https://juanmanuel.petrer.eu/en/proyectos/vcalib/</link>
       <pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
       <guid>https://juanmanuel.petrer.eu/en/proyectos/vcalib/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;When the lighting changes, a detector trained under other conditions degrades. The textbook answer is to collect data, label it, retrain and redeploy. vcalib explores the cheap answer: keep the model frozen and fit, in minutes and without labels, a tiny filter that corrects the input.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;&#xA;&lt;p&gt;RF-DETR is a state-of-the-art real-time detector and, like almost any vision model, it is sensitive to illumination: dawn vs. dusk, indoor vs. overcast, a new camera, a new site. When the input distribution drifts away from the training one, detection quality drops. Retraining or fine-tuning is expensive, needs labels and is impractical on edge devices.&lt;/p&gt;</description>
+      <description>A ~2 KB filter, fitted label-free in minutes on a CPU, gives a frozen detector back the activations and the mAP it loses when the lighting changes.</description>
     </item>
     <item>
       <title>Misinformation detection in fiction works with LLM-generated ontologies</title>
       <link>https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/</link>
       <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://juanmanuel.petrer.eu/en/proyectos/desinformacion-ontologias-llm/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Most anti-misinformation tools target fake news. Films, series and podcasts blend facts with creative license, and the brain does not always tell them apart: people are 40% more likely to believe a false claim when it arrives visually, and once absorbed it keeps influencing them about half of the time even after a correction.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;Work carried out at the &lt;strong&gt;BISITE&lt;/strong&gt; research group (University of Salamanca) within the &lt;strong&gt;TRUESTORIES&lt;/strong&gt; project (CPP2021-008358), funded by MICIU/AEI and the European Union (NextGenerationEU/PRTR), and published at &lt;strong&gt;DCAI 2025&lt;/strong&gt;, the International Conference on Distributed Computing and Artificial Intelligence: &lt;a href=&#34;https://juanmanuel.petrer.eu/DCAI.pdf&#34;&gt;&lt;em&gt;AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>An LLM + RAG architecture, published at DCAI&#39;25, that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts.</description>
     </item>
   </channel>
 </rss>

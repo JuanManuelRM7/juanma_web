@@ -101,14 +101,16 @@
   
 
   
-  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
+  
+  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs – RSS" href="https://juanmanuel.petrer.eu/en/index.xml" />
+  
   
 
   
   
   
   
-  <link href="/main.min.d9fb597eb0b8a18f395038752325f740da01e5dabde2dc2671da3ef2e42faf9e.css" rel="stylesheet" />
+  <link href="/main.min.471387030ed6e396ed55a6761e9bd4ed22c4a9e9c64145949132e12440b75a66.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -206,17 +208,17 @@
   role="banner"
 >
   
-  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal">
+  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Main navigation" data-i18n-aria="aria_main_nav">
     <a class="nav-menu-item !p-1 !px-2" href="/en/"><span data-i18n="nav_home">Home</span></a>
     <a class="nav-menu-item !p-1 !px-2" href="/en/proyectos/"><span data-i18n="nav_projects">Projects</span></a>
     <a class="nav-menu-item !p-1 !px-2" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Search">
       <i class="fas fa-search" aria-hidden="true"></i>
     </a>
     <button
       class="fas fa-globe text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
       onclick="toggleLang()"
-      aria-label="Cambiar idioma"
+      aria-label="Change language"
       data-i18n-aria="aria_toggle_lang"
     ></button>
     <i
@@ -224,14 +226,14 @@
       onclick="toggleTheme(event)"
       role="button"
       tabindex="0"
-      aria-label="Cambiar tema"
+      aria-label="Toggle theme"
       data-i18n-aria="aria_toggle_theme"
       onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
     ></i>
   </nav>
 
   
-  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
+  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Main navigation" data-i18n-aria="aria_main_nav">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="/en/"><span data-i18n="nav_home">Home</span></a>
       <a class="nav-menu-item" href="/en/proyectos/"><span data-i18n="nav_projects">Projects</span></a>
@@ -239,14 +241,14 @@
     </div>
     <div class="flex items-center justify-end gap-3">
       
-      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos">
+      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Open command palette" data-i18n-aria="aria_open_palette">
         <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
       </button>
-      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Search">
         <i class="fas fa-search" aria-hidden="true"></i>
       </a>
       
-      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
+      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Change language" data-i18n-aria="aria_toggle_lang">
         <span id="lang-label">ES</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
       </button>
       <i
@@ -254,7 +256,7 @@
         onclick="toggleTheme(event)"
         role="button"
         tabindex="0"
-        aria-label="Cambiar tema"
+        aria-label="Toggle theme"
         data-i18n-aria="aria_toggle_theme"
         onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
       ></i>
@@ -268,7 +270,7 @@
     
     <main id="main-content" class="grow">
 <nav aria-label="Breadcrumb" data-i18n-aria="aria_breadcrumb" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
-  <a href="/en/" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors" aria-label="Home">
+  <a href="/en/" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors" aria-label="Home" data-i18n-aria="nav_home">
     <i class="fas fa-home text-xs" aria-hidden="true"></i>
   </a>
   
@@ -475,6 +477,8 @@
     </aside>
   </div>
 </article>
+
+
 <div class="flex flex-row justify-around my-2">
   <h3 class="mb-1 mt-1 text-left mr-4">
     
@@ -518,7 +522,7 @@
         <div class="flex flex-col gap-1">
           <a href="/cv.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
           <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Search</span></a>
-          <a href="https://juanmanuel.petrer.eu/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
+          <a href="/en/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
             <i class="fas fa-rss" aria-hidden="true"></i> RSS
           </a>
         </div>
@@ -654,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('pre').forEach(function (pre) {
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
-    button.setAttribute('aria-label', 'Copy code');
+    button.setAttribute('aria-label', "Copy code");
     button.setAttribute('data-i18n-aria', 'action_copy_code');
     button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
     button.addEventListener('click', function () {
@@ -716,189 +720,230 @@ pre:hover .copy-code-btn {
 
 <script>
 (function() {
+  
   var translations = {
-    en: {
-      
-      nav_home: 'Home',
-      nav_blog: 'Blog',
-      nav_material: 'Resources',
-      nav_search: 'Search',
-      aria_toggle_theme: 'Toggle theme',
-      aria_toggle_lang: 'Change language',
-
-      
-      nav_projects: 'Projects',
-      section_blog: 'From the blog',
-      section_exp: 'Experience',
-      section_edu: 'Education',
-      section_pub: 'Publications',
-      section_projects: 'Projects',
-      section_contact: 'Contact',
-      section_github: 'GitHub Activity',
-      gh_contributions: 'contributions in the last year',
-      gh_view_profile: 'View profile',
-
-      
-      download_cv: 'Download CV',
-      action_view_thesis: 'View Thesis',
-      action_download_paper: 'Download Paper',
-      action_home: 'Go to homepage',
-      action_view_blog: 'View blog',
-      action_copy_code: 'Copy code',
-      aria_scroll_top: 'Scroll to top',
-
-      
-      content_reading_time: 'min read',
-      content_toc: 'Table of contents',
-      content_index: 'Index',
-      content_related: 'You might also like',
-      content_comments: 'Comments',
-
-      
-      blog_title: 'Blog',
-      blog_description: 'Articles about physics, AI, meteorology and more',
-
-      
-      profile_experience: 'Experience',
-      profile_publications: 'Publications',
-      profile_oss: 'Open source',
-      cta_projects: 'View projects',
-      cta_contact: 'Contact',
-      section_certs: 'Certifications',
-      contact_intro: 'Got a computer vision or LLM problem to take to production? Drop me a line.',
-      action_case_study: 'Case study',
-      action_all_projects: 'View all projects',
-      action_repo: 'Code',
-      action_paper: 'Paper',
-      action_post: 'Post',
-      project_case_study: 'Case study',
-      project_role: 'Role',
-      project_period: 'Period',
-      project_org: 'Organization',
-      project_stack: 'Stack',
-      project_metrics: 'Results',
-
-      
-      footer_sections: 'Sections',
-      footer_resources: 'Resources',
-      footer_contact: 'Contact',
-      footer_made_with: 'Made with',
-
-
-      
-      error_title: 'Page not found!',
-      error_message: "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
-      error_quote: '"In a universe of infinite pages, this one simply doesn\'t exist in your branch of the multiverse."',
-
-      
-      edu_thesis: 'Thesis:',
-
-      
-      status_production: 'In production',
-      status_published: 'Published',
-      status_active: 'Active',
-      status_development: 'In development',
-      status_completed: 'Completed',
-      
-      aria_breadcrumb: 'Breadcrumb',
-
-
-      
-      easter_secret: "\u{1F3AE} You found the secret!",
-      easter_konami: '— Konami Code activated —',
-      
-      action_skip_content: 'Skip to content',
+    "es": {
+      "action_all_projects": "Ver todos los proyectos",
+      "action_case_study": "Caso de estudio",
+      "action_copy_code": "Copiar código",
+      "action_download_paper": "Descargar Paper",
+      "action_home": "Volver al inicio",
+      "action_paper": "Paper",
+      "action_post": "Post",
+      "action_repo": "Código",
+      "action_skip_content": "Ir al contenido",
+      "action_view_blog": "Ver el blog",
+      "action_view_thesis": "Ver TFG",
+      "aria_breadcrumb": "Miga de pan",
+      "aria_email": "Contactar por email",
+      "aria_gh_calendar": "Calendario de contribuciones de GitHub",
+      "aria_hero_metrics": "Resultados destacados",
+      "aria_main_nav": "Navegación principal",
+      "aria_open_palette": "Abrir paleta de comandos",
+      "aria_scroll_down": "Bajar al contenido",
+      "aria_scroll_top": "Volver arriba",
+      "aria_toggle_lang": "Cambiar idioma",
+      "aria_toggle_theme": "Cambiar tema",
+      "blog_description": "Artículos sobre física, IA, meteorología y más",
+      "blog_title": "Blog",
+      "cmdk_agent_context": "Contexto para agentes",
+      "cmdk_copy_email": "Copiar email",
+      "cmdk_cvmode": "CV Mode — detección de objetos",
+      "cmdk_empty": "Sin resultados",
+      "cmdk_group_actions": "Acciones",
+      "cmdk_group_cases": "Casos de estudio",
+      "cmdk_group_content": "Contenido",
+      "cmdk_group_links": "Enlaces",
+      "cmdk_group_nav": "Navegación",
+      "cmdk_group_posts": "Posts del blog",
+      "cmdk_group_sections": "Secciones",
+      "cmdk_hint_close": "cerrar",
+      "cmdk_hint_nav": "navegar",
+      "cmdk_hint_open": "abrir",
+      "cmdk_label": "Paleta de comandos",
+      "cmdk_material": "Material universitario",
+      "cmdk_placeholder": "Buscar o ejecutar un comando…",
+      "cmdk_terminal": "Abrir terminal",
+      "contact_intro": "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.",
+      "content_comments": "Comentarios",
+      "content_index": "Índice",
+      "content_reading_time": "min lectura",
+      "content_related": "Te puede interesar",
+      "content_toc": "Tabla de contenidos",
+      "cta_contact": "Contactar",
+      "cta_projects": "Ver proyectos",
+      "download_cv": "Descargar CV",
+      "easter_konami": "— Konami Code activado —",
+      "easter_secret": "🎮 ¡Has descubierto el secreto!",
+      "edu_thesis": "TFG:",
+      "error_message": "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.",
+      "error_quote": "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»",
+      "error_title": "¡Página no encontrada!",
+      "footer_contact": "Contacto",
+      "footer_made_with": "Hecho con",
+      "footer_resources": "Recursos",
+      "footer_sections": "Secciones",
+      "gh_contributions": "contribuciones en el último año",
+      "gh_view_profile": "Ver perfil",
+      "nav_blog": "Blog",
+      "nav_home": "Inicio",
+      "nav_material": "Material",
+      "nav_projects": "Proyectos",
+      "nav_search": "Buscar",
+      "profile_experience": "Experiencia",
+      "profile_oss": "Open source",
+      "profile_publications": "Publicaciones",
+      "project_case_study": "Caso de estudio",
+      "project_metrics": "Resultados",
+      "project_org": "Organización",
+      "project_period": "Periodo",
+      "project_role": "Rol",
+      "project_stack": "Stack",
+      "section_blog": "Del blog",
+      "section_certs": "Certificaciones",
+      "section_contact": "Contacto",
+      "section_edu": "Educación",
+      "section_exp": "Experiencia",
+      "section_github": "Actividad en GitHub",
+      "section_projects": "Proyectos",
+      "section_pub": "Publicaciones",
+      "status_active": "Activo",
+      "status_completed": "Completado",
+      "status_development": "En desarrollo",
+      "status_production": "En producción",
+      "status_published": "Publicado",
+      "term_going_blog": "Navegando al blog…",
+      "term_help_blog": "ir al blog",
+      "term_help_clear": "limpiar pantalla",
+      "term_help_contact": "formas de contacto",
+      "term_help_cv": "descargar CV",
+      "term_help_exit": "cerrar terminal",
+      "term_help_neofetch": "info del sistema",
+      "term_help_projects": "proyectos destacados",
+      "term_help_skills": "stack técnico",
+      "term_help_whoami": "sobre mí",
+      "term_help_yolo": "modo detección de objetos",
+      "term_hint": "Escribe {help} para ver los comandos disponibles.",
+      "term_input": "Comando",
+      "term_label": "Terminal interactivo",
+      "term_more": "Más en",
+      "term_no_cvmode": "cv-mode.js no cargado.",
+      "term_opening_cv": "Abriendo cv.pdf…",
+      "term_projects_page": "la página de proyectos",
+      "term_try_help": "Prueba {help}.",
+      "term_uptime": "desde 2024",
     },
-    es: {
-      
-      nav_home: 'Inicio',
-      nav_blog: 'Blog',
-      nav_material: 'Material',
-      nav_search: 'Buscar',
-      aria_toggle_theme: 'Cambiar tema',
-      aria_toggle_lang: 'Cambiar idioma',
-
-      
-      nav_projects: 'Proyectos',
-      section_blog: 'Del blog',
-      section_exp: 'Experiencia',
-      section_edu: 'Educación',
-      section_pub: 'Publicaciones',
-      section_projects: 'Proyectos',
-      section_contact: 'Contacto',
-      section_github: 'Actividad en GitHub',
-      gh_contributions: 'contribuciones en el último año',
-      gh_view_profile: 'Ver perfil',
-
-      
-      download_cv: 'Descargar CV',
-      action_view_thesis: 'Ver TFG',
-      action_download_paper: 'Descargar Paper',
-      action_home: 'Volver al inicio',
-      action_view_blog: 'Ver el blog',
-      action_copy_code: 'Copiar código',
-      aria_scroll_top: 'Volver arriba',
-
-      
-      content_reading_time: 'min lectura',
-      content_toc: 'Tabla de contenidos',
-      content_index: 'Índice',
-      content_related: 'Te puede interesar',
-      content_comments: 'Comentarios',
-
-      
-      blog_title: 'Blog',
-      blog_description: 'Artículos sobre física, IA, meteorología y más',
-
-      
-      profile_experience: 'Experiencia',
-      profile_publications: 'Publicaciones',
-      profile_oss: 'Open source',
-      cta_projects: 'Ver proyectos',
-      cta_contact: 'Contactar',
-      action_skip_content: 'Ir al contenido',
-      section_certs: 'Certificaciones',
-      contact_intro: '¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.',
-      action_case_study: 'Caso de estudio',
-      action_all_projects: 'Ver todos los proyectos',
-      action_repo: 'Código',
-      action_paper: 'Paper',
-      action_post: 'Post',
-      project_case_study: 'Caso de estudio',
-      project_role: 'Rol',
-      project_period: 'Periodo',
-      project_org: 'Organización',
-      project_stack: 'Stack',
-      project_metrics: 'Resultados',
-
-      
-      footer_sections: 'Secciones',
-      footer_resources: 'Recursos',
-      footer_contact: 'Contacto',
-      footer_made_with: 'Hecho con',
-
-
-      
-      error_title: '¡Página no encontrada!',
-      error_message: 'Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.',
-      error_quote: '«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»',
-
-      
-      edu_thesis: 'TFG:',
-      
-      status_production: 'En producción',
-      status_published: 'Publicado',
-      status_active: 'Activo',
-      status_development: 'En desarrollo',
-      status_completed: 'Completado',
-      
-      aria_breadcrumb: 'Miga de pan',
-
-
-      
-      easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
-      easter_konami: '— Konami Code activado —',
-    }
+    "en": {
+      "action_all_projects": "View all projects",
+      "action_case_study": "Case study",
+      "action_copy_code": "Copy code",
+      "action_download_paper": "Download Paper",
+      "action_home": "Go to homepage",
+      "action_paper": "Paper",
+      "action_post": "Post",
+      "action_repo": "Code",
+      "action_skip_content": "Skip to content",
+      "action_view_blog": "View blog",
+      "action_view_thesis": "View Thesis",
+      "aria_breadcrumb": "Breadcrumb",
+      "aria_email": "Contact by email",
+      "aria_gh_calendar": "GitHub contributions calendar",
+      "aria_hero_metrics": "Key results",
+      "aria_main_nav": "Main navigation",
+      "aria_open_palette": "Open command palette",
+      "aria_scroll_down": "Scroll to content",
+      "aria_scroll_top": "Scroll to top",
+      "aria_toggle_lang": "Change language",
+      "aria_toggle_theme": "Toggle theme",
+      "blog_description": "Articles about physics, AI, meteorology and more",
+      "blog_title": "Blog",
+      "cmdk_agent_context": "Agent context",
+      "cmdk_copy_email": "Copy email",
+      "cmdk_cvmode": "CV Mode — object detection",
+      "cmdk_empty": "No results",
+      "cmdk_group_actions": "Actions",
+      "cmdk_group_cases": "Case studies",
+      "cmdk_group_content": "Content",
+      "cmdk_group_links": "Links",
+      "cmdk_group_nav": "Navigation",
+      "cmdk_group_posts": "Blog posts",
+      "cmdk_group_sections": "Sections",
+      "cmdk_hint_close": "close",
+      "cmdk_hint_nav": "navigate",
+      "cmdk_hint_open": "open",
+      "cmdk_label": "Command palette",
+      "cmdk_material": "University notes",
+      "cmdk_placeholder": "Search or run a command…",
+      "cmdk_terminal": "Open terminal",
+      "contact_intro": "Got a computer vision or LLM problem to take to production? Drop me a line.",
+      "content_comments": "Comments",
+      "content_index": "Index",
+      "content_reading_time": "min read",
+      "content_related": "You might also like",
+      "content_toc": "Table of contents",
+      "cta_contact": "Contact",
+      "cta_projects": "View projects",
+      "download_cv": "Download CV",
+      "easter_konami": "— Konami Code activated —",
+      "easter_secret": "🎮 You found the secret!",
+      "edu_thesis": "Thesis:",
+      "error_message": "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
+      "error_quote": "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\"",
+      "error_title": "Page not found!",
+      "footer_contact": "Contact",
+      "footer_made_with": "Made with",
+      "footer_resources": "Resources",
+      "footer_sections": "Sections",
+      "gh_contributions": "contributions in the last year",
+      "gh_view_profile": "View profile",
+      "nav_blog": "Blog",
+      "nav_home": "Home",
+      "nav_material": "Resources",
+      "nav_projects": "Projects",
+      "nav_search": "Search",
+      "profile_experience": "Experience",
+      "profile_oss": "Open source",
+      "profile_publications": "Publications",
+      "project_case_study": "Case study",
+      "project_metrics": "Results",
+      "project_org": "Organization",
+      "project_period": "Period",
+      "project_role": "Role",
+      "project_stack": "Stack",
+      "section_blog": "From the blog",
+      "section_certs": "Certifications",
+      "section_contact": "Contact",
+      "section_edu": "Education",
+      "section_exp": "Experience",
+      "section_github": "GitHub Activity",
+      "section_projects": "Projects",
+      "section_pub": "Publications",
+      "status_active": "Active",
+      "status_completed": "Completed",
+      "status_development": "In development",
+      "status_production": "In production",
+      "status_published": "Published",
+      "term_going_blog": "Heading to the blog…",
+      "term_help_blog": "go to the blog",
+      "term_help_clear": "clear the screen",
+      "term_help_contact": "ways to reach me",
+      "term_help_cv": "download CV",
+      "term_help_exit": "close the terminal",
+      "term_help_neofetch": "system info",
+      "term_help_projects": "featured projects",
+      "term_help_skills": "tech stack",
+      "term_help_whoami": "about me",
+      "term_help_yolo": "object detection mode",
+      "term_hint": "Type {help} to see the available commands.",
+      "term_input": "Command",
+      "term_label": "Interactive terminal",
+      "term_more": "More on",
+      "term_no_cvmode": "cv-mode.js not loaded.",
+      "term_opening_cv": "Opening cv.pdf…",
+      "term_projects_page": "the projects page",
+      "term_try_help": "Try {help}.",
+      "term_uptime": "since 2024",
+    },
   };
 
   
@@ -938,6 +983,10 @@ pre:hover .copy-code-btn {
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
       var key = el.getAttribute('data-i18n-aria');
       if (strings[key]) el.setAttribute('aria-label', strings[key]);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (strings[key]) el.setAttribute('placeholder', strings[key]);
     });
     
     document.querySelectorAll('time[data-i18n-date]').forEach(function(el) {
@@ -1005,47 +1054,51 @@ pre:hover .copy-code-btn {
 
     
 <div id="cmdk-overlay" class="cmdk-overlay" hidden>
-  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Paleta de comandos" class="cmdk-panel">
+  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette" data-i18n-aria="cmdk_label" class="cmdk-panel">
     <div class="cmdk-input-row">
       <i class="fas fa-search cmdk-input-icon" aria-hidden="true"></i>
-      <input id="cmdk-input" type="text" placeholder="Buscar o ejecutar un comando…" autocomplete="off" spellcheck="false" />
+      <input id="cmdk-input" type="text" placeholder="Search or run a command…" data-i18n-placeholder="cmdk_placeholder" autocomplete="off" spellcheck="false" />
       <kbd class="cmdk-kbd">esc</kbd>
     </div>
     <div id="cmdk-list" class="cmdk-list" role="listbox">
+      
+      
 
-      <div class="cmdk-group" data-group>Navegación</div>
-      <button class="cmdk-item" data-action="goto" data-target="https://juanmanuel.petrer.eu/" data-keywords="inicio home portada"><i class="fas fa-home"></i><span>Inicio</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/blog/" data-keywords="blog posts articulos"><i class="fas fa-newspaper"></i><span>Blog</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/material/" data-keywords="material apuntes universidad notes"><i class="fas fa-book-open"></i><span>Material Universitario</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/search/" data-keywords="buscar search"><i class="fas fa-search"></i><span>Búsqueda</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/agent-context/" data-keywords="agente contexto docs documentacion llm ia agent guide repo"><i class="fas fa-robot"></i><span>Contexto para agentes</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_nav">Navigation</div>
+      <button class="cmdk-item" data-action="goto" data-target="/en/" data-keywords="inicio home portada"><i class="fas fa-home"></i><span data-i18n="nav_home">Home</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/blog/" data-keywords="blog posts articulos articles"><i class="fas fa-newspaper"></i><span data-i18n="nav_blog">Blog</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/material/" data-keywords="material apuntes universidad notes university"><i class="fas fa-book-open"></i><span data-i18n="cmdk_material">University notes</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/search/" data-keywords="buscar busqueda search"><i class="fas fa-search"></i><span data-i18n="nav_search">Search</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/agent-context/" data-keywords="agente contexto docs documentacion llm ia agent context guide repo"><i class="fas fa-robot"></i><span data-i18n="cmdk_agent_context">Agent context</span></button>
 
-      <div class="cmdk-group" data-group>Secciones</div>
-      <button class="cmdk-item" data-action="goto" data-target="/#experiencia" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span>Experiencia</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/#educacion" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span>Educación</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/#publicaciones" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span>Publicaciones</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/#skills" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/#proyectos" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span>Proyectos</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span>Contacto</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_sections">Sections</div>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#experiencia" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span data-i18n="section_exp">Experience</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#educacion" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span data-i18n="section_edu">Education</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#publicaciones" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span data-i18n="section_pub">Publications</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#skills" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#proyectos" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span data-i18n="section_projects">Projects</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/en/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">Contact</span></button>
 
-      <div class="cmdk-group" data-group>Acciones</div>
-      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo"><i class="fas fa-moon"></i><span>Cambiar tema</span></button>
-      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles"><i class="fas fa-globe"></i><span>Cambiar idioma (ES/EN)</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar"><i class="fas fa-file-download"></i><span>Descargar CV</span></button>
-      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span>Copiar email</span></button>
-      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh"><i class="fas fa-terminal"></i><span>Abrir terminal</span></button>
-      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos computer cv mode camara easter egg"><i class="fas fa-eye"></i><span>CV Mode — detección de objetos</span></button>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Actions</div>
+      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">Toggle theme</span></button>
+      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Change language</span> (ES/EN)</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Download CV</span></button>
+      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copy email</span></button>
+      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh console"><i class="fas fa-terminal"></i><span data-i18n="cmdk_terminal">Open terminal</span></button>
+      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos object detection computer cv mode camara easter egg"><i class="fas fa-eye"></i><span data-i18n="cmdk_cvmode">CV Mode — object detection</span></button>
 
       
 
       
-      <div class="cmdk-group" data-group>Casos de estudio</div>
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_cases">Case studies</div>
       
       <button class="cmdk-item" data-action="goto" data-target="/en/proyectos/vcalib/" data-keywords="proyecto project caso estudio case study computer vision RF-DETR domain shift PyTorch"><i class="fas fa-project-diagram"></i><span>vcalib: differentiable calibration filters for RF-DETR under illumination shift</span></button>
       
       <button class="cmdk-item" data-action="goto" data-target="/en/proyectos/desinformacion-ontologias-llm/" data-keywords="proyecto project caso estudio case study LLMs RAG NLP ontologies misinformation"><i class="fas fa-project-diagram"></i><span>Misinformation detection in fiction works with LLM-generated ontologies</span></button>
       
-            <div class="cmdk-group" data-group>Enlaces</div>
+      
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_links">Links</div>
       
       <button class="cmdk-item" data-action="open" data-target="https://www.linkedin.com/in/juanmanuelruizmunoz/" data-keywords="linkedin social"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
       
@@ -1060,12 +1113,12 @@ pre:hover .copy-code-btn {
 
       <div id="cmdk-content-results"></div>
 
-      <div id="cmdk-empty" class="cmdk-empty" hidden>Sin resultados</div>
+      <div id="cmdk-empty" class="cmdk-empty" data-i18n="cmdk_empty" hidden>No results</div>
     </div>
     <div class="cmdk-footer">
-      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> navegar</span>
-      <span><kbd class="cmdk-kbd">↵</kbd> abrir</span>
-      <span><kbd class="cmdk-kbd">esc</kbd> cerrar</span>
+      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> <span data-i18n="cmdk_hint_nav">navigate</span></span>
+      <span><kbd class="cmdk-kbd">↵</kbd> <span data-i18n="cmdk_hint_open">open</span></span>
+      <span><kbd class="cmdk-kbd">esc</kbd> <span data-i18n="cmdk_hint_close">close</span></span>
     </div>
   </div>
 </div>
@@ -1173,7 +1226,7 @@ pre:hover .copy-code-btn {
 
     
 <div id="term-overlay" class="term-overlay" hidden>
-  <div class="term-window" role="dialog" aria-modal="true" aria-label="Terminal interactivo">
+  <div class="term-window" role="dialog" aria-modal="true" aria-label="Interactive terminal" data-i18n-aria="term_label">
     <div class="term-titlebar">
       <span class="term-dot" style="background:#ef4444" onclick="window.closeTerminal()"></span>
       <span class="term-dot" style="background:#f59e0b"></span>
@@ -1184,7 +1237,7 @@ pre:hover .copy-code-btn {
       <div id="term-output"></div>
       <div class="term-input-line">
         <span class="term-prompt">juanma@web:~$</span>
-        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Comando" />
+        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Command" data-i18n-aria="term_input" />
       </div>
     </div>
   </div>
@@ -1260,23 +1313,49 @@ pre:hover .copy-code-btn {
 <script>
 window.__terminalData = {
   base: '\/' || '/',
-  headline: "ML Engineer · Computer Vision \u0026 LLMs",
-  whoami: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
-  projects: [
-    { title: "vcalib: calibration filters for RF-DETR under illumination shift", tech: "PyTorch · RF-DETR · SAM3" },
-    { title: "Misinformation detection in fiction with LLM-generated ontologies", tech: "LLMs · RAG · SBERT" },
-    { title: "Industrial tire inspection with vision models and multimodal OCR", tech: "PyTorch · RF-DETR · GLM-OCR" },
-    { title: "GLM-OCR + LoRA for key information extraction on receipts and invoices", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
-    { title: "vision-pytorch: DINOv2/v3 pipelines for classification and features", tech: "PyTorch · DINOv2 · DINOv3" },
-    { title: "Lagrangian identification of atmospheric blocking (bachelor's thesis)", tech: "Python · HYSPLIT · ERA5" },
-    { title: "Local agent with Ollama: tool calling and RAG", tech: "Python · Ollama · ChromaDB" },
-  ],
-  skills: [
-    { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering" },
-    { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Diffusion models (FLUX.1) · Detection \u0026 segmentation" },
-    { name: "Languages \u0026 analysis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (reading \u0026 specs) · R · Statistical analysis · LaTeX" },
-    { name: "MLOps \u0026 tools", items: "Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
-  ],
+  
+  byLang: {
+    "es": {
+      headline: "ML Engineer · Computer Vision \u0026 LLMs",
+      whoami: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
+      projectsUrl: "/proyectos/",
+      projects: [
+        { title: "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación", tech: "PyTorch · RF-DETR · SAM3" },
+        { title: "Detección de desinformación en ficción con ontologías generadas por LLMs", tech: "LLMs · RAG · SBERT" },
+        { title: "Inspección industrial de neumáticos con visión y OCR multimodal", tech: "PyTorch · RF-DETR · GLM-OCR" },
+        { title: "GLM-OCR + LoRA para extraer campos de tickets y facturas", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
+        { title: "vision-pytorch: pipelines DINOv2/v3 para clasificación y features", tech: "PyTorch · DINOv2 · DINOv3" },
+        { title: "Identificación lagrangiana de bloqueos atmosféricos (TFG)", tech: "Python · HYSPLIT · ERA5" },
+        { title: "Agente local con Ollama: tool calling y RAG", tech: "Python · Ollama · ChromaDB" },
+      ],
+      skills: [
+        { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings y búsqueda semántica · ChromaDB · FAISS · Prompt engineering" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Modelos de difusión (FLUX.1) · Detección y segmentación" },
+        { name: "Lenguajes y análisis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (lectura y especificación) · R · Análisis estadístico · LaTeX" },
+        { name: "MLOps y herramientas", items: "Docker · MLflow · TensorBoard · Git y GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
+      ],
+    },
+    "en": {
+      headline: "ML Engineer · Computer Vision \u0026 LLMs",
+      whoami: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
+      projectsUrl: "/en/proyectos/",
+      projects: [
+        { title: "vcalib: calibration filters for RF-DETR under illumination shift", tech: "PyTorch · RF-DETR · SAM3" },
+        { title: "Misinformation detection in fiction with LLM-generated ontologies", tech: "LLMs · RAG · SBERT" },
+        { title: "Industrial tire inspection with vision models and multimodal OCR", tech: "PyTorch · RF-DETR · GLM-OCR" },
+        { title: "GLM-OCR + LoRA for key information extraction on receipts and invoices", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
+        { title: "vision-pytorch: DINOv2/v3 pipelines for classification and features", tech: "PyTorch · DINOv2 · DINOv3" },
+        { title: "Lagrangian identification of atmospheric blocking (bachelor's thesis)", tech: "Python · HYSPLIT · ERA5" },
+        { title: "Local agent with Ollama: tool calling and RAG", tech: "Python · Ollama · ChromaDB" },
+      ],
+      skills: [
+        { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Diffusion models (FLUX.1) · Detection \u0026 segmentation" },
+        { name: "Languages \u0026 analysis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (reading \u0026 specs) · R · Statistical analysis · LaTeX" },
+        { name: "MLOps \u0026 tools", items: "Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
+      ],
+    },
+  },
   social: [
     { title: "LinkedIn", url: "https://www.linkedin.com/in/juanmanuelruizmunoz/", label: "in/juanmanuelruizmunoz" },
     { title: "Instagram", url: "https://www.instagram.com/j.manuel__rm/", label: "@j.manuel__rm" },

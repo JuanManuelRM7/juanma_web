@@ -1,10 +1,19 @@
 {{- /* Imágenes de markdown (![alt](/images/x.png)): carga diferida y, si el fichero está en static/,
-       ancho y alto para que la página no salte al cargar. Para figuras procesadas a webp usa el shortcode img. */ -}}
+       ancho y alto para que la página no salte al cargar. Para figuras procesadas a webp usa el shortcode img.
+       Si el fichero es un .mp4 (un GIF convertido con scripts/gif2mp4.swift) se pinta como vídeo en bucle;
+       su póster es el .png del mismo nombre y partials/loop_video.html lo reproduce al entrar en pantalla. */ -}}
 {{- $src := .Destination -}}
+{{- $isVideo := strings.HasSuffix (lower $src) ".mp4" -}}
+{{- $sized := cond $isVideo (replaceRE `(?i)\.mp4$` ".png" $src) $src -}}
 {{- $w := 0 }}{{ $h := 0 -}}
-{{- if hasPrefix $src "/" -}}
-{{- $file := printf "static%s" $src -}}
+{{- if hasPrefix $sized "/" -}}
+{{- $file := printf "static%s" $sized -}}
 {{- if fileExists $file }}{{ with imageConfig $file }}{{ $w = .Width }}{{ $h = .Height }}{{ end }}{{ end -}}
 {{- end -}}
+{{- if $isVideo -}}
+{{- .Page.Store.Set "hasLoopVideo" true -}}
+<video src="{{ $src | safeURL }}"{{ if $w }} data-poster="{{ $sized | safeURL }}" width="{{ $w }}" height="{{ $h }}"{{ end }} aria-label="{{ .PlainText }}" data-loop-video controls loop muted playsinline preload="none"></video>
+{{- else -}}
 <img src="{{ $src | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $w }} width="{{ $w }}" height="{{ $h }}"{{ end }} loading="lazy" decoding="async" />
+{{- end -}}
 {{- /* sin salto de línea final: Hugo lo metería dentro del párrafo */ -}}

@@ -57,7 +57,8 @@ layouts/
 │   ├── single.html         # Post individual (blog, material)
 │   ├── list.html           # Páginas de tags: /tags/ (nube de etiquetas) y /tags/<tag>/ (tarjetas)
 │   ├── search.html         # Página de búsqueda (Pagefind)
-│   └── _markup/render-image.html  # Imágenes de markdown: lazy + width/height automáticos
+│   └── _markup/render-image.html  # Imágenes de markdown: lazy + width/height automáticos; los .mp4 salen como vídeo en bucle
+├── index.rss.xml           # Feed de la portada: solo posts y casos de estudio
 ├── robots.txt              # robots.txt con el sitemap (enableRobotsTXT en config.yaml)
 ├── blog/list.html          # Índice del blog (grid paginado)
 ├── proyectos/
@@ -70,7 +71,8 @@ layouts/
     ├── meta.html           # <title>, OG, Twitter, JSON-LD (Person en la portada; BlogPosting/Article en posts, casos y apuntes; CollectionPage/WebPage en el resto; BreadcrumbList)
     ├── header.html         # Nav: Inicio · Proyectos · Blog + buscar, idioma, tema
     ├── footer.html
-    ├── i18n.html           # Sistema i18n JS: claves estáticas + bloque generado desde config.yaml
+    ├── i18n.html           # Sistema i18n JS: textos de interfaz (generados desde i18n/*.yaml) + bloque generado desde config.yaml
+    ├── loop_video.html     # Reproduce los vídeos en bucle (GIF convertidos) solo cuando están a la vista
     ├── hero_metrics.html   # Franja de métricas del hero
     ├── projects.html / project_card.html
     ├── latest_posts.html   # Tres últimos posts (fallback a ES en la home EN)
@@ -85,6 +87,8 @@ layouts/
 Las imágenes que se procesan (foto de perfil, figuras de casos de estudio) viven en `assets/images/` y se convierten a webp con Hugo (`resources.Get` + `Resize`). Lo que va tal cual (PDFs, OG, iconos) está en `static/`.
 
 Las imágenes escritas en markdown (`![alt](/images/figura.png)`, con el fichero en `static/images/`) pasan por el render hook `layouts/_default/_markup/render-image.html`, que añade `loading="lazy"` y el ancho y alto reales. Usa siempre rutas absolutas (`/images/...`) para que pueda leer las dimensiones.
+
+**Animaciones: no subas GIF.** Conviértelos a vídeo con `scripts/gif2mp4.swift` (macOS, sin ffmpeg; instrucciones en la cabecera): genera `figura.mp4` y su póster `figura.png` junto al GIF, unas 5 veces más ligeros. En el post se enlaza igual que una imagen, `![texto alternativo](/images/figura.mp4)`, y el render hook lo pinta como `<video>` en bucle, sin sonido, que solo se descarga y reproduce al entrar en pantalla.
 
 ### Estilos → `assets/main.css` + `static/css/`
 
@@ -103,7 +107,7 @@ Los colores de las tarjetas de proyecto (`project-color-*`, `project-status-*`) 
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
 - `neural-hero.js` — Animación canvas del hero
 - `cmdk.js` — Paleta de comandos ⌘K
-- `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial)
+- `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial en los dos idiomas; textos desde `i18n/*.yaml`)
 
 ---
 
@@ -157,6 +161,8 @@ En `config.yaml` bajo `params.project.list` **y** `languages.en.params.project.l
   metrics:                   # opcional, 1-3 líneas cortas con números
     - "mAP 0,83 en producción"
   tech: [Python, Docker]
+  cover: "images/proyectos/mi-proyecto/portada.png"  # opcional: imagen de portada (en assets/); sin ella, gradiente + icono
+  cover_fit: contain         # opcional: muestra la imagen entera (para diagramas) en vez de recortarla
   icon: "fas fa-eye"         # icono Font Awesome (debe existir en el subset, ver abajo)
   color: "cyan"              # cyan | violet | amber | rose | indigo | emerald
   status: active             # production | published | active | development | completed
@@ -198,7 +204,7 @@ En `config.yaml` bajo `params.skill.categories` (ES) y `languages.en.params.skil
 
 Hay dos capas:
 
-1. **Textos de interfaz** (botones, títulos de sección): clave en `i18n/es.yaml` e `i18n/en.yaml` (`{{ i18n "clave" }}` en templates) **y** en los dos objetos estáticos de `layouts/partials/i18n.html` (para el toggle sin recarga, con `data-i18n="clave"` en el HTML).
+1. **Textos de interfaz** (botones, títulos de sección, paleta ⌘K, terminal): clave en `i18n/es.yaml` e `i18n/en.yaml`, con las mismas claves en los dos. En el template, `{{ i18n "clave" }}` más `data-i18n="clave"` para que el toggle sin recarga lo sustituya (`data-i18n-aria` para `aria-label`, `data-i18n-placeholder` para `placeholder`). El objeto JS que usa el toggle se genera desde esos dos ficheros en `layouts/partials/i18n.html`; no se escribe a mano.
 2. **Contenido del perfil** (hero, proyectos, experiencia, educación, publicaciones, skills, certificaciones): **no se escribe a mano**. El bloque `window.__i18nDyn` de `i18n.html` genera las claves (`proj_title_<id>`, `exp_hl_<n>`, `skill_<cat>_<n>`…) leyendo `params` y `languages.en.params`. Basta con mantener las dos ramas de `config.yaml` sincronizadas. El bloque solo se emite en la portada, que es la única página que sustituye estos textos sin recargar.
 
 En páginas que tienen traducción Hugo (casos de estudio), el toggle navega a la versión traducida en lugar de sustituir textos; al cargar, si el idioma guardado no coincide con el de la página y existe traducción, redirige.
@@ -294,5 +300,6 @@ npm run build
 - No editar `resources/` (caché interna de Hugo)
 - No cambiar `publishDir` en `config.yaml` sin actualizar también el workflow de GitHub Actions
 - No borrar `static/fontawesome/` ni `static/fonts/` (fuentes self-hosted, sin CDN)
-- No escribir a mano traducciones de proyectos/experiencia/skills en `i18n.html`: se generan desde `config.yaml`
+- No escribir a mano traducciones en `i18n.html`: los textos de interfaz se generan desde `i18n/*.yaml` y los del perfil desde `config.yaml`
+- No subir GIF animados: convertirlos a MP4 con `scripts/gif2mp4.swift`
 - No inventar métricas: todo lo que afirma la web sale del CV (`static/cv.pdf`), de los README de los repos o del paper

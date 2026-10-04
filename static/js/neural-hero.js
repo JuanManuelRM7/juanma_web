@@ -1,7 +1,7 @@
 // Neural network animation for the hero canvas.
 // Nodes drift slowly, edges fade in/out with distance, and the cursor acts
 // as an extra node that attracts connections. Skipped entirely when the
-// user prefers reduced motion or on very small screens.
+// user prefers reduced motion.
 (function () {
   var canvas = document.getElementById('neural-canvas');
   if (!canvas) return;
@@ -18,6 +18,8 @@
   var LINK_DIST = 130;
   var MOUSE_DIST = 180;
   var running = true;
+  var inView = true;
+  var frame = null;
 
   function nodeCount() {
     return Math.min(90, Math.max(30, Math.floor(width * height / 14000)));
@@ -44,7 +46,13 @@
     nodes.length = target;
   }
 
+  // At most one pending frame, so the loop can never be started twice
+  function schedule() {
+    if (frame === null) frame = requestAnimationFrame(step);
+  }
+
   function step() {
+    frame = null;
     if (!running) return;
     ctx.clearRect(0, 0, width, height);
 
@@ -93,7 +101,7 @@
       ctx.fill();
     }
 
-    requestAnimationFrame(step);
+    schedule();
   }
 
   var hero = canvas.parentElement;
@@ -107,20 +115,20 @@
     mouse.y = null;
   });
 
-  // Pause when the hero is off-screen or the tab is hidden.
+  // Run only while the hero is on screen and the tab is visible.
+  function update() {
+    running = inView && !document.hidden;
+    if (running) schedule();
+  }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      var visible = entries[0].isIntersecting && !document.hidden;
-      if (visible && !running) { running = true; requestAnimationFrame(step); }
-      else if (!visible) { running = false; }
+      inView = entries[0].isIntersecting;
+      update();
     }).observe(hero);
   }
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) { running = false; }
-    else { running = true; requestAnimationFrame(step); }
-  });
+  document.addEventListener('visibilitychange', update);
 
   window.addEventListener('resize', resize, { passive: true });
   resize();
-  requestAnimationFrame(step);
+  schedule();
 })();

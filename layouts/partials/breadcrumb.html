@@ -1,6 +1,6 @@
 {{ if and (not .IsHome) (.IsPage) }}
-<nav aria-label="Breadcrumb" data-i18n-aria="aria_breadcrumb" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
-  <a href="{{ .Site.Home.RelPermalink }}" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors" aria-label="Home">
+<nav aria-label="{{ i18n "aria_breadcrumb" }}" data-i18n-aria="aria_breadcrumb" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
+  <a href="{{ .Site.Home.RelPermalink }}" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors" aria-label="{{ i18n "nav_home" }}" data-i18n-aria="nav_home">
     <i class="fas fa-home text-xs" aria-hidden="true"></i>
   </a>
   {{ with .Parent }}

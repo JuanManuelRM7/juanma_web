@@ -1,6 +1,7 @@
 ---
 title: "Tiempos característicos estelares: el reloj interior de las estrellas"
 date: 2025-10-27
+description: "Tres tiempos característicos —nuclear, de Kelvin e hidrodinámico— que dicen cuánto vive una estrella, cuánto aguantaría solo con su energía gravitatoria y cuánto tarda en reaccionar a un desequilibrio."
 draft: false
 tags: ["astrofísica", "estrellas", "física"]
 math: true

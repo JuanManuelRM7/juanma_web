@@ -94,7 +94,7 @@ Edit `params.experience.list[].highlights` (bullets, markdown bold for metrics) 
 
 ### UI strings
 
-Interface strings (buttons, section titles) live in `i18n/es.yaml`, `i18n/en.yaml` and the two static objects in `layouts/partials/i18n.html`. Profile content strings are generated; never write them by hand.
+Interface strings (buttons, section titles, command palette, terminal) live in `i18n/es.yaml` and `i18n/en.yaml`; the JS object used by the runtime toggle is generated from those two files in `layouts/partials/i18n.html`. Profile content strings are generated from `config.yaml`; never write either by hand in the partial.
 
 ## Rules
 

@@ -1,5 +1,6 @@
 // Terminal easter egg (⌘K → "Abrir terminal"). Site data is injected by
-// layouts/partials/terminal.html as window.__terminalData (built from config.yaml).
+// layouts/partials/terminal.html as window.__terminalData (built from config.yaml, both languages);
+// UI strings come from i18n/*.yaml through window.__i18n and follow the ES/EN toggle.
 (function () {
   var overlay = document.getElementById('term-overlay');
   var output = document.getElementById('term-output');
@@ -14,50 +15,52 @@
 
   function esc(s) { return String(s).replace(/</g, '&lt;'); }
 
-  var BANNER =
-    '<span class="term-accent">     ██╗███╗   ███╗</span>\n' +
-    '<span class="term-accent">     ██║████╗ ████║</span>   Juan Manuel Ruiz\n' +
-    '<span class="term-accent">     ██║██╔████╔██║</span>   ' + esc(data.headline || 'ML Engineer · Computer Vision & LLMs') + '\n' +
-    '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; Mathematician\n' +
-    '<span class="term-accent">╚█████╔╝██║ ╚═╝ ██║</span>\n' +
-    '<span class="term-accent"> ╚════╝ ╚═╝     ╚═╝</span>\n\n' +
-    'Escribe <span class="term-accent">help</span> para ver los comandos disponibles.\n';
+  var HELP = '<span class="term-accent">help</span>';
+  function lang() { return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es'; }
+  // UI string in the current language; {help} becomes the highlighted command name
+  function tr(key) {
+    var s = ((window.__i18n || {})[lang()] || {})[key];
+    return esc(s === undefined ? key : s).replace('{help}', HELP);
+  }
+  // Profile data in the current language
+  function profile() { return (data.byLang || {})[lang()] || {}; }
+
+  function banner() {
+    return '<span class="term-accent">     ██╗███╗   ███╗</span>\n' +
+      '<span class="term-accent">     ██║████╗ ████║</span>   Juan Manuel Ruiz\n' +
+      '<span class="term-accent">     ██║██╔████╔██║</span>   ' + esc(profile().headline || 'ML Engineer · Computer Vision & LLMs') + '\n' +
+      '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; Mathematician\n' +
+      '<span class="term-accent">╚█████╔╝██║ ╚═╝ ██║</span>\n' +
+      '<span class="term-accent"> ╚════╝ ╚═╝     ╚═╝</span>\n\n' +
+      tr('term_hint') + '\n';
+  }
 
   var commands = {
     help: function () {
-      return [
-        '<span class="term-accent">whoami</span>      sobre mí',
-        '<span class="term-accent">projects</span>    proyectos destacados',
-        '<span class="term-accent">skills</span>      stack técnico',
-        '<span class="term-accent">cv</span>          descargar CV',
-        '<span class="term-accent">blog</span>        ir al blog',
-        '<span class="term-accent">contact</span>     formas de contacto',
-        '<span class="term-accent">neofetch</span>    info del sistema',
-        '<span class="term-accent">yolo</span>        modo detección de objetos',
-        '<span class="term-accent">clear</span>       limpiar pantalla',
-        '<span class="term-accent">exit</span>        cerrar terminal'
-      ].join('\n');
+      return ['whoami', 'projects', 'skills', 'cv', 'blog', 'contact', 'neofetch', 'yolo', 'clear', 'exit'].map(function (c) {
+        return '<span class="term-accent">' + c + '</span>' + new Array(13 - c.length).join(' ') + tr('term_help_' + c);
+      }).join('\n');
     },
     whoami: function () {
-      return esc(data.whoami || '');
+      return esc(profile().whoami || '');
     },
     projects: function () {
-      var lines = (data.projects || []).map(function (p) {
+      var lines = (profile().projects || []).map(function (p) {
         return '• ' + esc(p.title) + '  <span class="term-output-cmd">(' + esc(p.tech) + ')</span>';
       });
-      lines.push('', 'Más en <a href="' + base + 'proyectos/">la página de proyectos</a>.');
+      lines.push('', tr('term_more') + ' <a href="' + (profile().projectsUrl || base + 'proyectos/') + '">' + tr('term_projects_page') + '</a>.');
       return lines.join('\n');
     },
     skills: function () {
-      return (data.skills || []).map(function (c) { return esc(c.name) + ': ' + esc(c.items); }).join('\n');
+      return (profile().skills || []).map(function (c) { return esc(c.name) + ': ' + esc(c.items); }).join('\n');
     },
     cv: function () {
       window.open(base + 'cv.pdf', '_blank');
-      return 'Abriendo cv.pdf…';
+      return tr('term_opening_cv');
     },
     blog: function () {
       window.location.href = base + 'blog/';
-      return 'Navegando al blog…';
+      return tr('term_going_blog');
     },
     contact: function () {
       return (data.social || []).filter(function (s) { return s.title !== 'Instagram'; }).map(function (s) {
@@ -69,12 +72,12 @@
     },
     neofetch: function () {
       var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      return BANNER +
+      return banner() +
         '<span class="term-accent">OS:</span> juanmanuel.petrer.eu\n' +
         '<span class="term-accent">Host:</span> GitHub Pages\n' +
         '<span class="term-accent">Shell:</span> Hugo + Tailwind + vanilla JS\n' +
         '<span class="term-accent">Theme:</span> ' + theme + '\n' +
-        '<span class="term-accent">Uptime:</span> desde 2024';
+        '<span class="term-accent">Uptime:</span> ' + tr('term_uptime');
     },
     yolo: function () {
       if (window.toggleCvMode) {
@@ -82,7 +85,7 @@
         window.toggleCvMode();
         return null;
       }
-      return '<span class="term-warn">cv-mode.js no cargado.</span>';
+      return '<span class="term-warn">' + tr('term_no_cvmode') + '</span>';
     },
     pwd: function () { return '/home/juanma/web'; },
     ls: function () { return 'experiencia/  educacion/  publicaciones/  proyectos/  blog/  cv.pdf'; },
@@ -111,13 +114,13 @@
       var out = fn(parts.slice(1));
       if (out !== null) print(out + '\n');
     } else {
-      print('zsh: command not found: ' + esc(cmd) + '. Prueba <span class="term-accent">help</span>.\n');
+      print('zsh: command not found: ' + esc(cmd) + '. ' + tr('term_try_help') + '\n');
     }
   }
 
   function open() {
     overlay.hidden = false;
-    if (!output.innerHTML) print(BANNER);
+    if (!output.innerHTML) print(banner());
     input.focus();
   }
   function close() { overlay.hidden = true; }

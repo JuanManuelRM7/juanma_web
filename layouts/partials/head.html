@@ -18,11 +18,13 @@
   {{ range .AllTranslations }}{{ if eq .Language.Lang "es" }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />{{ end }}{{ end }}
   {{ end }}
 
-  <!-- RSS Feed -->
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Params.title }} – RSS" href="{{ `index.xml` | absURL }}" />
-  {{ with .OutputFormats.Get "rss" }}
-  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Params.title }}" href="{{ .RelPermalink }}" />
+  <!-- RSS: el feed del sitio (layouts/index.rss.xml) y, en secciones y tags, el suyo propio -->
+  {{ with .Site.Home.OutputFormats.Get "rss" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Params.title }} – RSS" href="{{ .Permalink }}" />
   {{ end }}
+  {{ if not .IsHome }}{{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Title }} – RSS" href="{{ .Permalink }}" />
+  {{ end }}{{ end }}
 
   {{ $css := resources.Get "main.css" | postCSS }}
   {{ if hugo.IsProduction }}

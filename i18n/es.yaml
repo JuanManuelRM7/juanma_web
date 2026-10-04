@@ -1,4 +1,5 @@
-# Generado desde layouts/partials/i18n.html — mantener sincronizado
+# Textos de interfaz. Fuente única: layouts/partials/i18n.html genera desde aquí el objeto JS
+# que usa el toggle ES/EN sin recarga. Mantén las mismas claves en es.yaml y en.yaml.
 nav_home:
   other: "Inicio"
 nav_blog:
@@ -129,3 +130,91 @@ action_all_projects:
   other: "Ver todos los proyectos"
 action_skip_content:
   other: "Ir al contenido"
+aria_main_nav:
+  other: "Navegación principal"
+aria_open_palette:
+  other: "Abrir paleta de comandos"
+aria_scroll_down:
+  other: "Bajar al contenido"
+aria_email:
+  other: "Contactar por email"
+aria_hero_metrics:
+  other: "Resultados destacados"
+aria_gh_calendar:
+  other: "Calendario de contribuciones de GitHub"
+cmdk_label:
+  other: "Paleta de comandos"
+cmdk_placeholder:
+  other: "Buscar o ejecutar un comando…"
+cmdk_group_nav:
+  other: "Navegación"
+cmdk_group_sections:
+  other: "Secciones"
+cmdk_group_actions:
+  other: "Acciones"
+cmdk_group_posts:
+  other: "Posts del blog"
+cmdk_group_cases:
+  other: "Casos de estudio"
+cmdk_group_links:
+  other: "Enlaces"
+cmdk_group_content:
+  other: "Contenido"
+cmdk_material:
+  other: "Material universitario"
+cmdk_agent_context:
+  other: "Contexto para agentes"
+cmdk_copy_email:
+  other: "Copiar email"
+cmdk_terminal:
+  other: "Abrir terminal"
+cmdk_cvmode:
+  other: "CV Mode — detección de objetos"
+cmdk_empty:
+  other: "Sin resultados"
+cmdk_hint_nav:
+  other: "navegar"
+cmdk_hint_open:
+  other: "abrir"
+cmdk_hint_close:
+  other: "cerrar"
+term_label:
+  other: "Terminal interactivo"
+term_input:
+  other: "Comando"
+term_hint:
+  other: "Escribe {help} para ver los comandos disponibles."
+term_help_whoami:
+  other: "sobre mí"
+term_help_projects:
+  other: "proyectos destacados"
+term_help_skills:
+  other: "stack técnico"
+term_help_cv:
+  other: "descargar CV"
+term_help_blog:
+  other: "ir al blog"
+term_help_contact:
+  other: "formas de contacto"
+term_help_neofetch:
+  other: "info del sistema"
+term_help_yolo:
+  other: "modo detección de objetos"
+term_help_clear:
+  other: "limpiar pantalla"
+term_help_exit:
+  other: "cerrar terminal"
+term_more:
+  other: "Más en"
+term_projects_page:
+  other: "la página de proyectos"
+term_opening_cv:
+  other: "Abriendo cv.pdf…"
+term_going_blog:
+  other: "Navegando al blog…"
+term_no_cvmode:
+  other: "cv-mode.js no cargado."
+term_uptime:
+  other: "desde 2024"
+term_try_help:
+  other: "Prueba {help}."

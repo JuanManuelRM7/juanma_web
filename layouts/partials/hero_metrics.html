@@ -1,7 +1,7 @@
 <!-- Proof strip under the hero copy. Values come from params.hero.metrics (ES) and
      languages.en.params.hero.metrics (EN); the runtime toggle swaps them via data-i18n. -->
 {{ with .Site.Params.hero.metrics }}
-<ul class="hero-metrics" aria-label="Resultados destacados">
+<ul class="hero-metrics" aria-label="{{ i18n "aria_hero_metrics" }}" data-i18n-aria="aria_hero_metrics">
   {{ range $i, $m := . }}
   <li class="hero-metric">
     <span class="hero-metric-value" data-i18n="hero_metric_{{ add $i 1 }}_value">{{ $m.value }}</span>

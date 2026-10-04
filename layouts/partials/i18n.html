@@ -65,189 +65,15 @@ window.__i18nDyn = {
 <!-- Global i18n translation system -->
 <script>
 (function() {
+  // UI strings, generated from i18n/es.yaml and i18n/en.yaml (the single source of truth)
   var translations = {
-    en: {
-      // Navigation
-      nav_home: 'Home',
-      nav_blog: 'Blog',
-      nav_material: 'Resources',
-      nav_search: 'Search',
-      aria_toggle_theme: 'Toggle theme',
-      aria_toggle_lang: 'Change language',
-
-      // Hero & Homepage sections
-      nav_projects: 'Projects',
-      section_blog: 'From the blog',
-      section_exp: 'Experience',
-      section_edu: 'Education',
-      section_pub: 'Publications',
-      section_projects: 'Projects',
-      section_contact: 'Contact',
-      section_github: 'GitHub Activity',
-      gh_contributions: 'contributions in the last year',
-      gh_view_profile: 'View profile',
-
-      // Actions & Buttons
-      download_cv: 'Download CV',
-      action_view_thesis: 'View Thesis',
-      action_download_paper: 'Download Paper',
-      action_home: 'Go to homepage',
-      action_view_blog: 'View blog',
-      action_copy_code: 'Copy code',
-      aria_scroll_top: 'Scroll to top',
-
-      // Content
-      content_reading_time: 'min read',
-      content_toc: 'Table of contents',
-      content_index: 'Index',
-      content_related: 'You might also like',
-      content_comments: 'Comments',
-
-      // Blog
-      blog_title: 'Blog',
-      blog_description: 'Articles about physics, AI, meteorology and more',
-
-      // Profile stats
-      profile_experience: 'Experience',
-      profile_publications: 'Publications',
-      profile_oss: 'Open source',
-      cta_projects: 'View projects',
-      cta_contact: 'Contact',
-      section_certs: 'Certifications',
-      contact_intro: 'Got a computer vision or LLM problem to take to production? Drop me a line.',
-      action_case_study: 'Case study',
-      action_all_projects: 'View all projects',
-      action_repo: 'Code',
-      action_paper: 'Paper',
-      action_post: 'Post',
-      project_case_study: 'Case study',
-      project_role: 'Role',
-      project_period: 'Period',
-      project_org: 'Organization',
-      project_stack: 'Stack',
-      project_metrics: 'Results',
-
-      // Footer
-      footer_sections: 'Sections',
-      footer_resources: 'Resources',
-      footer_contact: 'Contact',
-      footer_made_with: 'Made with',
-
-
-      // 404
-      error_title: 'Page not found!',
-      error_message: "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
-      error_quote: '"In a universe of infinite pages, this one simply doesn\'t exist in your branch of the multiverse."',
-
-      // Education
-      edu_thesis: 'Thesis:',
-
-      // Project statuses
-      status_production: 'In production',
-      status_published: 'Published',
-      status_active: 'Active',
-      status_development: 'In development',
-      status_completed: 'Completed',
-      // Breadcrumb
-      aria_breadcrumb: 'Breadcrumb',
-
-
-      // Easter egg
-      easter_secret: "\u{1F3AE} You found the secret!",
-      easter_konami: '— Konami Code activated —',
-      // Profile & content data
-      action_skip_content: 'Skip to content',
+    {{- range $lang := slice "es" "en" }}
+    {{ $lang }}: {
+      {{- range $key, $entry := os.ReadFile (printf "i18n/%s.yaml" $lang) | transform.Unmarshal }}
+      {{ $key }}: {{ $entry.other }},
+      {{- end }}
     },
-    es: {
-      // Navigation
-      nav_home: 'Inicio',
-      nav_blog: 'Blog',
-      nav_material: 'Material',
-      nav_search: 'Buscar',
-      aria_toggle_theme: 'Cambiar tema',
-      aria_toggle_lang: 'Cambiar idioma',
-
-      // Hero & Homepage sections
-      nav_projects: 'Proyectos',
-      section_blog: 'Del blog',
-      section_exp: 'Experiencia',
-      section_edu: 'Educación',
-      section_pub: 'Publicaciones',
-      section_projects: 'Proyectos',
-      section_contact: 'Contacto',
-      section_github: 'Actividad en GitHub',
-      gh_contributions: 'contribuciones en el último año',
-      gh_view_profile: 'Ver perfil',
-
-      // Actions & Buttons
-      download_cv: 'Descargar CV',
-      action_view_thesis: 'Ver TFG',
-      action_download_paper: 'Descargar Paper',
-      action_home: 'Volver al inicio',
-      action_view_blog: 'Ver el blog',
-      action_copy_code: 'Copiar código',
-      aria_scroll_top: 'Volver arriba',
-
-      // Content
-      content_reading_time: 'min lectura',
-      content_toc: 'Tabla de contenidos',
-      content_index: 'Índice',
-      content_related: 'Te puede interesar',
-      content_comments: 'Comentarios',
-
-      // Blog
-      blog_title: 'Blog',
-      blog_description: 'Artículos sobre física, IA, meteorología y más',
-
-      // Profile stats
-      profile_experience: 'Experiencia',
-      profile_publications: 'Publicaciones',
-      profile_oss: 'Open source',
-      cta_projects: 'Ver proyectos',
-      cta_contact: 'Contactar',
-      action_skip_content: 'Ir al contenido',
-      section_certs: 'Certificaciones',
-      contact_intro: '¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.',
-      action_case_study: 'Caso de estudio',
-      action_all_projects: 'Ver todos los proyectos',
-      action_repo: 'Código',
-      action_paper: 'Paper',
-      action_post: 'Post',
-      project_case_study: 'Caso de estudio',
-      project_role: 'Rol',
-      project_period: 'Periodo',
-      project_org: 'Organización',
-      project_stack: 'Stack',
-      project_metrics: 'Resultados',
-
-      // Footer
-      footer_sections: 'Secciones',
-      footer_resources: 'Recursos',
-      footer_contact: 'Contacto',
-      footer_made_with: 'Hecho con',
-
-
-      // 404
-      error_title: '¡Página no encontrada!',
-      error_message: 'Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.',
-      error_quote: '«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»',
-
-      // Education
-      edu_thesis: 'TFG:',
-      // Project statuses
-      status_production: 'En producción',
-      status_published: 'Publicado',
-      status_active: 'Activo',
-      status_development: 'En desarrollo',
-      status_completed: 'Completado',
-      // Breadcrumb
-      aria_breadcrumb: 'Miga de pan',
-
-
-      // Easter egg
-      easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
-      easter_konami: '— Konami Code activado —',
-    }
+    {{- end }}
   };
 
   // Make translations globally available
@@ -287,6 +113,10 @@ window.__i18nDyn = {
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
       var key = el.getAttribute('data-i18n-aria');
       if (strings[key]) el.setAttribute('aria-label', strings[key]);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (strings[key]) el.setAttribute('placeholder', strings[key]);
     });
     // Dates rendered by Hugo: reformatted with Intl; back on the page's own language the original text returns
     document.querySelectorAll('time[data-i18n-date]').forEach(function(el) {

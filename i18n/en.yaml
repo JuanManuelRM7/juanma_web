@@ -1,4 +1,5 @@
-# Generado desde layouts/partials/i18n.html — mantener sincronizado
+# Textos de interfaz. Fuente única: layouts/partials/i18n.html genera desde aquí el objeto JS
+# que usa el toggle ES/EN sin recarga. Mantén las mismas claves en es.yaml y en.yaml.
 nav_home:
   other: "Home"
 nav_blog:
@@ -129,3 +130,91 @@ contact_intro:
   other: "Got a computer vision or LLM problem to take to production? Drop me a line."
 action_all_projects:
   other: "View all projects"
+aria_main_nav:
+  other: "Main navigation"
+aria_open_palette:
+  other: "Open command palette"
+aria_scroll_down:
+  other: "Scroll to content"
+aria_email:
+  other: "Contact by email"
+aria_hero_metrics:
+  other: "Key results"
+aria_gh_calendar:
+  other: "GitHub contributions calendar"
+cmdk_label:
+  other: "Command palette"
+cmdk_placeholder:
+  other: "Search or run a command…"
+cmdk_group_nav:
+  other: "Navigation"
+cmdk_group_sections:
+  other: "Sections"
+cmdk_group_actions:
+  other: "Actions"
+cmdk_group_posts:
+  other: "Blog posts"
+cmdk_group_cases:
+  other: "Case studies"
+cmdk_group_links:
+  other: "Links"
+cmdk_group_content:
+  other: "Content"
+cmdk_material:
+  other: "University notes"
+cmdk_agent_context:
+  other: "Agent context"
+cmdk_copy_email:
+  other: "Copy email"
+cmdk_terminal:
+  other: "Open terminal"
+cmdk_cvmode:
+  other: "CV Mode — object detection"
+cmdk_empty:
+  other: "No results"
+cmdk_hint_nav:
+  other: "navigate"
+cmdk_hint_open:
+  other: "open"
+cmdk_hint_close:
+  other: "close"
+term_label:
+  other: "Interactive terminal"
+term_input:
+  other: "Command"
+term_hint:
+  other: "Type {help} to see the available commands."
+term_help_whoami:
+  other: "about me"
+term_help_projects:
+  other: "featured projects"
+term_help_skills:
+  other: "tech stack"
+term_help_cv:
+  other: "download CV"
+term_help_blog:
+  other: "go to the blog"
+term_help_contact:
+  other: "ways to reach me"
+term_help_neofetch:
+  other: "system info"
+term_help_yolo:
+  other: "object detection mode"
+term_help_clear:
+  other: "clear the screen"
+term_help_exit:
+  other: "close the terminal"
+term_more:
+  other: "More on"
+term_projects_page:
+  other: "the projects page"
+term_opening_cv:
+  other: "Opening cv.pdf…"
+term_going_blog:
+  other: "Heading to the blog…"
+term_no_cvmode:
+  other: "cv-mode.js not loaded."
+term_uptime:
+  other: "since 2024"
+term_try_help:
+  other: "Try {help}."

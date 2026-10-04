@@ -1,6 +1,6 @@
 <!-- Interactive terminal easter egg. Open via ⌘K palette ("Terminal") or window.openTerminal() -->
 <div id="term-overlay" class="term-overlay" hidden>
-  <div class="term-window" role="dialog" aria-modal="true" aria-label="Terminal interactivo">
+  <div class="term-window" role="dialog" aria-modal="true" aria-label="{{ i18n "term_label" }}" data-i18n-aria="term_label">
     <div class="term-titlebar">
       <span class="term-dot" style="background:#ef4444" onclick="window.closeTerminal()"></span>
       <span class="term-dot" style="background:#f59e0b"></span>
@@ -11,7 +11,7 @@
       <div id="term-output"></div>
       <div class="term-input-line">
         <span class="term-prompt">juanma@web:~$</span>
-        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Comando" />
+        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="{{ i18n "term_input" }}" data-i18n-aria="term_input" />
       </div>
     </div>
   </div>
@@ -87,18 +87,26 @@
 <script>
 window.__terminalData = {
   base: '{{ "" | relURL }}' || '/',
-  headline: {{ .Site.Params.profile.position }},
-  whoami: {{ .Site.Params.aboutme.description }},
-  projects: [
-    {{- range .Site.Params.project.list }}
-    { title: {{ .title }}, tech: {{ delimit (first 3 .tech) " · " }} },
+  // Contenido del perfil en los dos idiomas: el terminal sigue al toggle ES/EN
+  byLang: {
+    {{- range .Site.Home.AllTranslations }}
+    {{ .Language.Lang }}: {
+      headline: {{ .Site.Params.profile.position }},
+      whoami: {{ .Site.Params.aboutme.description }},
+      projectsUrl: {{ with .Site.GetPage "/proyectos" }}{{ .RelPermalink }}{{ else }}""{{ end }},
+      projects: [
+        {{- range .Site.Params.project.list }}
+        { title: {{ .title }}, tech: {{ delimit (first 3 .tech) " · " }} },
+        {{- end }}
+      ],
+      skills: [
+        {{- range .Site.Params.skill.categories }}
+        { name: {{ .name }}, items: {{ delimit .items " · " }} },
+        {{- end }}
+      ],
+    },
     {{- end }}
-  ],
-  skills: [
-    {{- range .Site.Params.skill.categories }}
-    { name: {{ .name }}, items: {{ delimit .items " · " }} },
-    {{- end }}
-  ],
+  },
   social: [
     {{- range .Site.Params.social.list }}
     { title: {{ .title }}, url: {{ .url }}, label: {{ .label | default .url }} },

@@ -9,9 +9,11 @@ html {
   }
 }
 
-/* Make post/content images responsive and nicely presented */
+/* Make post/content images (and looping videos) responsive and nicely presented */
 .content img,
-.prose img {
+.prose img,
+.content video,
+.prose video {
   max-width: 100%;
   height: auto;
   display: block;

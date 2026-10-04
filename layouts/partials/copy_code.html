@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('pre').forEach(function (pre) {
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
-    button.setAttribute('aria-label', 'Copy code');
+    button.setAttribute('aria-label', {{ i18n "action_copy_code" }});
     button.setAttribute('data-i18n-aria', 'action_copy_code');
     button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
     button.addEventListener('click', function () {

@@ -1,0 +1,32 @@
+{{- /* Vídeos en bucle (GIF convertidos, ver render-image.html): el póster se pide al acercarse y el vídeo
+       solo se descarga y se reproduce mientras está a la vista. Con "reducir movimiento" no arranca solo. */ -}}
+{{ if .Store.Get "hasLoopVideo" }}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var videos = document.querySelectorAll('video[data-loop-video]');
+  if (!videos.length) return;
+  function showPoster(v) { if (v.dataset.poster && !v.poster) v.poster = v.dataset.poster; }
+  if (!('IntersectionObserver' in window)) { videos.forEach(showPoster); return; }
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var near = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { showPoster(e.target); near.unobserve(e.target); }
+    });
+  }, { rootMargin: '600px 0px' });
+  var inView = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        var p = e.target.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        e.target.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+  videos.forEach(function (v) {
+    near.observe(v);
+    if (!still) inView.observe(v);
+  });
+});
+</script>
+{{ end }}

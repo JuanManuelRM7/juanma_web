@@ -1,6 +1,7 @@
 {{/* One project card. Called as: partial "project_card" (dict "p" <project map> "featured" <bool>)
      Fields used from the project map: id, title, description, metrics[], tech[], icon, color, status,
-     links{case_study, repo, paper, posts[{title,url}], more[{title,url}]} */}}
+     links{case_study, repo, paper, posts[{title,url}], more[{title,url}]},
+     cover (image under assets/), cover_fit ("contain" = show the whole image instead of cropping it) */}}
 {{ $p := .p }}
 {{ $featured := .featured }}
 {{ $links := $p.links | default dict }}
@@ -9,10 +10,14 @@
 {{ $external := hasPrefix $primary "http" }}
 {{ $cover := "" }}
 {{ $cover2 := "" }}
-{{ with $p.cover }}{{ with resources.Get . }}{{ $cover = .Fill (cond $featured "450x180 webp q80" "350x140 webp q80") }}{{ $cover2 = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}{{ end }}
+{{ $contain := eq $p.cover_fit "contain" }}
+{{ with $p.cover }}{{ with resources.Get . }}
+{{ if $contain }}{{ $cover = .Resize (cond $featured "450x webp q80" "350x webp q80") }}{{ $cover2 = .Resize (cond $featured "900x webp q80" "700x webp q80") }}
+{{ else }}{{ $cover = .Fill (cond $featured "450x180 webp q80" "350x140 webp q80") }}{{ $cover2 = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}
+{{ end }}{{ end }}
 <article class="project-card group{{ if $featured }} project-card-featured{{ end }}">
   {{/* Portada: imagen procesada (cover en config) o gradiente del color del proyecto con su icono */}}
-  <div class="project-cover{{ if not $cover }} project-cover-{{ $p.color | default "violet" }}{{ end }}">
+  <div class="project-cover{{ if not $cover }} project-cover-{{ $p.color | default "violet" }}{{ else if $contain }} project-cover-contain{{ end }}">
     {{ if $primary }}<a href="{{ $primary }}" class="project-cover-link flex" aria-hidden="true" tabindex="-1"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
     {{ if $cover }}
     <img src="{{ $cover.RelPermalink }}" srcset="{{ $cover.RelPermalink }} {{ $cover.Width }}w, {{ $cover2.RelPermalink }} {{ $cover2.Width }}w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="{{ $cover2.Width }}" height="{{ $cover2.Height }}" alt="" loading="lazy" decoding="async" />
