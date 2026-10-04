@@ -26,38 +26,38 @@ En definitiva, este trabajo propone una manera distinta de estudiar los bloqueos
 
 Si te interesa profundizar en lo que comento en esta entrada, puedes visitar mi página de GitHub, donde encontrarás el trabajo completo en formato PDF. Actualmente sigo desarrollando esta línea de investigación, con el objetivo de generalizar el método a cualquier episodio mediante técnicas de Deep Learning. Si tienes alguna duda, sugerencia o simplemente quieres comentar algún detalle, no dudes en escribirme a mi correo. Toda aportación o intercambio de ideas será muy bien recibida.
 
-*Relacionado: el porqué de la impredecibilidad atmosférica está en [Del clima al caos](../caos), y cómo se cuantifica la incertidumbre en la predicción del tiempo, en [Predicciones por conjuntos](../predicciones-por-conjuntos).*
+*Relacionado: el porqué de la impredecibilidad atmosférica está en [Del clima al caos](../caos/), y cómo se cuantifica la incertidumbre en la predicción del tiempo, en [Predicciones por conjuntos](../predicciones-por-conjuntos/).*
 
----
+## Figuras
 
 Los mapas mostrados no incluyen su correspondiente escala de color, lo que puede generar dudas sobre lo que se representa en cada figura. Debido a limitaciones de formato, no me ha sido posible incorporarlas aquí. Sin embargo, invito a quienes estén interesados a visitar mi repositorio de GitHub, donde podrán encontrar los mapas con sus barras de color y un análisis detallado de cada uno de los resultados.
 
-## Figura 14
+### Figura 14
 
 ![Mapa animado distancias End-to-End](/images/traj_25E.gif)
 
-## Figura 20
+### Figura 20
 
 ![Figura 20 animada](/images/Figura_20_animada.gif)
 
-## Figura 21
+### Figura 21
 
 ![Figura 21 animada](/images/Figura_21_animada.gif)
 
-## Figura 23
+### Figura 23
 
 ![Figura 23 arriba izquierda](/images/Figura_23_arriba_izquierda.gif) ![Figura 23 arriba derecha](/images/Figura_23_arriba_derecha.gif)
 
 ![Figura 23 abajo izquierda](/images/Figura_23_abajo_izquierda.gif) ![Figura 23 abajo derecha](/images/Figura_23_abajo_derecha.gif)
 
-## Figura 25
+### Figura 25
 
 ![Figura 25 izquierda](/images/Figura_25_izquierda.gif) ![Figura 25 derecha](/images/Figura_25_derecha.gif)
 
-## Figura 27
+### Figura 27
 
 ![Figura 27 izquierda](/images/Figura_27_izquierda.gif) ![Figura 27 derecha](/images/Figura_27_derecha.gif)
 
-## Figura 28
+### Figura 28
 
 ![Figura 28](/images/Figura_28.gif)

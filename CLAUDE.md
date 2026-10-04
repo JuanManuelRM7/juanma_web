@@ -55,8 +55,10 @@ layouts/
 ├── _default/
 │   ├── baseof.html         # Plantilla base (HTML, head, body con data-kind)
 │   ├── single.html         # Post individual (blog, material)
-│   ├── list.html           # Lista genérica (tags)
-│   └── search.html         # Página de búsqueda (Pagefind)
+│   ├── list.html           # Páginas de tags: /tags/ (nube de etiquetas) y /tags/<tag>/ (tarjetas)
+│   ├── search.html         # Página de búsqueda (Pagefind)
+│   └── _markup/render-image.html  # Imágenes de markdown: lazy + width/height automáticos
+├── robots.txt              # robots.txt con el sitemap (enableRobotsTXT en config.yaml)
 ├── blog/list.html          # Índice del blog (grid paginado)
 ├── proyectos/
 │   ├── list.html           # /proyectos/: intro + mismas tarjetas que la portada
@@ -65,7 +67,7 @@ layouts/
 ├── shortcodes/img.html     # {{< img src="images/..." alt="" caption="" width="1200" >}} → webp procesado desde assets/
 └── partials/
     ├── head.html           # Meta tags, CSS, preload de fuentes, detección de tema
-    ├── meta.html           # OG, Twitter, JSON-LD (Person con worksFor/alumniOf/knowsAbout)
+    ├── meta.html           # <title>, OG, Twitter, JSON-LD (Person en la portada; BlogPosting/Article en posts, casos y apuntes; CollectionPage/WebPage en el resto; BreadcrumbList)
     ├── header.html         # Nav: Inicio · Proyectos · Blog + buscar, idioma, tema
     ├── footer.html
     ├── i18n.html           # Sistema i18n JS: claves estáticas + bloque generado desde config.yaml
@@ -82,17 +84,22 @@ layouts/
 
 Las imágenes que se procesan (foto de perfil, figuras de casos de estudio) viven en `assets/images/` y se convierten a webp con Hugo (`resources.Get` + `Resize`). Lo que va tal cual (PDFs, OG, iconos) está en `static/`.
 
+Las imágenes escritas en markdown (`![alt](/images/figura.png)`, con el fichero en `static/images/`) pasan por el render hook `layouts/_default/_markup/render-image.html`, que añade `loading="lazy"` y el ancho y alto reales. Usa siempre rutas absolutas (`/images/...`) para que pueda leer las dimensiones.
+
 ### Estilos → `assets/main.css` + `static/css/`
 
 - `assets/main.css` — Tailwind imports, `@font-face` de las fuentes self-hosted (`static/fonts/`), utilidades custom (hero, proyectos, experiencia, certificaciones, contacto)
 - `static/css/general.css` — Clases de componentes reutilizables
 - `tailwind.config.js` — Configuración de Tailwind (cargada con `@config`)
 
+Tailwind solo busca clases en `layouts/` y `content/` (la clave `content` de `tailwind.config.js`); `main.css` importa con `source(none)` para que no escanee el resto del repo (antes leía `docs/` y el CSS cambiaba en cada build). Una utilidad que solo aparezca en `static/js/` o en `config.yaml` no se genera.
+
+Las reglas base de `main.css` (`a`, `h1`…) están en `@layer utilities` y salen con `!important` (`important: true`). Un color declarado fuera de capa no puede ganarles ni con `!important`: para un botón con color propio, exclúyelo en la regla `a:where(:not(...))` o dale una utilidad (`text-white`).
+
 Los colores de las tarjetas de proyecto (`project-color-*`, `project-status-*`) son CSS plano, no utilidades Tailwind: evita clases Tailwind construidas dinámicamente desde datos de `config.yaml`, porque el purge no las ve.
 
 ### JS → `static/js/`
 
-- `accordion.js` — Expand/collapse + persistencia en localStorage
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
 - `neural-hero.js` — Animación canvas del hero
 - `cmdk.js` — Paleta de comandos ⌘K
@@ -192,7 +199,7 @@ En `config.yaml` bajo `params.skill.categories` (ES) y `languages.en.params.skil
 Hay dos capas:
 
 1. **Textos de interfaz** (botones, títulos de sección): clave en `i18n/es.yaml` e `i18n/en.yaml` (`{{ i18n "clave" }}` en templates) **y** en los dos objetos estáticos de `layouts/partials/i18n.html` (para el toggle sin recarga, con `data-i18n="clave"` en el HTML).
-2. **Contenido del perfil** (hero, proyectos, experiencia, educación, publicaciones, skills, certificaciones): **no se escribe a mano**. El bloque `window.__i18nDyn` de `i18n.html` genera las claves (`proj_title_<id>`, `exp_hl_<n>`, `skill_<cat>_<n>`…) leyendo `params` y `languages.en.params`. Basta con mantener las dos ramas de `config.yaml` sincronizadas.
+2. **Contenido del perfil** (hero, proyectos, experiencia, educación, publicaciones, skills, certificaciones): **no se escribe a mano**. El bloque `window.__i18nDyn` de `i18n.html` genera las claves (`proj_title_<id>`, `exp_hl_<n>`, `skill_<cat>_<n>`…) leyendo `params` y `languages.en.params`. Basta con mantener las dos ramas de `config.yaml` sincronizadas. El bloque solo se emite en la portada, que es la única página que sustituye estos textos sin recargar.
 
 En páginas que tienen traducción Hugo (casos de estudio), el toggle navega a la versión traducida en lugar de sustituir textos; al cargar, si el idioma guardado no coincide con el de la página y existe traducción, redirige.
 
@@ -239,7 +246,6 @@ En mobile colapsa a una sola columna y aparece una barra inferior sticky con CV,
 |---------|-----------|-------------------|
 | Dark/light mode | CSS `dark:` prefix + toggle JS | `theme` |
 | Idioma ES/EN | `data-i18n` + `toggleLang()` (navega si hay traducción) | `lang` |
-| Acordeón abierto | `accordion.js` | `lastAccordionPanel` |
 
 ---
 
@@ -269,7 +275,8 @@ npm run build
 | `/material/{slug}/` | `content/material/*.md` | `layouts/_default/single.html` |
 | `/search/` | `content/search/_index.md` | `layouts/_default/search.html` |
 | `/agent-context/` | `content/agent-context.md` | `layouts/_default/single.html` |
-| `/tags/{tag}/` | Taxonomía Hugo automática | — |
+| `/tags/` y `/tags/{tag}/` | Taxonomía Hugo automática | `layouts/_default/list.html` |
+| `/robots.txt` | — | `layouts/robots.txt` |
 
 ---
 

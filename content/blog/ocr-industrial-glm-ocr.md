@@ -77,4 +77,4 @@ Y mientras tanto, abajo en el portátil, un modelo abierto de 0.9B parámetros l
 
 ---
 
-*Relacionado: en [CNNs vs Vision Transformers](../cnn-vs-vision-transformers-inspeccion-industrial) hablo de cómo elegir arquitectura para inspección industrial, y en [¿Qué ve realmente una red neuronal?](../que-ve-una-red-neuronal) de cómo auditar lo que el modelo mira — exactamente lo que querrías hacer cuando tu OCR lee un `8` donde había un `3`.*
+*Relacionado: en [CNNs vs Vision Transformers](../cnn-vs-vision-transformers-inspeccion-industrial/) hablo de cómo elegir arquitectura para inspección industrial, y en [¿Qué ve realmente una red neuronal?](../que-ve-una-red-neuronal/) de cómo auditar lo que el modelo mira — exactamente lo que querrías hacer cuando tu OCR lee un `8` donde había un `3`.*

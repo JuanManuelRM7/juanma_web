@@ -6,9 +6,9 @@
   <!-- MÓVIL: fila con 5 elementos equiespaciados + borde inferior -->
   <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal">
     <a class="nav-menu-item !p-1 !px-2" href="{{ .Site.Home.RelPermalink }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `proyectos` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
-    <a href="{{ `search` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+    <a class="nav-menu-item !p-1 !px-2" href="{{ `proyectos/` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="{{ `blog/` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
+    <a href="{{ `search/` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
       <i class="fas fa-search" aria-hidden="true"></i>
     </a>
     <button
@@ -32,15 +32,15 @@
   <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="{{ .Site.Home.RelPermalink }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
-      <a class="nav-menu-item" href="{{ `proyectos` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
-      <a class="nav-menu-item" href="{{ `blog` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
+      <a class="nav-menu-item" href="{{ `proyectos/` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
+      <a class="nav-menu-item" href="{{ `blog/` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
     </div>
     <div class="flex items-center justify-end gap-3">
       <!-- Command Palette trigger -->
       <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos">
         <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
       </button>
-      <a href="{{ `search` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+      <a href="{{ `search/` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
         <i class="fas fa-search" aria-hidden="true"></i>
       </a>
       <!-- Language Toggle -->

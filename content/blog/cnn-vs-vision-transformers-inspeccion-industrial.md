@@ -79,4 +79,4 @@ La arquitectura es la parte divertida. Los datos son la parte que funciona.
 
 ---
 
-*Si te interesa la otra cara de mi trabajo —la física del caos y la predicción atmosférica—, échale un ojo a [Caos](../caos) y [Predicciones por conjuntos](../predicciones-por-conjuntos).*
+*Si te interesa la otra cara de mi trabajo —la física del caos y la predicción atmosférica—, échale un ojo a [Caos](../caos/) y [Predicciones por conjuntos](../predicciones-por-conjuntos/).*

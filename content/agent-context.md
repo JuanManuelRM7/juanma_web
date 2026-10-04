@@ -47,7 +47,7 @@ All profile data lives in `config.yaml`: Spanish under `params`, English under `
 
 - `index.html` — homepage
 - `proyectos/list.html`, `proyectos/single.html` — projects index and case-study page (sticky fact sheet + TOC)
-- `blog/list.html`, `material/list.html`, `_default/single.html`
+- `blog/list.html`, `material/list.html`, `_default/single.html`, `_default/list.html` (tag pages)
 - `shortcodes/img.html` — processed webp images from `assets/images/`
 - `partials/` — `head`, `meta` (OG + JSON-LD), `header`, `footer`, `i18n` (static UI strings + generated `window.__i18nDyn`), `projects`/`project_card`, `hero_metrics`, `latest_posts`, `certifications`, `command_palette`, `terminal`, `accordion/*`
 
@@ -58,7 +58,7 @@ Processed images (profile photo, case-study figures) live in `assets/images/` an
 ### Styles and JS
 
 - `assets/main.css` — Tailwind imports, self-hosted `@font-face` (`static/fonts/`), custom components. Project colors and status badges are plain CSS: do not build Tailwind classes dynamically from config data (the purge cannot see them).
-- `static/js/` — `accordion.js`, `cv-mode.js` (YOLO easter egg), `neural-hero.js`, `cmdk.js` (⌘K palette), `terminal.js` (terminal easter egg)
+- `static/js/` — `cv-mode.js` (YOLO easter egg), `neural-hero.js`, `cmdk.js` (⌘K palette), `terminal.js` (terminal easter egg)
 
 ## Common tasks
 

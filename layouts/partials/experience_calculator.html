@@ -48,8 +48,16 @@ document.addEventListener('DOMContentLoaded', function() {
       andWord = 'y';
     }
     if (years === 0) display.textContent = months + ' ' + mWord;
-    else if (months === 0) display.textContent = years + ' ' + yWord;
-    else display.textContent = years + ' ' + yWord + ' ' + andWord + ' ' + months + ' ' + mWord;
+    else {
+      display.textContent = years + ' ' + yWord;
+      if (months > 0) {
+        // Segunda línea más pequeña: en la sidebar no cabe todo en una
+        var rest = document.createElement('span');
+        rest.className = 'block text-xs font-medium';
+        rest.textContent = andWord + ' ' + months + ' ' + mWord;
+        display.appendChild(rest);
+      }
+    }
   }
 
   updateDisplay();

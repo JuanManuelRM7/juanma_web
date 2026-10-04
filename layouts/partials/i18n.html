@@ -1,11 +1,15 @@
 <!-- Translations generated from config.yaml: params (es) and languages.en.params (en).
-     Keys here are data-driven so hero, profile, projects and experience never need manual duplication. -->
+     Keys here are data-driven so hero, profile, projects and experience never need manual duplication.
+     Only the homepage swaps these strings in place; every other page with profile content has a
+     Hugo translation and the toggle navigates to it, so the block is not emitted there. -->
+{{ if .IsHome }}
 <script>
 window.__i18nDyn = {
   {{- range .Site.Home.AllTranslations }}
   {{ .Language.Lang }}: {
     profile_position: {{ .Site.Params.profile.position }},
     profile_location: {{ .Site.Params.profile.location }},
+    aboutme_title: {{ .Site.Params.aboutme.title }},
     aboutme_description: {{ .Site.Params.aboutme.description }},
     hero_value: {{ .Site.Params.hero.value }},
     {{- range $i, $m := .Site.Params.hero.metrics }}
@@ -18,9 +22,16 @@ window.__i18nDyn = {
     {{- range $i, $m := $p.metrics }}
     {{ printf "proj_metric_%s_%d" $p.id (add $i 1) }}: {{ $m }},
     {{- end }}
+    {{- with $p.links }}{{ range $i, $l := .posts }}
+    {{ printf "proj_post_%s_%d" $p.id (add $i 1) }}: {{ $l.title }},
+    {{- end }}{{ end }}
     {{- end }}
     {{- range $i, $e := .Site.Params.experience.list }}
     {{ printf "exp_position_%d" (add $i 1) }}: {{ $e.position }},
+    {{ printf "exp_company_%d" (add $i 1) }}: {{ $e.company }},
+    {{- range $j, $t := $e.tags }}
+    {{ printf "exp_tag_%d_%d" (add $i 1) (add $j 1) }}: {{ $t }},
+    {{- end }}
     {{ printf "exp_dates_%d" (add $i 1) }}: {{ $e.dates | markdownify }},
     {{ printf "exp_details_%d" (add $i 1) }}: {{ $e.details | markdownify }},
     {{- $hl := "" }}{{ range $e.highlights }}{{ $hl = printf "%s<li>%s</li>" $hl (. | markdownify) }}{{ end }}
@@ -50,6 +61,7 @@ window.__i18nDyn = {
   {{- end }}
 };
 </script>
+{{ end }}
 <!-- Global i18n translation system -->
 <script>
 (function() {
@@ -59,17 +71,12 @@ window.__i18nDyn = {
       nav_home: 'Home',
       nav_blog: 'Blog',
       nav_material: 'Resources',
-      nav_material_desktop: 'University Resources',
       nav_search: 'Search',
       aria_toggle_theme: 'Toggle theme',
       aria_toggle_lang: 'Change language',
 
       // Hero & Homepage sections
-      nav_exp: 'Experience',
-      nav_edu: 'Education',
-      nav_pub: 'Publications',
       nav_projects: 'Projects',
-      nav_contact: 'Contact',
       section_blog: 'From the blog',
       section_exp: 'Experience',
       section_edu: 'Education',
@@ -82,7 +89,6 @@ window.__i18nDyn = {
 
       // Actions & Buttons
       download_cv: 'Download CV',
-      action_view_more: 'View more',
       action_view_thesis: 'View Thesis',
       action_download_paper: 'Download Paper',
       action_home: 'Go to homepage',
@@ -96,7 +102,6 @@ window.__i18nDyn = {
       content_index: 'Index',
       content_related: 'You might also like',
       content_comments: 'Comments',
-      content_read_more: 'Read more',
 
       // Blog
       blog_title: 'Blog',
@@ -120,7 +125,6 @@ window.__i18nDyn = {
       project_period: 'Period',
       project_org: 'Organization',
       project_stack: 'Stack',
-      project_links: 'Links',
       project_metrics: 'Results',
 
       // Footer
@@ -144,10 +148,6 @@ window.__i18nDyn = {
       status_active: 'Active',
       status_development: 'In development',
       status_completed: 'Completed',
-
-      // Search
-      search_title: 'Search',
-
       // Breadcrumb
       aria_breadcrumb: 'Breadcrumb',
 
@@ -155,39 +155,20 @@ window.__i18nDyn = {
       // Easter egg
       easter_secret: "\u{1F3AE} You found the secret!",
       easter_konami: '— Konami Code activated —',
-
-      // Prev/Next
-      prev_post: 'Previous',
-      next_post: 'Next',
-
       // Profile & content data
       action_skip_content: 'Skip to content',
-      profile_location: 'Elche, Alicante, Spain',
-
-      // Education data
-
-      // Experience data
-
-      // Project data
-
-      // Publication types
     },
     es: {
       // Navigation
       nav_home: 'Inicio',
       nav_blog: 'Blog',
       nav_material: 'Material',
-      nav_material_desktop: 'Material Universitario',
       nav_search: 'Buscar',
       aria_toggle_theme: 'Cambiar tema',
       aria_toggle_lang: 'Cambiar idioma',
 
       // Hero & Homepage sections
-      nav_exp: 'Experiencia',
-      nav_edu: 'Educación',
-      nav_pub: 'Publicaciones',
       nav_projects: 'Proyectos',
-      nav_contact: 'Contacto',
       section_blog: 'Del blog',
       section_exp: 'Experiencia',
       section_edu: 'Educación',
@@ -200,7 +181,6 @@ window.__i18nDyn = {
 
       // Actions & Buttons
       download_cv: 'Descargar CV',
-      action_view_more: 'Ver más',
       action_view_thesis: 'Ver TFG',
       action_download_paper: 'Descargar Paper',
       action_home: 'Volver al inicio',
@@ -214,7 +194,6 @@ window.__i18nDyn = {
       content_index: 'Índice',
       content_related: 'Te puede interesar',
       content_comments: 'Comentarios',
-      content_read_more: 'Leer más',
 
       // Blog
       blog_title: 'Blog',
@@ -239,7 +218,6 @@ window.__i18nDyn = {
       project_period: 'Periodo',
       project_org: 'Organización',
       project_stack: 'Stack',
-      project_links: 'Enlaces',
       project_metrics: 'Resultados',
 
       // Footer
@@ -256,21 +234,12 @@ window.__i18nDyn = {
 
       // Education
       edu_thesis: 'TFG:',
-
-      // Education data
-
-      // Experience data
-
       // Project statuses
       status_production: 'En producción',
       status_published: 'Publicado',
       status_active: 'Activo',
       status_development: 'En desarrollo',
       status_completed: 'Completado',
-
-      // Search
-      search_title: 'Buscar',
-
       // Breadcrumb
       aria_breadcrumb: 'Miga de pan',
 
@@ -278,10 +247,6 @@ window.__i18nDyn = {
       // Easter egg
       easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
       easter_konami: '— Konami Code activado —',
-
-      // Prev/Next
-      prev_post: 'Anterior',
-      next_post: 'Siguiente'
     }
   };
 
@@ -323,6 +288,14 @@ window.__i18nDyn = {
       var key = el.getAttribute('data-i18n-aria');
       if (strings[key]) el.setAttribute('aria-label', strings[key]);
     });
+    // Dates rendered by Hugo: reformatted with Intl; back on the page's own language the original text returns
+    document.querySelectorAll('time[data-i18n-date]').forEach(function(el) {
+      if (!el.hasAttribute('data-i18n-orig')) el.setAttribute('data-i18n-orig', el.textContent);
+      var d = new Date(el.getAttribute('datetime') + 'T12:00:00');
+      el.textContent = (lang === pageLang || isNaN(d))
+        ? el.getAttribute('data-i18n-orig')
+        : d.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
+    });
     var label = document.getElementById('lang-label');
     if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
     window.localStorage.setItem('lang', lang);
@@ -362,11 +335,6 @@ window.__i18nDyn = {
       return;
     }
     applyLang(next);
-  };
-
-  window.getI18n = function(key) {
-    var lang = window.localStorage.getItem('lang') || 'es';
-    return (translations[lang] && translations[lang][key]) || key;
   };
 
   // Apply saved language on load (only if it differs from the page's own language)

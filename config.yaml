@@ -3,6 +3,7 @@ languageCode: es
 publishDir: docs
 defaultContentLanguage: es
 defaultContentLanguageInSubdir: false
+enableRobotsTXT: true
 taxonomies:
   tag: tags
 outputs:

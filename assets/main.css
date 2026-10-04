@@ -181,22 +181,6 @@
   .dark .prose blockquote {
     color: rgb(243 244 246) !important; /* gray-100 */
   }
-  .accordion {
-    @apply text-violet-700 dark:text-violet-300 my-0;
-    > p {
-      @apply my-0 p-2 rounded-sm;
-      transition: all 0.3s ease;
-    }
-    > p:hover {
-      background: linear-gradient(135deg, rgb(237 233 254) 0%, rgb(221 214 254) 100%);
-      transform: translateX(4px);
-    }
-  }
-  .dark .accordion > p:hover {
-    background: linear-gradient(135deg, rgb(91 33 182) 0%, rgb(139 92 246) 100%);
-    color: rgb(255 255 255);
-  }
-
   /* Buttons - Using direct CSS instead of @apply for Tailwind v4 compatibility */
   .btn {
     display: inline-flex;

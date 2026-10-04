@@ -3,11 +3,15 @@
   
 
 
-<title>Blog</title>
 
-<meta name="theme-color" content="#8b5cf6" />
+
+
+
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Blog · Juan Manuel Ruiz Muñoz</title>
+
+<meta name="theme-color" content="#8b5cf6" />
 <meta name="description" content="Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
@@ -16,7 +20,7 @@
 
 <meta property="og:title" content="Blog" />
 <meta property="og:description" content="Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología." />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://juanmanuel.petrer.eu/blog/" />
 <meta property="og:image" content="https://juanmanuel.petrer.eu/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -24,11 +28,6 @@
 <meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - ML Engineer · Computer Vision &amp; LLMs" />
 <meta property="og:site_name" content="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs" />
 <meta property="og:locale" content="es_ES" />
-
-
-<meta property="article:author" content="Juan Manuel Ruiz Muñoz" />
-<meta property="article:published_time" content="2026-06-20T00:00:00Z" />
-<meta property="article:modified_time" content="2026-06-20T00:00:00Z" />
 
 
 
@@ -43,25 +42,23 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Blog",
+  "@type": "CollectionPage",
+  "name": "Blog",
   "description": "Artículos de Juan Manuel Ruiz Muñoz sobre visión por computador, LLMs, física y meteorología.",
-  "author": {
-    "@type": "Person",
-    "name": "Juan Manuel Ruiz Muñoz"
-  },
-  "datePublished": "2026-06-20",
+  "inLanguage": "es",
   "url": "https:\/\/juanmanuel.petrer.eu\/blog\/"
 }
 </script>
+
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https:\/\/juanmanuel.petrer.eu\/" },
-    { "@type": "ListItem", "position": 2, "name": "\"Blog\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" },
-    { "@type": "ListItem", "position": 3, "name": "\"Blog\"", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" }
+    { "@type": "ListItem", "position":  2 , "name": "Blog", "item": "https:\/\/juanmanuel.petrer.eu\/blog\/" }
   ]
 }
 </script>
@@ -93,7 +90,7 @@
   
   
   
-  <link href="/main.min.78005acb232922e9656c408efd97165646f368c3899dcd6b86c65fcb6ff07cf4.css" rel="stylesheet" />
+  <link href="/main.min.d9fb597eb0b8a18f395038752325f740da01e5dabde2dc2671da3ef2e42faf9e.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/search.css" />
   <link rel="stylesheet" href="/css/general.css" />
   <link rel="stylesheet" href="/css/syntax.css" />
@@ -176,24 +173,6 @@
         .catch(() => {})
         .finally(() => html.classList.remove("theme-vt"));
     };
-
-    window.onload = () => {
-      fixThemeToggleIcon(theme);
-
-      let defaultActivePanel = document.querySelector(".accordion.active");
-      if (defaultActivePanel) {
-        defaultActivePanel.nextElementSibling.style.maxHeight =
-          defaultActivePanel.nextElementSibling.scrollHeight + "px";
-      }
-    };
-
-    window.onresize = () => {
-      let defaultActivePanel = document.querySelector(".accordion.active");
-      if (defaultActivePanel) {
-        defaultActivePanel.nextElementSibling.style.maxHeight =
-          defaultActivePanel.nextElementSibling.scrollHeight + "px";
-      }
-    };
   </script>
   
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
@@ -211,9 +190,9 @@
   
   <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal">
     <a class="nav-menu-item !p-1 !px-2" href="/"><span data-i18n="nav_home">Inicio</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/proyectos"><span data-i18n="nav_projects">Proyectos</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
-    <a href="/search" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+    <a class="nav-menu-item !p-1 !px-2" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
+    <a class="nav-menu-item !p-1 !px-2" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
+    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
       <i class="fas fa-search" aria-hidden="true"></i>
     </a>
     <button
@@ -237,15 +216,15 @@
   <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal">
     <div class="flex gap-1 items-center">
       <a class="nav-menu-item" href="/"><span data-i18n="nav_home">Inicio</span></a>
-      <a class="nav-menu-item" href="/proyectos"><span data-i18n="nav_projects">Proyectos</span></a>
-      <a class="nav-menu-item" href="/blog"><span data-i18n="nav_blog">Blog</span></a>
+      <a class="nav-menu-item" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
+      <a class="nav-menu-item" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
     </div>
     <div class="flex items-center justify-end gap-3">
       
       <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos">
         <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
       </button>
-      <a href="/search" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
+      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
         <i class="fas fa-search" aria-hidden="true"></i>
       </a>
       
@@ -863,226 +842,7 @@ pre:hover .copy-code-btn {
 </style>
 
     
-<script>
-window.__i18nDyn = {
-  "es": {
-    profile_position: "ML Engineer · Computer Vision \u0026 LLMs",
-    profile_location: "Elche, Alicante, España",
-    aboutme_description: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
-    hero_value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico y matemático de formación: me importa entender por qué funciona un modelo antes de desplegarlo.",
-    "hero_metric_1_value": "0,83",
-    "hero_metric_1_label": "mAP@50:95 en segmentación multiclase, en producción",
-    "hero_metric_2_value": "98,56 %",
-    "hero_metric_2_label": "exact match de un OCR multimodal (GLM-OCR + LoRA) en producción",
-    "hero_metric_3_value": "DCAI'25",
-    "hero_metric_3_label": "paper sobre detección de desinformación con LLMs y RAG",
-    "hero_metric_4_value": "35,9 %",
-    "hero_metric_4_label": "recuperación de activaciones con un filtro de ~2 KB (vcalib)",
-    "proj_title_vcalib": "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación",
-    "proj_desc_vcalib": "Un filtro diferenciable de ~2 KB que corrige el cambio de iluminación antes de que la imagen llegue a un detector congelado. Sin reentrenar, sin etiquetas, minutos en CPU.",
-    "proj_metric_vcalib_1": "35,9 % de recuperación de activaciones en pares reales held-out",
-    "proj_metric_vcalib_2": "Cierra el gap de AP en level_2 (pseudo-GT de SAM3)",
-    "proj_metric_vcalib_3": "~3,5 min de ajuste en la CPU de un portátil",
-    "proj_title_desinformacion-ontologias": "Detección de desinformación en ficción con ontologías generadas por LLMs",
-    "proj_desc_desinformacion-ontologias": "Arquitectura LLM + RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI'25.",
-    "proj_metric_desinformacion-ontologias_1": "Precisión 0,98 · F1 0,86 sobre 320 frases de evaluación",
-    "proj_metric_desinformacion-ontologias_2": "Ontología de 246 clases generada sin supervisión",
-    "proj_title_inspeccion-neumaticos": "Inspección industrial de neumáticos con visión y OCR multimodal",
-    "proj_desc_inspeccion-neumaticos": "Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.",
-    "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 de 0,83 en segmentación multiclase",
-    "proj_metric_inspeccion-neumaticos_2": "98,56 % de exact match en OCR sobre flancos",
-    "proj_title_glm-ocr-lora": "GLM-OCR + LoRA para extraer campos de tickets y facturas",
-    "proj_desc_glm-ocr-lora": "Adaptación del modelo multimodal GLM-OCR con LoRA (LLaMA-Factory) para devolver JSON estructurado a partir de la imagen de un ticket o una factura. Inferencia 100 % local.",
-    "proj_title_vision-pytorch": "vision-pytorch: pipelines DINOv2/v3 para clasificación y features",
-    "proj_desc_vision-pytorch": "Entrenamiento, evaluación y extracción de embeddings con backbones ViT de Meta: fine-tuning completo, linear probe o extractor de características, con métricas por clase y checkpoints.",
-    "proj_title_tfg-bloqueos": "Identificación lagrangiana de bloqueos atmosféricos (TFG)",
-    "proj_desc_tfg-bloqueos": "Miles de retrotrayectorias HYSPLIT sobre ERA5 y clustering DBSCAN para localizar bloqueos por el estancamiento real del aire, sin umbrales eulerianos. Validado en las olas de calor de 2003 y 2019.",
-    "proj_title_agente-ollama": "Agente local con Ollama: tool calling y RAG",
-    "proj_desc_agente-ollama": "Agente de consola 100 % local con herramientas nativas (ficheros, búsqueda web, ejecución de Python) y RAG sobre documentos propios con ChromaDB.",
-    "exp_position_1": "ML Engineer · Computer Vision \u0026 LLMs",
-    "exp_dates_1": "Junio 2025 - \u003cem\u003ePresente\u003c/em\u003e",
-    "exp_details_1": "\u003cp\u003eLlevo a producción modelos de \u003cstrong\u003edetección y segmentación de defectos\u003c/strong\u003e (CNNs, ViT, YOLO, RF-DETR) y un \u003cstrong\u003eOCR multimodal\u003c/strong\u003e (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.\u003c/p\u003e\n\u003cp\u003eEscribo sobre este trabajo en \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR en condiciones extremas\u003c/a\u003e y \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_1": "\u003cli\u003eDiseño y entrenamiento de modelos de \u003cstrong\u003edetección y segmentación de defectos\u003c/strong\u003e (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: \u003cstrong\u003emAP@50:95 de 0,83\u003c/strong\u003e en segmentación multiclase sobre datasets propios de miles de imágenes.\u003c/li\u003e\u003cli\u003eFine-tuning de un modelo de lenguaje multimodal (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) con \u003cstrong\u003eLoRA\u003c/strong\u003e vía LLaMA-Factory para leer texto en flancos de neumático: \u003cstrong\u003e98,56 % de exact match\u003c/strong\u003e en producción; serving con vLLM y Ollama.\u003c/li\u003e\u003cli\u003ePipeline de \u003cstrong\u003egeneración sintética de defectos\u003c/strong\u003e con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003ePeritaje técnico\u003c/strong\u003e con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.\u003c/li\u003e\u003cli\u003ePipelines \u003cstrong\u003eETL\u003c/strong\u003e de extracción, transformación y aumento de datasets visuales a escala industrial.\u003c/li\u003e\u003cli\u003eDespliegue y monitorización con \u003cstrong\u003eDocker, MLflow y TensorBoard\u003c/strong\u003e; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y \u003cstrong\u003eespecificación algorítmica en C++\u003c/strong\u003e para el equipo cliente.\u003c/li\u003e",
-    "exp_position_2": "Data Scientist \u0026 AI Researcher",
-    "exp_dates_2": "Junio 2024 - Junio 2025",
-    "exp_details_2": "\u003cp\u003eInvestigación en \u003cstrong\u003eNLP y LLMs\u003c/strong\u003e: una arquitectura de detección de desinformación basada en ontologías generadas con LLMs (publicada en DCAI'25), pipelines \u003cstrong\u003eRAG\u003c/strong\u003e y sistemas \u003cstrong\u003emultiagente\u003c/strong\u003e, además de proyectos de visión por computador.\u003c/p\u003e\n\u003cp\u003ePublicación: \u003ca href=\"/DCAI.pdf\"\u003epaper en DCAI'25\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_2": "\u003cli\u003eInvestigación y desarrollo de soluciones de \u003cstrong\u003eNLP y LLMs\u003c/strong\u003e, incluida una arquitectura de detección de desinformación basada en ontologías generadas con modelos de lenguaje (\u003cstrong\u003epublicada en DCAI'25\u003c/strong\u003e).\u003c/li\u003e\u003cli\u003ePipelines \u003cstrong\u003eRAG\u003c/strong\u003e y de recuperación semántica con bases de datos vectoriales (ChromaDB) y sistemas \u003cstrong\u003emultiagente\u003c/strong\u003e (Ollama, DeepSeek, GPT-4o-mini), con foco en reducir coste y latencia.\u003c/li\u003e\u003cli\u003eProyectos de Computer Vision (detección, clasificación y segmentación) y gestión del ciclo completo de proyectos ML: requisitos, desarrollo, validación y documentación.\u003c/li\u003e\u003cli\u003eInteracción directa con clientes para captura de requisitos y adaptación de soluciones state-of-the-art a casos de uso reales.\u003c/li\u003e",
-    "exp_position_3": "Investigador · Contrato de prácticas",
-    "exp_dates_3": "Enero 2024 - Julio 2024",
-    "exp_details_3": "\u003cp\u003eDesarrollé \u003cstrong\u003emétodos lagrangianos\u003c/strong\u003e para identificar automáticamente situaciones de \u003cstrong\u003ebloqueo atmosférico\u003c/strong\u003e: la base de mi TFG y de una publicación en desarrollo.\u003c/p\u003e\n\u003cp\u003eLo cuento en detalle en \u003ca href=\"/blog/tfg/\"\u003eBloqueos atmosféricos, punto de vista lagrangiano\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_3": "\u003cli\u003eDesarrollo de \u003cstrong\u003emétodos lagrangianos\u003c/strong\u003e para la identificación automática de situaciones de \u003cstrong\u003ebloqueo atmosférico\u003c/strong\u003e, base del TFG y de una publicación en desarrollo.\u003c/li\u003e\u003cli\u003eColaboración en proyectos del grupo de física atmosférica.\u003c/li\u003e",
-    "edu_degree_1": "Grado en Física",
-    "edu_details_1": "+120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA).",
-    "edu_thesis_1": "Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico",
-    "edu_degree_2": "Beca SICUE — Física y Matemáticas",
-    "edu_details_2": "Beca de movilidad nacional.",
-    "edu_thesis_2": "",
-    "pub_status_dcai25": "DCAI'25",
-    "pub_venue_dcai25": "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence",
-    "pub_org_dcai25": "BISITE Research Group, Universidad de Salamanca · Proyecto TRUESTORIES (CPP2021-008358)",
-    "pub_status_lagrangian-blocking": "En desarrollo",
-    "pub_venue_lagrangian-blocking": "Publicación en desarrollo a partir del TFG (Universidad de Alicante · Grupo SCOLAb, UMH)",
-    "pub_org_lagrangian-blocking": "",
-    "skill_cat_llm": "LLMs \u0026 NLP",
-    "skill_llm_1": "Fine-tuning (LoRA)",
-    "skill_llm_2": "LLaMA-Factory",
-    "skill_llm_3": "RAG",
-    "skill_llm_4": "Transformers",
-    "skill_llm_5": "vLLM",
-    "skill_llm_6": "Ollama",
-    "skill_llm_7": "Embeddings y búsqueda semántica",
-    "skill_llm_8": "ChromaDB",
-    "skill_llm_9": "FAISS",
-    "skill_llm_10": "Prompt engineering",
-    "skill_cat_cv": "Computer Vision",
-    "skill_cv_1": "PyTorch",
-    "skill_cv_2": "TensorFlow",
-    "skill_cv_3": "Keras",
-    "skill_cv_4": "OpenCV",
-    "skill_cv_5": "CNNs",
-    "skill_cv_6": "Vision Transformers",
-    "skill_cv_7": "YOLO",
-    "skill_cv_8": "RF-DETR",
-    "skill_cv_9": "Modelos de difusión (FLUX.1)",
-    "skill_cv_10": "Detección y segmentación",
-    "skill_cat_lang": "Lenguajes y análisis",
-    "skill_lang_1": "Python",
-    "skill_lang_2": "NumPy",
-    "skill_lang_3": "Pandas",
-    "skill_lang_4": "scikit-learn",
-    "skill_lang_5": "Matplotlib",
-    "skill_lang_6": "C++ (lectura y especificación)",
-    "skill_lang_7": "R",
-    "skill_lang_8": "Análisis estadístico",
-    "skill_lang_9": "LaTeX",
-    "skill_cat_mlops": "MLOps y herramientas",
-    "skill_mlops_1": "Docker",
-    "skill_mlops_2": "MLflow",
-    "skill_mlops_3": "TensorBoard",
-    "skill_mlops_4": "Git y GitHub",
-    "skill_mlops_5": "AWS (Cloud Technical Essentials)",
-    "skill_mlops_6": "Linux / SSH",
-    "skill_mlops_7": "uv",
-    "skill_mlops_8": "Jupyter",
-    "cert_title_1": "AWS Cloud Technical Essentials",
-    "cert_issuer_1": "Amazon Web Services",
-    "cert_title_2": "Build Basic Generative Adversarial Networks (GANs)",
-    "cert_issuer_2": "DeepLearning.AI",
-    "cert_title_3": "Introduction to Front-End Development",
-    "cert_issuer_3": "Meta",
-    "cert_title_4": "Cambridge English B1 Preliminary",
-    "cert_issuer_4": "Cambridge Assessment English",
-  },
-  "en": {
-    profile_position: "ML Engineer · Computer Vision \u0026 LLMs",
-    profile_location: "Elche, Alicante, Spain",
-    aboutme_description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
-    hero_value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist and mathematician, I care about understanding why a model works before shipping it.",
-    "hero_metric_1_value": "0.83",
-    "hero_metric_1_label": "mAP@50:95 on multi-class segmentation, in production",
-    "hero_metric_2_value": "98.56%",
-    "hero_metric_2_label": "exact match of a multimodal OCR (GLM-OCR + LoRA) in production",
-    "hero_metric_3_value": "DCAI'25",
-    "hero_metric_3_label": "paper on misinformation detection with LLMs and RAG",
-    "hero_metric_4_value": "35.9%",
-    "hero_metric_4_label": "activation recovery with a ~2 KB calibration filter (vcalib)",
-    "proj_title_vcalib": "vcalib: calibration filters for RF-DETR under illumination shift",
-    "proj_desc_vcalib": "A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.",
-    "proj_metric_vcalib_1": "35.9% activation recovery on real held-out image pairs",
-    "proj_metric_vcalib_2": "Closes the AP gap on level_2 (SAM3 pseudo-GT)",
-    "proj_metric_vcalib_3": "~3.5 min to fit on a laptop CPU",
-    "proj_title_desinformacion-ontologias": "Misinformation detection in fiction with LLM-generated ontologies",
-    "proj_desc_desinformacion-ontologias": "An LLM + RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI'25.",
-    "proj_metric_desinformacion-ontologias_1": "Precision 0.98 · F1 0.86 on 320 evaluation sentences",
-    "proj_metric_desinformacion-ontologias_2": "246-class ontology generated without supervision",
-    "proj_title_inspeccion-neumaticos": "Industrial tire inspection with vision models and multimodal OCR",
-    "proj_desc_inspeccion-neumaticos": "Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.",
-    "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 of 0.83 on multi-class segmentation",
-    "proj_metric_inspeccion-neumaticos_2": "98.56% exact match on sidewall OCR",
-    "proj_title_glm-ocr-lora": "GLM-OCR + LoRA for key information extraction on receipts and invoices",
-    "proj_desc_glm-ocr-lora": "LoRA adaptation of the multimodal GLM-OCR model (LLaMA-Factory) that returns structured JSON from the image of a receipt or an invoice. Fully local inference.",
-    "proj_title_vision-pytorch": "vision-pytorch: DINOv2/v3 pipelines for classification and features",
-    "proj_desc_vision-pytorch": "Training, evaluation and embedding extraction with Meta's ViT backbones: full fine-tuning, linear probe or raw feature extractor, with per-class metrics and checkpoints.",
-    "proj_title_tfg-bloqueos": "Lagrangian identification of atmospheric blocking (bachelor's thesis)",
-    "proj_desc_tfg-bloqueos": "Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves.",
-    "proj_title_agente-ollama": "Local agent with Ollama: tool calling and RAG",
-    "proj_desc_agente-ollama": "A fully local console agent with native tools (files, web search, Python execution) and RAG over your own documents with ChromaDB.",
-    "exp_position_1": "ML Engineer · Computer Vision \u0026 LLMs",
-    "exp_dates_1": "June 2025 - \u003cem\u003ePresent\u003c/em\u003e",
-    "exp_details_1": "\u003cp\u003eI take \u003cstrong\u003edefect detection and segmentation\u003c/strong\u003e models (CNNs, ViT, YOLO, RF-DETR) and a \u003cstrong\u003emultimodal OCR\u003c/strong\u003e (GLM-OCR) to production for industrial tire inspection: mAP@50:95 of 0.83 and 98.56% exact match reading sidewalls.\u003c/p\u003e\n\u003cp\u003eI write about this work in \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR in extreme conditions\u003c/a\u003e and \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_1": "\u003cli\u003eDesign and training of \u003cstrong\u003edefect detection and segmentation\u003c/strong\u003e models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection: \u003cstrong\u003emAP@50:95 of 0.83\u003c/strong\u003e on multi-class segmentation over in-house datasets of thousands of images.\u003c/li\u003e\u003cli\u003eFine-tuning of a multimodal language model (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) with \u003cstrong\u003eLoRA\u003c/strong\u003e via LLaMA-Factory to read text on tire sidewalls: \u003cstrong\u003e98.56% exact match\u003c/strong\u003e in production; served with vLLM and Ollama.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eSynthetic defect generation\u003c/strong\u003e pipeline with generative models to enlarge scarce datasets and improve detection robustness.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eTechnical appraisal\u003c/strong\u003e with CNNs and Vision Transformers to compare products objectively and reproducibly from their structural and appearance parts.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eETL\u003c/strong\u003e pipelines for extracting, transforming and augmenting visual datasets at industrial scale.\u003c/li\u003e\u003cli\u003eDeployment and monitoring with \u003cstrong\u003eDocker, MLflow and TensorBoard\u003c/strong\u003e; evaluation metrics (precision, recall, F1, mAP, IoU) for real-time validation; technical documentation and \u003cstrong\u003ealgorithm specification in C++\u003c/strong\u003e for the client team.\u003c/li\u003e",
-    "exp_position_2": "Data Scientist \u0026 AI Researcher",
-    "exp_dates_2": "June 2024 - June 2025",
-    "exp_details_2": "\u003cp\u003eResearch in \u003cstrong\u003eNLP and LLMs\u003c/strong\u003e: an ontology-based misinformation-detection architecture built with LLM-generated ontologies (published at DCAI'25), \u003cstrong\u003eRAG\u003c/strong\u003e pipelines and \u003cstrong\u003emulti-agent\u003c/strong\u003e systems, plus computer vision projects.\u003c/p\u003e\n\u003cp\u003ePublication: \u003ca href=\"/DCAI.pdf\"\u003eDCAI'25 paper\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_2": "\u003cli\u003eResearch and development of \u003cstrong\u003eNLP and LLM\u003c/strong\u003e solutions, including a misinformation-detection architecture based on ontologies generated with language models (\u003cstrong\u003epublished at DCAI'25\u003c/strong\u003e).\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eRAG\u003c/strong\u003e and semantic-retrieval pipelines with vector databases (ChromaDB) and \u003cstrong\u003emulti-agent\u003c/strong\u003e systems (Ollama, DeepSeek, GPT-4o-mini), focused on cutting cost and latency.\u003c/li\u003e\u003cli\u003eComputer vision projects (detection, classification and segmentation) and end-to-end ML project management: requirements, development, validation and documentation.\u003c/li\u003e\u003cli\u003eDirect interaction with clients to capture requirements and adapt state-of-the-art solutions to real use cases.\u003c/li\u003e",
-    "exp_position_3": "Researcher · Internship",
-    "exp_dates_3": "January 2024 - July 2024",
-    "exp_details_3": "\u003cp\u003eI developed \u003cstrong\u003eLagrangian methods\u003c/strong\u003e to automatically identify \u003cstrong\u003eatmospheric blocking\u003c/strong\u003e situations — the basis of my thesis and a publication in progress.\u003c/p\u003e\n\u003cp\u003eI tell the full story in \u003ca href=\"/blog/tfg/\"\u003eAtmospheric blocking, a Lagrangian view\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_3": "\u003cli\u003eDevelopment of \u003cstrong\u003eLagrangian methods\u003c/strong\u003e for the automatic identification of \u003cstrong\u003eatmospheric blocking\u003c/strong\u003e situations, the basis of my thesis and of a publication in progress.\u003c/li\u003e\u003cli\u003eCollaboration on projects of the atmospheric physics group.\u003c/li\u003e",
-    "edu_degree_1": "Bachelor's Degree in Physics",
-    "edu_details_1": "+120 ECTS from the Mathematics degree taken in parallel (UA simultaneous-studies program).",
-    "edu_thesis_1": "A Lagrangian method for the identification of atmospheric blocking situations",
-    "edu_degree_2": "SICUE Exchange — Physics \u0026 Mathematics",
-    "edu_details_2": "National mobility scholarship.",
-    "edu_thesis_2": "",
-    "pub_status_dcai25": "DCAI'25",
-    "pub_venue_dcai25": "DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence",
-    "pub_org_dcai25": "BISITE Research Group, University of Salamanca · TRUESTORIES project (CPP2021-008358)",
-    "pub_status_lagrangian-blocking": "In progress",
-    "pub_venue_lagrangian-blocking": "Publication in progress based on the bachelor's thesis (University of Alicante · SCOLAb group, UMH)",
-    "pub_org_lagrangian-blocking": "",
-    "skill_cat_llm": "LLMs \u0026 NLP",
-    "skill_llm_1": "Fine-tuning (LoRA)",
-    "skill_llm_2": "LLaMA-Factory",
-    "skill_llm_3": "RAG",
-    "skill_llm_4": "Transformers",
-    "skill_llm_5": "vLLM",
-    "skill_llm_6": "Ollama",
-    "skill_llm_7": "Embeddings \u0026 semantic search",
-    "skill_llm_8": "ChromaDB",
-    "skill_llm_9": "FAISS",
-    "skill_llm_10": "Prompt engineering",
-    "skill_cat_cv": "Computer Vision",
-    "skill_cv_1": "PyTorch",
-    "skill_cv_2": "TensorFlow",
-    "skill_cv_3": "Keras",
-    "skill_cv_4": "OpenCV",
-    "skill_cv_5": "CNNs",
-    "skill_cv_6": "Vision Transformers",
-    "skill_cv_7": "YOLO",
-    "skill_cv_8": "RF-DETR",
-    "skill_cv_9": "Diffusion models (FLUX.1)",
-    "skill_cv_10": "Detection \u0026 segmentation",
-    "skill_cat_lang": "Languages \u0026 analysis",
-    "skill_lang_1": "Python",
-    "skill_lang_2": "NumPy",
-    "skill_lang_3": "Pandas",
-    "skill_lang_4": "scikit-learn",
-    "skill_lang_5": "Matplotlib",
-    "skill_lang_6": "C++ (reading \u0026 specs)",
-    "skill_lang_7": "R",
-    "skill_lang_8": "Statistical analysis",
-    "skill_lang_9": "LaTeX",
-    "skill_cat_mlops": "MLOps \u0026 tools",
-    "skill_mlops_1": "Docker",
-    "skill_mlops_2": "MLflow",
-    "skill_mlops_3": "TensorBoard",
-    "skill_mlops_4": "Git \u0026 GitHub",
-    "skill_mlops_5": "AWS (Cloud Technical Essentials)",
-    "skill_mlops_6": "Linux / SSH",
-    "skill_mlops_7": "uv",
-    "skill_mlops_8": "Jupyter",
-    "cert_title_1": "AWS Cloud Technical Essentials",
-    "cert_issuer_1": "Amazon Web Services",
-    "cert_title_2": "Build Basic Generative Adversarial Networks (GANs)",
-    "cert_issuer_2": "DeepLearning.AI",
-    "cert_title_3": "Introduction to Front-End Development",
-    "cert_issuer_3": "Meta",
-    "cert_title_4": "Cambridge English B1 Preliminary",
-    "cert_issuer_4": "Cambridge Assessment English",
-  },
-};
-</script>
+
 
 <script>
 (function() {
@@ -1092,17 +852,12 @@ window.__i18nDyn = {
       nav_home: 'Home',
       nav_blog: 'Blog',
       nav_material: 'Resources',
-      nav_material_desktop: 'University Resources',
       nav_search: 'Search',
       aria_toggle_theme: 'Toggle theme',
       aria_toggle_lang: 'Change language',
 
       
-      nav_exp: 'Experience',
-      nav_edu: 'Education',
-      nav_pub: 'Publications',
       nav_projects: 'Projects',
-      nav_contact: 'Contact',
       section_blog: 'From the blog',
       section_exp: 'Experience',
       section_edu: 'Education',
@@ -1115,7 +870,6 @@ window.__i18nDyn = {
 
       
       download_cv: 'Download CV',
-      action_view_more: 'View more',
       action_view_thesis: 'View Thesis',
       action_download_paper: 'Download Paper',
       action_home: 'Go to homepage',
@@ -1129,7 +883,6 @@ window.__i18nDyn = {
       content_index: 'Index',
       content_related: 'You might also like',
       content_comments: 'Comments',
-      content_read_more: 'Read more',
 
       
       blog_title: 'Blog',
@@ -1153,7 +906,6 @@ window.__i18nDyn = {
       project_period: 'Period',
       project_org: 'Organization',
       project_stack: 'Stack',
-      project_links: 'Links',
       project_metrics: 'Results',
 
       
@@ -1177,10 +929,6 @@ window.__i18nDyn = {
       status_active: 'Active',
       status_development: 'In development',
       status_completed: 'Completed',
-
-      
-      search_title: 'Search',
-
       
       aria_breadcrumb: 'Breadcrumb',
 
@@ -1188,39 +936,20 @@ window.__i18nDyn = {
       
       easter_secret: "\u{1F3AE} You found the secret!",
       easter_konami: '— Konami Code activated —',
-
-      
-      prev_post: 'Previous',
-      next_post: 'Next',
-
       
       action_skip_content: 'Skip to content',
-      profile_location: 'Elche, Alicante, Spain',
-
-      
-
-      
-
-      
-
-      
     },
     es: {
       
       nav_home: 'Inicio',
       nav_blog: 'Blog',
       nav_material: 'Material',
-      nav_material_desktop: 'Material Universitario',
       nav_search: 'Buscar',
       aria_toggle_theme: 'Cambiar tema',
       aria_toggle_lang: 'Cambiar idioma',
 
       
-      nav_exp: 'Experiencia',
-      nav_edu: 'Educación',
-      nav_pub: 'Publicaciones',
       nav_projects: 'Proyectos',
-      nav_contact: 'Contacto',
       section_blog: 'Del blog',
       section_exp: 'Experiencia',
       section_edu: 'Educación',
@@ -1233,7 +962,6 @@ window.__i18nDyn = {
 
       
       download_cv: 'Descargar CV',
-      action_view_more: 'Ver más',
       action_view_thesis: 'Ver TFG',
       action_download_paper: 'Descargar Paper',
       action_home: 'Volver al inicio',
@@ -1247,7 +975,6 @@ window.__i18nDyn = {
       content_index: 'Índice',
       content_related: 'Te puede interesar',
       content_comments: 'Comentarios',
-      content_read_more: 'Leer más',
 
       
       blog_title: 'Blog',
@@ -1272,7 +999,6 @@ window.__i18nDyn = {
       project_period: 'Periodo',
       project_org: 'Organización',
       project_stack: 'Stack',
-      project_links: 'Enlaces',
       project_metrics: 'Resultados',
 
       
@@ -1289,21 +1015,12 @@ window.__i18nDyn = {
 
       
       edu_thesis: 'TFG:',
-
-      
-
-      
-
       
       status_production: 'En producción',
       status_published: 'Publicado',
       status_active: 'Activo',
       status_development: 'En desarrollo',
       status_completed: 'Completado',
-
-      
-      search_title: 'Buscar',
-
       
       aria_breadcrumb: 'Miga de pan',
 
@@ -1311,10 +1028,6 @@ window.__i18nDyn = {
       
       easter_secret: "\u{1F3AE} ¡Has descubierto el secreto!",
       easter_konami: '— Konami Code activado —',
-
-      
-      prev_post: 'Anterior',
-      next_post: 'Siguiente'
     }
   };
 
@@ -1355,6 +1068,14 @@ window.__i18nDyn = {
     document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
       var key = el.getAttribute('data-i18n-aria');
       if (strings[key]) el.setAttribute('aria-label', strings[key]);
+    });
+    
+    document.querySelectorAll('time[data-i18n-date]').forEach(function(el) {
+      if (!el.hasAttribute('data-i18n-orig')) el.setAttribute('data-i18n-orig', el.textContent);
+      var d = new Date(el.getAttribute('datetime') + 'T12:00:00');
+      el.textContent = (lang === pageLang || isNaN(d))
+        ? el.getAttribute('data-i18n-orig')
+        : d.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
     });
     var label = document.getElementById('lang-label');
     if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
@@ -1397,11 +1118,6 @@ window.__i18nDyn = {
     applyLang(next);
   };
 
-  window.getI18n = function(key) {
-    var lang = window.localStorage.getItem('lang') || 'es';
-    return (translations[lang] && translations[lang][key]) || key;
-  };
-
   
   var saved = window.localStorage.getItem('lang');
   if (saved && saved !== pageLang) {
@@ -1429,10 +1145,10 @@ window.__i18nDyn = {
 
       <div class="cmdk-group" data-group>Navegación</div>
       <button class="cmdk-item" data-action="goto" data-target="https://juanmanuel.petrer.eu/" data-keywords="inicio home portada"><i class="fas fa-home"></i><span>Inicio</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/blog" data-keywords="blog posts articulos"><i class="fas fa-newspaper"></i><span>Blog</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/material" data-keywords="material apuntes universidad notes"><i class="fas fa-book-open"></i><span>Material Universitario</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/search" data-keywords="buscar search"><i class="fas fa-search"></i><span>Búsqueda</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/agent-context" data-keywords="agente contexto docs documentacion llm ia agent guide repo"><i class="fas fa-robot"></i><span>Contexto para agentes</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/blog/" data-keywords="blog posts articulos"><i class="fas fa-newspaper"></i><span>Blog</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/material/" data-keywords="material apuntes universidad notes"><i class="fas fa-book-open"></i><span>Material Universitario</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/search/" data-keywords="buscar search"><i class="fas fa-search"></i><span>Búsqueda</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/agent-context/" data-keywords="agente contexto docs documentacion llm ia agent guide repo"><i class="fas fa-robot"></i><span>Contexto para agentes</span></button>
 
       <div class="cmdk-group" data-group>Secciones</div>
       <button class="cmdk-item" data-action="goto" data-target="/#experiencia" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span>Experiencia</span></button>

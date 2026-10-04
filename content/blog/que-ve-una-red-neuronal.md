@@ -103,4 +103,4 @@ La interpretabilidad en visión no es un lujo académico: es la diferencia entre
 
 ---
 
-*Relacionado: en [CNNs vs Vision Transformers](../cnn-vs-vision-transformers-inspeccion-industrial) cuento cómo elijo arquitectura para inspección industrial.*
+*Relacionado: en [CNNs vs Vision Transformers](../cnn-vs-vision-transformers-inspeccion-industrial/) cuento cómo elijo arquitectura para inspección industrial.*

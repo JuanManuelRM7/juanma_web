@@ -1,37 +1,35 @@
 {{ define "main" }}
-<div class="prose dark:prose-invert max-w-none">
-  <h1 class="standard {{ if eq .Kind `term` }}font-italic{{ end }}">
-    {{ if eq .Kind "term" }}#{{ end }}{{- .Title -}}
-  </h1>
-  {{ range $key, $val := (.Paginator 10).Pages }}
-  <div class="mb-4 mx-2 md:mx-0">
-    <div
-      class="rounded-t-lg hover:bg-gray-400 dark:hover:bg-darker flex flex-row items-center justify-start accordion mt-0 mb-0 p-3 border-2 border-b-0 border-violet-500 dark:border-violet-400 bg-gray-200 dark:bg-dark active"
-    >
-      <i
-        onclick="expandAccordion(this)"
-        class="cursor-pointer chevron p-2 mr-4 fas fa-chevron-right rounded-sm text-violet-600 dark:text-violet-300 hover:bg-gray-300 dark:hover:bg-gray-700"
-      ></i>
-      <a href="{{ .Permalink | relURL }}"
-        ><h2 class="accordion m-0">{{- .Title -}}</h2></a
-      >
-    </div>
-    <div
-      id="panel-item-{{ $key }}"
-      class="panel metadata-panel overflow-hidden bg-gray-200 dark:bg-dark rounded-b-lg border-2 border-t-0 border-violet-500 dark:border-violet-400"
-    >
-      <div class="metadata p-3">{{- partial "metadata" . -}}</div>
-      {{ with .Summary }}
-      {{/* Sin ids: varios resúmenes en la misma página duplicarían los anclajes de los títulos */}}
-      <div class="p-3 pt-0 text-sm prose dark:prose-invert max-w-none">{{ . | replaceRE ` id="[^"]*"` "" | safeHTML }}</div>
-      {{ end }}
-    </div>
+{{/* Páginas de taxonomía: /tags/ (todas las etiquetas) y /tags/<tag>/ (páginas con esa etiqueta) */}}
+{{ $sections := dict "blog" "nav_blog" "proyectos" "nav_projects" "material" "nav_material" }}
+<div class="max-w-4xl mx-auto px-4">
+  <div class="mb-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
+      {{ if eq .Kind "term" }}<span class="text-violet-600 dark:text-violet-400">#</span>{{ end }}{{ .Title }}
+    </h1>
+  </div>
+
+  {{ if eq .Kind "taxonomy" }}
+  <div class="flex flex-wrap justify-center gap-2 mb-12">
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="text-sm px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800 hover:bg-violet-100 dark:hover:bg-violet-800/50 transition-colors no-underline">#{{ .Page.Title }} <span class="text-gray-500 dark:text-gray-400">{{ .Count }}</span></a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="grid grid-cols-1 gap-4 mb-10">
+    {{ range (.Paginator 10).Pages }}
+    <a href="{{ .RelPermalink }}" class="group flex flex-col p-5 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
+      <p class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
+        {{ with index $sections .Section }}<span class="font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400">{{ i18n . }}</span><span aria-hidden="true">·</span>{{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      </p>
+      <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">{{ .Title }}</h2>
+      {{ with .Description }}<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ . }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+  <div class="my-6 flex justify-center pagination-links">
+    {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
   </div>
   {{ end }}
 </div>
-<script src="{{ `js/accordion.js` | relURL }}"></script>
-<div class="my-6 flex justify-center pagination-links">
-  {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
-</div>
 {{ end }}
-

@@ -19,9 +19,3 @@
 .dark .pagefind-ui__search-input::placeholder {
   color: #8f8f8f;
 }
-.chevron {
-  transition: 300ms linear rotate;
-}
-.active > .chevron {
-  transform: rotate(90deg);
-}

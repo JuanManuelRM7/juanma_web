@@ -18,7 +18,7 @@
 </div>
 {{ if $homeOnly }}
 <div class="mt-4 text-right">
-  <a href="{{ `proyectos` | relLangURL }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_all_projects">{{ i18n "action_all_projects" }}</span> ({{ len $all }}) <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i></a>
+  <a href="{{ `proyectos/` | relLangURL }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_all_projects">{{ i18n "action_all_projects" }}</span> ({{ len $all }}) <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i></a>
 </div>
 {{ end }}
 

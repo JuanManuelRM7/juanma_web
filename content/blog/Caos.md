@@ -139,4 +139,4 @@ Este paralelismo entre el clima y las poblaciones revela una verdad profunda:
 
 ---
 
-*Relacionado: estas mismas ideas de sensibilidad e impredecibilidad se llevan a la predicción del tiempo en [Predicciones por conjuntos](../predicciones-por-conjuntos), y a un fenómeno atmosférico real en [Bloqueos atmosféricos desde un punto de vista lagrangiano](../tfg).*
+*Relacionado: estas mismas ideas de sensibilidad e impredecibilidad se llevan a la predicción del tiempo en [Predicciones por conjuntos](../predicciones-por-conjuntos/), y a un fenómeno atmosférico real en [Bloqueos atmosféricos desde un punto de vista lagrangiano](../tfg/).*

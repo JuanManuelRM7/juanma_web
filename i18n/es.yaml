@@ -5,24 +5,14 @@ nav_blog:
   other: "Blog"
 nav_material:
   other: "Material"
-nav_material_desktop:
-  other: "Material Universitario"
 nav_search:
   other: "Buscar"
 aria_toggle_theme:
   other: "Cambiar tema"
 aria_toggle_lang:
   other: "Cambiar idioma"
-nav_exp:
-  other: "Experiencia"
-nav_edu:
-  other: "Educación"
-nav_pub:
-  other: "Publicaciones"
 nav_projects:
   other: "Proyectos"
-nav_contact:
-  other: "Contacto"
 section_blog:
   other: "Del blog"
 section_exp:
@@ -43,8 +33,6 @@ gh_view_profile:
   other: "Ver perfil"
 download_cv:
   other: "Descargar CV"
-action_view_more:
-  other: "Ver más"
 action_view_thesis:
   other: "Ver TFG"
 action_download_paper:
@@ -67,8 +55,6 @@ content_related:
   other: "Te puede interesar"
 content_comments:
   other: "Comentarios"
-content_read_more:
-  other: "Leer más"
 blog_title:
   other: "Blog"
 blog_description:
@@ -101,18 +87,12 @@ status_development:
   other: "En desarrollo"
 status_completed:
   other: "Completado"
-search_title:
-  other: "Buscar"
 aria_breadcrumb:
   other: "Miga de pan"
 easter_secret:
   other: "🎮 ¡Has descubierto el secreto!"
 easter_konami:
   other: "— Konami Code activado —"
-prev_post:
-  other: "Anterior"
-next_post:
-  other: "Siguiente"
 profile_publications:
   other: "Publicaciones"
 profile_oss:
@@ -139,8 +119,6 @@ project_org:
   other: "Organización"
 project_stack:
   other: "Stack"
-project_links:
-  other: "Enlaces"
 project_metrics:
   other: "Resultados"
 section_certs:
@@ -149,3 +127,5 @@ contact_intro:
   other: "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme."
 action_all_projects:
   other: "Ver todos los proyectos"
+action_skip_content:
+  other: "Ir al contenido"

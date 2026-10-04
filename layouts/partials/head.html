@@ -111,24 +111,6 @@
         .catch(() => {})
         .finally(() => html.classList.remove("theme-vt"));
     };
-
-    window.onload = () => {
-      fixThemeToggleIcon(theme);
-
-      let defaultActivePanel = document.querySelector(".accordion.active");
-      if (defaultActivePanel) {
-        defaultActivePanel.nextElementSibling.style.maxHeight =
-          defaultActivePanel.nextElementSibling.scrollHeight + "px";
-      }
-    };
-
-    window.onresize = () => {
-      let defaultActivePanel = document.querySelector(".accordion.active");
-      if (defaultActivePanel) {
-        defaultActivePanel.nextElementSibling.style.maxHeight =
-          defaultActivePanel.nextElementSibling.scrollHeight + "px";
-      }
-    };
   </script>
   <!-- Plausible Analytics -->
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>

@@ -3,11 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.panel {
-  max-height: 0;
-  transition: 0.3s ease-out;
-}
-
 .profile-photo-container {
   img {
     max-width: 100%;
