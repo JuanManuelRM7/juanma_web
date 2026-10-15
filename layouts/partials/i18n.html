@@ -86,7 +86,9 @@ window.__i18nDyn = {
   }
   window.__i18n = translations;
 
-  function applyLang(lang) {
+  // persist=false: language chosen automatically (browser detection), not by the visitor;
+  // it is applied but not saved, so the visitor's own choice always takes precedence.
+  function applyLang(lang, persist) {
     var strings = translations[lang];
     if (!strings) return;
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -135,7 +137,7 @@ window.__i18nDyn = {
     });
     var label = document.getElementById('lang-label');
     if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
-    window.localStorage.setItem('lang', lang);
+    if (persist !== false) window.localStorage.setItem('lang', lang);
     document.documentElement.setAttribute('lang', lang);
 
     // Update experience calculator if present
@@ -163,7 +165,7 @@ window.__i18nDyn = {
   var isHome = document.body && document.body.getAttribute('data-kind') === 'home';
 
   window.toggleLang = function() {
-    var current = window.localStorage.getItem('lang') || pageLang;
+    var current = window.localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || pageLang;
     var next = current === 'es' ? 'en' : 'es';
     var alt = !isHome && altUrl(next);
     if (alt) {
@@ -174,16 +176,25 @@ window.__i18nDyn = {
     applyLang(next);
   };
 
-  // Apply saved language on load (only if it differs from the page's own language)
+  // No saved choice: visitors whose browser is not in Spanish (or another language of Spain)
+  // get English on pages rendered in Spanish. Never the other way round: an /en/ link stays English.
+  function browserLang() {
+    var l = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+    return /^(es|ca|gl|eu)\b/.test(l) ? 'es' : 'en';
+  }
+
+  // Apply the saved (or detected) language on load, only if it differs from the page's own language
   var saved = window.localStorage.getItem('lang');
-  if (saved && saved !== pageLang) {
-    var savedAlt = !isHome && altUrl(saved);
-    if (savedAlt) {
-      window.location.replace(savedAlt);
+  var auto = !saved && pageLang === 'es' && browserLang() === 'en';
+  var target = saved || (auto ? 'en' : null);
+  if (target && target !== pageLang) {
+    var targetAlt = !isHome && altUrl(target);
+    if (targetAlt) {
+      window.location.replace(targetAlt);
     } else if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { applyLang(saved); });
+      document.addEventListener('DOMContentLoaded', function() { applyLang(target, !auto); });
     } else {
-      applyLang(saved);
+      applyLang(target, !auto);
     }
   }
 })();

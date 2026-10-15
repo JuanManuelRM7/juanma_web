@@ -253,6 +253,8 @@ En mobile colapsa a una sola columna y aparece una barra inferior sticky con CV,
 | Dark/light mode | CSS `dark:` prefix + toggle JS | `theme` |
 | Idioma ES/EN | `data-i18n` + `toggleLang()` (navega si hay traducción) | `lang` |
 
+Sin elección guardada, quien tiene el navegador en un idioma que no es español (ni catalán, gallego o euskera) ve en inglés las páginas renderizadas en español (`browserLang()` en `i18n.html`). Esa detección no se guarda en `localStorage` y nunca pasa una página `/en/` a español.
+
 ---
 
 ## Build y despliegue
