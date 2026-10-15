@@ -9,6 +9,7 @@ window.__i18nDyn = {
   {{ .Language.Lang }}: {
     profile_position: {{ .Site.Params.profile.position }},
     profile_location: {{ .Site.Params.profile.location }},
+    profile_availability: {{ .Site.Params.profile.availability }},
     aboutme_title: {{ .Site.Params.aboutme.title }},
     aboutme_description: {{ .Site.Params.aboutme.description }},
     hero_value: {{ .Site.Params.hero.value }},
@@ -125,6 +126,12 @@ window.__i18nDyn = {
       el.textContent = (lang === pageLang || isNaN(d))
         ? el.getAttribute('data-i18n-orig')
         : d.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
+    });
+    // CV links: Spanish or English PDF
+    document.querySelectorAll('[data-cv-es]').forEach(function(el) {
+      var url = el.getAttribute(lang === 'en' ? 'data-cv-en' : 'data-cv-es');
+      if (el.hasAttribute('data-target')) el.setAttribute('data-target', url);
+      else el.setAttribute('href', url);
     });
     var label = document.getElementById('lang-label');
     if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';

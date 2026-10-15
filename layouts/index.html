@@ -22,7 +22,7 @@
       <a href="#proyectos" class="hero-cta hero-cta-primary">
         <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="cta_projects">{{ i18n "cta_projects" }}</span>
       </a>
-      <a href="{{ `/cv.pdf` | relURL }}" class="hero-cta hero-cta-secondary">
+      <a href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}" class="hero-cta hero-cta-secondary">
         <i class="fas fa-file-download" aria-hidden="true"></i> <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>
       {{ with $mail }}
@@ -31,7 +31,7 @@
       </a>
       {{ end }}
     </div>
-    <p class="mt-5 text-sm text-violet-100 dark:text-gray-400" data-i18n="profile_location">{{ .Site.Params.profile.location }}</p>
+    <p class="mt-5 text-sm text-violet-100 dark:text-gray-400"><span data-i18n="profile_location">{{ .Site.Params.profile.location }}</span>{{ with .Site.Params.profile.availability }} · <span data-i18n="profile_availability">{{ . }}</span>{{ end }}</p>
   </div>
   <a href="#proyectos" class="scroll-indicator" aria-label="{{ i18n "aria_scroll_down" }}" data-i18n-aria="aria_scroll_down" style="color: rgba(255,255,255,0.7) !important;">
     <i class="fas fa-chevron-down" aria-hidden="true"></i>
@@ -61,7 +61,7 @@
       </div>
       
       <!-- CV Button -->
-      <a href="{{ `/cv.pdf` | relURL }}" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
+      <a href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
         <i class="fas fa-file-download" aria-hidden="true"></i>
         <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
       </a>

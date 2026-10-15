@@ -39,7 +39,7 @@
       <div>
         <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_resources">{{ i18n "footer_resources" }}</h4>
         <div class="flex flex-col gap-1">
-          <a href="/cv.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
+          <a href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
           <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">{{ i18n "nav_search" }}</span></a>
           <a href="{{ with .Site.Home.OutputFormats.Get "rss" }}{{ .RelPermalink }}{{ end }}" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
             <i class="fas fa-rss" aria-hidden="true"></i> RSS

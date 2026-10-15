@@ -43,7 +43,7 @@ const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http
   ${net}
   <rect x="80" y="382" width="120" height="6" rx="3" fill="url(#accent)"/>
   <text x="80" y="300" font-family="Helvetica, Arial, sans-serif" font-size="74" font-weight="bold" fill="#ffffff">Juan Manuel Ruiz</text>
-  <text x="80" y="360" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#a5f3fc">ML Engineer · Computer Vision · Physicist &amp; Mathematician</text>
+  <text x="80" y="360" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#a5f3fc">ML Engineer · Computer Vision &amp; LLMs · Physicist</text>
   <text x="80" y="560" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#cbd5e1">juanmanuel.petrer.eu</text>
 </svg>`;
 

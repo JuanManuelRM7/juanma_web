@@ -20,15 +20,16 @@ languages:
     weight: 2
     params:
       title: Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision & LLMs
-      description: "ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz."
+      description: "ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz."
       profile:
         name: "Juan Manuel Ruiz Muñoz"
         short_name: "Juan Manuel"
-        location: "Elche, Alicante, Spain"
+        location: "Alicante, Spain"
+        availability: "EU citizen · Open to relocation, hybrid or remote"
         photo: profile.png
         position: "ML Engineer · Computer Vision & LLMs"
       hero:
-        value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist and mathematician, I care about understanding why a model works before shipping it."
+        value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist with a strong mathematics background, I care about understanding why a model works before shipping it."
         metrics:
           - value: "0.83"
             label: "mAP@50:95 on multi-class segmentation, in production"
@@ -69,7 +70,7 @@ languages:
               - "Vision Transformers"
               - "YOLO"
               - "RF-DETR"
-              - "Diffusion models (FLUX.1)"
+              - "Generative models"
               - "Detection & segmentation"
           - key: lang
             name: "Languages & analysis"
@@ -101,16 +102,10 @@ languages:
         list:
           - title: "AWS Cloud Technical Essentials"
             issuer: "Amazon Web Services"
-          - title: "Build Basic Generative Adversarial Networks (GANs)"
-            issuer: "DeepLearning.AI"
-          - title: "Introduction to Front-End Development"
-            issuer: "Meta"
-          - title: "Cambridge English B1 Preliminary"
-            issuer: "Cambridge Assessment English"
       aboutme:
         title: About me
         icon: fas fa-user
-        description: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog."
+        description: "Physicist with a strong mathematics background, specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog."
       experience:
         title: Experience
         icon: fas fa-briefcase
@@ -336,7 +331,7 @@ markup:
 params:
   title: Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision & LLMs
   author: Juan Manuel Ruiz Muñoz
-  description: "ML Engineer especializado en Computer Vision y LLMs: detección de defectos industriales, OCR multimodal con LoRA y sistemas RAG en producción. Físico y matemático. Proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz."
+  description: "ML Engineer especializado en Computer Vision y LLMs: detección de defectos industriales, OCR multimodal con LoRA y sistemas RAG en producción. Físico con formación avanzada en Matemáticas. Proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz."
   copyright:
   theme:
     mainTheme: null
@@ -355,11 +350,12 @@ params:
   profile:
     name: "Juan Manuel Ruiz Muñoz"
     short_name: "Juan Manuel"
-    location: "Elche, Alicante, España"
+    location: "Alicante, España"
+    availability: "Abierto a reubicación, híbrido o remoto"
     photo: profile.png
     position: "ML Engineer · Computer Vision & LLMs"
   hero:
-    value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico y matemático de formación: me importa entender por qué funciona un modelo antes de desplegarlo."
+    value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo."
     metrics:
       - value: "0,83"
         label: "mAP@50:95 en segmentación multiclase, en producción"
@@ -374,12 +370,6 @@ params:
     list:
       - title: "AWS Cloud Technical Essentials"
         issuer: "Amazon Web Services"
-      - title: "Build Basic Generative Adversarial Networks (GANs)"
-        issuer: "DeepLearning.AI"
-      - title: "Introduction to Front-End Development"
-        issuer: "Meta"
-      - title: "Cambridge English B1 Preliminary"
-        issuer: "Cambridge Assessment English"
   social:
     title: Links
     list:
@@ -387,10 +377,6 @@ params:
         url: "https://www.linkedin.com/in/juanmanuelruizmunoz/"
         title: LinkedIn
         label: "in/juanmanuelruizmunoz"
-      - icon: fab fa-instagram
-        url: "https://www.instagram.com/j.manuel__rm/"
-        title: Instagram
-        label: "@j.manuel__rm"
       - icon: fab fa-github
         url: "https://github.com/juanmanuelruizm"
         title: GitHub
@@ -413,7 +399,7 @@ params:
   aboutme:
     title: Sobre mí
     icon: fas fa-user
-    description: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog."
+    description: "Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog."
   experience:
     title: Experiencia
     icon: fas fa-briefcase
@@ -642,7 +628,7 @@ params:
           - "Vision Transformers"
           - "YOLO"
           - "RF-DETR"
-          - "Modelos de difusión (FLUX.1)"
+          - "Modelos generativos"
           - "Detección y segmentación"
       - key: lang
         name: "Lenguajes y análisis"

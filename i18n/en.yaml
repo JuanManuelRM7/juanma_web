@@ -209,7 +209,7 @@ term_more:
 term_projects_page:
   other: "the projects page"
 term_opening_cv:
-  other: "Opening cv.pdf…"
+  other: "Opening cv-en.pdf…"
 term_going_blog:
   other: "Heading to the blog…"
 term_no_cvmode:

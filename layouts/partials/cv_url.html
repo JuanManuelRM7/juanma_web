@@ -1,0 +1,3 @@
+{{- /* CV in the page's language: Spanish at /cv.pdf, English at /cv-en.pdf. On the homepage the
+       ES/EN toggle swaps elements carrying data-cv-es / data-cv-en (see i18n.html). */ -}}
+{{- if eq .Site.Language.Lang "en" }}{{ `/cv-en.pdf` | relURL }}{{ else }}{{ `/cv.pdf` | relURL }}{{ end -}}

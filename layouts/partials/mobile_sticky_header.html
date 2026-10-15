@@ -24,7 +24,7 @@
     <div class="flex gap-2 flex-shrink-0">
       <!-- CV Button -->
       <a
-        href="{{ `/cv.pdf` | relURL }}"
+        href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}"
         class="inline-flex items-center justify-center p-2.5 rounded-md bg-violet-600 hover:bg-violet-700 text-white transition-all duration-300"
         aria-label="{{ i18n "download_cv" }}"
         data-i18n-aria="download_cv"

@@ -1,6 +1,6 @@
 # juanmanuel.petrer.eu
 
-Portfolio y blog personal de **Juan Manuel Ruiz Muñoz** — ML Engineer · Computer Vision & LLMs, físico y matemático de formación.
+Portfolio y blog personal de **Juan Manuel Ruiz Muñoz** — ML Engineer · Computer Vision & LLMs, físico de formación con base sólida en Matemáticas.
 
 **Live:** [juanmanuel.petrer.eu](https://juanmanuel.petrer.eu/)
 

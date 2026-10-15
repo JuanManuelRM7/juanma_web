@@ -29,7 +29,7 @@
     return '<span class="term-accent">     ██╗███╗   ███╗</span>\n' +
       '<span class="term-accent">     ██║████╗ ████║</span>   Juan Manuel Ruiz\n' +
       '<span class="term-accent">     ██║██╔████╔██║</span>   ' + esc(profile().headline || 'ML Engineer · Computer Vision & LLMs') + '\n' +
-      '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; Mathematician\n' +
+      '<span class="term-accent">██   ██║██║╚██╔╝██║</span>   Physicist &amp; ML Engineer\n' +
       '<span class="term-accent">╚█████╔╝██║ ╚═╝ ██║</span>\n' +
       '<span class="term-accent"> ╚════╝ ╚═╝     ╚═╝</span>\n\n' +
       tr('term_hint') + '\n';
@@ -55,7 +55,7 @@
       return (profile().skills || []).map(function (c) { return esc(c.name) + ': ' + esc(c.items); }).join('\n');
     },
     cv: function () {
-      window.open(base + 'cv.pdf', '_blank');
+      window.open(base + (lang() === 'en' ? 'cv-en.pdf' : 'cv.pdf'), '_blank');
       return tr('term_opening_cv');
     },
     blog: function () {

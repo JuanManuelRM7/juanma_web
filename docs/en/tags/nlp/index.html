@@ -12,14 +12,14 @@
 <title>NLP · Juan Manuel Ruiz Muñoz</title>
 
 <meta name="theme-color" content="#8b5cf6" />
-<meta name="description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
+<meta name="description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://juanmanuel.petrer.eu/en/tags/nlp/" />
 
 
 <meta property="og:title" content="NLP" />
-<meta property="og:description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
+<meta property="og:description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://juanmanuel.petrer.eu/en/tags/nlp/" />
 <meta property="og:image" content="https://juanmanuel.petrer.eu/og-image.png" />
@@ -34,7 +34,7 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="NLP" />
-<meta name="twitter:description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
+<meta name="twitter:description" content="ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz." />
 <meta name="twitter:image" content="https://juanmanuel.petrer.eu/og-image.png" />
 
 
@@ -44,7 +44,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "NLP",
-  "description": "ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist and mathematician. Projects, publications and blog of Juan Manuel Ruiz Muñoz.",
+  "description": "ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz.",
   "inLanguage": "en",
   "url": "https:\/\/juanmanuel.petrer.eu\/en\/tags\/nlp\/"
 }
@@ -308,7 +308,7 @@
       <div>
         <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_resources">Resources</h4>
         <div class="flex flex-col gap-1">
-          <a href="/cv.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
+          <a href="/cv-en.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
           <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Search</span></a>
           <a href="/en/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
             <i class="fas fa-rss" aria-hidden="true"></i> RSS
@@ -320,8 +320,6 @@
         <div class="flex flex-col gap-1">
           
           <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">LinkedIn</a>
-          
-          <a href="https://www.instagram.com/j.manuel__rm/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">Instagram</a>
           
           <a href="https://github.com/juanmanuelruizm" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">GitHub</a>
           
@@ -727,7 +725,7 @@ pre:hover .copy-code-btn {
       "term_label": "Interactive terminal",
       "term_more": "More on",
       "term_no_cvmode": "cv-mode.js not loaded.",
-      "term_opening_cv": "Opening cv.pdf…",
+      "term_opening_cv": "Opening cv-en.pdf…",
       "term_projects_page": "the projects page",
       "term_try_help": "Try {help}.",
       "term_uptime": "since 2024",
@@ -783,6 +781,12 @@ pre:hover .copy-code-btn {
       el.textContent = (lang === pageLang || isNaN(d))
         ? el.getAttribute('data-i18n-orig')
         : d.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
+    });
+    
+    document.querySelectorAll('[data-cv-es]').forEach(function(el) {
+      var url = el.getAttribute(lang === 'en' ? 'data-cv-en' : 'data-cv-es');
+      if (el.hasAttribute('data-target')) el.setAttribute('data-target', url);
+      else el.setAttribute('href', url);
     });
     var label = document.getElementById('lang-label');
     if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
@@ -870,7 +874,7 @@ pre:hover .copy-code-btn {
       <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Actions</div>
       <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">Toggle theme</span></button>
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Change language</span> (ES/EN)</span></button>
-      <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Download CV</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/cv-en.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Download CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copy email</span></button>
       <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh console"><i class="fas fa-terminal"></i><span data-i18n="cmdk_terminal">Open terminal</span></button>
       <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos object detection computer cv mode camara easter egg"><i class="fas fa-eye"></i><span data-i18n="cmdk_cvmode">CV Mode — object detection</span></button>
@@ -889,8 +893,6 @@ pre:hover .copy-code-btn {
       <div class="cmdk-group" data-group data-i18n="cmdk_group_links">Links</div>
       
       <button class="cmdk-item" data-action="open" data-target="https://www.linkedin.com/in/juanmanuelruizmunoz/" data-keywords="linkedin social"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
-      
-      <button class="cmdk-item" data-action="open" data-target="https://www.instagram.com/j.manuel__rm/" data-keywords="instagram social"><i class="fab fa-instagram"></i><span>Instagram</span></button>
       
       <button class="cmdk-item" data-action="open" data-target="https://github.com/juanmanuelruizm" data-keywords="github social"><i class="fab fa-github"></i><span>GitHub</span></button>
       
@@ -1105,7 +1107,7 @@ window.__terminalData = {
   byLang: {
     "es": {
       headline: "ML Engineer · Computer Vision \u0026 LLMs",
-      whoami: "Físico y matemático especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
+      whoami: "Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
       projectsUrl: "/proyectos/",
       projects: [
         { title: "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación", tech: "PyTorch · RF-DETR · SAM3" },
@@ -1118,14 +1120,14 @@ window.__terminalData = {
       ],
       skills: [
         { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings y búsqueda semántica · ChromaDB · FAISS · Prompt engineering" },
-        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Modelos de difusión (FLUX.1) · Detección y segmentación" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Modelos generativos · Detección y segmentación" },
         { name: "Lenguajes y análisis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (lectura y especificación) · R · Análisis estadístico · LaTeX" },
         { name: "MLOps y herramientas", items: "Docker · MLflow · TensorBoard · Git y GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
       ],
     },
     "en": {
       headline: "ML Engineer · Computer Vision \u0026 LLMs",
-      whoami: "Physicist and mathematician specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
+      whoami: "Physicist with a strong mathematics background, specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
       projectsUrl: "/en/proyectos/",
       projects: [
         { title: "vcalib: calibration filters for RF-DETR under illumination shift", tech: "PyTorch · RF-DETR · SAM3" },
@@ -1138,7 +1140,7 @@ window.__terminalData = {
       ],
       skills: [
         { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering" },
-        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Diffusion models (FLUX.1) · Detection \u0026 segmentation" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Generative models · Detection \u0026 segmentation" },
         { name: "Languages \u0026 analysis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (reading \u0026 specs) · R · Statistical analysis · LaTeX" },
         { name: "MLOps \u0026 tools", items: "Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
       ],
@@ -1146,7 +1148,6 @@ window.__terminalData = {
   },
   social: [
     { title: "LinkedIn", url: "https://www.linkedin.com/in/juanmanuelruizmunoz/", label: "in/juanmanuelruizmunoz" },
-    { title: "Instagram", url: "https://www.instagram.com/j.manuel__rm/", label: "@j.manuel__rm" },
     { title: "GitHub", url: "https://github.com/juanmanuelruizm", label: "juanmanuelruizm" },
     { title: "Email", url: "mailto:juanmanuelruiz383@gmail.com", label: "juanmanuelruiz383@gmail.com" },
     { title: "ORCID", url: "https://orcid.org/0009-0008-7529-306X", label: "0009-0008-7529-306X" },
