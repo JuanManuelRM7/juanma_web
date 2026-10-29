@@ -1,7 +1,7 @@
 /* Escaneo de puntos (estilo Vantage).
    1. Portada: un neumático generado como nube de puntos (WebGL) que gira mientras lo cruza un
       barrido de luz rasante. El texto en relieve del flanco y un defecto (en lima) son puntos.
-      Dos etiquetas siguen al defecto y al texto (las cifras salen de config.yaml).
+      Dos etiquetas siguen al neumático (segmentación) y al texto del flanco (OCR); las cifras salen de config.yaml.
    2. Todas las páginas: el nombre del pie dibujado con puntos y un barrido que lo recorre.
    Se pausa fuera de pantalla y, con "reducir movimiento", queda un fotograma fijo. */
 (() => {
@@ -151,9 +151,13 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
     gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.disable(gl.DEPTH_TEST);
 
     const st = { w: 0, h: 0, spin: 0.35, alpha: 0, px: 0, py: 0, tpx: 0, tpy: 0, mvp: null, on: true, t0: performance.now(), last: performance.now() };
-    const callouts = [...document.querySelectorAll('[data-anchor]')].map((el) => ({ el, p: el.dataset.anchor === 'defect'
-      ? [DEF.r * Math.cos(DEF.th), DEF.r * Math.sin(DEF.th), sideZ(DEF.r) + DEF.h]
-      : [78 * Math.cos(Math.PI / 2), 78 * Math.sin(Math.PI / 2), sideZ(78) + 1.5] }));
+    // Anclas de las etiquetas: el hombro del neumático (segmentación) y el texto del flanco (OCR).
+    // El defecto en lima no lleva cifra.
+    const ANCHORS = {
+      tire: [Ro * Math.cos(-0.35), Ro * Math.sin(-0.35), HW + RS * 0.6],
+      text: [78 * Math.cos(Math.PI / 2), 78 * Math.sin(Math.PI / 2), sideZ(78) + 1.5],
+    };
+    const callouts = [...document.querySelectorAll('[data-anchor]')].map((el) => ({ el, p: ANCHORS[el.dataset.anchor] || ANCHORS.text }));
 
     function resize() { const r = canvas.getBoundingClientRect(); if (!r.width) return; st.w = r.width; st.h = r.height; canvas.width = Math.round(r.width * DPR); canvas.height = Math.round(r.height * DPR); gl.viewport(0, 0, canvas.width, canvas.height); }
     // barrido: cruza en 5,6 s y descansa hasta 7,5 s
@@ -178,7 +182,7 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
       const ctr = project([0, 0, 0]);
       callouts.forEach(({ el, p }) => {
         const sp = project(p); if (!sp) return;
-        const flip = ctr ? sp[0] < ctr[0] - 10 : sp[0] > st.w - 280;
+        const flip = (ctr ? sp[0] < ctr[0] - 10 : false) || sp[0] > st.w - 270; // a la izquierda si no cabe a la derecha
         const ok = sp[0] > 40 && sp[0] < st.w - 40 && sp[1] > 90 && sp[1] < st.h - 50 && !(flip && sp[0] - 270 < st.w * 0.17);
         el.style.transform = `translate3d(${sp[0].toFixed(1)}px, ${sp[1].toFixed(1)}px, 0)`;
         el.classList.toggle('is-hidden', !ok); el.classList.toggle('is-flip', flip);

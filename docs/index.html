@@ -143,9 +143,9 @@
   <div class="scan">
     <canvas id="tire" aria-hidden="true"></canvas>
     
-    <div class="callout callout--found is-hidden" data-anchor="defect" aria-hidden="true">
+    <div class="callout is-hidden" data-anchor="tire" aria-hidden="true">
       <span class="callout__line"></span><i class="callout__dot"></i>
-      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_defect">Defecto segmentado</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">0,83</span> <span class="u">mAP@50:95</span></span></div>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_seg">Segmentación multiclase</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">0,83</span> <span class="u">mAP@50:95</span></span></div>
     </div>
     
     
@@ -160,7 +160,7 @@
     <div class="hero__text">
       <p class="hero__kicker" data-i18n="profile_position">ML Engineer · Computer Vision &amp; LLMs</p>
       <h1 id="hero-name">Juan Manuel Ruiz Muñoz</h1>
-      <p class="hero__lead" data-i18n="hero_value">Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.</p>
+      <p class="hero__lead" data-i18n="hero_value">Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación para inspección industrial, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.</p>
       <div class="hero__ctas">
         <a class="btn" href="#proyectos"><span data-i18n="cta_projects">Ver proyectos</span></a>
         <a class="btn btn--line" href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf"><span data-i18n="download_cv">Descargar CV</span></a>
@@ -286,7 +286,7 @@
 <div class="ledger__row" role="row">
   <div role="cell">
     <h3><span data-i18n="proj_title_inspeccion-neumaticos">Inspección industrial de neumáticos con visión y OCR multimodal</span></h3>
-    <p data-i18n="proj_desc_inspeccion-neumaticos">Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.</p>
+    <p data-i18n="proj_desc_inspeccion-neumaticos">Detección y segmentación (CNNs, ViT, YOLO, RF-DETR) para inspección y detección de defectos, y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.</p>
   </div>
   <span role="cell" class="ledger__cap">PyTorch · RF-DETR · GLM-OCR · LoRA · vLLM · Docker</span>
   <span role="cell" class="ledger__state"><span class="dot" aria-hidden="true"></span><span data-i18n="status_production">En producción</span></span>
@@ -409,13 +409,13 @@
   <div class="role__body">
     <h3 data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</h3>
     <p class="role__org"><a href="https://vraia.com/" target="_blank" rel="noopener noreferrer" data-i18n="exp_company_1">VRAIA Corp.</a></p>
-    <div class="md" data-i18n="exp_details_1" data-i18n-html><p>Llevo a producción modelos de <strong>detección y segmentación de defectos</strong> (CNNs, ViT, YOLO, RF-DETR) y un <strong>OCR multimodal</strong> (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.</p>
+    <div class="md" data-i18n="exp_details_1" data-i18n-html><p>Llevo a producción modelos de <strong>detección y segmentación</strong> (CNNs, ViT, YOLO, RF-DETR) para inspección industrial de neumáticos y <strong>detección de defectos</strong>, y un <strong>OCR multimodal</strong> (GLM-OCR): mAP@50:95 de 0,83 en segmentación multiclase y 98,56 % de exact match leyendo flancos.</p>
 <p>Escribo sobre este trabajo en <a href="/blog/ocr-industrial-glm-ocr/">OCR en condiciones extremas</a> y <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/">CNNs vs Vision Transformers</a>.</p>
 </div>
     
     <details class="more">
       <summary><span class="num">6</span> <span data-i18n="exp_achievements">logros</span></summary>
-      <ul class="bullets" data-i18n="exp_hl_1" data-i18n-html><li>Diseño y entrenamiento de modelos de <strong>detección y segmentación de defectos</strong> (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: <strong>mAP@50:95 de 0,83</strong> en segmentación multiclase sobre datasets propios de miles de imágenes.</li><li>Fine-tuning de un modelo de lenguaje multimodal (<strong>GLM-OCR</strong>) con <strong>LoRA</strong> vía LLaMA-Factory para leer texto en flancos de neumático: <strong>98,56 % de exact match</strong> en producción; serving con vLLM y Ollama.</li><li>Pipeline de <strong>generación sintética de defectos</strong> con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.</li><li><strong>Peritaje técnico</strong> con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.</li><li>Pipelines <strong>ETL</strong> de extracción, transformación y aumento de datasets visuales a escala industrial.</li><li>Despliegue y monitorización con <strong>Docker, MLflow y TensorBoard</strong>; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y <strong>especificación algorítmica en C++</strong> para el equipo cliente.</li></ul>
+      <ul class="bullets" data-i18n="exp_hl_1" data-i18n-html><li>Diseño y entrenamiento de modelos de <strong>detección y segmentación</strong> (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos y <strong>detección de defectos</strong>: <strong>mAP@50:95 de 0,83</strong> en segmentación multiclase sobre datasets propios de miles de imágenes.</li><li>Fine-tuning de un modelo de lenguaje multimodal (<strong>GLM-OCR</strong>) con <strong>LoRA</strong> vía LLaMA-Factory para leer texto en flancos de neumático: <strong>98,56 % de exact match</strong> en producción; serving con vLLM y Ollama.</li><li>Pipeline de <strong>generación sintética de defectos</strong> con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.</li><li><strong>Peritaje técnico</strong> con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.</li><li>Pipelines <strong>ETL</strong> de extracción, transformación y aumento de datasets visuales a escala industrial.</li><li>Despliegue y monitorización con <strong>Docker, MLflow y TensorBoard</strong>; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y <strong>especificación algorítmica en C++</strong> para el equipo cliente.</li></ul>
     </details>
     
     <div class="stack"><span data-i18n="exp_tag_1_1">PyTorch</span><span data-i18n="exp_tag_1_2">Vision Transformers</span><span data-i18n="exp_tag_1_3">YOLO</span><span data-i18n="exp_tag_1_4">RF-DETR</span><span data-i18n="exp_tag_1_5">GLM-OCR</span><span data-i18n="exp_tag_1_6">LoRA</span><span data-i18n="exp_tag_1_7">LLaMA-Factory</span><span data-i18n="exp_tag_1_8">vLLM</span><span data-i18n="exp_tag_1_9">MLflow</span><span data-i18n="exp_tag_1_10">Docker</span><span data-i18n="exp_tag_1_11">C&#43;&#43;</span></div>
@@ -959,7 +959,7 @@ window.__i18nDyn = {
     profile_availability: "Abierto a reubicación, híbrido o remoto",
     aboutme_title: "Sobre mí",
     aboutme_description: "Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
-    hero_value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.",
+    hero_value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación para inspección industrial, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.",
     "hero_metric_1_value": "0,83",
     "hero_metric_1_label": "mAP@50:95 en segmentación multiclase, en producción",
     "hero_metric_2_value": "98,56 %",
@@ -979,7 +979,7 @@ window.__i18nDyn = {
     "proj_metric_desinformacion-ontologias_2": "Ontología de 246 clases generada sin supervisión",
     "proj_post_desinformacion-ontologias_1": "Post",
     "proj_title_inspeccion-neumaticos": "Inspección industrial de neumáticos con visión y OCR multimodal",
-    "proj_desc_inspeccion-neumaticos": "Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.",
+    "proj_desc_inspeccion-neumaticos": "Detección y segmentación (CNNs, ViT, YOLO, RF-DETR) para inspección y detección de defectos, y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.",
     "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 de 0,83 en segmentación multiclase",
     "proj_metric_inspeccion-neumaticos_2": "98,56 % de exact match en OCR sobre flancos",
     "proj_post_inspeccion-neumaticos_1": "OCR en condiciones extremas",
@@ -1007,8 +1007,8 @@ window.__i18nDyn = {
     "exp_tag_1_10": "Docker",
     "exp_tag_1_11": "C++",
     "exp_dates_1": "Junio 2025 - \u003cem\u003ePresente\u003c/em\u003e",
-    "exp_details_1": "\u003cp\u003eLlevo a producción modelos de \u003cstrong\u003edetección y segmentación de defectos\u003c/strong\u003e (CNNs, ViT, YOLO, RF-DETR) y un \u003cstrong\u003eOCR multimodal\u003c/strong\u003e (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.\u003c/p\u003e\n\u003cp\u003eEscribo sobre este trabajo en \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR en condiciones extremas\u003c/a\u003e y \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_1": "\u003cli\u003eDiseño y entrenamiento de modelos de \u003cstrong\u003edetección y segmentación de defectos\u003c/strong\u003e (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: \u003cstrong\u003emAP@50:95 de 0,83\u003c/strong\u003e en segmentación multiclase sobre datasets propios de miles de imágenes.\u003c/li\u003e\u003cli\u003eFine-tuning de un modelo de lenguaje multimodal (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) con \u003cstrong\u003eLoRA\u003c/strong\u003e vía LLaMA-Factory para leer texto en flancos de neumático: \u003cstrong\u003e98,56 % de exact match\u003c/strong\u003e en producción; serving con vLLM y Ollama.\u003c/li\u003e\u003cli\u003ePipeline de \u003cstrong\u003egeneración sintética de defectos\u003c/strong\u003e con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003ePeritaje técnico\u003c/strong\u003e con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.\u003c/li\u003e\u003cli\u003ePipelines \u003cstrong\u003eETL\u003c/strong\u003e de extracción, transformación y aumento de datasets visuales a escala industrial.\u003c/li\u003e\u003cli\u003eDespliegue y monitorización con \u003cstrong\u003eDocker, MLflow y TensorBoard\u003c/strong\u003e; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y \u003cstrong\u003eespecificación algorítmica en C++\u003c/strong\u003e para el equipo cliente.\u003c/li\u003e",
+    "exp_details_1": "\u003cp\u003eLlevo a producción modelos de \u003cstrong\u003edetección y segmentación\u003c/strong\u003e (CNNs, ViT, YOLO, RF-DETR) para inspección industrial de neumáticos y \u003cstrong\u003edetección de defectos\u003c/strong\u003e, y un \u003cstrong\u003eOCR multimodal\u003c/strong\u003e (GLM-OCR): mAP@50:95 de 0,83 en segmentación multiclase y 98,56 % de exact match leyendo flancos.\u003c/p\u003e\n\u003cp\u003eEscribo sobre este trabajo en \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR en condiciones extremas\u003c/a\u003e y \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
+    "exp_hl_1": "\u003cli\u003eDiseño y entrenamiento de modelos de \u003cstrong\u003edetección y segmentación\u003c/strong\u003e (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos y \u003cstrong\u003edetección de defectos\u003c/strong\u003e: \u003cstrong\u003emAP@50:95 de 0,83\u003c/strong\u003e en segmentación multiclase sobre datasets propios de miles de imágenes.\u003c/li\u003e\u003cli\u003eFine-tuning de un modelo de lenguaje multimodal (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) con \u003cstrong\u003eLoRA\u003c/strong\u003e vía LLaMA-Factory para leer texto en flancos de neumático: \u003cstrong\u003e98,56 % de exact match\u003c/strong\u003e en producción; serving con vLLM y Ollama.\u003c/li\u003e\u003cli\u003ePipeline de \u003cstrong\u003egeneración sintética de defectos\u003c/strong\u003e con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003ePeritaje técnico\u003c/strong\u003e con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.\u003c/li\u003e\u003cli\u003ePipelines \u003cstrong\u003eETL\u003c/strong\u003e de extracción, transformación y aumento de datasets visuales a escala industrial.\u003c/li\u003e\u003cli\u003eDespliegue y monitorización con \u003cstrong\u003eDocker, MLflow y TensorBoard\u003c/strong\u003e; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y \u003cstrong\u003eespecificación algorítmica en C++\u003c/strong\u003e para el equipo cliente.\u003c/li\u003e",
     "exp_position_2": "Data Scientist \u0026 AI Researcher",
     "exp_company_2": "AIR Institute \u0026 Grupo de Investigación BISITE",
     "exp_tag_2_1": "NLP",
@@ -1094,7 +1094,7 @@ window.__i18nDyn = {
     profile_availability: "EU citizen · Open to relocation, hybrid or remote",
     aboutme_title: "About me",
     aboutme_description: "Physicist with a strong mathematics background, specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
-    hero_value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist with a strong mathematics background, I care about understanding why a model works before shipping it.",
+    hero_value: "I take vision and language models from research to production: detection and segmentation for industrial inspection, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist with a strong mathematics background, I care about understanding why a model works before shipping it.",
     "hero_metric_1_value": "0.83",
     "hero_metric_1_label": "mAP@50:95 on multi-class segmentation, in production",
     "hero_metric_2_value": "98.56%",
@@ -1114,7 +1114,7 @@ window.__i18nDyn = {
     "proj_metric_desinformacion-ontologias_2": "246-class ontology generated without supervision",
     "proj_post_desinformacion-ontologias_1": "Post (ES)",
     "proj_title_inspeccion-neumaticos": "Industrial tire inspection with vision models and multimodal OCR",
-    "proj_desc_inspeccion-neumaticos": "Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.",
+    "proj_desc_inspeccion-neumaticos": "Detection and segmentation (CNNs, ViT, YOLO, RF-DETR) for inspection and defect detection, plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.",
     "proj_metric_inspeccion-neumaticos_1": "mAP@50:95 of 0.83 on multi-class segmentation",
     "proj_metric_inspeccion-neumaticos_2": "98.56% exact match on sidewall OCR",
     "proj_post_inspeccion-neumaticos_1": "OCR in extreme conditions (ES)",
@@ -1142,8 +1142,8 @@ window.__i18nDyn = {
     "exp_tag_1_10": "Docker",
     "exp_tag_1_11": "C++",
     "exp_dates_1": "June 2025 - \u003cem\u003ePresent\u003c/em\u003e",
-    "exp_details_1": "\u003cp\u003eI take \u003cstrong\u003edefect detection and segmentation\u003c/strong\u003e models (CNNs, ViT, YOLO, RF-DETR) and a \u003cstrong\u003emultimodal OCR\u003c/strong\u003e (GLM-OCR) to production for industrial tire inspection: mAP@50:95 of 0.83 and 98.56% exact match reading sidewalls.\u003c/p\u003e\n\u003cp\u003eI write about this work in \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR in extreme conditions\u003c/a\u003e and \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
-    "exp_hl_1": "\u003cli\u003eDesign and training of \u003cstrong\u003edefect detection and segmentation\u003c/strong\u003e models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection: \u003cstrong\u003emAP@50:95 of 0.83\u003c/strong\u003e on multi-class segmentation over in-house datasets of thousands of images.\u003c/li\u003e\u003cli\u003eFine-tuning of a multimodal language model (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) with \u003cstrong\u003eLoRA\u003c/strong\u003e via LLaMA-Factory to read text on tire sidewalls: \u003cstrong\u003e98.56% exact match\u003c/strong\u003e in production; served with vLLM and Ollama.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eSynthetic defect generation\u003c/strong\u003e pipeline with generative models to enlarge scarce datasets and improve detection robustness.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eTechnical appraisal\u003c/strong\u003e with CNNs and Vision Transformers to compare products objectively and reproducibly from their structural and appearance parts.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eETL\u003c/strong\u003e pipelines for extracting, transforming and augmenting visual datasets at industrial scale.\u003c/li\u003e\u003cli\u003eDeployment and monitoring with \u003cstrong\u003eDocker, MLflow and TensorBoard\u003c/strong\u003e; evaluation metrics (precision, recall, F1, mAP, IoU) for real-time validation; technical documentation and \u003cstrong\u003ealgorithm specification in C++\u003c/strong\u003e for the client team.\u003c/li\u003e",
+    "exp_details_1": "\u003cp\u003eI take \u003cstrong\u003edetection and segmentation\u003c/strong\u003e models (CNNs, ViT, YOLO, RF-DETR) for industrial tire inspection and \u003cstrong\u003edefect detection\u003c/strong\u003e, and a \u003cstrong\u003emultimodal OCR\u003c/strong\u003e (GLM-OCR), to production: mAP@50:95 of 0.83 on multi-class segmentation and 98.56% exact match reading sidewalls.\u003c/p\u003e\n\u003cp\u003eI write about this work in \u003ca href=\"/blog/ocr-industrial-glm-ocr/\"\u003eOCR in extreme conditions\u003c/a\u003e and \u003ca href=\"/blog/cnn-vs-vision-transformers-inspeccion-industrial/\"\u003eCNNs vs Vision Transformers\u003c/a\u003e.\u003c/p\u003e\n",
+    "exp_hl_1": "\u003cli\u003eDesign and training of \u003cstrong\u003edetection and segmentation\u003c/strong\u003e models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection and \u003cstrong\u003edefect detection\u003c/strong\u003e: \u003cstrong\u003emAP@50:95 of 0.83\u003c/strong\u003e on multi-class segmentation over in-house datasets of thousands of images.\u003c/li\u003e\u003cli\u003eFine-tuning of a multimodal language model (\u003cstrong\u003eGLM-OCR\u003c/strong\u003e) with \u003cstrong\u003eLoRA\u003c/strong\u003e via LLaMA-Factory to read text on tire sidewalls: \u003cstrong\u003e98.56% exact match\u003c/strong\u003e in production; served with vLLM and Ollama.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eSynthetic defect generation\u003c/strong\u003e pipeline with generative models to enlarge scarce datasets and improve detection robustness.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eTechnical appraisal\u003c/strong\u003e with CNNs and Vision Transformers to compare products objectively and reproducibly from their structural and appearance parts.\u003c/li\u003e\u003cli\u003e\u003cstrong\u003eETL\u003c/strong\u003e pipelines for extracting, transforming and augmenting visual datasets at industrial scale.\u003c/li\u003e\u003cli\u003eDeployment and monitoring with \u003cstrong\u003eDocker, MLflow and TensorBoard\u003c/strong\u003e; evaluation metrics (precision, recall, F1, mAP, IoU) for real-time validation; technical documentation and \u003cstrong\u003ealgorithm specification in C++\u003c/strong\u003e for the client team.\u003c/li\u003e",
     "exp_position_2": "Data Scientist \u0026 AI Researcher",
     "exp_company_2": "AIR Institute \u0026 BISITE Research Group",
     "exp_tag_2_1": "NLP",
@@ -1303,7 +1303,7 @@ window.__i18nDyn = {
       "footer_sections": "Secciones",
       "gh_contributions": "contribuciones en el último año",
       "gh_view_profile": "Ver perfil",
-      "hero_callout_defect": "Defecto segmentado",
+      "hero_callout_seg": "Segmentación multiclase",
       "hero_callout_text": "Flanco leído con GLM-OCR + LoRA",
       "hero_scan_caption": "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos.",
       "material_intro_label": "Apuntes",
@@ -1434,7 +1434,7 @@ window.__i18nDyn = {
       "footer_sections": "Sections",
       "gh_contributions": "contributions in the last year",
       "gh_view_profile": "View profile",
-      "hero_callout_defect": "Segmented defect",
+      "hero_callout_seg": "Multi-class segmentation",
       "hero_callout_text": "Sidewall read with GLM-OCR + LoRA",
       "hero_scan_caption": "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection.",
       "material_intro_label": "Notes",
