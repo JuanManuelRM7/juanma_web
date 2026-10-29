@@ -101,10 +101,10 @@ Diseño **Vantage** (de [Hallmark](https://github.com/Nutlope/hallmark)), **solo
 - Texto de los artículos: clase `.article` (no `prose`). Avisos dentro del markdown: `<div class="note note--warn">…</div>`.
 - Colores: cambia los tokens de `:root`, nunca valores sueltos. Las cifras van con `.num` (tabular) y la unidad en `.u`.
 
-### JS → `static/js/`
+### JS → `static/js/` (y `assets/js/scan.js`)
 
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
-- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; un OCR lee el texto del flanco como un escáner: una línea de luz recorre el texto, los caracteres leídos se encienden en lima y la etiqueta los escribe; el defecto en lima no lleva cifra) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
+- `assets/js/scan.js` (no está en `static/`: Hugo lo minifica y le pone huella para que el navegador nunca use una versión vieja) — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; un OCR lee el texto del flanco como un escáner: una línea de luz recorre el texto, los caracteres leídos se encienden en lima y la etiqueta los escribe; el defecto en lima no lleva cifra) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
 - `cmdk.js` — Paleta de comandos ⌘K
 - `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial en los dos idiomas; textos desde `i18n/*.yaml`)
 

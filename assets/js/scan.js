@@ -132,7 +132,7 @@
     const mul = (a, b) => { const o = new Array(16); for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { let s = 0; for (let k = 0; k < 4; k++) s += a[k * 4 + j] * b[i * 4 + k]; o[i * 4 + j] = s; } return o; };
 
     const VS = `attribute vec3 p; attribute vec3 n; attribute float c; attribute float r; attribute float tu;
-uniform mat4 mvp; uniform vec2 rot; uniform float dpr, size, sweep, alpha, near, far, readU, readA;
+uniform mat4 mvp; uniform vec2 rot; uniform float dpr, size, sweep, alpha, near, far, readU, readA, beamW;
 uniform vec3 lo, mid, hi, acc, ldir;
 varying vec4 col;
 void main(){
@@ -147,7 +147,7 @@ void main(){
   float d = sweep - w.x; float s = d >= 0. ? .6 * exp(-d / 2.4) + .4 * exp(-d / 22.) : exp(d / .8);
   k = mix(k, hi * 1.12, min(1., s * 1.05));
   float found = c > 2.5 ? 1. : 0.;
-  float beam = tu >= 0. ? exp(-pow((tu - readU) / .011, 2.)) * readA : 0.;
+  float beam = tu >= 0. ? exp(-pow((tu - readU) / beamW, 2.)) * readA : 0.;
   float read = (c > .5 && c < 1.5 && tu >= 0. && tu < readU - .006) ? readA : 0.;
   k = mix(k, acc, read);
   k = mix(k, hi * 1.25, min(1., beam * 1.3));
@@ -165,7 +165,7 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
     gl.useProgram(pr);
     const buf = (data, name, n) => { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW); const l = gl.getAttribLocation(pr, name); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, n, gl.FLOAT, false, 0, 0); };
     buf(new Float32Array(pos), 'p', 3); buf(new Float32Array(nor), 'n', 3); buf(new Float32Array(cls), 'c', 1); buf(new Float32Array(rr), 'r', 1); buf(new Float32Array(tus), 'tu', 1);
-    const U = {}; ['mvp', 'rot', 'dpr', 'size', 'sweep', 'alpha', 'near', 'far', 'readU', 'readA', 'lo', 'mid', 'hi', 'acc', 'ldir'].forEach((n) => (U[n] = gl.getUniformLocation(pr, n)));
+    const U = {}; ['mvp', 'rot', 'dpr', 'size', 'sweep', 'alpha', 'near', 'far', 'readU', 'readA', 'beamW', 'lo', 'mid', 'hi', 'acc', 'ldir'].forEach((n) => (U[n] = gl.getUniformLocation(pr, n)));
     gl.uniform3fv(U.lo, COL.lo); gl.uniform3fv(U.mid, COL.mid); gl.uniform3fv(U.hi, COL.hi); gl.uniform3fv(U.acc, COL.acc);
     const L = [-0.35, 0.62, 0.7], ll = Math.hypot(...L); gl.uniform3f(U.ldir, L[0] / ll, L[1] / ll, L[2] / ll); gl.uniform1f(U.dpr, DPR);
     gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.disable(gl.DEPTH_TEST);
@@ -207,7 +207,7 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
       gl.uniformMatrix4fv(U.mvp, false, st.mvp); gl.uniform2f(U.rot, Math.cos(st.spin), Math.sin(st.spin));
       gl.uniform1f(U.size, wide ? 1.15 : 1.0); gl.uniform1f(U.alpha, st.alpha); gl.uniform1f(U.near, R - 120); gl.uniform1f(U.far, R + 120);
       gl.uniform1f(U.sweep, sweepAt(t));
-      const [ru, ra] = readAt(t); gl.uniform1f(U.readU, ru); gl.uniform1f(U.readA, ra);
+      const [ru, ra] = readAt(t); gl.uniform1f(U.readU, ru); gl.uniform1f(U.readA, ra); gl.uniform1f(U.beamW, wide ? 0.011 : 0.022);
       const nChars = ru < 0 || ra < 0.05 ? 0 : texts[0].ends.filter((e) => e <= ru).length;
       if (ocrOut && nChars !== typed) { typed = nChars; ocrOut.textContent = OCR.slice(0, nChars); ocrOut.parentElement.classList.toggle('is-done', nChars === OCR.length); }
       gl.drawArrays(gl.POINTS, 0, N);
@@ -215,7 +215,8 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
       if (label && leader && label.offsetParent) {
         const sp = project(ANCHORS.text);
         if (sp) {
-          const x1 = label.offsetLeft + 18, y1 = label.offsetTop + label.offsetHeight;
+          // Sale del borde de la etiqueta que mira al texto (abajo en escritorio, arriba en móvil)
+          const x1 = label.offsetLeft + 18, y1 = sp[1] < label.offsetTop ? label.offsetTop : label.offsetTop + label.offsetHeight;
           lLine.setAttribute('x1', x1); lLine.setAttribute('y1', y1); lLine.setAttribute('x2', sp[0].toFixed(1)); lLine.setAttribute('y2', sp[1].toFixed(1));
           lDot.setAttribute('cx', sp[0].toFixed(1)); lDot.setAttribute('cy', sp[1].toFixed(1));
         }

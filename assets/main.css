@@ -143,7 +143,7 @@ body.site::before { content: ""; position: fixed; inset: 0 0 auto; height: env(s
 .nav a:hover, .nav a[aria-current="page"] { color: var(--color-ink); }
 .head-tools { margin-left: auto; display: flex; gap: 8px; align-items: center; }
 .head-tools .btn { min-height: 36px; }
-@media (max-width: 760px) {
+@media (max-width: 880px) {
   .site-head .wrap { column-gap: 8px; }
   .brand { font-size: var(--text-sm); min-height: 56px; }
   .nav { order: 3; width: 100%; margin: 0 0 6px -10px; overflow-x: auto; }
@@ -187,8 +187,14 @@ body.site::before { content: ""; position: fixed; inset: 0 0 auto; height: env(s
   .scan canvas { top: 0; bottom: auto; height: calc(100% - 56px); }
   .scan__caption { right: auto; left: max(16px, env(safe-area-inset-left, 0px)); bottom: 18px; text-align: left; }
 }
-@media (max-width: 959px) { .callout--fixed, .scan__leader { display: none; } }
-@media (max-width: 600px) { .scan { height: 340px; } }
+@media (max-width: 959px) {
+  .scan { height: 560px; }
+  .scan canvas { height: calc(100% - 190px); }
+  .callout--fixed { left: max(16px, env(safe-area-inset-left, 0px)); top: auto; bottom: 104px; }
+  .callout__label { padding: 8px 12px 10px; }
+  .callout__v { font-size: var(--text-md); }
+}
+@media (max-width: 600px) { .scan { height: 500px; } }
 
 /* Franja de cifras medidas */
 .figures { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--color-rule); }
