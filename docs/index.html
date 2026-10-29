@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="m-auto "><head>
+<html lang="es" class="dark"><head>
   
 
 
@@ -8,10 +8,9 @@
 
 
 <meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
 <title>Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs</title>
 
-<meta name="theme-color" content="#8b5cf6" />
 <meta name="description" content="ML Engineer especializado en Computer Vision y LLMs: detección de defectos industriales, OCR multimodal con LoRA y sistemas RAG en producción. Físico con formación avanzada en Matemáticas. Proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
@@ -77,8 +76,9 @@
   <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
-  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b1116" />
 
   
   
@@ -100,362 +100,591 @@
   
   
   
-  <link href="/main.min.471387030ed6e396ed55a6761e9bd4ed22c4a9e9c64145949132e12440b75a66.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/search.css" />
-  <link rel="stylesheet" href="/css/general.css" />
-  <link rel="stylesheet" href="/css/syntax.css" />
+  <link href="/main.min.8beed2a3ded94c5f9ed383ba4449e48d138d685d72b46cd08a12e5c8b1b648b7.css" rel="stylesheet" />
   
 
-  <script>
-    let html = document.querySelector("html");
-    let theme = window.localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      html.classList.remove("light");
-      if (theme === "dark") {
-        html.classList.add("dark");
-        window.localStorage.setItem("theme", "dark");
-      } else {
-        html.classList.remove("dark");
-        window.localStorage.setItem("theme", "light");
-      }
-      fixThemeToggleIcon(theme);
-    };
-
-    const fixThemeToggleIcon = (theme) => {
-      
-      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
-        if (theme === "dark") {
-          themeToggle.classList.remove("fa-moon");
-          themeToggle.classList.add("fa-sun");
-        } else {
-          themeToggle.classList.remove("fa-sun");
-          themeToggle.classList.add("fa-moon");
-        }
-      });
-    };
-
-    if (theme == null) {
-      if (html.classList.contains("dark")) {
-        theme = "dark";
-      } else if (html.classList.contains("light")) {
-        theme = "light";
-      } else {
-        
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (prefersDark) {
-          theme = "dark";
-        } else {
-          theme = "light";
-        }
-      }
-    }
-
-    setTheme(theme);
-    
-    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
-
-    const toggleTheme = (evt) => {
-      const next = html.classList.contains("dark") ? "light" : "dark";
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!document.startViewTransition || reduceMotion) {
-        setTheme(next);
-        return;
-      }
-      
-      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
-      const y = evt && evt.clientY ? evt.clientY : 40;
-      html.classList.add("theme-vt");
-      const vt = document.startViewTransition(() => setTheme(next));
-      vt.ready
-        .then(() => {
-          const r = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-          );
-          return html.animate(
-            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
-            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
-          ).finished;
-        })
-        .catch(() => {})
-        .finally(() => html.classList.remove("theme-vt"));
-    };
-  </script>
   
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="min-h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="home">
-    
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Ir al contenido</a>
-    
-    <header
-  class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-violet-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
-  style="box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.12);"
-  role="banner"
->
-  
-  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
-    <a class="nav-menu-item !p-1 !px-2" href="/"><span data-i18n="nav_home">Inicio</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
-      <i class="fas fa-search" aria-hidden="true"></i>
+<body class="site" data-kind="home">
+    <div class="atmos" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link" data-i18n="action_skip_content">Ir al contenido</a>
+    <header class="site-head" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Juan Manuel Ruiz Muñoz, Inicio">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="11" cy="11" r="5.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="16.2" cy="6.4" r="1.6" fill="var(--color-accent)"/></svg>
+      Juan Manuel Ruiz Muñoz
     </a>
-    <button
-      class="fas fa-globe text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
-      onclick="toggleLang()"
-      aria-label="Cambiar idioma"
-      data-i18n-aria="aria_toggle_lang"
-    ></button>
-    <i
-      class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme(event)"
-      role="button"
-      tabindex="0"
-      aria-label="Cambiar tema"
-      data-i18n-aria="aria_toggle_theme"
-      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-    ></i>
-  </nav>
-
-  
-  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
-    <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="/"><span data-i18n="nav_home">Inicio</span></a>
-      <a class="nav-menu-item" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
-      <a class="nav-menu-item" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    </div>
-    <div class="flex items-center justify-end gap-3">
-      
-      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos" data-i18n-aria="aria_open_palette">
-        <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
+    <nav class="nav" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
+      <a href="/" aria-current="page"><span data-i18n="nav_home">Inicio</span></a>
+      <a href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
+      <a href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
+      <a href="/material/"><span data-i18n="nav_material">Material</span></a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn btn--line btn--sm btn--cmdk" onclick="window.openCmdk && window.openCmdk()" aria-label="Abrir paleta de comandos" data-i18n-aria="aria_open_palette">
+        <i class="fas fa-search" aria-hidden="true"></i><span class="label-wide" data-i18n="nav_search">Buscar</span> <kbd class="kbd">⌘K</kbd>
       </button>
-      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </a>
-      
-      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
-        <span id="lang-label">EN</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+      <button type="button" id="lang-toggle" class="btn btn--line btn--sm" onclick="toggleLang()" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">EN</span>
       </button>
-      <i
-        class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-        onclick="toggleTheme(event)"
-        role="button"
-        tabindex="0"
-        aria-label="Cambiar tema"
-        data-i18n-aria="aria_toggle_theme"
-        onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-      ></i>
     </div>
-  </nav>
+  </div>
 </header>
 
+    <main id="main-content">
 
 
+<div id="reading-progress" aria-hidden="true"></div>
 
+
+<section class="hero" aria-labelledby="hero-name">
+  <div class="scan">
+    <canvas id="tire" aria-hidden="true"></canvas>
     
-    <main id="main-content" class="grow">
-
-
-<div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-150" style="width: 0%;"></div>
-
-
-
-<div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
-  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
-  
-  <div class="hero-aurora" style="width: 340px; height: 340px; top: -120px; right: -60px; background: radial-gradient(circle, #22d3ee, transparent 70%);"></div>
-  <div class="hero-aurora" style="width: 300px; height: 300px; bottom: -140px; left: -80px; background: radial-gradient(circle, #c4b5fd, transparent 70%); animation-delay: -7s;"></div>
-  <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
-
-  <div class="max-w-4xl mx-auto relative z-10">
-    <p class="hero-kicker" data-i18n="profile_position">ML Engineer · Computer Vision &amp; LLMs</p>
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gradient-animated">Juan Manuel Ruiz Muñoz</h1>
-    <p class="text-base md:text-lg max-w-3xl leading-relaxed text-violet-50 dark:text-gray-200 mb-6" data-i18n="hero_value">Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.</p>
+    <div class="callout callout--found is-hidden" data-anchor="defect" aria-hidden="true">
+      <span class="callout__line"></span><i class="callout__dot"></i>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_defect">Defecto segmentado</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">0,83</span> <span class="u">mAP@50:95</span></span></div>
+    </div>
     
+    
+    <div class="callout is-hidden" data-anchor="text" aria-hidden="true">
+      <span class="callout__line"></span><i class="callout__dot"></i>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_text">Flanco leído con GLM-OCR &#43; LoRA</span><span class="callout__v num"><span data-i18n="hero_metric_2_value">98,56 %</span> <span class="u">exact match</span></span></div>
+    </div>
+    
+    <p class="scan__caption" data-i18n="hero_scan_caption">Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos.</p>
+  </div>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="hero__kicker" data-i18n="profile_position">ML Engineer · Computer Vision &amp; LLMs</p>
+      <h1 id="hero-name">Juan Manuel Ruiz Muñoz</h1>
+      <p class="hero__lead" data-i18n="hero_value">Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo.</p>
+      <div class="hero__ctas">
+        <a class="btn" href="#proyectos"><span data-i18n="cta_projects">Ver proyectos</span></a>
+        <a class="btn btn--line" href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf"><span data-i18n="download_cv">Descargar CV</span></a>
+        <a class="btn btn--line" href="#contacto"><span data-i18n="cta_contact">Contactar</span></a>
+      </div>
+      <p class="hero__where"><span class="dot" aria-hidden="true"></span><span><span data-i18n="profile_location">Alicante, España</span> · <span data-i18n="profile_availability">Abierto a reubicación, híbrido o remoto</span></span></p>
+    </div>
+  </div>
+</section>
 
-<ul class="hero-metrics" aria-label="Resultados destacados" data-i18n-aria="aria_hero_metrics">
+<div class="wrap">
+
+<ul class="figures" aria-label="Resultados destacados" data-i18n-aria="aria_hero_metrics">
   
-  <li class="hero-metric">
-    <span class="hero-metric-value" data-i18n="hero_metric_1_value">0,83</span>
-    <span class="hero-metric-label" data-i18n="hero_metric_1_label">mAP@50:95 en segmentación multiclase, en producción</span>
+  <li class="figure">
+    <span class="figure__v" data-i18n="hero_metric_1_value">0,83</span>
+    <span class="figure__l" data-i18n="hero_metric_1_label">mAP@50:95 en segmentación multiclase, en producción</span>
   </li>
   
-  <li class="hero-metric">
-    <span class="hero-metric-value" data-i18n="hero_metric_2_value">98,56 %</span>
-    <span class="hero-metric-label" data-i18n="hero_metric_2_label">exact match de un OCR multimodal (GLM-OCR &#43; LoRA) en producción</span>
+  <li class="figure">
+    <span class="figure__v" data-i18n="hero_metric_2_value">98,56 %</span>
+    <span class="figure__l" data-i18n="hero_metric_2_label">exact match de un OCR multimodal (GLM-OCR &#43; LoRA) en producción</span>
   </li>
   
-  <li class="hero-metric">
-    <span class="hero-metric-value" data-i18n="hero_metric_3_value">DCAI&#39;25</span>
-    <span class="hero-metric-label" data-i18n="hero_metric_3_label">paper sobre detección de desinformación con LLMs y RAG</span>
+  <li class="figure">
+    <span class="figure__v" data-i18n="hero_metric_3_value">DCAI&#39;25</span>
+    <span class="figure__l" data-i18n="hero_metric_3_label">paper sobre detección de desinformación con LLMs y RAG</span>
   </li>
   
-  <li class="hero-metric">
-    <span class="hero-metric-value" data-i18n="hero_metric_4_value">35,9 %</span>
-    <span class="hero-metric-label" data-i18n="hero_metric_4_label">recuperación de activaciones con un filtro de ~2 KB (vcalib)</span>
+  <li class="figure">
+    <span class="figure__v" data-i18n="hero_metric_4_value">35,9 %</span>
+    <span class="figure__l" data-i18n="hero_metric_4_label">recuperación de activaciones con un filtro de ~2 KB (vcalib)</span>
   </li>
   
 </ul>
 
+</div>
 
-    
-    <div class="flex flex-wrap gap-3 mt-8">
-      <a href="#proyectos" class="hero-cta hero-cta-primary">
-        <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="cta_projects">Ver proyectos</span>
-      </a>
-      <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" class="hero-cta hero-cta-secondary">
-        <i class="fas fa-file-download" aria-hidden="true"></i> <span data-i18n="download_cv">Descargar CV</span>
-      </a>
-      
-      <a href="mailto:juanmanuelruiz383@gmail.com" class="hero-cta hero-cta-secondary">
-        <i class="fas fa-envelope" aria-hidden="true"></i> <span data-i18n="cta_contact">Contactar</span>
-      </a>
-      
-    </div>
-    <p class="mt-5 text-sm text-violet-100 dark:text-gray-400"><span data-i18n="profile_location">Alicante, España</span> · <span data-i18n="profile_availability">Abierto a reubicación, híbrido o remoto</span></p>
+
+<section class="section wrap" id="proyectos" aria-labelledby="h-proy" data-reveal>
+  <div class="section__head">
+    <h2 id="h-proy" data-i18n="section_projects">Proyectos</h2>
+    <p data-i18n="section_projects_intro">Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más.</p>
   </div>
-  <a href="#proyectos" class="scroll-indicator" aria-label="Bajar al contenido" data-i18n-aria="aria_scroll_down" style="color: rgba(255,255,255,0.7) !important;">
-    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+  
+
+
+
+
+
+
+
+
+
+<article class="feature">
+  
+  <a class="feature__media ticks" href="/proyectos/vcalib/" tabindex="-1" aria-hidden="true">
+    <img src="/images/proyectos/vcalib/money_shot_level2_hu_9cc2a416bf043179.webp" width="1000" height="532" alt="" loading="lazy" decoding="async">
+    
   </a>
-</div>
-<script defer src="/js/neural-hero.js"></script>
-
-
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 md:px-0 max-w-6xl mx-auto mb-12">
-  
-  
-  <div class="lg:col-span-1">
+  <div class="feature__body">
+    <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_active">Activo</span></p>
+    <h3><a href="/proyectos/vcalib/" data-i18n="proj_title_vcalib">vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación</a></h3>
+    <p data-i18n="proj_desc_vcalib">Un filtro diferenciable de ~2 KB que corrige el cambio de iluminación antes de que la imagen llegue a un detector congelado. Sin reentrenar, sin etiquetas, minutos en CPU.</p>
     
-    <div class="bg-gradient-to-br from-violet-50 via-white to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 rounded-lg shadow-md border border-violet-200 dark:border-violet-700 p-5 mb-6 sticky top-20">
-      <div class="text-center mb-2">
-        <div class="w-full flex justify-center align-middle profile-photo-container">
-  
-  <div class="flip-card cursor-pointer" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped')}" tabindex="0" role="button">
-    <div class="flip-card-inner">
+    <ul class="measures">
+      <li><span data-i18n="proj_metric_vcalib_1">35,9 % de recuperación de activaciones en pares reales held-out</span></li><li><span data-i18n="proj_metric_vcalib_2">Cierra el gap de AP en level_2 (pseudo-GT de SAM3)</span></li><li><span data-i18n="proj_metric_vcalib_3">~3,5 min de ajuste en la CPU de un portátil</span></li>
+    </ul>
+    
+    <div class="stack"><span>PyTorch</span><span>RF-DETR</span><span>SAM3</span><span>uv</span></div>
+    <div class="links">
+      <a class="btn btn--sm" href="/proyectos/vcalib/"><span data-i18n="action_case_study">Caso de estudio</span></a>
+      <a class="btn btn--line btn--sm" href="https://github.com/juanmanuelruizm/vcalib" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span data-i18n="action_repo">Código</span></a>
       
-      <div class="flip-card-front">
-        <div class="relative group w-full px-3 py-4 flex flex-col justify-center">
-          
-          <div class="absolute left-1/2 -translate-x-1/2 -bottom-3 w-9/12 h-5 rounded-full bg-black/25 dark:bg-black/50 blur-xl transition-all duration-300 group-hover:w-10/12 group-hover:h-6 group-hover:-bottom-4"></div>
-          
-          
-          
-          <img
-            class="relative z-10 rounded-lg border-4 border-black transform-gpu transition-all duration-300 ease-out shadow-xl group-hover:-translate-y-1 group-hover:shadow-2xl w-full h-auto lazy-img"
-            src="/images/profile_hu_3bac69a549651002.webp"
-            srcset="/images/profile_hu_3bac69a549651002.webp 560w, /images/profile_hu_b49af907cda40dd0.webp 1120w"
-            sizes="(min-width: 1024px) 280px, 70vw"
-            width="560"
-            height="560"
-            alt="Juan Manuel Ruiz Muñoz"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            onload="this.classList.add('loaded')"
-          />
-        </div>
-      </div>
       
-      <div class="flip-card-back">
-        <div class="bg-gradient-to-br from-violet-50 via-white to-violet-100 dark:from-slate-700 dark:via-slate-800 dark:to-slate-900 rounded-lg border-4 border-violet-500 dark:border-violet-400 p-4 shadow-xl w-full h-full flex flex-col justify-center overflow-hidden">
-          <p class="text-sm font-bold text-violet-700 dark:text-violet-300 mb-2 text-center">
-            <i class="fas fa-user mr-1 text-xs" aria-hidden="true"></i><span data-i18n="aboutme_title">Sobre mí</span>
-            </p>
-          <p class="text-xs text-gray-700 dark:text-gray-200 leading-tight text-justify" data-i18n="aboutme_description">
-            Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.
-          </p>
-        </div>
-      </div>
+      
     </div>
+  </div>
+</article>
+
+
+
+
+
+
+<article class="feature">
+  
+  <a class="feature__media ticks" href="/proyectos/desinformacion-ontologias-llm/" tabindex="-1" aria-hidden="true">
+    <img src="/images/proyectos/desinformacion/pipeline_hu_216e08ff379bf9.webp" width="1000" height="400" alt="" loading="lazy" decoding="async">
+    
+  </a>
+  <div class="feature__body">
+    <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_published">Publicado</span></p>
+    <h3><a href="/proyectos/desinformacion-ontologias-llm/" data-i18n="proj_title_desinformacion-ontologias">Detección de desinformación en ficción con ontologías generadas por LLMs</a></h3>
+    <p data-i18n="proj_desc_desinformacion-ontologias">Arquitectura LLM &#43; RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI&#39;25.</p>
+    
+    <ul class="measures">
+      <li><span data-i18n="proj_metric_desinformacion-ontologias_1">Precisión 0,98 · F1 0,86 sobre 320 frases de evaluación</span></li><li><span data-i18n="proj_metric_desinformacion-ontologias_2">Ontología de 246 clases generada sin supervisión</span></li>
+    </ul>
+    
+    <div class="stack"><span>LLMs</span><span>RAG</span><span>SBERT</span><span>GPT-4o</span><span>Python</span></div>
+    <div class="links">
+      <a class="btn btn--sm" href="/proyectos/desinformacion-ontologias-llm/"><span data-i18n="action_case_study">Caso de estudio</span></a>
+      
+      <a class="btn btn--line btn--sm" href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="action_paper">Paper</span></a>
+      <a class="btn btn--line btn--sm" href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><span data-i18n="proj_post_desinformacion-ontologias_1">Post</span></a>
+      
+    </div>
+  </div>
+</article>
+
+
+
+<h3 class="ledger__title" data-i18n="projects_more">Más proyectos</h3>
+<div class="ledger" role="table" aria-label="Más proyectos" data-i18n-aria="projects_more" style="margin-top: 16px">
+  <div class="ledger__head" role="row"><span role="columnheader" data-i18n="col_project">Proyecto</span><span role="columnheader" data-i18n="col_stack">Stack</span><span role="columnheader" data-i18n="col_status">Estado</span><span role="columnheader" data-i18n="col_links">Enlaces</span></div>
+  
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><span data-i18n="proj_title_inspeccion-neumaticos">Inspección industrial de neumáticos con visión y OCR multimodal</span></h3>
+    <p data-i18n="proj_desc_inspeccion-neumaticos">Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.</p>
+  </div>
+  <span role="cell" class="ledger__cap">PyTorch · RF-DETR · GLM-OCR · LoRA · vLLM · Docker</span>
+  <span role="cell" class="ledger__state"><span class="dot" aria-hidden="true"></span><span data-i18n="status_production">En producción</span></span>
+  <span role="cell" class="ledger__go">
+    
+    
+    
+    <a href="/blog/ocr-industrial-glm-ocr/" data-i18n="proj_post_inspeccion-neumaticos_1">OCR en condiciones extremas</a><a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/" data-i18n="proj_post_inspeccion-neumaticos_2">CNNs vs Vision Transformers</a>
+    
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_glm-ocr-lora">GLM-OCR &#43; LoRA para extraer campos de tickets y facturas</a></h3>
+    <p data-i18n="proj_desc_glm-ocr-lora">Adaptación del modelo multimodal GLM-OCR con LoRA (LLaMA-Factory) para devolver JSON estructurado a partir de la imagen de un ticket o una factura. Inferencia 100 % local.</p>
+  </div>
+  <span role="cell" class="ledger__cap">GLM-OCR · LoRA · LLaMA-Factory · Python</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_development">En desarrollo</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Código</a>
+    
+    
+    <a href="https://github.com/juanmanuelruizm/invoice-ocr" target="_blank" rel="noopener noreferrer">invoice-ocr</a>
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_vision-pytorch">vision-pytorch: pipelines DINOv2/v3 para clasificación y features</a></h3>
+    <p data-i18n="proj_desc_vision-pytorch">Entrenamiento, evaluación y extracción de embeddings con backbones ViT de Meta: fine-tuning completo, linear probe o extractor de características, con métricas por clase y checkpoints.</p>
+  </div>
+  <span role="cell" class="ledger__cap">PyTorch · DINOv2 · DINOv3 · ViT</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_development">En desarrollo</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Código</a>
+    
+    
+    
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_tfg-bloqueos">Identificación lagrangiana de bloqueos atmosféricos (TFG)</a></h3>
+    <p data-i18n="proj_desc_tfg-bloqueos">Miles de retrotrayectorias HYSPLIT sobre ERA5 y clustering DBSCAN para localizar bloqueos por el estancamiento real del aire, sin umbrales eulerianos. Validado en las olas de calor de 2003 y 2019.</p>
+  </div>
+  <span role="cell" class="ledger__cap">Python · HYSPLIT · ERA5 · DBSCAN</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_completed">Completado</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Código</a>
+    <a href="/tfg.pdf" target="_blank" rel="noopener noreferrer" data-i18n="action_paper">Paper</a>
+    <a href="/blog/tfg/" data-i18n="proj_post_tfg-bloqueos_1">Post</a>
+    
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_agente-ollama">Agente local con Ollama: tool calling y RAG</a></h3>
+    <p data-i18n="proj_desc_agente-ollama">Agente de consola 100 % local con herramientas nativas (ficheros, búsqueda web, ejecución de Python) y RAG sobre documentos propios con ChromaDB.</p>
+  </div>
+  <span role="cell" class="ledger__cap">Python · Ollama · ChromaDB · RAG</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_active">Activo</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Código</a>
+    
+    
+    
+  </span>
+</div>
+
+</div>
+
+
+<p class="more-link"><a href="/proyectos/"><span data-i18n="action_all_projects">Ver todos los proyectos</span> <span class="num muted">(7)</span></a></p>
+
+
+</section>
+
+
+<section class="section wrap" id="experiencia" aria-labelledby="h-exp" data-reveal>
+  <div class="section__head">
+    <h2 id="h-exp" data-i18n="section_exp">Experiencia</h2>
+    <p data-i18n="section_exp_intro">De la física atmosférica a la visión industrial, pasando por la investigación en LLMs.</p>
+  </div>
+  
+<div class="roles">
+
+
+<article class="role">
+  <div class="role__when">
+    <span class="num" data-i18n="exp_dates_1" data-i18n-html>Junio 2025 - <em>Presente</em></span>
+    <span class="role__now"><span class="dot" aria-hidden="true"></span><span data-i18n="exp_current">Puesto actual</span></span>
+  </div>
+  <div class="role__body">
+    <h3 data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</h3>
+    <p class="role__org"><a href="https://vraia.com/" target="_blank" rel="noopener noreferrer" data-i18n="exp_company_1">VRAIA Corp.</a></p>
+    <div class="md" data-i18n="exp_details_1" data-i18n-html><p>Llevo a producción modelos de <strong>detección y segmentación de defectos</strong> (CNNs, ViT, YOLO, RF-DETR) y un <strong>OCR multimodal</strong> (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.</p>
+<p>Escribo sobre este trabajo en <a href="/blog/ocr-industrial-glm-ocr/">OCR en condiciones extremas</a> y <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/">CNNs vs Vision Transformers</a>.</p>
+</div>
+    
+    <details class="more">
+      <summary><span class="num">6</span> <span data-i18n="exp_achievements">logros</span></summary>
+      <ul class="bullets" data-i18n="exp_hl_1" data-i18n-html><li>Diseño y entrenamiento de modelos de <strong>detección y segmentación de defectos</strong> (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: <strong>mAP@50:95 de 0,83</strong> en segmentación multiclase sobre datasets propios de miles de imágenes.</li><li>Fine-tuning de un modelo de lenguaje multimodal (<strong>GLM-OCR</strong>) con <strong>LoRA</strong> vía LLaMA-Factory para leer texto en flancos de neumático: <strong>98,56 % de exact match</strong> en producción; serving con vLLM y Ollama.</li><li>Pipeline de <strong>generación sintética de defectos</strong> con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.</li><li><strong>Peritaje técnico</strong> con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.</li><li>Pipelines <strong>ETL</strong> de extracción, transformación y aumento de datasets visuales a escala industrial.</li><li>Despliegue y monitorización con <strong>Docker, MLflow y TensorBoard</strong>; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y <strong>especificación algorítmica en C++</strong> para el equipo cliente.</li></ul>
+    </details>
+    
+    <div class="stack"><span data-i18n="exp_tag_1_1">PyTorch</span><span data-i18n="exp_tag_1_2">Vision Transformers</span><span data-i18n="exp_tag_1_3">YOLO</span><span data-i18n="exp_tag_1_4">RF-DETR</span><span data-i18n="exp_tag_1_5">GLM-OCR</span><span data-i18n="exp_tag_1_6">LoRA</span><span data-i18n="exp_tag_1_7">LLaMA-Factory</span><span data-i18n="exp_tag_1_8">vLLM</span><span data-i18n="exp_tag_1_9">MLflow</span><span data-i18n="exp_tag_1_10">Docker</span><span data-i18n="exp_tag_1_11">C&#43;&#43;</span></div>
+  </div>
+</article>
+
+
+<article class="role">
+  <div class="role__when">
+    <span class="num" data-i18n="exp_dates_2" data-i18n-html>Junio 2024 - Junio 2025</span>
+    
+  </div>
+  <div class="role__body">
+    <h3 data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</h3>
+    <p class="role__org"><a href="https://www.air-institute.org/" target="_blank" rel="noopener noreferrer" data-i18n="exp_company_2">AIR Institute &amp; Grupo de Investigación BISITE</a></p>
+    <div class="md" data-i18n="exp_details_2" data-i18n-html><p>Investigación en <strong>NLP y LLMs</strong>: una arquitectura de detección de desinformación basada en ontologías generadas con LLMs (publicada en DCAI'25), pipelines <strong>RAG</strong> y sistemas <strong>multiagente</strong>, además de proyectos de visión por computador.</p>
+<p>Publicación: <a href="/DCAI.pdf">paper en DCAI'25</a>.</p>
+</div>
+    
+    <details class="more">
+      <summary><span class="num">4</span> <span data-i18n="exp_achievements">logros</span></summary>
+      <ul class="bullets" data-i18n="exp_hl_2" data-i18n-html><li>Investigación y desarrollo de soluciones de <strong>NLP y LLMs</strong>, incluida una arquitectura de detección de desinformación basada en ontologías generadas con modelos de lenguaje (<strong>publicada en DCAI'25</strong>).</li><li>Pipelines <strong>RAG</strong> y de recuperación semántica con bases de datos vectoriales (ChromaDB) y sistemas <strong>multiagente</strong> (Ollama, DeepSeek, GPT-4o-mini), con foco en reducir coste y latencia.</li><li>Proyectos de Computer Vision (detección, clasificación y segmentación) y gestión del ciclo completo de proyectos ML: requisitos, desarrollo, validación y documentación.</li><li>Interacción directa con clientes para captura de requisitos y adaptación de soluciones state-of-the-art a casos de uso reales.</li></ul>
+    </details>
+    
+    <div class="stack"><span data-i18n="exp_tag_2_1">NLP</span><span data-i18n="exp_tag_2_2">LLMs</span><span data-i18n="exp_tag_2_3">RAG</span><span data-i18n="exp_tag_2_4">ChromaDB</span><span data-i18n="exp_tag_2_5">Multiagente</span><span data-i18n="exp_tag_2_6">Ollama</span><span data-i18n="exp_tag_2_7">Computer Vision</span><span data-i18n="exp_tag_2_8">Python</span></div>
+  </div>
+</article>
+
+
+<article class="role">
+  <div class="role__when">
+    <span class="num" data-i18n="exp_dates_3" data-i18n-html>Enero 2024 - Julio 2024</span>
+    
+  </div>
+  <div class="role__body">
+    <h3 data-i18n="exp_position_3">Investigador · Contrato de prácticas</h3>
+    <p class="role__org"><a href="https://seneca.umh.es/" target="_blank" rel="noopener noreferrer" data-i18n="exp_company_3">Universidad Miguel Hernández — Grupo SCOLAb</a></p>
+    <div class="md" data-i18n="exp_details_3" data-i18n-html><p>Desarrollé <strong>métodos lagrangianos</strong> para identificar automáticamente situaciones de <strong>bloqueo atmosférico</strong>: la base de mi TFG y de una publicación en desarrollo.</p>
+<p>Lo cuento en detalle en <a href="/blog/tfg/">Bloqueos atmosféricos, punto de vista lagrangiano</a>.</p>
+</div>
+    
+    <details class="more">
+      <summary><span class="num">2</span> <span data-i18n="exp_achievements">logros</span></summary>
+      <ul class="bullets" data-i18n="exp_hl_3" data-i18n-html><li>Desarrollo de <strong>métodos lagrangianos</strong> para la identificación automática de situaciones de <strong>bloqueo atmosférico</strong>, base del TFG y de una publicación en desarrollo.</li><li>Colaboración en proyectos del grupo de física atmosférica.</li></ul>
+    </details>
+    
+    <div class="stack"><span data-i18n="exp_tag_3_1">Python</span><span data-i18n="exp_tag_3_2">Física Atmosférica</span><span data-i18n="exp_tag_3_3">HYSPLIT</span><span data-i18n="exp_tag_3_4">ERA5</span><span data-i18n="exp_tag_3_5">DBSCAN</span></div>
+  </div>
+</article>
+
+</div>
+
+</section>
+
+
+<section class="section wrap" id="blog" aria-labelledby="h-blog" data-reveal>
+  <div class="section__head">
+    <h2 id="h-blog" data-i18n="section_blog">Del blog</h2>
+    <p data-i18n="section_blog_intro">Visión por computador, LLMs, física y meteorología.</p>
+  </div>
+  
+
+
+
+
+<div class="ledger" style="margin-top:0">
+  
+
+<div class="ledger__row ledger__row--post">
+  <time class="num ledger__cap" datetime="2026-06-20" data-i18n-date>20 jun. 2026</time>
+  <div>
+    <h3><a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/">Detectar desinformación en la ficción: una ontología que se construye sola</a></h3>
+    <p>Cómo construimos, en un trabajo publicado en DCAI&#39;25, un sistema que genera automáticamente una base de conocimiento (ontología) con LLMs y RAG, y la usa para detectar información falsa en películas, podcasts y otros formatos de ficción.</p>
+    
+  </div>
+  <span class="num ledger__go muted">6 min</span>
+</div>
+
+
+<div class="ledger__row ledger__row--post">
+  <time class="num ledger__cap" datetime="2026-06-11" data-i18n-date>11 jun. 2026</time>
+  <div>
+    <h3><a href="/blog/ocr-industrial-glm-ocr/">OCR en condiciones extremas: leer texto donde no hay tinta</a></h3>
+    <p>Qué pasa cuando llevas el OCR a un entorno industrial real —texto en relieve negro sobre negro, polvo, brillos y cadencia de línea— y qué aprendí probando GLM-OCR, un modelo multimodal de 0.9B parámetros que corre en local</p>
+    
+  </div>
+  <span class="num ledger__go muted">6 min</span>
+</div>
+
+
+<div class="ledger__row ledger__row--post">
+  <time class="num ledger__cap" datetime="2026-06-11" data-i18n-date>11 jun. 2026</time>
+  <div>
+    <h3><a href="/blog/que-ve-una-red-neuronal/">¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</a></h3>
+    <p>Un recorrido por la interpretabilidad en visión por computador: filtros clásicos, mapas de características, Grad-CAM y atención. Y por qué visualizar lo que ve tu modelo no es opcional en producción</p>
+    
+  </div>
+  <span class="num ledger__go muted">5 min</span>
+</div>
+
+</div>
+<p class="more-link"><a href="/blog/"><span data-i18n="action_view_blog">Ver el blog</span> <span class="num muted">(8)</span></a></p>
+
+
+</section>
+
+
+<div class="band" id="formacion">
+  <div class="wrap cols">
+    <section id="publicaciones" aria-labelledby="h-pub">
+      <h2 class="col-title" id="h-pub" data-i18n="section_pub">Publicaciones</h2>
+      
+
+
+
+<div class="entry">
+  <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="pub_status_dcai25">DCAI&#39;25</span></p>
+  <h3>AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works</h3>
+  <p>Marcos Arias-González, <strong>Juan Manuel Ruiz Muñoz</strong>, Pablo Armenteros Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández</p>
+  <p data-i18n="pub_venue_dcai25">DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence</p>
+  <p data-i18n="pub_org_dcai25">BISITE Research Group, Universidad de Salamanca · Proyecto TRUESTORIES (CPP2021-008358)</p>
+  <div class="links">
+    <a class="btn btn--line btn--sm" href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="action_download_paper">Descargar Paper</span></a>
+    <a class="btn btn--line btn--sm" href="/proyectos/desinformacion-ontologias-llm/"><span data-i18n="action_case_study">Caso de estudio</span></a>
+    
+    
+    <a class="btn btn--line btn--sm" href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><span data-i18n="action_post">Post</span></a>
   </div>
 </div>
 
-<style>
- 
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-  width: 100%;
-  max-width: 280px;
-}
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 340px;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  z-index: 2;
-  transform: rotateY(0deg);
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  padding: 0;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
- 
-.flip-card-front img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 340px;
-  object-fit: contain;
-}
-
-.flip-card-back > div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-</style>
-
-
-      </div>
-      
-      
-      
-
-
-<div class="grid grid-cols-3 gap-3 text-center py-4">
-  <div class="flex flex-col items-center">
-    <div id="experience-stats">
-  <p class="text-lg font-bold text-violet-600 dark:text-violet-400">
-    <span id="total-experience">...</span>
-  </p>
+<div class="entry">
+  <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="pub_status_lagrangian-blocking">En desarrollo</span></p>
+  <h3>A Lagrangian Method for the Identification of Atmospheric Blocking Situations</h3>
+  
+  <p data-i18n="pub_venue_lagrangian-blocking">Publicación en desarrollo a partir del TFG (Universidad de Alicante · Grupo SCOLAb, UMH)</p>
+  
+  <div class="links">
+    
+    
+    <a class="btn btn--line btn--sm" href="/tfg.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="action_view_thesis">Ver TFG</span></a>
+    <a class="btn btn--line btn--sm" href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span data-i18n="action_repo">Código</span></a>
+    <a class="btn btn--line btn--sm" href="/blog/tfg/"><span data-i18n="action_post">Post</span></a>
+  </div>
 </div>
 
+
+    </section>
+    <section id="educacion" aria-labelledby="h-edu">
+      <h2 class="col-title" id="h-edu" data-i18n="section_edu">Educación</h2>
+      
+
+
+<div class="entry">
+  <p class="entry__when num">2020 - 2024</p>
+  <h3><span data-i18n="edu_degree_1">Grado en Física</span> · Universidad de Alicante</h3>
+  <p data-i18n="edu_details_1">&#43;120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA).</p>
+  
+  <p><span data-i18n="edu_thesis">TFG:</span> <span data-i18n="edu_thesis_1">Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</span></p>
+  <div class="links">
+    <a class="btn btn--line btn--sm" href="/tfg.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="action_view_thesis">Ver TFG</span></a>
+    <a class="btn btn--line btn--sm" href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span data-i18n="action_repo">Código</span></a>
+  </div>
+  
+</div>
+
+
+<div class="entry">
+  <p class="entry__when num">2022 - 2023</p>
+  <h3><span data-i18n="edu_degree_2">Beca SICUE — Física y Matemáticas</span> · Universidad de Salamanca</h3>
+  <p data-i18n="edu_details_2">Beca de movilidad nacional.</p>
+  
+</div>
+
+
+      
+
+<div class="entry">
+  <p class="entry__when" data-i18n="section_certs">Certificaciones</p>
+  <h3><span data-i18n="cert_title_1">AWS Cloud Technical Essentials</span> · <span data-i18n="cert_issuer_1">Amazon Web Services</span></h3>
+</div>
+
+
+    </section>
+  </div>
+</div>
+
+
+<section class="section wrap" id="skills" aria-labelledby="h-skills" data-reveal>
+  <div class="section__head">
+    <h2 id="h-skills" data-i18n="section_skills">Herramientas</h2>
+    <p data-i18n="section_skills_intro">Lo que uso a diario, agrupado por área.</p>
+  </div>
+  
+<div class="skills">
+  
+  <div>
+    <h3 data-i18n="skill_cat_llm">LLMs &amp; NLP</h3>
+    <ul><li data-i18n="skill_llm_1">Fine-tuning (LoRA)</li><li data-i18n="skill_llm_2">LLaMA-Factory</li><li data-i18n="skill_llm_3">RAG</li><li data-i18n="skill_llm_4">Transformers</li><li data-i18n="skill_llm_5">vLLM</li><li data-i18n="skill_llm_6">Ollama</li><li data-i18n="skill_llm_7">Embeddings y búsqueda semántica</li><li data-i18n="skill_llm_8">ChromaDB</li><li data-i18n="skill_llm_9">FAISS</li><li data-i18n="skill_llm_10">Prompt engineering</li></ul>
+  </div>
+  
+  <div>
+    <h3 data-i18n="skill_cat_cv">Computer Vision</h3>
+    <ul><li data-i18n="skill_cv_1">PyTorch</li><li data-i18n="skill_cv_2">TensorFlow</li><li data-i18n="skill_cv_3">Keras</li><li data-i18n="skill_cv_4">OpenCV</li><li data-i18n="skill_cv_5">CNNs</li><li data-i18n="skill_cv_6">Vision Transformers</li><li data-i18n="skill_cv_7">YOLO</li><li data-i18n="skill_cv_8">RF-DETR</li><li data-i18n="skill_cv_9">Modelos generativos</li><li data-i18n="skill_cv_10">Detección y segmentación</li></ul>
+  </div>
+  
+  <div>
+    <h3 data-i18n="skill_cat_lang">Lenguajes y análisis</h3>
+    <ul><li data-i18n="skill_lang_1">Python</li><li data-i18n="skill_lang_2">NumPy</li><li data-i18n="skill_lang_3">Pandas</li><li data-i18n="skill_lang_4">scikit-learn</li><li data-i18n="skill_lang_5">Matplotlib</li><li data-i18n="skill_lang_6">C&#43;&#43; (lectura y especificación)</li><li data-i18n="skill_lang_7">R</li><li data-i18n="skill_lang_8">Análisis estadístico</li><li data-i18n="skill_lang_9">LaTeX</li></ul>
+  </div>
+  
+  <div>
+    <h3 data-i18n="skill_cat_mlops">MLOps y herramientas</h3>
+    <ul><li data-i18n="skill_mlops_1">Docker</li><li data-i18n="skill_mlops_2">MLflow</li><li data-i18n="skill_mlops_3">TensorBoard</li><li data-i18n="skill_mlops_4">Git y GitHub</li><li data-i18n="skill_mlops_5">AWS (Cloud Technical Essentials)</li><li data-i18n="skill_mlops_6">Linux / SSH</li><li data-i18n="skill_mlops_7">uv</li><li data-i18n="skill_mlops_8">Jupyter</li></ul>
+  </div>
+  
+</div>
+
+  
+<div id="gh-activity" class="ticks gh" style="margin-top: var(--space-2xl)" hidden>
+  <h3 class="col-title" style="font-size: var(--text-md); margin-bottom: 16px" data-i18n="section_github">Actividad en GitHub</h3>
+  <div id="gh-grid" class="gh-grid-wrap" role="img" aria-label="Calendario de contribuciones de GitHub" data-i18n-aria="aria_gh_calendar"></div>
+  <div class="gh__foot">
+    <span><strong id="gh-total" class="num"></strong> <span data-i18n="gh_contributions">contribuciones en el último año</span></span>
+    <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer"><span data-i18n="gh_view_profile">Ver perfil</span></a>
+  </div>
+</div>
+
+<script>
+(function () {
+  fetch('https://github-contributions-api.jogruber.de/v4/juanmanuelruizm?y=last')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      var grid = document.createElement('div');
+      grid.className = 'gh-grid';
+      data.contributions.forEach(function (day) {
+        var cell = document.createElement('div');
+        cell.className = 'gh-cell';
+        cell.dataset.level = day.level;
+        cell.title = day.date + ': ' + day.count;
+        grid.appendChild(cell);
+      });
+      document.getElementById('gh-grid').appendChild(grid);
+      document.getElementById('gh-total').textContent = data.total.lastYear;
+      document.getElementById('gh-activity').hidden = false;
+      
+      var wrap = document.querySelector('.gh-grid-wrap');
+      wrap.scrollLeft = wrap.scrollWidth;
+    })
+    .catch(function () {   });
+})();
+</script>
+
+</section>
+
+
+<section class="section wrap" id="sobre-mi" aria-labelledby="h-about" data-reveal>
+  <div class="section__head"><h2 id="h-about" data-i18n="aboutme_title">Sobre mí</h2></div>
+  <div class="about">
+    
+    
+    <div class="about__photo ticks"><img src="/images/profile_hu_216f96fa81fee433.webp" width="400" height="400" alt="Juan Manuel Ruiz Muñoz" loading="lazy" decoding="async"></div>
+    
+    <p class="about__text" data-i18n="aboutme_description">Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.</p>
+    
+
+
+<ul class="stats">
+  <li><span data-i18n="profile_experience">Experiencia</span><span class="num" id="total-experience">…</span>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var display = document.getElementById('total-experience');
@@ -499,1243 +728,111 @@ document.addEventListener('DOMContentLoaded', function() {
       mWord = months === 1 ? 'mes' : 'meses';
       andWord = 'y';
     }
-    if (years === 0) display.textContent = months + ' ' + mWord;
-    else {
-      display.textContent = years + ' ' + yWord;
-      if (months > 0) {
-        
-        var rest = document.createElement('span');
-        rest.className = 'block text-xs font-medium';
-        rest.textContent = andWord + ' ' + months + ' ' + mWord;
-        display.appendChild(rest);
-      }
-    }
+    var unit = function (t) { var u = document.createElement('span'); u.className = 'u'; u.textContent = ' ' + t; return u; };
+    display.textContent = '';
+    if (years > 0) { display.append(String(years)); display.appendChild(unit(yWord)); }
+    if (months > 0) { if (years > 0) display.append(' '); display.append(String(months)); display.appendChild(unit(mWord)); }
   }
 
   updateDisplay();
   window.updateExperienceDisplay = updateDisplay;
 });
 </script>
+</li>
+  <li><span data-i18n="profile_publications">Publicaciones</span><span class="num">1</span></li>
+  <li><span data-i18n="profile_oss">Open source</span><span class="num">5</span></li>
+</ul>
 
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_experience">Experiencia</p>
   </div>
-  <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">1</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_publications">Publicaciones</p>
-  </div>
-  <div class="flex flex-col items-center">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">5</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_oss">Open source</p>
-  </div>
-</div>
-<div class="border-t border-gray-200 dark:border-gray-700"></div>
+</section>
 
-      <div class="flex justify-center gap-4 mb-5 flex-wrap">
-        
-        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        
-        <a href="https://github.com/juanmanuelruizm" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        
-        <a href="mailto:juanmanuelruiz383@gmail.com" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        
-        <a href="https://orcid.org/0009-0008-7529-306X" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="ORCID">
-          <i class="fab fa-orcid"></i>
-        </a>
-        
+
+<section class="section wrap" id="contacto" aria-labelledby="h-contact" data-reveal>
+  <div class="contact">
+    <div>
+      <h2 id="h-contact" data-i18n="section_contact">Contacto</h2>
+      <p class="contact__intro" data-i18n="contact_intro">¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.</p>
+      <div class="links" style="margin-top:24px">
+        <a class="btn" href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf"><span data-i18n="download_cv">Descargar CV</span></a>
+        <a class="btn btn--line" href="mailto:juanmanuelruiz383@gmail.com"><span data-i18n="cta_contact">Contactar</span></a>
       </div>
-      
-      
-      <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
-        <i class="fas fa-file-download" aria-hidden="true"></i>
-        <span data-i18n="download_cv">Descargar CV</span>
-      </a>
-      
-      
-      <div class="hidden lg:block"><footer class="text-sm border-t-2 border-violet-500 dark:border-violet-400  bg-transparent rounded-b-none py-3 "
-  
-  role="contentinfo">
-
-  
-  
-  <div class="text-center">
-    <div class="flex justify-center gap-3 mb-2">
-      <a href="/blog/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/material/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Material</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Buscar</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
-        <i class="fas fa-rss" aria-hidden="true"></i> RSS
-      </a>
     </div>
-    <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">
-      © 2026
-      <a href="https://github.com/juanmanuelruizm" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline">Juan Manuel</a>
-    </p>
-    <p class="text-[10px] text-gray-400 dark:text-gray-600">
-      <span data-i18n="footer_made_with">Hecho con</span> <span class="text-red-400">♥</span> y Hugo
-    </p>
+    <ul class="contact__list">
+      
+      
+      <li>
+        <span class="k">LinkedIn</span>
+        <a class="v" href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer">in/juanmanuelruizmunoz</a>
+        <span></span>
+      </li>
+      
+      
+      <li>
+        <span class="k">GitHub</span>
+        <a class="v" href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer">juanmanuelruizm</a>
+        <span></span>
+      </li>
+      
+      
+      <li>
+        <span class="k">Email</span>
+        <a class="v" href="mailto:juanmanuelruiz383@gmail.com" id="contact-email">juanmanuelruiz383@gmail.com</a>
+        <button class="copy" type="button" data-copy-text="juanmanuelruiz383@gmail.com" data-i18n="action_copy">Copiar</button>
+      </li>
+      
+      
+      <li>
+        <span class="k">ORCID</span>
+        <a class="v num" href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer">0009-0008-7529-306X</a>
+        <span></span>
+      </li>
+      
+    </ul>
   </div>
-  
+</section>
 
-  
-</footer>
+<button id="scroll-to-top" type="button" class="btn btn--line btn--sm btn--icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
 
-</div>
+
+<div class="mobile-bar" data-sticky-header>
+  <div class="mobile-bar__in">
+    <div class="mobile-bar__who">
+      <p>Juan Manuel</p>
+      <p data-i18n="profile_position">ML Engineer · Computer Vision &amp; LLMs</p>
+    </div>
+    <div class="links">
+      <a class="btn btn--sm" href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf">CV</a>
+      <a class="btn btn--line btn--sm btn--icon" href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+      <a class="btn btn--line btn--sm btn--icon" href="mailto:juanmanuelruiz383@gmail.com" aria-label="Contactar por email" data-i18n-aria="aria_email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
     </div>
   </div>
-  
-  
-  <div class="lg:col-span-2">
-    
-    
-    <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_projects">Proyectos</span>
-      </h2>
-      
-
-
-
-
-
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group project-card-featured">
-  
-  <div class="project-cover">
-    <a href="/proyectos/vcalib/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
-    
-    <img src="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp" srcset="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp 450w, /images/proyectos/vcalib/money_shot_level2_hu_3f533fedc96342d5.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
-    
-    </a>
-    
-    <span class="project-status project-status-active project-cover-status" data-i18n="status_active">Activo</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
-    
-    <a href="/proyectos/vcalib/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_vcalib">vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vcalib">Un filtro diferenciable de ~2 KB que corrige el cambio de iluminación antes de que la imagen llegue a un detector congelado. Sin reentrenar, sin etiquetas, minutos en CPU.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_1">35,9 % de recuperación de activaciones en pares reales held-out</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_2">Cierra el gap de AP en level_2 (pseudo-GT de SAM3)</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_3">~3,5 min de ajuste en la CPU de un portátil</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SAM3</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">uv</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    <a href="/proyectos/vcalib/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Caso de estudio</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
-    
-    
-    <a href="https://github.com/juanmanuelruizm/vcalib" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Código</span></a>
-    
-    
-    
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group project-card-featured">
-  
-  <div class="project-cover project-cover-contain">
-    <a href="/proyectos/desinformacion-ontologias-llm/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
-    
-    <img src="/images/proyectos/desinformacion/pipeline_hu_edc6d6a4cb253377.webp" srcset="/images/proyectos/desinformacion/pipeline_hu_edc6d6a4cb253377.webp 450w, /images/proyectos/desinformacion/pipeline_hu_85f7c8020e75d12f.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
-    
-    </a>
-    
-    <span class="project-status project-status-published project-cover-status" data-i18n="status_published">Publicado</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
-    
-    <a href="/proyectos/desinformacion-ontologias-llm/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_desinformacion-ontologias">Detección de desinformación en ficción con ontologías generadas por LLMs</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_desinformacion-ontologias">Arquitectura LLM &#43; RAG que construye una ontología verificada de forma incremental y la usa para detectar afirmaciones falsas en películas, podcasts y textos. Publicado en DCAI&#39;25.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_1">Precisión 0,98 · F1 0,86 sobre 320 frases de evaluación</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_2">Ontología de 246 clases generada sin supervisión</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LLMs</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SBERT</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GPT-4o</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    <a href="/proyectos/desinformacion-ontologias-llm/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Caso de estudio</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
-    
-    
-    
-    <a href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">Paper</span></a>
-    
-    
-    <a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_desinformacion-ontologias_1">Post</span></a>
-    
-    
-  </div>
-  
-</article>
-
-  
-  
-  <div class="sm:col-span-2">
-  
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover project-cover-emerald">
-    
-    
-    <i class="fas fa-eye" aria-hidden="true"></i>
-    
-    
-    
-    <span class="project-status project-status-production project-cover-status" data-i18n="status_production">En producción</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <span data-i18n="proj_title_inspeccion-neumaticos">Inspección industrial de neumáticos con visión y OCR multimodal</span>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_inspeccion-neumaticos">Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_1">mAP@50:95 de 0,83 en segmentación multiclase</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_2">98,56 % de exact match en OCR sobre flancos</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GLM-OCR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LoRA</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">vLLM</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Docker</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    
-    
-    
-    <a href="/blog/ocr-industrial-glm-ocr/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_inspeccion-neumaticos_1">OCR en condiciones extremas</span></a>
-    
-    <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_inspeccion-neumaticos_2">CNNs vs Vision Transformers</span></a>
-    
-    
-  </div>
-  
-</article>
-
-  </div>
-  
 </div>
-
-<div class="mt-4 text-right">
-  <a href="/proyectos/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_all_projects">Ver todos los proyectos</span> (7) <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i></a>
-</div>
-
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var bar = document.querySelector('[data-sticky-header]'); if (!bar) return;
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () { bar.classList.toggle('is-on', window.scrollY > 300); ticking = false; });
+  }, { passive: true });
+});
+</script>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.project-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      var rect = card.getBoundingClientRect();
-      card.style.setProperty('--spot-x', (e.clientX - rect.left) + 'px');
-      card.style.setProperty('--spot-y', (e.clientY - rect.top) + 'px');
-    });
-  });
-});
-</script>
-
-    </div>
-
-    
-    <div class="section-separator"></div>
-
-    
-    <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-briefcase section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_exp">Experiencia</span>
-      </h2>
-      <div class="timeline-container">
-        
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_1">ML Engineer · Computer Vision &amp; LLMs</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
-          
-          <a href="https://vraia.com/" class="hover:text-violet-600 dark:hover:text-violet-400" data-i18n="exp_company_1">VRAIA Corp.</a>
-          
-        </p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_1" data-i18n-html>Junio 2025 - <em>Presente</em></span>
-    </div>
-    
-    
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_1" data-i18n-html>
-    <p>Llevo a producción modelos de <strong>detección y segmentación de defectos</strong> (CNNs, ViT, YOLO, RF-DETR) y un <strong>OCR multimodal</strong> (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.</p>
-<p>Escribo sobre este trabajo en <a href="/blog/ocr-industrial-glm-ocr/">OCR en condiciones extremas</a> y <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/">CNNs vs Vision Transformers</a>.</p>
-
-    </div>
-    
-
-    
-    <ul class="exp-highlights" data-i18n="exp_hl_1" data-i18n-html>
-      <li>Diseño y entrenamiento de modelos de <strong>detección y segmentación de defectos</strong> (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: <strong>mAP@50:95 de 0,83</strong> en segmentación multiclase sobre datasets propios de miles de imágenes.</li><li>Fine-tuning de un modelo de lenguaje multimodal (<strong>GLM-OCR</strong>) con <strong>LoRA</strong> vía LLaMA-Factory para leer texto en flancos de neumático: <strong>98,56 % de exact match</strong> en producción; serving con vLLM y Ollama.</li><li>Pipeline de <strong>generación sintética de defectos</strong> con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección.</li><li><strong>Peritaje técnico</strong> con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia.</li><li>Pipelines <strong>ETL</strong> de extracción, transformación y aumento de datasets visuales a escala industrial.</li><li>Despliegue y monitorización con <strong>Docker, MLflow y TensorBoard</strong>; métricas de evaluación (precision, recall, F1, mAP, IoU) para validación en tiempo real; documentación técnica y <strong>especificación algorítmica en C++</strong> para el equipo cliente.</li>
-    </ul>
-    
-    
-    
-    
-    <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_1">PyTorch</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_2">Vision Transformers</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_3">YOLO</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_4">RF-DETR</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_5">GLM-OCR</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_6">LoRA</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_7">LLaMA-Factory</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_8">vLLM</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_9">MLflow</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_10">Docker</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_1_11">C&#43;&#43;</span>
-      
-    </div>
-    
-  </div>
-</div>
-
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_2">Data Scientist &amp; AI Researcher</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
-          
-          <a href="https://www.air-institute.org/" class="hover:text-violet-600 dark:hover:text-violet-400" data-i18n="exp_company_2">AIR Institute &amp; Grupo de Investigación BISITE</a>
-          
-        </p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_2" data-i18n-html>Junio 2024 - Junio 2025</span>
-    </div>
-    
-    
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_2" data-i18n-html>
-    <p>Investigación en <strong>NLP y LLMs</strong>: una arquitectura de detección de desinformación basada en ontologías generadas con LLMs (publicada en DCAI'25), pipelines <strong>RAG</strong> y sistemas <strong>multiagente</strong>, además de proyectos de visión por computador.</p>
-<p>Publicación: <a href="/DCAI.pdf">paper en DCAI'25</a>.</p>
-
-    </div>
-    
-
-    
-    <ul class="exp-highlights" data-i18n="exp_hl_2" data-i18n-html>
-      <li>Investigación y desarrollo de soluciones de <strong>NLP y LLMs</strong>, incluida una arquitectura de detección de desinformación basada en ontologías generadas con modelos de lenguaje (<strong>publicada en DCAI'25</strong>).</li><li>Pipelines <strong>RAG</strong> y de recuperación semántica con bases de datos vectoriales (ChromaDB) y sistemas <strong>multiagente</strong> (Ollama, DeepSeek, GPT-4o-mini), con foco en reducir coste y latencia.</li><li>Proyectos de Computer Vision (detección, clasificación y segmentación) y gestión del ciclo completo de proyectos ML: requisitos, desarrollo, validación y documentación.</li><li>Interacción directa con clientes para captura de requisitos y adaptación de soluciones state-of-the-art a casos de uso reales.</li>
-    </ul>
-    
-    
-    
-    
-    <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_1">NLP</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_2">LLMs</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_3">RAG</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_4">ChromaDB</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_5">Multiagente</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_6">Ollama</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_7">Computer Vision</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_2_8">Python</span>
-      
-    </div>
-    
-  </div>
-</div>
-
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_3">Investigador · Contrato de prácticas</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
-          
-          <a href="https://seneca.umh.es/" class="hover:text-violet-600 dark:hover:text-violet-400" data-i18n="exp_company_3">Universidad Miguel Hernández — Grupo SCOLAb</a>
-          
-        </p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_3" data-i18n-html>Enero 2024 - Julio 2024</span>
-    </div>
-    
-    
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_3" data-i18n-html>
-    <p>Desarrollé <strong>métodos lagrangianos</strong> para identificar automáticamente situaciones de <strong>bloqueo atmosférico</strong>: la base de mi TFG y de una publicación en desarrollo.</p>
-<p>Lo cuento en detalle en <a href="/blog/tfg/">Bloqueos atmosféricos, punto de vista lagrangiano</a>.</p>
-
-    </div>
-    
-
-    
-    <ul class="exp-highlights" data-i18n="exp_hl_3" data-i18n-html>
-      <li>Desarrollo de <strong>métodos lagrangianos</strong> para la identificación automática de situaciones de <strong>bloqueo atmosférico</strong>, base del TFG y de una publicación en desarrollo.</li><li>Colaboración en proyectos del grupo de física atmosférica.</li>
-    </ul>
-    
-    
-    
-    
-    <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_3_1">Python</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_3_2">Física Atmosférica</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_3_3">HYSPLIT</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_3_4">ERA5</span>
-      
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_3_5">DBSCAN</span>
-      
-    </div>
-    
-  </div>
-</div>
-
-
-
-      </div>
-    </div>
-
-    
-    <div class="section-separator"></div>
-    
-    
-    <div class="mb-8" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_blog">Del blog</span>
-      </h2>
-      
-
-
-
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4" data-stagger>
-  
-  <a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/" class="group flex flex-col p-4 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
-    <p class="flex items-center gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-2">
-      <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-      <time datetime="2026-06-20" data-i18n-date>20 jun. 2026</time>
-    </p>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">Detectar desinformación en la ficción: una ontología que se construye sola</h3>
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Cómo construimos, en un trabajo publicado en DCAI&#39;25, un sistema que genera automáticamente una base de conocimiento (ontología) con LLMs y RAG, y la usa para detectar información falsa en películas, podcasts y otros formatos de ficción.</p>
-  </a>
-  
-  <a href="/blog/ocr-industrial-glm-ocr/" class="group flex flex-col p-4 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
-    <p class="flex items-center gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-2">
-      <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-      <time datetime="2026-06-11" data-i18n-date>11 jun. 2026</time>
-    </p>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">OCR en condiciones extremas: leer texto donde no hay tinta</h3>
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Qué pasa cuando llevas el OCR a un entorno industrial real —texto en relieve negro sobre negro, polvo, brillos y cadencia de línea— y qué aprendí probando GLM-OCR, un modelo multimodal de 0.9B parámetros que corre en local</p>
-  </a>
-  
-  <a href="/blog/que-ve-una-red-neuronal/" class="group flex flex-col p-4 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
-    <p class="flex items-center gap-2 text-[11px] text-gray-500 dark:text-gray-400 mb-2">
-      <i class="fas fa-calendar-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-      <time datetime="2026-06-11" data-i18n-date>11 jun. 2026</time>
-    </p>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-3">¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</h3>
-    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">Un recorrido por la interpretabilidad en visión por computador: filtros clásicos, mapas de características, Grad-CAM y atención. Y por qué visualizar lo que ve tu modelo no es opcional en producción</p>
-  </a>
-  
-</div>
-<div class="mt-3 text-right">
-  <a href="/blog/" class="text-xs font-medium text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_view_blog">Ver el blog</span> <i class="fas fa-arrow-right text-[10px] ml-1" aria-hidden="true"></i></a>
-</div>
-
-
-    </div>
-
-    
-    <div class="section-separator"></div>
-    
-    
-    <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-graduation-cap section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_edu">Educación</span>
-      </h2>
-      <div class="timeline-container">
-        
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_1">Grado en Física</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Alicante</p>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_1">&#43;120 ECTS del Grado en Matemáticas cursados en paralelo (programa de estudios simultáneos de la UA).</p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0">2020 - 2024</span>
-    </div>
-    
-    
-    <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-      <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-        <strong data-i18n="edu_thesis">TFG:</strong> <i><span data-i18n="edu_thesis_1">Un método lagrangiano para la identificación de situaciones de bloqueo atmosférico</span></i>
-      </p>
-      <div class="flex flex-wrap gap-2">
-      
-      <a
-        href="/tfg.pdf"
-        class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 text-sm no-underline"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-        <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_view_thesis">Ver TFG</span>
-      </a>
-      
-      
-      <a
-        href="https://github.com/juanmanuelruizm/TFG"
-        class="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 text-sm no-underline"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fab fa-github text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-        <span class="font-medium text-gray-900 dark:text-gray-100" data-i18n="action_repo">Código</span>
-      </a>
-      
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-graduation-cap text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="edu_degree_2">Beca SICUE — Física y Matemáticas</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1 m-0">Universidad de Salamanca</p>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 m-0" data-i18n="edu_details_2">Beca de movilidad nacional.</p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0">2022 - 2023</span>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-
-      </div>
-    </div>
-
-    
-    <div class="section-separator"></div>
-    
-    
-    
-    <div id="certificaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-check-circle section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_certs">Certificaciones</span>
-      </h2>
-      
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-3" data-stagger>
-  
-  <div class="cert-card">
-    <i class="fas fa-check-circle" aria-hidden="true"></i>
-    <div>
-      <p class="cert-title" data-i18n="cert_title_1">AWS Cloud Technical Essentials</p>
-      <p class="cert-issuer" data-i18n="cert_issuer_1">Amazon Web Services</p>
-    </div>
-  </div>
-  
-</div>
-
-    </div>
-
-    
-    <div class="section-separator"></div>
-        
-    <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_pub">Publicaciones</span>
-      </h2>
-      
-
-
-<div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
-  <div class="flex items-start gap-4">
-    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
-      <i class="fas fa-file-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-    </div>
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2 flex-wrap">
-        <span class="project-status project-status-published" data-i18n="pub_status_dcai25">DCAI&#39;25</span>
-        <span class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pub_venue_dcai25">DCAI 2025 · International Conference on Distributed Computing and Artificial Intelligence</span>
-      </div>
-      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1 leading-snug">AI-Powered Ontology-Based Architecture for Misinformation Detection in Fiction Works</p>
-      <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">Marcos Arias-González, <strong>Juan Manuel Ruiz Muñoz</strong>, Pablo Armenteros Cosme, Lucía Isabel Rodríguez González, Javier Curto Hernández</p>
-      <p class="text-xs text-gray-500 dark:text-gray-400 mb-2" data-i18n="pub_org_dcai25">BISITE Research Group, Universidad de Salamanca · Proyecto TRUESTORIES (CPP2021-008358)</p>
-      
-      <div class="flex flex-wrap gap-2 mt-2">
-        
-        <a href="/DCAI.pdf" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_download_paper">Descargar Paper</span>
-        </a>
-        
-        
-        <a href="/proyectos/desinformacion-ontologias-llm/" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100">
-          <i class="fas fa-project-diagram text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_case_study">Caso de estudio</span>
-        </a>
-        
-        
-        
-        
-        <a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100">
-          <i class="fas fa-newspaper text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_post">Post</span>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700">
-  <div class="flex items-start gap-4">
-    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
-      <i class="fas fa-file-alt text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-    </div>
-    <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2 mb-2 flex-wrap">
-        <span class="project-status project-status-development" data-i18n="pub_status_lagrangian-blocking">En desarrollo</span>
-        <span class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pub_venue_lagrangian-blocking">Publicación en desarrollo a partir del TFG (Universidad de Alicante · Grupo SCOLAb, UMH)</span>
-      </div>
-      <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1 leading-snug">A Lagrangian Method for the Identification of Atmospheric Blocking Situations</p>
-      
-      
-      
-      <div class="flex flex-wrap gap-2 mt-2">
-        
-        
-        
-        <a href="/tfg.pdf" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-file-download text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_view_thesis">Ver TFG</span>
-        </a>
-        
-        
-        <a href="https://github.com/juanmanuelruizm/TFG" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_repo">Código</span>
-        </a>
-        
-        
-        <a href="/blog/tfg/" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium border border-violet-500/50 dark:border-violet-400/50 bg-white/80 dark:bg-slate-700/80 hover:bg-violet-50 dark:hover:bg-slate-600 transition-all duration-300 no-underline text-gray-900 dark:text-gray-100">
-          <i class="fas fa-newspaper text-violet-600 dark:text-violet-300" aria-hidden="true"></i>
-          <span data-i18n="action_post">Post</span>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    </div>
-
-    
-    <div class="section-separator"></div>
-    
-    
-    <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-cogs section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        Skills
-      </h2>
-      
-<div class="space-y-6">
-  
-  <div>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full skill-dot-primary" aria-hidden="true"></span>
-      <span data-i18n="skill_cat_llm">LLMs &amp; NLP</span>
-    </h3>
-    <div class="flex flex-wrap gap-2">
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_1">Fine-tuning (LoRA)</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_2">LLaMA-Factory</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_3">RAG</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_4">Transformers</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_5">vLLM</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_6">Ollama</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_7">Embeddings y búsqueda semántica</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_8">ChromaDB</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_9">FAISS</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_llm_10">Prompt engineering</span>
-      
-    </div>
-  </div>
-  
-  <div>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full skill-dot-primary" aria-hidden="true"></span>
-      <span data-i18n="skill_cat_cv">Computer Vision</span>
-    </h3>
-    <div class="flex flex-wrap gap-2">
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_1">PyTorch</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_2">TensorFlow</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_3">Keras</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_4">OpenCV</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_5">CNNs</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_6">Vision Transformers</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_7">YOLO</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_8">RF-DETR</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_9">Modelos generativos</span>
-      
-      <span class="skill-chip skill-chip-primary" data-i18n="skill_cv_10">Detección y segmentación</span>
-      
-    </div>
-  </div>
-  
-  <div>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full skill-dot-tertiary" aria-hidden="true"></span>
-      <span data-i18n="skill_cat_lang">Lenguajes y análisis</span>
-    </h3>
-    <div class="flex flex-wrap gap-2">
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_1">Python</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_2">NumPy</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_3">Pandas</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_4">scikit-learn</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_5">Matplotlib</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_6">C&#43;&#43; (lectura y especificación)</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_7">R</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_8">Análisis estadístico</span>
-      
-      <span class="skill-chip skill-chip-tertiary" data-i18n="skill_lang_9">LaTeX</span>
-      
-    </div>
-  </div>
-  
-  <div>
-    <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full skill-dot-secondary" aria-hidden="true"></span>
-      <span data-i18n="skill_cat_mlops">MLOps y herramientas</span>
-    </h3>
-    <div class="flex flex-wrap gap-2">
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_1">Docker</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_2">MLflow</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_3">TensorBoard</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_4">Git y GitHub</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_5">AWS (Cloud Technical Essentials)</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_6">Linux / SSH</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_7">uv</span>
-      
-      <span class="skill-chip skill-chip-secondary" data-i18n="skill_mlops_8">Jupyter</span>
-      
-    </div>
-  </div>
-  
-</div>
-
-    </div>
-
-    
-    <div class="section-separator"></div>
-
-    
-    
-<div id="gh-activity" class="mb-8 scroll-mt-24" hidden>
-  <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-    <i class="fab fa-github text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-    <span data-i18n="section_github">Actividad en GitHub</span>
-  </h2>
-  <div class="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-4">
-    <div id="gh-grid" class="gh-grid-wrap" role="img" aria-label="Calendario de contribuciones de GitHub" data-i18n-aria="aria_gh_calendar"></div>
-    <div class="flex items-center justify-between mt-3 text-xs text-gray-600 dark:text-gray-400">
-      <span><strong id="gh-total" class="text-violet-700 dark:text-violet-300"></strong> <span data-i18n="gh_contributions">contribuciones en el último año</span></span>
-      <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer" class="no-underline text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 font-medium">
-        <span data-i18n="gh_view_profile">Ver perfil</span> <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
-      </a>
-    </div>
-  </div>
-  <div class="section-separator"></div>
-</div>
-
-<style>
-.gh-grid-wrap { overflow-x: auto; padding-bottom: 0.25rem; }
-.gh-grid {
-  display: grid;
-  grid-template-rows: repeat(7, 10px);
-  grid-auto-flow: column;
-  grid-auto-columns: 10px;
-  gap: 3px;
-  width: max-content;
-}
-.gh-cell { width: 10px; height: 10px; border-radius: 2px; background: #e5e7eb; }
-.dark .gh-cell { background: rgb(51 65 85); }
-.gh-cell[data-level="1"] { background: #ddd6fe; }
-.gh-cell[data-level="2"] { background: #a78bfa; }
-.gh-cell[data-level="3"] { background: #7c3aed; }
-.gh-cell[data-level="4"] { background: #5b21b6; }
-.dark .gh-cell[data-level="1"] { background: #4c1d95; }
-.dark .gh-cell[data-level="2"] { background: #6d28d9; }
-.dark .gh-cell[data-level="3"] { background: #8b5cf6; }
-.dark .gh-cell[data-level="4"] { background: #c4b5fd; }
-</style>
-
-<script>
-(function () {
-  fetch('https://github-contributions-api.jogruber.de/v4/juanmanuelruizm?y=last')
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) {
-      var grid = document.createElement('div');
-      grid.className = 'gh-grid';
-      data.contributions.forEach(function (day) {
-        var cell = document.createElement('div');
-        cell.className = 'gh-cell';
-        cell.dataset.level = day.level;
-        cell.title = day.date + ': ' + day.count;
-        grid.appendChild(cell);
-      });
-      document.getElementById('gh-grid').appendChild(grid);
-      document.getElementById('gh-total').textContent = data.total.lastYear;
-      document.getElementById('gh-activity').hidden = false;
-      
-      var wrap = document.querySelector('.gh-grid-wrap');
-      wrap.scrollLeft = wrap.scrollWidth;
-    })
-    .catch(function () {   });
-})();
-</script>
-
-
-    
-    <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_contact">Contacto</span>
-      </h2>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="contact_intro">¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-        
-        
-        
-        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon contact-tone-blue">
-            <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">LinkedIn</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">in/juanmanuelruizmunoz</p>
-          </div>
-        </a>
-        
-        
-        
-        
-        <a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon contact-tone-gray">
-            <i class="fab fa-github text-lg" aria-hidden="true"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">GitHub</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">juanmanuelruizm</p>
-          </div>
-        </a>
-        
-        
-        
-        
-        <a href="mailto:juanmanuelruiz383@gmail.com" class="contact-card group no-underline">
-          <div class="contact-card-icon contact-tone-red">
-            <i class="fas fa-envelope text-lg" aria-hidden="true"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Email</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">juanmanuelruiz383@gmail.com</p>
-          </div>
-        </a>
-        
-        
-        
-        
-        <a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer" class="contact-card group no-underline">
-          <div class="contact-card-icon contact-tone-green">
-            <i class="fab fa-orcid text-lg" aria-hidden="true"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">ORCID</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">0009-0008-7529-306X</p>
-          </div>
-        </a>
-        
-        
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-
-<div class="lg:hidden px-4 mb-24"><footer class="text-sm border-t-2 border-violet-500 dark:border-violet-400  bg-transparent rounded-b-none py-3 "
-  
-  role="contentinfo">
-
-  
-  
-  <div class="text-center">
-    <div class="flex justify-center gap-3 mb-2">
-      <a href="/blog/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/material/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Material</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Buscar</span></a>
-      <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
-      <a href="/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
-        <i class="fas fa-rss" aria-hidden="true"></i> RSS
-      </a>
-    </div>
-    <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">
-      © 2026
-      <a href="https://github.com/juanmanuelruizm" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline">Juan Manuel</a>
-    </p>
-    <p class="text-[10px] text-gray-400 dark:text-gray-600">
-      <span data-i18n="footer_made_with">Hecho con</span> <span class="text-red-400">♥</span> y Hugo
-    </p>
-  </div>
-  
-
-  
-</footer>
-
-</div>
-
-
-<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-violet-400">
-  <i class="fas fa-chevron-up" aria-hidden="true"></i>
-</button>
-
-
-<div data-sticky-header>
-  
-<div data-sticky-header class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-violet-200 dark:border-violet-700 shadow-2xl z-40 p-3" style="transform: translateY(100px); opacity: 0; pointer-events: none;">
-  <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
-    
-    <div class="flex items-center gap-2 min-w-0">
-      
-      <img
-        src="/images/profile_hu_218184817b617325.webp"
-        width="48" height="48"
-        alt="Juan Manuel Ruiz Muñoz"
-        class="w-12 h-12 rounded-lg border-2 border-violet-600 dark:border-violet-400 flex-shrink-0"
-      />
-      <div class="min-w-0">
-        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
-          Juan Manuel
-        </p>
-        <p class="text-xs text-gray-600 dark:text-gray-400 truncate" data-i18n="profile_position">
-          ML Engineer · Computer Vision &amp; LLMs
-        </p>
-      </div>
-    </div>
-
-    
-    <div class="flex gap-2 flex-shrink-0">
-      
-      <a
-        href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf"
-        class="inline-flex items-center justify-center p-2.5 rounded-md bg-violet-600 hover:bg-violet-700 text-white transition-all duration-300"
-        aria-label="Descargar CV"
-        data-i18n-aria="download_cv"
-      >
-        <i class="fas fa-file-download text-sm" aria-hidden="true"></i>
-      </a>
-
-      
-      
-        
-        <a
-          href="https://www.linkedin.com/in/juanmanuelruizmunoz/"
-          class="inline-flex items-center justify-center p-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-          aria-label="LinkedIn"
-        >
-          <i class="fab fa-linkedin-in text-sm"></i>
-        </a>
-        
-      
-        
-      
-        
-      
-        
-      
-
-      
-      
-        
-      
-        
-      
-        
-        <a
-          href="mailto:juanmanuelruiz383@gmail.com"
-          class="inline-flex items-center justify-center p-2.5 rounded-md bg-red-600 hover:bg-red-700 text-white transition-all duration-300"
-          aria-label="Contactar por email"
-          data-i18n-aria="aria_email"
-        >
-          <i class="fas fa-envelope text-sm"></i>
-        </a>
-        
-      
-        
-      
-    </div>
-  </div>
-</div>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const stickyHeader = document.querySelector('[data-sticky-header]');
-  if (!stickyHeader) return;
-
-  let ticking = false;
-  let lastScrollY = 0;
-
-  window.addEventListener('scroll', function() {
-    lastScrollY = window.scrollY;
-    
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        
-        if (lastScrollY > 300) {
-          stickyHeader.style.transform = 'translateY(0)';
-          stickyHeader.style.opacity = '1';
-          stickyHeader.style.pointerEvents = 'auto';
-        } else {
-          stickyHeader.style.transform = 'translateY(100px)';
-          stickyHeader.style.opacity = '0';
-          stickyHeader.style.pointerEvents = 'none';
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
+  var bar = document.getElementById('reading-progress'), up = document.getElementById('scroll-to-top');
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if (up) up.classList.toggle('is-on', y > 600);
   }, { passive: true });
-});
-</script>
-
-<style>
-[data-sticky-header] {
-  transition: all 0.3s ease-out;
-  pointer-events: auto;
-}
-</style>
-
-</div>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
   
-  var progressBar = document.getElementById('reading-progress');
-  var scrollTopBtn = document.getElementById('scroll-to-top');
-  
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.scrollY;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    if (progressBar) progressBar.style.width = progress + '%';
-    
-    
-    if (scrollTopBtn) {
-      if (scrollTop > 400) {
-        scrollTopBtn.style.opacity = '1';
-        scrollTopBtn.style.pointerEvents = 'auto';
-      } else {
-        scrollTopBtn.style.opacity = '0';
-        scrollTopBtn.style.pointerEvents = 'none';
-      }
-    }
-  }, { passive: true });
-
-  
-  document.querySelectorAll('.hero-cta[href^="#"], .scroll-indicator[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var href = this.getAttribute('href');
-      if (href && href.length > 1) {
-        var target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+  document.querySelectorAll('[data-copy-text]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-copy-text'), strings = (window.__i18n || {})[document.documentElement.lang] || {};
+      var done = function () { b.textContent = strings.action_copied || 'Copiado'; setTimeout(function () { b.textContent = strings.action_copy || 'Copiar'; }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () {});
     });
   });
 });
@@ -1749,16 +846,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) {
     if (e.keyCode === konamiCode[konamiIndex]) {
       konamiIndex++;
-      if (konamiIndex === konamiCode.length) {
-        konamiIndex = 0;
-        activateEasterEgg();
-      }
-    } else {
-      konamiIndex = 0;
-    }
+      if (konamiIndex === konamiCode.length) { konamiIndex = 0; activateEasterEgg(); }
+    } else { konamiIndex = 0; }
   });
   function activateEasterEgg() {
-    
     var container = document.createElement('div');
     container.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden;';
     document.body.appendChild(container);
@@ -1780,133 +871,65 @@ document.addEventListener('DOMContentLoaded', function() {
         }, idx * 50);
       })(i);
     }
-    
     var msg = document.createElement('div');
-    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#8b5cf6,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(139,92,246,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
-    msg.innerHTML = '<span data-i18n="easter_secret">🎮 ¡Has descubierto el secreto!</span><br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;" data-i18n="easter_konami">— Konami Code activado —</span>';
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:var(--color-paper-3);border:1px solid var(--color-accent);color:var(--color-ink);padding:1.5rem 2.5rem;border-radius:6px;font-size:1.25rem;font-weight:400;box-shadow:0 30px 80px rgba(0,0,0,0.5);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
+    msg.innerHTML = '<span data-i18n="easter_secret">🎮 ¡Has descubierto el secreto!</span><br><span style="font-size:0.85rem;color:var(--color-muted);" data-i18n="easter_konami">— Konami Code activado —</span>';
     container.appendChild(msg);
     requestAnimationFrame(function() { msg.style.opacity = '1'; });
-    setTimeout(function() {
-      msg.style.opacity = '0';
-      setTimeout(function() { container.remove(); }, 600);
-    }, 3500);
+    setTimeout(function() { msg.style.opacity = '0'; setTimeout(function() { container.remove(); }, 600); }, 3500);
   }
 })();
 </script>
 
-
-
-
     </main>
-    
+    <footer class="site-foot" role="contentinfo">
+  <div class="wrap">
+    <div class="wordmark" data-points-word="Juan Manuel" aria-hidden="true"><canvas></canvas></div>
+    <div class="foot-row">
+      <span>© 2026 Juan Manuel Ruiz Muñoz · <span data-i18n="footer_made_with">Hecho con</span> <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a></span>
+      <nav aria-label="Secciones" data-i18n-aria="footer_sections">
+        <a href="/blog/" data-i18n="nav_blog">Blog</a>
+        <a href="/material/" data-i18n="nav_material">Material</a>
+        <a href="/search/" data-i18n="nav_search">Buscar</a>
+        <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf">CV (PDF)</a>
+        <a href="/index.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:juanmanuelruiz383@gmail.com">Email</a><a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer">ORCID</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
     
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        
-        entry.target.classList.add('animate-fade-in-up');
-        
-        entry.target.querySelectorAll('[data-stagger]').forEach(group => {
-          Array.from(group.children).forEach((child, i) => {
-            child.style.transitionDelay = (i * 90) + 'ms';
-          });
-          group.classList.add('stagger-in');
-        });
-        
-        observer.unobserve(entry.target);
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('[data-reveal]')).filter(function (el) { return el.getBoundingClientRect().top > innerHeight; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = ''; e.target.classList.add('animate-fade-in-up'); io.unobserve(e.target);
     });
-  }, observerOptions);
-
-  
-  document.querySelectorAll('.card, .card-group, [data-reveal]').forEach(el => {
-    
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
-  });
-
-  
-  document.querySelectorAll('[data-stagger]').forEach(group => {
-    if (group.closest('[data-reveal]')) return;
-    const groupObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        Array.from(entry.target.children).forEach((child, i) => {
-          child.style.transitionDelay = (i * 90) + 'ms';
-        });
-        entry.target.classList.add('stagger-in');
-        groupObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.05 });
-    groupObserver.observe(group);
-  });  
-  const cardGroups = document.querySelectorAll('[data-card-group]');
-  cardGroups.forEach(group => {
-    const cards = group.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(card);
-    });
-  });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { el.style.opacity = '0'; io.observe(el); });
 });
 </script>
 
-<noscript><style>[data-reveal], [data-stagger] > * { opacity: 1 !important; transform: none !important; }</style></noscript>
-<style>
-.card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease-out;
-}
-
-.card.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-[data-reveal].animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-</style>
-
     <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('pre').forEach(function (pre) {
+  var label = function (k, d) { var t = (window.__i18n || {})[document.documentElement.lang] || {}; return t[k] || d; };
+  document.querySelectorAll('.article pre').forEach(function (pre) {
+    var box = pre.closest('.highlight') || pre;
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
     button.setAttribute('aria-label', "Copiar código");
     button.setAttribute('data-i18n-aria', 'action_copy_code');
-    button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    button.textContent = label('action_copy', 'Copiar');
     button.addEventListener('click', function () {
       var code = pre.querySelector('code');
       if (!code) return;
       navigator.clipboard.writeText(code.innerText).then(function () {
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = code.innerText;
@@ -1916,44 +939,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       });
     });
-    pre.style.position = 'relative';
-    pre.appendChild(button);
+    box.appendChild(button);
   });
 });
 </script>
 
-<style>
-.copy-code-btn {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
-  padding: 0.3rem 0.45rem;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  font-size: 0.7rem;
-  opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
-  line-height: 1;
-}
-pre:hover .copy-code-btn {
-  opacity: 1;
-}
-.copy-code-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-}
-.copy-code-btn:focus-visible {
-  outline: 2px solid rgba(167, 139, 250, 0.8);
-  opacity: 1;
-}
-</style>
 
     
 
@@ -2240,6 +1234,8 @@ window.__i18nDyn = {
     "es": {
       "action_all_projects": "Ver todos los proyectos",
       "action_case_study": "Caso de estudio",
+      "action_copied": "Copiado",
+      "action_copy": "Copiar",
       "action_copy_code": "Copiar código",
       "action_download_paper": "Descargar Paper",
       "action_home": "Volver al inicio",
@@ -2260,6 +1256,7 @@ window.__i18nDyn = {
       "aria_toggle_lang": "Cambiar idioma",
       "aria_toggle_theme": "Cambiar tema",
       "blog_description": "Artículos sobre física, IA, meteorología y más",
+      "blog_posts_count": "artículos",
       "blog_title": "Blog",
       "cmdk_agent_context": "Contexto para agentes",
       "cmdk_copy_email": "Copiar email",
@@ -2279,6 +1276,10 @@ window.__i18nDyn = {
       "cmdk_material": "Material universitario",
       "cmdk_placeholder": "Buscar o ejecutar un comando…",
       "cmdk_terminal": "Abrir terminal",
+      "col_links": "Enlaces",
+      "col_project": "Proyecto",
+      "col_stack": "Stack",
+      "col_status": "Estado",
       "contact_intro": "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.",
       "content_comments": "Comentarios",
       "content_index": "Índice",
@@ -2294,12 +1295,18 @@ window.__i18nDyn = {
       "error_message": "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.",
       "error_quote": "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»",
       "error_title": "¡Página no encontrada!",
+      "exp_achievements": "logros",
+      "exp_current": "Puesto actual",
       "footer_contact": "Contacto",
       "footer_made_with": "Hecho con",
       "footer_resources": "Recursos",
       "footer_sections": "Secciones",
       "gh_contributions": "contribuciones en el último año",
       "gh_view_profile": "Ver perfil",
+      "hero_callout_defect": "Defecto segmentado",
+      "hero_callout_text": "Flanco leído con GLM-OCR + LoRA",
+      "hero_scan_caption": "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos.",
+      "material_intro_label": "Apuntes",
       "nav_blog": "Blog",
       "nav_home": "Inicio",
       "nav_material": "Material",
@@ -2314,14 +1321,21 @@ window.__i18nDyn = {
       "project_period": "Periodo",
       "project_role": "Rol",
       "project_stack": "Stack",
+      "projects_more": "Más proyectos",
+      "search_intro": "Busca en los artículos, los casos de estudio y los apuntes.",
       "section_blog": "Del blog",
+      "section_blog_intro": "Visión por computador, LLMs, física y meteorología.",
       "section_certs": "Certificaciones",
       "section_contact": "Contacto",
       "section_edu": "Educación",
       "section_exp": "Experiencia",
+      "section_exp_intro": "De la física atmosférica a la visión industrial, pasando por la investigación en LLMs.",
       "section_github": "Actividad en GitHub",
       "section_projects": "Proyectos",
+      "section_projects_intro": "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más.",
       "section_pub": "Publicaciones",
+      "section_skills": "Herramientas",
+      "section_skills_intro": "Lo que uso a diario, agrupado por área.",
       "status_active": "Activo",
       "status_completed": "Completado",
       "status_development": "En desarrollo",
@@ -2351,6 +1365,8 @@ window.__i18nDyn = {
     "en": {
       "action_all_projects": "View all projects",
       "action_case_study": "Case study",
+      "action_copied": "Copied",
+      "action_copy": "Copy",
       "action_copy_code": "Copy code",
       "action_download_paper": "Download Paper",
       "action_home": "Go to homepage",
@@ -2371,6 +1387,7 @@ window.__i18nDyn = {
       "aria_toggle_lang": "Change language",
       "aria_toggle_theme": "Toggle theme",
       "blog_description": "Articles about physics, AI, meteorology and more",
+      "blog_posts_count": "posts",
       "blog_title": "Blog",
       "cmdk_agent_context": "Agent context",
       "cmdk_copy_email": "Copy email",
@@ -2390,6 +1407,10 @@ window.__i18nDyn = {
       "cmdk_material": "University notes",
       "cmdk_placeholder": "Search or run a command…",
       "cmdk_terminal": "Open terminal",
+      "col_links": "Links",
+      "col_project": "Project",
+      "col_stack": "Stack",
+      "col_status": "Status",
       "contact_intro": "Got a computer vision or LLM problem to take to production? Drop me a line.",
       "content_comments": "Comments",
       "content_index": "Index",
@@ -2405,12 +1426,18 @@ window.__i18nDyn = {
       "error_message": "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
       "error_quote": "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\"",
       "error_title": "Page not found!",
+      "exp_achievements": "achievements",
+      "exp_current": "Current role",
       "footer_contact": "Contact",
       "footer_made_with": "Made with",
       "footer_resources": "Resources",
       "footer_sections": "Sections",
       "gh_contributions": "contributions in the last year",
       "gh_view_profile": "View profile",
+      "hero_callout_defect": "Segmented defect",
+      "hero_callout_text": "Sidewall read with GLM-OCR + LoRA",
+      "hero_scan_caption": "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection.",
+      "material_intro_label": "Notes",
       "nav_blog": "Blog",
       "nav_home": "Home",
       "nav_material": "Resources",
@@ -2425,14 +1452,21 @@ window.__i18nDyn = {
       "project_period": "Period",
       "project_role": "Role",
       "project_stack": "Stack",
+      "projects_more": "More projects",
+      "search_intro": "Search the posts, the case studies and the course notes.",
       "section_blog": "From the blog",
+      "section_blog_intro": "Computer vision, LLMs, physics and meteorology.",
       "section_certs": "Certifications",
       "section_contact": "Contact",
       "section_edu": "Education",
       "section_exp": "Experience",
+      "section_exp_intro": "From atmospheric physics to industrial vision, by way of LLM research.",
       "section_github": "GitHub Activity",
       "section_projects": "Projects",
+      "section_projects_intro": "Full case studies and the rest of the work, with its status and where to read more.",
       "section_pub": "Publications",
+      "section_skills": "Tools",
+      "section_skills_intro": "What I use every day, grouped by area.",
       "status_active": "Active",
       "status_completed": "Completed",
       "status_development": "In development",
@@ -2612,7 +1646,6 @@ window.__i18nDyn = {
       <button class="cmdk-item" data-action="goto" data-target="/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">Contacto</span></button>
 
       <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Acciones</div>
-      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">Cambiar tema</span></button>
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Cambiar idioma</span> (ES/EN)</span></button>
       <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copiar email</span></button>
@@ -2672,103 +1705,6 @@ window.__i18nDyn = {
   </div>
 </div>
 
-<style>
-.cmdk-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 120;
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 12vh 1rem 1rem;
-}
-.cmdk-panel {
-  width: 100%;
-  max-width: 560px;
-  background: white;
-  border: 1px solid rgb(229 231 235);
-  border-radius: 0.875rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  animation: cmdkIn 0.15s ease-out;
-}
-@keyframes cmdkIn {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to { opacity: 1; transform: none; }
-}
-.dark .cmdk-panel { background: rgb(15 23 42); border-color: rgb(51 65 85); }
-.cmdk-input-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgb(229 231 235);
-}
-.dark .cmdk-input-row { border-color: rgb(51 65 85); }
-.cmdk-input-icon { color: #8b5cf6; font-size: 0.9rem; }
-#cmdk-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: rgb(17 24 39);
-}
-.dark #cmdk-input { color: rgb(243 244 246); }
-.cmdk-list { max-height: 46vh; overflow-y: auto; padding: 0.4rem; }
-.cmdk-group {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgb(107 114 128);
-  padding: 0.6rem 0.75rem 0.25rem;
-}
-.dark .cmdk-group { color: rgb(148 163 184); }
-.cmdk-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  text-align: left;
-  padding: 0.55rem 0.75rem;
-  border: none;
-  background: transparent;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: rgb(31 41 55);
-  cursor: pointer;
-}
-.dark .cmdk-item { color: rgb(226 232 240); }
-.cmdk-item i { width: 1.1rem; text-align: center; color: #7c3aed; font-size: 0.85rem; }
-.dark .cmdk-item i { color: #a78bfa; }
-.cmdk-item.active, .cmdk-item:hover { background: rgba(139, 92, 246, 0.12); }
-.cmdk-empty { padding: 1.5rem; text-align: center; font-size: 0.85rem; color: rgb(107 114 128); }
-.cmdk-footer {
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  border-top: 1px solid rgb(229 231 235);
-  font-size: 0.7rem;
-  color: rgb(107 114 128);
-}
-.dark .cmdk-footer { border-color: rgb(51 65 85); color: rgb(148 163 184); }
-.cmdk-kbd {
-  display: inline-block;
-  padding: 0.1rem 0.35rem;
-  margin-right: 0.25rem;
-  border: 1px solid rgb(209 213 219);
-  border-bottom-width: 2px;
-  border-radius: 0.3rem;
-  font-size: 0.65rem;
-  font-family: monospace;
-  color: rgb(75 85 99);
-  background: rgb(249 250 251);
-}
-.dark .cmdk-kbd { background: rgb(30 41 59); border-color: rgb(71 85 105); color: rgb(203 213 225); }
-</style>
 
 <script>window.__cmdkIndexUrl = '\/index.json';</script>
 <script defer src="/js/cmdk.js"></script>
@@ -2792,72 +1728,6 @@ window.__i18nDyn = {
   </div>
 </div>
 
-<style>
-.term-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 130;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-.term-window {
-  width: 100%;
-  max-width: 640px;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(51 65 85);
-  animation: cmdkIn 0.15s ease-out;
-}
-.term-titlebar {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 0.9rem;
-  background: #1e293b;
-  border-bottom: 1px solid rgb(51 65 85);
-}
-.term-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; cursor: pointer; }
-.term-title {
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: rgb(148 163 184);
-}
-.term-body {
-  background: #0f172a;
-  color: #e2e8f0;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  padding: 0.9rem;
-  height: 50vh;
-  max-height: 420px;
-  overflow-y: auto;
-  cursor: text;
-}
-.term-body a { color: #22d3ee; }
-.term-output-cmd { color: #94a3b8; }
-.term-accent { color: #22d3ee; }
-.term-warn { color: #fbbf24; }
-.term-input-line { display: flex; gap: 0.5rem; align-items: center; }
-.term-prompt { color: #4ade80; white-space: nowrap; }
-#term-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e2e8f0;
-  font-family: inherit;
-  font-size: inherit;
-  caret-color: #22d3ee;
-}
-</style>
 
 <script>
 window.__terminalData = {
@@ -2915,6 +1785,7 @@ window.__terminalData = {
 </script>
 <script defer src="/js/terminal.js"></script>
 
+    <script defer src="/js/scan.js"></script>
     <script defer src="/js/cv-mode.js"></script>
   </body>
 </html>

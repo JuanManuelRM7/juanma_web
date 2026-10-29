@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="m-auto "><head>
+<html lang="es" class="dark"><head>
   
 
 
@@ -8,10 +8,9 @@
 
 
 <meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
 <title>Física Moderna · Juan Manuel Ruiz Muñoz</title>
 
-<meta name="theme-color" content="#8b5cf6" />
 <meta name="description" content="ML Engineer especializado en Computer Vision y LLMs: detección de defectos industriales, OCR multimodal con LoRA y sistemas RAG en producción. Físico con formación avanzada en Matemáticas. Proyectos, publicaciones y blog de Juan Manuel Ruiz Muñoz." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
@@ -75,8 +74,9 @@
   <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
-  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b1116" />
 
   
   
@@ -93,359 +93,120 @@
   
   
   
-  <link href="/main.min.471387030ed6e396ed55a6761e9bd4ed22c4a9e9c64145949132e12440b75a66.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/search.css" />
-  <link rel="stylesheet" href="/css/general.css" />
-  <link rel="stylesheet" href="/css/syntax.css" />
+  <link href="/main.min.8beed2a3ded94c5f9ed383ba4449e48d138d685d72b46cd08a12e5c8b1b648b7.css" rel="stylesheet" />
   
 
-  <script>
-    let html = document.querySelector("html");
-    let theme = window.localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      html.classList.remove("light");
-      if (theme === "dark") {
-        html.classList.add("dark");
-        window.localStorage.setItem("theme", "dark");
-      } else {
-        html.classList.remove("dark");
-        window.localStorage.setItem("theme", "light");
-      }
-      fixThemeToggleIcon(theme);
-    };
-
-    const fixThemeToggleIcon = (theme) => {
-      
-      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
-        if (theme === "dark") {
-          themeToggle.classList.remove("fa-moon");
-          themeToggle.classList.add("fa-sun");
-        } else {
-          themeToggle.classList.remove("fa-sun");
-          themeToggle.classList.add("fa-moon");
-        }
-      });
-    };
-
-    if (theme == null) {
-      if (html.classList.contains("dark")) {
-        theme = "dark";
-      } else if (html.classList.contains("light")) {
-        theme = "light";
-      } else {
-        
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (prefersDark) {
-          theme = "dark";
-        } else {
-          theme = "light";
-        }
-      }
-    }
-
-    setTheme(theme);
-    
-    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
-
-    const toggleTheme = (evt) => {
-      const next = html.classList.contains("dark") ? "light" : "dark";
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!document.startViewTransition || reduceMotion) {
-        setTheme(next);
-        return;
-      }
-      
-      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
-      const y = evt && evt.clientY ? evt.clientY : 40;
-      html.classList.add("theme-vt");
-      const vt = document.startViewTransition(() => setTheme(next));
-      vt.ready
-        .then(() => {
-          const r = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-          );
-          return html.animate(
-            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
-            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
-          ).finished;
-        })
-        .catch(() => {})
-        .finally(() => html.classList.remove("theme-vt"));
-    };
-  </script>
   
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="min-h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="term">
-    
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Ir al contenido</a>
-    
-    <header
-  class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-violet-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
-  style="box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.12);"
-  role="banner"
->
-  
-  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
-    <a class="nav-menu-item !p-1 !px-2" href="/"><span data-i18n="nav_home">Inicio</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
-      <i class="fas fa-search" aria-hidden="true"></i>
+<body class="site" data-kind="term">
+    <div class="atmos" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link" data-i18n="action_skip_content">Ir al contenido</a>
+    <header class="site-head" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Juan Manuel Ruiz Muñoz, Inicio">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="11" cy="11" r="5.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="16.2" cy="6.4" r="1.6" fill="var(--color-accent)"/></svg>
+      Juan Manuel Ruiz Muñoz
     </a>
-    <button
-      class="fas fa-globe text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
-      onclick="toggleLang()"
-      aria-label="Cambiar idioma"
-      data-i18n-aria="aria_toggle_lang"
-    ></button>
-    <i
-      class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme(event)"
-      role="button"
-      tabindex="0"
-      aria-label="Cambiar tema"
-      data-i18n-aria="aria_toggle_theme"
-      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-    ></i>
-  </nav>
-
-  
-  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
-    <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="/"><span data-i18n="nav_home">Inicio</span></a>
-      <a class="nav-menu-item" href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
-      <a class="nav-menu-item" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    </div>
-    <div class="flex items-center justify-end gap-3">
-      
-      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Abrir paleta de comandos" data-i18n-aria="aria_open_palette">
-        <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
+    <nav class="nav" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
+      <a href="/"><span data-i18n="nav_home">Inicio</span></a>
+      <a href="/proyectos/"><span data-i18n="nav_projects">Proyectos</span></a>
+      <a href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
+      <a href="/material/"><span data-i18n="nav_material">Material</span></a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn btn--line btn--sm btn--cmdk" onclick="window.openCmdk && window.openCmdk()" aria-label="Abrir paleta de comandos" data-i18n-aria="aria_open_palette">
+        <i class="fas fa-search" aria-hidden="true"></i><span class="label-wide" data-i18n="nav_search">Buscar</span> <kbd class="kbd">⌘K</kbd>
       </button>
-      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Buscar">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </a>
-      
-      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
-        <span id="lang-label">EN</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+      <button type="button" id="lang-toggle" class="btn btn--line btn--sm" onclick="toggleLang()" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">EN</span>
       </button>
-      <i
-        class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-        onclick="toggleTheme(event)"
-        role="button"
-        tabindex="0"
-        aria-label="Cambiar tema"
-        data-i18n-aria="aria_toggle_theme"
-        onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-      ></i>
     </div>
-  </nav>
+  </div>
 </header>
 
+    <main id="main-content">
 
 
-
-    
-    <main id="main-content" class="grow">
-
-
-<div class="max-w-4xl mx-auto px-4">
-  <div class="mb-8 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
-      <span class="text-violet-600 dark:text-violet-400">#</span>Física Moderna
-    </h1>
-  </div>
-
+<header class="page-head wrap">
   
-  <div class="grid grid-cols-1 gap-4 mb-10">
+<nav class="crumbs" aria-label="Miga de pan" data-i18n-aria="aria_breadcrumb">
+  <a href="/" data-i18n="nav_home">Inicio</a>
+  
+</nav>
+
+
+  <h1><span class="muted">#</span>Física Moderna</h1>
+  <div class="post-meta"><span><span class="num">1</span></span><a class="pill" href="/tags/">#tags</a></div>
+</header>
+<div class="wrap" style="margin-top: var(--space-2xl)">
+  
+  <div class="ledger" style="margin-top:0">
     
-    <a href="/material/mecanica-cuantica/" class="group flex flex-col p-5 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
-      <p class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
-        <span class="font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400">Material</span><span aria-hidden="true">·</span>
-        <time datetime="2025-10-27">27 de octubre de 2025</time>
-      </p>
-      <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Mecánica Cuántica</h2>
-      <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Material y recursos de Mecánica Cuántica: principios fundamentales, física moderna y teoría cuántica</p>
-    </a>
+    <div class="ledger__row ledger__row--post">
+      <time class="num ledger__cap" datetime="2025-10-27">27 oct. 2025</time>
+      <div>
+        <h3><a href="/material/mecanica-cuantica/">Mecánica Cuántica</a></h3>
+        <p>Material y recursos de Mecánica Cuántica: principios fundamentales, física moderna y teoría cuántica</p>
+      </div>
+      <span class="ledger__go muted"><span data-i18n="nav_material">Material</span></span>
+    </div>
     
   </div>
-  <div class="my-6 flex justify-center pagination-links">
-    
-  </div>
+  <div class="pagination-links"></div>
   
 </div>
 
     </main>
-    
-    <footer class="text-sm border-t-2 border-violet-500 dark:border-violet-400  py-6 bg-gradient-to-r from-transparent via-violet-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent "
-  style="box-shadow: 0 -4px 6px -1px rgba(139, 92, 246, 0.1);"
-  role="contentinfo">
-
-  
-  
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left mb-4">
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_sections">Secciones</h4>
-        <div class="flex flex-col gap-1">
-          <a href="/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_home">Inicio</span></a>
-          <a href="/blog/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
-          <a href="/material/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Material</span></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_resources">Recursos</h4>
-        <div class="flex flex-col gap-1">
-          <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
-          <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Buscar</span></a>
-          <a href="/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
-            <i class="fas fa-rss" aria-hidden="true"></i> RSS
-          </a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_contact">Contacto</h4>
-        <div class="flex flex-col gap-1">
-          
-          <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">LinkedIn</a>
-          
-          <a href="https://github.com/juanmanuelruizm" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">GitHub</a>
-          
-          <a href="mailto:juanmanuelruiz383@gmail.com" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">Email</a>
-          
-          <a href="https://orcid.org/0009-0008-7529-306X" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">ORCID</a>
-          
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-gray-200 dark:border-gray-700 pt-3 text-center">
-      <p class="text-xs text-gray-400 dark:text-gray-500">
-        © 2026
-        <a href="https://github.com/juanmanuelruizm" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline">Juan Manuel</a>
-        · <span data-i18n="footer_made_with">Hecho con</span> <span class="text-red-400">♥</span> y <a href="https://gohugo.io" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline" target="_blank" rel="noopener noreferrer">Hugo</a>
-      </p>
+    <footer class="site-foot" role="contentinfo">
+  <div class="wrap">
+    <div class="wordmark" data-points-word="Juan Manuel" aria-hidden="true"><canvas></canvas></div>
+    <div class="foot-row">
+      <span>© 2026 Juan Manuel Ruiz Muñoz · <span data-i18n="footer_made_with">Hecho con</span> <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a></span>
+      <nav aria-label="Secciones" data-i18n-aria="footer_sections">
+        <a href="/blog/" data-i18n="nav_blog">Blog</a>
+        <a href="/material/" data-i18n="nav_material">Material</a>
+        <a href="/search/" data-i18n="nav_search">Buscar</a>
+        <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf">CV (PDF)</a>
+        <a href="/index.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:juanmanuelruiz383@gmail.com">Email</a><a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer">ORCID</a>
+      </nav>
     </div>
   </div>
-  
-
-  
 </footer>
 
-
-    
     
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        
-        entry.target.classList.add('animate-fade-in-up');
-        
-        entry.target.querySelectorAll('[data-stagger]').forEach(group => {
-          Array.from(group.children).forEach((child, i) => {
-            child.style.transitionDelay = (i * 90) + 'ms';
-          });
-          group.classList.add('stagger-in');
-        });
-        
-        observer.unobserve(entry.target);
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('[data-reveal]')).filter(function (el) { return el.getBoundingClientRect().top > innerHeight; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = ''; e.target.classList.add('animate-fade-in-up'); io.unobserve(e.target);
     });
-  }, observerOptions);
-
-  
-  document.querySelectorAll('.card, .card-group, [data-reveal]').forEach(el => {
-    
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
-  });
-
-  
-  document.querySelectorAll('[data-stagger]').forEach(group => {
-    if (group.closest('[data-reveal]')) return;
-    const groupObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        Array.from(entry.target.children).forEach((child, i) => {
-          child.style.transitionDelay = (i * 90) + 'ms';
-        });
-        entry.target.classList.add('stagger-in');
-        groupObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.05 });
-    groupObserver.observe(group);
-  });  
-  const cardGroups = document.querySelectorAll('[data-card-group]');
-  cardGroups.forEach(group => {
-    const cards = group.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(card);
-    });
-  });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { el.style.opacity = '0'; io.observe(el); });
 });
 </script>
 
-<noscript><style>[data-reveal], [data-stagger] > * { opacity: 1 !important; transform: none !important; }</style></noscript>
-<style>
-.card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease-out;
-}
-
-.card.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-[data-reveal].animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-</style>
-
     <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('pre').forEach(function (pre) {
+  var label = function (k, d) { var t = (window.__i18n || {})[document.documentElement.lang] || {}; return t[k] || d; };
+  document.querySelectorAll('.article pre').forEach(function (pre) {
+    var box = pre.closest('.highlight') || pre;
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
     button.setAttribute('aria-label', "Copiar código");
     button.setAttribute('data-i18n-aria', 'action_copy_code');
-    button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    button.textContent = label('action_copy', 'Copiar');
     button.addEventListener('click', function () {
       var code = pre.querySelector('code');
       if (!code) return;
       navigator.clipboard.writeText(code.innerText).then(function () {
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = code.innerText;
@@ -455,44 +216,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       });
     });
-    pre.style.position = 'relative';
-    pre.appendChild(button);
+    box.appendChild(button);
   });
 });
 </script>
 
-<style>
-.copy-code-btn {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
-  padding: 0.3rem 0.45rem;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  font-size: 0.7rem;
-  opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
-  line-height: 1;
-}
-pre:hover .copy-code-btn {
-  opacity: 1;
-}
-.copy-code-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-}
-.copy-code-btn:focus-visible {
-  outline: 2px solid rgba(167, 139, 250, 0.8);
-  opacity: 1;
-}
-</style>
 
     
 
@@ -504,6 +236,8 @@ pre:hover .copy-code-btn {
     "es": {
       "action_all_projects": "Ver todos los proyectos",
       "action_case_study": "Caso de estudio",
+      "action_copied": "Copiado",
+      "action_copy": "Copiar",
       "action_copy_code": "Copiar código",
       "action_download_paper": "Descargar Paper",
       "action_home": "Volver al inicio",
@@ -524,6 +258,7 @@ pre:hover .copy-code-btn {
       "aria_toggle_lang": "Cambiar idioma",
       "aria_toggle_theme": "Cambiar tema",
       "blog_description": "Artículos sobre física, IA, meteorología y más",
+      "blog_posts_count": "artículos",
       "blog_title": "Blog",
       "cmdk_agent_context": "Contexto para agentes",
       "cmdk_copy_email": "Copiar email",
@@ -543,6 +278,10 @@ pre:hover .copy-code-btn {
       "cmdk_material": "Material universitario",
       "cmdk_placeholder": "Buscar o ejecutar un comando…",
       "cmdk_terminal": "Abrir terminal",
+      "col_links": "Enlaces",
+      "col_project": "Proyecto",
+      "col_stack": "Stack",
+      "col_status": "Estado",
       "contact_intro": "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.",
       "content_comments": "Comentarios",
       "content_index": "Índice",
@@ -558,12 +297,18 @@ pre:hover .copy-code-btn {
       "error_message": "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.",
       "error_quote": "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»",
       "error_title": "¡Página no encontrada!",
+      "exp_achievements": "logros",
+      "exp_current": "Puesto actual",
       "footer_contact": "Contacto",
       "footer_made_with": "Hecho con",
       "footer_resources": "Recursos",
       "footer_sections": "Secciones",
       "gh_contributions": "contribuciones en el último año",
       "gh_view_profile": "Ver perfil",
+      "hero_callout_defect": "Defecto segmentado",
+      "hero_callout_text": "Flanco leído con GLM-OCR + LoRA",
+      "hero_scan_caption": "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos.",
+      "material_intro_label": "Apuntes",
       "nav_blog": "Blog",
       "nav_home": "Inicio",
       "nav_material": "Material",
@@ -578,14 +323,21 @@ pre:hover .copy-code-btn {
       "project_period": "Periodo",
       "project_role": "Rol",
       "project_stack": "Stack",
+      "projects_more": "Más proyectos",
+      "search_intro": "Busca en los artículos, los casos de estudio y los apuntes.",
       "section_blog": "Del blog",
+      "section_blog_intro": "Visión por computador, LLMs, física y meteorología.",
       "section_certs": "Certificaciones",
       "section_contact": "Contacto",
       "section_edu": "Educación",
       "section_exp": "Experiencia",
+      "section_exp_intro": "De la física atmosférica a la visión industrial, pasando por la investigación en LLMs.",
       "section_github": "Actividad en GitHub",
       "section_projects": "Proyectos",
+      "section_projects_intro": "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más.",
       "section_pub": "Publicaciones",
+      "section_skills": "Herramientas",
+      "section_skills_intro": "Lo que uso a diario, agrupado por área.",
       "status_active": "Activo",
       "status_completed": "Completado",
       "status_development": "En desarrollo",
@@ -615,6 +367,8 @@ pre:hover .copy-code-btn {
     "en": {
       "action_all_projects": "View all projects",
       "action_case_study": "Case study",
+      "action_copied": "Copied",
+      "action_copy": "Copy",
       "action_copy_code": "Copy code",
       "action_download_paper": "Download Paper",
       "action_home": "Go to homepage",
@@ -635,6 +389,7 @@ pre:hover .copy-code-btn {
       "aria_toggle_lang": "Change language",
       "aria_toggle_theme": "Toggle theme",
       "blog_description": "Articles about physics, AI, meteorology and more",
+      "blog_posts_count": "posts",
       "blog_title": "Blog",
       "cmdk_agent_context": "Agent context",
       "cmdk_copy_email": "Copy email",
@@ -654,6 +409,10 @@ pre:hover .copy-code-btn {
       "cmdk_material": "University notes",
       "cmdk_placeholder": "Search or run a command…",
       "cmdk_terminal": "Open terminal",
+      "col_links": "Links",
+      "col_project": "Project",
+      "col_stack": "Stack",
+      "col_status": "Status",
       "contact_intro": "Got a computer vision or LLM problem to take to production? Drop me a line.",
       "content_comments": "Comments",
       "content_index": "Index",
@@ -669,12 +428,18 @@ pre:hover .copy-code-btn {
       "error_message": "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
       "error_quote": "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\"",
       "error_title": "Page not found!",
+      "exp_achievements": "achievements",
+      "exp_current": "Current role",
       "footer_contact": "Contact",
       "footer_made_with": "Made with",
       "footer_resources": "Resources",
       "footer_sections": "Sections",
       "gh_contributions": "contributions in the last year",
       "gh_view_profile": "View profile",
+      "hero_callout_defect": "Segmented defect",
+      "hero_callout_text": "Sidewall read with GLM-OCR + LoRA",
+      "hero_scan_caption": "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection.",
+      "material_intro_label": "Notes",
       "nav_blog": "Blog",
       "nav_home": "Home",
       "nav_material": "Resources",
@@ -689,14 +454,21 @@ pre:hover .copy-code-btn {
       "project_period": "Period",
       "project_role": "Role",
       "project_stack": "Stack",
+      "projects_more": "More projects",
+      "search_intro": "Search the posts, the case studies and the course notes.",
       "section_blog": "From the blog",
+      "section_blog_intro": "Computer vision, LLMs, physics and meteorology.",
       "section_certs": "Certifications",
       "section_contact": "Contact",
       "section_edu": "Education",
       "section_exp": "Experience",
+      "section_exp_intro": "From atmospheric physics to industrial vision, by way of LLM research.",
       "section_github": "GitHub Activity",
       "section_projects": "Projects",
+      "section_projects_intro": "Full case studies and the rest of the work, with its status and where to read more.",
       "section_pub": "Publications",
+      "section_skills": "Tools",
+      "section_skills_intro": "What I use every day, grouped by area.",
       "status_active": "Active",
       "status_completed": "Completed",
       "status_development": "In development",
@@ -876,7 +648,6 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="goto" data-target="/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">Contacto</span></button>
 
       <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Acciones</div>
-      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">Cambiar tema</span></button>
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Cambiar idioma</span> (ES/EN)</span></button>
       <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Descargar CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copiar email</span></button>
@@ -936,103 +707,6 @@ pre:hover .copy-code-btn {
   </div>
 </div>
 
-<style>
-.cmdk-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 120;
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 12vh 1rem 1rem;
-}
-.cmdk-panel {
-  width: 100%;
-  max-width: 560px;
-  background: white;
-  border: 1px solid rgb(229 231 235);
-  border-radius: 0.875rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  animation: cmdkIn 0.15s ease-out;
-}
-@keyframes cmdkIn {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to { opacity: 1; transform: none; }
-}
-.dark .cmdk-panel { background: rgb(15 23 42); border-color: rgb(51 65 85); }
-.cmdk-input-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgb(229 231 235);
-}
-.dark .cmdk-input-row { border-color: rgb(51 65 85); }
-.cmdk-input-icon { color: #8b5cf6; font-size: 0.9rem; }
-#cmdk-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: rgb(17 24 39);
-}
-.dark #cmdk-input { color: rgb(243 244 246); }
-.cmdk-list { max-height: 46vh; overflow-y: auto; padding: 0.4rem; }
-.cmdk-group {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgb(107 114 128);
-  padding: 0.6rem 0.75rem 0.25rem;
-}
-.dark .cmdk-group { color: rgb(148 163 184); }
-.cmdk-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  text-align: left;
-  padding: 0.55rem 0.75rem;
-  border: none;
-  background: transparent;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: rgb(31 41 55);
-  cursor: pointer;
-}
-.dark .cmdk-item { color: rgb(226 232 240); }
-.cmdk-item i { width: 1.1rem; text-align: center; color: #7c3aed; font-size: 0.85rem; }
-.dark .cmdk-item i { color: #a78bfa; }
-.cmdk-item.active, .cmdk-item:hover { background: rgba(139, 92, 246, 0.12); }
-.cmdk-empty { padding: 1.5rem; text-align: center; font-size: 0.85rem; color: rgb(107 114 128); }
-.cmdk-footer {
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  border-top: 1px solid rgb(229 231 235);
-  font-size: 0.7rem;
-  color: rgb(107 114 128);
-}
-.dark .cmdk-footer { border-color: rgb(51 65 85); color: rgb(148 163 184); }
-.cmdk-kbd {
-  display: inline-block;
-  padding: 0.1rem 0.35rem;
-  margin-right: 0.25rem;
-  border: 1px solid rgb(209 213 219);
-  border-bottom-width: 2px;
-  border-radius: 0.3rem;
-  font-size: 0.65rem;
-  font-family: monospace;
-  color: rgb(75 85 99);
-  background: rgb(249 250 251);
-}
-.dark .cmdk-kbd { background: rgb(30 41 59); border-color: rgb(71 85 105); color: rgb(203 213 225); }
-</style>
 
 <script>window.__cmdkIndexUrl = '\/index.json';</script>
 <script defer src="/js/cmdk.js"></script>
@@ -1056,72 +730,6 @@ pre:hover .copy-code-btn {
   </div>
 </div>
 
-<style>
-.term-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 130;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-.term-window {
-  width: 100%;
-  max-width: 640px;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(51 65 85);
-  animation: cmdkIn 0.15s ease-out;
-}
-.term-titlebar {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 0.9rem;
-  background: #1e293b;
-  border-bottom: 1px solid rgb(51 65 85);
-}
-.term-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; cursor: pointer; }
-.term-title {
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: rgb(148 163 184);
-}
-.term-body {
-  background: #0f172a;
-  color: #e2e8f0;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  padding: 0.9rem;
-  height: 50vh;
-  max-height: 420px;
-  overflow-y: auto;
-  cursor: text;
-}
-.term-body a { color: #22d3ee; }
-.term-output-cmd { color: #94a3b8; }
-.term-accent { color: #22d3ee; }
-.term-warn { color: #fbbf24; }
-.term-input-line { display: flex; gap: 0.5rem; align-items: center; }
-.term-prompt { color: #4ade80; white-space: nowrap; }
-#term-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e2e8f0;
-  font-family: inherit;
-  font-size: inherit;
-  caret-color: #22d3ee;
-}
-</style>
 
 <script>
 window.__terminalData = {
@@ -1179,6 +787,7 @@ window.__terminalData = {
 </script>
 <script defer src="/js/terminal.js"></script>
 
+    <script defer src="/js/scan.js"></script>
     <script defer src="/js/cv-mode.js"></script>
   </body>
 </html>

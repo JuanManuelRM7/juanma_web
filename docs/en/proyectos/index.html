@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="m-auto "><head>
+<html lang="en" class="dark"><head>
   
 
 
@@ -8,10 +8,9 @@
 
 
 <meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
 <title>Projects · Juan Manuel Ruiz Muñoz</title>
 
-<meta name="theme-color" content="#8b5cf6" />
 <meta name="description" content="Case studies and open-source projects by Juan Manuel Ruiz Muñoz: computer vision, LLMs and computational physics, with metrics and code." />
 <meta name="author" content="Juan Manuel Ruiz Muñoz" />
 <meta name="robots" content="index, follow" />
@@ -74,8 +73,9 @@
   <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
   
-  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b1116" />
 
   
   
@@ -99,247 +99,87 @@
   
   
   
-  <link href="/main.min.471387030ed6e396ed55a6761e9bd4ed22c4a9e9c64145949132e12440b75a66.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/search.css" />
-  <link rel="stylesheet" href="/css/general.css" />
-  <link rel="stylesheet" href="/css/syntax.css" />
+  <link href="/main.min.8beed2a3ded94c5f9ed383ba4449e48d138d685d72b46cd08a12e5c8b1b648b7.css" rel="stylesheet" />
   
 
-  <script>
-    let html = document.querySelector("html");
-    let theme = window.localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      html.classList.remove("light");
-      if (theme === "dark") {
-        html.classList.add("dark");
-        window.localStorage.setItem("theme", "dark");
-      } else {
-        html.classList.remove("dark");
-        window.localStorage.setItem("theme", "light");
-      }
-      fixThemeToggleIcon(theme);
-    };
-
-    const fixThemeToggleIcon = (theme) => {
-      
-      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
-        if (theme === "dark") {
-          themeToggle.classList.remove("fa-moon");
-          themeToggle.classList.add("fa-sun");
-        } else {
-          themeToggle.classList.remove("fa-sun");
-          themeToggle.classList.add("fa-moon");
-        }
-      });
-    };
-
-    if (theme == null) {
-      if (html.classList.contains("dark")) {
-        theme = "dark";
-      } else if (html.classList.contains("light")) {
-        theme = "light";
-      } else {
-        
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (prefersDark) {
-          theme = "dark";
-        } else {
-          theme = "light";
-        }
-      }
-    }
-
-    setTheme(theme);
-    
-    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
-
-    const toggleTheme = (evt) => {
-      const next = html.classList.contains("dark") ? "light" : "dark";
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!document.startViewTransition || reduceMotion) {
-        setTheme(next);
-        return;
-      }
-      
-      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
-      const y = evt && evt.clientY ? evt.clientY : 40;
-      html.classList.add("theme-vt");
-      const vt = document.startViewTransition(() => setTheme(next));
-      vt.ready
-        .then(() => {
-          const r = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-          );
-          return html.animate(
-            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
-            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
-          ).finished;
-        })
-        .catch(() => {})
-        .finally(() => html.classList.remove("theme-vt"));
-    };
-  </script>
   
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>
 
-<body class="min-h-screen p-2 m-auto max-w-4xl flex flex-col" data-kind="section">
-    
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-md focus:outline-none" data-i18n="action_skip_content">Skip to content</a>
-    
-    <header
-  class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-violet-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
-  style="box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.12);"
-  role="banner"
->
-  
-  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="Main navigation" data-i18n-aria="aria_main_nav">
-    <a class="nav-menu-item !p-1 !px-2" href="/en/"><span data-i18n="nav_home">Home</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/en/proyectos/"><span data-i18n="nav_projects">Projects</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Search">
-      <i class="fas fa-search" aria-hidden="true"></i>
+<body class="site" data-kind="section">
+    <div class="atmos" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link" data-i18n="action_skip_content">Skip to content</a>
+    <header class="site-head" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Juan Manuel Ruiz Muñoz, Home">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="11" cy="11" r="5.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="16.2" cy="6.4" r="1.6" fill="var(--color-accent)"/></svg>
+      Juan Manuel Ruiz Muñoz
     </a>
-    <button
-      class="fas fa-globe text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
-      onclick="toggleLang()"
-      aria-label="Change language"
-      data-i18n-aria="aria_toggle_lang"
-    ></button>
-    <i
-      class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme(event)"
-      role="button"
-      tabindex="0"
-      aria-label="Toggle theme"
-      data-i18n-aria="aria_toggle_theme"
-      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-    ></i>
-  </nav>
-
-  
-  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="Main navigation" data-i18n-aria="aria_main_nav">
-    <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="/en/"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-menu-item" href="/en/proyectos/"><span data-i18n="nav_projects">Projects</span></a>
-      <a class="nav-menu-item" href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
-    </div>
-    <div class="flex items-center justify-end gap-3">
-      
-      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Open command palette" data-i18n-aria="aria_open_palette">
-        <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
+    <nav class="nav" aria-label="Main navigation" data-i18n-aria="aria_main_nav">
+      <a href="/en/"><span data-i18n="nav_home">Home</span></a>
+      <a href="/en/proyectos/" aria-current="page"><span data-i18n="nav_projects">Projects</span></a>
+      <a href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
+      <a href="/material/"><span data-i18n="nav_material">Resources</span></a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn btn--line btn--sm btn--cmdk" onclick="window.openCmdk && window.openCmdk()" aria-label="Open command palette" data-i18n-aria="aria_open_palette">
+        <i class="fas fa-search" aria-hidden="true"></i><span class="label-wide" data-i18n="nav_search">Search</span> <kbd class="kbd">⌘K</kbd>
       </button>
-      <a href="/search/" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="Search">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </a>
-      
-      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="Change language" data-i18n-aria="aria_toggle_lang">
-        <span id="lang-label">ES</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+      <button type="button" id="lang-toggle" class="btn btn--line btn--sm" onclick="toggleLang()" aria-label="Change language" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">ES</span>
       </button>
-      <i
-        class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-        onclick="toggleTheme(event)"
-        role="button"
-        tabindex="0"
-        aria-label="Toggle theme"
-        data-i18n-aria="aria_toggle_theme"
-        onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-      ></i>
     </div>
-  </nav>
+  </div>
 </header>
 
+    <main id="main-content">
+<header class="page-head wrap">
+  
+<nav class="crumbs" aria-label="Breadcrumb" data-i18n-aria="aria_breadcrumb">
+  <a href="/en/" data-i18n="nav_home">Home</a>
+  
+</nav>
 
 
-
-    
-    <main id="main-content" class="grow">
-<div class="max-w-4xl mx-auto px-4">
-  <div class="mb-8 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
-      <i class="fas fa-project-diagram text-violet-600 dark:text-violet-400 mr-2" aria-hidden="true"></i>Projects
-    </h1>
-    <div class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"><p>Work with measurable results: two in-depth case studies plus the rest of the projects with their code, metrics and links.</p>
+  <h1>Projects</h1>
+  <div class="page-head__lead"><p>Work with measurable results: two in-depth case studies plus the rest of the projects with their code, metrics and links.</p>
 </div>
+</header>
+<div class="wrap" style="margin-top: var(--space-xl)">
+  
+
+
+
+
+
+
+
+
+
+<article class="feature">
+  
+  <a class="feature__media ticks" href="/en/proyectos/vcalib/" tabindex="-1" aria-hidden="true">
+    <img src="/images/proyectos/vcalib/money_shot_level2_hu_9cc2a416bf043179.webp" width="1000" height="532" alt="" loading="lazy" decoding="async">
+    
+  </a>
+  <div class="feature__body">
+    <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_active">Active</span></p>
+    <h3><a href="/en/proyectos/vcalib/" data-i18n="proj_title_vcalib">vcalib: calibration filters for RF-DETR under illumination shift</a></h3>
+    <p data-i18n="proj_desc_vcalib">A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.</p>
+    
+    <ul class="measures">
+      <li><span data-i18n="proj_metric_vcalib_1">35.9% activation recovery on real held-out image pairs</span></li><li><span data-i18n="proj_metric_vcalib_2">Closes the AP gap on level_2 (SAM3 pseudo-GT)</span></li><li><span data-i18n="proj_metric_vcalib_3">~3.5 min to fit on a laptop CPU</span></li>
+    </ul>
+    
+    <div class="stack"><span>PyTorch</span><span>RF-DETR</span><span>SAM3</span><span>uv</span></div>
+    <div class="links">
+      <a class="btn btn--sm" href="/en/proyectos/vcalib/"><span data-i18n="action_case_study">Case study</span></a>
+      <a class="btn btn--line btn--sm" href="https://github.com/juanmanuelruizm/vcalib" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span data-i18n="action_repo">Code</span></a>
+      
+      
+      
+    </div>
   </div>
-
-  <div class="mb-12">
-    
-
-
-
-
-
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group project-card-featured">
-  
-  <div class="project-cover">
-    <a href="/en/proyectos/vcalib/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
-    
-    <img src="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp" srcset="/images/proyectos/vcalib/money_shot_level2_hu_f133e440864b92a4.webp 450w, /images/proyectos/vcalib/money_shot_level2_hu_3f533fedc96342d5.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
-    
-    </a>
-    
-    <span class="project-status project-status-active project-cover-status" data-i18n="status_active">Active</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
-    
-    <a href="/en/proyectos/vcalib/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_vcalib">vcalib: calibration filters for RF-DETR under illumination shift</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vcalib">A ~2 KB differentiable filter that undoes an illumination shift before the image reaches a frozen detector. No retraining, no labels, minutes on a CPU.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_1">35.9% activation recovery on real held-out image pairs</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_2">Closes the AP gap on level_2 (SAM3 pseudo-GT)</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_vcalib_3">~3.5 min to fit on a laptop CPU</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SAM3</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">uv</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    <a href="/en/proyectos/vcalib/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Case study</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
-    
-    
-    <a href="https://github.com/juanmanuelruizm/vcalib" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
-    
-    
-    
-    
-  </div>
-  
 </article>
 
 
@@ -347,557 +187,198 @@
 
 
 
-
-
-
-
-
-
-
-
-<article class="project-card group project-card-featured">
+<article class="feature">
   
-  <div class="project-cover project-cover-contain">
-    <a href="/en/proyectos/desinformacion-ontologias-llm/" class="project-cover-link flex" aria-hidden="true" tabindex="-1">
+  <a class="feature__media ticks" href="/en/proyectos/desinformacion-ontologias-llm/" tabindex="-1" aria-hidden="true">
+    <img src="/images/proyectos/desinformacion/pipeline_hu_216e08ff379bf9.webp" width="1000" height="400" alt="" loading="lazy" decoding="async">
     
-    <img src="/images/proyectos/desinformacion/pipeline_hu_edc6d6a4cb253377.webp" srcset="/images/proyectos/desinformacion/pipeline_hu_edc6d6a4cb253377.webp 450w, /images/proyectos/desinformacion/pipeline_hu_85f7c8020e75d12f.webp 900w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="900" height="360" alt="" loading="lazy" decoding="async" />
+  </a>
+  <div class="feature__body">
+    <p class="status"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_published">Published</span></p>
+    <h3><a href="/en/proyectos/desinformacion-ontologias-llm/" data-i18n="proj_title_desinformacion-ontologias">Misinformation detection in fiction with LLM-generated ontologies</a></h3>
+    <p data-i18n="proj_desc_desinformacion-ontologias">An LLM &#43; RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI&#39;25.</p>
     
-    </a>
+    <ul class="measures">
+      <li><span data-i18n="proj_metric_desinformacion-ontologias_1">Precision 0.98 · F1 0.86 on 320 evaluation sentences</span></li><li><span data-i18n="proj_metric_desinformacion-ontologias_2">246-class ontology generated without supervision</span></li>
+    </ul>
     
-    <span class="project-status project-status-published project-cover-status" data-i18n="status_published">Published</span>
-    
+    <div class="stack"><span>LLMs</span><span>RAG</span><span>SBERT</span><span>GPT-4o</span><span>Python</span></div>
+    <div class="links">
+      <a class="btn btn--sm" href="/en/proyectos/desinformacion-ontologias-llm/"><span data-i18n="action_case_study">Case study</span></a>
+      
+      <a class="btn btn--line btn--sm" href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="action_paper">Paper</span></a>
+      <a class="btn btn--line btn--sm" href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><span data-i18n="proj_post_desinformacion-ontologias_1">Post (ES)</span></a>
+      
+    </div>
   </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-base mb-2 leading-snug">
-    
-    <a href="/en/proyectos/desinformacion-ontologias-llm/" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"><span data-i18n="proj_title_desinformacion-ontologias">Misinformation detection in fiction with LLM-generated ontologies</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_desinformacion-ontologias">An LLM &#43; RAG architecture that builds a verified ontology incrementally and uses it to flag false claims in films, podcasts and texts. Published at DCAI&#39;25.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_1">Precision 0.98 · F1 0.86 on 320 evaluation sentences</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_desinformacion-ontologias_2">246-class ontology generated without supervision</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LLMs</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">SBERT</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GPT-4o</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    <a href="/en/proyectos/desinformacion-ontologias-llm/" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">Case study</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
-    
-    
-    
-    <a href="/DCAI.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">Paper</span></a>
-    
-    
-    <a href="/blog/desinformacion-en-la-ficcion-ontologias-llm/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_desinformacion-ontologias_1">Post (ES)</span></a>
-    
-    
-  </div>
-  
 </article>
 
+
+
+<h3 class="ledger__title" data-i18n="projects_more">More projects</h3>
+<div class="ledger" role="table" aria-label="More projects" data-i18n-aria="projects_more" style="margin-top: 16px">
+  <div class="ledger__head" role="row"><span role="columnheader" data-i18n="col_project">Project</span><span role="columnheader" data-i18n="col_stack">Stack</span><span role="columnheader" data-i18n="col_status">Status</span><span role="columnheader" data-i18n="col_links">Links</span></div>
   
-  
-  
-  
 
 
 
 
 
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover project-cover-emerald">
-    
-    
-    <i class="fas fa-eye" aria-hidden="true"></i>
-    
-    
-    
-    <span class="project-status project-status-production project-cover-status" data-i18n="status_production">In production</span>
-    
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><span data-i18n="proj_title_inspeccion-neumaticos">Industrial tire inspection with vision models and multimodal OCR</span></h3>
+    <p data-i18n="proj_desc_inspeccion-neumaticos">Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.</p>
   </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <span data-i18n="proj_title_inspeccion-neumaticos">Industrial tire inspection with vision models and multimodal OCR</span>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_inspeccion-neumaticos">Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker.</p>
-
-  
-  <ul class="project-metrics">
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_1">mAP@50:95 of 0.83 on multi-class segmentation</span></li>
-    
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_inspeccion-neumaticos_2">98.56% exact match on sidewall OCR</span></li>
-    
-  </ul>
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RF-DETR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GLM-OCR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LoRA</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">vLLM</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Docker</span>
-  </div>
-  
-
-  
-  <div class="project-links">
+  <span role="cell" class="ledger__cap">PyTorch · RF-DETR · GLM-OCR · LoRA · vLLM · Docker</span>
+  <span role="cell" class="ledger__state"><span class="dot" aria-hidden="true"></span><span data-i18n="status_production">In production</span></span>
+  <span role="cell" class="ledger__go">
     
     
     
+    <a href="/blog/ocr-industrial-glm-ocr/" data-i18n="proj_post_inspeccion-neumaticos_1">OCR in extreme conditions (ES)</a><a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/" data-i18n="proj_post_inspeccion-neumaticos_2">CNNs vs Vision Transformers (ES)</a>
     
-    <a href="/blog/ocr-industrial-glm-ocr/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_inspeccion-neumaticos_1">OCR in extreme conditions (ES)</span></a>
-    
-    <a href="/blog/cnn-vs-vision-transformers-inspeccion-industrial/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_inspeccion-neumaticos_2">CNNs vs Vision Transformers (ES)</span></a>
-    
-    
-  </div>
-  
-</article>
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover project-cover-amber">
-    <a href="https://github.com/juanmanuelruizm/ocr-tickets" class="project-cover-link flex" aria-hidden="true" tabindex="-1" target="_blank" rel="noopener noreferrer">
-    
-    <i class="fas fa-font" aria-hidden="true"></i>
-    
-    </a>
-    
-    <span class="project-status project-status-development project-cover-status" data-i18n="status_development">In development</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <a href="https://github.com/juanmanuelruizm/ocr-tickets" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_glm-ocr-lora">GLM-OCR &#43; LoRA for key information extraction on receipts and invoices</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_glm-ocr-lora">LoRA adaptation of the multimodal GLM-OCR model (LLaMA-Factory) that returns structured JSON from the image of a receipt or an invoice. Fully local inference.</p>
-
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">GLM-OCR</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LoRA</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">LLaMA-Factory</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    
-    <a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
-    
-    
-    
-    
-    <a href="https://github.com/juanmanuelruizm/invoice-ocr" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> invoice-ocr</a>
-    
-  </div>
-  
-</article>
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover project-cover-indigo">
-    <a href="https://github.com/juanmanuelruizm/vision-pytorch" class="project-cover-link flex" aria-hidden="true" tabindex="-1" target="_blank" rel="noopener noreferrer">
-    
-    <i class="fas fa-code" aria-hidden="true"></i>
-    
-    </a>
-    
-    <span class="project-status project-status-development project-cover-status" data-i18n="status_development">In development</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <a href="https://github.com/juanmanuelruizm/vision-pytorch" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_vision-pytorch">vision-pytorch: DINOv2/v3 pipelines for classification and features</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_vision-pytorch">Training, evaluation and embedding extraction with Meta&#39;s ViT backbones: full fine-tuning, linear probe or raw feature extractor, with per-class metrics and checkpoints.</p>
-
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">PyTorch</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DINOv2</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DINOv3</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ViT</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    
-    <a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
-    
-    
-    
-    
-  </div>
-  
-</article>
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover">
-    <a href="https://github.com/juanmanuelruizm/TFG" class="project-cover-link flex" aria-hidden="true" tabindex="-1" target="_blank" rel="noopener noreferrer">
-    
-    <img src="/images/proyectos/tfg/dbscan_hu_87afa2e61b22059c.webp" srcset="/images/proyectos/tfg/dbscan_hu_87afa2e61b22059c.webp 350w, /images/proyectos/tfg/dbscan_hu_c36995d0ecfe5583.webp 700w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="700" height="280" alt="" loading="lazy" decoding="async" />
-    
-    </a>
-    
-    <span class="project-status project-status-completed project-cover-status" data-i18n="status_completed">Completed</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <a href="https://github.com/juanmanuelruizm/TFG" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_tfg-bloqueos">Lagrangian identification of atmospheric blocking (bachelor&#39;s thesis)</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_tfg-bloqueos">Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves.</p>
-
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">HYSPLIT</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ERA5</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">DBSCAN</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    
-    <a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
-    
-    
-    <a href="/tfg.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">Paper</span></a>
-    
-    
-    <a href="/blog/tfg/"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_tfg-bloqueos_1">Post (ES)</span></a>
-    
-    
-  </div>
-  
-</article>
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-<article class="project-card group">
-  
-  <div class="project-cover project-cover-rose">
-    <a href="https://github.com/juanmanuelruizm/chatbot" class="project-cover-link flex" aria-hidden="true" tabindex="-1" target="_blank" rel="noopener noreferrer">
-    
-    <i class="fas fa-robot" aria-hidden="true"></i>
-    
-    </a>
-    
-    <span class="project-status project-status-active project-cover-status" data-i18n="status_active">Active</span>
-    
-  </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2 leading-snug">
-    
-    <a href="https://github.com/juanmanuelruizm/chatbot" class="no-underline hover:text-violet-600 dark:hover:text-violet-400" target="_blank" rel="noopener noreferrer"><span data-i18n="proj_title_agente-ollama">Local agent with Ollama: tool calling and RAG</span></a>
-    
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_agente-ollama">A fully local console agent with native tools (files, web search, Python execution) and RAG over your own documents with ChromaDB.</p>
-
-  
-
-  
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Python</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">Ollama</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">ChromaDB</span><span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">RAG</span>
-  </div>
-  
-
-  
-  <div class="project-links">
-    
-    
-    <a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">Code</span></a>
-    
-    
-    
-    
-  </div>
-  
-</article>
-
-  
-  
+  </span>
 </div>
 
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.project-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      var rect = card.getBoundingClientRect();
-      card.style.setProperty('--spot-x', (e.clientX - rect.left) + 'px');
-      card.style.setProperty('--spot-y', (e.clientY - rect.top) + 'px');
-    });
-  });
-});
-</script>
 
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_glm-ocr-lora">GLM-OCR &#43; LoRA for key information extraction on receipts and invoices</a></h3>
+    <p data-i18n="proj_desc_glm-ocr-lora">LoRA adaptation of the multimodal GLM-OCR model (LLaMA-Factory) that returns structured JSON from the image of a receipt or an invoice. Fully local inference.</p>
   </div>
+  <span role="cell" class="ledger__cap">GLM-OCR · LoRA · LLaMA-Factory · Python</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_development">In development</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/ocr-tickets" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Code</a>
+    
+    
+    <a href="https://github.com/juanmanuelruizm/invoice-ocr" target="_blank" rel="noopener noreferrer">invoice-ocr</a>
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_vision-pytorch">vision-pytorch: DINOv2/v3 pipelines for classification and features</a></h3>
+    <p data-i18n="proj_desc_vision-pytorch">Training, evaluation and embedding extraction with Meta&#39;s ViT backbones: full fine-tuning, linear probe or raw feature extractor, with per-class metrics and checkpoints.</p>
+  </div>
+  <span role="cell" class="ledger__cap">PyTorch · DINOv2 · DINOv3 · ViT</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_development">In development</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/vision-pytorch" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Code</a>
+    
+    
+    
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_tfg-bloqueos">Lagrangian identification of atmospheric blocking (bachelor&#39;s thesis)</a></h3>
+    <p data-i18n="proj_desc_tfg-bloqueos">Thousands of HYSPLIT back-trajectories on ERA5 and DBSCAN clustering to locate blockings from the actual stagnation of air, without Eulerian thresholds. Validated on the 2003 and 2019 heatwaves.</p>
+  </div>
+  <span role="cell" class="ledger__cap">Python · HYSPLIT · ERA5 · DBSCAN</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_completed">Completed</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/TFG" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Code</a>
+    <a href="/tfg.pdf" target="_blank" rel="noopener noreferrer" data-i18n="action_paper">Paper</a>
+    <a href="/blog/tfg/" data-i18n="proj_post_tfg-bloqueos_1">Post (ES)</a>
+    
+  </span>
+</div>
+
+
+
+
+
+
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3><a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer" data-i18n="proj_title_agente-ollama">Local agent with Ollama: tool calling and RAG</a></h3>
+    <p data-i18n="proj_desc_agente-ollama">A fully local console agent with native tools (files, web search, Python execution) and RAG over your own documents with ChromaDB.</p>
+  </div>
+  <span role="cell" class="ledger__cap">Python · Ollama · ChromaDB · RAG</span>
+  <span role="cell" class="ledger__state"><span class="dot dot--off" aria-hidden="true"></span><span data-i18n="status_active">Active</span></span>
+  <span role="cell" class="ledger__go">
+    
+    <a href="https://github.com/juanmanuelruizm/chatbot" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">Code</a>
+    
+    
+    
+  </span>
+</div>
+
+</div>
+
+
+
 </div>
 
     </main>
-    
-    <footer class="text-sm border-t-2 border-violet-500 dark:border-violet-400  py-6 bg-gradient-to-r from-transparent via-violet-50/50 to-transparent dark:from-transparent dark:via-slate-800/50 dark:to-transparent "
-  style="box-shadow: 0 -4px 6px -1px rgba(139, 92, 246, 0.1);"
-  role="contentinfo">
-
-  
-  
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left mb-4">
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_sections">Sections</h4>
-        <div class="flex flex-col gap-1">
-          <a href="/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_home">Home</span></a>
-          <a href="/blog/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_blog">Blog</span></a>
-          <a href="/material/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_material">Resources</span></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_resources">Resources</h4>
-        <div class="flex flex-col gap-1">
-          <a href="/cv-en.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">CV (PDF)</a>
-          <a href="/search/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline"><span data-i18n="nav_search">Search</span></a>
-          <a href="/en/index.xml" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline" aria-label="RSS Feed">
-            <i class="fas fa-rss" aria-hidden="true"></i> RSS
-          </a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2" data-i18n="footer_contact">Contact</h4>
-        <div class="flex flex-col gap-1">
-          
-          <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">LinkedIn</a>
-          
-          <a href="https://github.com/juanmanuelruizm" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">GitHub</a>
-          
-          <a href="mailto:juanmanuelruiz383@gmail.com" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">Email</a>
-          
-          <a href="https://orcid.org/0009-0008-7529-306X" class="inline-block py-1 text-xs text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 no-underline">ORCID</a>
-          
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-gray-200 dark:border-gray-700 pt-3 text-center">
-      <p class="text-xs text-gray-400 dark:text-gray-500">
-        © 2026
-        <a href="https://github.com/juanmanuelruizm" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline">Juan Manuel</a>
-        · <span data-i18n="footer_made_with">Made with</span> <span class="text-red-400">♥</span> y <a href="https://gohugo.io" class="hover:text-violet-600 dark:hover:text-violet-400 no-underline" target="_blank" rel="noopener noreferrer">Hugo</a>
-      </p>
+    <footer class="site-foot" role="contentinfo">
+  <div class="wrap">
+    <div class="wordmark" data-points-word="Juan Manuel" aria-hidden="true"><canvas></canvas></div>
+    <div class="foot-row">
+      <span>© 2026 Juan Manuel Ruiz Muñoz · <span data-i18n="footer_made_with">Made with</span> <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a></span>
+      <nav aria-label="Sections" data-i18n-aria="footer_sections">
+        <a href="/blog/" data-i18n="nav_blog">Blog</a>
+        <a href="/material/" data-i18n="nav_material">Resources</a>
+        <a href="/search/" data-i18n="nav_search">Search</a>
+        <a href="/cv-en.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf">CV (PDF)</a>
+        <a href="/en/index.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:juanmanuelruiz383@gmail.com">Email</a><a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer">ORCID</a>
+      </nav>
     </div>
   </div>
-  
-
-  
 </footer>
 
-
-    
     
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        
-        entry.target.classList.add('animate-fade-in-up');
-        
-        entry.target.querySelectorAll('[data-stagger]').forEach(group => {
-          Array.from(group.children).forEach((child, i) => {
-            child.style.transitionDelay = (i * 90) + 'ms';
-          });
-          group.classList.add('stagger-in');
-        });
-        
-        observer.unobserve(entry.target);
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('[data-reveal]')).filter(function (el) { return el.getBoundingClientRect().top > innerHeight; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = ''; e.target.classList.add('animate-fade-in-up'); io.unobserve(e.target);
     });
-  }, observerOptions);
-
-  
-  document.querySelectorAll('.card, .card-group, [data-reveal]').forEach(el => {
-    
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
-  });
-
-  
-  document.querySelectorAll('[data-stagger]').forEach(group => {
-    if (group.closest('[data-reveal]')) return;
-    const groupObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        Array.from(entry.target.children).forEach((child, i) => {
-          child.style.transitionDelay = (i * 90) + 'ms';
-        });
-        entry.target.classList.add('stagger-in');
-        groupObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.05 });
-    groupObserver.observe(group);
-  });  
-  const cardGroups = document.querySelectorAll('[data-card-group]');
-  cardGroups.forEach(group => {
-    const cards = group.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(card);
-    });
-  });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { el.style.opacity = '0'; io.observe(el); });
 });
 </script>
 
-<noscript><style>[data-reveal], [data-stagger] > * { opacity: 1 !important; transform: none !important; }</style></noscript>
-<style>
-.card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease-out;
-}
-
-.card.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-[data-reveal].animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-</style>
-
     <script>
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('pre').forEach(function (pre) {
+  var label = function (k, d) { var t = (window.__i18n || {})[document.documentElement.lang] || {}; return t[k] || d; };
+  document.querySelectorAll('.article pre').forEach(function (pre) {
+    var box = pre.closest('.highlight') || pre;
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
     button.setAttribute('aria-label', "Copy code");
     button.setAttribute('data-i18n-aria', 'action_copy_code');
-    button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>';
+    button.textContent = label('action_copy', 'Copiar');
     button.addEventListener('click', function () {
       var code = pre.querySelector('code');
       if (!code) return;
       navigator.clipboard.writeText(code.innerText).then(function () {
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       }).catch(function () {
         var ta = document.createElement('textarea');
         ta.value = code.innerText;
@@ -907,44 +388,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        button.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
-        setTimeout(function () { button.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i>'; }, 2000);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
       });
     });
-    pre.style.position = 'relative';
-    pre.appendChild(button);
+    box.appendChild(button);
   });
 });
 </script>
 
-<style>
-.copy-code-btn {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
-  padding: 0.3rem 0.45rem;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  font-size: 0.7rem;
-  opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
-  line-height: 1;
-}
-pre:hover .copy-code-btn {
-  opacity: 1;
-}
-.copy-code-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-}
-.copy-code-btn:focus-visible {
-  outline: 2px solid rgba(167, 139, 250, 0.8);
-  opacity: 1;
-}
-</style>
 
     
 
@@ -956,6 +408,8 @@ pre:hover .copy-code-btn {
     "es": {
       "action_all_projects": "Ver todos los proyectos",
       "action_case_study": "Caso de estudio",
+      "action_copied": "Copiado",
+      "action_copy": "Copiar",
       "action_copy_code": "Copiar código",
       "action_download_paper": "Descargar Paper",
       "action_home": "Volver al inicio",
@@ -976,6 +430,7 @@ pre:hover .copy-code-btn {
       "aria_toggle_lang": "Cambiar idioma",
       "aria_toggle_theme": "Cambiar tema",
       "blog_description": "Artículos sobre física, IA, meteorología y más",
+      "blog_posts_count": "artículos",
       "blog_title": "Blog",
       "cmdk_agent_context": "Contexto para agentes",
       "cmdk_copy_email": "Copiar email",
@@ -995,6 +450,10 @@ pre:hover .copy-code-btn {
       "cmdk_material": "Material universitario",
       "cmdk_placeholder": "Buscar o ejecutar un comando…",
       "cmdk_terminal": "Abrir terminal",
+      "col_links": "Enlaces",
+      "col_project": "Proyecto",
+      "col_stack": "Stack",
+      "col_status": "Estado",
       "contact_intro": "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.",
       "content_comments": "Comentarios",
       "content_index": "Índice",
@@ -1010,12 +469,18 @@ pre:hover .copy-code-btn {
       "error_message": "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.",
       "error_quote": "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»",
       "error_title": "¡Página no encontrada!",
+      "exp_achievements": "logros",
+      "exp_current": "Puesto actual",
       "footer_contact": "Contacto",
       "footer_made_with": "Hecho con",
       "footer_resources": "Recursos",
       "footer_sections": "Secciones",
       "gh_contributions": "contribuciones en el último año",
       "gh_view_profile": "Ver perfil",
+      "hero_callout_defect": "Defecto segmentado",
+      "hero_callout_text": "Flanco leído con GLM-OCR + LoRA",
+      "hero_scan_caption": "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos.",
+      "material_intro_label": "Apuntes",
       "nav_blog": "Blog",
       "nav_home": "Inicio",
       "nav_material": "Material",
@@ -1030,14 +495,21 @@ pre:hover .copy-code-btn {
       "project_period": "Periodo",
       "project_role": "Rol",
       "project_stack": "Stack",
+      "projects_more": "Más proyectos",
+      "search_intro": "Busca en los artículos, los casos de estudio y los apuntes.",
       "section_blog": "Del blog",
+      "section_blog_intro": "Visión por computador, LLMs, física y meteorología.",
       "section_certs": "Certificaciones",
       "section_contact": "Contacto",
       "section_edu": "Educación",
       "section_exp": "Experiencia",
+      "section_exp_intro": "De la física atmosférica a la visión industrial, pasando por la investigación en LLMs.",
       "section_github": "Actividad en GitHub",
       "section_projects": "Proyectos",
+      "section_projects_intro": "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más.",
       "section_pub": "Publicaciones",
+      "section_skills": "Herramientas",
+      "section_skills_intro": "Lo que uso a diario, agrupado por área.",
       "status_active": "Activo",
       "status_completed": "Completado",
       "status_development": "En desarrollo",
@@ -1067,6 +539,8 @@ pre:hover .copy-code-btn {
     "en": {
       "action_all_projects": "View all projects",
       "action_case_study": "Case study",
+      "action_copied": "Copied",
+      "action_copy": "Copy",
       "action_copy_code": "Copy code",
       "action_download_paper": "Download Paper",
       "action_home": "Go to homepage",
@@ -1087,6 +561,7 @@ pre:hover .copy-code-btn {
       "aria_toggle_lang": "Change language",
       "aria_toggle_theme": "Toggle theme",
       "blog_description": "Articles about physics, AI, meteorology and more",
+      "blog_posts_count": "posts",
       "blog_title": "Blog",
       "cmdk_agent_context": "Agent context",
       "cmdk_copy_email": "Copy email",
@@ -1106,6 +581,10 @@ pre:hover .copy-code-btn {
       "cmdk_material": "University notes",
       "cmdk_placeholder": "Search or run a command…",
       "cmdk_terminal": "Open terminal",
+      "col_links": "Links",
+      "col_project": "Project",
+      "col_stack": "Stack",
+      "col_status": "Status",
       "contact_intro": "Got a computer vision or LLM problem to take to production? Drop me a line.",
       "content_comments": "Comments",
       "content_index": "Index",
@@ -1121,12 +600,18 @@ pre:hover .copy-code-btn {
       "error_message": "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
       "error_quote": "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\"",
       "error_title": "Page not found!",
+      "exp_achievements": "achievements",
+      "exp_current": "Current role",
       "footer_contact": "Contact",
       "footer_made_with": "Made with",
       "footer_resources": "Resources",
       "footer_sections": "Sections",
       "gh_contributions": "contributions in the last year",
       "gh_view_profile": "View profile",
+      "hero_callout_defect": "Segmented defect",
+      "hero_callout_text": "Sidewall read with GLM-OCR + LoRA",
+      "hero_scan_caption": "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection.",
+      "material_intro_label": "Notes",
       "nav_blog": "Blog",
       "nav_home": "Home",
       "nav_material": "Resources",
@@ -1141,14 +626,21 @@ pre:hover .copy-code-btn {
       "project_period": "Period",
       "project_role": "Role",
       "project_stack": "Stack",
+      "projects_more": "More projects",
+      "search_intro": "Search the posts, the case studies and the course notes.",
       "section_blog": "From the blog",
+      "section_blog_intro": "Computer vision, LLMs, physics and meteorology.",
       "section_certs": "Certifications",
       "section_contact": "Contact",
       "section_edu": "Education",
       "section_exp": "Experience",
+      "section_exp_intro": "From atmospheric physics to industrial vision, by way of LLM research.",
       "section_github": "GitHub Activity",
       "section_projects": "Projects",
+      "section_projects_intro": "Full case studies and the rest of the work, with its status and where to read more.",
       "section_pub": "Publications",
+      "section_skills": "Tools",
+      "section_skills_intro": "What I use every day, grouped by area.",
       "status_active": "Active",
       "status_completed": "Completed",
       "status_development": "In development",
@@ -1328,7 +820,6 @@ pre:hover .copy-code-btn {
       <button class="cmdk-item" data-action="goto" data-target="/en/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">Contact</span></button>
 
       <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Actions</div>
-      <button class="cmdk-item" data-action="theme" data-keywords="tema oscuro claro dark light theme modo mode"><i class="fas fa-moon"></i><span data-i18n="aria_toggle_theme">Toggle theme</span></button>
       <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Change language</span> (ES/EN)</span></button>
       <button class="cmdk-item" data-action="goto" data-target="/cv-en.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Download CV</span></button>
       <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copy email</span></button>
@@ -1369,103 +860,6 @@ pre:hover .copy-code-btn {
   </div>
 </div>
 
-<style>
-.cmdk-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 120;
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 12vh 1rem 1rem;
-}
-.cmdk-panel {
-  width: 100%;
-  max-width: 560px;
-  background: white;
-  border: 1px solid rgb(229 231 235);
-  border-radius: 0.875rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  animation: cmdkIn 0.15s ease-out;
-}
-@keyframes cmdkIn {
-  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-  to { opacity: 1; transform: none; }
-}
-.dark .cmdk-panel { background: rgb(15 23 42); border-color: rgb(51 65 85); }
-.cmdk-input-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgb(229 231 235);
-}
-.dark .cmdk-input-row { border-color: rgb(51 65 85); }
-.cmdk-input-icon { color: #8b5cf6; font-size: 0.9rem; }
-#cmdk-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: rgb(17 24 39);
-}
-.dark #cmdk-input { color: rgb(243 244 246); }
-.cmdk-list { max-height: 46vh; overflow-y: auto; padding: 0.4rem; }
-.cmdk-group {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgb(107 114 128);
-  padding: 0.6rem 0.75rem 0.25rem;
-}
-.dark .cmdk-group { color: rgb(148 163 184); }
-.cmdk-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  text-align: left;
-  padding: 0.55rem 0.75rem;
-  border: none;
-  background: transparent;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: rgb(31 41 55);
-  cursor: pointer;
-}
-.dark .cmdk-item { color: rgb(226 232 240); }
-.cmdk-item i { width: 1.1rem; text-align: center; color: #7c3aed; font-size: 0.85rem; }
-.dark .cmdk-item i { color: #a78bfa; }
-.cmdk-item.active, .cmdk-item:hover { background: rgba(139, 92, 246, 0.12); }
-.cmdk-empty { padding: 1.5rem; text-align: center; font-size: 0.85rem; color: rgb(107 114 128); }
-.cmdk-footer {
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  border-top: 1px solid rgb(229 231 235);
-  font-size: 0.7rem;
-  color: rgb(107 114 128);
-}
-.dark .cmdk-footer { border-color: rgb(51 65 85); color: rgb(148 163 184); }
-.cmdk-kbd {
-  display: inline-block;
-  padding: 0.1rem 0.35rem;
-  margin-right: 0.25rem;
-  border: 1px solid rgb(209 213 219);
-  border-bottom-width: 2px;
-  border-radius: 0.3rem;
-  font-size: 0.65rem;
-  font-family: monospace;
-  color: rgb(75 85 99);
-  background: rgb(249 250 251);
-}
-.dark .cmdk-kbd { background: rgb(30 41 59); border-color: rgb(71 85 105); color: rgb(203 213 225); }
-</style>
 
 <script>window.__cmdkIndexUrl = '\/index.json';</script>
 <script defer src="/js/cmdk.js"></script>
@@ -1489,72 +883,6 @@ pre:hover .copy-code-btn {
   </div>
 </div>
 
-<style>
-.term-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 130;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-.term-window {
-  width: 100%;
-  max-width: 640px;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(51 65 85);
-  animation: cmdkIn 0.15s ease-out;
-}
-.term-titlebar {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 0.9rem;
-  background: #1e293b;
-  border-bottom: 1px solid rgb(51 65 85);
-}
-.term-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; cursor: pointer; }
-.term-title {
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: rgb(148 163 184);
-}
-.term-body {
-  background: #0f172a;
-  color: #e2e8f0;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  padding: 0.9rem;
-  height: 50vh;
-  max-height: 420px;
-  overflow-y: auto;
-  cursor: text;
-}
-.term-body a { color: #22d3ee; }
-.term-output-cmd { color: #94a3b8; }
-.term-accent { color: #22d3ee; }
-.term-warn { color: #fbbf24; }
-.term-input-line { display: flex; gap: 0.5rem; align-items: center; }
-.term-prompt { color: #4ade80; white-space: nowrap; }
-#term-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e2e8f0;
-  font-family: inherit;
-  font-size: inherit;
-  caret-color: #22d3ee;
-}
-</style>
 
 <script>
 window.__terminalData = {
@@ -1612,6 +940,7 @@ window.__terminalData = {
 </script>
 <script defer src="/js/terminal.js"></script>
 
+    <script defer src="/js/scan.js"></script>
     <script defer src="/js/cv-mode.js"></script>
   </body>
 </html>
