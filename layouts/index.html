@@ -8,9 +8,9 @@
   <div class="scan">
     <canvas id="tire" aria-hidden="true"></canvas>
     {{ with index $metrics 0 }}
-    <div class="callout callout--found is-hidden" data-anchor="defect" aria-hidden="true">
+    <div class="callout is-hidden" data-anchor="tire" aria-hidden="true">
       <span class="callout__line"></span><i class="callout__dot"></i>
-      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_defect">{{ i18n "hero_callout_defect" }}</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">{{ .value }}</span> <span class="u">mAP@50:95</span></span></div>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_seg">{{ i18n "hero_callout_seg" }}</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">{{ .value }}</span> <span class="u">mAP@50:95</span></span></div>
     </div>
     {{ end }}
     {{ with index $metrics 1 }}

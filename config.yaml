@@ -29,7 +29,7 @@ languages:
         photo: profile.png
         position: "ML Engineer · Computer Vision & LLMs"
       hero:
-        value: "I take vision and language models from research to production: industrial defect detection and segmentation, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist with a strong mathematics background, I care about understanding why a model works before shipping it."
+        value: "I take vision and language models from research to production: detection and segmentation for industrial inspection, LoRA-tuned multimodal OCR and RAG systems. Trained as a physicist with a strong mathematics background, I care about understanding why a model works before shipping it."
         metrics:
           - value: "0.83"
             label: "mAP@50:95 on multi-class segmentation, in production"
@@ -118,12 +118,12 @@ languages:
             company: VRAIA Corp.
             url: "https://vraia.com/"
             details: |1-
-                I take **defect detection and segmentation** models (CNNs, ViT, YOLO, RF-DETR) and a **multimodal OCR** (GLM-OCR) to production for industrial tire inspection: mAP@50:95 of 0.83 and 98.56% exact match reading sidewalls.
+                I take **detection and segmentation** models (CNNs, ViT, YOLO, RF-DETR) for industrial tire inspection and **defect detection**, and a **multimodal OCR** (GLM-OCR), to production: mAP@50:95 of 0.83 on multi-class segmentation and 98.56% exact match reading sidewalls.
 
                 I write about this work in [OCR in extreme conditions](/blog/ocr-industrial-glm-ocr/) and [CNNs vs Vision Transformers](/blog/cnn-vs-vision-transformers-inspeccion-industrial/).
             tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "LLaMA-Factory", "vLLM", "MLflow", "Docker", "C++"]
             highlights:
-              - "Design and training of **defect detection and segmentation** models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection: **mAP@50:95 of 0.83** on multi-class segmentation over in-house datasets of thousands of images."
+              - "Design and training of **detection and segmentation** models (CNNs, Vision Transformers, YOLO, RF-DETR) for industrial tire inspection and **defect detection**: **mAP@50:95 of 0.83** on multi-class segmentation over in-house datasets of thousands of images."
               - "Fine-tuning of a multimodal language model (**GLM-OCR**) with **LoRA** via LLaMA-Factory to read text on tire sidewalls: **98.56% exact match** in production; served with vLLM and Ollama."
               - "**Synthetic defect generation** pipeline with generative models to enlarge scarce datasets and improve detection robustness."
               - "**Technical appraisal** with CNNs and Vision Transformers to compare products objectively and reproducibly from their structural and appearance parts."
@@ -243,7 +243,7 @@ languages:
           - id: inspeccion-neumaticos
             home: true
             title: "Industrial tire inspection with vision models and multimodal OCR"
-            description: "Defect detection and segmentation (CNNs, ViT, YOLO, RF-DETR) plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker."
+            description: "Detection and segmentation (CNNs, ViT, YOLO, RF-DETR) for inspection and defect detection, plus sidewall reading with a LoRA-tuned GLM-OCR, in production at VRAIA. Served with vLLM and Docker."
             metrics:
               - "mAP@50:95 of 0.83 on multi-class segmentation"
               - "98.56% exact match on sidewall OCR"
@@ -355,7 +355,7 @@ params:
     photo: profile.png
     position: "ML Engineer · Computer Vision & LLMs"
   hero:
-    value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación de defectos industriales, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo."
+    value: "Llevo modelos de visión y lenguaje de la investigación a producción: detección y segmentación para inspección industrial, OCR multimodal ajustado con LoRA y sistemas RAG. Físico de formación, con base sólida en Matemáticas: me importa entender por qué funciona un modelo antes de desplegarlo."
     metrics:
       - value: "0,83"
         label: "mAP@50:95 en segmentación multiclase, en producción"
@@ -413,12 +413,12 @@ params:
         company: VRAIA Corp.
         url: "https://vraia.com/"
         details: |1-
-            Llevo a producción modelos de **detección y segmentación de defectos** (CNNs, ViT, YOLO, RF-DETR) y un **OCR multimodal** (GLM-OCR) para inspección industrial de neumáticos: mAP@50:95 de 0,83 y 98,56% de exact match leyendo flancos.
+            Llevo a producción modelos de **detección y segmentación** (CNNs, ViT, YOLO, RF-DETR) para inspección industrial de neumáticos y **detección de defectos**, y un **OCR multimodal** (GLM-OCR): mAP@50:95 de 0,83 en segmentación multiclase y 98,56 % de exact match leyendo flancos.
 
             Escribo sobre este trabajo en [OCR en condiciones extremas](/blog/ocr-industrial-glm-ocr/) y [CNNs vs Vision Transformers](/blog/cnn-vs-vision-transformers-inspeccion-industrial/).
         tags: ["PyTorch", "Vision Transformers", "YOLO", "RF-DETR", "GLM-OCR", "LoRA", "LLaMA-Factory", "vLLM", "MLflow", "Docker", "C++"]
         highlights:
-          - "Diseño y entrenamiento de modelos de **detección y segmentación de defectos** (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos: **mAP@50:95 de 0,83** en segmentación multiclase sobre datasets propios de miles de imágenes."
+          - "Diseño y entrenamiento de modelos de **detección y segmentación** (CNNs, Vision Transformers, YOLO, RF-DETR) para inspección industrial de neumáticos y **detección de defectos**: **mAP@50:95 de 0,83** en segmentación multiclase sobre datasets propios de miles de imágenes."
           - "Fine-tuning de un modelo de lenguaje multimodal (**GLM-OCR**) con **LoRA** vía LLaMA-Factory para leer texto en flancos de neumático: **98,56 % de exact match** en producción; serving con vLLM y Ollama."
           - "Pipeline de **generación sintética de defectos** con modelos generativos para ampliar datasets escasos y mejorar la robustez de la detección."
           - "**Peritaje técnico** con CNNs y Vision Transformers para comparar productos de forma objetiva y reproducible a partir de sus partes estructurales y de apariencia."
@@ -539,7 +539,7 @@ params:
       - id: inspeccion-neumaticos
         home: true
         title: "Inspección industrial de neumáticos con visión y OCR multimodal"
-        description: "Detección y segmentación de defectos (CNNs, ViT, YOLO, RF-DETR) y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker."
+        description: "Detección y segmentación (CNNs, ViT, YOLO, RF-DETR) para inspección y detección de defectos, y lectura de flancos con GLM-OCR ajustado con LoRA, en producción en VRAIA. Servido con vLLM y Docker."
         metrics:
           - "mAP@50:95 de 0,83 en segmentación multiclase"
           - "98,56 % de exact match en OCR sobre flancos"

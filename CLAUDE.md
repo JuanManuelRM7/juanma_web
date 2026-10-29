@@ -104,7 +104,7 @@ Diseño **Vantage** (de [Hallmark](https://github.com/Nutlope/hallmark)), **solo
 ### JS → `static/js/`
 
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
-- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; las etiquetas siguen al defecto y al texto) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
+- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; las etiquetas siguen al neumático y al texto del flanco; el defecto en lima no lleva cifra) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
 - `cmdk.js` — Paleta de comandos ⌘K
 - `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial en los dos idiomas; textos desde `i18n/*.yaml`)
 

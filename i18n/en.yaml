@@ -220,8 +220,8 @@ term_try_help:
   other: "Try {help}."
 hero_scan_caption:
   other: "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection."
-hero_callout_defect:
-  other: "Segmented defect"
+hero_callout_seg:
+  other: "Multi-class segmentation"
 hero_callout_text:
   other: "Sidewall read with GLM-OCR + LoRA"
 section_projects_intro:
