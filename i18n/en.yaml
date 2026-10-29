@@ -218,12 +218,6 @@ term_uptime:
   other: "since 2024"
 term_try_help:
   other: "Try {help}."
-hero_scan_caption:
-  other: "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection."
-hero_callout_seg:
-  other: "Multi-class segmentation"
-hero_callout_text:
-  other: "Sidewall read with GLM-OCR + LoRA"
 section_projects_intro:
   other: "Full case studies and the rest of the work, with its status and where to read more."
 section_exp_intro:
@@ -258,3 +252,7 @@ material_intro_label:
   other: "Notes"
 search_intro:
   other: "Search the posts, the case studies and the course notes."
+hero_callout_ocr:
+  other: "Sidewall OCR reading"
+hero_scan_caption:
+  other: "Generated point cloud: a tire turning under a sweep of raking light while an OCR reads the sidewall text."

@@ -7,18 +7,14 @@
 <section class="hero" aria-labelledby="hero-name">
   <div class="scan">
     <canvas id="tire" aria-hidden="true"></canvas>
-    {{ with index $metrics 0 }}
-    <div class="callout is-hidden" data-anchor="tire" aria-hidden="true">
-      <span class="callout__line"></span><i class="callout__dot"></i>
-      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_seg">{{ i18n "hero_callout_seg" }}</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">{{ .value }}</span> <span class="u">mAP@50:95</span></span></div>
+    <svg class="scan__leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"></line><circle r="3" cx="0" cy="0"></circle></svg>
+    <div class="callout callout--fixed" data-anchor="text" aria-hidden="true">
+      <div class="callout__label">
+        <span class="callout__k" data-i18n="hero_callout_ocr">{{ i18n "hero_callout_ocr" }}</span>
+        <span class="callout__v num callout__read"><span data-ocr-out></span><i class="callout__caret"></i></span>
+        {{ with index $metrics 1 }}<span class="callout__u">GLM-OCR + LoRA · <span data-i18n="hero_metric_2_value">{{ .value }}</span> exact match</span>{{ end }}
+      </div>
     </div>
-    {{ end }}
-    {{ with index $metrics 1 }}
-    <div class="callout is-hidden" data-anchor="text" aria-hidden="true">
-      <span class="callout__line"></span><i class="callout__dot"></i>
-      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_text">{{ i18n "hero_callout_text" }}</span><span class="callout__v num"><span data-i18n="hero_metric_2_value">{{ .value }}</span> <span class="u">exact match</span></span></div>
-    </div>
-    {{ end }}
     <p class="scan__caption" data-i18n="hero_scan_caption">{{ i18n "hero_scan_caption" }}</p>
   </div>
   <div class="wrap hero__grid">

@@ -218,12 +218,6 @@ term_uptime:
   other: "desde 2024"
 term_try_help:
   other: "Prueba {help}."
-hero_scan_caption:
-  other: "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos."
-hero_callout_seg:
-  other: "Segmentación multiclase"
-hero_callout_text:
-  other: "Flanco leído con GLM-OCR + LoRA"
 section_projects_intro:
   other: "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más."
 section_exp_intro:
@@ -258,3 +252,7 @@ material_intro_label:
   other: "Apuntes"
 search_intro:
   other: "Busca en los artículos, los casos de estudio y los apuntes."
+hero_callout_ocr:
+  other: "Lectura OCR del flanco"
+hero_scan_caption:
+  other: "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante mientras un OCR lee el texto del flanco."

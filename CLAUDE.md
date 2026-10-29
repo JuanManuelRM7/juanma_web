@@ -24,7 +24,7 @@ Al añadir un post o un caso de estudio, regenera las imágenes Open Graph: `npm
 
 | Sección | Clave en `config.yaml` | Renderizado por |
 |---------|------------------------|-----------------|
-| Hero (titular, propuesta de valor, métricas) | `params.profile`, `params.hero.value`, `params.hero.metrics` | `layouts/index.html`, `layouts/partials/hero_metrics.html` (las dos primeras métricas también etiquetan el neumático del hero) |
+| Hero (titular, propuesta de valor, métricas) | `params.profile`, `params.hero.value`, `params.hero.metrics` | `layouts/index.html`, `layouts/partials/hero_metrics.html` (la segunda métrica, el exact match del OCR, aparece también en la etiqueta del neumático) |
 | Proyectos (destacados + tabla) | `params.project.list` | `layouts/partials/projects.html` → `project_card.html` (destacados) y `project_row.html` (resto) |
 | Experiencia (resumen + `highlights`) | `params.experience.list` | `layouts/partials/accordion/experience.html` |
 | Educación | `params.education.list` | `layouts/partials/accordion/education.html` |
@@ -104,7 +104,7 @@ Diseño **Vantage** (de [Hallmark](https://github.com/Nutlope/hallmark)), **solo
 ### JS → `static/js/`
 
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
-- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; las etiquetas siguen al neumático y al texto del flanco; el defecto en lima no lleva cifra) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
+- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; un OCR lee el texto del flanco: los caracteres se encienden en lima y la etiqueta escribe lo leído; el defecto en lima no lleva cifra) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
 - `cmdk.js` — Paleta de comandos ⌘K
 - `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial en los dos idiomas; textos desde `i18n/*.yaml`)
 
@@ -286,7 +286,7 @@ npm run build
 ## Easter eggs (no tocar sin querer)
 
 - **Konami Code** (↑↑↓↓←→←→BA): partículas animadas — `layouts/index.html`
-- **Neumático del hero**: no es un easter egg, pero `static/js/scan.js` tiene la geometría; las cifras de sus etiquetas salen de `params.hero.metrics`
+- **Neumático del hero**: no es un easter egg, pero `static/js/scan.js` tiene la geometría; el exact match de su etiqueta sale de `params.hero.metrics`
 - **CV Mode** (escribir "yolo" o ⌘K → "CV Mode"): overlay YOLO — `static/js/cv-mode.js`
 - **Terminal** (⌘K → "Abrir terminal"): shell simulado — `static/js/terminal.js` + datos en `layouts/partials/terminal.html`
 
