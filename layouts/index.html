@@ -9,7 +9,7 @@
     <canvas id="tire" aria-hidden="true"></canvas>
     <svg class="scan__leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"></line><circle r="3" cx="0" cy="0"></circle></svg>
     <div class="callout callout--fixed" data-anchor="text" aria-hidden="true">
-      <div class="callout__label">
+      <div class="callout__label ticks">
         <span class="callout__k" data-i18n="hero_callout_ocr">{{ i18n "hero_callout_ocr" }}</span>
         <span class="callout__v num callout__read"><span data-ocr-out></span><i class="callout__caret"></i></span>
         {{ with index $metrics 1 }}<span class="callout__u">GLM-OCR + LoRA · <span data-i18n="hero_metric_2_value">{{ .value }}</span> exact match</span>{{ end }}
