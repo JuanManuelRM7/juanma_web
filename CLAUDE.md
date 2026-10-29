@@ -300,4 +300,5 @@ npm run build
 - No borrar `static/fontawesome/` ni `static/fonts/` (fuentes self-hosted, sin CDN)
 - No escribir a mano traducciones en `i18n.html`: los textos de interfaz se generan desde `i18n/*.yaml` y los del perfil desde `config.yaml`
 - No subir GIF animados: convertirlos a MP4 con `scripts/gif2mp4.swift`
-- No inventar métricas: todo lo que afirma la web sale del CV (`static/cv.pdf`), de los README de los repos o del paper
+- No inventar métricas: todo lo que afirma la web sale del CV (`static/cv.pdf`, fuente en `cv/`), de los README de los repos o del paper
+- El CV se edita en `cv/*.tex` (ES y EN) y se recompila a `static/cv.pdf` y `static/cv-en.pdf` (ver `cv/README.md`); mantén la web y los dos CV con la misma redacción de las métricas

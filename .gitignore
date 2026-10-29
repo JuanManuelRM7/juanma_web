@@ -13,3 +13,9 @@ build.ps1
 
 # Carpetas de conflicto de iCloud ("carpeta 2/", "carpeta 3/", ...)
 * [0-9]/
+
+# Ficheros intermedios de LaTeX
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.pdf
