@@ -1,7 +1,8 @@
 /* Escaneo de puntos (estilo Vantage).
    1. Portada: un neumático generado como nube de puntos (WebGL) que gira mientras lo cruza un
       barrido de luz rasante. El texto en relieve del flanco y un defecto (en lima) son puntos.
-      Dos etiquetas siguen al neumático (segmentación) y al texto del flanco (OCR); las cifras salen de config.yaml.
+      Un OCR lee el texto del flanco: los caracteres se encienden en lima a medida que se leen y la
+      etiqueta escribe lo leído (la cifra de exact match sale de config.yaml).
    2. Todas las páginas: el nombre del pie dibujado con puntos y un barrido que lo recorre.
    Se pausa fuera de pantalla y, con "reducir movimiento", queda un fotograma fijo. */
 (() => {
@@ -45,23 +46,26 @@
     const texts = [{ s: '205/55 R16 91V', c: Math.PI / 2, span: 1.55 }, { s: 'RADIAL  TUBELESS', c: -Math.PI / 2 + 0.2, span: 1.5 }].map((t) => {
       const cv = document.createElement('canvas'); cv.width = 900; cv.height = 90; const g = cv.getContext('2d');
       g.fillStyle = '#fff'; g.font = '700 74px "Arial Black", Arial, sans-serif'; g.textBaseline = 'middle'; g.textAlign = 'center';
-      const k = Math.min(1, 880 / g.measureText(t.s).width); g.save(); g.scale(k, 1); g.fillText(t.s, 450 / k, 48); g.restore();
-      return { ...t, data: g.getImageData(0, 0, 900, 90).data };
+      const w = g.measureText(t.s).width, k = Math.min(1, 880 / w); g.save(); g.scale(k, 1); g.fillText(t.s, 450 / k, 48); g.restore();
+      const x0 = 450 - (w * k) / 2, ends = [...t.s].map((_, i) => (x0 + g.measureText(t.s.slice(0, i + 1)).width * k) / 899);
+      return { ...t, ends, data: g.getImageData(0, 0, 900, 90).data };
     });
+    // 0: sin letra. Texto que lee el OCR (el primero): 1 + posición a lo largo del texto (0..1). Otro texto: 3.
     function glyph(th, r) {
       if (r < BAND[0] || r > BAND[1]) return 0;
-      for (const t of texts) {
-        const d = wrapA(t.c - th); if (Math.abs(d) > t.span / 2) continue;
-        const u = Math.floor((d / t.span + 0.5) * 899), v = Math.floor(((BAND[1] - r) / (BAND[1] - BAND[0])) * 89);
-        if (t.data[(v * 900 + u) * 4 + 3] > 110) return 1;
+      for (let i = 0; i < texts.length; i++) {
+        const t = texts[i], d = wrapA(t.c - th); if (Math.abs(d) > t.span / 2) continue;
+        const f = d / t.span + 0.5, u = Math.floor(f * 899), v = Math.floor(((BAND[1] - r) / (BAND[1] - BAND[0])) * 89);
+        if (t.data[(v * 900 + u) * 4 + 3] > 110) return i === 0 ? 1 + f : 3;
       }
       return 0;
     }
+    const readPos = (g) => (g >= 1 && g <= 2 ? g - 1 : -1);
     const DEF = { th: -0.75, r: 77, s: 4.4, h: 3.6 };
     const bump = (th, r) => { const d = Math.hypot(r - DEF.r, DEF.r * wrapA(th - DEF.th)); return DEF.h * Math.exp(-(d * d) / (2 * DEF.s * DEF.s)); };
 
-    const pos = [], nor = [], cls = [], rr = [];
-    const add = (x, y, z, nx, ny, nz, c) => { pos.push(x, y, z); nor.push(nx, ny, nz); cls.push(c); rr.push(rnd()); };
+    const pos = [], nor = [], cls = [], rr = [], tus = [];
+    const add = (x, y, z, nx, ny, nz, c, tu = -1) => { pos.push(x, y, z); nor.push(nx, ny, nz); cls.push(c); rr.push(rnd()); tus.push(tu); };
     const ROWS = small ? 380 : 660, TSTEP = small ? 1.25 : 0.8, SSTEP = small ? 1.0 : 0.66;
     for (let i = 0; i < ROWS; i++) {
       const th = (i / ROWS) * Math.PI * 2 + (rnd() - 0.5) * 0.002, c = Math.cos(th), s = Math.sin(th);
@@ -83,10 +87,10 @@
       for (const sg of [1, -1]) {
         if (sg < 0 && i % 2) continue;
         for (let r = Ri; r <= RSH; r += SSTEP * (sg < 0 ? 1.4 : 1) * (0.75 + rnd() * 0.5)) {
-          let z = sg * sideZ(r), k = 0;
-          if (sg > 0) { if (glyph(th, r)) { z += 1.5; k = 1; } const b = bump(th, r); z += b; if (b > 0.6) k = 3; }
+          let z = sg * sideZ(r), k = 0, tu = -1;
+          if (sg > 0) { const g = glyph(th, r); if (g) { z += 1.5; k = 1; tu = readPos(g); } const b = bump(th, r); z += b; if (b > 0.6) k = 3; }
           const d = sideDZ(r), n = Math.hypot(d, 1);
-          add(r * c, r * s, z, (-d * c) / n, (-d * s) / n, sg / n, k);
+          add(r * c, r * s, z, (-d * c) / n, (-d * s) / n, sg / n, k, tu);
         }
         for (let z = ZB - 6; z <= ZB; z += 1.4) add(Ri * c, Ri * s, sg * z, -c, -s, 0, 0); // talón
       }
@@ -98,9 +102,9 @@
         const step = DSTEP / r;
         for (let th = t.c - t.span / 2; th <= t.c + t.span / 2; th += step) {
           const jt = th + (rnd() - 0.5) * step, jr = r + (rnd() - 0.5) * 0.2;
-          if (!glyph(jt, jr)) continue;
+          const g = glyph(jt, jr); if (!g) continue;
           const z = sideZ(jr) + 1.5, d = sideDZ(jr), n = Math.hypot(d, 1), c = Math.cos(jt), s = Math.sin(jt);
-          add(jr * c, jr * s, z, (-d * c) / n, (-d * s) / n, 1 / n, 1);
+          add(jr * c, jr * s, z, (-d * c) / n, (-d * s) / n, 1 / n, 1, readPos(g));
         }
       }
     }
@@ -116,8 +120,8 @@
     function lookAt(e, c) { let zx = e[0] - c[0], zy = e[1] - c[1], zz = e[2] - c[2]; let l = Math.hypot(zx, zy, zz); zx /= l; zy /= l; zz /= l; let xx = zz, xz = -zx; l = Math.hypot(xx, xz); xx /= l; xz /= l; const yx = zy * xz, yy = zz * xx - zx * xz, yz = -zy * xx; return [xx, yx, zx, 0, 0, yy, zy, 0, xz, yz, zz, 0, -(xx * e[0] + xz * e[2]), -(yx * e[0] + yy * e[1] + yz * e[2]), -(zx * e[0] + zy * e[1] + zz * e[2]), 1]; }
     const mul = (a, b) => { const o = new Array(16); for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { let s = 0; for (let k = 0; k < 4; k++) s += a[k * 4 + j] * b[i * 4 + k]; o[i * 4 + j] = s; } return o; };
 
-    const VS = `attribute vec3 p; attribute vec3 n; attribute float c; attribute float r;
-uniform mat4 mvp; uniform vec2 rot; uniform float dpr, size, sweep, alpha, near, far;
+    const VS = `attribute vec3 p; attribute vec3 n; attribute float c; attribute float r; attribute float tu;
+uniform mat4 mvp; uniform vec2 rot; uniform float dpr, size, sweep, alpha, near, far, readU, readA;
 uniform vec3 lo, mid, hi, acc, ldir;
 varying vec4 col;
 void main(){
@@ -132,7 +136,10 @@ void main(){
   float d = sweep - w.x; float s = d >= 0. ? .6 * exp(-d / 2.4) + .4 * exp(-d / 22.) : exp(d / .8);
   k = mix(k, hi * 1.12, min(1., s * 1.05));
   float found = c > 2.5 ? 1. : 0.;
-  if (found > .5) k = acc;
+  float read = (tu >= 0. && tu <= readU) ? readA : 0.;
+  k = mix(k, acc, read);
+  found = max(found, read);
+  if (found > .99) k = acc;
   float fd = clamp(1. - (q.w - near) / (far - near), .22, 1.);
   gl_PointSize = clamp(size * dpr * 300. / q.w * (.8 + .4 * r) * (1. + .3 * s) * (1. + .5 * found), 1. * dpr, 3.6 * dpr);
   col = vec4(k, mix(fd * min(1., .72 + .5 * s), 1., found) * alpha);
@@ -144,20 +151,28 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
     if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
     gl.useProgram(pr);
     const buf = (data, name, n) => { const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW); const l = gl.getAttribLocation(pr, name); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, n, gl.FLOAT, false, 0, 0); };
-    buf(new Float32Array(pos), 'p', 3); buf(new Float32Array(nor), 'n', 3); buf(new Float32Array(cls), 'c', 1); buf(new Float32Array(rr), 'r', 1);
-    const U = {}; ['mvp', 'rot', 'dpr', 'size', 'sweep', 'alpha', 'near', 'far', 'lo', 'mid', 'hi', 'acc', 'ldir'].forEach((n) => (U[n] = gl.getUniformLocation(pr, n)));
+    buf(new Float32Array(pos), 'p', 3); buf(new Float32Array(nor), 'n', 3); buf(new Float32Array(cls), 'c', 1); buf(new Float32Array(rr), 'r', 1); buf(new Float32Array(tus), 'tu', 1);
+    const U = {}; ['mvp', 'rot', 'dpr', 'size', 'sweep', 'alpha', 'near', 'far', 'readU', 'readA', 'lo', 'mid', 'hi', 'acc', 'ldir'].forEach((n) => (U[n] = gl.getUniformLocation(pr, n)));
     gl.uniform3fv(U.lo, COL.lo); gl.uniform3fv(U.mid, COL.mid); gl.uniform3fv(U.hi, COL.hi); gl.uniform3fv(U.acc, COL.acc);
     const L = [-0.35, 0.62, 0.7], ll = Math.hypot(...L); gl.uniform3f(U.ldir, L[0] / ll, L[1] / ll, L[2] / ll); gl.uniform1f(U.dpr, DPR);
     gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.disable(gl.DEPTH_TEST);
 
     const st = { w: 0, h: 0, spin: 0.35, alpha: 0, px: 0, py: 0, tpx: 0, tpy: 0, mvp: null, on: true, t0: performance.now(), last: performance.now() };
-    // Anclas de las etiquetas: el hombro del neumático (segmentación) y el texto del flanco (OCR).
-    // El defecto en lima no lleva cifra.
-    const ANCHORS = {
-      tire: [Ro * Math.cos(-0.35), Ro * Math.sin(-0.35), HW + RS * 0.6],
-      text: [78 * Math.cos(Math.PI / 2), 78 * Math.sin(Math.PI / 2), sideZ(78) + 1.5],
+    // Ancla de la etiqueta: el centro del texto que lee el OCR. El defecto en lima no lleva etiqueta.
+    const ANCHORS = { text: [78 * Math.cos(texts[0].c), 78 * Math.sin(texts[0].c), sideZ(78) + 1.5] };
+    // Lectura OCR: en reposo 2,2 s, lee el texto en 3,2 s, lo mantiene 2,4 s y se apaga en 1,2 s
+    const OCR = texts[0].s, ocrOut = document.querySelector('[data-ocr-out]');
+    const readAt = (t) => {
+      if (reduce) return [1, 1];
+      const k = t % 9;
+      if (k < 2.2) return [-1, 0];
+      if (k < 5.4) return [(k - 2.2) / 3.2, 1];
+      if (k < 7.8) return [1, 1];
+      return [1, 1 - (k - 7.8) / 1.2];
     };
-    const callouts = [...document.querySelectorAll('[data-anchor]')].map((el) => ({ el, p: ANCHORS[el.dataset.anchor] || ANCHORS.text }));
+    let typed = -1;
+    const label = document.querySelector('.callout--fixed'), leader = document.querySelector('.scan__leader');
+    const lLine = leader && leader.querySelector('line'), lDot = leader && leader.querySelector('circle');
 
     function resize() { const r = canvas.getBoundingClientRect(); if (!r.width) return; st.w = r.width; st.h = r.height; canvas.width = Math.round(r.width * DPR); canvas.height = Math.round(r.height * DPR); gl.viewport(0, 0, canvas.width, canvas.height); }
     // barrido: cruza en 5,6 s y descansa hasta 7,5 s
@@ -178,15 +193,20 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
       gl.uniformMatrix4fv(U.mvp, false, st.mvp); gl.uniform2f(U.rot, Math.cos(st.spin), Math.sin(st.spin));
       gl.uniform1f(U.size, wide ? 1.15 : 1.0); gl.uniform1f(U.alpha, st.alpha); gl.uniform1f(U.near, R - 120); gl.uniform1f(U.far, R + 120);
       gl.uniform1f(U.sweep, sweepAt(t));
+      const [ru, ra] = readAt(t); gl.uniform1f(U.readU, ru); gl.uniform1f(U.readA, ra);
+      const nChars = ru < 0 || ra < 0.05 ? 0 : texts[0].ends.filter((e) => e <= ru + 0.004).length;
+      if (ocrOut && nChars !== typed) { typed = nChars; ocrOut.textContent = OCR.slice(0, nChars); ocrOut.parentElement.classList.toggle('is-done', nChars === OCR.length); }
       gl.drawArrays(gl.POINTS, 0, N);
-      const ctr = project([0, 0, 0]);
-      callouts.forEach(({ el, p }) => {
-        const sp = project(p); if (!sp) return;
-        const flip = (ctr ? sp[0] < ctr[0] - 10 : false) || sp[0] > st.w - 270; // a la izquierda si no cabe a la derecha
-        const ok = sp[0] > 40 && sp[0] < st.w - 40 && sp[1] > 90 && sp[1] < st.h - 50 && !(flip && sp[0] - 270 < st.w * 0.17);
-        el.style.transform = `translate3d(${sp[0].toFixed(1)}px, ${sp[1].toFixed(1)}px, 0)`;
-        el.classList.toggle('is-hidden', !ok); el.classList.toggle('is-flip', flip);
-      });
+      // Línea guía desde la etiqueta (fija sobre el neumático) hasta el centro del texto que se lee
+      if (label && leader && label.offsetParent) {
+        const sp = project(ANCHORS.text);
+        if (sp) {
+          const x1 = label.offsetLeft + 18, y1 = label.offsetTop + label.offsetHeight;
+          lLine.setAttribute('x1', x1); lLine.setAttribute('y1', y1); lLine.setAttribute('x2', sp[0].toFixed(1)); lLine.setAttribute('y2', sp[1].toFixed(1));
+          lDot.setAttribute('cx', sp[0].toFixed(1)); lDot.setAttribute('cy', sp[1].toFixed(1));
+        }
+        leader.classList.toggle('is-on', !!sp);
+      }
     }
     let hiddenDoc = false;
     function frame(now, once) {
