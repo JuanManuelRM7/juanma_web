@@ -1,0 +1,22 @@
+{{/* Fila de la tabla de proyectos (los que no son destacados). Recibe el mapa del proyecto.
+     El punto lima marca solo lo que está en producción. */}}
+{{ $p := . }}
+{{ $links := $p.links | default dict }}
+{{ $primary := "" }}
+{{ with $links.case_study }}{{ $primary = . }}{{ else }}{{ with $links.repo }}{{ $primary = . }}{{ else }}{{ with $links.paper }}{{ $primary = . }}{{ end }}{{ end }}{{ end }}
+{{ $external := hasPrefix $primary "http" }}
+<div class="ledger__row" role="row">
+  <div role="cell">
+    <h3>{{ if $primary }}<a href="{{ $primary }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }} data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</a>{{ else }}<span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span>{{ end }}</h3>
+    <p data-i18n="proj_desc_{{ $p.id }}">{{ $p.description }}</p>
+  </div>
+  <span role="cell" class="ledger__cap">{{ delimit ($p.tech | default slice) " · " }}</span>
+  <span role="cell" class="ledger__state">{{ with $p.status }}<span class="dot{{ if ne . "production" }} dot--off{{ end }}" aria-hidden="true"></span><span data-i18n="status_{{ . }}">{{ i18n (printf "status_%s" .) }}</span>{{ end }}</span>
+  <span role="cell" class="ledger__go">
+    {{ with $links.case_study }}<a href="{{ . }}" data-i18n="action_case_study">{{ i18n "action_case_study" }}</a>{{ end }}
+    {{ with $links.repo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" data-i18n="action_repo">{{ i18n "action_repo" }}</a>{{ end }}
+    {{ with $links.paper }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" data-i18n="action_paper">{{ i18n "action_paper" }}</a>{{ end }}
+    {{ range $i, $l := $links.posts }}<a href="{{ $l.url }}" data-i18n="proj_post_{{ $p.id }}_{{ add $i 1 }}">{{ $l.title }}</a>{{ end }}
+    {{ range $links.more }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>{{ end }}
+  </span>
+</div>

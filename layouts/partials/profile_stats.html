@@ -1,18 +1,8 @@
-<!-- Profile stats: all three values are derived from config.yaml -->
+<!-- Estadísticas del perfil: los tres valores salen de config.yaml -->
 {{ $pubs := 0 }}{{ range .Site.Params.publication.list }}{{ if or .pdf_url .doi }}{{ $pubs = add $pubs 1 }}{{ end }}{{ end }}
 {{ $oss := 0 }}{{ range .Site.Params.project.list }}{{ $repo := "" }}{{ with .links }}{{ $repo = .repo | default "" }}{{ end }}{{ $u := .url | default "" }}{{ if or $repo (in $u "github.com") }}{{ $oss = add $oss 1 }}{{ end }}{{ end }}
-<div class="grid grid-cols-3 gap-3 text-center py-4">
-  <div class="flex flex-col items-center">
-    {{ partial "experience_calculator" . }}
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_experience">{{ i18n "profile_experience" }}</p>
-  </div>
-  <div class="flex flex-col items-center border-l border-r border-gray-200 dark:border-gray-700">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">{{ $pubs }}</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_publications">{{ i18n "profile_publications" }}</p>
-  </div>
-  <div class="flex flex-col items-center">
-    <p class="text-lg font-bold text-violet-600 dark:text-violet-400">{{ $oss }}</p>
-    <p class="text-xs text-gray-600 dark:text-gray-400" data-i18n="profile_oss">{{ i18n "profile_oss" }}</p>
-  </div>
-</div>
-<div class="border-t border-gray-200 dark:border-gray-700"></div>
+<ul class="stats">
+  <li><span data-i18n="profile_experience">{{ i18n "profile_experience" }}</span>{{ partial "experience_calculator" . }}</li>
+  <li><span data-i18n="profile_publications">{{ i18n "profile_publications" }}</span><span class="num">{{ $pubs }}</span></li>
+  <li><span data-i18n="profile_oss">{{ i18n "profile_oss" }}</span><span class="num">{{ $oss }}</span></li>
+</ul>

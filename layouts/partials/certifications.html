@@ -1,12 +1,7 @@
-{{/* Certifications from params.certifications.list (ES) / languages.en.params.certifications.list (EN). */}}
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-3" data-stagger>
-  {{ range $i, $c := .Site.Params.certifications.list }}
-  <div class="cert-card">
-    <i class="fas fa-check-circle" aria-hidden="true"></i>
-    <div>
-      <p class="cert-title" data-i18n="cert_title_{{ add $i 1 }}">{{ $c.title }}</p>
-      {{ with $c.issuer }}<p class="cert-issuer" data-i18n="cert_issuer_{{ add $i 1 }}">{{ . }}</p>{{ end }}
-    </div>
-  </div>
-  {{ end }}
+{{/* Certificaciones: params.certifications.list (title, issuer). Van al final de la columna de educación. */}}
+{{ range $i, $c := .Site.Params.certifications.list }}
+<div class="entry">
+  <p class="entry__when" data-i18n="section_certs">{{ i18n "section_certs" }}</p>
+  <h3><span data-i18n="cert_title_{{ add $i 1 }}">{{ $c.title }}</span>{{ with $c.issuer }} · <span data-i18n="cert_issuer_{{ add $i 1 }}">{{ . }}</span>{{ end }}</h3>
 </div>
+{{ end }}

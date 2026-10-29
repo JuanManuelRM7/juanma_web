@@ -1,43 +1,25 @@
+{{/* Experiencia: fecha a la izquierda, puesto, empresa, resumen, logros plegados y stack.
+     Datos: params.experience.list; las claves data-i18n las genera partials/i18n.html. */}}
+<div class="roles">
 {{ range $idx, $el := .Site.Params.experience.list }}
-<div class="timeline-item">
-  <div class="timeline-dot"></div>
-  <div class="card border-l-4 border-l-violet-600 dark:border-l-violet-400 bg-white dark:bg-slate-800 p-5 mb-4 rounded-lg shadow-sm hover:shadow-md">
-    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-3">
-      <div class="sm:flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <i class="fas fa-briefcase text-violet-600 dark:text-violet-400"></i>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 m-0"><span data-i18n="exp_position_{{ add $idx 1 }}">{{ .position }}</span></h3>
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400 m-0 flex items-center gap-1">
-          {{ if .url }}
-          <a href="{{ .url }}" class="hover:text-violet-600 dark:hover:text-violet-400" data-i18n="exp_company_{{ add $idx 1 }}">{{ .company }}</a>
-          {{ else }}<span data-i18n="exp_company_{{ add $idx 1 }}">{{ .company }}</span>{{ end }}
-        </p>
-      </div>
-      <span class="text-sm text-violet-600 dark:text-violet-400 font-medium sm:flex-shrink-0" data-i18n="exp_dates_{{ add $idx 1 }}" data-i18n-html>{{ .dates | markdownify }}</span>
-    </div>
-    
-    {{ if .details }}
-    <div class="prose prose-stone dark:prose-invert max-w-none text-sm text-gray-700 dark:text-gray-300 mb-3" data-i18n="exp_details_{{ add $idx 1 }}" data-i18n-html>
-    {{ .details | markdownify }}
-    </div>
-    {{ end }}
-
-    {{ with .highlights }}
-    <ul class="exp-highlights" data-i18n="exp_hl_{{ add $idx 1 }}" data-i18n-html>
-      {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
-    </ul>
-    {{ end }}
-    
-    <!-- Quick skills tags -->
-    {{ with .tags }}
-    <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-      {{ range $j, $t := . }}
-      <span class="px-2 py-1 rounded text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300" data-i18n="exp_tag_{{ add $idx 1 }}_{{ add $j 1 }}">{{ $t }}</span>
-      {{ end }}
-    </div>
-    {{ end }}
+{{ $n := add $idx 1 }}
+<article class="role">
+  <div class="role__when">
+    <span class="num" data-i18n="exp_dates_{{ $n }}" data-i18n-html>{{ .dates | markdownify }}</span>
+    {{ if not .end }}<span class="role__now"><span class="dot" aria-hidden="true"></span><span data-i18n="exp_current">{{ i18n "exp_current" }}</span></span>{{ end }}
   </div>
-</div>
+  <div class="role__body">
+    <h3 data-i18n="exp_position_{{ $n }}">{{ .position }}</h3>
+    <p class="role__org">{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" data-i18n="exp_company_{{ $n }}">{{ .company }}</a>{{ else }}<span data-i18n="exp_company_{{ $n }}">{{ .company }}</span>{{ end }}</p>
+    {{ with .details }}<div class="md" data-i18n="exp_details_{{ $n }}" data-i18n-html>{{ . | markdownify }}</div>{{ end }}
+    {{ with .highlights }}
+    <details class="more">
+      <summary><span class="num">{{ len . }}</span> <span data-i18n="exp_achievements">{{ i18n "exp_achievements" }}</span></summary>
+      <ul class="bullets" data-i18n="exp_hl_{{ $n }}" data-i18n-html>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+    </details>
+    {{ end }}
+    {{ with .tags }}<div class="stack">{{ range $j, $t := . }}<span data-i18n="exp_tag_{{ $n }}_{{ add $j 1 }}">{{ $t }}</span>{{ end }}</div>{{ end }}
+  </div>
+</article>
 {{ end }}
-
+</div>

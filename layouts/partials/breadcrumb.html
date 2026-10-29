@@ -1,13 +1,6 @@
-{{ if and (not .IsHome) (.IsPage) }}
-<nav aria-label="{{ i18n "aria_breadcrumb" }}" data-i18n-aria="aria_breadcrumb" class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-1.5 flex-wrap">
-  <a href="{{ .Site.Home.RelPermalink }}" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors" aria-label="{{ i18n "nav_home" }}" data-i18n-aria="nav_home">
-    <i class="fas fa-home text-xs" aria-hidden="true"></i>
-  </a>
-  {{ with .Parent }}
-  <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>
-  <a href="{{ .RelPermalink }}" class="hover:text-violet-600 dark:hover:text-violet-300 transition-colors capitalize">{{ .Title }}</a>
-  {{ end }}
-  <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">/</span>
-  <span class="text-gray-700 dark:text-gray-300 font-medium truncate max-w-[220px] sm:max-w-xs" aria-current="page">{{ .Title }}</span>
+{{ if not .IsHome }}
+<nav class="crumbs" aria-label="{{ i18n "aria_breadcrumb" }}" data-i18n-aria="aria_breadcrumb">
+  <a href="{{ .Site.Home.RelPermalink }}" data-i18n="nav_home">{{ i18n "nav_home" }}</a>
+  {{ if .IsPage }}{{ with .Parent }}{{ if not .IsHome }}<span aria-hidden="true">/</span><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}{{ end }}
 </nav>
 {{ end }}

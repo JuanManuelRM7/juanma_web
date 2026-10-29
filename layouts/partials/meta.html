@@ -9,10 +9,9 @@
 {{- if not .IsHome }}{{ with .File }}{{ $postOg := printf "og/%s.png" .ContentBaseName }}{{ if fileExists (printf "static/%s" $postOg) }}{{ $image = absURL $postOg }}{{ end }}{{ end }}{{ end -}}
 
 <meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
 <title>{{ $pageTitle }}</title>
 
-<meta name="theme-color" content="#8b5cf6" />
 <meta name="description" content="{{ $desc }}" />
 <meta name="author" content="{{ .Site.Params.author }}" />
 <meta name="robots" content="index, follow" />

@@ -1,93 +1,15 @@
-<!-- Scroll Reveal Animation Script -->
+<!-- Revelado suave de secciones al entrar en pantalla. Solo se ocultan las que aún están por debajo
+     de la vista al cargar, así la primera pantalla (y una captura) siempre sale completa. -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Intersection Observer para reveal animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Add animation class
-        entry.target.classList.add('animate-fade-in-up');
-        // Cascada para los hijos de los contenedores marcados con data-stagger
-        entry.target.querySelectorAll('[data-stagger]').forEach(group => {
-          Array.from(group.children).forEach((child, i) => {
-            child.style.transitionDelay = (i * 90) + 'ms';
-          });
-          group.classList.add('stagger-in');
-        });
-        // Stop observing once animated
-        observer.unobserve(entry.target);
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('[data-reveal]')).filter(function (el) { return el.getBoundingClientRect().top > innerHeight; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = ''; e.target.classList.add('animate-fade-in-up'); io.unobserve(e.target);
     });
-  }, observerOptions);
-
-  // Observe all cards and sections
-  document.querySelectorAll('.card, .card-group, [data-reveal]').forEach(el => {
-    // Set initial opacity to 0
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
-  });
-
-  // Grupos data-stagger que no cuelgan de un data-reveal (p. ej. /proyectos/): se revelan solos
-  document.querySelectorAll('[data-stagger]').forEach(group => {
-    if (group.closest('[data-reveal]')) return;
-    const groupObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        Array.from(entry.target.children).forEach((child, i) => {
-          child.style.transitionDelay = (i * 90) + 'ms';
-        });
-        entry.target.classList.add('stagger-in');
-        groupObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.05 });
-    groupObserver.observe(group);
-  });  // Stagger animation for multiple cards
-  const cardGroups = document.querySelectorAll('[data-card-group]');
-  cardGroups.forEach(group => {
-    const cards = group.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-      observer.observe(card);
-    });
-  });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { el.style.opacity = '0'; io.observe(el); });
 });
 </script>
-
-<noscript><style>[data-reveal], [data-stagger] > * { opacity: 1 !important; transform: none !important; }</style></noscript>
-<style>
-.card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease-out;
-}
-
-.card.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-[data-reveal].animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-</style>

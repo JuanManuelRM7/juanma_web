@@ -218,3 +218,43 @@ term_uptime:
   other: "desde 2024"
 term_try_help:
   other: "Prueba {help}."
+hero_scan_caption:
+  other: "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante, como en la inspección de flancos."
+hero_callout_defect:
+  other: "Defecto segmentado"
+hero_callout_text:
+  other: "Flanco leído con GLM-OCR + LoRA"
+section_projects_intro:
+  other: "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más."
+section_exp_intro:
+  other: "De la física atmosférica a la visión industrial, pasando por la investigación en LLMs."
+section_blog_intro:
+  other: "Visión por computador, LLMs, física y meteorología."
+section_skills:
+  other: "Herramientas"
+section_skills_intro:
+  other: "Lo que uso a diario, agrupado por área."
+exp_current:
+  other: "Puesto actual"
+exp_achievements:
+  other: "logros"
+projects_more:
+  other: "Más proyectos"
+col_project:
+  other: "Proyecto"
+col_stack:
+  other: "Stack"
+col_status:
+  other: "Estado"
+col_links:
+  other: "Enlaces"
+action_copy:
+  other: "Copiar"
+action_copied:
+  other: "Copiado"
+blog_posts_count:
+  other: "artículos"
+material_intro_label:
+  other: "Apuntes"
+search_intro:
+  other: "Busca en los artículos, los casos de estudio y los apuntes."

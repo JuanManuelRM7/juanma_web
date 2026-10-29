@@ -1,53 +1,15 @@
 {{ define "main" }}
-<div class="prose prose-stone dark:prose-invert max-w-none mx-auto px-4 pb-8">
+<header class="page-head wrap">
+  {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mb-12 auto-rows-fr">
+  {{ with .Content }}<div class="page-head__lead">{{ . }}</div>{{ end }}
+</header>
+<div class="wrap" style="margin-top: var(--space-2xl)">
+  <div class="notes">
     {{ range .Pages }}
-    <a href="{{ .RelPermalink }}" class="block group h-full">
-      <div class="bg-gradient-to-br from-gray-200 via-gray-300 to-emerald-100 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 p-4 rounded-lg shadow-md border border-emerald-500/50 dark:border-emerald-400/50 
-        transition-all duration-300 ease-out
-        hover:shadow-lg hover:shadow-emerald-500/10
-        hover:-translate-y-1 hover:scale-[1.02]
-        hover:border-emerald-500 dark:hover:border-emerald-400
-        relative overflow-hidden h-full flex flex-col
-        after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-br after:from-emerald-500/0 after:to-emerald-500/0 after:transition-colors after:duration-300
-        hover:after:from-emerald-500/5 hover:after:to-emerald-500/10
-        dark:hover:after:from-emerald-400/5 dark:hover:after:to-emerald-400/10">
-        
-        {{ if eq .Title "Astrofísica" }}
-        {{/* Campo de estrellas con espiral galáctica */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%223%22 fill=%22currentColor%22 /><path d=%22M50 50 Q60 42 65 35 Q68 25 60 20 Q50 16 42 22 Q32 30 35 42 Q38 52 50 55 Q62 58 70 50 Q78 40 74 28%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><circle cx=%2212%22 cy=%2215%22 r=%221.5%22 fill=%22currentColor%22 /><circle cx=%2285%22 cy=%2212%22 r=%221%22 fill=%22currentColor%22 /><circle cx=%2278%22 cy=%2280%22 r=%221.5%22 fill=%22currentColor%22 /><circle cx=%2218%22 cy=%2275%22 r=%221%22 fill=%22currentColor%22 /><circle cx=%2290%22 cy=%2255%22 r=%221%22 fill=%22currentColor%22 /><circle cx=%228%22 cy=%2248%22 r=%221.5%22 fill=%22currentColor%22 /><circle cx=%2235%22 cy=%2288%22 r=%221%22 fill=%22currentColor%22 /><circle cx=%2268%22 cy=%2290%22 r=%221.5%22 fill=%22currentColor%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Mecánica Cuántica" }}
-        {{/* Modelo atómico de Bohr con 3 órbitas y núcleo */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%224%22 fill=%22currentColor%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2238%22 ry=%2214%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2238%22 ry=%2214%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 transform=%22rotate(60 50 50)%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2238%22 ry=%2214%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 transform=%22rotate(120 50 50)%22 /><circle cx=%2288%22 cy=%2250%22 r=%222%22 fill=%22currentColor%22 /><circle cx=%2269%22 cy=%2218%22 r=%222%22 fill=%22currentColor%22 /><circle cx=%2231%22 cy=%2218%22 r=%222%22 fill=%22currentColor%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Óptica" }}
-        {{/* Prisma con rayos de luz divergentes */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M50 15 L82 72 L18 72 Z%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /><line x1=%225%22 y1=%2244%22 x2=%2233%22 y2=%2244%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2267%22 y1=%2244%22 x2=%2280%22 y2=%2232%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><line x1=%2267%22 y1=%2248%22 x2=%2283%22 y2=%2248%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><line x1=%2267%22 y1=%2252%22 x2=%2280%22 y2=%2264%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Electromagnetismo" }}
-        {{/* Onda sinusoidal — campo E (línea continua) y campo B (línea discontinua) */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M5 50 C13 30 17 30 25 50 C33 70 37 70 45 50 C53 30 57 30 65 50 C73 70 77 70 85 50 C93 30 97 30 100 50%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.8%22 /><path d=%22M5 50 C13 38 17 38 25 50 C33 62 37 62 45 50 C53 38 57 38 65 50 C73 62 77 62 85 50 C93 38 97 38 100 50%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 stroke-dasharray=%223 2%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Ecuaciones Diferenciales" }}
-        {{/* Campo de direcciones (flechitas) con curva solución encima */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><line x1=%2210%22 y1=%2270%22 x2=%2218%22 y2=%2255%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2230%22 y1=%2260%22 x2=%2238%22 y2=%2248%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2250%22 y1=%2250%22 x2=%2258%22 y2=%2242%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2270%22 y1=%2240%22 x2=%2278%22 y2=%2232%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2210%22 y1=%2290%22 x2=%2218%22 y2=%2278%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2230%22 y1=%2282%22 x2=%2238%22 y2=%2270%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2250%22 y1=%2272%22 x2=%2258%22 y2=%2260%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><line x1=%2270%22 y1=%2262%22 x2=%2278%22 y2=%2250%22 stroke=%22currentColor%22 stroke-width=%221.5%22 /><path d=%22M8 75 Q30 55 55 45 Q75 36 92 28%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Física Computacional" }}
-        {{/* Malla numérica con puntos de datos y curva de ajuste */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><line x1=%2210%22 y1=%2225%22 x2=%2290%22 y2=%2225%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><line x1=%2210%22 y1=%2250%22 x2=%2290%22 y2=%2250%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><line x1=%2210%22 y1=%2275%22 x2=%2290%22 y2=%2275%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><line x1=%2225%22 y1=%2210%22 x2=%2225%22 y2=%2290%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><line x1=%2250%22 y1=%2210%22 x2=%2250%22 y2=%2290%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><line x1=%2275%22 y1=%2210%22 x2=%2275%22 y2=%2290%22 stroke=%22currentColor%22 stroke-width=%220.8%22 /><circle cx=%2225%22 cy=%2275%22 r=%222%22 fill=%22currentColor%22 /><circle cx=%2250%22 cy=%2255%22 r=%222%22 fill=%22currentColor%22 /><circle cx=%2275%22 cy=%2230%22 r=%222%22 fill=%22currentColor%22 /><path d=%22M10 82 Q25 75 50 55 Q75 30 90 22%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ else if eq .Title "Física de la Atmósfera" }}
-        {{/* Isobaras concéntricas (mapa meteorológico) */}}
-        <div class="absolute inset-0 opacity-[0.18] dark:opacity-[0.12]" style="background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><ellipse cx=%2250%22 cy=%2250%22 rx=%2242%22 ry=%2228%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2228%22 ry=%2218%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><ellipse cx=%2250%22 cy=%2250%22 rx=%2214%22 ry=%228%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%221.2%22 /><circle cx=%2250%22 cy=%2250%22 r=%222%22 fill=%22currentColor%22 /></svg>'); background-size: contain; background-repeat: no-repeat; background-position: right center;"></div>
-        {{ end }}
-        
-        <h3 class="text-gray-900 dark:text-gray-100 mb-2 relative z-10 transition-colors duration-300 group-hover:text-emerald-800 dark:group-hover:text-emerald-300">
-          {{ .Title }}
-        </h3>
-        {{ if .Description }}
-        <p class="text-gray-700 dark:text-gray-300 text-sm relative z-10 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-gray-100 flex-grow">
-          {{ .Description }}
-        </p>
-        {{ end }}
-      </div>
+    <a href="{{ .RelPermalink }}">
+      <h2>{{ .Title }}</h2>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
     </a>
     {{ end }}
   </div>

@@ -1,0 +1,12 @@
+{{/* Fila de un post en una lista: fecha, título y descripción, minutos de lectura.
+     Llamada: partial "post_row" (dict "p" <página> "tags" <bool>) */}}
+{{ $p := .p }}
+<div class="ledger__row ledger__row--post">
+  <time class="num ledger__cap" datetime="{{ $p.Date.Format "2006-01-02" }}" data-i18n-date>{{ $p.Date | time.Format ":date_medium" }}</time>
+  <div>
+    <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    {{ with $p.Description }}<p>{{ . }}</p>{{ else }}{{ with $p.Summary }}<p>{{ . | plainify | truncate 160 }}</p>{{ end }}{{ end }}
+    {{ if and .tags $p.Params.tags }}<div class="pills">{{ range first 5 $p.Params.tags }}<a class="pill" href="{{ `/tags/` | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>{{ end }}
+  </div>
+  <span class="num ledger__go muted">{{ math.Max 1 (math.Round (div (countwords $p.Content) 200.0)) }} min</span>
+</div>

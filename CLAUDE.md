@@ -24,17 +24,17 @@ Al añadir un post o un caso de estudio, regenera las imágenes Open Graph: `npm
 
 | Sección | Clave en `config.yaml` | Renderizado por |
 |---------|------------------------|-----------------|
-| Hero (titular, propuesta de valor, métricas) | `params.profile`, `params.hero.value`, `params.hero.metrics` | `layouts/index.html`, `layouts/partials/hero_metrics.html` |
-| Proyectos (tarjetas) | `params.project.list` | `layouts/partials/projects.html` → `project_card.html` |
+| Hero (titular, propuesta de valor, métricas) | `params.profile`, `params.hero.value`, `params.hero.metrics` | `layouts/index.html`, `layouts/partials/hero_metrics.html` (las dos primeras métricas también etiquetan el neumático del hero) |
+| Proyectos (destacados + tabla) | `params.project.list` | `layouts/partials/projects.html` → `project_card.html` (destacados) y `project_row.html` (resto) |
 | Experiencia (resumen + `highlights`) | `params.experience.list` | `layouts/partials/accordion/experience.html` |
 | Educación | `params.education.list` | `layouts/partials/accordion/education.html` |
 | Certificaciones | `params.certifications.list` | `layouts/partials/certifications.html` |
 | Publicaciones | `params.publication.list` | `layouts/partials/accordion/publication.html` |
 | Skills por categoría | `params.skill.categories` | `layouts/partials/skills_by_category.html` |
-| Redes / contacto (con `label`) | `params.social.list` | `layouts/index.html` (contacto), sidebar, footer |
-| Sobre mí (dorso de la foto, terminal) | `params.aboutme` | `layouts/partials/profilePhoto.html` |
+| Redes / contacto (con `label`) | `params.social.list` | `layouts/index.html` (contacto), barra móvil, footer |
+| Sobre mí (texto, foto, terminal) | `params.aboutme`, `params.profile.photo` | `layouts/index.html` (sección «Sobre mí») |
 
-Las estadísticas de la sidebar (años de experiencia, publicaciones, proyectos open source) se calculan a partir de esos datos en `profile_stats.html` y `experience_calculator.html` (usa `start`/`end` en formato `YYYY-MM` de cada experiencia).
+Las estadísticas de «Sobre mí» (años de experiencia, publicaciones, proyectos open source) se calculan a partir de esos datos en `profile_stats.html` y `experience_calculator.html` (usa `start`/`end` en formato `YYYY-MM` de cada experiencia).
 
 ### Contenido en markdown → `content/`
 
@@ -60,22 +60,24 @@ layouts/
 │   └── _markup/render-image.html  # Imágenes de markdown: lazy + width/height automáticos; los .mp4 salen como vídeo en bucle
 ├── index.rss.xml           # Feed de la portada: solo posts y casos de estudio
 ├── robots.txt              # robots.txt con el sitemap (enableRobotsTXT en config.yaml)
-├── blog/list.html          # Índice del blog (grid paginado)
+├── blog/list.html          # Índice del blog (lista paginada con reglas)
 ├── proyectos/
-│   ├── list.html           # /proyectos/: intro + mismas tarjetas que la portada
-│   └── single.html         # Caso de estudio: ficha lateral (rol, periodo, stack, enlaces, métricas) + TOC
+│   ├── list.html           # /proyectos/: intro + los mismos proyectos que la portada
+│   └── single.html         # Caso de estudio: cifras, ficha lateral (rol, periodo, stack, enlaces) + TOC
 ├── material/list.html      # Índice de material universitario
 ├── shortcodes/img.html     # {{< img src="images/..." alt="" caption="" width="1200" >}} → webp procesado desde assets/
 └── partials/
-    ├── head.html           # Meta tags, CSS, preload de fuentes, detección de tema
+    ├── head.html           # Meta tags, CSS, preload de fuentes (siempre oscuro)
     ├── meta.html           # <title>, OG, Twitter, JSON-LD (Person en la portada; BlogPosting/Article en posts, casos y apuntes; CollectionPage/WebPage en el resto; BreadcrumbList)
-    ├── header.html         # Nav: Inicio · Proyectos · Blog + buscar, idioma, tema
-    ├── footer.html
+    ├── header.html         # Nav: Inicio · Proyectos · Blog · Material + paleta ⌘K e idioma (sin botón de tema)
+    ├── footer.html         # Pie común: nombre dibujado con puntos (scan.js) y enlaces
     ├── i18n.html           # Sistema i18n JS: textos de interfaz (generados desde i18n/*.yaml) + bloque generado desde config.yaml
     ├── loop_video.html     # Reproduce los vídeos en bucle (GIF convertidos) solo cuando están a la vista
     ├── hero_metrics.html   # Franja de métricas del hero
-    ├── projects.html / project_card.html
+    ├── projects.html / project_card.html / project_row.html
     ├── latest_posts.html   # Tres últimos posts (fallback a ES en la home EN)
+    ├── post_row.html       # Fila de post (fecha, título, descripción, minutos) para listas
+    ├── toc.html            # Índice lateral (marca en lima la sección leída) y plegable en móvil
     ├── certifications.html
     ├── command_palette.html # Paleta ⌘K (HTML + datos; lógica en static/js/cmdk.js)
     ├── terminal.html        # Terminal easter egg (HTML + datos; lógica en static/js/terminal.js)
@@ -90,22 +92,19 @@ Las imágenes escritas en markdown (`![alt](/images/figura.png)`, con el fichero
 
 **Animaciones: no subas GIF.** Conviértelos a vídeo con `scripts/gif2mp4.swift` (macOS, sin ffmpeg; instrucciones en la cabecera): genera `figura.mp4` y su póster `figura.png` junto al GIF, unas 5 veces más ligeros. En el post se enlaza igual que una imagen, `![texto alternativo](/images/figura.mp4)`, y el render hook lo pinta como `<video>` en bucle, sin sonido, que solo se descarga y reproduce al entrar en pantalla.
 
-### Estilos → `assets/main.css` + `static/css/`
+### Estilos → `assets/main.css`
 
-- `assets/main.css` — Tailwind imports, `@font-face` de las fuentes self-hosted (`static/fonts/`), utilidades custom (hero, proyectos, experiencia, certificaciones, contacto)
-- `static/css/general.css` — Clases de componentes reutilizables
-- `tailwind.config.js` — Configuración de Tailwind (cargada con `@config`)
+Diseño **Vantage** (de [Hallmark](https://github.com/Nutlope/hallmark)), **solo modo oscuro**: fondo azul acero con un degradado suave (`.atmos`), tinta gris acero, Geologica fina con esquinas afiladas (eje `SHRP`), marcos de esquina (`.ticks`) y **un único verde lima** (`--color-accent`) reservado para lo encontrado, lo vivo o lo principal (botón primario, «en producción», puesto actual, sección leída en el índice, defecto del neumático). No uses el lima para títulos ni fondos grandes.
 
-Tailwind solo busca clases en `layouts/` y `content/` (la clave `content` de `tailwind.config.js`); `main.css` importa con `source(none)` para que no escanee el resto del repo (antes leía `docs/` y el CSS cambiaba en cada build). Una utilidad que solo aparezca en `static/js/` o en `config.yaml` no se genera.
-
-Las reglas base de `main.css` (`a`, `h1`…) están en `@layer utilities` y salen con `!important` (`important: true`). Un color declarado fuera de capa no puede ganarles ni con `!important`: para un botón con color propio, exclúyelo en la regla `a:where(:not(...))` o dale una utilidad (`text-white`).
-
-Los colores de las tarjetas de proyecto (`project-color-*`, `project-status-*`) son CSS plano, no utilidades Tailwind: evita clases Tailwind construidas dinámicamente desde datos de `config.yaml`, porque el purge no las ve.
+- `assets/main.css` — todo el CSS: tokens (`:root`), `@font-face` (Geologica y JetBrains Mono en `static/fonts/`), componentes con clases propias (`.hero`, `.figures`, `.feature`, `.ledger`, `.role`, `.entry`, `.article`, `.toc`…), paleta ⌘K, terminal, Pagefind, impresión. Ya no hay `static/css/`.
+- `tailwind.config.js` — Tailwind sigue cargado solo para las pocas utilidades que puedan aparecer en el contenido; las plantillas no usan utilidades (salvo `min-w-0`).
+- Texto de los artículos: clase `.article` (no `prose`). Avisos dentro del markdown: `<div class="note note--warn">…</div>`.
+- Colores: cambia los tokens de `:root`, nunca valores sueltos. Las cifras van con `.num` (tabular) y la unidad en `.u`.
 
 ### JS → `static/js/`
 
 - `cv-mode.js` — Easter egg YOLO (activar con "yolo" o ⌘K → "CV Mode")
-- `neural-hero.js` — Animación canvas del hero
+- `scan.js` — Nube de puntos del hero (neumático en WebGL con barrido de luz, texto del flanco y defecto en lima; las etiquetas siguen al defecto y al texto) y el nombre del pie dibujado con puntos. Se pausa fuera de pantalla y respeta «reducir movimiento»
 - `cmdk.js` — Paleta de comandos ⌘K
 - `terminal.js` — Terminal simulado (datos en `window.__terminalData`, generados por el partial en los dos idiomas; textos desde `i18n/*.yaml`)
 
@@ -154,8 +153,8 @@ En `config.yaml` bajo `params.project.list` **y** `languages.en.params.project.l
 
 ```yaml
 - id: mi-proyecto            # clave estable; se usa para las traducciones
-  featured: true             # opcional: tarjeta grande al principio
-  home: true                 # opcional: aparece también en la portada (el resto solo en /proyectos/)
+  featured: true             # opcional: fila grande con imagen al principio; sin él, va a la tabla «Más proyectos»
+  home: true                 # ya no se usa: la portada muestra los destacados y la tabla con todos los demás
   title: "Nombre del proyecto"
   description: "Qué hace y qué resultado tiene"
   metrics:                   # opcional, 1-3 líneas cortas con números
@@ -163,9 +162,9 @@ En `config.yaml` bajo `params.project.list` **y** `languages.en.params.project.l
   tech: [Python, Docker]
   cover: "images/proyectos/mi-proyecto/portada.png"  # opcional: imagen de portada (en assets/); sin ella, gradiente + icono
   cover_fit: contain         # opcional: muestra la imagen entera (para diagramas) en vez de recortarla
-  icon: "fas fa-eye"         # icono Font Awesome (debe existir en el subset, ver abajo)
-  color: "cyan"              # cyan | violet | amber | rose | indigo | emerald
-  status: active             # production | published | active | development | completed
+  icon: "fas fa-eye"         # icono Font Awesome (debe existir en el subset); solo si es destacado y no tiene cover
+  color: "cyan"              # ya no se usa en el diseño actual
+  status: active             # production | published | active | development | completed (solo production lleva el punto lima)
   links:                     # todos opcionales
     repo: "https://github.com/..."
     case_study: "/proyectos/mi-proyecto/"
@@ -223,26 +222,22 @@ Font Awesome está self-hosted **y recortado** a los iconos usados (`static/font
 
 ## Arquitectura de la homepage
 
-Grid 40/60 (sidebar sticky | contenido) bajo un hero a ancho completo:
+Una sola columna, de arriba abajo:
 
 ```
-Hero: kicker (puesto) · nombre · propuesta de valor · 4 métricas · CTAs (proyectos, CV, contacto)
-┌─────────────────┬────────────────────────────────┐
-│  40% (sticky)   │  60% (scroll)                  │
-│                 │                                 │
-│  Foto (flip)    │  Proyectos (2 destacados + grid)│
-│  Stats          │  Experiencia (timeline + bullets)│
-│  Redes sociales │  Del blog (3 últimos posts)     │
-│  Botón CV       │  Educación                      │
-│  Footer compacto│  Certificaciones                │
-│                 │  Publicaciones                  │
-│                 │  Skills por categoría           │
-│                 │  GitHub activity calendar       │
-│                 │  Contacto                       │
-└─────────────────┴────────────────────────────────┘
+Hero: kicker (puesto) · nombre · propuesta de valor · CTAs · ubicación   |  neumático escaneado (scan.js) con 2 etiquetas
+Franja de 4 cifras (params.hero.metrics)
+Proyectos: destacados (imagen + ficha) y tabla «Más proyectos» (stack, estado, enlaces)
+Experiencia: fecha | puesto, empresa, resumen, logros plegados, stack
+Del blog: tres últimos posts
+Banda: Publicaciones | Educación + certificaciones
+Herramientas (skills por categoría) + actividad en GitHub
+Sobre mí: foto, texto, estadísticas
+Contacto: CV, email (con copiar), LinkedIn, GitHub, ORCID
+Pie: nombre en puntos + enlaces
 ```
 
-En mobile colapsa a una sola columna y aparece una barra inferior sticky con CV, LinkedIn y email.
+En móvil todo pasa a una columna (el neumático va debajo del texto) y aparece una barra inferior fija con CV, LinkedIn y email.
 
 ---
 
@@ -250,7 +245,7 @@ En mobile colapsa a una sola columna y aparece una barra inferior sticky con CV,
 
 | Feature | Mecanismo | Clave localStorage |
 |---------|-----------|-------------------|
-| Dark/light mode | CSS `dark:` prefix + toggle JS | `theme` |
+| Modo oscuro | Siempre activo (`class="dark"` en `<html>`, `color-scheme: dark`); ya no hay toggle | — |
 | Idioma ES/EN | `data-i18n` + `toggleLang()` (navega si hay traducción) | `lang` |
 
 Sin elección guardada, quien tiene el navegador en un idioma que no es español (ni catalán, gallego o euskera) ve en inglés las páginas renderizadas en español (`browserLang()` en `i18n.html`). Esa detección no se guarda en `localStorage` y nunca pasa una página `/en/` a español.
@@ -291,6 +286,7 @@ npm run build
 ## Easter eggs (no tocar sin querer)
 
 - **Konami Code** (↑↑↓↓←→←→BA): partículas animadas — `layouts/index.html`
+- **Neumático del hero**: no es un easter egg, pero `static/js/scan.js` tiene la geometría; las cifras de sus etiquetas salen de `params.hero.metrics`
 - **CV Mode** (escribir "yolo" o ⌘K → "CV Mode"): overlay YOLO — `static/js/cv-mode.js`
 - **Terminal** (⌘K → "Abrir terminal"): shell simulado — `static/js/terminal.js` + datos en `layouts/partials/terminal.html`
 

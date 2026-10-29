@@ -218,3 +218,43 @@ term_uptime:
   other: "since 2024"
 term_try_help:
   other: "Try {help}."
+hero_scan_caption:
+  other: "Generated point cloud: a tire turning under a sweep of raking light, as in sidewall inspection."
+hero_callout_defect:
+  other: "Segmented defect"
+hero_callout_text:
+  other: "Sidewall read with GLM-OCR + LoRA"
+section_projects_intro:
+  other: "Full case studies and the rest of the work, with its status and where to read more."
+section_exp_intro:
+  other: "From atmospheric physics to industrial vision, by way of LLM research."
+section_blog_intro:
+  other: "Computer vision, LLMs, physics and meteorology."
+section_skills:
+  other: "Tools"
+section_skills_intro:
+  other: "What I use every day, grouped by area."
+exp_current:
+  other: "Current role"
+exp_achievements:
+  other: "achievements"
+projects_more:
+  other: "More projects"
+col_project:
+  other: "Project"
+col_stack:
+  other: "Stack"
+col_status:
+  other: "Status"
+col_links:
+  other: "Links"
+action_copy:
+  other: "Copy"
+action_copied:
+  other: "Copied"
+blog_posts_count:
+  other: "posts"
+material_intro_label:
+  other: "Notes"
+search_intro:
+  other: "Search the posts, the case studies and the course notes."

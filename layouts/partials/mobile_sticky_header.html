@@ -1,105 +1,24 @@
-<!-- Mobile Sticky Header (appears on scroll down) -->
-<div data-sticky-header class="fixed bottom-0 left-0 right-0 md:hidden bg-white dark:bg-slate-900 border-t border-violet-200 dark:border-violet-700 shadow-2xl z-40 p-3" style="transform: translateY(100px); opacity: 0; pointer-events: none;">
-  <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
-    <!-- Photo + Name -->
-    <div class="flex items-center gap-2 min-w-0">
-      {{ $thumb := (resources.Get (printf "images/%s" .Site.Params.profile.photo)).Fill "96x96 webp q80" }}
-      <img
-        src="{{ $thumb.RelPermalink }}"
-        width="48" height="48"
-        alt="{{ .Site.Params.author }}"
-        class="w-12 h-12 rounded-lg border-2 border-violet-600 dark:border-violet-400 flex-shrink-0"
-      />
-      <div class="min-w-0">
-        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
-          {{ .Site.Params.profile.short_name | default .Site.Params.profile.name }}
-        </p>
-        <p class="text-xs text-gray-600 dark:text-gray-400 truncate" data-i18n="profile_position">
-          {{ .Site.Params.profile.position }}
-        </p>
-      </div>
+<!-- Barra inferior en móvil: aparece al bajar con el nombre, el CV, LinkedIn y el email -->
+<div class="mobile-bar" data-sticky-header>
+  <div class="mobile-bar__in">
+    <div class="mobile-bar__who">
+      <p>{{ .Site.Params.profile.short_name | default .Site.Params.profile.name }}</p>
+      <p data-i18n="profile_position">{{ .Site.Params.profile.position }}</p>
     </div>
-
-    <!-- Quick Action Buttons -->
-    <div class="flex gap-2 flex-shrink-0">
-      <!-- CV Button -->
-      <a
-        href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}"
-        class="inline-flex items-center justify-center p-2.5 rounded-md bg-violet-600 hover:bg-violet-700 text-white transition-all duration-300"
-        aria-label="{{ i18n "download_cv" }}"
-        data-i18n-aria="download_cv"
-      >
-        <i class="fas fa-file-download text-sm" aria-hidden="true"></i>
-      </a>
-
-      <!-- LinkedIn -->
-      {{ range .Site.Params.social.list }}
-        {{ if eq .icon "fab fa-linkedin-in" }}
-        <a
-          href="{{ .url }}"
-          class="inline-flex items-center justify-center p-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-          aria-label="LinkedIn"
-        >
-          <i class="fab fa-linkedin-in text-sm"></i>
-        </a>
-        {{ end }}
-      {{ end }}
-
-      <!-- Email -->
-      {{ range .Site.Params.social.list }}
-        {{ if eq .icon "fas fa-envelope" }}
-        <a
-          href="{{ .url }}"
-          class="inline-flex items-center justify-center p-2.5 rounded-md bg-red-600 hover:bg-red-700 text-white transition-all duration-300"
-          aria-label="{{ i18n "aria_email" }}"
-          data-i18n-aria="aria_email"
-        >
-          <i class="fas fa-envelope text-sm"></i>
-        </a>
-        {{ end }}
-      {{ end }}
+    <div class="links">
+      <a class="btn btn--sm" href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}">CV</a>
+      {{ range .Site.Params.social.list }}{{ if eq .icon "fab fa-linkedin-in" }}<a class="btn btn--line btn--sm btn--icon" href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>{{ end }}{{ end }}
+      {{ range .Site.Params.social.list }}{{ if eq .icon "fas fa-envelope" }}<a class="btn btn--line btn--sm btn--icon" href="{{ .url }}" aria-label="{{ i18n "aria_email" }}" data-i18n-aria="aria_email"><i class="fas fa-envelope" aria-hidden="true"></i></a>{{ end }}{{ end }}
     </div>
   </div>
 </div>
-
 <script>
-// Show/hide sticky header based on scroll
-document.addEventListener('DOMContentLoaded', function() {
-  const stickyHeader = document.querySelector('[data-sticky-header]');
-  if (!stickyHeader) return;
-
-  let ticking = false;
-  let lastScrollY = 0;
-
-  window.addEventListener('scroll', function() {
-    lastScrollY = window.scrollY;
-    
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        // Show sticky header only after scrolling down 300px
-        if (lastScrollY > 300) {
-          stickyHeader.style.transform = 'translateY(0)';
-          stickyHeader.style.opacity = '1';
-          stickyHeader.style.pointerEvents = 'auto';
-        } else {
-          stickyHeader.style.transform = 'translateY(100px)';
-          stickyHeader.style.opacity = '0';
-          stickyHeader.style.pointerEvents = 'none';
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  var bar = document.querySelector('[data-sticky-header]'); if (!bar) return;
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () { bar.classList.toggle('is-on', window.scrollY > 300); ticking = false; });
   }, { passive: true });
 });
 </script>
-
-<style>
-[data-sticky-header] {
-  transition: all 0.3s ease-out;
-  pointer-events: auto;
-}
-</style>

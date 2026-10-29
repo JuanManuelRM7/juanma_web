@@ -1,253 +1,156 @@
 {{ define "main" }}
-
-<!-- Reading Progress Bar -->
-<div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-400 z-50 transition-all duration-150" style="width: 0%;"></div>
-
-<!-- Hero Section -->
 {{ $mail := "" }}{{ range .Site.Params.social.list }}{{ if eq .icon "fas fa-envelope" }}{{ $mail = .url }}{{ end }}{{ end }}
-<div class="hero-section w-full text-white dark:text-gray-100 py-16 md:py-24 px-4 mb-8 relative overflow-hidden" style="background: linear-gradient(-45deg, #7c3aed, #6366f1, #8b5cf6, #0891b2); background-size: 400% 400%; animation: heroGradient 12s ease infinite;">
-  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
-  <!-- Blobs aurora -->
-  <div class="hero-aurora" style="width: 340px; height: 340px; top: -120px; right: -60px; background: radial-gradient(circle, #22d3ee, transparent 70%);"></div>
-  <div class="hero-aurora" style="width: 300px; height: 300px; bottom: -140px; left: -80px; background: radial-gradient(circle, #c4b5fd, transparent 70%); animation-delay: -7s;"></div>
-  <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+{{ $metrics := .Site.Params.hero.metrics }}
+<div id="reading-progress" aria-hidden="true"></div>
 
-  <div class="max-w-4xl mx-auto relative z-10">
-    <p class="hero-kicker" data-i18n="profile_position">{{ .Site.Params.profile.position }}</p>
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gradient-animated">{{ .Site.Params.profile.name }}</h1>
-    <p class="text-base md:text-lg max-w-3xl leading-relaxed text-violet-50 dark:text-gray-200 mb-6" data-i18n="hero_value">{{ .Site.Params.hero.value }}</p>
-    {{ partial "hero_metrics" . }}
-    <!-- CTAs -->
-    <div class="flex flex-wrap gap-3 mt-8">
-      <a href="#proyectos" class="hero-cta hero-cta-primary">
-        <i class="fas fa-project-diagram" aria-hidden="true"></i> <span data-i18n="cta_projects">{{ i18n "cta_projects" }}</span>
-      </a>
-      <a href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}" class="hero-cta hero-cta-secondary">
-        <i class="fas fa-file-download" aria-hidden="true"></i> <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
-      </a>
-      {{ with $mail }}
-      <a href="{{ . }}" class="hero-cta hero-cta-secondary">
-        <i class="fas fa-envelope" aria-hidden="true"></i> <span data-i18n="cta_contact">{{ i18n "cta_contact" }}</span>
-      </a>
-      {{ end }}
+<!-- Hero: el neumático escaneado como nube de puntos (static/js/scan.js) junto al nombre -->
+<section class="hero" aria-labelledby="hero-name">
+  <div class="scan">
+    <canvas id="tire" aria-hidden="true"></canvas>
+    {{ with index $metrics 0 }}
+    <div class="callout callout--found is-hidden" data-anchor="defect" aria-hidden="true">
+      <span class="callout__line"></span><i class="callout__dot"></i>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_defect">{{ i18n "hero_callout_defect" }}</span><span class="callout__v num"><span data-i18n="hero_metric_1_value">{{ .value }}</span> <span class="u">mAP@50:95</span></span></div>
     </div>
-    <p class="mt-5 text-sm text-violet-100 dark:text-gray-400"><span data-i18n="profile_location">{{ .Site.Params.profile.location }}</span>{{ with .Site.Params.profile.availability }} · <span data-i18n="profile_availability">{{ . }}</span>{{ end }}</p>
+    {{ end }}
+    {{ with index $metrics 1 }}
+    <div class="callout is-hidden" data-anchor="text" aria-hidden="true">
+      <span class="callout__line"></span><i class="callout__dot"></i>
+      <div class="callout__label"><span class="callout__k" data-i18n="hero_callout_text">{{ i18n "hero_callout_text" }}</span><span class="callout__v num"><span data-i18n="hero_metric_2_value">{{ .value }}</span> <span class="u">exact match</span></span></div>
+    </div>
+    {{ end }}
+    <p class="scan__caption" data-i18n="hero_scan_caption">{{ i18n "hero_scan_caption" }}</p>
   </div>
-  <a href="#proyectos" class="scroll-indicator" aria-label="{{ i18n "aria_scroll_down" }}" data-i18n-aria="aria_scroll_down" style="color: rgba(255,255,255,0.7) !important;">
-    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-  </a>
-</div><!-- Neural Network Hero Animation -->
-<script defer src="{{ `/js/neural-hero.js` | relURL }}"></script>
-
-<!-- Main Content Grid: 40% sidebar | 60% content -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 md:px-0 max-w-6xl mx-auto mb-12">
-  
-  <!-- LEFT SIDEBAR (40%) -->
-  <div class="lg:col-span-1">
-    <!-- Profile Card -->
-    <div class="bg-gradient-to-br from-violet-50 via-white to-slate-50 dark:from-slate-800 dark:via-slate-700 dark:to-slate-900 rounded-lg shadow-md border border-violet-200 dark:border-violet-700 p-5 mb-6 sticky top-20">
-      <div class="text-center mb-2">
-        {{ partial "profilePhoto" . }}
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="hero__kicker" data-i18n="profile_position">{{ .Site.Params.profile.position }}</p>
+      <h1 id="hero-name">{{ .Site.Params.profile.name }}</h1>
+      <p class="hero__lead" data-i18n="hero_value">{{ .Site.Params.hero.value }}</p>
+      <div class="hero__ctas">
+        <a class="btn" href="#proyectos"><span data-i18n="cta_projects">{{ i18n "cta_projects" }}</span></a>
+        <a class="btn btn--line" href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}"><span data-i18n="download_cv">{{ i18n "download_cv" }}</span></a>
+        <a class="btn btn--line" href="#contacto"><span data-i18n="cta_contact">{{ i18n "cta_contact" }}</span></a>
       </div>
-      
-      <!-- Profile Stats -->
-      {{ partial "profile_stats" . }}
-      <div class="flex justify-center gap-4 mb-5 flex-wrap">
-        {{ range .Site.Params.social.list }}
-        <a href="{{ .url }}" class="text-2xl text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" title="{{ .title }}">
-          <i class="{{ .icon }}"></i>
-        </a>
-        {{ end }}
-      </div>
-      
-      <!-- CV Button -->
-      <a href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}" class="sidebar-cv w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg no-underline mb-6">
-        <i class="fas fa-file-download" aria-hidden="true"></i>
-        <span data-i18n="download_cv">{{ i18n "download_cv" }}</span>
-      </a>
-      
-      {{/* En escritorio el pie va en la sidebar fija; en móvil, al final de la página (ver más abajo) */}}
-      <div class="hidden lg:block">{{ partial "footer" . }}</div>
+      <p class="hero__where"><span class="dot" aria-hidden="true"></span><span><span data-i18n="profile_location">{{ .Site.Params.profile.location }}</span>{{ with .Site.Params.profile.availability }} · <span data-i18n="profile_availability">{{ . }}</span>{{ end }}</span></p>
     </div>
   </div>
-  
-  <!-- RIGHT CONTENT (60%) -->
-  <div class="lg:col-span-2">
-    
-    <!-- Projects Section -->
-    <div id="proyectos" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-project-diagram section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_projects">{{ i18n "section_projects" }}</span>
-      </h2>
-      {{ partial "projects" (dict "page" . "homeOnly" true) }}
-    </div>
+</section>
 
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
+<div class="wrap">{{ partial "hero_metrics" . }}</div>
 
-    <!-- Experience Section (Timeline) -->
-    <div id="experiencia" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-briefcase section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_exp">{{ i18n "section_exp" }}</span>
-      </h2>
-      <div class="timeline-container">
-        {{ partial "accordion/experience" . }}
-      </div>
-    </div>
+<!-- Proyectos -->
+<section class="section wrap" id="proyectos" aria-labelledby="h-proy" data-reveal>
+  <div class="section__head">
+    <h2 id="h-proy" data-i18n="section_projects">{{ i18n "section_projects" }}</h2>
+    <p data-i18n="section_projects_intro">{{ i18n "section_projects_intro" }}</p>
+  </div>
+  {{ partial "projects" (dict "page" . "homeOnly" true) }}
+</section>
 
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-    
-    <!-- Featured Blog Post -->
-    <div class="mb-8" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-newspaper section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_blog">{{ i18n "section_blog" }}</span>
-      </h2>
-      {{ partial "latest_posts" . }}
-    </div>
+<!-- Experiencia -->
+<section class="section wrap" id="experiencia" aria-labelledby="h-exp" data-reveal>
+  <div class="section__head">
+    <h2 id="h-exp" data-i18n="section_exp">{{ i18n "section_exp" }}</h2>
+    <p data-i18n="section_exp_intro">{{ i18n "section_exp_intro" }}</p>
+  </div>
+  {{ partial "accordion/experience" . }}
+</section>
 
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-    
-    <!-- Education Section (Timeline) -->
-    <div id="educacion" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-graduation-cap section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_edu">{{ i18n "section_edu" }}</span>
-      </h2>
-      <div class="timeline-container">
-        {{ partial "accordion/education" . }}
-      </div>
-    </div>
+<!-- Del blog -->
+<section class="section wrap" id="blog" aria-labelledby="h-blog" data-reveal>
+  <div class="section__head">
+    <h2 id="h-blog" data-i18n="section_blog">{{ i18n "section_blog" }}</h2>
+    <p data-i18n="section_blog_intro">{{ i18n "section_blog_intro" }}</p>
+  </div>
+  {{ partial "latest_posts" . }}
+</section>
 
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-    
-    <!-- Certifications -->
-    {{ with .Site.Params.certifications.list }}
-    <div id="certificaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-check-circle section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_certs">{{ i18n "section_certs" }}</span>
-      </h2>
-      {{ partial "certifications" $ }}
-    </div>
-
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-    {{ end }}    <!-- Publications Section -->
-    <div id="publicaciones" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-book section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_pub">{{ i18n "section_pub" }}</span>
-      </h2>
+<!-- Publicaciones y educación -->
+<div class="band" id="formacion">
+  <div class="wrap cols">
+    <section id="publicaciones" aria-labelledby="h-pub">
+      <h2 class="col-title" id="h-pub" data-i18n="section_pub">{{ i18n "section_pub" }}</h2>
       {{ partial "accordion/publication" . }}
-    </div>
-
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-    
-    <!-- Skills Section by Category -->
-    <div id="skills" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-cogs section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        Skills
-      </h2>
-      {{ partial "skills_by_category" . }}
-    </div>
-
-    <!-- Section Separator -->
-    <div class="section-separator"></div>
-
-    <!-- GitHub Activity -->
-    {{ partial "github_activity" . }}
-
-    <!-- Contact Section -->
-    <div id="contacto" class="mb-8 scroll-mt-24" data-reveal>
-      <h2 class="section-title text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-        <i class="fas fa-envelope section-icon text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-        <span data-i18n="section_contact">{{ i18n "section_contact" }}</span>
-      </h2>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="contact_intro">{{ i18n "contact_intro" }}</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-        {{ range .Site.Params.social.list }}
-        {{ if ne .icon "fab fa-instagram" }}
-        {{ $tone := "contact-tone-gray" }}{{ if eq .icon "fas fa-envelope" }}{{ $tone = "contact-tone-red" }}{{ else if eq .icon "fab fa-linkedin-in" }}{{ $tone = "contact-tone-blue" }}{{ else if eq .icon "fab fa-orcid" }}{{ $tone = "contact-tone-green" }}{{ end }}
-        <a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }} class="contact-card group no-underline">
-          <div class="contact-card-icon {{ $tone }}">
-            <i class="{{ .icon }} text-lg" aria-hidden="true"></i>
-          </div>
-          <div class="min-w-0">
-            <p class="font-semibold text-gray-900 dark:text-gray-100 text-sm">{{ .title }}</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400 truncate">{{ .label | default .url }}</p>
-          </div>
-        </a>
-        {{ end }}
-        {{ end }}
-      </div>
-    </div>
-    
+    </section>
+    <section id="educacion" aria-labelledby="h-edu">
+      <h2 class="col-title" id="h-edu" data-i18n="section_edu">{{ i18n "section_edu" }}</h2>
+      {{ partial "accordion/education" . }}
+      {{ partial "certifications" . }}
+    </section>
   </div>
 </div>
 
-<!-- Pie en móvil y tablet (mb-24: deja sitio a la barra inferior fija) -->
-<div class="lg:hidden px-4 mb-24">{{ partial "footer" . }}</div>
+<!-- Herramientas -->
+<section class="section wrap" id="skills" aria-labelledby="h-skills" data-reveal>
+  <div class="section__head">
+    <h2 id="h-skills" data-i18n="section_skills">{{ i18n "section_skills" }}</h2>
+    <p data-i18n="section_skills_intro">{{ i18n "section_skills_intro" }}</p>
+  </div>
+  {{ partial "skills_by_category" . }}
+  {{ partial "github_activity" . }}
+</section>
 
-<!-- Scroll to Top Button -->
-<button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="{{ i18n "aria_scroll_top" }}" data-i18n-aria="aria_scroll_top" class="fixed bottom-20 md:bottom-8 right-6 z-40 w-12 h-12 rounded-full bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none flex items-center justify-center focus:opacity-100 focus:pointer-events-auto focus:outline-none focus:ring-2 focus:ring-violet-400">
-  <i class="fas fa-chevron-up" aria-hidden="true"></i>
-</button>
+<!-- Sobre mí -->
+<section class="section wrap" id="sobre-mi" aria-labelledby="h-about" data-reveal>
+  <div class="section__head"><h2 id="h-about" data-i18n="aboutme_title">{{ .Site.Params.aboutme.title }}</h2></div>
+  <div class="about">
+    {{ with resources.Get (printf "images/%s" .Site.Params.profile.photo) }}
+    {{ $w1 := .Resize "400x webp q82" }}
+    <div class="about__photo ticks"><img src="{{ $w1.RelPermalink }}" width="{{ $w1.Width }}" height="{{ $w1.Height }}" alt="{{ $.Site.Params.author }}" loading="lazy" decoding="async"></div>
+    {{ end }}
+    <p class="about__text" data-i18n="aboutme_description">{{ .Site.Params.aboutme.description }}</p>
+    {{ partial "profile_stats" . }}
+  </div>
+</section>
 
-<!-- Mobile Sticky Header -->
-<div data-sticky-header>
-  {{ partial "mobile_sticky_header" . }}
-</div>
+<!-- Contacto -->
+<section class="section wrap" id="contacto" aria-labelledby="h-contact" data-reveal>
+  <div class="contact">
+    <div>
+      <h2 id="h-contact" data-i18n="section_contact">{{ i18n "section_contact" }}</h2>
+      <p class="contact__intro" data-i18n="contact_intro">{{ i18n "contact_intro" }}</p>
+      <div class="links" style="margin-top:24px">
+        <a class="btn" href="{{ partial "cv_url" . }}" data-cv-es="{{ `/cv.pdf` | relURL }}" data-cv-en="{{ `/cv-en.pdf` | relURL }}"><span data-i18n="download_cv">{{ i18n "download_cv" }}</span></a>
+        {{ with $mail }}<a class="btn btn--line" href="{{ . }}"><span data-i18n="cta_contact">{{ i18n "cta_contact" }}</span></a>{{ end }}
+      </div>
+    </div>
+    <ul class="contact__list">
+      {{ range .Site.Params.social.list }}
+      {{ $isMail := hasPrefix .url "mailto:" }}
+      <li>
+        <span class="k">{{ .title }}</span>
+        <a class="v{{ if eq .icon "fab fa-orcid" }} num{{ end }}" href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $isMail }} id="contact-email"{{ end }}>{{ .label | default .url }}</a>
+        {{ if $isMail }}<button class="copy" type="button" data-copy-text="{{ .label | default (strings.TrimPrefix "mailto:" .url) }}" data-i18n="action_copy">{{ i18n "action_copy" }}</button>{{ else }}<span></span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
 
-<!-- Reading Progress + Scroll-to-Top + Page Loader Scripts -->
+<button id="scroll-to-top" type="button" class="btn btn--line btn--sm btn--icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="{{ i18n "aria_scroll_top" }}" data-i18n-aria="aria_scroll_top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+
+{{ partial "mobile_sticky_header" . }}
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Reading progress bar
-  var progressBar = document.getElementById('reading-progress');
-  var scrollTopBtn = document.getElementById('scroll-to-top');
-  
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.scrollY;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    if (progressBar) progressBar.style.width = progress + '%';
-    
-    // Scroll to top button visibility
-    if (scrollTopBtn) {
-      if (scrollTop > 400) {
-        scrollTopBtn.style.opacity = '1';
-        scrollTopBtn.style.pointerEvents = 'auto';
-      } else {
-        scrollTopBtn.style.opacity = '0';
-        scrollTopBtn.style.pointerEvents = 'none';
-      }
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  var bar = document.getElementById('reading-progress'), up = document.getElementById('scroll-to-top');
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if (up) up.classList.toggle('is-on', y > 600);
   }, { passive: true });
-
-  // Smooth scroll ONLY for hero nav pills (not all # links)
-  document.querySelectorAll('.hero-cta[href^="#"], .scroll-indicator[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var href = this.getAttribute('href');
-      if (href && href.length > 1) {
-        var target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+  // Copiar el email: con el portapapeles si se puede y, si no, seleccionando el texto
+  document.querySelectorAll('[data-copy-text]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-copy-text'), strings = (window.__i18n || {})[document.documentElement.lang] || {};
+      var done = function () { b.textContent = strings.action_copied || 'Copiado'; setTimeout(function () { b.textContent = strings.action_copy || 'Copiar'; }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () {});
     });
   });
 });
 </script>
 
-<!-- Easter Egg: Konami Code ↑↑↓↓←→←→BA -->
+<!-- Easter egg: Konami Code ↑↑↓↓←→←→BA -->
 <script>
 (function() {
   var konamiCode = [38,38,40,40,37,39,37,39,66,65];
@@ -255,16 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) {
     if (e.keyCode === konamiCode[konamiIndex]) {
       konamiIndex++;
-      if (konamiIndex === konamiCode.length) {
-        konamiIndex = 0;
-        activateEasterEgg();
-      }
-    } else {
-      konamiIndex = 0;
-    }
+      if (konamiIndex === konamiCode.length) { konamiIndex = 0; activateEasterEgg(); }
+    } else { konamiIndex = 0; }
   });
   function activateEasterEgg() {
-    // Create particle burst
     var container = document.createElement('div');
     container.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden;';
     document.body.appendChild(container);
@@ -286,20 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }, idx * 50);
       })(i);
     }
-    // Show secret message
     var msg = document.createElement('div');
-    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:linear-gradient(135deg,#8b5cf6,#3b82f6);color:white;padding:1.5rem 2.5rem;border-radius:1rem;font-size:1.25rem;font-weight:bold;box-shadow:0 20px 60px rgba(139,92,246,0.4);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
-    msg.innerHTML = '<span data-i18n="easter_secret">{{ i18n "easter_secret" }}</span><br><span style="font-size:0.85rem;font-weight:normal;opacity:0.9;" data-i18n="easter_konami">{{ i18n "easter_konami" }}</span>';
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;background:var(--color-paper-3);border:1px solid var(--color-accent);color:var(--color-ink);padding:1.5rem 2.5rem;border-radius:6px;font-size:1.25rem;font-weight:400;box-shadow:0 30px 80px rgba(0,0,0,0.5);text-align:center;pointer-events:none;opacity:0;transition:opacity 0.5s;';
+    msg.innerHTML = '<span data-i18n="easter_secret">{{ i18n "easter_secret" }}</span><br><span style="font-size:0.85rem;color:var(--color-muted);" data-i18n="easter_konami">{{ i18n "easter_konami" }}</span>';
     container.appendChild(msg);
     requestAnimationFrame(function() { msg.style.opacity = '1'; });
-    setTimeout(function() {
-      msg.style.opacity = '0';
-      setTimeout(function() { container.remove(); }, 600);
-    }, 3500);
+    setTimeout(function() { msg.style.opacity = '0'; setTimeout(function() { container.remove(); }, 600); }, 3500);
   }
 })();
 </script>
-
-
-
 {{ end }}

@@ -1,35 +1,30 @@
 {{ define "main" }}
-{{/* Páginas de taxonomía: /tags/ (todas las etiquetas) y /tags/<tag>/ (páginas con esa etiqueta) */}}
+{{/* Taxonomías: /tags/ (todas las etiquetas) y /tags/<tag>/ (páginas con esa etiqueta) */}}
 {{ $sections := dict "blog" "nav_blog" "proyectos" "nav_projects" "material" "nav_material" }}
-<div class="max-w-4xl mx-auto px-4">
-  <div class="mb-8 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3" style="margin-top: 1rem;">
-      {{ if eq .Kind "term" }}<span class="text-violet-600 dark:text-violet-400">#</span>{{ end }}{{ .Title }}
-    </h1>
-  </div>
-
+<header class="page-head wrap">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ if eq .Kind "term" }}<span class="muted">#</span>{{ end }}{{ .Title }}</h1>
+  {{ if eq .Kind "term" }}<div class="post-meta"><span><span class="num">{{ len .Pages }}</span></span><a class="pill" href="{{ `tags/` | relLangURL }}">#tags</a></div>{{ end }}
+</header>
+<div class="wrap" style="margin-top: var(--space-2xl)">
   {{ if eq .Kind "taxonomy" }}
-  <div class="flex flex-wrap justify-center gap-2 mb-12">
-    {{ range .Data.Terms.Alphabetical }}
-    <a href="{{ .Page.RelPermalink }}" class="text-sm px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800 hover:bg-violet-100 dark:hover:bg-violet-800/50 transition-colors no-underline">#{{ .Page.Title }} <span class="text-gray-500 dark:text-gray-400">{{ .Count }}</span></a>
-    {{ end }}
+  <div class="tagcloud">
+    {{ range .Data.Terms.Alphabetical }}<a class="pill" href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} <span class="u num">{{ .Count }}</span></a>{{ end }}
   </div>
   {{ else }}
-  <div class="grid grid-cols-1 gap-4 mb-10">
+  <div class="ledger" style="margin-top:0">
     {{ range (.Paginator 10).Pages }}
-    <a href="{{ .RelPermalink }}" class="group flex flex-col p-5 bg-white dark:bg-slate-800 border border-violet-200 dark:border-violet-700/50 rounded-lg hover:border-violet-400 dark:hover:border-violet-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 no-underline">
-      <p class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
-        {{ with index $sections .Section }}<span class="font-semibold uppercase tracking-wider text-violet-600 dark:text-violet-400">{{ i18n . }}</span><span aria-hidden="true">·</span>{{ end }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
-      </p>
-      <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 leading-snug mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">{{ .Title }}</h2>
-      {{ with .Description }}<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ . }}</p>{{ end }}
-    </a>
+    <div class="ledger__row ledger__row--post">
+      <time class="num ledger__cap" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+      <div>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </div>
+      <span class="ledger__go muted">{{ with index $sections .Section }}<span data-i18n="{{ . }}">{{ i18n . }}</span>{{ end }}</span>
+    </div>
     {{ end }}
   </div>
-  <div class="my-6 flex justify-center pagination-links">
-    {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
-  </div>
+  <div class="pagination-links">{{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}</div>
   {{ end }}
 </div>
 {{ end }}

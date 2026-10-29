@@ -1,0 +1,27 @@
+{{/* Índice: lateral fijo en escritorio (marca con lima la sección que se lee) y plegable en móvil.
+     Llamada: partial "toc" (dict "page" . "where" "side"|"mobile") */}}
+{{ $p := .page }}
+{{ if $p.TableOfContents }}{{ if ne (trim ($p.TableOfContents | plainify) " \n") "" }}
+{{ if eq .where "mobile" }}
+<details class="toc-mobile">
+  <summary><span data-i18n="content_toc">{{ i18n "content_toc" }}</span></summary>
+  <nav class="toc">{{ $p.TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML }}</nav>
+</details>
+{{ else }}
+<nav class="toc ticks" aria-label="{{ i18n "content_index" }}" data-i18n-aria="content_index">
+  <p class="toc__title" data-i18n="content_index">{{ i18n "content_index" }}</p>
+  {{ $p.TableOfContents }}
+</nav>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var links = [].slice.call(document.querySelectorAll('#TableOfContents a'));
+  var heads = links.map(function (a) { return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))); });
+  function update() {
+    var k = 0; heads.forEach(function (h, i) { if (h && h.getBoundingClientRect().top < innerHeight * 0.3) k = i; });
+    links.forEach(function (a, i) { a.classList.toggle('is-on', i === k); });
+  }
+  if (links.length) { addEventListener('scroll', update, { passive: true }); update(); }
+});
+</script>
+{{ end }}
+{{ end }}{{ end }}

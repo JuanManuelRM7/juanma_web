@@ -1,9 +1,4 @@
-<div id="experience-stats">
-  <p class="text-lg font-bold text-violet-600 dark:text-violet-400">
-    <span id="total-experience">...</span>
-  </p>
-</div>
-
+<span class="num" id="total-experience">…</span>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var display = document.getElementById('total-experience');
@@ -47,17 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
       mWord = months === 1 ? 'mes' : 'meses';
       andWord = 'y';
     }
-    if (years === 0) display.textContent = months + ' ' + mWord;
-    else {
-      display.textContent = years + ' ' + yWord;
-      if (months > 0) {
-        // Segunda línea más pequeña: en la sidebar no cabe todo en una
-        var rest = document.createElement('span');
-        rest.className = 'block text-xs font-medium';
-        rest.textContent = andWord + ' ' + months + ' ' + mWord;
-        display.appendChild(rest);
-      }
-    }
+    var unit = function (t) { var u = document.createElement('span'); u.className = 'u'; u.textContent = ' ' + t; return u; };
+    display.textContent = '';
+    if (years > 0) { display.append(String(years)); display.appendChild(unit(yWord)); }
+    if (months > 0) { if (years > 0) display.append(' '); display.append(String(months)); display.appendChild(unit(mWord)); }
   }
 
   updateDisplay();

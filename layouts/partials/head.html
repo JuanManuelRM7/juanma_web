@@ -7,8 +7,9 @@
   <link rel="preload" href="{{ `/fontawesome/webfonts/fa-brands-400.woff2?v=3` | relURL }}" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="{{ `/fontawesome/css/all.min.css` | relURL }}" />
   <!-- Fuentes self-hosted (ver @font-face en assets/main.css) -->
-  <link rel="preload" href="{{ `/fonts/inter-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="{{ `/fonts/space-grotesk-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{ `/fonts/geologica-latin.woff2` | relURL }}" as="font" type="font/woff2" crossorigin />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b1116" />
 
   <!-- Language alternates (SEO) -->
   {{ if .IsTranslated }}
@@ -31,89 +32,8 @@
   {{ $css = $css | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ `/css/search.css` | relURL }}" />
-  <link rel="stylesheet" href="{{ `/css/general.css` | relURL }}" />
-  <link rel="stylesheet" href="{{ `/css/syntax.css` | relURL }}" />
   {{ if .Param "math" }}{{ partial "katex.html" . }}{{ end }}
 
-  <script>
-    let html = document.querySelector("html");
-    let theme = window.localStorage.getItem("theme");
-
-    const setTheme = (theme) => {
-      html.classList.remove("light");
-      if (theme === "dark") {
-        html.classList.add("dark");
-        window.localStorage.setItem("theme", "dark");
-      } else {
-        html.classList.remove("dark");
-        window.localStorage.setItem("theme", "light");
-      }
-      fixThemeToggleIcon(theme);
-    };
-
-    const fixThemeToggleIcon = (theme) => {
-      // Hay dos toggles (nav móvil y nav de escritorio)
-      document.querySelectorAll(".theme-toggle").forEach((themeToggle) => {
-        if (theme === "dark") {
-          themeToggle.classList.remove("fa-moon");
-          themeToggle.classList.add("fa-sun");
-        } else {
-          themeToggle.classList.remove("fa-sun");
-          themeToggle.classList.add("fa-moon");
-        }
-      });
-    };
-
-    if (theme == null) {
-      if (html.classList.contains("dark")) {
-        theme = "dark";
-      } else if (html.classList.contains("light")) {
-        theme = "light";
-      } else {
-        // console.log("will use device theme");
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (prefersDark) {
-          theme = "dark";
-        } else {
-          theme = "light";
-        }
-      }
-    }
-
-    setTheme(theme);
-    // Los toggles aún no existen aquí; se corrige el icono al tener DOM, sin esperar a window.onload
-    document.addEventListener("DOMContentLoaded", () => fixThemeToggleIcon(theme));
-
-    const toggleTheme = (evt) => {
-      const next = html.classList.contains("dark") ? "light" : "dark";
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!document.startViewTransition || reduceMotion) {
-        setTheme(next);
-        return;
-      }
-      // Circular reveal from the click position (or top-right corner as fallback)
-      const x = evt && evt.clientX ? evt.clientX : window.innerWidth - 40;
-      const y = evt && evt.clientY ? evt.clientY : 40;
-      html.classList.add("theme-vt");
-      const vt = document.startViewTransition(() => setTheme(next));
-      vt.ready
-        .then(() => {
-          const r = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-          );
-          return html.animate(
-            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
-            { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
-          ).finished;
-        })
-        .catch(() => {})
-        .finally(() => html.classList.remove("theme-vt"));
-    };
-  </script>
   <!-- Plausible Analytics -->
   <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
 </head>

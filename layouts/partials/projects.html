@@ -1,36 +1,20 @@
-{{/* Project cards. Data lives in config.yaml (params.project.list for ES, languages.en.params.project.list for EN).
-     Call with the page context for the full grid ({{ partial "projects" . }}) or with
-     (dict "page" . "homeOnly" true) to show only the projects marked `home: true` plus a link to all of them.
-     Projects with `featured: true` render first with a highlighted card. */}}
+{{/* Proyectos. Datos en config.yaml (params.project.list en ES, languages.en.params.project.list en EN).
+     Los proyectos con `featured: true` salen como fila grande con imagen (partial project_card);
+     el resto, en una tabla con estado y enlaces (partial project_row).
+     Llamada: {{ partial "projects" . }} o (dict "page" . "homeOnly" true) en la portada, que añade
+     el enlace a /proyectos/. */}}
 {{ $page := . }}{{ $homeOnly := false }}
 {{ if reflect.IsMap . }}{{ $page = .page }}{{ $homeOnly = .homeOnly | default false }}{{ end }}
 {{ $all := $page.Site.Params.project.list }}
-{{ $list := slice }}
-{{ range $all }}{{ if or (not $homeOnly) .home }}{{ $list = $list | append . }}{{ end }}{{ end }}
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-stagger>
-  {{ range $list }}{{ if .featured }}{{ partial "project_card" (dict "p" . "featured" true) }}{{ end }}{{ end }}
-  {{ range $i, $p := $list }}{{ if not $p.featured }}
-  {{ $wide := and $homeOnly (eq (add $i 1) (len $list)) (eq (mod (len $list) 2) 1) }}
-  {{ if $wide }}<div class="sm:col-span-2">{{ end }}
-  {{ partial "project_card" (dict "p" $p "featured" false) }}
-  {{ if $wide }}</div>{{ end }}
-  {{ end }}{{ end }}
-</div>
-{{ if $homeOnly }}
-<div class="mt-4 text-right">
-  <a href="{{ `proyectos/` | relLangURL }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 dark:text-violet-400 no-underline hover:text-violet-800 dark:hover:text-violet-300"><span data-i18n="action_all_projects">{{ i18n "action_all_projects" }}</span> ({{ len $all }}) <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i></a>
+{{ range $all }}{{ if .featured }}{{ partial "project_card" (dict "p" .) }}{{ end }}{{ end }}
+{{ $rest := where $all "featured" "!=" true }}
+{{ with $rest }}
+<h3 class="ledger__title" data-i18n="projects_more">{{ i18n "projects_more" }}</h3>
+<div class="ledger" role="table" aria-label="{{ i18n "projects_more" }}" data-i18n-aria="projects_more" style="margin-top: 16px">
+  <div class="ledger__head" role="row"><span role="columnheader" data-i18n="col_project">{{ i18n "col_project" }}</span><span role="columnheader" data-i18n="col_stack">{{ i18n "col_stack" }}</span><span role="columnheader" data-i18n="col_status">{{ i18n "col_status" }}</span><span role="columnheader" data-i18n="col_links">{{ i18n "col_links" }}</span></div>
+  {{ range . }}{{ partial "project_row" . }}{{ end }}
 </div>
 {{ end }}
-
-<!-- Spotlight effect: track cursor position per card -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.project-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      var rect = card.getBoundingClientRect();
-      card.style.setProperty('--spot-x', (e.clientX - rect.left) + 'px');
-      card.style.setProperty('--spot-y', (e.clientY - rect.top) + 'px');
-    });
-  });
-});
-</script>
+{{ if $homeOnly }}
+<p class="more-link"><a href="{{ `proyectos/` | relLangURL }}"><span data-i18n="action_all_projects">{{ i18n "action_all_projects" }}</span> <span class="num muted">({{ len $all }})</span></a></p>
+{{ end }}

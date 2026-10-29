@@ -1,64 +1,24 @@
-<header
-  class="nav px-4 pt-3 mb-6 w-full bg-gradient-to-r from-transparent via-violet-50 to-transparent dark:from-transparent dark:via-slate-800 dark:to-transparent relative"
-  style="box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.12);"
-  role="banner"
->
-  <!-- MÓVIL: fila con 5 elementos equiespaciados + borde inferior -->
-  <nav class="flex justify-evenly items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400 md:hidden" aria-label="{{ i18n "aria_main_nav" }}" data-i18n-aria="aria_main_nav">
-    <a class="nav-menu-item !p-1 !px-2" href="{{ .Site.Home.RelPermalink }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `proyectos/` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
-    <a class="nav-menu-item !p-1 !px-2" href="{{ `blog/` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
-    <a href="{{ `search/` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="{{ i18n "nav_search" }}">
-      <i class="fas fa-search" aria-hidden="true"></i>
+{{- /* Cabecera fija: marca, navegación, paleta ⌘K, búsqueda e idioma. Solo modo oscuro: ya no hay botón de tema. */ -}}
+{{- $section := .Section -}}
+<header class="site-head" role="banner">
+  <div class="wrap">
+    <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ .Site.Params.profile.name }}, {{ i18n "nav_home" }}">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="11" cy="11" r="5.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="16.2" cy="6.4" r="1.6" fill="var(--color-accent)"/></svg>
+      {{ .Site.Params.profile.name }}
     </a>
-    <button
-      class="fas fa-globe text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1 bg-transparent border-none"
-      onclick="toggleLang()"
-      aria-label="{{ i18n "aria_toggle_lang" }}"
-      data-i18n-aria="aria_toggle_lang"
-    ></button>
-    <i
-      class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-      onclick="toggleTheme(event)"
-      role="button"
-      tabindex="0"
-      aria-label="{{ i18n "aria_toggle_theme" }}"
-      data-i18n-aria="aria_toggle_theme"
-      onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-    ></i>
-  </nav>
-
-  <!-- DESKTOP: grid 3 columnas + borde inferior en el header -->
-  <nav class="hidden md:flex md:justify-between items-center pb-3 border-b-2 border-violet-500 dark:border-violet-400" aria-label="{{ i18n "aria_main_nav" }}" data-i18n-aria="aria_main_nav">
-    <div class="flex gap-1 items-center">
-      <a class="nav-menu-item" href="{{ .Site.Home.RelPermalink }}"><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
-      <a class="nav-menu-item" href="{{ `proyectos/` | relLangURL }}"><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
-      <a class="nav-menu-item" href="{{ `blog/` | relURL }}"><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
-    </div>
-    <div class="flex items-center justify-end gap-3">
-      <!-- Command Palette trigger -->
-      <button onclick="window.openCmdk && window.openCmdk()" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="{{ i18n "aria_open_palette" }}" data-i18n-aria="aria_open_palette">
-        <i class="fas fa-terminal text-[10px]" aria-hidden="true"></i> <kbd class="font-mono">⌘K</kbd>
+    <nav class="nav" aria-label="{{ i18n "aria_main_nav" }}" data-i18n-aria="aria_main_nav">
+      <a href="{{ .Site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}><span data-i18n="nav_home">{{ i18n "nav_home" }}</span></a>
+      <a href="{{ `proyectos/` | relLangURL }}"{{ if eq $section "proyectos" }} aria-current="page"{{ end }}><span data-i18n="nav_projects">{{ i18n "nav_projects" }}</span></a>
+      <a href="{{ `blog/` | relURL }}"{{ if eq $section "blog" }} aria-current="page"{{ end }}><span data-i18n="nav_blog">{{ i18n "nav_blog" }}</span></a>
+      <a href="{{ `material/` | relURL }}"{{ if eq $section "material" }} aria-current="page"{{ end }}><span data-i18n="nav_material">{{ i18n "nav_material" }}</span></a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn btn--line btn--sm btn--cmdk" onclick="window.openCmdk && window.openCmdk()" aria-label="{{ i18n "aria_open_palette" }}" data-i18n-aria="aria_open_palette">
+        <i class="fas fa-search" aria-hidden="true"></i><span class="label-wide" data-i18n="nav_search">{{ i18n "nav_search" }}</span> <kbd class="kbd">⌘K</kbd>
       </button>
-      <a href="{{ `search/` | relURL }}" class="text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1" data-i18n-aria="nav_search" aria-label="{{ i18n "nav_search" }}">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </a>
-      <!-- Language Toggle -->
-      <button id="lang-toggle" onclick="toggleLang()" class="px-2.5 py-1 rounded-full text-xs font-bold bg-violet-100 hover:bg-violet-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-violet-700 dark:text-violet-300 border border-violet-300 dark:border-violet-600 transition-all duration-300 hover:scale-105 cursor-pointer" aria-label="{{ i18n "aria_toggle_lang" }}" data-i18n-aria="aria_toggle_lang">
-        <span id="lang-label">{{ if eq .Site.Language.Lang "en" }}ES{{ else }}EN{{ end }}</span> <i class="fas fa-globe ml-0.5" aria-hidden="true"></i>
+      <button type="button" id="lang-toggle" class="btn btn--line btn--sm" onclick="toggleLang()" aria-label="{{ i18n "aria_toggle_lang" }}" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">{{ if eq .Site.Language.Lang "en" }}ES{{ else }}EN{{ end }}</span>
       </button>
-      <i
-        class="fas fa-sun theme-toggle text-violet-600 hover:text-violet-800 dark:text-violet-300 dark:hover:text-violet-400 cursor-pointer text-lg transition-all duration-300 hover:scale-110 p-1"
-        onclick="toggleTheme(event)"
-        role="button"
-        tabindex="0"
-        aria-label="{{ i18n "aria_toggle_theme" }}"
-        data-i18n-aria="aria_toggle_theme"
-        onkeydown="if(event.key==='Enter'||event.key===' ')toggleTheme()"
-      ></i>
     </div>
-  </nav>
+  </div>
 </header>
-
-{{ partial "toggleTheme.html" . }}
-

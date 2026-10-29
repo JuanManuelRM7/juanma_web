@@ -1,76 +1,33 @@
-{{/* One project card. Called as: partial "project_card" (dict "p" <project map> "featured" <bool>)
-     Fields used from the project map: id, title, description, metrics[], tech[], icon, color, status,
-     links{case_study, repo, paper, posts[{title,url}], more[{title,url}]},
-     cover (image under assets/), cover_fit ("contain" = show the whole image instead of cropping it) */}}
+{{/* Proyecto destacado: imagen (cover, en assets/) o icono a la izquierda, ficha a la derecha.
+     Llamada: partial "project_card" (dict "p" <proyecto>). Campos: id, title, description, metrics[], tech[],
+     icon, status, links{case_study, repo, paper, posts[{title,url}], more[{title,url}]}, cover, cover_fit. */}}
 {{ $p := .p }}
-{{ $featured := .featured }}
 {{ $links := $p.links | default dict }}
 {{ $primary := "" }}
 {{ with $links.case_study }}{{ $primary = . }}{{ else }}{{ with $links.repo }}{{ $primary = . }}{{ else }}{{ with $links.paper }}{{ $primary = . }}{{ end }}{{ end }}{{ end }}
 {{ $external := hasPrefix $primary "http" }}
-{{ $cover := "" }}
-{{ $cover2 := "" }}
-{{ $contain := eq $p.cover_fit "contain" }}
-{{ with $p.cover }}{{ with resources.Get . }}
-{{ if $contain }}{{ $cover = .Resize (cond $featured "450x webp q80" "350x webp q80") }}{{ $cover2 = .Resize (cond $featured "900x webp q80" "700x webp q80") }}
-{{ else }}{{ $cover = .Fill (cond $featured "450x180 webp q80" "350x140 webp q80") }}{{ $cover2 = .Fill (cond $featured "900x360 webp q80" "700x280 webp q80") }}{{ end }}
-{{ end }}{{ end }}
-<article class="project-card group{{ if $featured }} project-card-featured{{ end }}">
-  {{/* Portada: imagen procesada (cover en config) o gradiente del color del proyecto con su icono */}}
-  <div class="project-cover{{ if not $cover }} project-cover-{{ $p.color | default "violet" }}{{ else if $contain }} project-cover-contain{{ end }}">
-    {{ if $primary }}<a href="{{ $primary }}" class="project-cover-link flex" aria-hidden="true" tabindex="-1"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ end }}
-    {{ if $cover }}
-    <img src="{{ $cover.RelPermalink }}" srcset="{{ $cover.RelPermalink }} {{ $cover.Width }}w, {{ $cover2.RelPermalink }} {{ $cover2.Width }}w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 92vw" width="{{ $cover2.Width }}" height="{{ $cover2.Height }}" alt="" loading="lazy" decoding="async" />
-    {{ else }}
-    <i class="{{ $p.icon | default "fas fa-code" }}" aria-hidden="true"></i>
+<article class="feature">
+  {{ $img := "" }}{{ with $p.cover }}{{ with resources.Get . }}{{ $img = .Resize "1000x webp q80" }}{{ end }}{{ end }}
+  <a class="feature__media ticks" {{ with $primary }}href="{{ . }}"{{ end }} tabindex="-1" aria-hidden="true"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{ with $img }}<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy" decoding="async">
+    {{ else }}<span class="feature__icon"><i class="{{ $p.icon | default "fas fa-code" }}"></i></span>{{ end }}
+  </a>
+  <div class="feature__body">
+    {{ with $p.status }}<p class="status"><span class="dot{{ if ne . "production" }} dot--off{{ end }}" aria-hidden="true"></span><span data-i18n="status_{{ . }}">{{ i18n (printf "status_%s" .) }}</span></p>{{ end }}
+    <h3>{{ if $primary }}<a href="{{ $primary }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }} data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</a>{{ else }}<span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span>{{ end }}</h3>
+    <p data-i18n="proj_desc_{{ $p.id }}">{{ $p.description }}</p>
+    {{ with $p.metrics }}
+    <ul class="measures">
+      {{ range $i, $m := . }}<li><span data-i18n="proj_metric_{{ $p.id }}_{{ add $i 1 }}">{{ $m }}</span></li>{{ end }}
+    </ul>
     {{ end }}
-    {{ if $primary }}</a>{{ end }}
-    {{ with $p.status }}
-    <span class="project-status project-status-{{ . }} project-cover-status" data-i18n="status_{{ . }}">{{ i18n (printf "status_%s" .) }}</span>
-    {{ end }}
+    {{ with $p.tech }}<div class="stack">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+    <div class="links">
+      {{ with $links.case_study }}<a class="btn btn--sm" href="{{ . }}"><span data-i18n="action_case_study">{{ i18n "action_case_study" }}</span></a>{{ end }}
+      {{ with $links.repo }}<a class="btn btn--line btn--sm" href="{{ . }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span data-i18n="action_repo">{{ i18n "action_repo" }}</span></a>{{ end }}
+      {{ with $links.paper }}<a class="btn btn--line btn--sm" href="{{ . }}" target="_blank" rel="noopener noreferrer"><span data-i18n="action_paper">{{ i18n "action_paper" }}</span></a>{{ end }}
+      {{ range $i, $l := $links.posts }}<a class="btn btn--line btn--sm" href="{{ $l.url }}"><span data-i18n="proj_post_{{ $p.id }}_{{ add $i 1 }}">{{ $l.title }}</span></a>{{ end }}
+      {{ range $links.more }}<a class="btn btn--line btn--sm" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>{{ end }}
+    </div>
   </div>
-
-  <h3 class="font-bold text-gray-900 dark:text-gray-100 {{ if $featured }}text-base{{ else }}text-sm{{ end }} mb-2 leading-snug">
-    {{ if $primary }}
-    <a href="{{ $primary }}" class="no-underline hover:text-violet-600 dark:hover:text-violet-400"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}><span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span></a>
-    {{ else }}
-    <span data-i18n="proj_title_{{ $p.id }}">{{ $p.title }}</span>
-    {{ end }}
-  </h3>
-
-  <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3" data-i18n="proj_desc_{{ $p.id }}">{{ $p.description }}</p>
-
-  {{ with $p.metrics }}
-  <ul class="project-metrics">
-    {{ range $i, $m := . }}
-    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span data-i18n="proj_metric_{{ $p.id }}_{{ add $i 1 }}">{{ $m }}</span></li>
-    {{ end }}
-  </ul>
-  {{ end }}
-
-  {{ with $p.tech }}
-  <div class="flex flex-wrap gap-1.5 mt-auto">
-    {{ range . }}<span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300">{{ . }}</span>{{ end }}
-  </div>
-  {{ end }}
-
-  {{ if or $links.case_study $links.repo $links.paper $links.posts $links.more }}
-  <div class="project-links">
-    {{ with $links.case_study }}
-    <a href="{{ . }}" class="text-violet-600 dark:text-violet-400 font-semibold"><span data-i18n="action_case_study">{{ i18n "action_case_study" }}</span> <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
-    {{ end }}
-    {{ with $links.repo }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="action_repo">{{ i18n "action_repo" }}</span></a>
-    {{ end }}
-    {{ with $links.paper }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="action_paper">{{ i18n "action_paper" }}</span></a>
-    {{ end }}
-    {{ range $i, $l := $links.posts }}
-    <a href="{{ $l.url }}"><i class="fas fa-newspaper" aria-hidden="true"></i> <span data-i18n="proj_post_{{ $p.id }}_{{ add $i 1 }}">{{ $l.title }}</span></a>
-    {{ end }}
-    {{ range $links.more }}
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> {{ .title }}</a>
-    {{ end }}
-  </div>
-  {{ end }}
 </article>

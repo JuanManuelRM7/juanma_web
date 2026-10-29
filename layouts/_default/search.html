@@ -1,9 +1,17 @@
 {{ define "main" }}
-<script src="/pagefind/pagefind-ui.js"></script>
-<div id="search"></div>
+<header class="page-head wrap">
+  {{ partial "breadcrumb.html" . }}
+  <h1 data-i18n="nav_search">{{ i18n "nav_search" }}</h1>
+  <p class="page-head__lead" data-i18n="search_intro">{{ i18n "search_intro" }}</p>
+</header>
+<div class="wrap">
+  <link rel="stylesheet" href="{{ `pagefind/pagefind-ui.css` | relURL }}">
+  <div id="search" class="search-box"></div>
+</div>
+<script src="{{ `pagefind/pagefind-ui.js` | relURL }}"></script>
 <script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    new PagefindUI({ element: "#search", showSubResults: true });
+  window.addEventListener("DOMContentLoaded", function () {
+    new PagefindUI({ element: "#search", showSubResults: true, resetStyles: false });
   });
 </script>
 {{ end }}

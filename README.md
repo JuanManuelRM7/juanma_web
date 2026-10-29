@@ -10,12 +10,12 @@ Portfolio y blog personal de **Juan Manuel Ruiz Muñoz** — ML Engineer · Comp
 
 | Área | Detalle |
 |------|---------|
-| **Portada** | Hero con propuesta de valor y métricas, sidebar fija con foto (flip card) y estadísticas, proyectos, experiencia, educación, certificaciones, publicaciones, skills, actividad en GitHub y contacto |
+| **Portada** | Hero con un neumático escaneado como nube de puntos (WebGL), cifras medidas, proyectos (destacados + tabla), experiencia, blog, publicaciones, educación, herramientas, actividad en GitHub, sobre mí y contacto |
 | **Proyectos** | Tarjetas generadas desde `config.yaml` y casos de estudio bilingües (ES/EN) con ficha, métricas e índice |
-| **Blog** | Grid de tarjetas, lectura estimada, tags, índice automático en cada post, fórmulas con KaTeX y comentarios con Giscus |
+| **Blog** | Lista con reglas, lectura estimada, tags, índice automático en cada post, fórmulas con KaTeX y comentarios con Giscus |
 | **SEO** | Open Graph con imagen por página, Twitter Cards, JSON-LD (Person, BlogPosting/Article, BreadcrumbList), hreflang, sitemap y robots.txt |
 | **i18n** | Español por defecto e inglés: toggle en tiempo real en la portada (persistido en localStorage) y páginas traducidas para los casos de estudio |
-| **Dark mode** | Tema claro/oscuro con detección automática del sistema y toggle manual |
+| **Diseño** | Estilo Vantage (Hallmark), solo modo oscuro: degradado azul acero, Geologica, marcos de esquina y un único acento lima |
 | **Búsqueda** | Pagefind (índice estático) y paleta de comandos `⌘K` |
 | **Easter eggs** | 🎮 Código Konami (`↑↑↓↓←→←→BA`) · 👁️ CV Mode: escribe `yolo` y la web se "auto-detecta" estilo YOLO · terminal simulado (`⌘K` → "Abrir terminal") |
 | **Print** | CSS optimizado para impresión / exportar a PDF |

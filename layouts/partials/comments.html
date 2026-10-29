@@ -1,8 +1,5 @@
-<div class="not-prose mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
-  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-2">
-    <i class="fas fa-comments text-violet-600 dark:text-violet-400" aria-hidden="true"></i>
-    <span data-i18n="content_comments">{{ i18n "content_comments" }}</span>
-  </h3>
+<section class="comments">
+  <h2><span data-i18n="content_comments">{{ i18n "content_comments" }}</span></h2>
   <script src="https://giscus.app/client.js"
           data-repo="JuanManuelRM7/juanma_web"
           data-repo-id="R_kgDOOBoH0g"
@@ -13,21 +10,9 @@
           data-reactions-enabled="1"
           data-emit-metadata="0"
           data-input-position="bottom"
-          data-theme="preferred_color_scheme"
+          data-theme="transparent_dark"
           data-lang="es"
           crossorigin="anonymous"
           async>
   </script>
-  <script>
-    // Sync Giscus theme with site theme toggle
-    new MutationObserver(function () {
-      var isDark = document.documentElement.classList.contains('dark');
-      var iframe = document.querySelector('iframe.giscus-frame');
-      if (!iframe) return;
-      iframe.contentWindow.postMessage(
-        { giscus: { setConfig: { theme: isDark ? 'dark' : 'light' } } },
-        'https://giscus.app'
-      );
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-  </script>
-</div>
+</section>
