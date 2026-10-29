@@ -1,8 +1,8 @@
 /* Escaneo de puntos (estilo Vantage).
    1. Portada: un neumático generado como nube de puntos (WebGL) que gira mientras lo cruza un
       barrido de luz rasante. El texto en relieve del flanco y un defecto (en lima) son puntos.
-      Un OCR lee el texto del flanco: los caracteres se encienden en lima a medida que se leen y la
-      etiqueta escribe lo leído (la cifra de exact match sale de config.yaml).
+      Un OCR lee el texto del flanco como un escáner: una línea de luz recorre el texto, cada carácter
+      que deja atrás se enciende en lima y la etiqueta lo escribe (el exact match sale de config.yaml).
    2. Todas las páginas: el nombre del pie dibujado con puntos y un barrido que lo recorre.
    Se pausa fuera de pantalla y, con "reducir movimiento", queda un fotograma fijo. */
 (() => {
@@ -61,6 +61,11 @@
       return 0;
     }
     const readPos = (g) => (g >= 1 && g <= 2 ? g - 1 : -1);
+    // Posición a lo largo del texto que se lee para cualquier punto de su banda (letra o no): por ahí pasa el escáner
+    const bandPos = (th, r) => {
+      if (r < BAND[0] - 1.2 || r > BAND[1] + 1.2) return -1;
+      const d = wrapA(texts[0].c - th); return Math.abs(d) > texts[0].span / 2 ? -1 : d / texts[0].span + 0.5;
+    };
     const DEF = { th: -0.75, r: 77, s: 4.4, h: 3.6 };
     const bump = (th, r) => { const d = Math.hypot(r - DEF.r, DEF.r * wrapA(th - DEF.th)); return DEF.h * Math.exp(-(d * d) / (2 * DEF.s * DEF.s)); };
 
@@ -88,7 +93,7 @@
         if (sg < 0 && i % 2) continue;
         for (let r = Ri; r <= RSH; r += SSTEP * (sg < 0 ? 1.4 : 1) * (0.75 + rnd() * 0.5)) {
           let z = sg * sideZ(r), k = 0, tu = -1;
-          if (sg > 0) { const g = glyph(th, r); if (g) { z += 1.5; k = 1; tu = readPos(g); } const b = bump(th, r); z += b; if (b > 0.6) k = 3; }
+          if (sg > 0) { const g = glyph(th, r); if (g) { z += 1.5; k = 1; } tu = bandPos(th, r); const b = bump(th, r); z += b; if (b > 0.6) k = 3; }
           const d = sideDZ(r), n = Math.hypot(d, 1);
           add(r * c, r * s, z, (-d * c) / n, (-d * s) / n, sg / n, k, tu);
         }
@@ -107,6 +112,12 @@
           add(jr * c, jr * s, z, (-d * c) / n, (-d * s) / n, 1 / n, 1, readPos(g));
         }
       }
+    }
+    for (let k = 0; k < (small ? 1500 : 4000); k++) {
+      const f = rnd(), th = texts[0].c + texts[0].span / 2 - f * texts[0].span, r = BAND[0] - 1 + rnd() * (BAND[1] - BAND[0] + 2);
+      if (glyph(th, r)) continue;
+      const z = sideZ(r), d = sideDZ(r), n = Math.hypot(d, 1), c = Math.cos(th), s = Math.sin(th);
+      add(r * c, r * s, z, (-d * c) / n, (-d * s) / n, 1 / n, 0, bandPos(th, r));
     }
     for (let k = 0; k < (small ? 900 : 2200); k++) {
       const a = rnd() * Math.PI * 2, d = Math.sqrt(rnd()) * DEF.s * 2.1, r = DEF.r + d * Math.cos(a), th = DEF.th + (d * Math.sin(a)) / DEF.r;
@@ -136,12 +147,14 @@ void main(){
   float d = sweep - w.x; float s = d >= 0. ? .6 * exp(-d / 2.4) + .4 * exp(-d / 22.) : exp(d / .8);
   k = mix(k, hi * 1.12, min(1., s * 1.05));
   float found = c > 2.5 ? 1. : 0.;
-  float read = (tu >= 0. && tu <= readU) ? readA : 0.;
+  float beam = tu >= 0. ? exp(-pow((tu - readU) / .011, 2.)) * readA : 0.;
+  float read = (c > .5 && c < 1.5 && tu >= 0. && tu < readU - .006) ? readA : 0.;
   k = mix(k, acc, read);
-  found = max(found, read);
-  if (found > .99) k = acc;
+  k = mix(k, hi * 1.25, min(1., beam * 1.3));
+  found = max(found, max(read, beam));
+  if (found > .99 && beam < .5) k = acc;
   float fd = clamp(1. - (q.w - near) / (far - near), .22, 1.);
-  gl_PointSize = clamp(size * dpr * 300. / q.w * (.8 + .4 * r) * (1. + .3 * s) * (1. + .5 * found), 1. * dpr, 3.6 * dpr);
+  gl_PointSize = clamp(size * dpr * 300. / q.w * (.8 + .4 * r) * (1. + .3 * s) * (1. + .5 * found + .6 * beam), 1. * dpr, 3.8 * dpr);
   col = vec4(k, mix(fd * min(1., .72 + .5 * s), 1., found) * alpha);
 }`;
     const FS = `precision mediump float; varying vec4 col;
@@ -160,15 +173,16 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
     const st = { w: 0, h: 0, spin: 0.35, alpha: 0, px: 0, py: 0, tpx: 0, tpy: 0, mvp: null, on: true, t0: performance.now(), last: performance.now() };
     // Ancla de la etiqueta: el centro del texto que lee el OCR. El defecto en lima no lleva etiqueta.
     const ANCHORS = { text: [78 * Math.cos(texts[0].c), 78 * Math.sin(texts[0].c), sideZ(78) + 1.5] };
-    // Lectura OCR: en reposo 2,2 s, lee el texto en 3,2 s, lo mantiene 2,4 s y se apaga en 1,2 s
+    // Lectura OCR como un escáner: en reposo 2,2 s, la línea recorre el texto en 3,2 s (velocidad constante),
+    // el texto leído se mantiene 2,4 s y se apaga en 1,2 s
     const OCR = texts[0].s, ocrOut = document.querySelector('[data-ocr-out]');
     const readAt = (t) => {
-      if (reduce) return [1, 1];
+      if (reduce) return [1.2, 1];
       const k = t % 9;
       if (k < 2.2) return [-1, 0];
-      if (k < 5.4) return [(k - 2.2) / 3.2, 1];
-      if (k < 7.8) return [1, 1];
-      return [1, 1 - (k - 7.8) / 1.2];
+      if (k < 5.4) return [-0.03 + ((k - 2.2) / 3.2) * 1.08, 1];
+      if (k < 7.8) return [1.2, 1];
+      return [1.2, 1 - (k - 7.8) / 1.2];
     };
     let typed = -1;
     const label = document.querySelector('.callout--fixed'), leader = document.querySelector('.scan__leader');
@@ -194,7 +208,7 @@ void main(){ vec2 d = gl_PointCoord - .5; float e = dot(d, d); if (e > .25) disc
       gl.uniform1f(U.size, wide ? 1.15 : 1.0); gl.uniform1f(U.alpha, st.alpha); gl.uniform1f(U.near, R - 120); gl.uniform1f(U.far, R + 120);
       gl.uniform1f(U.sweep, sweepAt(t));
       const [ru, ra] = readAt(t); gl.uniform1f(U.readU, ru); gl.uniform1f(U.readA, ra);
-      const nChars = ru < 0 || ra < 0.05 ? 0 : texts[0].ends.filter((e) => e <= ru + 0.004).length;
+      const nChars = ru < 0 || ra < 0.05 ? 0 : texts[0].ends.filter((e) => e <= ru).length;
       if (ocrOut && nChars !== typed) { typed = nChars; ocrOut.textContent = OCR.slice(0, nChars); ocrOut.parentElement.classList.toggle('is-done', nChars === OCR.length); }
       gl.drawArrays(gl.POINTS, 0, N);
       // Línea guía desde la etiqueta (fija sobre el neumático) hasta el centro del texto que se lee
