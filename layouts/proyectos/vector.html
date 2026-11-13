@@ -1,0 +1,35 @@
+{{/* Caso de estudio de Vector (front matter `layout: vector`). Mismo encabezado y cifras que
+     proyectos/single.html, pero el cuerpo son filas anchas de «texto + maqueta» (shortcodes vx-*)
+     en vez del artículo estrecho con índice. El CSS y el JS de las maquetas solo se cargan aquí. */}}
+{{ define "main" }}
+{{ with resources.Get "css/vector.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
+<article class="vx">
+  <header class="page-head wrap">
+    {{ partial "breadcrumb.html" . }}
+    <p class="page-head__kicker">{{ i18n "project_case_study" }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-head__lead">{{ . }}</p>{{ end }}
+    {{ with .Params.note }}<p class="vx-note">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Params.metrics }}
+  <div class="wrap">
+    <ul class="figures" aria-label="{{ i18n "project_metrics" }}">
+      {{ range . }}<li class="figure"><span class="figure__v">{{ .value }}</span><span class="figure__l">{{ .label }}</span></li>{{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  <div class="wrap vx-flow">
+    {{ .Content }}
+    <div class="facts ticks vx-facts">
+      <dl>
+        {{ with .Params.role }}<div><dt>{{ i18n "project_role" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.period }}<div><dt>{{ i18n "project_period" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.org }}<div><dt>{{ i18n "project_org" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.stack }}<div><dt>{{ i18n "project_stack" }}</dt><dd class="stack" style="color: var(--color-ink)">{{ range . }}<span>{{ . }}</span>{{ end }}</dd></div>{{ end }}
+      </dl>
+    </div>
+    {{ partial "prevnext" . }}
+  </div>
+</article>
+{{ with resources.Get "js/vector.js" | minify | fingerprint }}<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>{{ end }}
+{{ end }}

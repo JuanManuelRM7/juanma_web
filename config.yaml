@@ -301,6 +301,15 @@ languages:
             status: active
             links:
               repo: "https://github.com/juanmanuelruizm/chatbot"
+          - id: vector
+            title: "Vector: a personal iPhone and Apple Watch app"
+            description: "My day in one direction: workouts, food, water, spending and calendar in a native app with widgets, CarPlay and a running coach on the watch that puts heart rate before pace."
+            tech: [SwiftUI, SwiftData, HealthKit, WidgetKit]
+            icon: "fas fa-mobile-alt"
+            color: "emerald"
+            status: active
+            links:
+              case_study: "/en/proyectos/vector/"
 build:
   writeStats: true
 markup:
@@ -597,6 +606,15 @@ params:
         status: active
         links:
           repo: "https://github.com/juanmanuelruizm/chatbot"
+      - id: vector
+        title: "Vector: app personal para iPhone y Apple Watch"
+        description: "Mi día en una sola dirección: entrenos, comidas, agua, gastos y agenda en una app nativa con widgets, CarPlay y un entrenador de carrera en el reloj que pone el pulso por delante del ritmo."
+        tech: [SwiftUI, SwiftData, HealthKit, WidgetKit]
+        icon: "fas fa-mobile-alt"
+        color: "emerald"
+        status: active
+        links:
+          case_study: "/proyectos/vector/"
   skill:
     title: Skills
     panelId: skill-panel

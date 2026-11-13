@@ -1,0 +1,10 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+<div class="vx-widgets" aria-hidden="true">
+  <div class="vx-w vx-w--cal"><span class="vx-w__lab vx-w__lab--plain">OCT – NOV</span><div class="vx-cal vx-cal--mini" data-vx-cal="{{ $t.weekdays }}"></div></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">{{ $t.today }}</span><span class="vx-w__n">4 <small>{{ $t.of_6 }}</small></span><div class="vx-bar" style="--f:0.71"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div><span class="vx-w__foot">{{ $t.w_kcal }}</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-warn)">{{ $t.next_race }}</span><span class="vx-w__n">16 <small>{{ $t.days }}</small></span><span class="vx-w__foot">{{ $t.race_line }}</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-water)">{{ $t.water }}</span><span class="vx-w__n">{{ $t.litres }} <small>/ 3 L</small></span><div class="vx-meter"><i style="width:70%;background:var(--vx-water)"></i></div><span class="vx-w__foot">+300 · +500</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">{{ $t.spending }}</span><span class="vx-w__n">512 <small>€</small></span><div class="vx-meter"><i style="width:46%;background:var(--vx-accent)"></i></div><span class="vx-w__foot">{{ $t.month_end }}</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-muted)">{{ $t.lock }}</span><span class="vx-w__n vx-w__n--sm">4<small>/6</small> · 16<small> d</small></span><span class="vx-w__foot">{{ $t.lock_line }}</span></div>
+  <div class="vx-live"><span class="vx-live__t">1:12</span><span class="vx-live__x"><b>{{ $t.live_title }}</b>{{ $t.live_line }}</span></div>
+</div>

@@ -1,0 +1,7 @@
+{{/* Caso de estudio de Vector: bloque a todo el ancho, con una maqueta opcional debajo del texto.
+     {{< vx-block kicker="Apple Watch" stage="watches" >}} markdown {{< /vx-block >}} */}}
+<section class="vx-block">
+  {{ with .Get "kicker" }}<p class="vx-kicker">{{ . }}</p>{{ end }}
+  <div class="vx-words">{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+  {{ with .Get "stage" }}{{ partial (printf "vector/%s.html" .) $.Page }}{{ end }}
+</section>

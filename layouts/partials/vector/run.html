@@ -1,0 +1,20 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+{{ $first := index $t.scenarios 0 }}
+<div class="vx-runcol" data-vx-run='{{ $t.scenarios | jsonify }}' data-vx-hr="{{ $t.hr_label }}">
+  <div class="vx-watch" aria-hidden="true">
+    <div class="vx-watch__scr">
+      <span class="vx-wlab">{{ $t.run_goal }}</span>
+      <div class="vx-runbig">{{ $t.run_km }}<small> km</small></div>
+      <div class="vx-bar" style="--f:0.59;--c:#FF8A3D"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-delta is-good" data-vx-delta>{{ $first.delta }}</div>
+      <div class="vx-cells">
+        <div><b>{{ $t.pace_label }}</b><span data-vx-pace>{{ $first.pace }}</span></div>
+        <div><b data-vx-zone>{{ $t.hr_label }} · {{ $first.zone }}</b><span data-vx-hrv>{{ $first.hr }}</span></div>
+      </div>
+      <div class="vx-banner" data-vx-banner><div class="vx-banner__t" data-vx-bt></div><div class="vx-banner__v" data-vx-bv></div><div class="vx-banner__x" data-vx-bx></div></div>
+    </div>
+  </div>
+  <div class="vx-scn" role="group" aria-label="{{ $t.scenario_label }}">
+    {{ range $i, $s := $t.scenarios }}<button type="button" data-vx-scn="{{ $i }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $s.name }}</button>{{ end }}
+  </div>
+</div>
