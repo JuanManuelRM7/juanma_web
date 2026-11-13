@@ -2,6 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/ios/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/ios/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/ios/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/product/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/proyectos/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/proyectos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/proyectos/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/swiftui/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/swiftui/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/swiftui/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/proyectos/vector/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/proyectos/vector/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/proyectos/vector/"
+                />
+  </url><url>
+    <loc>https://juanmanuel.petrer.eu/en/tags/watchos/</loc>
+    <lastmod>2026-11-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://juanmanuel.petrer.eu/tags/watchos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://juanmanuel.petrer.eu/en/tags/watchos/"
+                />
+  </url><url>
     <loc>https://juanmanuel.petrer.eu/en/tags/computer-vision/</loc>
     <lastmod>2026-07-04T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -28,32 +122,6 @@
                 href="https://juanmanuel.petrer.eu/en/tags/domain-shift/"
                 />
   </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/</loc>
-    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/"
-                />
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/proyectos/</loc>
-    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/proyectos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/proyectos/"
-                />
-  </url><url>
     <loc>https://juanmanuel.petrer.eu/en/tags/pytorch/</loc>
     <lastmod>2026-07-04T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -78,19 +146,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://juanmanuel.petrer.eu/en/tags/rf-detr/"
-                />
-  </url><url>
-    <loc>https://juanmanuel.petrer.eu/en/tags/</loc>
-    <lastmod>2026-07-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://juanmanuel.petrer.eu/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://juanmanuel.petrer.eu/en/tags/"
                 />
   </url><url>
     <loc>https://juanmanuel.petrer.eu/en/proyectos/vcalib/</loc>
