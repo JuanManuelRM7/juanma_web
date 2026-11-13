@@ -1,0 +1,10 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+<div class="vx-card vx-calcard" aria-hidden="true">
+  <div class="vx-between"><b>{{ $t.workouts }}</b><span class="vx-eyebrow">OCT – NOV</span></div>
+  <div class="vx-cal" data-vx-cal="{{ $t.weekdays }}"></div>
+  <div class="vx-legend">
+    <span><i style="background:var(--vx-run)"></i>Running</span>
+    <span><i style="background:var(--vx-gym)"></i>Gym</span>
+    <span><i style="box-shadow:inset 0 0 0 2px var(--vx-run)"></i>{{ $t.planned }}</span>
+  </div>
+</div>

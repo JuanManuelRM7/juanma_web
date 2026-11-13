@@ -6,8 +6,15 @@
     <description>ML Engineer specialized in Computer Vision and LLMs: industrial defect detection, LoRA-tuned multimodal OCR and RAG systems in production. Physicist with a strong mathematics background. Projects, publications and blog of Juan Manuel Ruiz Muñoz.</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://juanmanuel.petrer.eu/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector: my day in one direction</title>
+      <link>https://juanmanuel.petrer.eu/en/proyectos/vector/</link>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>https://juanmanuel.petrer.eu/en/proyectos/vector/</guid>
+      <description>A native iPhone and Apple Watch app I built for myself: workouts, food, water, spending and calendar in one place, with an arrow that shows how far along the day I am.</description>
+    </item>
     <item>
       <title>vcalib: differentiable calibration filters for RF-DETR under illumination shift</title>
       <link>https://juanmanuel.petrer.eu/en/proyectos/vcalib/</link>

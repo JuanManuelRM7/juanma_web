@@ -1,0 +1,23 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+<div class="vx-phone" aria-hidden="true" data-vx-day>
+  <div class="vx-phone__scr">
+    <div>
+      <div class="vx-eyebrow">{{ $t.date }}</div>
+      <div class="vx-hello">{{ $t.greeting }}</div>
+    </div>
+    <div class="vx-card">
+      <div class="vx-between">
+        <b>{{ $t.your_day }}</b>
+        <span class="vx-small"><span class="vx-num vx-done" data-vx-done>2</span> {{ $t.of_goals }}</span>
+      </div>
+      <div class="vx-bar" data-vx-daybar style="--f:0.42"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-chips" data-vx-chips>
+        {{ range $i, $g := $t.goals }}<span class="vx-chip{{ if lt $i 2 }} is-on{{ end }}">{{ $g }}</span>{{ end }}
+      </div>
+    </div>
+    <div class="vx-duo">
+      <div class="vx-card"><span class="vx-small">{{ $t.meals }}</span><span class="vx-num vx-n22">{{ $t.kcal }} <span class="vx-small">kcal</span></span><div class="vx-meter"><i style="width:63%;background:var(--vx-ink)"></i></div></div>
+      <div class="vx-card"><span class="vx-small">{{ $t.water }}</span><span class="vx-num vx-n22">{{ $t.litres }} <span class="vx-small">/ 3 L</span></span><div class="vx-meter"><i style="width:70%;background:var(--vx-water)"></i></div></div>
+    </div>
+  </div>
+</div>

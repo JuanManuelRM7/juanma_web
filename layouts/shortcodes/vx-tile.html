@@ -1,0 +1,3 @@
+{{/* {{< vx-tile k="Carreras" color="run" title="Título" >}}Texto{{< /vx-tile >}}
+     color: run | gym | warn | accent | water | muted (colores de la app, ver assets/css/vector.css). */}}
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-{{ .Get "color" | default "muted" }})">{{ .Get "k" }}</span><h3>{{ .Get "title" }}</h3><p>{{ .Inner | .Page.RenderString }}</p></div>

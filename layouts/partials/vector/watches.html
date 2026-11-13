@@ -1,0 +1,37 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+<div class="vx-watches" aria-hidden="true">
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">{{ $t.today }}</div>
+      <div><span class="vx-num vx-wbig">4</span> <span class="vx-wof">{{ $t.of_6 }}</span></div>
+      <div class="vx-bar" style="--f:0.71"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-wgoals">
+        {{ range $i, $g := slice (index $t.goals 0) (index $t.goals 2) (index $t.goals 3) (index $t.goals 1) (index $t.goals 4) (index $t.goals 5) }}<span{{ if lt $i 4 }} class="is-ok"{{ end }}><i></i>{{ $g }}</span>{{ end }}
+      </div>
+      <div class="vx-wnext"><i></i><span>{{ $t.next_event }}<small>18:30</small></span></div>
+    </div></div>
+    <figcaption>{{ $t.cap_today }}</figcaption>
+  </figure>
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">{{ $t.water }}</div>
+      <div class="vx-wwater">
+        <div class="vx-ring"><b>{{ $t.litres }}<small>{{ $t.litres_unit }}</small></b></div>
+        <div class="vx-wtogo">{{ $t.to_go }}<br><b>900 ml</b></div>
+      </div>
+      <div class="vx-wbtns"><span>+300</span><span>+500</span><span>+1 L</span></div>
+    </div></div>
+    <figcaption>{{ $t.cap_water }}</figcaption>
+  </figure>
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">Gym</div>
+      <div class="vx-wweek">{{ $t.this_week }}</div>
+      <div><span class="vx-num vx-wbig vx-wbig--ink">2/3</span> <span class="vx-wof">{{ $t.sessions }}</span></div>
+      <div class="vx-wsegs"><i class="is-on"></i><i class="is-on"></i><i></i></div>
+      <div class="vx-wrow vx-wrow--push"><span>{{ $t.set_line }}</span></div>
+      <div class="vx-wrow"><span>{{ $t.rest }}</span><b>1:12</b></div>
+    </div></div>
+    <figcaption>{{ $t.cap_gym }}</figcaption>
+  </figure>
+</div>

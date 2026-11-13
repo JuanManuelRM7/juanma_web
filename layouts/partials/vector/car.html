@@ -1,0 +1,6 @@
+{{ $t := index site.Data.vector .Language.Lang }}
+<div class="vx-car" aria-hidden="true">
+  <div class="vx-car__dock"><i class="is-v"></i><i></i><i></i><i></i></div>
+  <div class="vx-car__map"><svg viewBox="0 0 200 170" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><path d="M-10 130 C40 120 50 70 95 72 S150 40 215 28" fill="none" stroke="#2A2F36" stroke-width="16" stroke-linecap="round"/><path d="M-10 130 C40 120 50 70 95 72" fill="none" stroke="#5FCBFF" stroke-width="5" stroke-linecap="round"/><circle cx="95" cy="72" r="6" fill="#F5F5F7"/></svg></div>
+  <div class="vx-car__tile"><span class="vx-car__m">OCT – NOV</span><div class="vx-cal vx-cal--mini" data-vx-cal="{{ $t.weekdays }}"></div></div>
+</div>

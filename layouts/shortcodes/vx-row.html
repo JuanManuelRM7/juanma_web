@@ -1,0 +1,10 @@
+{{/* Caso de estudio de Vector: fila «texto + maqueta».
+     {{< vx-row stage="phone" kicker="La idea" flip="true" >}} markdown {{< /vx-row >}}
+     stage = nombre de un partial de layouts/partials/vector/ (phone, calendar, run, widgets, car). */}}
+<section class="vx-row{{ if .Get "flip" }} vx-row--flip{{ end }}">
+  <div class="vx-words">
+    {{ with .Get "kicker" }}<p class="vx-kicker">{{ . }}</p>{{ end }}
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+  <div class="vx-stage">{{ partial (printf "vector/%s.html" (.Get "stage")) .Page }}</div>
+</section>

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es" class="dark"><head>
+  
+
+
+
+
+
+
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+<title>Vector: mi día en una sola dirección · Juan Manuel Ruiz Muñoz</title>
+
+<meta name="description" content="Una app nativa para iPhone y Apple Watch que hice para mí: entrenos, comidas, agua, gastos y agenda en un mismo sitio, con una flecha que dice cuánto llevo del día." />
+<meta name="author" content="Juan Manuel Ruiz Muñoz" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://juanmanuel.petrer.eu/proyectos/vector/" />
+
+
+<meta property="og:title" content="Vector: mi día en una sola dirección" />
+<meta property="og:description" content="Una app nativa para iPhone y Apple Watch que hice para mí: entrenos, comidas, agua, gastos y agenda en un mismo sitio, con una flecha que dice cuánto llevo del día." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://juanmanuel.petrer.eu/proyectos/vector/" />
+<meta property="og:image" content="https://juanmanuel.petrer.eu/og/vector.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Juan Manuel Ruiz Muñoz - ML Engineer · Computer Vision &amp; LLMs" />
+<meta property="og:site_name" content="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<meta property="article:author" content="Juan Manuel Ruiz Muñoz" />
+<meta property="article:published_time" content="2026-11-13T00:00:00Z" />
+<meta property="article:modified_time" content="2026-11-13T00:00:00Z" />
+<meta property="article:tag" content="iOS" /><meta property="article:tag" content="watchOS" /><meta property="article:tag" content="SwiftUI" /><meta property="article:tag" content="producto" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vector: mi día en una sola dirección" />
+<meta name="twitter:description" content="Una app nativa para iPhone y Apple Watch que hice para mí: entrenos, comidas, agua, gastos y agenda en un mismo sitio, con una flecha que dice cuánto llevo del día." />
+<meta name="twitter:image" content="https://juanmanuel.petrer.eu/og/vector.png" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vector: mi día en una sola dirección",
+  "description": "Una app nativa para iPhone y Apple Watch que hice para mí: entrenos, comidas, agua, gastos y agenda en un mismo sitio, con una flecha que dice cuánto llevo del día.",
+  "image": "https:\/\/juanmanuel.petrer.eu\/og\/vector.png",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Person",
+    "name": "Juan Manuel Ruiz Muñoz",
+    "url": "https:\/\/juanmanuel.petrer.eu\/"
+  },
+  "datePublished": "2026-11-13",
+  "url": "https:\/\/juanmanuel.petrer.eu\/proyectos\/vector\/"
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https:\/\/juanmanuel.petrer.eu\/" },
+    { "@type": "ListItem", "position": 2, "name": "Proyectos", "item": "https:\/\/juanmanuel.petrer.eu\/proyectos\/" },
+    { "@type": "ListItem", "position":  3 , "name": "Vector: mi día en una sola dirección", "item": "https:\/\/juanmanuel.petrer.eu\/proyectos\/vector\/" }
+  ]
+}
+</script>
+
+
+<meta name="generator" content="Sitio web por JM con Hugo 0.151.0" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <link rel="preload" href="/fontawesome/webfonts/fa-solid-900.woff2?v=3" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fontawesome/webfonts/fa-brands-400.woff2?v=3" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+  
+  <link rel="preload" href="/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b1116" />
+
+  
+  
+  
+  <link rel="alternate" hreflang="es" href="https://juanmanuel.petrer.eu/proyectos/vector/" />
+  
+  <link rel="alternate" hreflang="en" href="https://juanmanuel.petrer.eu/en/proyectos/vector/" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://juanmanuel.petrer.eu/proyectos/vector/" />
+  
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="Juan Manuel Ruiz Muñoz – ML Engineer · Computer Vision &amp; LLMs – RSS" href="https://juanmanuel.petrer.eu/index.xml" />
+  
+  
+
+  
+  
+  
+  
+  <link href="/main.min.c4da9b4b4767c7a3f26b75b053573e64c9ba34bbc5c367c680251df3da995a0a.css" rel="stylesheet" />
+  
+
+  
+  <script defer data-domain="juanmanuel.petrer.eu" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body class="site" data-kind="page">
+    <div class="atmos" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link" data-i18n="action_skip_content">Ir al contenido</a>
+    <header class="site-head" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Juan Manuel Ruiz Muñoz, Inicio">
+      <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="11" cy="11" r="5.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="16.2" cy="6.4" r="1.6" fill="var(--color-accent)"/></svg>
+      Juan Manuel Ruiz Muñoz
+    </a>
+    <nav class="nav" aria-label="Navegación principal" data-i18n-aria="aria_main_nav">
+      <a href="/"><span data-i18n="nav_home">Inicio</span></a>
+      <a href="/proyectos/" aria-current="page"><span data-i18n="nav_projects">Proyectos</span></a>
+      <a href="/blog/"><span data-i18n="nav_blog">Blog</span></a>
+      <a href="/material/"><span data-i18n="nav_material">Material</span></a>
+    </nav>
+    <div class="head-tools">
+      <button type="button" class="btn btn--line btn--sm btn--cmdk" onclick="window.openCmdk && window.openCmdk()" aria-label="Abrir paleta de comandos" data-i18n-aria="aria_open_palette">
+        <i class="fas fa-search" aria-hidden="true"></i><span class="label-wide" data-i18n="nav_search">Buscar</span> <kbd class="kbd">⌘K</kbd>
+      </button>
+      <button type="button" id="lang-toggle" class="btn btn--line btn--sm" onclick="toggleLang()" aria-label="Cambiar idioma" data-i18n-aria="aria_toggle_lang">
+        <span id="lang-label">EN</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <main id="main-content">
+<link rel="stylesheet" href="/css/vector.min.dd0e73ff40fc9568053bfb596d302175bbb6962657a2d411ced1ec86f9b5e7df.css" integrity="sha256-3Q5z/0D8lWgFO/tZbTAhdbu2liZXotQRztHshvm1598=">
+<article class="vx">
+  <header class="page-head wrap">
+    
+<nav class="crumbs" aria-label="Miga de pan" data-i18n-aria="aria_breadcrumb">
+  <a href="/" data-i18n="nav_home">Inicio</a>
+  <span aria-hidden="true">/</span><a href="/proyectos/">Proyectos</a>
+</nav>
+
+
+    <p class="page-head__kicker">Caso de estudio</p>
+    <h1>Vector: mi día en una sola dirección</h1>
+    <p class="page-head__lead">Una app nativa para iPhone y Apple Watch que hice para mí: entrenos, comidas, agua, gastos y agenda en un mismo sitio, con una flecha que dice cuánto llevo del día.</p>
+    <p class="vx-note">No está en la App Store. La uso a diario y la enseño aquí como proyecto. Las pantallas de esta página son maquetas con datos de ejemplo.</p>
+  </header>
+  
+  <div class="wrap">
+    <ul class="figures" aria-label="Resultados">
+      <li class="figure"><span class="figure__v">9</span><span class="figure__l">módulos en una sola app</span></li><li class="figure"><span class="figure__v">4</span><span class="figure__l">objetivos: iPhone, reloj, widgets y complicaciones</span></li><li class="figure"><span class="figure__v">~22.000</span><span class="figure__l">líneas de Swift</span></li><li class="figure"><span class="figure__v">ES · EN</span><span class="figure__l">según el idioma del dispositivo, en claro y en oscuro</span></li>
+    </ul>
+  </div>
+  
+  <div class="wrap vx-flow">
+    
+<section class="vx-row">
+  <div class="vx-words">
+    <p class="vx-kicker">La idea</p>
+    <h2 id="una-flecha-en-lugar-de-seis-anillos">Una flecha en lugar de seis anillos</h2>
+<p>Cada día tiene unos pocos objetivos: comer lo suficiente, beber, entrenar si toca, la pregunta de inglés, las tareas. El número cuenta los cumplidos. La flecha cuenta también los parciales, así que avanza aunque todavía no hayas cerrado ninguno.</p>
+<ul>
+<li>Solo cuenta lo que tiene sentido hoy: en día de descanso, el entreno no aparece.</li>
+<li>El mismo cálculo en el iPhone, el reloj y el widget.</li>
+</ul>
+
+  </div>
+  <div class="vx-stage">
+<div class="vx-phone" aria-hidden="true" data-vx-day>
+  <div class="vx-phone__scr">
+    <div>
+      <div class="vx-eyebrow">Jueves 12 nov</div>
+      <div class="vx-hello">Buenas tardes</div>
+    </div>
+    <div class="vx-card">
+      <div class="vx-between">
+        <b>Tu día</b>
+        <span class="vx-small"><span class="vx-num vx-done" data-vx-done>2</span> de 6 objetivos</span>
+      </div>
+      <div class="vx-bar" data-vx-daybar style="--f:0.42"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-chips" data-vx-chips>
+        <span class="vx-chip is-on">Entreno</span><span class="vx-chip is-on">Inglés</span><span class="vx-chip">Agua</span><span class="vx-chip">Creatina</span><span class="vx-chip">Comidas</span><span class="vx-chip">Tareas</span>
+      </div>
+    </div>
+    <div class="vx-duo">
+      <div class="vx-card"><span class="vx-small">Comidas</span><span class="vx-num vx-n22">1.640 <span class="vx-small">kcal</span></span><div class="vx-meter"><i style="width:63%;background:var(--vx-ink)"></i></div></div>
+      <div class="vx-card"><span class="vx-small">Agua</span><span class="vx-num vx-n22">2,1 <span class="vx-small">/ 3 L</span></span><div class="vx-meter"><i style="width:70%;background:var(--vx-water)"></i></div></div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="vx-row vx-row--flip">
+  <div class="vx-words">
+    <p class="vx-kicker">Entrenos</p>
+    <h2 id="el-mes-de-entrenos-de-un-vistazo">El mes de entrenos de un vistazo</h2>
+<p>Cuatro semanas en una rejilla: las dos anteriores, la actual y la siguiente. Lo hecho va relleno y lo agendado solo con el borde, así se distingue lo que pasó de lo que está por venir.</p>
+<ul>
+<li>Running en naranja y gym en índigo; si un día hay los dos, mitad y mitad.</li>
+<li>Lo hecho sale de Salud y lo agendado, del calendario del sistema.</li>
+</ul>
+
+  </div>
+  <div class="vx-stage">
+<div class="vx-card vx-calcard" aria-hidden="true">
+  <div class="vx-between"><b>Entrenos</b><span class="vx-eyebrow">OCT – NOV</span></div>
+  <div class="vx-cal" data-vx-cal="L,M,X,J,V,S,D"></div>
+  <div class="vx-legend">
+    <span><i style="background:var(--vx-run)"></i>Running</span>
+    <span><i style="background:var(--vx-gym)"></i>Gym</span>
+    <span><i style="box-shadow:inset 0 0 0 2px var(--vx-run)"></i>Agendado</span>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="vx-block">
+  <p class="vx-kicker">Apple Watch</p>
+  <div class="vx-words"><h2 id="la-app-entera-en-la-muñeca">La app entera en la muñeca</h2>
+<p>No es un mando a distancia del iPhone. El reloj tiene nueve páginas, una por módulo: se apunta el agua, la comida o un gasto desde ahí, se lanza la rutina de gym o la carrera, y todo vuelve al iPhone solo. También lleva complicaciones para la esfera.</p>
+</div>
+  
+<div class="vx-watches" aria-hidden="true">
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">Hoy</div>
+      <div><span class="vx-num vx-wbig">4</span> <span class="vx-wof">de 6</span></div>
+      <div class="vx-bar" style="--f:0.71"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-wgoals">
+        <span class="is-ok"><i></i>Entreno</span><span class="is-ok"><i></i>Agua</span><span class="is-ok"><i></i>Creatina</span><span class="is-ok"><i></i>Inglés</span><span><i></i>Comidas</span><span><i></i>Tareas</span>
+      </div>
+      <div class="vx-wnext"><i></i><span>Rodaje 6–7 km<small>18:30</small></span></div>
+    </div></div>
+    <figcaption>Hoy: objetivos y lo próximo</figcaption>
+  </figure>
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">Agua</div>
+      <div class="vx-wwater">
+        <div class="vx-ring"><b>2,1<small>litros</small></b></div>
+        <div class="vx-wtogo">Te faltan<br><b>900 ml</b></div>
+      </div>
+      <div class="vx-wbtns"><span>+300</span><span>+500</span><span>+1 L</span></div>
+    </div></div>
+    <figcaption>Agua: un toque y apuntado</figcaption>
+  </figure>
+  <figure class="vx-wcol">
+    <div class="vx-watch vx-watch--sm"><div class="vx-watch__scr">
+      <div class="vx-wt">Gym</div>
+      <div class="vx-wweek">Esta semana</div>
+      <div><span class="vx-num vx-wbig vx-wbig--ink">2/3</span> <span class="vx-wof">sesiones</span></div>
+      <div class="vx-wsegs"><i class="is-on"></i><i class="is-on"></i><i></i></div>
+      <div class="vx-wrow vx-wrow--push"><span>Press banca · serie 3</span></div>
+      <div class="vx-wrow"><span>Descanso</span><b>1:12</b></div>
+    </div></div>
+    <figcaption>Gym: rutina, series y descanso</figcaption>
+  </figure>
+</div>
+
+</section>
+
+
+<section class="vx-row">
+  <div class="vx-words">
+    <p class="vx-kicker">Entrenador de carrera</p>
+    <h2 id="un-plan-de-carrera-que-sabe-cuándo-callarse">Un plan de carrera que sabe cuándo callarse</h2>
+<p>El reloj lee las pruebas del calendario y monta el objetivo: distancia, tiempo y ritmo uniforme. En carrera muestra cuánto vas por delante o por detrás. Pero el pulso manda sobre el ritmo.</p>
+<ul>
+<li>Con el pulso alto sostenido no te pide acelerar, aunque vayas por detrás.</li>
+<li>Si el plan deja de salir sin forzar, lo ajusta a una llegada realista.</li>
+<li>Con calor previsto ofrece alargar el objetivo antes de salir y es más prudente durante la carrera.</li>
+</ul>
+
+  </div>
+  <div class="vx-stage">
+
+<div class="vx-runcol" data-vx-run='[{&#34;delta&#34;:&#34;En el plan&#34;,&#34;good&#34;:true,&#34;hr&#34;:&#34;152&#34;,&#34;name&#34;:&#34;En el plan&#34;,&#34;pace&#34;:&#34;6:36&#34;,&#34;zone&#34;:&#34;Z3&#34;},{&#34;delta&#34;:&#34;0:40 por detrás del plan&#34;,&#34;detail&#34;:&#34;Sube a 6:36 /km.&#34;,&#34;good&#34;:false,&#34;hr&#34;:&#34;156&#34;,&#34;name&#34;:&#34;Por detrás&#34;,&#34;pace&#34;:&#34;6:52&#34;,&#34;title&#34;:&#34;Vas lento&#34;,&#34;value&#34;:&#34;6:52&#34;,&#34;zone&#34;:&#34;Z3&#34;},{&#34;delta&#34;:&#34;En el plan ajustado&#34;,&#34;detail&#34;:&#34;Con el pulso alto, 2:19:00 ya no sale sin forzar. Nueva referencia: 6:47 /km.&#34;,&#34;good&#34;:true,&#34;hr&#34;:&#34;176&#34;,&#34;name&#34;:&#34;Pulso alto&#34;,&#34;pace&#34;:&#34;6:52&#34;,&#34;title&#34;:&#34;Objetivo ajustado&#34;,&#34;value&#34;:&#34;2:23:10&#34;,&#34;zone&#34;:&#34;Z4&#34;}]' data-vx-hr="PULSO">
+  <div class="vx-watch" aria-hidden="true">
+    <div class="vx-watch__scr">
+      <span class="vx-wlab">OBJETIVO MEDIA MARATÓN</span>
+      <div class="vx-runbig">12,40<small> km</small></div>
+      <div class="vx-bar" style="--f:0.59;--c:#FF8A3D"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div>
+      <div class="vx-delta is-good" data-vx-delta>En el plan</div>
+      <div class="vx-cells">
+        <div><b>RITMO /KM</b><span data-vx-pace>6:36</span></div>
+        <div><b data-vx-zone>PULSO · Z3</b><span data-vx-hrv>152</span></div>
+      </div>
+      <div class="vx-banner" data-vx-banner><div class="vx-banner__t" data-vx-bt></div><div class="vx-banner__v" data-vx-bv></div><div class="vx-banner__x" data-vx-bx></div></div>
+    </div>
+  </div>
+  <div class="vx-scn" role="group" aria-label="Escenario">
+    <button type="button" data-vx-scn="0" aria-pressed="true">En el plan</button><button type="button" data-vx-scn="1" aria-pressed="false">Por detrás</button><button type="button" data-vx-scn="2" aria-pressed="false">Pulso alto</button>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="vx-row vx-row--flip">
+  <div class="vx-words">
+    <p class="vx-kicker">Widgets</p>
+    <h2 id="lo-importante-sin-abrir-la-app">Lo importante, sin abrir la app</h2>
+<p>Widgets para la pantalla de inicio y la de bloqueo, con el mismo estilo que la app y el aspecto claro u oscuro del sistema. El descanso entre series sale como actividad en directo.</p>
+<ul>
+<li>Añadir agua desde el widget, sin entrar en la app.</li>
+<li>Gasto del mes con la previsión de fin de mes.</li>
+</ul>
+
+  </div>
+  <div class="vx-stage">
+<div class="vx-widgets" aria-hidden="true">
+  <div class="vx-w vx-w--cal"><span class="vx-w__lab vx-w__lab--plain">OCT – NOV</span><div class="vx-cal vx-cal--mini" data-vx-cal="L,M,X,J,V,S,D"></div></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">Hoy</span><span class="vx-w__n">4 <small>de 6</small></span><div class="vx-bar" style="--f:0.71"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div><span class="vx-w__foot">1.640 / 2.600 kcal</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-warn)">Próxima prueba</span><span class="vx-w__n">16 <small>días</small></span><span class="vx-w__foot">Media maratón · 21,1 km</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-water)">Agua</span><span class="vx-w__n">2,1 <small>/ 3 L</small></span><div class="vx-meter"><i style="width:70%;background:var(--vx-water)"></i></div><span class="vx-w__foot">+300 · +500</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">Gastos · nov</span><span class="vx-w__n">512 <small>€</small></span><div class="vx-meter"><i style="width:46%;background:var(--vx-accent)"></i></div><span class="vx-w__foot">Fin de mes ~1.040 €</span></div>
+  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-muted)">Pantalla de bloqueo</span><span class="vx-w__n vx-w__n--sm">4<small>/6</small> · 16<small> d</small></span><span class="vx-w__foot">Objetivos y días para la prueba, también con el iPhone bloqueado.</span></div>
+  <div class="vx-live"><span class="vx-live__t">1:12</span><span class="vx-live__x"><b>Descanso · Press banca</b>Actividad en directo en la isla dinámica y la pantalla bloqueada</span></div>
+</div>
+</div>
+</section>
+
+
+<section class="vx-row">
+  <div class="vx-words">
+    <p class="vx-kicker">CarPlay · StandBy</p>
+    <h2 id="el-mes-de-entrenos-en-el-salpicadero">El mes de entrenos, en el salpicadero</h2>
+<p>El calendario de entrenos también vive en la pantalla del coche. Está pensado para ese sitio: números grandes, nada que tocar y sin gastar batería, porque solo se redibuja cuando cambia un día.</p>
+<ul>
+<li>El mismo widget sirve en StandBy, con el iPhone cargando en horizontal.</li>
+</ul>
+
+  </div>
+  <div class="vx-stage">
+<div class="vx-car" aria-hidden="true">
+  <div class="vx-car__dock"><i class="is-v"></i><i></i><i></i><i></i></div>
+  <div class="vx-car__map"><svg viewBox="0 0 200 170" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><path d="M-10 130 C40 120 50 70 95 72 S150 40 215 28" fill="none" stroke="#2A2F36" stroke-width="16" stroke-linecap="round"/><path d="M-10 130 C40 120 50 70 95 72" fill="none" stroke="#5FCBFF" stroke-width="5" stroke-linecap="round"/><circle cx="95" cy="72" r="6" fill="#F5F5F7"/></svg></div>
+  <div class="vx-car__tile"><span class="vx-car__m">OCT – NOV</span><div class="vx-cal vx-cal--mini" data-vx-cal="L,M,X,J,V,S,D"></div></div>
+</div>
+</div>
+</section>
+
+
+<section class="vx-block">
+  <p class="vx-kicker">Todo lo que lleva dentro</p>
+  <div class="vx-words"><h2 id="nueve-módulos-una-sola-app">Nueve módulos, una sola app</h2>
+</div>
+  
+</section>
+
+
+<div class="vx-tiles">
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-run)">Carreras</span><h3>Previsión de tiempo para cada prueba</h3><p>Lee las pruebas del calendario, estima tu marca a partir de tus carreras recientes y te da el ritmo por kilómetro. Parciales, zonas de pulso y cadencia en directo.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-gym)">Gym</span><h3>Rutinas que se siguen desde el reloj</h3><p>Catálogo de ejercicios, series con la referencia de la última vez y temporizador de descanso que sigue visible aunque bloquees el iPhone.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-warn)">Comidas</span><h3>Un objetivo de kcal que se mueve contigo</h3><p>Reposo más la actividad real que mide Salud, así que sube a lo largo del día. Miles de alimentos sin conexión y lector de códigos de barras.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-accent)">Gastos</span><h3>Cómo acabará el mes, no solo cómo va</h3><p>Presupuesto por categoría, gastos anuales repartidos mes a mes y una proyección de fin de mes que cuenta los fijos pendientes y tu ritmo de gasto variable.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-water)">Agua y creatina</span><h3>Apuntar en un toque, desde donde estés</h3><p>Desde la app, el reloj, el widget o la esfera. El objetivo de litros es tuyo y la creatina se marca cuando la tomas.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-accent)">Agenda y tiempo</span><h3>Cada evento, con su previsión</h3><p>Calendario y tareas del sistema en una vista. Junto a cada evento, el tiempo previsto en ese sitio y a esa hora, y un aviso antes si va a llover, hará calor o hay alerta oficial.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-gym)">Inglés</span><h3>Una pregunta al día</h3><p>Vocabulario y expresiones de nivel B2 y C1, con respuesta desde el iPhone o el reloj. Cuenta como objetivo del día.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-warn)">Logros</span><h3>Experiencia, niveles y medallas</h3><p>Cada cosa que haces suma. Más de cien medallas y una racha que premia la constancia, no los días sueltos.</p></div>
+
+
+<div class="vx-tile"><span class="vx-tile__k" style="color:var(--vx-muted)">Laboratorio</span><h3>Qué se mueve junto en tus días</h3><p>Cruza comida, gasto y entreno de los últimos 120 días: correlación de Pearson con su intervalo de confianza, contraste de significación y relaciones de un día para el siguiente. Enseña la nube de puntos, no solo el número.</p></div>
+
+</div>
+
+
+<section class="vx-block">
+  <p class="vx-kicker">Cómo está hecha</p>
+  <div class="vx-words"><h2 id="nativa-sin-servidor-y-sin-cuentas">Nativa, sin servidor y sin cuentas</h2>
+<p>Todo vive en el iPhone y el reloj. Los datos de salud salen de Salud, la agenda del calendario del sistema y el tiempo de una previsión pública. No hay backend ni registro: el iPhone y el reloj se hablan directamente y cada uno guarda lo suyo.</p>
+<p>La interfaz usa una paleta con dos valores por color, de modo que la app y sus widgets siguen el aspecto claro u oscuro del sistema, y todos los textos están en español e inglés.</p>
+</div>
+  
+</section>
+
+
+    <div class="facts ticks vx-facts">
+      <dl>
+        <div><dt>Rol</dt><dd>Autor · diseño y desarrollo</dd></div>
+        <div><dt>Periodo</dt><dd>2026</dd></div>
+        <div><dt>Organización</dt><dd>Proyecto personal</dd></div>
+        <div><dt>Stack</dt><dd class="stack" style="color: var(--color-ink)"><span>Swift</span><span>SwiftUI</span><span>SwiftData</span><span>HealthKit</span><span>WidgetKit</span><span>WatchConnectivity</span><span>EventKit</span><span>App Intents</span><span>Swift Charts</span></dd></div>
+      </dl>
+    </div>
+    
+
+<nav class="prevnext" aria-label="Te puede interesar">
+  <span></span>
+  <a class="next" href="/proyectos/vcalib/"><span>→</span>vcalib: filtros de calibración diferenciables para RF-DETR bajo cambios de iluminación</a>
+</nav>
+
+
+  </div>
+</article>
+<script defer src="/js/vector.min.5c83679f1ec163c4c104488e4c428b15ba17666f1839af32c43b4784b4a29cd7.js" integrity="sha256-XINnnx7BY8TBBEiOTEKLFboXZm8YOa8yxDtHhLSinNc="></script>
+
+    </main>
+    <footer class="site-foot" role="contentinfo">
+  <div class="wrap">
+    <div class="wordmark" data-points-word="Juan Manuel" aria-hidden="true"><canvas></canvas></div>
+    <div class="foot-row">
+      <span>© 2026 Juan Manuel Ruiz Muñoz · <span data-i18n="footer_made_with">Hecho con</span> <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a></span>
+      <nav aria-label="Secciones" data-i18n-aria="footer_sections">
+        <a href="/blog/" data-i18n="nav_blog">Blog</a>
+        <a href="/material/" data-i18n="nav_material">Material</a>
+        <a href="/search/" data-i18n="nav_search">Buscar</a>
+        <a href="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf">CV (PDF)</a>
+        <a href="/index.xml">RSS</a>
+        <a href="https://www.linkedin.com/in/juanmanuelruizmunoz/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/juanmanuelruizm" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:juanmanuelruiz383@gmail.com">Email</a><a href="https://orcid.org/0009-0008-7529-306X" target="_blank" rel="noopener noreferrer">ORCID</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('[data-reveal]')).filter(function (el) { return el.getBoundingClientRect().top > innerHeight; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = ''; e.target.classList.add('animate-fade-in-up'); io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { el.style.opacity = '0'; io.observe(el); });
+});
+</script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var label = function (k, d) { var t = (window.__i18n || {})[document.documentElement.lang] || {}; return t[k] || d; };
+  document.querySelectorAll('.article pre').forEach(function (pre) {
+    var box = pre.closest('.highlight') || pre;
+    var button = document.createElement('button');
+    button.className = 'copy-code-btn';
+    button.setAttribute('aria-label', "Copiar código");
+    button.setAttribute('data-i18n-aria', 'action_copy_code');
+    button.textContent = label('action_copy', 'Copiar');
+    button.addEventListener('click', function () {
+      var code = pre.querySelector('code');
+      if (!code) return;
+      navigator.clipboard.writeText(code.innerText).then(function () {
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
+      }).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = code.innerText;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        button.textContent = label('action_copied', 'Copiado');
+        setTimeout(function () { button.textContent = label('action_copy', 'Copiar'); }, 2000);
+      });
+    });
+    box.appendChild(button);
+  });
+});
+</script>
+
+
+    
+
+
+<script>
+(function() {
+  
+  var translations = {
+    "es": {
+      "action_all_projects": "Ver todos los proyectos",
+      "action_case_study": "Caso de estudio",
+      "action_copied": "Copiado",
+      "action_copy": "Copiar",
+      "action_copy_code": "Copiar código",
+      "action_download_paper": "Descargar Paper",
+      "action_home": "Volver al inicio",
+      "action_paper": "Paper",
+      "action_post": "Post",
+      "action_repo": "Código",
+      "action_skip_content": "Ir al contenido",
+      "action_view_blog": "Ver el blog",
+      "action_view_thesis": "Ver TFG",
+      "aria_breadcrumb": "Miga de pan",
+      "aria_email": "Contactar por email",
+      "aria_gh_calendar": "Calendario de contribuciones de GitHub",
+      "aria_hero_metrics": "Resultados destacados",
+      "aria_main_nav": "Navegación principal",
+      "aria_open_palette": "Abrir paleta de comandos",
+      "aria_scroll_down": "Bajar al contenido",
+      "aria_scroll_top": "Volver arriba",
+      "aria_toggle_lang": "Cambiar idioma",
+      "aria_toggle_theme": "Cambiar tema",
+      "blog_description": "Artículos sobre física, IA, meteorología y más",
+      "blog_posts_count": "artículos",
+      "blog_title": "Blog",
+      "cmdk_agent_context": "Contexto para agentes",
+      "cmdk_copy_email": "Copiar email",
+      "cmdk_cvmode": "CV Mode — detección de objetos",
+      "cmdk_empty": "Sin resultados",
+      "cmdk_group_actions": "Acciones",
+      "cmdk_group_cases": "Casos de estudio",
+      "cmdk_group_content": "Contenido",
+      "cmdk_group_links": "Enlaces",
+      "cmdk_group_nav": "Navegación",
+      "cmdk_group_posts": "Posts del blog",
+      "cmdk_group_sections": "Secciones",
+      "cmdk_hint_close": "cerrar",
+      "cmdk_hint_nav": "navegar",
+      "cmdk_hint_open": "abrir",
+      "cmdk_label": "Paleta de comandos",
+      "cmdk_material": "Material universitario",
+      "cmdk_placeholder": "Buscar o ejecutar un comando…",
+      "cmdk_terminal": "Abrir terminal",
+      "col_links": "Enlaces",
+      "col_project": "Proyecto",
+      "col_stack": "Stack",
+      "col_status": "Estado",
+      "contact_intro": "¿Tienes un problema de visión por computador o de LLMs que llevar a producción? Escríbeme.",
+      "content_comments": "Comentarios",
+      "content_index": "Índice",
+      "content_reading_time": "min lectura",
+      "content_related": "Te puede interesar",
+      "content_toc": "Tabla de contenidos",
+      "cta_contact": "Contactar",
+      "cta_projects": "Ver proyectos",
+      "download_cv": "Descargar CV",
+      "easter_konami": "— Konami Code activado —",
+      "easter_secret": "🎮 ¡Has descubierto el secreto!",
+      "edu_thesis": "TFG:",
+      "error_message": "Parece que esta página se ha perdido en el espacio-tiempo. Como buen físico, te recomiendo volver al origen de coordenadas.",
+      "error_quote": "«En un universo de infinitas páginas, esta simplemente no existe en tu rama del multiverso.»",
+      "error_title": "¡Página no encontrada!",
+      "exp_achievements": "logros",
+      "exp_current": "Puesto actual",
+      "footer_contact": "Contacto",
+      "footer_made_with": "Hecho con",
+      "footer_resources": "Recursos",
+      "footer_sections": "Secciones",
+      "gh_contributions": "contribuciones en el último año",
+      "gh_view_profile": "Ver perfil",
+      "hero_callout_ocr": "Lectura OCR del flanco",
+      "hero_scan_caption": "Nube de puntos generada: un neumático girando bajo un barrido de luz rasante mientras un OCR lee el texto del flanco.",
+      "material_intro_label": "Apuntes",
+      "nav_blog": "Blog",
+      "nav_home": "Inicio",
+      "nav_material": "Material",
+      "nav_projects": "Proyectos",
+      "nav_search": "Buscar",
+      "profile_experience": "Experiencia",
+      "profile_oss": "Open source",
+      "profile_publications": "Publicaciones",
+      "project_case_study": "Caso de estudio",
+      "project_metrics": "Resultados",
+      "project_org": "Organización",
+      "project_period": "Periodo",
+      "project_role": "Rol",
+      "project_stack": "Stack",
+      "projects_more": "Más proyectos",
+      "search_intro": "Busca en los artículos, los casos de estudio y los apuntes.",
+      "section_blog": "Del blog",
+      "section_blog_intro": "Visión por computador, LLMs, física y meteorología.",
+      "section_certs": "Certificaciones",
+      "section_contact": "Contacto",
+      "section_edu": "Educación",
+      "section_exp": "Experiencia",
+      "section_exp_intro": "De la física atmosférica a la visión industrial, pasando por la investigación en LLMs.",
+      "section_github": "Actividad en GitHub",
+      "section_projects": "Proyectos",
+      "section_projects_intro": "Casos de estudio completos y el resto del trabajo, con su estado y dónde leer más.",
+      "section_pub": "Publicaciones",
+      "section_skills": "Herramientas",
+      "section_skills_intro": "Lo que uso a diario, agrupado por área.",
+      "status_active": "Activo",
+      "status_completed": "Completado",
+      "status_development": "En desarrollo",
+      "status_production": "En producción",
+      "status_published": "Publicado",
+      "term_going_blog": "Navegando al blog…",
+      "term_help_blog": "ir al blog",
+      "term_help_clear": "limpiar pantalla",
+      "term_help_contact": "formas de contacto",
+      "term_help_cv": "descargar CV",
+      "term_help_exit": "cerrar terminal",
+      "term_help_neofetch": "info del sistema",
+      "term_help_projects": "proyectos destacados",
+      "term_help_skills": "stack técnico",
+      "term_help_whoami": "sobre mí",
+      "term_help_yolo": "modo detección de objetos",
+      "term_hint": "Escribe {help} para ver los comandos disponibles.",
+      "term_input": "Comando",
+      "term_label": "Terminal interactivo",
+      "term_more": "Más en",
+      "term_no_cvmode": "cv-mode.js no cargado.",
+      "term_opening_cv": "Abriendo cv.pdf…",
+      "term_projects_page": "la página de proyectos",
+      "term_try_help": "Prueba {help}.",
+      "term_uptime": "desde 2024",
+    },
+    "en": {
+      "action_all_projects": "View all projects",
+      "action_case_study": "Case study",
+      "action_copied": "Copied",
+      "action_copy": "Copy",
+      "action_copy_code": "Copy code",
+      "action_download_paper": "Download Paper",
+      "action_home": "Go to homepage",
+      "action_paper": "Paper",
+      "action_post": "Post",
+      "action_repo": "Code",
+      "action_skip_content": "Skip to content",
+      "action_view_blog": "View blog",
+      "action_view_thesis": "View Thesis",
+      "aria_breadcrumb": "Breadcrumb",
+      "aria_email": "Contact by email",
+      "aria_gh_calendar": "GitHub contributions calendar",
+      "aria_hero_metrics": "Key results",
+      "aria_main_nav": "Main navigation",
+      "aria_open_palette": "Open command palette",
+      "aria_scroll_down": "Scroll to content",
+      "aria_scroll_top": "Scroll to top",
+      "aria_toggle_lang": "Change language",
+      "aria_toggle_theme": "Toggle theme",
+      "blog_description": "Articles about physics, AI, meteorology and more",
+      "blog_posts_count": "posts",
+      "blog_title": "Blog",
+      "cmdk_agent_context": "Agent context",
+      "cmdk_copy_email": "Copy email",
+      "cmdk_cvmode": "CV Mode — object detection",
+      "cmdk_empty": "No results",
+      "cmdk_group_actions": "Actions",
+      "cmdk_group_cases": "Case studies",
+      "cmdk_group_content": "Content",
+      "cmdk_group_links": "Links",
+      "cmdk_group_nav": "Navigation",
+      "cmdk_group_posts": "Blog posts",
+      "cmdk_group_sections": "Sections",
+      "cmdk_hint_close": "close",
+      "cmdk_hint_nav": "navigate",
+      "cmdk_hint_open": "open",
+      "cmdk_label": "Command palette",
+      "cmdk_material": "University notes",
+      "cmdk_placeholder": "Search or run a command…",
+      "cmdk_terminal": "Open terminal",
+      "col_links": "Links",
+      "col_project": "Project",
+      "col_stack": "Stack",
+      "col_status": "Status",
+      "contact_intro": "Got a computer vision or LLM problem to take to production? Drop me a line.",
+      "content_comments": "Comments",
+      "content_index": "Index",
+      "content_reading_time": "min read",
+      "content_related": "You might also like",
+      "content_toc": "Table of contents",
+      "cta_contact": "Contact",
+      "cta_projects": "View projects",
+      "download_cv": "Download CV",
+      "easter_konami": "— Konami Code activated —",
+      "easter_secret": "🎮 You found the secret!",
+      "edu_thesis": "Thesis:",
+      "error_message": "It seems this page has been lost in spacetime. As a good physicist, I recommend returning to the origin of coordinates.",
+      "error_quote": "\"In a universe of infinite pages, this one simply doesn't exist in your branch of the multiverse.\"",
+      "error_title": "Page not found!",
+      "exp_achievements": "achievements",
+      "exp_current": "Current role",
+      "footer_contact": "Contact",
+      "footer_made_with": "Made with",
+      "footer_resources": "Resources",
+      "footer_sections": "Sections",
+      "gh_contributions": "contributions in the last year",
+      "gh_view_profile": "View profile",
+      "hero_callout_ocr": "Sidewall OCR reading",
+      "hero_scan_caption": "Generated point cloud: a tire turning under a sweep of raking light while an OCR reads the sidewall text.",
+      "material_intro_label": "Notes",
+      "nav_blog": "Blog",
+      "nav_home": "Home",
+      "nav_material": "Resources",
+      "nav_projects": "Projects",
+      "nav_search": "Search",
+      "profile_experience": "Experience",
+      "profile_oss": "Open source",
+      "profile_publications": "Publications",
+      "project_case_study": "Case study",
+      "project_metrics": "Results",
+      "project_org": "Organization",
+      "project_period": "Period",
+      "project_role": "Role",
+      "project_stack": "Stack",
+      "projects_more": "More projects",
+      "search_intro": "Search the posts, the case studies and the course notes.",
+      "section_blog": "From the blog",
+      "section_blog_intro": "Computer vision, LLMs, physics and meteorology.",
+      "section_certs": "Certifications",
+      "section_contact": "Contact",
+      "section_edu": "Education",
+      "section_exp": "Experience",
+      "section_exp_intro": "From atmospheric physics to industrial vision, by way of LLM research.",
+      "section_github": "GitHub Activity",
+      "section_projects": "Projects",
+      "section_projects_intro": "Full case studies and the rest of the work, with its status and where to read more.",
+      "section_pub": "Publications",
+      "section_skills": "Tools",
+      "section_skills_intro": "What I use every day, grouped by area.",
+      "status_active": "Active",
+      "status_completed": "Completed",
+      "status_development": "In development",
+      "status_production": "In production",
+      "status_published": "Published",
+      "term_going_blog": "Heading to the blog…",
+      "term_help_blog": "go to the blog",
+      "term_help_clear": "clear the screen",
+      "term_help_contact": "ways to reach me",
+      "term_help_cv": "download CV",
+      "term_help_exit": "close the terminal",
+      "term_help_neofetch": "system info",
+      "term_help_projects": "featured projects",
+      "term_help_skills": "tech stack",
+      "term_help_whoami": "about me",
+      "term_help_yolo": "object detection mode",
+      "term_hint": "Type {help} to see the available commands.",
+      "term_input": "Command",
+      "term_label": "Interactive terminal",
+      "term_more": "More on",
+      "term_no_cvmode": "cv-mode.js not loaded.",
+      "term_opening_cv": "Opening cv-en.pdf…",
+      "term_projects_page": "the projects page",
+      "term_try_help": "Try {help}.",
+      "term_uptime": "since 2024",
+    },
+  };
+
+  
+  
+  if (window.__i18nDyn) {
+    Object.keys(window.__i18nDyn).forEach(function (l) {
+      translations[l] = Object.assign(translations[l] || {}, window.__i18nDyn[l]);
+    });
+  }
+  window.__i18n = translations;
+
+  
+  
+  function applyLang(lang, persist) {
+    var strings = translations[lang];
+    if (!strings) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var isHtml = el.hasAttribute('data-i18n-html');
+      
+      if (!el.hasAttribute('data-i18n-orig')) {
+        el.setAttribute('data-i18n-orig', isHtml ? el.innerHTML : el.textContent);
+      }
+      if (strings[key] !== undefined) {
+        if (isHtml) {
+          el.innerHTML = strings[key];
+        } else {
+          el.textContent = strings[key];
+        }
+      } else {
+        
+        var orig = el.getAttribute('data-i18n-orig');
+        if (orig !== null) {
+          if (isHtml) { el.innerHTML = orig; } else { el.textContent = orig; }
+        }
+      }
+    });
+    
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (strings[key]) el.setAttribute('aria-label', strings[key]);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (strings[key]) el.setAttribute('placeholder', strings[key]);
+    });
+    
+    document.querySelectorAll('time[data-i18n-date]').forEach(function(el) {
+      if (!el.hasAttribute('data-i18n-orig')) el.setAttribute('data-i18n-orig', el.textContent);
+      var d = new Date(el.getAttribute('datetime') + 'T12:00:00');
+      el.textContent = (lang === pageLang || isNaN(d))
+        ? el.getAttribute('data-i18n-orig')
+        : d.toLocaleDateString(lang, { year: 'numeric', month: 'short', day: 'numeric' });
+    });
+    
+    document.querySelectorAll('[data-cv-es]').forEach(function(el) {
+      var url = el.getAttribute(lang === 'en' ? 'data-cv-en' : 'data-cv-es');
+      if (el.hasAttribute('data-target')) el.setAttribute('data-target', url);
+      else el.setAttribute('href', url);
+    });
+    var label = document.getElementById('lang-label');
+    if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
+    if (persist !== false) window.localStorage.setItem('lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+
+    
+    if (typeof window.updateExperienceDisplay === 'function') window.updateExperienceDisplay();
+    
+    var gf = document.querySelector('iframe.giscus-frame');
+    if (gf) {
+      gf.contentWindow.postMessage(
+        { giscus: { setConfig: { lang: lang } } },
+        'https://giscus.app'
+      );
+    }
+  }
+
+  window.applyLang = applyLang;
+
+  
+  var pageLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'es';
+
+  
+  function altUrl(lang) {
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    return link ? link.getAttribute('href') : null;
+  }
+  var isHome = document.body && document.body.getAttribute('data-kind') === 'home';
+
+  window.toggleLang = function() {
+    var current = window.localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || pageLang;
+    var next = current === 'es' ? 'en' : 'es';
+    var alt = !isHome && altUrl(next);
+    if (alt) {
+      window.localStorage.setItem('lang', next);
+      window.location.href = alt;
+      return;
+    }
+    applyLang(next);
+  };
+
+  
+  
+  function browserLang() {
+    var l = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+    return /^(es|ca|gl|eu)\b/.test(l) ? 'es' : 'en';
+  }
+
+  
+  var saved = window.localStorage.getItem('lang');
+  var auto = !saved && pageLang === 'es' && browserLang() === 'en';
+  var target = saved || (auto ? 'en' : null);
+  if (target && target !== pageLang) {
+    var targetAlt = !isHome && altUrl(target);
+    if (targetAlt) {
+      window.location.replace(targetAlt);
+    } else if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { applyLang(target, !auto); });
+    } else {
+      applyLang(target, !auto);
+    }
+  }
+})();
+</script>
+
+    
+<div id="cmdk-overlay" class="cmdk-overlay" hidden>
+  <div id="cmdk" role="dialog" aria-modal="true" aria-label="Paleta de comandos" data-i18n-aria="cmdk_label" class="cmdk-panel">
+    <div class="cmdk-input-row">
+      <i class="fas fa-search cmdk-input-icon" aria-hidden="true"></i>
+      <input id="cmdk-input" type="text" placeholder="Buscar o ejecutar un comando…" data-i18n-placeholder="cmdk_placeholder" autocomplete="off" spellcheck="false" />
+      <kbd class="cmdk-kbd">esc</kbd>
+    </div>
+    <div id="cmdk-list" class="cmdk-list" role="listbox">
+      
+      
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_nav">Navegación</div>
+      <button class="cmdk-item" data-action="goto" data-target="/" data-keywords="inicio home portada"><i class="fas fa-home"></i><span data-i18n="nav_home">Inicio</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/blog/" data-keywords="blog posts articulos articles"><i class="fas fa-newspaper"></i><span data-i18n="nav_blog">Blog</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/material/" data-keywords="material apuntes universidad notes university"><i class="fas fa-book-open"></i><span data-i18n="cmdk_material">Material universitario</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/search/" data-keywords="buscar busqueda search"><i class="fas fa-search"></i><span data-i18n="nav_search">Buscar</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/agent-context/" data-keywords="agente contexto docs documentacion llm ia agent context guide repo"><i class="fas fa-robot"></i><span data-i18n="cmdk_agent_context">Contexto para agentes</span></button>
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_sections">Secciones</div>
+      <button class="cmdk-item" data-action="goto" data-target="/#experiencia" data-keywords="experiencia trabajo work experience"><i class="fas fa-briefcase"></i><span data-i18n="section_exp">Experiencia</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/#educacion" data-keywords="educacion estudios education"><i class="fas fa-graduation-cap"></i><span data-i18n="section_edu">Educación</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/#publicaciones" data-keywords="publicaciones papers publications"><i class="fas fa-book"></i><span data-i18n="section_pub">Publicaciones</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/#skills" data-keywords="skills tecnologias habilidades"><i class="fas fa-cogs"></i><span>Skills</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/#proyectos" data-keywords="proyectos projects portfolio"><i class="fas fa-project-diagram"></i><span data-i18n="section_projects">Proyectos</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/#contacto" data-keywords="contacto email contact"><i class="fas fa-envelope"></i><span data-i18n="section_contact">Contacto</span></button>
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_actions">Acciones</div>
+      <button class="cmdk-item" data-action="lang" data-keywords="idioma language english espanol ingles spanish"><i class="fas fa-globe"></i><span><span data-i18n="aria_toggle_lang">Cambiar idioma</span> (ES/EN)</span></button>
+      <button class="cmdk-item" data-action="goto" data-target="/cv.pdf" data-cv-es="/cv.pdf" data-cv-en="/cv-en.pdf" data-keywords="cv curriculum resume descargar download"><i class="fas fa-file-download"></i><span data-i18n="download_cv">Descargar CV</span></button>
+      <button class="cmdk-item" data-action="copy-email" data-keywords="email correo copiar copy mail"><i class="fas fa-copy"></i><span data-i18n="cmdk_copy_email">Copiar email</span></button>
+      <button class="cmdk-item" data-action="terminal" data-keywords="terminal consola shell cli bash zsh console"><i class="fas fa-terminal"></i><span data-i18n="cmdk_terminal">Abrir terminal</span></button>
+      <button class="cmdk-item" data-action="cvmode" data-keywords="yolo vision deteccion objetos object detection computer cv mode camara easter egg"><i class="fas fa-eye"></i><span data-i18n="cmdk_cvmode">CV Mode — detección de objetos</span></button>
+
+      
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_posts">Posts del blog</div>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/desinformacion-en-la-ficcion-ontologias-llm/" data-keywords="blog post LLMs NLP RAG ontologías desinformación deep learning"><i class="fas fa-file-alt"></i><span>Detectar desinformación en la ficción: una ontología que se construye sola</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/ocr-industrial-glm-ocr/" data-keywords="blog post OCR computer vision inspección industrial GLM-OCR modelos locales deep learning"><i class="fas fa-file-alt"></i><span>OCR en condiciones extremas: leer texto donde no hay tinta</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/que-ve-una-red-neuronal/" data-keywords="blog post computer vision interpretabilidad Grad-CAM deep learning OpenCV PyTorch"><i class="fas fa-file-alt"></i><span>¿Qué ve realmente una red neuronal? De los filtros de Sobel a los mapas de atención</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/cnn-vs-vision-transformers-inspeccion-industrial/" data-keywords="blog post computer vision deep learning vision transformers CNN inspección industrial PyTorch"><i class="fas fa-file-alt"></i><span>CNNs vs Vision Transformers: lecciones desde la inspección industrial</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/tiempos-caracteristicos-estelares/" data-keywords="blog post astrofísica estrellas física"><i class="fas fa-file-alt"></i><span>Tiempos característicos estelares: el reloj interior de las estrellas</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/predicciones-por-conjuntos/" data-keywords="blog post meteorología predicción por conjuntos modelos deterministas incertidumbre análisis estadístico"><i class="fas fa-file-alt"></i><span>Predicciones por conjuntos en meteorología</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/caos/" data-keywords="blog post caos efecto-mariposa ecuación-logística dinámica-poblacional meteorología modelos-matemáticos"><i class="fas fa-file-alt"></i><span>Del clima al caos: una analogía entre meteorología y dinámica de poblaciones</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/blog/tfg/" data-keywords="blog post bloqueo atmosférico bloqueo en Omega bloqueo en Rex método lagrangiano"><i class="fas fa-file-alt"></i><span>Bloqueos atmosféricos desde un punto de vista lagrangiano</span></button>
+      
+      
+
+      
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_cases">Casos de estudio</div>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/proyectos/vector/" data-keywords="proyecto project caso estudio case study iOS watchOS SwiftUI producto"><i class="fas fa-project-diagram"></i><span>Vector: mi día en una sola dirección</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/proyectos/vcalib/" data-keywords="proyecto project caso estudio case study computer vision RF-DETR domain shift PyTorch"><i class="fas fa-project-diagram"></i><span>vcalib: filtros de calibración diferenciables para RF-DETR bajo cambios de iluminación</span></button>
+      
+      <button class="cmdk-item" data-action="goto" data-target="/proyectos/desinformacion-ontologias-llm/" data-keywords="proyecto project caso estudio case study LLMs RAG NLP ontologías desinformación"><i class="fas fa-project-diagram"></i><span>Detección de desinformación en obras de ficción con ontologías generadas por LLMs</span></button>
+      
+      
+
+      <div class="cmdk-group" data-group data-i18n="cmdk_group_links">Enlaces</div>
+      
+      <button class="cmdk-item" data-action="open" data-target="https://www.linkedin.com/in/juanmanuelruizmunoz/" data-keywords="linkedin social"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></button>
+      
+      <button class="cmdk-item" data-action="open" data-target="https://github.com/juanmanuelruizm" data-keywords="github social"><i class="fab fa-github"></i><span>GitHub</span></button>
+      
+      <button class="cmdk-item" data-action="open" data-target="mailto:juanmanuelruiz383@gmail.com" data-keywords="email social"><i class="fas fa-envelope"></i><span>Email</span></button>
+      
+      <button class="cmdk-item" data-action="open" data-target="https://orcid.org/0009-0008-7529-306X" data-keywords="orcid social"><i class="fab fa-orcid"></i><span>ORCID</span></button>
+      
+
+      <div id="cmdk-content-results"></div>
+
+      <div id="cmdk-empty" class="cmdk-empty" data-i18n="cmdk_empty" hidden>Sin resultados</div>
+    </div>
+    <div class="cmdk-footer">
+      <span><kbd class="cmdk-kbd">↑</kbd><kbd class="cmdk-kbd">↓</kbd> <span data-i18n="cmdk_hint_nav">navegar</span></span>
+      <span><kbd class="cmdk-kbd">↵</kbd> <span data-i18n="cmdk_hint_open">abrir</span></span>
+      <span><kbd class="cmdk-kbd">esc</kbd> <span data-i18n="cmdk_hint_close">cerrar</span></span>
+    </div>
+  </div>
+</div>
+
+
+<script>window.__cmdkIndexUrl = '\/index.json';</script>
+<script defer src="/js/cmdk.js"></script>
+
+    
+<div id="term-overlay" class="term-overlay" hidden>
+  <div class="term-window" role="dialog" aria-modal="true" aria-label="Terminal interactivo" data-i18n-aria="term_label">
+    <div class="term-titlebar">
+      <span class="term-dot" style="background:#ef4444" onclick="window.closeTerminal()"></span>
+      <span class="term-dot" style="background:#f59e0b"></span>
+      <span class="term-dot" style="background:#22c55e"></span>
+      <span class="term-title">juanma@web — zsh</span>
+    </div>
+    <div id="term-body" class="term-body" tabindex="-1">
+      <div id="term-output"></div>
+      <div class="term-input-line">
+        <span class="term-prompt">juanma@web:~$</span>
+        <input id="term-input" type="text" autocomplete="off" spellcheck="false" aria-label="Comando" data-i18n-aria="term_input" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+window.__terminalData = {
+  base: '\/' || '/',
+  
+  byLang: {
+    "es": {
+      headline: "ML Engineer · Computer Vision \u0026 LLMs",
+      whoami: "Físico con formación avanzada en Matemáticas, especializado en ingeniería de Machine Learning y Computer Vision. Llevo modelos de visión y lenguaje a producción real: del dato al despliegue con Docker, vLLM y MLflow. Me interesa entender los modelos a fondo, no solo entrenarlos. Cuando no estoy entrenando modelos, escribo sobre física, caos y meteorología en este blog.",
+      projectsUrl: "/proyectos/",
+      projects: [
+        { title: "vcalib: filtros de calibración para RF-DETR bajo cambios de iluminación", tech: "PyTorch · RF-DETR · SAM3" },
+        { title: "Detección de desinformación en ficción con ontologías generadas por LLMs", tech: "LLMs · RAG · SBERT" },
+        { title: "Inspección industrial de neumáticos con visión y OCR multimodal", tech: "PyTorch · RF-DETR · GLM-OCR" },
+        { title: "GLM-OCR + LoRA para extraer campos de tickets y facturas", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
+        { title: "vision-pytorch: pipelines DINOv2/v3 para clasificación y features", tech: "PyTorch · DINOv2 · DINOv3" },
+        { title: "Identificación lagrangiana de bloqueos atmosféricos (TFG)", tech: "Python · HYSPLIT · ERA5" },
+        { title: "Agente local con Ollama: tool calling y RAG", tech: "Python · Ollama · ChromaDB" },
+        { title: "Vector: app personal para iPhone y Apple Watch", tech: "SwiftUI · SwiftData · HealthKit" },
+      ],
+      skills: [
+        { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings y búsqueda semántica · ChromaDB · FAISS · Prompt engineering" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Modelos generativos · Detección y segmentación" },
+        { name: "Lenguajes y análisis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (lectura y especificación) · R · Análisis estadístico · LaTeX" },
+        { name: "MLOps y herramientas", items: "Docker · MLflow · TensorBoard · Git y GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
+      ],
+    },
+    "en": {
+      headline: "ML Engineer · Computer Vision \u0026 LLMs",
+      whoami: "Physicist with a strong mathematics background, specialized in Machine Learning and Computer Vision engineering. I take vision and language models to real production: from data to deployment with Docker, vLLM and MLflow. I care about understanding models deeply, not just training them. When I am not training models, I write about physics, chaos and meteorology on this blog.",
+      projectsUrl: "/en/proyectos/",
+      projects: [
+        { title: "vcalib: calibration filters for RF-DETR under illumination shift", tech: "PyTorch · RF-DETR · SAM3" },
+        { title: "Misinformation detection in fiction with LLM-generated ontologies", tech: "LLMs · RAG · SBERT" },
+        { title: "Industrial tire inspection with vision models and multimodal OCR", tech: "PyTorch · RF-DETR · GLM-OCR" },
+        { title: "GLM-OCR + LoRA for key information extraction on receipts and invoices", tech: "GLM-OCR · LoRA · LLaMA-Factory" },
+        { title: "vision-pytorch: DINOv2/v3 pipelines for classification and features", tech: "PyTorch · DINOv2 · DINOv3" },
+        { title: "Lagrangian identification of atmospheric blocking (bachelor's thesis)", tech: "Python · HYSPLIT · ERA5" },
+        { title: "Local agent with Ollama: tool calling and RAG", tech: "Python · Ollama · ChromaDB" },
+        { title: "Vector: a personal iPhone and Apple Watch app", tech: "SwiftUI · SwiftData · HealthKit" },
+      ],
+      skills: [
+        { name: "LLMs \u0026 NLP", items: "Fine-tuning (LoRA) · LLaMA-Factory · RAG · Transformers · vLLM · Ollama · Embeddings \u0026 semantic search · ChromaDB · FAISS · Prompt engineering" },
+        { name: "Computer Vision", items: "PyTorch · TensorFlow · Keras · OpenCV · CNNs · Vision Transformers · YOLO · RF-DETR · Generative models · Detection \u0026 segmentation" },
+        { name: "Languages \u0026 analysis", items: "Python · NumPy · Pandas · scikit-learn · Matplotlib · C++ (reading \u0026 specs) · R · Statistical analysis · LaTeX" },
+        { name: "MLOps \u0026 tools", items: "Docker · MLflow · TensorBoard · Git \u0026 GitHub · AWS (Cloud Technical Essentials) · Linux / SSH · uv · Jupyter" },
+      ],
+    },
+  },
+  social: [
+    { title: "LinkedIn", url: "https://www.linkedin.com/in/juanmanuelruizmunoz/", label: "in/juanmanuelruizmunoz" },
+    { title: "GitHub", url: "https://github.com/juanmanuelruizm", label: "juanmanuelruizm" },
+    { title: "Email", url: "mailto:juanmanuelruiz383@gmail.com", label: "juanmanuelruiz383@gmail.com" },
+    { title: "ORCID", url: "https://orcid.org/0009-0008-7529-306X", label: "0009-0008-7529-306X" },
+  ]
+};
+</script>
+<script defer src="/js/terminal.js"></script>
+
+    <script defer src="/js/scan.min.69c824f179b972781b8d9093e9742c9fdf0fe2b29c2554c6f4a6a5dcfb62723a.js" integrity="sha256-acgk8Xm5cngbjZCT6XQsn98P4rKcJVTG9Kal3Pticjo="></script>
+    <script defer src="/js/cv-mode.js"></script>
+  </body>
+</html>
