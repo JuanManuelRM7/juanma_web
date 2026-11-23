@@ -11,7 +11,8 @@
         <div><b>{{ $t.pace_label }}</b><span data-vx-pace>{{ $first.pace }}</span></div>
         <div><b data-vx-zone>{{ $t.hr_label }} · {{ $first.zone }}</b><span data-vx-hrv>{{ $first.hr }}</span></div>
       </div>
-      <div class="vx-banner" data-vx-banner><div class="vx-banner__t" data-vx-bt></div><div class="vx-banner__v" data-vx-bv></div><div class="vx-banner__x" data-vx-bx></div></div>
+      {{/* El aviso a pantalla completa: lo rellena vector.js con el `banner` de cada escenario. */}}
+      <div class="vx-banner" data-vx-banner></div>
     </div>
   </div>
   <div class="vx-scn" role="group" aria-label="{{ $t.scenario_label }}">

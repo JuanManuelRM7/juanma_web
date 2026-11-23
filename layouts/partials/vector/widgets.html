@@ -1,10 +1,26 @@
 {{ $t := index site.Data.vector .Language.Lang }}
+{{/* Widgets del iPhone: cifras grandes y el fondo del color de cómo vas (como los avisos del reloj). */}}
 <div class="vx-widgets" aria-hidden="true">
   <div class="vx-w vx-w--cal"><span class="vx-w__lab vx-w__lab--plain">OCT – NOV</span><div class="vx-cal vx-cal--mini" data-vx-cal="{{ $t.weekdays }}"></div></div>
-  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">{{ $t.today }}</span><span class="vx-w__n">4 <small>{{ $t.of_6 }}</small></span><div class="vx-bar" style="--f:0.71"><div class="vx-bar__track"></div><div class="vx-bar__fill"></div><div class="vx-bar__dot"></div></div><span class="vx-w__foot">{{ $t.w_kcal }}</span></div>
-  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-warn)">{{ $t.next_race }}</span><span class="vx-w__n">16 <small>{{ $t.days }}</small></span><span class="vx-w__foot">{{ $t.race_line }}</span></div>
-  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-water)">{{ $t.water }}</span><span class="vx-w__n">{{ $t.litres }} <small>/ 3 L</small></span><div class="vx-meter"><i style="width:70%;background:var(--vx-water)"></i></div><span class="vx-w__foot">+300 · +500</span></div>
-  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-accent)">{{ $t.spending }}</span><span class="vx-w__n">512 <small>€</small></span><div class="vx-meter"><i style="width:46%;background:var(--vx-accent)"></i></div><span class="vx-w__foot">{{ $t.month_end }}</span></div>
-  <div class="vx-w"><span class="vx-w__lab" style="color:var(--vx-muted)">{{ $t.lock }}</span><span class="vx-w__n vx-w__n--sm">4<small>/6</small> · 16<small> d</small></span><span class="vx-w__foot">{{ $t.lock_line }}</span></div>
+  <div class="vx-w vx-w--today">
+    <span class="vx-w__lab" style="color:var(--vx-accent)">{{ $t.today }}</span>
+    <div class="vx-goalring"><b>4<small>{{ $t.of_6 }}</small></b></div>
+  </div>
+  <div class="vx-w vx-w--run"><span class="vx-w__lab">{{ $t.next_race }}</span><span class="vx-w__n vx-w__n--xl">16</span><span class="vx-w__unit">{{ $t.days }}</span><span class="vx-w__foot">{{ $t.race_line }}</span></div>
+  <div class="vx-w vx-w--water" style="--lvl:0.44">
+    <span class="vx-w__lab" style="color:var(--vx-water)">{{ $t.water }}</span>
+    <span class="vx-w__n">{{ $t.litres }} <small>/ 3 L</small></span>
+    <span class="vx-w__btns"><i>+300</i><i>+500</i></span>
+  </div>
+  <div class="vx-w vx-w--good">
+    <span class="vx-w__lab">{{ $t.spending }}</span><span class="vx-w__n">512 <small>€</small></span>
+    <span class="vx-w__foot">{{ $t.month_end }}</span><span class="vx-w__plus">+</span>
+  </div>
+  <div class="vx-w">
+    <span class="vx-w__lab" style="color:var(--vx-run)">{{ $t.week_label }}</span>
+    <span class="vx-w__n">{{ $t.week_km }} <small>km</small></span>
+    <span class="vx-w__delta">{{ $t.week_delta }}</span>
+    <span class="vx-wdots">{{ range $i, $d := split $t.weekdays "," }}<span><i class="{{ index (slice "is-run" "is-gym" "" "is-run" "is-both" "" "") $i }}"></i>{{ $d }}</span>{{ end }}</span>
+  </div>
   <div class="vx-live"><span class="vx-live__t">1:12</span><span class="vx-live__x"><b>{{ $t.live_title }}</b>{{ $t.live_line }}</span></div>
 </div>

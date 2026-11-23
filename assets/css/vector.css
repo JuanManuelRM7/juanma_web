@@ -136,18 +136,57 @@
 .vx-cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: auto; border-top: 1px solid var(--vx-rule); padding-top: 8px; }
 .vx-cells b { display: block; font: 600 10px/1 var(--vx-text); color: var(--vx-ink2); letter-spacing: .3px; }
 .vx-cells span { font: 800 22px/1.15 var(--vx-round); font-variant-numeric: tabular-nums; }
-.vx-banner { position: absolute; inset: 0; background: #101317; border-radius: inherit; padding: 26px 16px 16px; display: flex; flex-direction: column; gap: 6px;
-  opacity: 0; transform: translateY(8px); transition: opacity .35s, transform .35s; pointer-events: none; }
+/* El aviso a pantalla completa (como RunBannerView del reloj): el fondo dice cómo vas. */
+.vx-banner { position: absolute; inset: 0; border-radius: inherit; padding: 20px 14px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  text-align: center; color: #fff; background: linear-gradient(#1A1E24, #08090C);
+  opacity: 0; transform: scale(.96); transition: opacity .3s, transform .3s; pointer-events: none; }
 .vx-banner.is-on { opacity: 1; transform: none; }
-.vx-banner__t { font: 700 14px/1.2 var(--vx-text); color: var(--vx-warn); }
-.vx-banner__v { font: 800 38px/1 var(--vx-round); }
-.vx-banner__x { font: 400 12px/1.35 var(--vx-text); color: var(--vx-ink2); }
+.vx-banner.is-good { background: linear-gradient(#146E3C, #0A3C20); }
+.vx-banner.is-warn { background: linear-gradient(#D69614, #965F05); color: #191405; }
+.vx-banner.is-bad { background: linear-gradient(#BE2823, #6E120F); }
+.vx-banner svg { width: 30px; height: 30px; fill: currentColor; flex: none; }
+.vx-banner.is-neutral > svg { fill: var(--vx-accent); }
+.vx-banner__h { font: 900 22px/1.05 var(--vx-text); letter-spacing: -.2px; }
+.vx-banner__v { font: 900 52px/1 var(--vx-text); font-variant-numeric: tabular-nums; letter-spacing: -1.5px; white-space: nowrap; }
+.vx-banner__v small { font: 600 12px var(--vx-text); opacity: .8; letter-spacing: 0; margin-left: 3px; }
+.vx-banner__n { font: 900 26px/1.1 var(--vx-text); font-variant-numeric: tabular-nums; }
+.vx-banner__f { font: 600 13px/1.25 var(--vx-text); opacity: .85; }
+.vx-banner__chips { display: flex; gap: 10px; justify-content: space-around; width: 100%; font: 700 15px/1 var(--vx-text); font-variant-numeric: tabular-nums; }
+.vx-banner__chips span { display: inline-flex; align-items: center; gap: 4px; }
+.vx-banner__chips svg { width: 12px; height: 12px; }
+/* El resumen de cada km: KM y hora arriba, el ritmo enorme, la diferencia con el plan y dos datos. */
+.vx-banner--sum { justify-content: space-between; align-items: stretch; padding-top: 24px; }
+.vx-banner__top { display: flex; justify-content: space-between; align-items: baseline; font: 700 14px/1 var(--vx-text); }
+.vx-banner__top small { font: 600 12px var(--vx-text); opacity: .8; font-variant-numeric: tabular-nums; }
+.vx-banner__mid { display: flex; flex-direction: column; align-items: center; }
+.vx-banner--sum .vx-banner__v { font-size: 58px; }
 .vx-scn { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .vx-scn button { min-height: 40px; padding: 0 16px; border-radius: var(--radius-pill, 999px); border: 0; background: transparent; box-shadow: inset 0 0 0 1px var(--color-rule-2);
   color: var(--color-ink-2); font: 400 var(--text-sm)/1 var(--font-body); cursor: pointer; }
 .vx-scn button:hover { box-shadow: inset 0 0 0 1px var(--color-muted); color: var(--color-ink); }
 .vx-scn button[aria-pressed="true"] { background: var(--color-paper-3); color: var(--color-ink); box-shadow: inset 0 0 0 1px var(--color-ink-2); }
 .vx-scn button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+
+/* ---------- Compartir con foto (tarjeta de historia) ---------- */
+.vx-sharecol { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; }
+.vx-phone--story { width: min(300px, 100%); }
+.vx-phone--story .vx-phone__scr { padding: 0; overflow: hidden; }
+.vx-story { display: block; width: 100%; height: auto; font-family: var(--vx-text); }
+.vx-story__num { font-size: 96px; font-weight: 900; letter-spacing: -3px; }
+.vx-story__unit { font-size: 20px; font-weight: 700; letter-spacing: 0; fill: #D2F6EC; }
+.vx-story__me { fill: #0D0B10; }
+.vx-story__rim { stroke: #FFB36B; stroke-opacity: .5; stroke-width: 1; }
+.vx-story__km { font-size: 6px; font-weight: 700; fill: #fff; }
+.vx-story__lab { font-size: 6.4px; font-weight: 600; letter-spacing: .5px; fill: #fff; }
+.vx-story__lab--dim { font-size: 5.4px; letter-spacing: .9px; fill-opacity: .62; }
+.vx-story__arc { font-size: 5.8px; font-weight: 600; letter-spacing: 1px; fill: #fff; }
+.vx-story__head { font-size: 6.2px; letter-spacing: 1px; fill: #fff; fill-opacity: .78; }
+.vx-story__city { font-weight: 700; letter-spacing: 1.6px; fill-opacity: 1; }
+.vx-story__title { font-size: 6.6px; font-style: italic; fill: #fff; fill-opacity: .8; }
+.vx-story__fig { font-size: 15px; font-weight: 700; fill: #fff; font-variant-numeric: tabular-nums; }
+.vx-story__u { font-size: 6.5px; font-weight: 500; fill-opacity: .67; }
+.vx-sty { opacity: 0; transition: opacity .5s; }
+.vx-sty.is-on { opacity: 1; }
 
 /* ---------- Widgets ---------- */
 .vx-widgets { display: grid; grid-template-columns: repeat(2, minmax(0, 156px)); gap: 14px; justify-content: center; width: 100%; }
@@ -159,6 +198,36 @@
 .vx-w__n small { font: 600 12px var(--vx-text); color: var(--vx-muted); }
 .vx-w__n--sm { font-size: 26px; }
 .vx-w__foot { margin-top: auto; font: 500 11px/1.25 var(--vx-text); color: var(--vx-muted); }
+/* Fondo del color de cómo vas (WidgetTone de la app) */
+.vx-w--good { background: linear-gradient(#146E3C, #0A3C20); position: relative; }
+.vx-w--run { background: linear-gradient(#FF8A3D, #B2460A); gap: 0; }
+.vx-w--good .vx-w__n small, .vx-w--good .vx-w__foot, .vx-w--run .vx-w__foot { color: rgba(255,255,255,.75); }
+.vx-w--run .vx-w__foot { margin-top: auto; }
+.vx-w__n--xl { font-size: 58px; line-height: .95; letter-spacing: -1.5px; }
+.vx-w__unit { font: 700 14px/1 var(--vx-text); }
+.vx-w__plus { position: absolute; right: 12px; top: 10px; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.22); display: grid; place-items: center; font: 600 18px/1 var(--vx-text); }
+/* Agua: el fondo se llena según lo bebido */
+.vx-w--water { position: relative; overflow: hidden; isolation: isolate; }
+.vx-w--water::before { content: ""; position: absolute; inset: auto 0 0; height: calc(var(--lvl) * 100%); z-index: -1;
+  background: linear-gradient(rgba(95,203,255,.55), rgba(30,110,170,.55)); border-top: 2px solid rgba(160,225,255,.7); border-radius: 50% 50% 0 0 / 8px 8px 0 0; }
+.vx-w__btns { margin-top: auto; display: flex; gap: 6px; }
+.vx-w__btns i { font: 700 11px/1 var(--vx-round); font-style: normal; color: #0A2233; background: #fff; border-radius: 12px; padding: 7px 0; flex: 1; text-align: center; }
+/* Hoy: un trozo del anillo por objetivo, del color de su módulo */
+.vx-w--today { align-items: stretch; }
+.vx-goalring { flex: 1; aspect-ratio: 1; max-height: 104px; margin: 2px auto 0; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(closest-side, var(--vx-card) 76%, transparent 77% 100%),
+    conic-gradient(var(--vx-warn) 0 15.4%, transparent 0 16.7%, var(--vx-run) 0 32.1%, transparent 0 33.3%, var(--vx-water) 0 48.8%, transparent 0 50%,
+      #3D8AB3 0 65.4%, transparent 0 66.7%, #3A3F47 0 82.1%, transparent 0 83.3%, #3A3F47 0 98.8%, transparent 0); }
+.vx-goalring b { font: 800 30px/1 var(--vx-round); text-align: center; }
+.vx-goalring small { display: block; font: 600 11px var(--vx-text); color: var(--vx-muted); }
+/* Esta semana */
+.vx-w__delta { font: 600 11px/1.2 var(--vx-text); color: var(--vx-run); }
+.vx-wdots { margin-top: auto; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); font: 600 8px/1 var(--vx-text); color: rgba(255,255,255,.5); text-align: center; }
+.vx-wdots span { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.vx-wdots i { width: 11px; height: 11px; border-radius: 50%; background: var(--vx-rule); }
+.vx-wdots i.is-run { background: var(--vx-run); }
+.vx-wdots i.is-gym { background: var(--vx-gym); }
+.vx-wdots i.is-both { background: linear-gradient(90deg, var(--vx-run) 50%, var(--vx-gym) 50%); }
 .vx-live { grid-column: 1 / -1; background: #000; border-radius: 26px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; min-width: 0; }
 .vx-live__t { font: 800 26px/1 var(--vx-round); font-variant-numeric: tabular-nums; color: var(--vx-ok); }
 .vx-live__x { font: 500 12px/1.3 var(--vx-text); color: var(--vx-ink2); min-width: 0; }
@@ -173,4 +242,4 @@
 .vx-car__tile { border-radius: 14px; background: var(--vx-card); padding: 10px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .vx-car__m { font: 700 10px/1 var(--vx-text); letter-spacing: .4px; }
 
-@media (prefers-reduced-motion: reduce) { .vx-bar__fill, .vx-chip, .vx-banner, .vx-delta { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .vx-bar__fill, .vx-chip, .vx-banner, .vx-delta, .vx-sty { transition: none; } }

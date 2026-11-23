@@ -1,7 +1,8 @@
 // Maquetas animadas del caso de estudio de Vector (layouts/proyectos/vector.html).
 // - Dibuja los calendarios de entrenos (datos de ejemplo).
 // - «Tu día»: la flecha avanza según se cumplen objetivos.
-// - Plan de carrera: tres escenarios, en bucle o a mano.
+// - Plan de carrera: cuatro escenarios con su aviso a pantalla completa, en bucle o a mano.
+// - Compartir con foto: los cuatro estilos de ruta, en bucle o a mano.
 // Las animaciones solo corren con la maqueta a la vista y se quedan quietas con «reducir movimiento».
 (function () {
   'use strict';
@@ -52,7 +53,7 @@
     });
   }
 
-  // ---- Plan de carrera
+  // ---- Plan de carrera: el reloj y, encima, el aviso a pantalla completa de cada escenario
   var run = document.querySelector('[data-vx-run]');
   if (run) {
     var scenarios = [];
@@ -61,6 +62,52 @@
     var q = function (sel) { return run.querySelector(sel); };
     var buttons = run.querySelectorAll('[data-vx-scn]');
     var banner = q('[data-vx-banner]'), bannerTimer = null, current = 0;
+    // Los iconos del reloj (SF Symbols), dibujados a mano.
+    var ICONS = {
+      up: 'M12 3l7 8h-4.5v10h-5V11H5z',
+      down: 'M12 21l-7-8h4.5V3h5v10H19z',
+      heart: 'M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 5.8-8 11-8 11z',
+      flag: 'M5 3h2v18H5zM8 4h11l-2.5 4.5L19 13H8z'
+    };
+    function el(tag, cls, text) {
+      var e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text != null) e.textContent = text;
+      return e;
+    }
+    function icon(name) {
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', ICONS[name] || ''); svg.appendChild(path);
+      return svg;
+    }
+    function value(b) {
+      var v = el('div', 'vx-banner__v', b.value);
+      if (b.unit) v.appendChild(el('small', null, b.unit));
+      return v;
+    }
+    function chips(b) {
+      var row = el('div', 'vx-banner__chips');
+      (b.chips || []).forEach(function (c) { var s = el('span'); s.appendChild(icon(c.icon)); s.appendChild(document.createTextNode(c.v)); row.appendChild(s); });
+      return row;
+    }
+    function fill(b) {
+      banner.textContent = '';
+      banner.className = 'vx-banner is-' + (b.tone || 'neutral') + (b.kind === 'summary' ? ' vx-banner--sum' : '');
+      if (b.kind === 'summary') {
+        var top = el('div', 'vx-banner__top', b.title); top.appendChild(el('small', null, b.corner || '')); banner.appendChild(top);
+        var mid = el('div', 'vx-banner__mid'); mid.appendChild(value(b));
+        if (b.note) mid.appendChild(el('div', 'vx-banner__n', b.note));
+        banner.appendChild(mid); banner.appendChild(chips(b));
+      } else {
+        if (b.icon) banner.appendChild(icon(b.icon));
+        banner.appendChild(el('div', 'vx-banner__h', b.headline));
+        if (b.value) banner.appendChild(value(b));
+        if (b.chips) banner.appendChild(chips(b));
+        if (b.footnote) banner.appendChild(el('div', 'vx-banner__f', b.footnote));
+      }
+    }
     function show(i, withBanner) {
       var s = scenarios[i]; if (!s) return;
       current = i;
@@ -70,15 +117,34 @@
       var delta = q('[data-vx-delta]'); delta.textContent = s.delta; delta.classList.toggle('is-good', !!s.good);
       for (var k = 0; k < buttons.length; k++) buttons[k].setAttribute('aria-pressed', String(k === i));
       clearTimeout(bannerTimer); banner.classList.remove('is-on');
-      if (s.title && withBanner) {
-        q('[data-vx-bt]').textContent = s.title; q('[data-vx-bv]').textContent = s.value; q('[data-vx-bx]').textContent = s.detail;
-        banner.classList.add('is-on');
-        bannerTimer = setTimeout(function () { banner.classList.remove('is-on'); }, 3200);
+      if (s.banner && withBanner) {
+        fill(s.banner);
+        // Un fotograma después, para que se vea la transición.
+        requestAnimationFrame(function () { banner.classList.add('is-on'); });
+        if (!reduce) bannerTimer = setTimeout(function () { banner.classList.remove('is-on'); }, 3400);
       }
     }
     var loop = whileVisible(run, 5200, function () { show((current + 1) % scenarios.length, true); });
     [].forEach.call(buttons, function (b, i) {
       b.addEventListener('click', function () { show(i, true); loop.restart(); });
+    });
+  }
+  // ---- Compartir con foto: Gigante, Relieve, Trazo y Sello
+  var share = document.querySelector('[data-vx-share]');
+  if (share) {
+    var styleButtons = share.querySelectorAll('[data-vx-sty-btn]');
+    var names = [].map.call(styleButtons, function (b) { return b.getAttribute('data-vx-sty-btn'); });
+    var shown = 0;
+    function showStyle(i) {
+      shown = i;
+      [].forEach.call(share.querySelectorAll('[data-vx-sty]'), function (g) {
+        g.classList.toggle('is-on', g.getAttribute('data-vx-sty') === names[i]);
+      });
+      for (var k = 0; k < styleButtons.length; k++) styleButtons[k].setAttribute('aria-pressed', String(k === i));
+    }
+    var cycle = whileVisible(share, 3200, function () { showStyle((shown + 1) % names.length); });
+    [].forEach.call(styleButtons, function (b, i) {
+      b.addEventListener('click', function () { showStyle(i); cycle.restart(); });
     });
   }
 })();

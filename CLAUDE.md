@@ -199,7 +199,7 @@ En `config.yaml` bajo `params.project.list` **y** `languages.en.params.project.l
 
 `content/proyectos/vector(.en).md` usa `layout: vector` (`layouts/proyectos/vector.html`): mismo encabezado y cifras que los demás casos, pero el cuerpo son filas anchas de «texto + maqueta» en lugar del artículo con índice.
 
-- El texto va en el markdown, dentro de los shortcodes `vx-row` (texto + maqueta al lado; `stage` = phone, calendar, run, widgets o car), `vx-block` (a todo el ancho; `stage="watches"` opcional) y `vx-tiles` / `vx-tile` (rejilla de módulos).
+- El texto va en el markdown, dentro de los shortcodes `vx-row` (texto + maqueta al lado; `stage` = phone, calendar, share, run, widgets o car), `vx-block` (a todo el ancho; `stage="watches"` opcional) y `vx-tiles` / `vx-tile` (rejilla de módulos).
 - Las maquetas son partials en `layouts/partials/vector/`; sus textos, por idioma, están en `data/vector.yaml`. Todas las cifras que enseñan son de ejemplo.
 - `assets/css/vector.css` y `assets/js/vector.js` solo se cargan en esa página (con huella). Las maquetas llevan la paleta de la app (`--vx-*`, menta incluida) y esos colores no deben salir de ellas: el texto de la página sigue con los tokens del sitio y no usa el lima.
 - Las animaciones solo corren con la maqueta a la vista y respetan «reducir movimiento».

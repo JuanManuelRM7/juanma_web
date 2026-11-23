@@ -31,20 +31,64 @@ es:
   pace_label: "RITMO /KM"
   hr_label: "PULSO"
   scenario_label: "Escenario"
+  # Cada escenario lleva el aviso que salta a pantalla completa (banner): `tone` es el
+  # fondo (good verde, warn amarillo, bad rojo, neutral oscuro) e `icon`, el dibujo de
+  # arriba (up, down, heart, flag). El de «En el plan» es el resumen de cada km.
   scenarios:
-    - { name: "En el plan", pace: "6:36", hr: "152", zone: "Z3", delta: "En el plan", good: true }
-    - { name: "Por detrás", pace: "6:52", hr: "156", zone: "Z3", delta: "0:40 por detrás del plan", good: false, title: "Vas lento", value: "6:52", detail: "Sube a 6:36 /km." }
-    - { name: "Pulso alto", pace: "6:52", hr: "176", zone: "Z4", delta: "En el plan ajustado", good: true, title: "Objetivo ajustado", value: "2:23:10", detail: "Con el pulso alto, 2:19:00 ya no sale sin forzar. Nueva referencia: 6:47 /km." }
+    - name: "En el plan"
+      pace: "6:31"
+      hr: "152"
+      zone: "Z3"
+      delta: "0:12 por delante del plan"
+      good: true
+      banner: { kind: "summary", tone: "good", title: "KM 12", corner: "1:19:02", value: "6:31", unit: "/km", note: "−0:12", chips: [{ icon: "heart", v: "152" }, { icon: "flag", v: "2:18:48" }] }
+    - name: "Por detrás"
+      pace: "6:52"
+      hr: "156"
+      zone: "Z3"
+      delta: "0:40 por detrás del plan"
+      good: false
+      banner: { kind: "alert", tone: "warn", icon: "up", headline: "SUBE", value: "6:52", unit: "/km", footnote: "objetivo 6:36" }
+    - name: "Pulso alto"
+      pace: "6:52"
+      hr: "168"
+      zone: "Z4"
+      delta: "En el plan ajustado"
+      good: true
+      banner: { kind: "alert", tone: "neutral", icon: "flag", headline: "NUEVO PLAN", value: "2:23:10", unit: "", footnote: "nuevo ritmo 6:47/km" }
+    - name: "Sobre el tope"
+      pace: "6:40"
+      hr: "176"
+      zone: "Z5"
+      delta: "Pulso por encima del tope"
+      good: false
+      banner: { kind: "alert", tone: "bad", icon: "heart", headline: "AFLOJA", value: "176", unit: "ppm", footnote: "tope 172" }
   w_kcal: "1.640 / 2.600 kcal"
   next_race: "Próxima prueba"
   days: "días"
   race_line: "Media maratón · 21,1 km"
   spending: "Gastos · nov"
   month_end: "Fin de mes ~1.040 €"
-  lock: "Pantalla de bloqueo"
-  lock_line: "Objetivos y días para la prueba, también con el iPhone bloqueado."
+  week_label: "ESTA SEMANA"
+  week_km: "18,6"
+  week_delta: "+4,2 km que la anterior"
   live_title: "Descanso · Press banca"
   live_line: "Actividad en directo en la isla dinámica y la pantalla bloqueada"
+  # Compartir con foto (share.html): la tarjeta de historia de ejemplo.
+  share_km: "12,4"
+  share_city: "ALICANTE"
+  share_date: "DOM 22 NOV  ·  08:30"
+  share_title: "Carrera matinal"
+  share_peak: "214 m"
+  share_badge_top: "ALICANTE · 22.11.26"
+  share_badge_bottom: "12,4 KM · 1:21:25 · 6:34/KM"
+  share_start_finish: "SALIDA Y META"
+  share_elevation: "ALTITUD"
+  share_labels: ["TIEMPO", "RITMO", "DESNIVEL", "PULSO"]
+  share_values: ["1:21:25", "6:34", "+86", "151"]
+  share_units: ["", "/km", "m", "ppm"]
+  share_style_label: "Estilo de la ruta"
+  share_styles: [["giant", "Gigante"], ["relief", "Relieve"], ["trace", "Trazo"], ["badge", "Sello"]]
 en:
   weekdays: "M,T,W,T,F,S,S"
   date: "Thursday 12 Nov"
@@ -76,16 +120,56 @@ en:
   hr_label: "HR"
   scenario_label: "Scenario"
   scenarios:
-    - { name: "On plan", pace: "6:36", hr: "152", zone: "Z3", delta: "On plan", good: true }
-    - { name: "Behind", pace: "6:52", hr: "156", zone: "Z3", delta: "0:40 behind plan", good: false, title: "Too slow", value: "6:52", detail: "Speed up to 6:36 /km." }
-    - { name: "High pulse", pace: "6:52", hr: "176", zone: "Z4", delta: "On the adjusted plan", good: true, title: "Goal adjusted", value: "2:23:10", detail: "With your heart rate this high, 2:19:00 is out of reach without overreaching. New reference: 6:47 /km." }
+    - name: "On plan"
+      pace: "6:31"
+      hr: "152"
+      zone: "Z3"
+      delta: "0:12 ahead of plan"
+      good: true
+      banner: { kind: "summary", tone: "good", title: "KM 12", corner: "1:19:02", value: "6:31", unit: "/km", note: "−0:12", chips: [{ icon: "heart", v: "152" }, { icon: "flag", v: "2:18:48" }] }
+    - name: "Behind"
+      pace: "6:52"
+      hr: "156"
+      zone: "Z3"
+      delta: "0:40 behind plan"
+      good: false
+      banner: { kind: "alert", tone: "warn", icon: "up", headline: "SPEED UP", value: "6:52", unit: "/km", footnote: "goal 6:36" }
+    - name: "High pulse"
+      pace: "6:52"
+      hr: "168"
+      zone: "Z4"
+      delta: "On the adjusted plan"
+      good: true
+      banner: { kind: "alert", tone: "neutral", icon: "flag", headline: "NEW PLAN", value: "2:23:10", unit: "", footnote: "new pace 6:47/km" }
+    - name: "Over the cap"
+      pace: "6:40"
+      hr: "176"
+      zone: "Z5"
+      delta: "Heart rate over your cap"
+      good: false
+      banner: { kind: "alert", tone: "bad", icon: "heart", headline: "EASE OFF", value: "176", unit: "bpm", footnote: "cap 172" }
   w_kcal: "1,640 / 2,600 kcal"
   next_race: "Next race"
   days: "days"
   race_line: "Half marathon · 21.1 km"
   spending: "Spending · Nov"
   month_end: "Month end ~€1,040"
-  lock: "Lock Screen"
-  lock_line: "Goals and days to the race, with the iPhone locked too."
+  week_label: "THIS WEEK"
+  week_km: "18.6"
+  week_delta: "+4.2 km on last week"
   live_title: "Rest · Bench press"
   live_line: "Live Activity in the Dynamic Island and on the Lock Screen"
+  share_km: "12.4"
+  share_city: "ALICANTE"
+  share_date: "SUN 22 NOV  ·  08:30"
+  share_title: "Morning run"
+  share_peak: "214 m"
+  share_badge_top: "ALICANTE · 22.11.26"
+  share_badge_bottom: "12.4 KM · 1:21:25 · 6:34/KM"
+  share_start_finish: "START AND FINISH"
+  share_elevation: "ELEVATION"
+  share_labels: ["TIME", "PACE", "ELEVATION GAIN", "HEART RATE"]
+  share_values: ["1:21:25", "6:34", "+86", "151"]
+  share_units: ["", "/km", "m", "bpm"]
+  share_style_label: "Route style"
+  share_styles: [["giant", "Giant"], ["relief", "Relief"], ["trace", "Trace"], ["badge", "Badge"]]
